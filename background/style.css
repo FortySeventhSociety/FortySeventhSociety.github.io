@@ -67,5 +67,6 @@ a:active {
 }
 
 iframe {
+  position: absolute;
   z-index: 777;
 }
