@@ -225,10 +225,12 @@ a.labs-follow-me {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  /*
   left: 2rem;
   right: 2rem;
   bottom: 0.5vh;
   top: unset;
+  */
   text-align: center;
 }
 a.labs-follow-me svg {
