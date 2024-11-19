@@ -7,6 +7,25 @@ body {
   width: 100%;
   height: 100%;
 }
+/* unvisited link */
+a:link {
+  color: powderblue;
+}
+
+/* visited link */
+a:visited {
+  color: rebeccapurple;
+}
+
+/* mouse over link */
+a:hover {
+  color: mediumpurple;
+}
+
+/* selected link */
+a:active {
+  color: mediumaquamarine;
+}
 .anim, .anim svg {
   position: relative;
   width: 100%;
