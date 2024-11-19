@@ -54,7 +54,7 @@
   followMeButton.classList.add("labs-follow-me");
   document.body.appendChild(followMeButton);
   followMeButton.href = "https://twitter.com/D474designs";
-  followMeButton.target = "_top";
+  followMeButton.target = "_blank";
   followMeButton.setAttribute('title', 'Follow me on X for more!');
   followMeButton.innerHTML = `<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="300.000000pt" height="140.000000pt" viewBox="0 0 300.000000 140.000000"
