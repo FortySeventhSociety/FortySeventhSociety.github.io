@@ -7,7 +7,7 @@
   right: .25rem;
   top: .25rem;
   color: currentColor !important;
-  z-index: 7;
+  z-index: 77;
   
   &:visited, &:active { 
     color: currentColor;
