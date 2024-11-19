@@ -1,0 +1,24 @@
+- const title = "Train Puzzle";
+
+body.game.game--loading
+  .canvas-container
+    a.btn(onclick="finish()") Finished
+    canvas(width=1380, height=1380)
+  .modal
+    .modal__content.modal__main
+      h2.modal__title= title
+      label Difficulty
+        input(type="range", min=1, max=100, value=25 oninput="setSpeed(this)")
+      .modal__controls
+        a.btn(onclick="playLevel(false, false)") Play
+    .modal__content.modal__loading
+      h2.modal__title= title
+      .modal__text Loading...
+    .modal__content.modal__gameover
+      h2.modal__title Game Over
+      .modal__controls
+        a.btn(onclick="gotoMenu()") Try again
+    .modal__content.modal__win
+      h2.modal__title Well done!
+      .modal__controls
+        a.btn(onclick="gotoMenu()") Thanks

@@ -1,0 +1,106 @@
+form
+  - for i in (1..5)
+    input id='on-3-#{i}' type='radio' name='r-1' value='1-#{i}'
+
+  - for i in (1..5)
+    input id='tw-3-#{i}' type='radio' name='r-2' value='2-#{i}'
+
+  - for i in (1 .. 3)
+    - last = 5 + (3 - i);
+    - for j in (1 .. last)
+      input id='thr-#{i}-#{j}' type='radio' name='r-3' value='3-#{i}-#{j}'
+
+  - for h in (3 .. 5)
+    - if h === 3
+      - name = 'thr'
+    - if h === 4
+      - name = 'fr'
+    - if h === 5
+      - name = 'fv'
+
+    - for i in (1 .. 2)
+      - last = 6 + (2 - i);
+      - for j in (1 .. last)
+        input id='#{name}-#{i}-#{j}' type='radio' name='r-#{h}' value='#{h}-#{i}-#{j}'
+
+  - for h in (6 .. 10)
+    - if h === 6
+      - name = 'sx'
+    - if h === 7
+      - name = 'svn'
+    - if h === 8
+      - name = 'ght'
+    - if h === 9
+      - name = 'nn'
+    - if h === 10
+      - name = 'tn'
+    - for i in (1 .. 7)
+      input id='#{name}-1-#{i}' type='radio' name='r-#{h}' value='#{h}-1-#{i}'
+
+  div.controls
+    div.control
+      div.rs
+        - for h in (1 .. 10)
+          - if h === 1
+            - name = 'on'
+          - if h === 2
+            - name = 'tw'
+          - if h === 3
+            - name = 'thr'
+          - if h === 4
+            - name = 'fr'
+          - if h === 5
+            - name = 'fv'
+          - if h === 6
+            - name = 'sx'
+          - if h === 7
+            - name = 'svn'
+          - if h === 8
+            - name = 'ght'
+          - if h === 9
+            - name = 'nn'
+          - if h === 10
+            - name = 'tn'
+
+          - if h <= 3
+            - blocks = 3
+          - if h > 3 and h <= 6
+            - blocks = 2
+          - if h > 6
+            - blocks = 1
+
+          - for i in (1 .. blocks)
+            div class='r r-#{h}-#{i}'
+              - if i === 3
+                - movements = 5
+              - if i === 2
+                - movements = 6
+              - if i === 1
+                - movements = 7
+
+              - for j in (1 .. movements)
+                label for='#{name}-#{i}-#{j}'
+
+  div.bs
+    - for i in (1 .. 10)
+      .div.r
+        - for i in (1 .. 7)
+          div.b
+    div.line
+
+  div.results
+    div.go
+      span
+        | Game
+        br>/
+        | Over
+      div.minor
+      button type="reset" Again
+    div.win
+      span
+        | You
+        br>/
+        | Win
+      div.major
+      button type="reset" Again
+h1 Stacker

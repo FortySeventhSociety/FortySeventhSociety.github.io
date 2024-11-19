@@ -1,0 +1,85 @@
+$primary-color: #FF5400;
+$secondary-color: #FFBF00;
+$button-color: #DB4500;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #505050;
+  background: #F8F8F8;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+td {
+  border: 1px solid #DDD;
+  height: 1em;
+  width: 1em;
+  &:hover:not(.alive):not(.new-born) {
+  background: #DDD;
+  }
+}
+
+/* Width to match app grid size */
+.container {
+  margin: 1.5em auto;
+  max-width: 40em;
+}
+
+/* Grid styles */
+table {
+  margin: 1em 0;
+}
+
+.alive {
+  background: $primary-color;
+}
+
+.new-born {
+  background: $secondary-color;
+}
+
+/* Controls and button styles */
+.controls{
+  float: left;
+  user-select: none;
+}
+
+.button {
+  display: inline-block;
+  margin-right: 0.4em;
+  padding: 0.3em 0.7em;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.5em;
+  background: $button-color;
+  color: #fff;
+  cursor: pointer;
+    &:hover {
+    background: lighten($button-color, 10%);
+  }
+}
+
+.button-group {
+  display: inline-block;
+  .button {
+  border-right: 1px solid darken($button-color, 5%);
+  margin-right: 0px;
+  &:last-child {
+  border-right: 0
+}
+  }
+}
+
+.fa-pause, .fa-play, .fa-step-forward {
+  width: 1em;
+  text-align: center;
+}
+
+.counter {
+  float: right;
+}

@@ -1,0 +1,648 @@
+$block-gap: 8px;
+$block-size: 25px;
+$blocks-per-row: 7;
+$blocks-color: #233f5a;
+$blocks-active: #fabc7f;
+$blocks-bg: #172031;
+$speed: 2.5s;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  background: $blocks-bg;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  font-family: 'VT323', monospace;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  font-size: 30px !important;
+  letter-spacing: 0.05em;
+  margin: 20px auto 0 !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+form {
+  border: 6px solid #2f5d83;
+  padding: 25px 20px 80px;
+  position: relative;
+}
+
+input[type=radio] {
+  appearance: none;
+  font-size: 9px;
+  left: -10px;
+  opacity: 0.01;
+  position: fixed;
+  top: -10px;
+}
+
+@keyframes blockExplode {
+  0% {
+    background: $blocks-active;
+    box-shadow: none;
+  }
+  40% {
+    box-shadow: 0 0 5px lighten($blocks-active, 20%);
+  }
+  50% {
+    background: white;
+    box-shadow: 0 0 30px lighten($blocks-active, 20%);
+  }
+  60% {
+    background: $blocks-color;
+    box-shadow: none;
+  }
+  100% {
+    background: $blocks-color;
+    box-shadow: none;
+  }
+}
+
+@mixin blockInactive () {
+  animation-name: blockExplode;
+  animation-duration: .75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@mixin blockActive () {
+  background: $blocks-active;
+}
+
+.bs {
+  background: $blocks-bg;
+  display: flex;
+  flex-direction: column-reverse;
+  height: ($block-size + $block-gap) * 10;
+  position: relative;
+  width: ($block-size + $block-gap) * $blocks-per-row;
+
+  .r {
+    display: flex;
+    margin: 0;
+    width: 100%;
+
+    &:nth-of-type(7) .b {
+      background: lighten($blocks-color, 8%);
+    }
+
+    &:nth-of-type(10) .b {
+      background: lighten($blocks-color, 15%);
+    }
+  }
+
+  .b {
+    background: $blocks-color;
+    height: $block-size;
+    margin: 0 $block-gap / 2 $block-gap;
+    width: $block-size;
+  }
+}
+
+/**
+ * Global Functions
+ **/
+@function rowName ($number) {
+  @if $number == 1 {
+    @return 'on';
+  }
+  @elseif $number == 2 {
+    @return 'tw';
+  }
+  @elseif $number == 3 {
+    @return 'thr';
+  }
+  @elseif $number == 4 {
+    @return 'fr';
+  }
+  @elseif $number == 5 {
+    @return 'fv';
+  }
+  @elseif $number == 6 {
+    @return 'sx';
+  }
+  @elseif $number == 7 {
+    @return 'svn';
+  }
+  @elseif $number == 8 {
+    @return 'ght';
+  }
+  @elseif $number == 9 {
+    @return 'nn';
+  }
+  @elseif $number == 10 {
+    @return 'tn';
+  }
+}
+
+@function rowBlocks ($number) {
+  @if $number == 1 or $number == 2 {
+    @return 3;
+  }
+  @elseif $number == 3 or $number == 4 or $number == 5 {
+    @return 2;
+  }
+  @else {
+    @return 1;
+  }
+}
+
+@function rowMovements ($rowBlocks) {
+  @if $rowBlocks == 3 {
+    @return 5;
+  }
+  @elseif $rowBlocks == 2 {
+    @return 6;
+  }
+  @else {
+    @return 7;
+  }
+}
+
+@function rowSpeed ($row) {
+  @if $row > 8 {
+    @return $speed - 1.65s;
+  }
+  @elseif $row > 6 {
+    @return $speed - 1.25s;
+  }
+  @elseif $row > 4 {
+    @return $speed - 1s;
+  }
+  @elseif $row > 2 {
+    @return $speed - .5s;
+  }
+  @else {
+    @return $speed;
+  }
+}
+
+
+/**
+ * Light Up
+ **/
+@mixin lightUpSelector ($rowName, $row, $activeNumber, $activeBlocks) {
+  $selector: '##{$rowName}-#{$activeBlocks}-#{$activeNumber}:checked ~ .bs .r:nth-of-type(#{$row}) .b:nth-of-type(#{$activeNumber})';
+
+  @if $activeBlocks >= 2 {
+    $baseSelector: $selector;
+    $selector: $selector + ', ' + $baseSelector + ' + .b';
+
+    @if $activeBlocks == 3 {
+      $selector: $selector + ', ' + $baseSelector + ' + .b + .b';
+    }
+  }
+
+  #{$selector} {
+    @content;
+  }
+};
+
+@mixin targetRemove ($number) {
+  @if $number == 1 {
+    width: $block-size * 2 + $block-gap;
+  }
+  @elseif $number == 2 {
+    width: $block-size;
+  }
+}
+
+@mixin targetAnimations ($row, $blocks) {
+  $targetBottom: (($row - 1) * ($block-size + $block-gap)) + $block-gap;
+  $rowMovements: rowMovements($blocks);
+  $totalMovements: 2 * ($rowMovements - 1);
+  $increments: 100 / $totalMovements;
+
+  @keyframes target-#{$row}-#{$blocks} {
+    0% {
+      bottom: $targetBottom;
+      transform: translateX(0px);
+      @include targetRemove(3 - $blocks);
+    }
+
+    @for $i from 1 through $totalMovements {
+      $currentIncrement: $i * $increments;
+      $previousShift: ($i - 1) * ($block-size + $block-gap);
+      $currentShift: $i * ($block-size + $block-gap);
+
+      @if ($i > ($totalMovements / 2)) {
+        $previousShift: ($totalMovements - ($i - 1)) * ($block-size + $block-gap);
+        $currentShift: ($totalMovements - $i) * ($block-size + $block-gap);
+      }
+
+      #{$currentIncrement - 0.1}% {
+        transform: translateX($previousShift);
+      }
+      #{$currentIncrement}% {
+        transform: translateX($currentShift);
+        @if $i == $totalMovements {
+          bottom: $targetBottom;
+          @include targetRemove(3 - $blocks);
+        }
+      }
+    }
+  }
+}
+
+@mixin buildElements ($row, $rowBlocks) {
+  $rowName: rowName($row);
+  $rowMovements: rowMovements($rowBlocks);
+
+  @for $i from 1 through $rowBlocks {
+    @include targetAnimations($row, $i);
+
+    @for $j from 1 through $rowMovements {
+      @include lightUpSelector($rowName, $row, $j, $i) {
+        @include blockActive;
+      }
+    }
+  }
+}
+
+// Build Elements
+@for $i from 1 through 10 {
+  $rowBlocks: rowBlocks($i);
+  @include buildElements ($i, $rowBlocks);
+}
+
+/**
+ * Line
+ **/
+.line {
+  animation-name: target-1-3;
+  animation-duration: $speed;
+  animation-iteration-count: infinite;
+  bottom: $block-gap;
+  display: flex;
+  left: ($block-gap / 2);
+  overflow: hidden;
+  position: absolute;
+
+  background: $blocks-active;
+  height: $block-size;
+  margin-right: $block-gap;
+  width: ($block-size + $block-gap) * 2 + $block-size;
+
+  &:before,
+  &:after {
+    background: $blocks-active;
+    border-left: $block-gap solid $blocks-bg;
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    height: $block-size;
+    width: $block-size;
+  }
+
+  &:before {
+    margin-left: #{$block-size};
+  }
+}
+
+@mixin nextTurn ($selector, $row, $blocks) {
+  $nextRow: $row + 1;
+  $nextRowBlocks: rowBlocks($nextRow);
+  @if $nextRowBlocks > $blocks {
+    $nextRowBlocks: $blocks;
+  }
+  $nextRowSpeed: rowSpeed($row);
+
+  $important: '';
+  @if $nextRow > 7 {
+    $important: ' !important';
+  }
+
+  #{$selector} ~ .bs .line,
+  #{$selector} ~ .controls .rs {
+    animation-duration: $nextRowSpeed #{$important};
+    animation-name: target-#{$nextRow}-#{$nextRowBlocks} #{$important};
+  }
+
+  $hideSelector: '#{$selector} ~ .controls div[class*="r-#{$row}-"]';
+  @if $nextRowBlocks >= 2 {
+    $hideSelector: $hideSelector + ', #{$selector} ~ .controls div[class*="r-#{$nextRow}-1"]';
+
+    @if $nextRowBlocks > 2 {
+      $hideSelector: $hideSelector + ', #{$selector} ~ .controls div[class*="r-#{$nextRow}-2"]';
+    }
+  }
+
+  #{$hideSelector} {
+    display: none;
+  }
+}
+
+
+/**
+ * Game Logic
+ **/
+@mixin gameLogicRemove ($selector, $row, $number, $direction: 'before', $remove: 1) {
+  $removeSelector: '#{$selector} ~ .bs .r:nth-of-type(#{$row}) .b:nth-of-type(#{$number})';
+
+  @if $remove == 2 {
+    $secondNumber: $number - 1;
+
+    @if $direction == 'after' {
+      $secondNumber: $number + 1;
+    }
+
+    $removeSelector: $removeSelector + ', #{$selector} ~ .bs .r:nth-of-type(#{$row}) .b:nth-of-type(#{$secondNumber})';
+  }
+
+  #{$removeSelector} {
+    @include blockInactive;
+  }
+}
+
+@mixin gameLogicOver ($selector) {
+  #{$selector} ~ .results .go {
+    display: flex;
+  }
+
+  #{$selector} ~ .bs .line {
+    display: none;
+  }
+}
+
+@function gameLogicCheck ($prevBlocks, $nextBlocks, $prevPosition, $nextPosition) {
+  $prevLastPosition: ($prevPosition - 1) + $prevBlocks;
+  $nextLastPosition: ($nextPosition - 1) + $nextBlocks;
+
+  @if $nextLastPosition < $prevPosition or $nextPosition > $prevLastPosition {
+    @return 'out';
+  }
+  @elseif $nextPosition == ($prevPosition - 1) {
+    @return '1-before';
+  }
+  @elseif $nextPosition == ($prevPosition - 2) {
+    @return '2-before';
+  }
+  @elseif $nextLastPosition == ($prevLastPosition + 1) {
+    @return '1-after';
+  }
+  @elseif $nextLastPosition == ($prevLastPosition + 2) {
+    @return '2-after';
+  }
+  @else {
+    @return 'stack';
+  }
+}
+
+@mixin gameLogic($prevSelector, $blocks, $row, $position) {
+  @if $row < 6 {
+    $nextRow: $row + 1;
+    $nextRowName: rowName($nextRow);
+    $nextRowBlocks: rowBlocks($nextRow);
+    @if $nextRowBlocks > $blocks {
+      $nextRowBlocks: $blocks;
+    }
+    $nextRowMovements: rowMovements($nextRowBlocks);
+
+    @for $j from 1 through $nextRowMovements {
+      $combinedSelector: '#{$prevSelector} ~ ##{$nextRowName}-#{$nextRowBlocks}-#{$j}:checked';
+      $status: gameLogicCheck($blocks, $nextRowBlocks, $position, $j);
+
+      @if $status == '1-before' {
+        @include gameLogicRemove($combinedSelector, $nextRow, $j);
+        @include nextTurn($combinedSelector, $nextRow, $nextRowBlocks - 1);
+        @include gameLogic($combinedSelector, $nextRowBlocks - 1, $nextRow, $j + 1);
+      }
+      @elseif $status == '2-before' {
+        @include gameLogicRemove($combinedSelector, $nextRow, ($j + 1), 'before', 2);
+        @include nextTurn($combinedSelector, $nextRow, $nextRowBlocks - 2);
+        @include gameLogic($combinedSelector, $nextRowBlocks - 2, $nextRow, $j + 2);
+      }
+      @elseif $status == '1-after' {
+        @include gameLogicRemove($combinedSelector, $nextRow, ($j - 1 + $nextRowBlocks), 'after');
+        @include nextTurn($combinedSelector, $nextRow, $nextRowBlocks - 1);
+        @include gameLogic($combinedSelector, $nextRowBlocks - 1, $nextRow, $j);
+      }
+      @elseif $status == '2-after' {
+        @include gameLogicRemove($combinedSelector, $nextRow, ($j - 2 + $nextRowBlocks), 'after', 2);
+        @include nextTurn($combinedSelector, $nextRow, $nextRowBlocks - 2);
+        @include gameLogic($combinedSelector, $nextRowBlocks - 2, $nextRow, $j);
+      }
+      @elseif $status == 'out' {
+        @include gameLogicOver($combinedSelector);
+      }
+      @elseif $status == 'stack' {
+        @include nextTurn($combinedSelector, $nextRow, $nextRowBlocks);
+        @include gameLogic($combinedSelector, $nextRowBlocks, $nextRow, $j);
+      }
+    }
+  }
+}
+
+// Start
+@for $i from 1 through 5 {
+  $selector: '#on-3-#{$i}:checked';
+
+  @include gameLogic($selector, 3, 1, $i);
+}
+
+*[id^="on-3-"]:checked ~ .bs .line,
+*[id^="on-3-"]:checked ~ .controls .rs {
+  animation-name: target-2-3;
+}
+
+*[id^="on-3-"]:checked ~ .controls div[class*="r-1-"] {
+  display: none;
+}
+
+// Rows 6-10
+@for $i from 6 through 9 {
+  $rowName: rowName($i);
+  $nextRowName: rowName($i + 1);
+
+  @for $j from 1 through 7 {
+    ##{$rowName}-1-#{$j}:checked ~ *[id^="#{$nextRowName}-"]:checked:not(##{$nextRowName}-1-#{$j}) ~ .results .go {
+      display: flex;
+    }
+
+    ##{$rowName}-1-#{$j}:checked ~ *[id^="#{$nextRowName}-"]:checked:not(##{$nextRowName}-1-#{$j}) ~ .bs .line {
+      display: none;
+    }
+
+    $continueSelector: '##{$rowName}-1-#{$j}:checked ~ ##{$nextRowName}-1-#{$j}:checked';
+    @include nextTurn($continueSelector, ($i + 1), 1);
+  }
+}
+
+// Minor
+$secondLastRowMinor: rowName(6);
+$lastRowMinor: rowName(7);
+@for $i from 1 through 7 {
+  ##{$secondLastRowMinor}-1-#{$i}:checked ~ ##{$lastRowMinor}-1-#{$i}:checked ~ .results .go .minor {
+    display: block;
+  }
+}
+
+// Win
+$secondLastRow: rowName(9);
+$lastRow: rowName(10);
+@for $i from 1 through 7 {
+  ##{$secondLastRow}-1-#{$i}:checked ~ ##{$lastRow}-1-#{$i}:checked ~ .results .win {
+    display: flex;
+  }
+}
+
+
+ /**
+  * Results
+  **/
+.results {
+  .go,
+  .win {
+    color: white;
+    display: none;
+    position: fixed;
+  }
+
+  .go,
+  .win {
+    align-items: center;
+    background: rgba(0,0,0,.45);
+    bottom: 0;
+    flex-direction: column;
+    font-size: 35px;
+    justify-content: center;
+    left: 0;
+    padding-bottom: 55px;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+
+    span {
+      line-height: 1;
+    }
+
+    button {
+      appearance: none;
+      background: white;
+      border: none;
+      cursor: pointer;
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+      margin: 20px;
+      opacity: .9;
+      padding: 5px 10px;
+      text-transform: uppercase;
+    }
+  }
+
+  .go .minor,
+  .win .major {
+    background: url('http://www.jerrylow.com/demo/stacker/minor.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: none;
+    height: 70px;
+    width: 50px;
+  }
+
+  .win .major {
+    background-image: url('http://www.jerrylow.com/demo/stacker/major.png');
+    display: block;
+    height: 100px;
+    width: 50px;
+  }
+}
+
+/**
+ * Controls
+ **/
+$control-size: $block-size + $block-gap;
+$control-bg: #fa7f7f;
+
+.controls {
+  bottom: 25px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+
+  &:active {
+    .control .rs,
+    ~ .bs .line {
+      animation-play-state: paused;
+    }
+  }
+
+  .control {
+    background: $control-bg;
+    border: 2px solid $control-bg;
+    border-radius: 5px;
+    height: $control-size + 4px;
+    overflow: hidden;
+    width: $control-size + 4px;
+  }
+
+  .rs {
+    animation-duration: $speed;
+    animation-name: target-1-3;
+    animation-iteration-count: infinite;
+  }
+
+  .r {
+    display: flex;
+    flex-direction: row-reverse;
+    white-space: nowrap;
+
+    &.r-1-1,
+    &.r-1-2,
+    &.r-2-1,
+    &.r-2-2 {
+      display: none;
+    }
+
+    &[class$="-1"] {
+      margin-left: -#{($block-size + $block-gap) * 6};
+    }
+
+    &[class$="-2"] {
+      margin-left: -#{($block-size + $block-gap) * 5};
+    }
+
+    &[class$="-3"] {
+      margin-left: -#{($block-size + $block-gap) * 4};
+    }
+  }
+
+  @for $i from 1 through 10 {
+    $rowBlocks: rowBlocks($i);
+    @for $j from 1 through $rowBlocks {
+      $movements: rowMovements($j);
+
+      .r-#{$i}-#{$j} {
+        width: ($block-size + $block-gap) * $movements;
+      }
+    }
+  }
+
+  label {
+    cursor: pointer;
+    flex-shrink: 0;
+    height: $control-size;
+    width: $control-size;
+
+    &:first-of-type {
+      margin-right: auto;
+    }
+  }
+}
