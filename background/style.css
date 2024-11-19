@@ -57,13 +57,17 @@ a:active {
 }
 
 .side-banner {
+  /*
   right: 3px;
   bottom: 3px;
+  */
 }
 
 .mobile-ad {
+  /*
   left: 3px;
   bottom: 3px;
+  */
 }
 
 iframe {
