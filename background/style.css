@@ -70,12 +70,12 @@ a:active {
   z-index: 777;
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 720px) {
   .side-banner iframe {
-    height: 33.3%;
+    width: 33.3%;
   }
 
   .mobile-ad iframe {
-    width: 20%;
+    height: 33.3%;
   }
 }
