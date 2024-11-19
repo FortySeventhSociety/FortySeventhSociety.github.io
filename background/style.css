@@ -26,6 +26,21 @@ a:active {
   color: mediumaquamarine;
 }
 
+.multi-ad {
+  display: flex;
+  position: absolute;
+  left: 3px;
+  vertical-align: middle;
+  z-index: 777;
+}
+
+.square-ad iframe {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: 777;
+}
+
 @media only screen and (min-width: 728px) {
   .desktop {
     visibility: visible;
