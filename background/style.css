@@ -71,6 +71,7 @@ a:active {
 }
 
 @media only screen and (max-width: 720px) {
+  /*
   .side-banner iframe {
     width: 33.3%;
   }
@@ -78,4 +79,5 @@ a:active {
   .mobile-ad iframe {
     height: 33.3%;
   }
+  */
 }
