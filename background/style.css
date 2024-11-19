@@ -69,3 +69,13 @@ a:active {
   bottom: 3px;
   z-index: 777;
 }
+
+@media only screen and (max-width: 1130px) {
+  .side-banner iframe {
+    height: 33.3%;
+  }
+
+  .mobile-ad iframe {
+    width: 20%;
+  }
+}

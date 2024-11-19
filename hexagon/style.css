@@ -49,14 +49,27 @@
 
 .container {
   display: flex;
-  position: relative;
   align-items: center;
+  position: absolute;
+  z-index: 77;
+  top: 10%;
+  left: 33.3%;
+  padding: 5px;
+  margin: 0px;
 }
 .container .column {
   margin: 0 -0.2vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media only screen and (max-width: 1130px) {
+  .container {
+    top: 5%;
+    left: 12.5%;
+    padding: 2px;
+    margin: 0px;
+  }
 }
 
 .hexagon {
