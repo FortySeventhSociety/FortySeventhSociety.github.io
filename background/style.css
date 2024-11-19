@@ -37,7 +37,7 @@ a:active {
 .square-ad iframe {
   position: absolute;
   left: 3px;
-  top: 3px;
+  top: 20%;
   z-index: 777;
 }
 

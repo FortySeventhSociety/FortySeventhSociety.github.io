@@ -66,7 +66,10 @@
 @media only screen and (max-width: 1130px) {
   .container {
     top: 5%;
+    /*
     left: 12.5%;
+    */
+    left: 27.5%;
     padding: 2px;
     margin: 0px;
   }
