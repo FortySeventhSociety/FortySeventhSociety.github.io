@@ -56,21 +56,16 @@ a:active {
   stroke-width: 2;
 }
 
-.side-banner {
-  /*
+.side-banner iframe {
+  position: absolute;
   right: 3px;
   bottom: 3px;
-  */
+  z-index: 777;
 }
 
-.mobile-ad {
-  /*
+.mobile-ad iframe {
+  position: absolute;
   left: 3px;
   bottom: 3px;
-  */
-}
-
-iframe {
-  position: absolute;
   z-index: 777;
 }
