@@ -206,7 +206,7 @@ body:before {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(at center, transparent 80%, black), linear-gradient(to top, rgba(0, 0, 0, 0.3) 70%, transparent), url(https://assets.codepen.io/907471/vision-pro-palm.jpg) no-repeat 45% center/cover;
+  background: radial-gradient(at center, transparent 80%, black), linear-gradient(to top, rgba(0, 0, 0, 0.3) 70%, transparent), url(./vision-pro-palm.jpg) no-repeat 45% center/cover;
   opacity: 0;
   filter: blur(0.5rem);
   transition: opacity 0.6s ease-in-out, filter 0.6s ease-in-out;
@@ -232,5 +232,5 @@ a.labs-follow-me {
   text-align: center;
 }
 a.labs-follow-me svg {
-  width: 10vmin;
+  width: 14vmin;
 }
