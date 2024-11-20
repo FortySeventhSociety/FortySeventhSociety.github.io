@@ -168,7 +168,7 @@ $(document).ready(function() {
 
             switch( $(this).val() ) {
               case 'help':
-                $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>List of commands:<br>help - Show this message (command list)<br>connect [DNS name] - Connects host computer with the targeted DNS name<br>disconnect - Disconnects host computer from the connected DNS name<br>exit - Shuts down host computer<br>list - Shows the list of the currently available applications<br>send [application type] - Sends given application name to the connected DNS name<span id="blinking">_</span></div>');
+                $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>List of commands:<br>help - Show this message [command list]<br>connect [DNS name] - Connects host computer with the targeted DNS name<br>disconnect - Disconnects host computer from the connected DNS name<br>exit - Shuts down host computer<br>list - Shows the list of the currently available applications<br>send [application type] - Sends given application name to the connected DNS name<span id="blinking">_</span></div>');
                 help = 1;
                 break;
               case 'connect nearest.phone.relay':
