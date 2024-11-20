@@ -42,7 +42,7 @@ h1 {
 #terminal {
   padding: 7.5%;
   border: none;
-  height: calc(100% - 3em);
+  height: 85%;
   opacity: 0;
   overflow-y: auto;
   position: fixed;
