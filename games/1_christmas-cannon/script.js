@@ -941,7 +941,7 @@ function introCannon()
   cannonTL.to(steveEl, { y: '-=20', duration: 0.1, onComplete: () => {
       steveEl.setAttribute('src', 'https://assets.codepen.io/557388/happy.svg');
       textEl.textContent = "But wait, we have this ";
-      textHighlightEl.textContent = "Christmas Cannon!!";
+      textHighlightEl.textContent = "Christmas Cannon!!!";
       setTimeout(() => playSound('bing'), 300);
 
     } }, 0.5);
@@ -962,7 +962,7 @@ function introStart()
   cannonTL.to('#bubble', { autoAlpha: 0, y: '-=30', scale: 0.5, duration: 0.3, ease: 'power2.in' }, 0);
   cannonTL.to(steveEl, { y: '-=20', duration: 0.1, onComplete: () => {
       steveEl.setAttribute('src', 'https://assets.codepen.io/557388/steve.svg');
-      textEl.textContent = "Click or tap to fire the Christmas Cannon, let’s make this room more festive!!";
+      textEl.textContent = "Click or tap to fire the Christmas Cannon, let’s make this room more festive!!!";
       textHighlightEl.textContent = "";
       setTimeout(() => playSound('bing'), 700);
     } }, 0.5);
@@ -988,7 +988,7 @@ function endMessage()
         } }, 0);
       steveTL.to(steveEl, { y: 0, duration: .7, ease: 'bounce' }, 0.1);
     } else
-    window.open('https://ste.vg/pJ96mS5DC', '_blank');
+    window.open('https://d474media.github.io', '_blank');
   });
 
   textEl.addEventListener('click', event => {
@@ -1002,7 +1002,7 @@ function endMessage()
 
 
   // Be sure to send a screenshot to <a href="https://twitter.com/steeevg/" target="_blank">@steeevg</a>, he’d love to see it!`;
-  textHighlightEl.textContent = "Merry Christmas!";
+  textHighlightEl.textContent = "Merry Christmas!!!";
 
   let roomTL = gsap.timeline();
   setTimeout(() => playSound('bing'), 700);
