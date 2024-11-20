@@ -29,6 +29,6 @@ body, #container {
 }
 
 .fs {
-	width:1024px;
-	height:560px;
+	width:100%;
+	height:100%;
 }
