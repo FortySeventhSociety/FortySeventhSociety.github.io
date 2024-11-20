@@ -135,7 +135,7 @@ $(document).ready(function() {
 
       setTimeout(function(){
         $('span').remove();
-        $('#terminal').append('<br><div>Welcome to _hackSYS [v3.6.333].<br>47corporation<br><br>' + player_name + ' authenticated.<br>_hackSYS ready for use<br>Use the help command for a list of commands<br><br><span id="initial-root">___</span>&nbsp;&nbsp;&nbsp;<span id="blinking">_</span></div>');
+        $('#terminal').append('<br><div>Welcome to _hackSYS [v3.6.333].<br>47corporation<br><br>' + player_name + ' authenticated.<br>_hackSYS ready for use<br>Use the help command for a list of commands<br><br><span id="initial-root">$</span>&nbsp;&nbsp;&nbsp;<span id="blinking">_</span></div>');
       }, 6500);
 
       setTimeout(function() {
