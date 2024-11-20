@@ -219,7 +219,7 @@ class Stage
     this.scene.add(sofaGroup);
 
     var sofaLoader = new GLTFLoader(manager);
-    sofaLoader.load("./assets/sofa.glb", object => {
+    sofaLoader.load("https://assets.codepen.io/557388/sofa.glb", object => {
 
       object.scene.rotation.y = Math.PI * 0.5;
       let mat = new MeshPhongMaterial({ color: 0xffffff });
@@ -253,7 +253,7 @@ class Stage
     this.scene.add(treeGroup);
 
     var treeLoader = new GLTFLoader(manager);
-    treeLoader.load("./assets/PineTree.gltf", object => {
+    treeLoader.load("https://assets.codepen.io/557388/PineTree.gltf", object => {
 
       object.scene.position.set(0, 0, -17);
       object.scene.scale.set(1.2, 1.2, 1.2);
@@ -288,7 +288,7 @@ class Stage
     this.scene.add(fireplaceGroup);
 
     var fireplaceLoader = new GLTFLoader(manager);
-    fireplaceLoader.load("./assets/fireplace.gltf", object => {
+    fireplaceLoader.load("https://assets.codepen.io/557388/fireplace.gltf", object => {
 
       object.scene.position.set(0, -29, -19.5);
       object.scene.scale.set(4, 4, 4);
@@ -324,7 +324,7 @@ class Stage
     this.scene.add(tableGroup);
 
     var tableLoader = new GLTFLoader(manager);
-    tableLoader.load("./assets/table.gltf", object => {
+    tableLoader.load("https://assets.codepen.io/557388/table.gltf", object => {
 
       object.scene.position.set(0, -6.3, 0);
       object.scene.scale.set(2, 2, 2);
@@ -358,7 +358,7 @@ class Stage
     this.scene.add(standGroup);
 
     var tableLoader = new GLTFLoader(manager);
-    tableLoader.load("./assets/stand.gltf", object => {
+    tableLoader.load("https://assets.codepen.io/557388/stand.gltf", object => {
 
       object.scene.rotation.y = Math.PI * 0.5;
       standGroup.add(object.scene);
@@ -390,7 +390,7 @@ class Stage
     this.scene.add(tvGroup);
 
     var tableLoader = new GLTFLoader(manager);
-    tableLoader.load("./assets/tv.gltf", object => {
+    tableLoader.load("https://assets.codepen.io/557388/tv.gltf", object => {
 
       object.scene.scale.set(2, 2, 2);
       object.scene.rotation.y = Math.PI * 0.5;
@@ -423,7 +423,7 @@ class Stage
     this.scene.add(potGroup);
 
     var tableLoader = new GLTFLoader(manager);
-    tableLoader.load("./assets/pot.gltf", object => {
+    tableLoader.load("https://assets.codepen.io/557388/pot.gltf", object => {
 
       object.scene.position.set(0, 0, -15);
       object.scene.scale.set(6, 6, 6);
@@ -456,7 +456,7 @@ class Stage
     this.scene.add(cannonGroup);
 
     var tableLoader = new GLTFLoader(manager);
-    tableLoader.load("./assets/cannon2.gltf", object => {
+    tableLoader.load("https://assets.codepen.io/557388/cannon2.gltf", object => {
 
       object.scene.position.set(30, -30, 30);
       object.scene.scale.set(3, 3, 3);
@@ -488,7 +488,7 @@ class Stage
     this.scene.add(snowmanGroup);
 
     var snowmanLoader = new GLTFLoader(manager);
-    snowmanLoader.load("./assets/snowman.gltf", object => {
+    snowmanLoader.load("https://assets.codepen.io/557388/snowman.gltf", object => {
 
       //object.scene.position.set(30, -30, 30);
       object.scene.scale.set(2.5, 2.5, 2.5);
@@ -519,7 +519,7 @@ class Stage
     this.scene.add(starGroup);
 
     var starLoader = new GLTFLoader(manager);
-    starLoader.load("./assets/star.gltf", object => {
+    starLoader.load("https://assets.codepen.io/557388/star.gltf", object => {
 
       object.scene.position.set(-1, 0, 0);
       object.scene.scale.set(0.01, 0.01, 0.01);
@@ -840,9 +840,9 @@ const GAME_STATE = {
 
 
 let sounds = {
-  fire: [new Audio('./assets/fire_01.mp3'), new Audio('./assets/fire_02.mp3')],
-  bells: [new Audio('./assets/bells_01.mp3')],
-  bing: [new Audio('./assets/bing_01.mp3'), new Audio('./assets/bing_02.mp3')] };
+  fire: [new Audio('https://assets.codepen.io/557388/fire_01.mp3'), new Audio('https://assets.codepen.io/557388/fire_02.mp3')],
+  bells: [new Audio('https://assets.codepen.io/557388/bells_01.mp3')],
+  bing: [new Audio('https://assets.codepen.io/557388/bing_01.mp3'), new Audio('https://assets.codepen.io/557388/bing_02.mp3')] };
 
 
 let gameState = GAME_STATE.loading;
@@ -939,9 +939,9 @@ function introCannon()
   cannonTL.to(stage.cameraTarget, { x: 30, y: -25, z: 30 }, 0);
   cannonTL.to('#bubble', { autoAlpha: 0, y: '-=30', scale: 0.5, duration: 0.3, ease: 'power2.in' }, 0);
   cannonTL.to(steveEl, { y: '-=20', duration: 0.1, onComplete: () => {
-      steveEl.setAttribute('src', './assets/happy.svg');
+      steveEl.setAttribute('src', 'https://assets.codepen.io/557388/happy.svg');
       textEl.textContent = "But wait, we have this ";
-      textHighlightEl.textContent = "Christmas Cannon!!!";
+      textHighlightEl.textContent = "Christmas Cannon!!";
       setTimeout(() => playSound('bing'), 300);
 
     } }, 0.5);
@@ -961,8 +961,8 @@ function introStart()
   cannonTL.to(stage.cameraTarget, { x: 0, y: -22, z: 0, duration: 1.4 }, 0);
   cannonTL.to('#bubble', { autoAlpha: 0, y: '-=30', scale: 0.5, duration: 0.3, ease: 'power2.in' }, 0);
   cannonTL.to(steveEl, { y: '-=20', duration: 0.1, onComplete: () => {
-      steveEl.setAttribute('src', './assets/steve.svg');
-      textEl.textContent = "Click or tap to fire the Christmas Cannon, let’s make this room more festive!!!";
+      steveEl.setAttribute('src', 'https://assets.codepen.io/557388/steve.svg');
+      textEl.textContent = "Click or tap to fire the Christmas Cannon, let’s make this room more festive!!";
       textHighlightEl.textContent = "";
       setTimeout(() => playSound('bing'), 700);
     } }, 0.5);
@@ -984,11 +984,11 @@ function endMessage()
       changed = true;
       let steveTL = gsap.timeline();
       steveTL.to(steveEl, { y: '-=40', duration: 0.1, onComplete: () => {
-          steveEl.setAttribute('src', './assets/snowman.svg');
+          steveEl.setAttribute('src', 'https://assets.codepen.io/557388/snowman.svg');
         } }, 0);
       steveTL.to(steveEl, { y: 0, duration: .7, ease: 'bounce' }, 0.1);
     } else
-    window.open('https://d474media.github.io', '_blank');
+    window.open('https://ste.vg/pJ96mS5DC', '_blank');
   });
 
   textEl.addEventListener('click', event => {
@@ -1002,7 +1002,7 @@ function endMessage()
 
 
   // Be sure to send a screenshot to <a href="https://twitter.com/steeevg/" target="_blank">@steeevg</a>, he’d love to see it!`;
-  textHighlightEl.textContent = "Merry Christmas!!!";
+  textHighlightEl.textContent = "Merry Christmas!";
 
   let roomTL = gsap.timeline();
   setTimeout(() => playSound('bing'), 700);
