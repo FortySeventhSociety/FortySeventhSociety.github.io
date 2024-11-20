@@ -87,7 +87,7 @@ $(document).ready(function() {
           }
           if (danger === 1) {
             $('span').remove();
-            $('#terminal').append('<div>You have only 15 seconds left...<span id="blinking">_</span></div><br>');
+            $('#terminal').append('<div>You have 15 seconds left...<span id="blinking">_</span></div><br>');
             divx.scrollTop = divx.scrollHeight;
           } else if (danger > 1) {
             danger = 2;
@@ -99,7 +99,7 @@ $(document).ready(function() {
           }
           if (lost === 1) {
             $('span').remove();
-            $('#terminal').append('<div>You\'ve been traced down!<br>Formatting HDD...<br>Goodbye...<span id="blinking">_</span></div><br>');
+            $('#terminal').append('<div>You\'ve been traced...<br>Formatting HDD...<br>Goodbye...<span id="blinking">_</span></div><br>');
             $('#objectives li').animate({'opacity': '0'}, 3000);
             $('#objectives #lost').show(3000).animate({'opacity': '1'}, 3000);
             divx.scrollTop = divx.scrollHeight;
@@ -135,7 +135,7 @@ $(document).ready(function() {
 
       setTimeout(function(){
         $('span').remove();
-        $('#terminal').append('<br><div>Welcome to HACKSYS [version 1.0.0].<br>(c) Copyright 2014 HACorp Corporation. All rights reserved.<br><br>' + player_name + ' authenticated.<br>HACKSYS ready for use.<br>Use the help command for a list of commands.<br><br><span id="initial-root">$</span>&nbsp;&nbsp;&nbsp;<span id="blinking">_</span></div>');
+        $('#terminal').append('<br><div>Welcome to _hackSYS [v3.6.333].<br>47corporation<br><br>' + player_name + ' authenticated.<br>_hackSYS ready for use<br>Use the help command for a list of commands<br><br><span id="initial-root">$</span>&nbsp;&nbsp;&nbsp;<span id="blinking">_</span></div>');
       }, 6500);
 
       setTimeout(function() {
@@ -173,29 +173,29 @@ $(document).ready(function() {
                 break;
               case 'connect nearest.phone.relay':
                 if (connect === 0) {
-                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>Connecting...<br>Connected.<br>You have 1 minute before you get traced down.<span id="blinking">_</span></div>');
+                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>Connecting...<br>Connected.<br>You have 1 minute before your location is exposed<span id="blinking">_</span></div>');
                   connect = 1;
                 } else {
                   $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>You are already connected to nearest.phone.relay.<span id="blinking">_</span></div>');
                 }
                 break;
               case 'list':
-                $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>List of currently available applications:<br>AdBreak - bombard targeted computer with advertisement pop-ups (type: adware)<br>Trojan.Vaklik.BBB - steals vital information from the targeted computer (type: trojan)<span id="blinking">_</span>');
+                $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>List of currently available applications:<br>AdBreak - bombard targeted computer with advertisement pop-ups [type: adware]<br>Trojan.NightShade.666 - steals vital information from the targeted computer [type: trojan]<span id="blinking">_</span>');
                 list = 1;
                 break;
               case 'send trojan':
                 if (connect === 1) {
-                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>Sending Trojan.Vaklik.BBB...<br>Trojan.Vaklik.BBB sent.<span id="blinking">_</span></div>');
+                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>Sending Trojan.NightShade.666...<br>Trojan.NightShade.666 sent<span id="blinking">_</span></div>');
                   trojan = 1;
                 } else {
-                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>You are not connected to any DNS name.<span id="blinking">_</span></div>');
+                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>You are not connected to any DNS name<span id="blinking">_</span></div>');
                 }
                 break;
               case 'send adware':
                 if (connect === 1) {
                   $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>Sending AdBreak...<br>Unable to send AdBreak.<span id="blinking">_</span></div>');
                 } else {
-                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>You are not connected to any DNS name.<span id="blinking">_</span></div>');
+                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>You are not connected to any DNS name<span id="blinking">_</span></div>');
                 }
                 break;
               case 'disconnect':
@@ -206,7 +206,7 @@ $(document).ready(function() {
                   minutes = 0;
                   seconds = 0;
                 } else {
-                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>You are not connected to any DNS name.<span id="blinking">_</span></div>');
+                  $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>You are not connected to any DNS name<span id="blinking">_</span></div>');
                 }
                 break;
               case 'exit':
@@ -224,7 +224,7 @@ $(document).ready(function() {
                 $('#objectives li').css({'color': 'green'});
                 break;
               default:
-                $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>Command not recognized. Type in help for a list of commands.<span id="blinking">_</span></div>');
+                $('#terminal').append('<div>$&nbsp;&nbsp;&nbsp;' + $(this).val() + '<br>Command not recognized<span id="blinking">_</span></div>');
             }
             $('#terminal').append('<br>');
 
