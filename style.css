@@ -41,6 +41,7 @@
   height: 4vmin;
   cursor: pointer;
   font-size: 2vmin;
+  z-index: 777;
 }
 .switch2:after {
   --mix-percentage: calc(var(--column) * var(--index) * 3%);
