@@ -939,7 +939,7 @@ function introCannon()
   cannonTL.to(stage.cameraTarget, { x: 30, y: -25, z: 30 }, 0);
   cannonTL.to('#bubble', { autoAlpha: 0, y: '-=30', scale: 0.5, duration: 0.3, ease: 'power2.in' }, 0);
   cannonTL.to(steveEl, { y: '-=20', duration: 0.1, onComplete: () => {
-      steveEl.setAttribute('src', 'https://assets.codepen.io/557388/happy.svg');
+      steveEl.setAttribute('src', 'https://assets.codepen.io/557388/snowman.svg');
       textEl.textContent = "But wait, we have this ";
       textHighlightEl.textContent = "Christmas Cannon!!!";
       setTimeout(() => playSound('bing'), 300);
@@ -961,7 +961,7 @@ function introStart()
   cannonTL.to(stage.cameraTarget, { x: 0, y: -22, z: 0, duration: 1.4 }, 0);
   cannonTL.to('#bubble', { autoAlpha: 0, y: '-=30', scale: 0.5, duration: 0.3, ease: 'power2.in' }, 0);
   cannonTL.to(steveEl, { y: '-=20', duration: 0.1, onComplete: () => {
-      steveEl.setAttribute('src', 'https://assets.codepen.io/557388/steve.svg');
+      steveEl.setAttribute('src', 'https://assets.codepen.io/557388/snowman.svg');
       textEl.textContent = "Click or tap to fire the Christmas Cannon, let’s make this room more festive!!!";
       textHighlightEl.textContent = "";
       setTimeout(() => playSound('bing'), 700);
@@ -984,7 +984,7 @@ function endMessage()
       changed = true;
       let steveTL = gsap.timeline();
       steveTL.to(steveEl, { y: '-=40', duration: 0.1, onComplete: () => {
-          steveEl.setAttribute('src', 'https://assets.codepen.io/557388/snowman.svg');
+          steveEl.setAttribute('src', 'https://assets.codepen.io/557388/steve.svg');
         } }, 0);
       steveTL.to(steveEl, { y: 0, duration: .7, ease: 'bounce' }, 0.1);
     } else
