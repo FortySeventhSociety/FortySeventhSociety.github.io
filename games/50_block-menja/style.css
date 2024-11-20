@@ -30,14 +30,14 @@ body {
 }
 
 .hud__score {
-	top: 0.65em;
+	top: 7.5%;
 	left: 0.65em;
 	pointer-events: none;
 	user-select: none;
 }
 
 .cube-count-lbl {
-	font-size: 0.46em;
+	font-size: 0.6em;
 }
 
 .pause-btn {

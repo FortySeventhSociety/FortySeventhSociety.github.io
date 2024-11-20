@@ -13,7 +13,12 @@ const BLUE =   { r: 0x67, g: 0xd7, b: 0xf0 };
 const GREEN =  { r: 0xa6, g: 0xe0, b: 0x2c };
 const PINK =   { r: 0xfa, g: 0x24, b: 0x73 };
 const ORANGE = { r: 0xfe, g: 0x95, b: 0x22 };
-const allColors = [BLUE, GREEN, PINK, ORANGE];
+
+const RED = { r: 252, g: 3, b: 3 };
+const PURPLE = { r: 84, g: 0, b: 140 };
+const BLACK = { r: 0, g: 0, b: 0 };
+const WHITE = { r: 255, g: 255, b: 255 };
+const allColors = [BLUE, GREEN, PINK, ORANGE, RED, PURPLE, BLACK, WHITE];
 
 // Gameplay
 const getSpawnDelay = () => {
@@ -932,7 +937,7 @@ const getTarget = (() => {
 
 		// Target Parameters
 		// --------------------------------
-		let color = pickOne([BLUE, GREEN, ORANGE]);
+		let color = pickOne([BLUE, GREEN, ORANGE, RED, PURPLE, BLACK, WHITE]);
 		let wireframe = false;
 		let health = 1;
 		let maxHealth = 3;
@@ -1312,7 +1317,7 @@ function renderMenus() {
 		case MENU_SCORE:
 			finalScoreLblNode.textContent = formatNumber(state.game.score);
 			if (isNewHighScore()) {
-				highScoreLblNode.textContent = 'New High Score!';
+				highScoreLblNode.textContent = 'New High Score!!!';
 			} else {
 				highScoreLblNode.textContent = `High Score: ${formatNumber(getHighScore())}`;
 			}
