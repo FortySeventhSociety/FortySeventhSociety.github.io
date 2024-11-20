@@ -35,8 +35,8 @@
   --column: 2;
   position: absolute;
   display: flex;
-  top: 3px;
-  right: 47.5%;
+  top: 4vmin;
+  left: 4vmin;
   width: 8vmin;
   height: 4vmin;
   cursor: pointer;
