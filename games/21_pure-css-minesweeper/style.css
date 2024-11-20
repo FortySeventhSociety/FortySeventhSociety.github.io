@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
   padding: 1px;
   box-sizing: border-box;
-  background: teal url(https://assets.codepen.io/15664/bliss.jpg) center/cover no-repeat;
+  background: teal url(./assets/bliss.jpg) center/cover no-repeat;
   counter-reset: mines 10;
 }
 
