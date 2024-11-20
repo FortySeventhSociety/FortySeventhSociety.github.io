@@ -984,7 +984,7 @@ function endMessage()
       changed = true;
       let steveTL = gsap.timeline();
       steveTL.to(steveEl, { y: '-=40', duration: 0.1, onComplete: () => {
-          steveEl.setAttribute('src', 'https://assets.codepen.io/557388/steve.svg');
+          steveEl.setAttribute('src', 'https://assets.codepen.io/557388/snowman.svg');
         } }, 0);
       steveTL.to(steveEl, { y: 0, duration: .7, ease: 'bounce' }, 0.1);
     } else
