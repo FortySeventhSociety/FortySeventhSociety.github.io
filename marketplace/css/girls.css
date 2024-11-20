@@ -8,7 +8,7 @@
 
 /* Stili generali del corpo */
 body {
-    font-family: 'Dodec', monospace;
+    font-family: 'Roboto', sans-serif;
     background-color: #f8cce0; /* Colore di sfondo chiaro per un tema più morbido */
     color: #333333; /* Colore del testo principale */
     margin: 0;
