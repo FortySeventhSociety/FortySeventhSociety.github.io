@@ -3,9 +3,8 @@
   transform: scale(1);
   position: fixed;
   transition: background 0.3s ease;
-  padding: 1rem;
-  right: .25rem;
-  top: .25rem;
+  right: 3px;
+  top: 2vh;
   color: currentColor !important;
   z-index: 77;
   
