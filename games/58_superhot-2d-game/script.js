@@ -42,6 +42,10 @@
 
   currentHorizontalDirection = false;
 
+  lastVerticalDirection = null;
+
+  lastHorizonatlDirection = null;
+
   // preview = new PreviewImage("https://s3-us-west-2.amazonaws.com/s.cdpn.io/150586/superhot2d.png") #PREVIEW IMAGE
 
   //---------------------------------------------------
@@ -152,17 +156,23 @@
     // determine what direction the player is moving
     if (controls.left.isDown) {
       currentHorizontalDirection = "left";
+      lastHorizonatlDirection = "left";
     } else if (controls.right.isDown) {
       currentHorizontalDirection = "right";
+      lastHorizonatlDirection = "right";
+    } else if (!currentVerticalDirection) { // D474designs | Add memoization /////// Legacy: if nothing assume up
+      currentHorizontalDirection = lastHorizonatlDirection;
     } else {
       currentHorizontalDirection = false;
     }
     if (controls.up.isDown) {
       currentVerticalDirection = "up";
+      lastVerticalDirection = "up";
     } else if (controls.down.isDown) {
       currentVerticalDirection = "down";
-    } else if (!currentHorizontalDirection) { // if nothing assume up
-      currentVerticalDirection = "up";
+      lastVerticalDirection = "down";
+    } else if (!currentHorizontalDirection) { // D474designs | Add memoization /////// Legacy: if nothing assume up
+      currentVerticalDirection = lastVerticalDirection;
     } else {
       currentVerticalDirection = false;
     }
@@ -463,7 +473,7 @@ $("#shoot").on( "touchstart", function() {
   //---------------------------------------------------
   // BULLET CLASS
   //---------------------------------------------------
-  Bullet = function(game, x, y, sprite, h = false, v = "up") {
+  Bullet = function(game, x, y, sprite, h = false, v = false /* "up" */) {
     Phaser.Sprite.call(this, game, x, y, sprite);
     game.physics.arcade.enable(this);
     this.game = game;
