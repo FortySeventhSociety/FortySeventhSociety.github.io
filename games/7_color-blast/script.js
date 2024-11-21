@@ -34,7 +34,7 @@ var Game = {
 		this.player = new Player();
 		this.score = 0;
 
-		// D474designs | Add code to increment lives every 25 enemy deaths///////
+		// D474designs | Add code to increment lives every 50 enemy deaths///////
 		this.counter = 0;
 		this.counterControl = 0;
 		this.paused = false;
@@ -203,8 +203,8 @@ var Game = {
 			Game.currentFrame = Game.requestAnimationFrame.call(window, Game.loop);
 		}
 
-		//D474designs: Add code to increment lives every 10 enemy deaths///////
-		if(Game.counter === Game.counterControl + 25){
+		// D474designs | Add code to increment lives every 50 enemy deaths ///////
+		if(Game.counter === Game.counterControl + 50){
 		  Game.counterControl = Game.counter;
 			Game.maxLives++;
 		}
