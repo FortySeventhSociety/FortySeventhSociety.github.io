@@ -6,7 +6,7 @@
   right: 3px;
   top: 0px;
   color: currentColor !important;
-  z-index: 77;
+  z-index: 99;
   
   &:visited, &:active { 
     color: currentColor;
