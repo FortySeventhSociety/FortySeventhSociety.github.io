@@ -28,9 +28,11 @@ aim({
 });
 
 
-
 // set up start drag event
 window.addEventListener("mousedown", draw);
+
+// D474designs: add touch movements to aim
+window.addEventListener("touchstart", draw);
 
 function draw(e) {
 	// pull back arrow
@@ -40,6 +42,10 @@ function draw(e) {
 	});
 	window.addEventListener("mousemove", aim);
 	window.addEventListener("mouseup", loose);
+
+	// D474designs: add touch movements to aim
+	window.addEventListener("touchmove", aim);
+	window.addEventListener("touchend", loose);
 	aim(e);
 }
 
@@ -96,6 +102,8 @@ function loose() {
 	// release arrow
 	window.removeEventListener("mousemove", aim);
 	window.removeEventListener("mouseup", loose);
+	window.removeEventListener("touchmove", aim);
+	window.removeEventListener("touchend", loose);
 
 	TweenMax.to("#bow", 0.4, {
 		scaleX: 1,
@@ -195,8 +203,9 @@ function showMessage(selector) {
 
 function getMouseSVG(e) {
 	// normalize mouse position within svg coordinates
-	cursor.x = e.clientX;
-	cursor.y = e.clientY;
+	// D474designs: add touch movements to aim
+	cursor.x = e.clientX || e.touches[0].clientX;
+	cursor.y = e.clientY || e.touches[0].clientY;
 	return cursor.matrixTransform(svg.getScreenCTM().inverse());
 }
 
