@@ -8,7 +8,7 @@
 
   bullets = null;
 
-  bullets_count = 3;
+  bullets_count = 6;
 
   bullet_time = 0;
 
@@ -75,15 +75,15 @@
     game.physics.startSystem(Phaser.Physics.ARCADE);
     //input
     this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
-    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
-    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
-    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.LEFT);
-    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.RIGHT);
+    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.W);
+    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.S);
+    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.A);
+    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.D);
     controls = {
-      "up": game.input.keyboard.addKey(Phaser.Keyboard.UP),
-      "down": game.input.keyboard.addKey(Phaser.Keyboard.DOWN),
-      "left": game.input.keyboard.addKey(Phaser.Keyboard.LEFT),
-      "right": game.input.keyboard.addKey(Phaser.Keyboard.RIGHT)
+      "up": game.input.keyboard.addKey(Phaser.Keyboard.W),
+      "down": game.input.keyboard.addKey(Phaser.Keyboard.S),
+      "left": game.input.keyboard.addKey(Phaser.Keyboard.A),
+      "right": game.input.keyboard.addKey(Phaser.Keyboard.D)  
     };
     //start the game
     return nextLevel();
@@ -162,6 +162,7 @@
       lastHorizonatlDirection = "right";
     } else if (!currentVerticalDirection) { // D474designs | Add memoization /////// Legacy: if nothing assume up
       currentHorizontalDirection = lastHorizonatlDirection;
+      currentVerticalDirection = lastVerticalDirection;
     } else {
       currentHorizontalDirection = false;
     }
@@ -173,6 +174,7 @@
       lastVerticalDirection = "down";
     } else if (!currentHorizontalDirection) { // D474designs | Add memoization /////// Legacy: if nothing assume up
       currentVerticalDirection = lastVerticalDirection;
+      currentHorizontalDirection = lastHorizonatlDirection;
     } else {
       currentVerticalDirection = false;
     }
