@@ -1,4 +1,4 @@
-var $ = {
+var Game = {
       canvas: null,
       ctx: null,
       canvas2: null,
@@ -52,12 +52,12 @@ var $ = {
         bg: null
       }
     };
-$.canvas = document.getElementsByTagName('canvas')[0];
-$.ctx = $.canvas.getContext('2d');
-$.canvas2 = document.createElement('canvas');
-$.canvas2.width = $.canvas.width;
-$.canvas2.height = $.canvas.height;
-$.ctx2 = $.canvas2.getContext('2d');
+Game.canvas = document.getElementsByTagName('canvas')[0];
+Game.ctx = Game.canvas.getContext('2d');
+Game.canvas2 = document.createElement('canvas');
+Game.canvas2.width = Game.canvas.width;
+Game.canvas2.height = Game.canvas.height;
+Game.ctx2 = Game.canvas2.getContext('2d');
 window.addEventListener("keydown", keyDown, false);
 window.addEventListener("keyup", keyUp, false);
 
@@ -68,30 +68,30 @@ function draw() {
   setTimeout(function() {
     calcMovement();
     
-    //if($.state.speed > 0) {
-      $.state.bgpos += ($.state.currentCurve * 0.02) * ($.state.speed * 0.2);
-      $.state.bgpos = $.state.bgpos % $.canvas.width;
+    //if(Game.state.speed > 0) {
+      Game.state.bgpos += (Game.state.currentCurve * 0.02) * (Game.state.speed * 0.2);
+      Game.state.bgpos = Game.state.bgpos % Game.canvas.width;
       
-      $.ctx.putImageData($.storage.bg, $.state.bgpos, 5);
-      $.ctx.putImageData($.storage.bg, $.state.bgpos > 0 ? $.state.bgpos - $.canvas.width : $.state.bgpos + $.canvas.width, 5);
+      Game.ctx.putImageData(Game.storage.bg, Game.state.bgpos, 5);
+      Game.ctx.putImageData(Game.storage.bg, Game.state.bgpos > 0 ? Game.state.bgpos - Game.canvas.width : Game.state.bgpos + Game.canvas.width, 5);
     //}
     
-    $.state.offset += $.state.speed * 0.05;
-    if($.state.offset > $.settings.ground.min) {
-      $.state.offset = $.settings.ground.min - $.state.offset;
-      $.state.startDark = !$.state.startDark;
+    Game.state.offset += Game.state.speed * 0.05;
+    if(Game.state.offset > Game.settings.ground.min) {
+      Game.state.offset = Game.settings.ground.min - Game.state.offset;
+      Game.state.startDark = !Game.state.startDark;
     }
-    drawGround($.ctx, $.state.offset, $.colors.ground, $.colors.groundDark, $.canvas.width);
+    drawGround(Game.ctx, Game.state.offset, Game.colors.ground, Game.colors.groundDark, Game.canvas.width);
     
-    drawRoad($.settings.road.min + 6, $.settings.road.max + 36, 10, $.colors.roadLine);
-    drawGround($.ctx2, $.state.offset, $.colors.roadLine, $.colors.road, $.canvas.width);
-    drawRoad($.settings.road.min, $.settings.road.max, 10, $.colors.road);
-    drawRoad(3, 24, 0, $.ctx.createPattern($.canvas2, 'repeat'));
+    drawRoad(Game.settings.road.min + 6, Game.settings.road.max + 36, 10, Game.colors.roadLine);
+    drawGround(Game.ctx2, Game.state.offset, Game.colors.roadLine, Game.colors.road, Game.canvas.width);
+    drawRoad(Game.settings.road.min, Game.settings.road.max, 10, Game.colors.road);
+    drawRoad(3, 24, 0, Game.ctx.createPattern(Game.canvas2, 'repeat'));
     drawCar();
-    drawHUD($.ctx, 630, 340, $.colors.hud);
+    drawHUD(Game.ctx, 630, 340, Game.colors.hud);
     
     requestAnimationFrame(draw);
-  }, 1000 / $.settings.fps);
+  }, 1000 / Game.settings.fps);
 }
 
 function drawHUD(ctx, centerX, centerY, color) {
@@ -111,7 +111,7 @@ function drawHUD(ctx, centerX, centerY, color) {
   }
   
   // draw pointer
-  angle = map($.state.speed, 0, $.state.car.maxSpeed, 90, 360);
+  angle = map(Game.state.speed, 0, Game.state.car.maxSpeed, 90, 360);
   drawPointer(ctx, color, 50, centerX, centerY, angle);
 }
 
@@ -156,67 +156,67 @@ function getCirclePoint(x, y, radius, angle) {
 }
 
 function calcMovement() {
-  var move = $.state.speed * 0.01,
+  var move = Game.state.speed * 0.01,
       newCurve = 0;
   
-  if($.state.keypress.up) {
-    $.state.speed += $.state.car.acc - ($.state.speed * 0.015);
-  } else if ($.state.speed > 0) {
-    $.state.speed -= $.state.car.friction;
+  if(Game.state.keypress.up) {
+    Game.state.speed += Game.state.car.acc - (Game.state.speed * 0.015);
+  } else if (Game.state.speed > 0) {
+    Game.state.speed -= Game.state.car.friction;
   }
   
-  if($.state.keypress.down && $.state.speed > 0) {
-    $.state.speed -= 1;
+  if(Game.state.keypress.down && Game.state.speed > 0) {
+    Game.state.speed -= 1;
   }
   
   // Left and right
-  $.state.xpos -= ($.state.currentCurve * $.state.speed) * 0.005;
+  Game.state.xpos -= (Game.state.currentCurve * Game.state.speed) * 0.005;
   
-  if($.state.speed) {
-    if($.state.keypress.left) {
-      $.state.xpos += (Math.abs($.state.turn) + 7 + ($.state.speed > $.state.car.maxSpeed / 4 ? ($.state.car.maxSpeed - ($.state.speed / 2)) : $.state.speed)) * 0.2;
-      $.state.turn -= 1;
+  if(Game.state.speed) {
+    if(Game.state.keypress.left) {
+      Game.state.xpos += (Math.abs(Game.state.turn) + 7 + (Game.state.speed > Game.state.car.maxSpeed / 4 ? (Game.state.car.maxSpeed - (Game.state.speed / 2)) : Game.state.speed)) * 0.2;
+      Game.state.turn -= 1;
     }
   
-    if($.state.keypress.right) {
-      $.state.xpos -= (Math.abs($.state.turn) + 7 + ($.state.speed > $.state.car.maxSpeed / 4 ? ($.state.car.maxSpeed - ($.state.speed / 2)) : $.state.speed)) * 0.2;
-      $.state.turn += 1;
+    if(Game.state.keypress.right) {
+      Game.state.xpos -= (Math.abs(Game.state.turn) + 7 + (Game.state.speed > Game.state.car.maxSpeed / 4 ? (Game.state.car.maxSpeed - (Game.state.speed / 2)) : Game.state.speed)) * 0.2;
+      Game.state.turn += 1;
     }
     
-    if($.state.turn !== 0 && !$.state.keypress.left && !$.state.keypress.right) {
-      $.state.turn += $.state.turn > 0 ? -0.25 : 0.25;
+    if(Game.state.turn !== 0 && !Game.state.keypress.left && !Game.state.keypress.right) {
+      Game.state.turn += Game.state.turn > 0 ? -0.25 : 0.25;
     }
   }
   
-  $.state.turn = clamp($.state.turn, -5, 5);
-  $.state.speed = clamp($.state.speed, 0, $.state.car.maxSpeed);
+  Game.state.turn = clamp(Game.state.turn, -5, 5);
+  Game.state.speed = clamp(Game.state.speed, 0, Game.state.car.maxSpeed);
   
   // section
-  $.state.section -= $.state.speed;
+  Game.state.section -= Game.state.speed;
   
-  if($.state.section < 0) {
-    $.state.section = randomRange(1000, 9000);
+  if(Game.state.section < 0) {
+    Game.state.section = randomRange(1000, 9000);
     
     newCurve = randomRange(-50, 50);
     
-    if(Math.abs($.state.curve - newCurve) < 20) {
+    if(Math.abs(Game.state.curve - newCurve) < 20) {
       newCurve = randomRange(-50, 50);
     }
     
-    $.state.curve = newCurve;
+    Game.state.curve = newCurve;
   }
   
-  if($.state.currentCurve < $.state.curve && move < Math.abs($.state.currentCurve - $.state.curve)) {
-    $.state.currentCurve += move;
-  } else if($.state.currentCurve > $.state.curve && move < Math.abs($.state.currentCurve - $.state.curve)) {
-    $.state.currentCurve -= move;
+  if(Game.state.currentCurve < Game.state.curve && move < Math.abs(Game.state.currentCurve - Game.state.curve)) {
+    Game.state.currentCurve += move;
+  } else if(Game.state.currentCurve > Game.state.curve && move < Math.abs(Game.state.currentCurve - Game.state.curve)) {
+    Game.state.currentCurve -= move;
   }
   
-  if(Math.abs($.state.xpos) > 550) {
-    $.state.speed *= 0.96;
+  if(Math.abs(Game.state.xpos) > 550) {
+    Game.state.speed *= 0.96;
   }
   
-  $.state.xpos = clamp($.state.xpos, -650, 650);
+  Game.state.xpos = clamp(Game.state.xpos, -650, 650);
 }
 
 function keyUp(e) {
@@ -233,21 +233,73 @@ function move(e, isKeyDown) {
   }
 
   if(e.keyCode === 37) {
-    $.state.keypress.left = isKeyDown;
+    Game.state.keypress.left = isKeyDown;
   } 
 
   if(e.keyCode === 38) {
-    $.state.keypress.up = isKeyDown;
+    Game.state.keypress.up = isKeyDown;
   } 
 
   if(e.keyCode === 39) {
-    $.state.keypress.right = isKeyDown;
+    Game.state.keypress.right = isKeyDown;
   } 
 
   if(e.keyCode === 40) {
-    $.state.keypress.down = isKeyDown;
+    Game.state.keypress.down = isKeyDown;
   }
 }
+
+// D474designs | Add button functionality ///////
+$('#left').mousedown(function(isKeyDown){
+  Game.state.keypress.left = isKeyDown;
+  Game.state.keypress.up = isKeyDown;
+  Game.state.keypress.right = !isKeyDown;
+});
+$('#right').mousedown(function(isKeyDown){
+  Game.state.keypress.right = isKeyDown;
+  Game.state.keypress.up = isKeyDown;
+  Game.state.keypress.left = !isKeyDown;
+});
+$(document).mouseup(function(isKeyDown){
+  Game.state.keypress.up = !isKeyDown;
+});
+$('#gas').mousedown(function(isKeyDown){
+  Game.state.keypress.up = isKeyDown;
+});
+$(document).mouseup(function(isKeyDown){
+  Game.state.keypress.up = !isKeyDown;
+});
+$('#brake').mousedown(function(isKeyDown){
+  Game.state.keypress.down = isKeyDown;
+});
+$(document).mouseup(function(isKeyDown){
+  Game.state.keypress.down = !isKeyDown;
+});
+
+$("#left").on( "touchstart", function(isKeyDown) {
+  Game.state.keypress.left = isKeyDown;
+  Game.state.keypress.up = isKeyDown;
+}).on("touchend", function(isKeyDown) {
+  Game.state.keypress.left = !isKeyDown;
+  Game.state.keypress.up = !isKeyDown;
+});
+$("#right").on( "touchstart", function(isKeyDown) {
+  Game.state.keypress.right = isKeyDown;
+  Game.state.keypress.up = isKeyDown;
+}).on("touchend", function(isKeyDown) {
+  Game.state.keypress.right = !isKeyDown;
+  Game.state.keypress.up = !isKeyDown;
+});
+$("#gas").on( "touchstart", function(isKeyDown) {
+  Game.state.keypress.up = isKeyDown;
+}).on("touchend", function(isKeyDown) {
+  Game.state.keypress.up = !isKeyDown;
+});
+$("#brake").on( "touchstart", function(isKeyDown) {
+  Game.state.keypress.down = isKeyDown;
+}).on("touchend", function(isKeyDown) {
+  Game.state.keypress.down = !isKeyDown;
+});
 
 function randomRange(min, max) {
   return min + Math.random() * (max - min);
@@ -270,62 +322,62 @@ function clamp(value, min, max) {
 }
 
 function drawBg() {
-  $.ctx.fillStyle = $.colors.sky;
-  $.ctx.fillRect(0, 0, $.canvas.width, $.settings.skySize);
+  Game.ctx.fillStyle = Game.colors.sky;
+  Game.ctx.fillRect(0, 0, Game.canvas.width, Game.settings.skySize);
   drawMountain(0, 60, 200);
   drawMountain(280, 40, 200);
   drawMountain(400, 80, 200);
   drawMountain(550, 60, 200);
   
-  $.storage.bg = $.ctx.getImageData(0, 0, $.canvas.width, $.canvas.height);
+  Game.storage.bg = Game.ctx.getImageData(0, 0, Game.canvas.width, Game.canvas.height);
 }
 
 function drawMountain(pos, height, width) {
-  $.ctx.fillStyle = $.colors.mountains;
-  $.ctx.strokeStyle = $.colors.mountains;
-  $.ctx.lineJoin = "round";
-  $.ctx.lineWidth = 20;
-  $.ctx.beginPath();
-  $.ctx.moveTo(pos, $.settings.skySize);
-  $.ctx.lineTo(pos + (width / 2), $.settings.skySize - height);
-  $.ctx.lineTo(pos + width, $.settings.skySize);
-  $.ctx.closePath();
-  $.ctx.stroke();
-  $.ctx.fill();
+  Game.ctx.fillStyle = Game.colors.mountains;
+  Game.ctx.strokeStyle = Game.colors.mountains;
+  Game.ctx.lineJoin = "round";
+  Game.ctx.lineWidth = 20;
+  Game.ctx.beginPath();
+  Game.ctx.moveTo(pos, Game.settings.skySize);
+  Game.ctx.lineTo(pos + (width / 2), Game.settings.skySize - height);
+  Game.ctx.lineTo(pos + width, Game.settings.skySize);
+  Game.ctx.closePath();
+  Game.ctx.stroke();
+  Game.ctx.fill();
 }
 
 function drawSky() {
-  $.ctx.fillStyle = $.colors.sky;
-  $.ctx.fillRect(0, 0, $.canvas.width, $.settings.skySize);
+  Game.ctx.fillStyle = Game.colors.sky;
+  Game.ctx.fillRect(0, 0, Game.canvas.width, Game.settings.skySize);
 }
 
 function drawRoad(min, max, squishFactor, color) {
-  var basePos = $.canvas.width + $.state.xpos;
+  var basePos = Game.canvas.width + Game.state.xpos;
   
-  $.ctx.fillStyle = color;
-  $.ctx.beginPath();
-  $.ctx.moveTo(((basePos + min) / 2) - ($.state.currentCurve * 3), $.settings.skySize);
-  $.ctx.quadraticCurveTo((((basePos / 2) + min)) + ($.state.currentCurve / 3) + squishFactor, $.settings.skySize + 52, (basePos + max) / 2, $.canvas.height);
-  $.ctx.lineTo((basePos - max) / 2, $.canvas.height);
-  $.ctx.quadraticCurveTo((((basePos / 2) - min)) + ($.state.currentCurve / 3) - squishFactor, $.settings.skySize + 52, ((basePos - min) / 2) - ($.state.currentCurve * 3), $.settings.skySize);
-  $.ctx.closePath();
-  $.ctx.fill();
+  Game.ctx.fillStyle = color;
+  Game.ctx.beginPath();
+  Game.ctx.moveTo(((basePos + min) / 2) - (Game.state.currentCurve * 3), Game.settings.skySize);
+  Game.ctx.quadraticCurveTo((((basePos / 2) + min)) + (Game.state.currentCurve / 3) + squishFactor, Game.settings.skySize + 52, (basePos + max) / 2, Game.canvas.height);
+  Game.ctx.lineTo((basePos - max) / 2, Game.canvas.height);
+  Game.ctx.quadraticCurveTo((((basePos / 2) - min)) + (Game.state.currentCurve / 3) - squishFactor, Game.settings.skySize + 52, ((basePos - min) / 2) - (Game.state.currentCurve * 3), Game.settings.skySize);
+  Game.ctx.closePath();
+  Game.ctx.fill();
 }
 
 function drawCar() {
   var carWidth = 160,
       carHeight = 50,
-      carX = ($.canvas.width / 2) - (carWidth / 2),
+      carX = (Game.canvas.width / 2) - (carWidth / 2),
       carY = 320;
   
   // shadow
-  roundedRect($.ctx, "rgba(0, 0, 0, 0.35)", carX - 1 + $.state.turn, carY + (carHeight - 35), carWidth + 10, carHeight, 9);
+  roundedRect(Game.ctx, "rgba(0, 0, 0, 0.35)", carX - 1 + Game.state.turn, carY + (carHeight - 35), carWidth + 10, carHeight, 9);
   
   // tires
-  roundedRect($.ctx, "#111", carX, carY + (carHeight - 30), 30, 40, 6);
-  roundedRect($.ctx, "#111", (carX - 22) + carWidth, carY + (carHeight - 30), 30, 40, 6);
+  roundedRect(Game.ctx, "#111", carX, carY + (carHeight - 30), 30, 40, 6);
+  roundedRect(Game.ctx, "#111", (carX - 22) + carWidth, carY + (carHeight - 30), 30, 40, 6);
   
-  drawCarBody($.ctx);
+  drawCarBody(Game.ctx);
 }
 
 function drawCarBody(ctx) {
@@ -334,15 +386,15 @@ function drawCarBody(ctx) {
       lightsY = 0;
   
   /* Front */
-  roundedRect($.ctx, "#C2C2C2", startX + 6 + ($.state.turn * 1.1), startY - 18, 146, 40, 18);
+  roundedRect(Game.ctx, "#C2C2C2", startX + 6 + (Game.state.turn * 1.1), startY - 18, 146, 40, 18);
   
   ctx.beginPath(); 
   ctx.lineWidth="12";
   ctx.fillStyle="#FFFFFF";
   ctx.strokeStyle="#FFFFFF";
   ctx.moveTo(startX + 30, startY);
-  ctx.lineTo(startX + 46 + $.state.turn, startY - 25);
-  ctx.lineTo(startX + 114 + $.state.turn, startY - 25);
+  ctx.lineTo(startX + 46 + Game.state.turn, startY - 25);
+  ctx.lineTo(startX + 114 + Game.state.turn, startY - 25);
   ctx.lineTo(startX + 130, startY);
   ctx.fill();
   ctx.stroke();
@@ -353,11 +405,11 @@ function drawCarBody(ctx) {
   ctx.beginPath(); 
   ctx.fillStyle="#DEE0E2";
   ctx.strokeStyle="#DEE0E2";
-  ctx.moveTo(startX + 2, startY + 12 + ($.state.turn * 0.2));
-  ctx.lineTo(startX + 159, startY + 12 + ($.state.turn * 0.2));
-  ctx.quadraticCurveTo(startX + 166, startY + 35, startX + 159, startY + 55 + ($.state.turn * 0.2));
-  ctx.lineTo(startX + 2, startY + 55 - ($.state.turn * 0.2));
-  ctx.quadraticCurveTo(startX - 5, startY + 32, startX + 2, startY + 12 - ($.state.turn * 0.2));
+  ctx.moveTo(startX + 2, startY + 12 + (Game.state.turn * 0.2));
+  ctx.lineTo(startX + 159, startY + 12 + (Game.state.turn * 0.2));
+  ctx.quadraticCurveTo(startX + 166, startY + 35, startX + 159, startY + 55 + (Game.state.turn * 0.2));
+  ctx.lineTo(startX + 2, startY + 55 - (Game.state.turn * 0.2));
+  ctx.quadraticCurveTo(startX - 5, startY + 32, startX + 2, startY + 12 - (Game.state.turn * 0.2));
   ctx.fill();
   ctx.stroke();
 
@@ -366,8 +418,8 @@ function drawCarBody(ctx) {
   ctx.fillStyle="#DEE0E2";
   ctx.strokeStyle="#DEE0E2";
   ctx.moveTo(startX + 30, startY);
-  ctx.lineTo(startX + 40 + ($.state.turn * 0.7), startY - 15);
-  ctx.lineTo(startX + 120 + ($.state.turn * 0.7), startY - 15);
+  ctx.lineTo(startX + 40 + (Game.state.turn * 0.7), startY - 15);
+  ctx.lineTo(startX + 120 + (Game.state.turn * 0.7), startY - 15);
   ctx.lineTo(startX + 130, startY);
   ctx.fill();
   ctx.stroke();
@@ -382,18 +434,18 @@ function drawCarBody(ctx) {
     ctx.arc(startX + xPos, startY + 20 + lightsY, 6, 0, Math.PI*2, true); 
     ctx.closePath();
     ctx.fill();
-    lightsY += $.state.turn * 0.05;
+    lightsY += Game.state.turn * 0.05;
   });
   
   ctx.lineWidth="9";
   ctx.fillStyle="#222222";
   ctx.strokeStyle="#444";
   
-  roundedRect($.ctx, "#FFF", startX + 60, startY + 25, 40, 18, 3, true, 0.05);
+  roundedRect(Game.ctx, "#FFF", startX + 60, startY + 25, 40, 18, 3, true, 0.05);
 }
 
 function roundedRect(ctx, color, x, y, width, height, radius, turn, turneffect) {
-  var skew = turn === true ? $.state.turn * turneffect : 0;
+  var skew = turn === true ? Game.state.turn * turneffect : 0;
   
   ctx.fillStyle = color;
   ctx.beginPath();
@@ -422,22 +474,22 @@ function roundedRect(ctx, color, x, y, width, height, radius, turn, turneffect) 
 }
 
 function drawGround(ctx, offset, lightColor, darkColor, width) {
-  var pos = ($.settings.skySize - $.settings.ground.min) + offset, stepSize = 1, drawDark = $.state.startDark, firstRow = true;
+  var pos = (Game.settings.skySize - Game.settings.ground.min) + offset, stepSize = 1, drawDark = Game.state.startDark, firstRow = true;
   ctx.fillStyle = lightColor;
-  ctx.fillRect(0, $.settings.skySize, width, $.settings.ground.size);
+  ctx.fillRect(0, Game.settings.skySize, width, Game.settings.ground.size);
 
   ctx.fillStyle =  darkColor;
-  while(pos <= $.canvas.height) {
-    stepSize = norm(pos, $.settings.skySize, $.canvas.height) * $.settings.ground.max;
-    if(stepSize < $.settings.ground.min) {
-      stepSize = $.settings.ground.min;
+  while(pos <= Game.canvas.height) {
+    stepSize = norm(pos, Game.settings.skySize, Game.canvas.height) * Game.settings.ground.max;
+    if(stepSize < Game.settings.ground.min) {
+      stepSize = Game.settings.ground.min;
     }
   
     if(drawDark) {
       if(firstRow) {
-        ctx.fillRect(0, $.settings.skySize, width, stepSize - (offset > $.settings.ground.min ? $.settings.ground.min : $.settings.ground.min - offset));
+        ctx.fillRect(0, Game.settings.skySize, width, stepSize - (offset > Game.settings.ground.min ? Game.settings.ground.min : Game.settings.ground.min - offset));
       } else {
-        ctx.fillRect(0, pos < $.settings.skySize ? $.settings.skySize : pos, width, stepSize);
+        ctx.fillRect(0, pos < Game.settings.skySize ? Game.settings.skySize : pos, width, stepSize);
       }
     }
     

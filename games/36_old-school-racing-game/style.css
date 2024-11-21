@@ -1,12 +1,10 @@
 body {
   background-color: mediumaquamarine;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
 }
 
 canvas {
+  margin-top: 3px;
   border-radius: 0.4em;
 }
