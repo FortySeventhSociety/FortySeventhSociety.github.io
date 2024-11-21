@@ -271,6 +271,7 @@ $(document).mouseup(function(isKeyDown){
 });
 $('#brake').mousedown(function(isKeyDown){
   Game.state.keypress.down = isKeyDown;
+  Game.state.keypress.up = !isKeyDown;
 });
 $(document).mouseup(function(isKeyDown){
   Game.state.keypress.down = !isKeyDown;
@@ -297,6 +298,7 @@ $("#gas").on( "touchstart", function(isKeyDown) {
 });
 $("#brake").on( "touchstart", function(isKeyDown) {
   Game.state.keypress.down = isKeyDown;
+  Game.state.keypress.up = !isKeyDown;
 }).on("touchend", function(isKeyDown) {
   Game.state.keypress.down = !isKeyDown;
 });
