@@ -1,3 +1,6 @@
+/*/ D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved //////*/
+
 var svg = document.querySelector("svg");
 var cursor = svg.createSVGPoint();
 var arrows = document.querySelector(".arrows");

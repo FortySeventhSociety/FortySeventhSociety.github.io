@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 var cw, ch, ratio = 0.546875,
     game = document.getElementById('game'),
 		btnArea = document.getElementById('btnArea'),

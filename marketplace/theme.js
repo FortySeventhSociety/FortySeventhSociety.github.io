@@ -1,3 +1,5 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
 
         // Funzione per cambiare il CSS
         function changeCSS(cssFile) {

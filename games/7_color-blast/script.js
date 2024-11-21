@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 // Color Blast!
 // License MIT
 // © 2014 Nate Wiley
@@ -508,7 +511,7 @@ $("#right").on( "touchstart", function() {
     Game.player.movingRight = false;
 });
 
-// D474designs | Add automatic, and pause buttons ///////
+// D474designs | Add automatic toggle, and pause buttons ///////
 
 $('#auto').mousedown(function(){
 	if(!Game.shooting) {

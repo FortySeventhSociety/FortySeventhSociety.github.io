@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 // Three.js - https://github.com/mrdoob/three.js/
 // RoundedBoxGeometry - https://github.com/pailhead/three-rounded-box
 

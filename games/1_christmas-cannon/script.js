@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 let showGuides = false;
 
 // 👆 change to true to see the physics objects
@@ -9,20 +12,6 @@ let extraBounce = 0.1;
 let powerMultiplier = 1.2;
 
 // 👆 increase for more POWER!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import {
 TextureLoader, RepeatWrapping,

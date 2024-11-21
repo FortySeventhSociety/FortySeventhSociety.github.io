@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 $(document).ready(function() {
   var divx = document.getElementById('terminal');
   /* Welcome screen */

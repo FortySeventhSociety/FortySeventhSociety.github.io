@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 var pathEls = document.querySelectorAll('path');
 for (var i = 0; i < pathEls.length; i++) {
   var pathEl = pathEls[i];
