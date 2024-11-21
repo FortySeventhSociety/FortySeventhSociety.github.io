@@ -252,7 +252,7 @@ function move(e, isKeyDown) {
   }
 }
 
-// D474designs | Add button functionality ///////
+// D474designs | Add button functionality, with mobile support ///////
 $('#left').mousedown(function(isKeyDown){
   Game.state.keypress.left = isKeyDown;
   Game.state.keypress.up = isKeyDown;
@@ -281,6 +281,7 @@ $(document).mouseup(function(isKeyDown){
   Game.state.keypress.down = !isKeyDown;
 });
 
+// D474designs | Add button functionality, with mobile support ///////
 $("#left").on( "touchstart", function(isKeyDown) {
   Game.state.keypress.left = isKeyDown;
   Game.state.keypress.up = isKeyDown;

@@ -34,7 +34,7 @@ aim({
 // set up start drag event
 window.addEventListener("mousedown", draw);
 
-// D474designs: add touch movements to aim
+// D474designs | add touch movements to aim ///////
 window.addEventListener("touchstart", draw);
 
 function draw(e) {
@@ -105,6 +105,8 @@ function loose() {
 	// release arrow
 	window.removeEventListener("mousemove", aim);
 	window.removeEventListener("mouseup", loose);
+
+	// D474designs | Add mobile support ///////
 	window.removeEventListener("touchmove", aim);
 	window.removeEventListener("touchend", loose);
 
@@ -202,11 +204,10 @@ function showMessage(selector) {
 	}, .03);
 }
 
-
-
 function getMouseSVG(e) {
 	// normalize mouse position within svg coordinates
-	// D474designs: add touch movements to aim
+
+	// D474designs | Add touch movements to aim ///////
 	cursor.x = e.clientX || e.touches[0].clientX;
 	cursor.y = e.clientY || e.touches[0].clientY;
 	return cursor.matrixTransform(svg.getScreenCTM().inverse());

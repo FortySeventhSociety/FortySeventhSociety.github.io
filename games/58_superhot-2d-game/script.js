@@ -156,26 +156,27 @@
       slowDownTime();
     }
     
-    // determine what direction the player is moving
+    // D474designs | Add memoization for improved aiming /////// Legacy: if nothing assume up // determine what direction the player is moving
     if (controls.left.isDown) {
       currentHorizontalDirection = "left";
       lastHorizonatlDirection = "left";
     } else if (controls.right.isDown) {
       currentHorizontalDirection = "right";
       lastHorizonatlDirection = "right";
-    } else if (!currentVerticalDirection) { // D474designs | Add memoization /////// Legacy: if nothing assume up
+    } else if (!currentVerticalDirection) { 
       currentHorizontalDirection = lastHorizonatlDirection;
       currentVerticalDirection = lastVerticalDirection;
     } else {
       currentHorizontalDirection = false;
     }
+    // D474designs | Add memoization for improved aiming /////// Legacy: if nothing assume up
     if (controls.up.isDown) {
       currentVerticalDirection = "up";
       lastVerticalDirection = "up";
     } else if (controls.down.isDown) {
       currentVerticalDirection = "down";
       lastVerticalDirection = "down";
-    } else if (!currentHorizontalDirection) { // D474designs | Add memoization /////// Legacy: if nothing assume up
+    } else if (!currentHorizontalDirection) {
       currentVerticalDirection = lastVerticalDirection;
       currentHorizontalDirection = lastHorizonatlDirection;
     } else {
@@ -187,7 +188,7 @@
     }
   };
 
-// D474designs | Add button functionality ///////
+// D474designs | Add button functionality for desktop, and mobile ///////
 $('#left').mousedown(function(){
   controls.left.isDown = true;
 });

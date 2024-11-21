@@ -14,7 +14,7 @@ var Game = {
 		this.c.height = this.c.height;
 		this.ctx = this.c.getContext("2d");
 
-		// D474designs | Set background
+		// D474designs | Set background for glow effect I added in ///////
 		this.color = "black";
 		/*
 		this.color = "rgba(20,20,20,.7)";
@@ -37,7 +37,7 @@ var Game = {
 		this.player = new Player();
 		this.score = 0;
 
-		// D474designs | Add code to increment lives every 50 enemy deaths///////
+		// D474designs | Add code to increment lives every 50 enemy deaths ///////
 		this.counter = 0;
 		this.counterControl = 0;
 		this.paused = false;
@@ -226,7 +226,7 @@ var Player = function(){
 	this.invincible = false;
 	this.color = "white";
 
-	// D474designs | Add glow to game objects
+	// D474designs | Add glow to game objects ///////
 	this.shadowBlur = 100;
 	this.shadowColor = "white";
 };
@@ -316,6 +316,8 @@ var Enemy = function(){
 Enemy.prototype.draw = function(){
 	Game.ctx.fillStyle = this.color;
 	Game.ctx.fillRect(this.x, this.y, this.width, this.height);
+
+	// D474designs | Add glow to game objects ///////
 	Game.ctx.shadowBlur = 10;
 	Game.ctx.shadowColor = "white";
 };
@@ -485,6 +487,8 @@ $(document).on("touchend", (function() {
 }));
 */
 
+// D474designs | Add button functionality ///////
+
 $('#left').mousedown(function(){
 	Game.player.movingLeft = true;
 	Game.shooting = true;
@@ -511,7 +515,7 @@ $("#right").on( "touchstart", function() {
     Game.player.movingRight = false;
 });
 
-// D474designs | Add automatic toggle, and pause buttons ///////
+// D474designs | Add automatic firing toggle, and pause buttons ///////
 
 $('#auto').mousedown(function(){
 	if(!Game.shooting) {
