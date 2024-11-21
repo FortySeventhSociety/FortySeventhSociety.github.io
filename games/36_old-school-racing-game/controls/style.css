@@ -73,7 +73,7 @@
   content: "←";
 }
 .arrow-key.up:before {
-  content: "▓";
+  content: "▒";
 }
 .arrow-key.down:before {
   content: "░";
