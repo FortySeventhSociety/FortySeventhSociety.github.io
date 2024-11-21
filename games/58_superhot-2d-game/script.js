@@ -73,7 +73,7 @@
     
     //start physics engine
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    //input
+    // D474designs | Change arrow keys to WASD keys to correct glitch while firing, and moving in 2 directions /////// Legacy: input
     this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
     this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.W);
     this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.S);
