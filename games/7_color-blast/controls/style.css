@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.arrow-key-container {
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+}
+
+.arrow-key {
+  align-items: center;
+  background: linear-gradient(#222, #000);
+  border-radius: 6px;
+  box-shadow: -1px 1px 0 #999, -2px 2px 0 #999, -3px 3px 0 #999, -4px 4px 0 #999;
+  color: #fff;
+  display: inline-flex;
+  font-size: 30px;
+  font-weight: bold;
+  height: 75px;
+  justify-content: center;
+  transform: translate3d(0, 0, 0);
+  transition: box-shadow 0.1s linear, transform 0.1s linear;
+  width: 75px;
+}
+.arrow-key:active, .arrow-key.press {
+  box-shadow: 0px 0px 0 #999, 0px 0px 0 #999, 0px 0px 0 #999, -1px 1px 0 #999;
+  transform: translate3d(-3px, 3px, 0);
+}
+
+.arrow-key.left {
+  margin-right: 25%;
+}
+.arrow-key.right {
+  margin-left: 25%;
+}
+.arrow-key.up {
+  margin-top: 3%;
+  height: 55px;
+  width: 55px;
+}
+
+.arrow-key.down {
+  margin-top: 3%;
+  height: 55px;
+  width: 55px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .arrow-key.left {
+    margin-top: 25%;
+    margin-right: 25%;
+  }
+  .arrow-key.right {
+    margin-top: 25%;
+    margin-left: 25%;
+  }
+}
+
+.arrow-key.left:before {
+  content: "←";
+}
+.arrow-key.up:before {
+  content: "∞";
+}
+.arrow-key.down:before {
+  content: "■";
+}
+.arrow-key.right:before {
+  content: "→";
+}

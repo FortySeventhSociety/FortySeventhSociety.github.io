@@ -5,13 +5,17 @@
 (function(window){
 
 var Game = {
-
 	init: function(){
 		this.c = document.getElementById("game");
 		this.c.width = this.c.width;
 		this.c.height = this.c.height;
 		this.ctx = this.c.getContext("2d");
+
+		// D474designs | Set background
+		this.color = "black";
+		/*
 		this.color = "rgba(20,20,20,.7)";
+		*/
 		this.bullets = [];
 		this.enemyBullets = [];
 		this.enemies = [];
@@ -29,15 +33,20 @@ var Game = {
 		this.binding();
 		this.player = new Player();
 		this.score = 0;
+
+		// D474designs | Add code to increment lives every 25 enemy deaths///////
+		this.counter = 0;
+		this.counterControl = 0;
 		this.paused = false;
 		this.shooting = false;
 		this.oneShot = false;
 		this.isGameOver = false;
-     this.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+		this.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
 		for(var i = 0; i<this.maxEnemies; i++){
 			new Enemy();
 			this.enemiesAlive++;
 		}
+
 		this.invincibleMode(2000);
 
 		this.loop();
@@ -142,7 +151,7 @@ var Game = {
   	this.clear();
   	var message = "Game Over";
   	var message2 = "Score: " + Game.score;
-  	var message3 = "Click or press Spacebar to Play Again";
+  	var message3 = "Click Or Press Spacebar To Play Again";
   	this.pause();
   	this.ctx.fillStyle = "white";
 	  this.ctx.font = "bold 30px Lato, sans-serif";
@@ -193,14 +202,15 @@ var Game = {
 			Game.updateScore();
 			Game.currentFrame = Game.requestAnimationFrame.call(window, Game.loop);
 		}
+
+		//D474designs: Add code to increment lives every 10 enemy deaths///////
+		if(Game.counter === Game.counterControl + 25){
+		  Game.counterControl = Game.counter;
+			Game.maxLives++;
+		}
 	}
 
 };
-
-
-
-
-
 
 var Player = function(){
 	this.width = 60;
@@ -212,6 +222,10 @@ var Player = function(){
 	this.speed = 8;
 	this.invincible = false;
 	this.color = "white";
+
+	// D474designs | Add glow to game objects
+	this.shadowBlur = 100;
+	this.shadowColor = "white";
 };
 
 
@@ -257,11 +271,6 @@ Player.prototype.shoot = function(){
 	Game.bulletIndex++;
 };
 
-
-
-
-
-
 var Bullet = function(x){  
 	this.width = 8;
 	this.height = 20;
@@ -274,12 +283,10 @@ var Bullet = function(x){
 	
 };
 
-
 Bullet.prototype.draw = function(){
 	Game.ctx.fillStyle = this.color;
 	Game.ctx.fillRect(this.x, this.y, this.width, this.height);
 };
-
 
 Bullet.prototype.update = function(){
 	this.y -= this.vy;
@@ -287,11 +294,6 @@ Bullet.prototype.update = function(){
 		delete Game.bullets[this.index];
 	}
 };
-
-
-
-
-
 
 var Enemy = function(){
 	this.width = 60;
@@ -306,15 +308,14 @@ var Enemy = function(){
 	this.shootingSpeed = Game.random(30, 80);
 	this.movingLeft = Math.random() < 0.5 ? true : false;
 	this.color = "hsl("+ Game.random(0, 360) +", 60%, 50%)";
-	
 };
-
 
 Enemy.prototype.draw = function(){
 	Game.ctx.fillStyle = this.color;
 	Game.ctx.fillRect(this.x, this.y, this.width, this.height);
+	Game.ctx.shadowBlur = 10;
+	Game.ctx.shadowColor = "white";
 };
-
 
 Enemy.prototype.update = function(){
 	if(this.movingLeft){
@@ -344,6 +345,7 @@ Enemy.prototype.update = function(){
 
 Enemy.prototype.die = function(){
   this.explode();
+  Game.counter++
   delete Game.enemies[this.index];
   Game.score += 15;
   Game.enemiesAlive = Game.enemiesAlive > 1 ? Game.enemiesAlive - 1 : 0;
@@ -390,9 +392,6 @@ EnemyBullet.prototype.update = function(){
 	}
 };
 
-
-
-
 var Particle = function(x, y, color){
     this.x = x;
     this.y = y;
@@ -422,6 +421,115 @@ var Particle = function(x, y, color){
   };
 
 Game.init();
+
+// D474designs | Add button functionality ///////
+
+/*
+$("#thediv").mousedown(function(e) {
+	var divWidth = $("#thediv").width();		
+  var touchX = e.clientX;
+  if (touchX < divWidth/2) {
+  	Game.player.movingLeft = true;
+  	Game.player.movingRight = false;
+  	console.log("left");
+  }
+  if (touchX > divWidth/2) {
+  	Game.player.movingLeft = false;
+  	Game.player.movingRight = true;
+  	console.log("right");
+  }
+});
+
+$("#thediv").on( "touchstart", (function(e) {
+	var divWidth = $("#thediv").width();		
+  var touchX = e.clientX;
+  if (touchX < divWidth/2) {
+  	Game.player.movingLeft = true;
+  	Game.player.movingRight = false;
+  	console.log("left");
+  }
+  if (touchX > divWidth/2) {
+  	Game.player.movingLeft = false;
+  	Game.player.movingRight = true;
+  	console.log("right");
+  }
+})).on("touchend", function() {
+		Game.player.movingLeft = false;
+  	Game.player.movingRight = false;
+});
+*/
+
+/*
+$('#thediv').on("touchstart", (function(e) {
+	var divWidth = $("#thediv").width();		
+  var touchX = e.clientX;
+  if (touchX < divWidth/2) {
+		Game.player.movingLeft = true;
+		Game.shooting = true;
+	}
+}));
+$('#thediv').on("touchstart", (function(e) {
+	var divWidth = $("#thediv").width();		
+  var touchX = e.clientX;
+	if (touchX > divWidth/2) {
+		Game.player.movingRight = true;
+		Game.shooting = true;
+	}
+}));
+$(document).on("touchend", (function() {
+    Game.player.movingLeft = false;
+    Game.player.movingRight = false;
+}));
+*/
+
+$('#left').mousedown(function(){
+	Game.player.movingLeft = true;
+	Game.shooting = true;
+});
+$('#right').mousedown(function(){
+	Game.player.movingRight = true;
+	Game.shooting = true;
+});
+$(document).mouseup(function(){
+    Game.player.movingLeft = false;
+    Game.player.movingRight = false;
+});
+
+$("#left").on( "touchstart", function() {
+  Game.player.movingLeft = true;
+  Game.shooting = true;
+}).on("touchend", function() {
+    Game.player.movingLeft = false;
+});
+$("#right").on( "touchstart", function() {
+	Game.player.movingRight = true;
+	Game.shooting = true;
+}).on("touchend", function() {
+    Game.player.movingRight = false;
+});
+
+// D474designs | Add automatic, and pause buttons ///////
+
+$('#auto').mousedown(function(){
+	if(!Game.shooting) {
+		Game.shooting = true;
+	} else {
+		Game.shooting = false;
+	}
+});
+$('#pause').mousedown(function(){
+	if(!Game.paused) {
+			Game.pause();
+		} else {
+			if(Game.isGameOver){
+				Game.init();
+			} else {
+				Game.unPause();
+				Game.loop();
+				Game.invincibleMode(1000);
+			}
+		}
+});
 
 
 }(window));
