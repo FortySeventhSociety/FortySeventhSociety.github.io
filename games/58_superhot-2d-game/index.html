@@ -13,6 +13,7 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="./controls/style.css">
 </head>
 
 <body>
@@ -23,6 +24,17 @@
 <div class="container">
   
   <div id="game"></div>
+
+  <div class="arrow-key-container">
+    <div class="arrow-key up" id="up" data-key="38"></div><br>
+    <div class="arrow-key left" id="left" data-key="37"></div>
+    <div class="arrow-key shoot" id="shoot" data-key="32"></div>
+    <div class="arrow-key right" id="right" data-key="39"></div>
+  </div>
+  <br/>
+  <div class="arrow-key-container">
+    <div class="arrow-key down" id="down" data-key="40"></div>
+  </div>
   
   <h2>ARROW KEYS + SPACEBAR</h2>
   <p>
@@ -69,6 +81,7 @@
 <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js'></script>
 -->
 <script  src="./script.js"></script>
+<script  src="./controls/script.js"></script>
 
 </body>
 </html>

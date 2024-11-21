@@ -172,6 +172,59 @@
     }
   };
 
+// D474designs | Add button functionality ///////
+$('#left').mousedown(function(){
+  controls.left.isDown = true;
+});
+$('#right').mousedown(function(){
+  controls.right.isDown = true;
+});
+$(document).mouseup(function(){
+  controls.left.isDown = false;
+  controls.right.isDown = false;
+});
+$('#up').mousedown(function(){
+  controls.up.isDown = true;
+});
+$(document).mouseup(function(){
+  controls.up.isDown = false;
+});
+$('#down').mousedown(function(){
+  controls.down.isDown = true;
+});
+$(document).mouseup(function(){
+  controls.down.isDown = false;
+});
+
+$('#shoot').mousedown(function(){
+  return player.fireBullet(currentHorizontalDirection, currentVerticalDirection);
+});
+
+$("#left").on( "touchstart", function() {
+  controls.left.isDown = true;
+}).on("touchend", function(isKeyDown) {
+  controls.left.isDown = false;
+});
+$("#right").on( "touchstart", function() {
+  controls.right.isDown = true;
+}).on("touchend", function(isKeyDown) {
+  controls.right.isDown = false;
+});
+$("#up").on( "touchstart", function() {
+  controls.up.isDown = true;
+}).on("touchend", function(isKeyDown) {
+  controls.up.isDown = false;
+});
+$("#down").on( "touchstart", function() {
+  controls.down.isDown = true;
+}).on("touchend", function(isKeyDown) {
+  controls.down.isDown = false;
+});
+
+$("#shoot").on( "touchstart", function() {
+  return player.fireBullet(currentHorizontalDirection, currentVerticalDirection);
+})
+
   //MOVEMENT
   movePlayer = function() {
     return player.motionUpdate();
