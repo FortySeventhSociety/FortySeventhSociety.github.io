@@ -4,7 +4,7 @@
   position: fixed;
   transition: background 0.3s ease;
   right: 3px;
-  top: 2vh;
+  top: 0px;
   color: currentColor !important;
   z-index: 77;
   
