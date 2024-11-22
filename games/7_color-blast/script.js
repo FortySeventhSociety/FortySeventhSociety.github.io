@@ -165,15 +165,27 @@ var Game = {
   },
 
   updateScore: function(){
+  	// D474designs | Debug code for increasing the difficulty as you progress through the game ///////
+  	this.ctx.fillStyle = "red";
+  	this.ctx.font = "20px Lato, sans-serif";
+  	this.ctx.fillText("Enemy Kills: " + Game.enemyIndex, 8, 20);
+  	this.ctx.fillStyle = "violet";
+  	this.ctx.font = "20px Lato, sans-serif";
+  	this.ctx.fillText("Incoming Enemies: " + Game.maxEnemies, 8, 43);
+
   	this.ctx.fillStyle = "white";
+  	this.ctx.font = "18px Lato, sans-serif";
+  	this.ctx.fillText("Score: " + this.score, 8, 78);
+  	this.ctx.fillStyle = "limeGreen";
   	this.ctx.font = "16px Lato, sans-serif";
-  	this.ctx.fillText("Score: " + this.score, 8, 20);
-  	this.ctx.fillText("Lives: " + (this.maxLives - this.life), 8, 40);
+  	this.ctx.fillText("Lives: " + (this.maxLives - this.life), 8, 93);
 
   	// D474designs | Debug code for increasing the difficulty as you progress through the game ///////
+  	this.ctx.fillStyle = "violet";
+  	this.ctx.font = "20px Lato, sans-serif";
   	// this.ctx.fillText("Incoming Enemies: " + Game.maxEnemies, 8, 80);
   	// this.ctx.fillText("Incoming Enemies: " + Game.enemiesAlive, 8, 100);
-  	this.ctx.fillText("Incoming Enemies: " + Game.enemyIndex, 8, 120);
+  	// this.ctx.fillText("Incoming Enemies: " + Game.enemyIndex, 8, 120);
   },
   
 	loop: function(){
@@ -212,7 +224,7 @@ var Game = {
 		}
 
 		// D474designs | Add code to increment lives, and maximum number of enemies every 50 enemy deaths ///////
-		if(Game.counter === Game.counterControl + 5){
+		if(Game.counter === Game.counterControl + 50){
 		  Game.counterControl = Game.counter;
 			Game.maxLives++;
 			Game.maxEnemies++;
