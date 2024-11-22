@@ -169,6 +169,9 @@ var Game = {
   	this.ctx.font = "16px Lato, sans-serif";
   	this.ctx.fillText("Score: " + this.score, 8, 20);
   	this.ctx.fillText("Lives: " + (this.maxLives - this.life), 8, 40);
+
+  	// D474designs | Debug code for increasing the difficulty as you progress through the game ///////
+  	// this.ctx.fillText("Enemies: " + this.maxEnemies, 8, 60);
   },
   
 	loop: function(){
