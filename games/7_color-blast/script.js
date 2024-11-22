@@ -212,7 +212,7 @@ var Game = {
 		}
 
 		// D474designs | Add code to increment lives, and maximum number of enemies every 50 enemy deaths ///////
-		if(Game.counter === Game.counterControl + 1){
+		if(Game.counter === Game.counterControl + 5){
 		  Game.counterControl = Game.counter;
 			Game.maxLives++;
 			Game.maxEnemies++;
