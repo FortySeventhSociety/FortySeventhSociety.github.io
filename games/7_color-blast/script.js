@@ -27,7 +27,7 @@ var Game = {
 		this.enemyBulletIndex = 0;
 		this.enemyIndex = 0;
 		this.particleIndex = 0;
-		this.maxParticles = 10;
+		this.maxParticles = 25;
 		this.maxEnemies = 9;
 		this.enemiesAlive = 0;
 		this.currentFrame = 0;
@@ -171,7 +171,9 @@ var Game = {
   	this.ctx.fillText("Lives: " + (this.maxLives - this.life), 8, 40);
 
   	// D474designs | Debug code for increasing the difficulty as you progress through the game ///////
-  	// this.ctx.fillText("Enemies: " + this.maxEnemies, 8, 60);
+  	// this.ctx.fillText("Incoming Enemies: " + Game.maxEnemies, 8, 80);
+  	// this.ctx.fillText("Incoming Enemies: " + Game.enemiesAlive, 8, 100);
+  	this.ctx.fillText("Incoming Enemies: " + Game.enemyIndex, 8, 120);
   },
   
 	loop: function(){
@@ -210,10 +212,11 @@ var Game = {
 		}
 
 		// D474designs | Add code to increment lives, and maximum number of enemies every 50 enemy deaths ///////
-		if(Game.counter === Game.counterControl + 50){
+		if(Game.counter === Game.counterControl + 1){
 		  Game.counterControl = Game.counter;
 			Game.maxLives++;
 			Game.maxEnemies++;
+			new Enemy();
 		}
 	}
 
@@ -362,7 +365,8 @@ Enemy.prototype.die = function(){
   	Game.enemiesAlive++;
   	setTimeout(function(){
   		new Enemy();
-	  }, 2000);
+  		// D474designs | Increase spawn rate to account for increased enemy capacity ///////
+	  }, 1000);
 	}
   
 };
