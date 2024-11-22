@@ -206,10 +206,11 @@ var Game = {
 			Game.currentFrame = Game.requestAnimationFrame.call(window, Game.loop);
 		}
 
-		// D474designs | Add code to increment lives every 50 enemy deaths ///////
+		// D474designs | Add code to increment lives, and maximum number of enemies every 50 enemy deaths ///////
 		if(Game.counter === Game.counterControl + 50){
 		  Game.counterControl = Game.counter;
 			Game.maxLives++;
+			Game.maxEnemies++;
 		}
 	}
 
