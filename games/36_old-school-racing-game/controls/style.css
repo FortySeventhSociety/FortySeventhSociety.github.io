@@ -47,12 +47,12 @@
 
 @media only screen and (max-width: 1024px) {
   .arrow-key.left {
-    margin-top: 35%;
+    margin-top: 25%;
     height: 155px;
     width: 155px;
   }
   .arrow-key.right {
-    margin-top: 35%;
+    margin-top: 25%;
     height: 155px;
     width: 155px;
   }

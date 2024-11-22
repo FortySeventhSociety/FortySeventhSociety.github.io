@@ -10,4 +10,23 @@ body {
 canvas {
   margin-top: 3px;
   border-radius: 0.4em;
+  box-shadow: -5px 5px 25px black;
+}
+
+p {
+  font-size: 2.5vw;
+  line-height: .5em;
+  color: cyan;
+  text-shadow: -5px 5px 15px black;
+}
+
+code {
+  background: linear-gradient(grey, #255);
+  line-height: 1.3em;
+  display: inline-block;
+  border-radius: 3px;
+  font-family: monospace;
+  padding: 0px 10px;
+  margin: 0 2px;
+  color: white;
 }
