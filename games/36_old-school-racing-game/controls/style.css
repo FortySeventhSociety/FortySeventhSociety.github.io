@@ -6,6 +6,7 @@
 .arrow-key-container {
   text-align: center;
   transform: translate3d(0, 0, 0);
+  margin-bottom: 5px;
 }
 
 .arrow-key {
