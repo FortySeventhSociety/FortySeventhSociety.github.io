@@ -19,10 +19,13 @@ const ORANGE = { r: 0xfe, g: 0x95, b: 0x22 };
 
 //D474designs | Add additional block colors ///////
 const RED = { r: 252, g: 3, b: 3 };
+const BLUE2 = { r:52, g:67, b:235 };
+const VIOLET = { r:209, g:0, b:91 };
 const PURPLE = { r: 84, g: 0, b: 140 };
 const BLACK = { r: 0, g: 0, b: 0 };
 const WHITE = { r: 255, g: 255, b: 255 };
-const allColors = [BLUE, GREEN, PINK, ORANGE, RED, PURPLE, BLACK, WHITE];
+const GREY = { r:69, g:69, b:69 };
+const allColors = [BLUE, GREEN, PINK, ORANGE, RED, BLUE2, VIOLET, PURPLE, BLACK, WHITE, GREY];
 
 // Gameplay
 const getSpawnDelay = () => {
