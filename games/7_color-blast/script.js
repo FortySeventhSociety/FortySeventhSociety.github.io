@@ -27,7 +27,9 @@ var Game = {
 		this.enemyBulletIndex = 0;
 		this.enemyIndex = 0;
 		this.particleIndex = 0;
-		this.maxParticles = 25;
+
+		// D474designs | Increase the size of explosions ///////
+		this.maxParticles = 10;
 		this.maxEnemies = 9;
 		this.enemiesAlive = 0;
 		this.currentFrame = 0;
@@ -427,8 +429,10 @@ var Particle = function(x, y, color){
     this.id = Game.particleIndex;
     Game.particleIndex++;
     this.life = 0;
-    this.gravity = .05;
-    this.size = 40;
+
+    // D474designs | Increase the size of explosions ///////
+    this.gravity = .45;
+    this.size = 50;
     this.maxlife = 100;
   }
 
