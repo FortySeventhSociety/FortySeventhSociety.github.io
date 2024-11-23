@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 //Vanilla JS
 
 //PLAY IN FULL PAGE VIEW!
@@ -8,10 +11,10 @@ window.addEventListener("DOMContentLoaded", game);
 //General sprite load
 var sprite = new Image();
 var spriteExplosion = new Image();
-sprite.src = 'https://marclopezavila.github.io/planet-defense-game/img/sprite.png';
+sprite.src = './assets/sprite.png';
 
 window.onload = function() {
-    spriteExplosion.src = 'https://marclopezavila.github.io/planet-defense-game/img/explosion.png';
+    spriteExplosion.src = './assets/explosion.png';
 };
 
 //Game
@@ -45,6 +48,9 @@ function game() {
 
     canvas.addEventListener('click', action);
     canvas.addEventListener('mousemove', action);
+
+    // D474designs | Add mobile support ///////
+    canvas.addEventListener('touchmove', action);
     window.addEventListener("resize", update);
 
     function update() {
@@ -88,6 +94,9 @@ function game() {
                         player.deg = 0;
                         canvas.removeEventListener('contextmenu', action);
                         canvas.removeEventListener('mousemove', move);
+
+                        // D474designs | Add mobile support ///////
+                        canvas.removeEventListener('touchmove', move);
                         canvas.style.cursor = "default";
                     } else {
                         canvas.style.cursor = "pointer";
@@ -102,8 +111,14 @@ function game() {
                     if(e.type == 'click') {
                         playing = true;
                         canvas.removeEventListener("mousemove", action);
+
+                        // D474designs | Add mobile support ///////
+                        canvas.removeEventListener("touchmove", action);
                         canvas.addEventListener('contextmenu', action);
                         canvas.addEventListener('mousemove', move);
+
+                        // D474designs | Add mobile support ///////
+                        canvas.addEventListener('touchmove', move);
                         canvas.setAttribute("class", "playing");
                         canvas.style.cursor = "default";
                     } else {
@@ -365,14 +380,14 @@ function game() {
             if(playing) {
                 _asteroids();
 
-                ctx.font = "20px Verdana";
-                ctx.fillStyle = "white";
+                ctx.font = "25px Verdana";
+                ctx.fillStyle = "limeGreen";
                 ctx.textBaseline = 'middle';
                 ctx.textAlign = "left";
-                ctx.fillText('Record: '+record+'', 20, 30);
+                ctx.fillText('High Score: '+record+'', 20, 100);
 
                 ctx.font = "40px Verdana";
-                ctx.fillStyle = "white";
+                ctx.fillStyle = "cyan";
                 ctx.strokeStyle = "black";
                 ctx.textAlign = "center";
                 ctx.textBaseline = 'middle';
@@ -388,22 +403,22 @@ function game() {
             ctx.rect(0,0, cW,cH);
             ctx.fill();
 
-            ctx.font = "60px Verdana";
-            ctx.fillStyle = "white";
+            ctx.font = "80px Verdana";
+            ctx.fillStyle = "red";
             ctx.textAlign = "center";
             ctx.fillText("GAME OVER",cW/2,cH/2 - 150);
 
-            ctx.font = "20px Verdana";
-            ctx.fillStyle = "white";
-            ctx.textAlign = "center";
-            ctx.fillText("Total destroyed: "+ destroyed, cW/2,cH/2 + 140);
-
             record = destroyed > record ? destroyed : record;
 
-            ctx.font = "20px Verdana";
-            ctx.fillStyle = "white";
+            ctx.font = "25px Verdana";
+            ctx.fillStyle = "limeGreen";
             ctx.textAlign = "center";
-            ctx.fillText("RECORD: "+ record, cW/2,cH/2 + 185);
+            ctx.fillText("HIGH SCORE: "+ record, cW/2,cH/2 + 140);
+
+            ctx.font = "25px Verdana";
+            ctx.fillStyle = "cyan";
+            ctx.textAlign = "center";
+            ctx.fillText("ASTEROIDS DESTROYED: "+ destroyed, cW/2,cH/2 + 180);
 
             ctx.drawImage(sprite, 500, 18, 70, 70, cW/2 - 35, cH/2 + 40, 70,70);
 
