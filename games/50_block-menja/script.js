@@ -20,7 +20,7 @@ const ORANGE = { r: 0xfe, g: 0x95, b: 0x22 };
 //D474designs | Add new wireframe ///////
 const LIMEGREEN = { r:0, g:255, b:68 };
 
-//D474designs | Change wireframe color for PINK block
+//D474designs | Change wireframe color for PINK block, and create BOSS ///////
 const YELLOW = { r:207, g:255, b:74 };
 
 //D474designs | Add additional block colors ///////
@@ -32,7 +32,7 @@ const PURPLE = { r: 84, g: 0, b: 140 };
 const BLACK = { r: 0, g: 0, b: 0 };
 const WHITE = { r: 255, g: 255, b: 255 };
 const GREY = { r:69, g:69, b:69 };
-const allColors = [BLUE, GREEN, PINK, ORANGE, LIMEGREEN, RED, GREEN2, BLUE2, PINK2, PURPLE, BLACK, WHITE, GREY];
+const allColors = [BLUE, GREEN, PINK, ORANGE, LIMEGREEN, RED, GREEN2, BLUE2, PINK2, PURPLE, BLACK, WHITE, GREY, YELLOW];
 
 // Gameplay
 const getSpawnDelay = () => {
@@ -42,6 +42,10 @@ const getSpawnDelay = () => {
 	return Math.max(spawnDelay, spawnDelayMin);
 }
 const doubleStrongEnableScore = 2000;
+
+// D474designs | Add BOSS cube
+const tripleStrongEnableScore = 20000;
+const bossThreshold = 40;
 // Number of cubes that must be smashed before activating a feature.
 const slowmoThreshold = 10;
 const strongThreshold = 25;
@@ -56,7 +60,7 @@ let pointerScene = { x: 0, y: 0 };
 // Minimum speed of pointer before "hits" are counted.
 const minPointerSpeed = 60;
 // The hit speed affects the direction the target post-hit. This number dampens that force.
-const hitDampening = 0.1;
+const hitDampening = 0.01;
 // Backboard receives shadows and is the farthest negative Z position of entities.
 const backboardZ = -400;
 const shadowColor = '#262e36';
@@ -900,6 +904,13 @@ const getTarget = (() => {
 		maxSpawns: 1
 	});
 
+	let tripleStrong = false;
+	const bossSpawner = makeSpawner({
+		chance: .005,
+		cooldownPerSpawn: 100000,
+		maxSpawns: 1
+	});
+
 	// Cached array instances, no need to allocate every time.
 	const axisOptions = [
 		['x', 'y'],
@@ -934,7 +945,7 @@ const getTarget = (() => {
 		return target;
 	}
 
-	return function getTarget() {
+	return function getTarget(bossSpawned) {
 		if (doubleStrong && state.game.score <= doubleStrongEnableScore) {
 			doubleStrong = false;
 			// Spawner is reset automatically when game resets.
@@ -943,11 +954,21 @@ const getTarget = (() => {
 			strongSpawner.mutate({ maxSpawns: 2 });
 		}
 
+		if (tripleStrong && state.game.score <= tripleStrongEnableScore) {
+			tripleStrong = false;
+			// Spawner is reset automatically when game resets.
+
+		// D474designs | Add BOSS cube
+		} else if (!tripleStrong && state.game.score > tripleStrongEnableScore) {
+			tripleStrong = true;
+			bossSpawner.mutate({ maxSpawns: 1 });
+		}
+
 		// Target Parameters
 		// --------------------------------
 
 		// D474designs | Add additional block colors ///////
-		let color = pickOne([BLUE, GREEN, ORANGE, RED, GREEN2, BLUE2, PINK2, PURPLE, BLACK, WHITE, GREY]);
+		let color = pickOne([BLUE, GREEN, ORANGE, RED, GREEN2, BLUE2, PINK2, PURPLE, BLACK, WHITE, GREY, YELLOW]);
 		let wireframe = false;
 		let health = 1;
 		let maxHealth = 3;
@@ -964,6 +985,11 @@ const getTarget = (() => {
 		else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
 			color = PINK;
 			health = 3;
+		}
+		// D474designs | Add BOSS cube ///////
+		else if (state.game.cubeCount >= bossThreshold && bossSpawner.shouldSpawn()) {
+			color = YELLOW;
+			health = 5;
 		}
 
 		// Target Creation
@@ -2096,6 +2122,7 @@ function setupCanvases() {
 		ctx.translate(halfW, halfH);
 		draw(ctx, width, height, viewScale);
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
+
 	}
 	const raf = () => requestAnimationFrame(frameHandler);
 	// Start loop
