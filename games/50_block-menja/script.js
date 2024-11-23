@@ -17,15 +17,22 @@ const GREEN =  { r: 0xa6, g: 0xe0, b: 0x2c };
 const PINK =   { r: 0xfa, g: 0x24, b: 0x73 };
 const ORANGE = { r: 0xfe, g: 0x95, b: 0x22 };
 
+//D474designs | Add new wireframe ///////
+const LIMEGREEN = { r:0, g:255, b:68 };
+
+//D474designs | Change wireframe color for PINK block
+const YELLOW = { r:207, g:255, b:74 };
+
 //D474designs | Add additional block colors ///////
 const RED = { r: 252, g: 3, b: 3 };
+const GREEN2 = { r:0, g:189, b:85 };
 const BLUE2 = { r:52, g:67, b:235 };
-const VIOLET = { r:209, g:0, b:91 };
+const PINK2 = { r:255, g:138, b:243 };
 const PURPLE = { r: 84, g: 0, b: 140 };
 const BLACK = { r: 0, g: 0, b: 0 };
 const WHITE = { r: 255, g: 255, b: 255 };
 const GREY = { r:69, g:69, b:69 };
-const allColors = [BLUE, GREEN, PINK, ORANGE, RED, BLUE2, VIOLET, PURPLE, BLACK, WHITE, GREY];
+const allColors = [BLUE, GREEN, PINK, ORANGE, LIMEGREEN, RED, GREEN2, BLUE2, PINK2, PURPLE, BLACK, WHITE, GREY];
 
 // Gameplay
 const getSpawnDelay = () => {
@@ -71,7 +78,9 @@ const targetHitRadius = 50;
 const makeTargetGlueColor = target => {
 	// const alpha = (target.health - 1) / (target.maxHealth - 1);
 	// return `rgba(170,221,255,${alpha.toFixed(3)})`;
-	return 'rgb(170,221,255)';
+
+	// D474designs | Change color of Glue ///////
+	return 'rgb(207,255,74)';
 };
 // Size of target fragments
 const fragRadius = targetRadius / 3;
@@ -884,7 +893,9 @@ const getTarget = (() => {
 	});
 
 	const spinnerSpawner = makeSpawner({
-		chance: 0.1,
+
+		//D474designs | Increase the chance for a Spinner block ///////
+		chance: 0.125,
 		cooldownPerSpawn: 10000,
 		maxSpawns: 1
 	});
@@ -934,7 +945,9 @@ const getTarget = (() => {
 
 		// Target Parameters
 		// --------------------------------
-		let color = pickOne([BLUE, GREEN, ORANGE, RED, PURPLE, BLACK, WHITE]);
+
+		// D474designs | Add additional block colors ///////
+		let color = pickOne([BLUE, GREEN, ORANGE, RED, GREEN2, BLUE2, PINK2, PURPLE, BLACK, WHITE, GREY]);
 		let wireframe = false;
 		let health = 1;
 		let maxHealth = 3;
@@ -943,7 +956,9 @@ const getTarget = (() => {
 		// Target Parameter Overrides
 		// --------------------------------
 		if (state.game.cubeCount >= slowmoThreshold && slowmoSpawner.shouldSpawn()) {
-			color = BLUE;
+
+			//D474designs | Add new wireframe ///////
+			color = LIMEGREEN;
 			wireframe = true;
 		}
 		else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
