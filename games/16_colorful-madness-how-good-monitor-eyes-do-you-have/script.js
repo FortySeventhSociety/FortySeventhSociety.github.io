@@ -1,3 +1,6 @@
+// D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved ///////
+
 function randomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -58,7 +61,7 @@ class Game {
 
   _newGame() {
     this.difficulty = 1;
-    this.difficultyLevel = 30;
+    this.difficultyLevel = 50;
     this.size = 4;
     this.dateStart = new Date();
     this.level = [];
@@ -81,11 +84,11 @@ class Game {
     const text = new Konva.Text({
       text: `YOU WON!
 
-Are you magician? Well done!
+Are you an S-Class Wizard? Well...!
 
-If you like it, I'd appreciate your ❤️
+If you like, I would appreciate your ❤️
 
-(click to restart)
+(Click to restart)
 `,
       fontSize: 13,
       opacity: 0,
@@ -151,9 +154,9 @@ If you like it, I'd appreciate your ❤️
 
 Your score is: ${this.difficulty - 1}
 
-If you like it, I'd appreciated your ❤️
+If you like, I'd appreciated your ❤️
 
-(click to restart)
+(Click to restart)
 `,
       fontSize: 13,
       opacity: 0,

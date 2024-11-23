@@ -1,21 +1,26 @@
+/*/ D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved //////*/
+
 body {
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: darkGray;
 }
 
 footer {
   position: absolute;
   bottom: 5px;
   right: 10px;
+  font-weight: 700;
 }
 footer a:visited,
 footer a:active,
 footer a {
   text-decoration: none;
-  color: blue;
+  color: red;
 }
 footer a:visited:hover,
 footer a:active:hover,
