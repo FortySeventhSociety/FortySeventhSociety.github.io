@@ -44,7 +44,7 @@ const getSpawnDelay = () => {
 const doubleStrongEnableScore = 2000;
 
 // D474designs | Add BOSS cube
-const tripleStrongEnableScore = 20000;
+const tripleStrongEnableScore = 10000;
 const bossThreshold = 40;
 // Number of cubes that must be smashed before activating a feature.
 const slowmoThreshold = 10;
@@ -906,7 +906,7 @@ const getTarget = (() => {
 
 	let tripleStrong = false;
 	const bossSpawner = makeSpawner({
-		chance: .005,
+		chance: .05,
 		cooldownPerSpawn: 100000,
 		maxSpawns: 1
 	});
