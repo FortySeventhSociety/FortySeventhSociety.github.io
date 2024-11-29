@@ -8,6 +8,10 @@
 /* Slideshow container */
 .slideshow-container {
   width: 250px;
+  position: absolute;
+  left: 3px;
+  top: 20%;
+  z-index: 777;
 }
 
 /* Hide the images by default */
