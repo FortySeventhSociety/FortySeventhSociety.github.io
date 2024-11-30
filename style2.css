@@ -12,6 +12,7 @@
   left: 3px;
   top: 20%;
   z-index: 777;
+  min-height: 254px;
 }
 
 /* Hide the images by default */
