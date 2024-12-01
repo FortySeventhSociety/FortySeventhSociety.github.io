@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 R=Math.random,d=document,moves=0
 // mini jquery ;) (equivalent to dev console's native $/$$ functions)
 $ =function(x,c){return(c||d).querySelector(x)}
@@ -9,7 +12,9 @@ lock=function(l){game.classList[l?'add':'remove']('lock')}
 function tile(x,y,v,t){
 	t=document.createElement('button')
 	t.setPos=function(x,y){t.pos={x:x,y:y};t.setAttribute('class','tile x'+x+' y'+(y<0?'h':y))}
-	t.setVal=function(v){t.textContent=v;t.style.backgroundColor='hsl('+((v*100)%360)+',100%,'+(20+v*5)+'%)'}
+
+	/*/ D474designs | Change color palette for tiles //////*/
+	t.setVal=function(v){t.textContent=v;t.style.backgroundColor='hsl('+((v*333)%360)+',100%,'+(20+v*5)+'%)'}
 	t.setVal(v);t.setPos(x,y)
 	return t
 }

@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 * {
 	        box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -17,6 +20,33 @@ body {
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
+
+	/*/ D474designs | Add background //////*/
+	background: radial-gradient(ellipse at top, deeppink, transparent),
+            	radial-gradient(ellipse at bottom, palegoldenrod, transparent),
+            	radial-gradient(ellipse at right, yellowgreen, transparent),
+            	radial-gradient(ellipse at left, hotpink, transparent),
+            	radial-gradient(farthest-corner at 40px 40px, deepskyblue 0%, white 100%);
+}
+
+.backgroundText {
+	top: 3px;
+	left: 3px;
+	position: absolute;
+	color: #0039e6;
+	text-shadow: -5px 0px 5px white;
+	font-size: 9vw;
+}
+.backgroundTextSub {
+	top: 15%;
+	left: 3px;
+	position: absolute;
+	color: #00b2ff;
+	text-shadow: -5px 0px 5px white;
+	font-size: 6vw;
+}
+.switch2 {
+	text-shadow: -5px 0px 5px white;
 }
 
 .tile {
