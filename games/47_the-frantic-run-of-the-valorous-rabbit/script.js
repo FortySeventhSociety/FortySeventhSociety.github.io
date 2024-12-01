@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 //THREEJS RELATED VARIABLES 
 
 var scene,
@@ -163,9 +166,10 @@ function handleMouseDown(event){
 }
 
 function createLights() {
-  globalLight = new THREE.AmbientLight(0xffffff, .9);
 
-  shadowLight = new THREE.DirectionalLight(0xffffff, 1);
+  // D474designs | Make lighting adjustments ///////
+  globalLight = new THREE.AmbientLight(0xffffff, .95);
+  shadowLight = new THREE.DirectionalLight(0xffffff, 1.25);
   shadowLight.position.set(-30, 40, 20);
   shadowLight.castShadow = true;
   shadowLight.shadow.camera.left = -400;
@@ -186,7 +190,9 @@ function createFloor() {
   floorShadow = new THREE.Mesh(new THREE.SphereGeometry(floorRadius, 50, 50), new THREE.MeshPhongMaterial({
     color: 0x7abf8e,
     specular:0x000000,
-    shininess:1,
+
+    // D474designs | Make lighting adjustments ///////
+    shininess:1.5,
     transparent:true,
     opacity:.5
   }));
@@ -867,6 +873,11 @@ Carrot = function() {
   this.mesh.add(this.leaf1);
   this.mesh.add(this.leaf2);
 
+
+  // D474designs | Make Carrots shiny ///////
+  this.mesh.reflectivity = 7;
+  this.mesh.refractionRatio =.4;
+
   this.body.traverse(function(object) {
     if (object instanceof THREE.Mesh) {
       object.castShadow = true;
@@ -1305,6 +1316,11 @@ Tree = function(){
 	this.mesh = new THREE.Object3D();
 	this.trunc = new Trunc();
 	this.mesh.add(this.trunc.mesh);
+
+
+  // D474designs | Make Trees shiny ///////
+  this.mesh.reflectivity = 7;
+  this.mesh.refractionRatio =.4;
 }
 
 
@@ -1342,6 +1358,11 @@ Trunc = function(){
       fruit.position.z = v.z;
       fruit.rotation.x = Math.random()*Math.PI;
       fruit.rotation.y = Math.random()*Math.PI;
+
+
+      // D474designs | Make Fruits shiny ///////
+      fruit.reflectivity = 7;
+      fruit.refractionRatio =.4;
       
       this.mesh.add(fruit);
     }
