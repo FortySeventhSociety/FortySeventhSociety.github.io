@@ -112,7 +112,7 @@ class Stage
     const shadowLight = new PointLight(0xffffff, 0.6, 100);
     shadowLight.position.set(10, 0, 4);
     shadowLight.castShadow = true;
-    shadowLight.shadow.radius = 16;
+    shadowLight.shadow.radius = 32;
     shadowLight.shadow.mapSize.width = 2048;
     shadowLight.shadow.mapSize.height = 2048;
     this.scene.add(shadowLight);
@@ -120,7 +120,7 @@ class Stage
     this.cannonLight = new PointLight(0xEDB458, 0, 100, 2);
     this.cannonLight.position.set(28, -20, 28);
     this.cannonLight.castShadow = true;
-    this.cannonLight.shadow.radius = 2;
+    this.cannonLight.shadow.radius = 4;
     this.cannonLight.shadow.mapSize.width = 256;
     this.cannonLight.shadow.mapSize.height = 256;
     this.scene.add(this.cannonLight);
