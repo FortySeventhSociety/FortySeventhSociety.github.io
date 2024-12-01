@@ -114,7 +114,7 @@ class Stage
     shadowLight.castShadow = true;
 
     // D474designs | Increase light radius for Christmas Decorations ///////
-    shadowLight.shadow.radius = 32;
+    shadowLight.shadow.radius = 48;
     shadowLight.shadow.mapSize.width = 2048;
     shadowLight.shadow.mapSize.height = 2048;
     this.scene.add(shadowLight);
