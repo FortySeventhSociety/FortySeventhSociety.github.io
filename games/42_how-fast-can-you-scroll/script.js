@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved /////// -->
+
 var rainbow = new Rainbow();
 var best = 0;
 rainbow.setSpectrum("#2ecc71","#ff9a42","#e74c3c");
