@@ -1,0 +1,1598 @@
+/* Main reset? */
+
+ul, li {
+}
+
+a {
+}
+
+/* Game and Watch */
+
+body {
+}
+
+#game-and-watch-game-title  {
+}
+
+#gameboy-settings-text, #gameboy-start-text {	
+display:none;
+}
+
+#gameboy-dotmatrix, #game-and-watch-mini-chain, #classic-title, #gameboy-title, #game-and-watch-gameboy-battery, #game-and-watch-gameboy-title, #game-and-watch-gameboy-trim-onoff, #mini-classic-rightbutton-text, #gameboy-button-text-a, #gameboy-button-text-b {
+display:none;
+}
+
+#game-and-watch-game-title span {
+font-size:1.3em;
+vertical-align:bottom;
+line-height:1.2em;
+text-transform:uppercase;	
+}
+
+#game-and-watch-text .button a {
+margin:40px 0;
+position:relative; /* Android not reflecting properly, brings buttons to front */
+z-index:999;	
+}
+
+#game-and-watch-leftbutton-top a:active, #game-and-watch-leftbutton-bottom a:active, #game-and-watch-leftbutton-left a:active, #game-and-watch-leftbutton-right a:active {
+position:relative;
+z-index:9999;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+::-moz-selection { background: red; color: #fff; text-shadow: none; }
+::selection { background: red; color: #fff; text-shadow: none; }
+
+#game-and-watch-type-gameboy, #game-and-watch-type-mini-classic {
+display:none;
+}
+
+
+@font-face {
+    font-family: 'DigitaldreamRegular';
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+font-family: 'PretendoRegular';
+font-weight: normal;
+font-style: normal;
+}
+
+
+#game-and-watch-text {
+text-align:left;
+margin-left:auto;
+margin-right:auto;
+max-width:500px;
+font-size:.9em;
+color:#555;
+margin-top:150px;
+margin-bottom:100px;
+background:rgba(255,255,255,.6);
+padding:10px 30px 30px; 
+border:6px solid rgba(255,255,255,.6);
+position:relative;
+z-index:999;
+line-height:2em;
+}
+
+#game-and-watch {
+z-index:9999;
+border:5px solid transparent;
+-webkit-box-reflect:below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(white)); 
+}
+
+#game-and-watch p {
+margin-bottom:0;
+line-height:1em;
+letter-spacing:-px;
+}
+
+#game-and-watch-case {
+text-transform:uppercase;
+text-align:center;	
+color:#fff;
+border-radius:5px;
+}
+
+#game-and-watch-case-in {
+}
+
+#game-and-watch-left {
+}
+
+#game-and-watch-screen {
+
+}
+
+#game-and-watch-screen-top {
+border-top:10px solid #777;
+border-left:7px solid transparent;
+border-right:7px solid transparent;
+height:0;
+margin-left:-4px;
+margin-right:-4px;
+}
+
+#gameboy-dotmatrix-box {
+display:none;
+}
+
+#game-and-watch-screen-bottom {
+border-left:7px solid transparent;
+border-right:7px solid transparent;
+}
+
+#game-and-watch-game {
+}
+
+#game-and-watch-screen-sheen {
+}
+
+#game-and-watch-screen-sheen-in {
+}
+
+#game-and-watch-badge {
+}
+
+#game-and-watch-leftbutton {
+font-size:.5em;
+}
+
+#game-and-watch-character {
+}
+
+#game-and-watch-leftbutton-horizontal {
+width:98px;
+height:36px;
+background:#eee;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;	
+border-radius:20px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-vertical {
+width:36px;
+height:98px;
+background:#eee;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-top a {
+display:block;
+width:30px;
+height: 30px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-leftbutton-cover {
+width:40px;
+height:35px;
+background: #eee;
+}
+
+#game-and-watch-leftbutton-bottom a {
+display:block;
+width:30px;
+height: 30px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-border-radius:40px;
+position:relative;
+z-index:9999;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-leftbutton-left a {
+top: 65%;
+left: 10%;
+display:block;
+width:30px;
+height: 30px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+cursor: -webkit-grab; cursor: -moz-grab;
+position:relative; /*prevents weird box around button */
+}
+
+#game-and-watch-leftbutton-right a {
+display:block;
+width:30px;
+height: 30px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-rightbutton {
+clear:both;
+width:60px;
+}
+
+#game-and-watch-rightbutton-in {
+width:50px;
+height: 50px;
+border: 5px solid #fff;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+}
+
+#game-and-watch-rightbutton-in a {
+width:50px;
+display:block;
+height: 50px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-rightbutton-in a:active, #gameboy-rightbutton-in a:active {
+-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, .9);
+position:relative;
+z-index:9999;
+}
+
+#gameboy-rightbutton-in a:active {
+border-top:3px solid #000;
+}
+
+#game-and-watch-right {
+font-size:.4em;
+}
+
+#game-and-watch-game-start {
+width:30px;
+font-size:8px;
+height:130px;
+float:left;	
+}
+
+#game-and-watch-start-one, #game-and-watch-start-two, #game-and-watch-start-three {
+width:26px;
+height:13px;
+background:#fff;
+position:relative;
+z-index:999;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-left-gloss {
+width:220px;
+height:226px;
+opacity:.2;
+border-left:126px solid #fff;
+-webkit-border-top-left-radius:550px;
+-webkit-border-top-right-radius:0;
+-moz-border-radius-topleft:550px;
+-moz-border-radius-topright:0;
+border-top-left-radius:550px;
+border-top-right-radius:0;
+-moz-transform:rotate(-90deg);
+-webkit-transform:rotate(-90deg);
+-o-transform:rotate(-90deg);
+-ms-transform:rotate (-90deg);
+transform:rotate(-90deg);
+}
+
+#game-and-watch-right-gloss {
+width:50px;
+height:226px;
+opacity:.2;
+border-left:326px solid #fff;
+-webkit-border-top-left-radius:550px;
+-webkit-border-top-right-radius:0;
+-moz-border-radius-topleft:550px;
+-moz-border-radius-topright:0;
+border-top-left-radius:550px;
+border-top-right-radius:0;
+-moz-transform:rotate(-90deg);
+-webkit-transform:rotate(-90deg);
+-o-transform:rotate(-90deg);
+-ms-transform:rotate (-90deg);
+transform:rotate(-90deg);
+}
+
+#game-and-watch-gamea-text, #game-and-watch-gameb-text, #game-and-watch-time-text {
+clear:both;
+line-height:1.2em;	
+}
+
+#game-and-watch-bottom-edge {
+}
+
+#game-and-watch-bottom-edgetwo {
+}
+
+#game-and-watch-bottom-edgeshadow {
+-webkit-box-shadow:0 10px 15px #444;
+-moz-box-shadow:0 10px 15px #444;
+box-shadow:0 10px 15px #444;
+}
+
+#game-and-watch-start-one, #game-and-watch-start-two, #game-and-watch-start-three {
+width:26px;
+height:13px;
+}
+
+#game-and-watch-start-two {
+width:26px;
+height:13px;
+}
+
+.game-and-watch-start-inner a {
+display:block;
+width:22px;
+height:9px;
+background:#999;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+
+.game-and-watch-start-inner a:active {
+-webkit-box-shadow:inset 0 3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow:inset 0 3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-game-settings {
+width:40px;
+height:100px;
+font-size:6px;
+}
+
+#game-and-watch-game-tiny-pinhole {
+width:10px;
+height:10px;
+background:#fff;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+-moz-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+}
+
+#game-and-watch-screen-in {
+font-family: PretendoRegular;
+text-transform:uppercase;
+font-size:.8em;
+color:#222;
+background: rgb(238,238,238); 
+background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1)));
+background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
+background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
+background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
+-webkit-border-radius:6px;
+-moz-border-radius:6px;
+border-radius:6px;
+}
+
+#game-and-watch-nintendo-logo {
+text-transform:capitalize;
+width:100px;
+height:10px;
+font-size:1.3em;
+line-height:1em;
+color:#000;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+}
+
+
+#mini-classic-logo {
+display:none;
+}
+
+#game-and-watch-leftbutton span {
+letter-spacing:-7px;
+display:none;
+font-size: 1.5em;
+}
+
+#game-and-watch-game-meta {
+line-height:1.5em;
+font-family:DigitaldreamRegular, sans-serif;
+font-size:.6em;
+}
+
+#game-and-watch-meta-branch {
+width:190px;
+height:8px;
+background:#96535a;
+-moz-transform:rotate(11deg);
+-webkit-transform:rotate(11deg);
+-o-transform:rotate(11deg);
+-ms-transform:rotate(11deg);
+transform:rotate(11deg);
+}
+
+.game-and-watch-branch-pattern {
+background:#96535a;
+}
+
+#game-and-watch-game-meta span {
+font-size:1.7em;
+}
+
+#game-and-watch-game-cage {
+}
+
+#game-and-watch-game-cage-in {
+border:3px solid #000;
+position:relative;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+}
+
+#game-and-watch-game-cage-lock {
+background:#000;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+border-radius:3px;
+}
+
+#game-and-watch-game-cage-key-top {
+height:4px;
+background:#c4c6b8;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#game-and-watch-game-cage-key-bottom {
+}
+
+.game-and-watch-game-cage-bar {
+width: 2px;
+height:44px;
+background:#000;
+float:left;
+position:relative;
+z-index:9999
+}
+
+#game-and-watch-game-cage-floor {
+clear:both;
+background:brown;
+}
+
+#game-and-watch-gameboy-speaker li {
+background:#999;	
+height:60px;
+width:6px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow:inset 0 6px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow:inset 0 6px 2px rgba(0, 0, 0, .4);
+box-shadow:inset 0 6px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-gameboy-title {
+display:block;
+}
+
+.sharebox {
+clear:both;
+}
+
+#game-and-watch {
+width:350px;
+border:none;
+-webkit-box-reflect:none;
+}
+
+#game-and-watch-screen {
+width:340px;
+height:230px;
+border:0;
+background:transparent;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-left {
+}
+
+#game-and-watch-right {
+}
+
+#game-and-watch-case-in {
+box-shadow:none;
+background:transparent;
+}
+
+#game-and-watch-screen-sheen {
+height:205px;
+width:220px;
+border:none;
+border-radius:0;
+-webkit-border-bottom-right-radius:0;
+-moz-border-radius-bottomright:0;
+border-bottom-right-radius:0;
+}
+
+#game-and-watch-screen-sheen-in {
+height:205px;
+width:225px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+opacity:.2;
+-webkit-border-bottom-right-radius:0;
+-moz-border-radius-bottomright:0;
+border-bottom-right-radius:0;
+}
+
+#game-and-watch-gamea-text, #game-and-watch-gameb-text, #game-and-watch-time-text {
+display:none;
+}
+
+#game-and-watch-gameboy-title  {
+color:#315594;
+font-size:1em;	
+margin-top: 10px;
+text-align:left;
+font-style:italic;
+font-weight:bold;
+}
+
+#game-and-watch-gameboy-title span {
+font-family: PretendoRegular;
+font-style:normal;	
+font-weight:normal;
+font-size:.8em;
+text-transform:capitalize;
+}
+
+#game-and-watch-leftbutton-right a {
+display:block;
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-leftbutton-left a {
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-leftbutton {
+font-size:.5em;
+}
+
+#game-and-watch-leftbutton-top a {
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-leftbutton-bottom a {
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-right-gloss {
+width:50px;
+height:76px;
+opacity:.2;
+-webkit-border-top-left-radius:550px;
+-webkit-border-top-right-radius:0;
+-moz-border-radius-topleft:550px;
+-moz-border-radius-topright:0;
+border-top-left-radius:550px;
+border-top-right-radius:0;
+-moz-transform:rotate(-90deg);
+-webkit-transform:rotate(-90deg);
+-o-transform:rotate(-90deg);
+-ms-transform:rotate(-90deg);
+transform:rotate(-90deg);
+}
+
+#game-and-watch-badge, #game-and-watch-left-gloss, #game-and-watch-start-three, #game-and-watch-character-donkey {
+display:none;
+}
+
+#game-and-watch-leftbutton-cover {
+display:none;
+}
+
+#game-and-watch-rightbutton {
+color:#444;
+}
+
+#game-and-watch-game-settings {
+display:none;
+}
+
+.name {
+display:none;
+}
+
+#classic-title {
+display:none;
+}
+
+#gameboy-title {
+display:block;
+text-align:center;
+}
+
+#gameboy-title span {
+color:#860a48;
+}
+
+#classic-title span {
+color:orange;
+}
+
+#game-and-watch-nintendo-logo {
+display:none;
+}
+
+#game-and-watch-game-tiny-pinhole a {
+display:block;
+width:10px;
+height:9px;
+background:#777;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-screen-in {
+font-size:.7em;
+background:transparent;
+border: none;
+}
+
+#game-and-watch-character {
+display:none;
+}
+
+#game-and-watch-rightbutton-in {
+border:none;
+height:40px;
+width:40px;
+}
+
+#game-and-watch-case {
+overflow:hidden;
+background:#eae8db;
+height: 530px;
+background: -moz-linear-gradient(left, rgba(183,180,174,1) 0%, rgba(216,215,203,1) 16%, rgba(234,232,219,1) 39%, rgba(234,232,219,1) 89%, rgba(216,215,203,1) 97%, rgba(183,180,174,1) 100%); 
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(183,180,174,1)), color-stop(16%,rgba(216,215,203,1)), color-stop(39%,rgba(234,232,219,1)), color-stop(89%,rgba(234,232,219,1)), color-stop(97%,rgba(216,215,203,1)), color-stop(100%,rgba(183,180,174,1))); 
+background: -webkit-linear-gradient(left, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+background: -o-linear-gradient(left, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+background: -ms-linear-gradient(left, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+background: linear-gradient(to right, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+-webkit-border-top-left-radius:15px;
+-moz-border-radius-topleft:15px;
+border-top-left-radius:15px;
+-webkit-border-top-right-radius:15px;
+-moz-border-radius-topright:15px;
+border-top-right-radius:15px;
+-webkit-border-bottom-left-radius:10px;
+-moz-border-radius-bottomleft:10px;
+border-bottom-left-radius:10px;
+-webkit-border-bottom-right-radius:40px;
+-moz-border-radius-bottomright:40px;
+border-bottom-right-radius:40px;
+}
+
+#gameboy-start-text {
+display:block;
+font-weight:bold;
+}
+
+#gameboy-settings-text {	
+color:#315594;
+font-weight:bold;
+display:block;
+
+font-size:1.4em;
+}
+
+#gameboy-dotmatrix-box {
+display:block;
+}
+
+#gameboy-dotmatrix {
+display:block;
+font-family:sans-serif;
+color:#ccc;
+font-size:.7em;
+height:10px;
+line-height:1em;
+position:relative;
+z-index:99999;
+}
+
+#gameboy-dotmatrix-lineone {
+background:blue;
+opacity:.7;
+width:280px;
+position:relative;
+z-index:99999;}
+
+#gameboy-dotmatrix-linetwo {
+background:red;
+width:280px;
+opacity:.7;
+position:relative;
+z-index:99999;
+}
+
+#gameboy-button-text-a {
+width:50px;
+color:#315594;
+display:block;
+font-weight:bold;
+-moz-transform:rotate(-32deg);
+-webkit-transform:rotate(-32deg);
+-o-transform:rotate(-32deg);
+-ms-transform:rotate(-32deg);
+transform:rotate(-32deg);
+}
+
+#gameboy-button-text-b {
+width:50px;
+display:block;
+color:#315594;
+font-weight:bold;
+-moz-transform:rotate(-32deg);
+-webkit-transform:rotate(-32deg);
+-o-transform:rotate(-32deg);
+-ms-transform:rotate(-32deg);
+transform:rotate(-32deg);
+}
+
+#game-and-watch-rightbutton-text {
+display:none;	
+}
+
+#game-and-watch-bottom-edgeshadow {
+-webkit-box-shadow:0 10px 15px #444;
+-moz-box-shadow:0 10px 15px #444;
+box-shadow:0 10px 15px #444;
+}
+
+#game-and-watch-gameboy-battery {
+display:block;	
+}
+
+#game-and-watch-gameboy-trim {
+clear:both;
+padding:2px;
+background: #ccc;	
+-webkit-box-shadow:  0 -1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-gameboy-trim-onoff {
+display:block;
+line-height: 1em;
+font-size:.7em;
+text-align:left;
+width:85px;
+height:11px;
+background: #ccc;	
+color: #ccc;
+text-shadow:#fff 0 -1px 0;
+position:relative;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, .4);
+-moz-box-shadow: 0 -1px 4px rgba(0, 0, 0, .4);
+box-shadow: 0 -1px 4px rgba(0, 0, 0, .4);
+}
+
+#gameboy-onleft {
+width:0;
+height:0;
+}
+
+#gameboy-onright {
+width:0;
+height:0;
+}
+
+#game-and-watch-gameboy-trim-l {
+width:2px;
+height:24px;
+background: #ccc;	
+position:relative;
+}
+
+#game-and-watch-gameboy-trim-r {
+width:2px;
+height:24px;
+background: #ccc;	
+position:relative;
+}
+
+#game-and-watch-gameboy-light {
+width:10px;
+height: 10px;
+opacity:.8;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-gameboy-battery {
+width:25px;
+font-size:5px;
+text-align:center;
+position:relative;
+z-index:9999;
+}
+
+#game-and-watch-type-watch, #game-and-watch-type-mini-classic {
+display:none
+}
+
+#game-and-watch-type-gameboy {
+display:block
+}
+
+#game-and-watch-start-one, #game-and-watch-start-two {
+width:35px;
+height:8px;
+background:#999;
+}
+
+.game-and-watch-start-inner a {
+width:35px;
+}
+
+#game-and-watch-screen-top, #game-and-watch-screen-bottom {
+display:none;
+}
+
+#game-and-watch-game {
+-webkit-border-bottom-right-radius:40px;
+-moz-border-radius-bottomright:40px;
+border-bottom-right-radius:40px;
+}
+
+#game-and-watch-bottom-row {
+height:70px;
+}
+
+#game-and-watch-jr {
+}
+
+#game-and-watch-reed {
+}
+#game-and-watch-reed.game-and-watch-reed-up {
+}
+
+#game-and-watch-bottom-row #game-and-watch-reed {
+display: none;
+}
+
+
+#game-and-watch-leftbutton-vertical {
+background:#222;
+width:30px;
+height:88px;
+-webkit-border-radius:4px;
+border-top: solid 1px #999;
+border-left: solid 1px #000;
+border-right: solid 1px #000;
+border-bottom: solid 1px #000;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+border-radius:4px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-horizontal {
+background:#222;
+width:90px;
+height:30px;
+margin-top:-20px;
+margin-bottom:7px;
+border-top: solid 1px #999;
+border-left: solid 1px #000;
+border-right: solid 1px #000;
+border-bottom: solid 1px #000;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+border-radius:4px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-rightbutton-in a {
+width:40px;
+height: 40px;
+border: 0;
+background:#860a48;
+position:relative;
+z-index:9999;
+border-top:3px solid #de4491;
+background: -moz-linear-gradient(top, rgba(134,10,72,1) 0%, rgba(132,31,80,1) 44%, rgba(134,10,72,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(134,10,72,1)), color-stop(44%,rgba(132,31,80,1)), color-stop(100%,rgba(134,10,72,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* W3C */
+margin-right:20px;
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+}
+
+#game-and-watch-start-two {
+}
+
+#gameboy-rightbutton-in a {
+width:40px;
+height: 40px;
+display:block;
+position:relative;
+z-index:99;
+background:#860a48;
+background: -moz-linear-gradient(top, rgba(134,10,72,1) 0%, rgba(132,31,80,1) 44%, rgba(134,10,72,1) 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(134,10,72,1)), color-stop(44%,rgba(132,31,80,1)), color-stop(100%,rgba(134,10,72,1))); 
+background: -webkit-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+background: -o-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+background: -ms-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+background: linear-gradient(to bottom, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+margin-top:-95px;
+margin-right:100px;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-bottom-edge {
+border-top: 10px solid #ccc;
+}
+
+#game-and-watch-game-start {
+height:60px;
+color:#444;
+width:90px;
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+}
+
+#game-and-watch-bottom-edgetwo {
+}
+
+#game-and-watch-game-title  {
+display:none;
+}
+
+#game-and-watch-reeds {
+display:none;
+}
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+#game-and-watch-game-title {
+display:none;
+}
+
+#game-and-watch-mini-chain {
+display:block;
+width:50px;
+}
+
+.game-and-watch-mini-chain-link-top {
+width:30px;
+background:#ccc;
+height:15px;
+moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+-ms-transform:rotate (-40deg);
+transform:rotate(-40deg);
+-webkit-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+}
+
+.game-and-watch-mini-chain-linkin-top {
+width:30px;
+background:#2989d8;
+height:15px;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+}
+
+.game-and-watch-mini-chain-link {
+width:10px;
+height:15px;
+background:#ccc;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+}
+
+.game-and-watch-mini-chain-linkin {
+background:#2989d8;
+width:10px;
+height:15px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+.game-and-watch-mini-chain-bottom {
+background: rgb(239,202,134); 
+background: -moz-linear-gradient(-45deg, rgba(239,202,134,1) 0%, rgba(252,194,58,1) 100%); 
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(239,202,134,1)), color-stop(100%,rgba(252,194,58,1))); 
+background: -webkit-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -o-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -ms-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: linear-gradient(135deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+width:20px;
+height:20px;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+-webkit-box-shadow: inset 0 -1px 6px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -1px 6px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -1px 6px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch {
+width:240px;
+border:none;
+-webkit-box-reflect:none;
+-moz-transform:rotate(-11deg);
+-webkit-transform:rotate(-11deg);
+-o-transform:rotate(-11deg);
+-ms-transform:rotate(-11deg);
+transform:rotate(-11deg);
+}
+
+#game-and-watch-screen {
+width:230px;
+height:190px;
+float:none;
+background:transparent;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-screen-sheen {
+height:185px;
+width:228px;
+border:none;
+-webkit-border-bottom-right-radius:25px;
+-moz-border-radius-bottomright:25px;
+border-bottom-right-radius:25px;
+display:none;
+}
+
+#game-and-watch-screen-sheen-in {
+height:165px;
+width:210px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+opacity:.2;
+display:none;
+}
+
+#game-and-watch-left {
+float:none;
+}
+
+#game-and-watch-right {
+float:none;
+}
+
+#game-and-watch-case-in {
+background:transparent;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#mini-classic-rightbutton-text {
+display:block;
+width:80px;
+}
+
+#game-and-watch-rightbutton-text {
+display:none;	
+}
+
+#game-and-watch-leftbutton-right a {
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-leftbutton-left a {
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-leftbutton {
+font-size:0;
+}
+
+#game-and-watch-leftbutton-top a {
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-leftbutton-bottom a {
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-badge, #game-and-watch-right-gloss, #game-and-watch-left-gloss, #game-and-watch-start-two, #game-and-watch-start-three, #game-and-watch-character-donkey {
+display:none;
+}
+
+#game-and-watch-leftbutton-cover {
+display:none;
+}
+
+#game-and-watch-rightbutton {
+color:#444;
+width:80px;
+}
+
+#game-and-watch-game-start {
+display:none;
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+}
+
+#game-and-watch-game-settings {
+color:#444;
+height:70px;
+}
+
+.name {
+display:none;
+}
+
+#classic-title {
+display:block;
+position:relative;
+z-index:9;
+}
+
+#classic-title span {
+color:orange;
+}
+
+#game-and-watch-game-tiny-pinhole a {
+display:block;
+width:10px;
+height:9px;
+background:#777;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-screen-in {
+font-size:.7em;
+background:transparent;
+border-bottom: none;
+}
+
+#game-and-watch-case {
+background: rgb(239,202,134); 
+background: -moz-linear-gradient(-45deg, rgba(239,202,134,1) 0%, rgba(252,194,58,1) 100%); 
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(239,202,134,1)), color-stop(100%,rgba(252,194,58,1))); 
+background: -webkit-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -o-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -ms-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: linear-gradient(135deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+-webkit-border-bottom-right-radius:40px;
+-moz-border-radius-bottomright:40px;
+border-bottom-right-radius:40px;
+}
+
+#game-and-watch-bottom-edgeshadow {
+-webkit-box-shadow:0 10px 13px #444;
+-moz-box-shadow:0 10px 13px #444;
+box-shadow:0 10px 13px #ccc;
+}
+
+#game-and-watch-screen-top, #game-and-watch-screen-bottom {
+display:none;
+}
+
+#game-and-watch-game {
+height:155px;
+-webkit-border-bottom-right-radius:25px;
+-moz-border-radius-bottomright:25px;
+border-bottom-right-radius:25px;
+}
+
+#game-and-watch-leftbutton-vertical {
+background:#222;
+width:20px;
+height:65px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-horizontal {
+background:#222;
+width:70px;
+height:20px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-rightbutton-in  {
+}
+
+#game-and-watch-rightbutton-in a {
+width:50px;
+height: 50px;
+background: #444;
+background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,1) 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,126,125,1)), color-stop(100%,rgba(14,14,14,1))); 
+background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+background: -o-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+background: -ms-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-bottom-edge {
+}
+
+#game-and-watch-bottom-edgetwo {
+}
+
+#game-and-watch-game-tiny-pinhole {
+width:16px;
+height:16px;
+background:#fff;
+-webkit-border-radius:15px;
+-moz-border-radius:15px;
+border-radius:15px;
+-webkit-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+-moz-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+}
+
+#game-and-watch-game-tiny-pinhole a {
+display:block;
+width:14px;
+height:14px;
+background:#777;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-type-gameboy, #game-and-watch-type-watch {
+display:none
+}
+
+#game-and-watch-type-mini-classic {
+display:block
+}
+
+.sharebox {clear:both;}
+
+
+#game-and-watch-game-rope {
+}
+
+#game-and-watch-keybush-lower {
+display:none;
+}
+
+#game-and-watch-meta-branch {
+width:120px;	
+}
+
+#game-and-watch-jr-coconut {
+display:none
+}
+
+#game-and-watch-level-two-branch {
+width:55px;		
+}
+
+#game-and-watch-reed {
+height:10px;
+width: 20px;
+}
+
+#game-and-watch-reeds {
+width:210px;
+height:35px;
+}
+
+#game-and-watch-nintendo-logo {
+display:none;
+}
+
+
+#game-and-watch-gameboy-speaker {
+display:none;
+}
+
+
+#mini-classic-logo {
+display:block;
+font-family:PretendoRegular;
+width:100px;
+line-height:1em;
+height:10px;
+color:red;
+font-size:.5em;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+position:relative;
+z-index:99999999999999;
+}
+
+#game-and-watch-character {
+visibility:hidden	
+}
+
+#game-and-watch-bottom-row {
+height:70px;
+}
+
+.game-and-watch-chain-link-top,.game-and-watch-chain-linkround, .game-and-watch-chain-link {
+width:2px;
+height:2px;
+}
+
+#game-and-watch-level-two {
+height:65px;	
+}
+
+#game-and-watch-game-cage-in {
+}
+
+#game-and-watch-level-two-seat {
+width:40px;
+height:8px;
+background:#96535a;
+}
+
+#game-and-watch-level-two-vinestep {
+-moz-transform:rotate(0deg);
+-webkit-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+transform:rotate(0deg);
+}
+
+#game-and-watch-level-two-vine {
+width:33px;
+height:4px;
+}
+
+#game-and-watch-reed-tall {
+display:none;
+}
+#game-and-watch-character-donkey-caged {
+}
+
+#gameboy-dotmatrix-box {
+display:none;
+}
+
+#game-and-watch-keybush-lower {
+display:none;
+}
+#game-and-watch-keybush {
+display:none;
+}
+
+}

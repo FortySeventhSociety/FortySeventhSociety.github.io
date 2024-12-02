@@ -1,0 +1,3529 @@
+/* Main reset? */
+
+ul, li {
+margin:0;
+padding:0;
+border:0;
+list-style:none;
+}
+
+a {
+text-decoration:none;
+color:#000
+}
+
+/* Game and Watch */
+
+body {
+font-family:sans-serif;
+text-align:center;
+  padding-top:130px;
+margin:0;
+background: #2989d8;
+}
+
+#game-and-watch-game-title  {
+padding-top:10px;
+line-height:1.5em;
+}
+
+#gameboy-settings-text, #gameboy-start-text {	
+display:none;
+}
+
+#gameboy-dotmatrix, #game-and-watch-mini-chain, #classic-title, #gameboy-title, #game-and-watch-gameboy-battery, #game-and-watch-gameboy-title, #game-and-watch-gameboy-trim-onoff, #mini-classic-rightbutton-text, #gameboy-button-text-a, #gameboy-button-text-b {
+display:none;
+}
+
+#game-and-watch-game-title span {
+font-size:1.3em;
+vertical-align:bottom;
+line-height:1.2em;
+text-transform:uppercase;	
+}
+
+#game-and-watch-text .button a {
+margin:40px 0;
+position:relative; /* Android not reflecting properly, brings buttons to front */
+z-index:999;	
+}
+
+#game-and-watch-leftbutton-top a:active, #game-and-watch-leftbutton-bottom a:active, #game-and-watch-leftbutton-left a:active, #game-and-watch-leftbutton-right a:active {
+position:relative;
+z-index:9999;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+::-moz-selection { background: red; color: #fff; text-shadow: none; }
+::selection { background: red; color: #fff; text-shadow: none; }
+
+#game-and-watch-type-gameboy, #game-and-watch-type-mini-classic {
+display:none;
+}
+
+
+@font-face {
+    font-family: 'DigitaldreamRegular';
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+font-family: 'PretendoRegular';
+font-weight: normal;
+font-style: normal;
+}
+
+
+#game-and-watch-text {
+text-align:left;
+margin-left:auto;
+margin-right:auto;
+max-width:500px;
+font-size:.9em;
+color:#555;
+margin-top:150px;
+margin-bottom:100px;
+background:rgba(255,255,255,.6);
+padding:10px 30px 30px; 
+border:6px solid rgba(255,255,255,.6);
+position:relative;
+z-index:999;
+line-height:2em;
+}
+
+#game-and-watch {
+width:700px;
+margin-left:auto;
+position:relative;
+z-index:9999;
+margin-right:auto;
+margin-bottom:90px;
+margin-top:120px;
+border:5px solid transparent;
+-webkit-box-reflect:below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(white)); 
+}
+
+#game-and-watch p {
+margin-bottom:0;
+line-height:1em;
+letter-spacing:-px;
+}
+
+#game-and-watch-case {
+background:#eae8db;
+padding-top:10px;
+height:350px;
+padding-bottom:10px;
+text-transform:uppercase;
+text-align:center;	
+color:#fff;
+border-radius:5px;
+}
+
+#game-and-watch-case-in {
+margin-left:10px;
+margin-right:10px;
+background: #55bac6; 
+height:350px;
+background: -moz-linear-gradient(top, #55bac6 0%, #53b6bb 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#55bac6), color-stop(100%,#53b6bb)); 
+background: -webkit-linear-gradient(top, #55bac6 0%,#53b6bb 100%); 
+background: -o-linear-gradient(top, #55bac6 0%,#53b6bb 100%); 
+background: -ms-linear-gradient(top, #55bac6 0%,#53b6bb 100%); 
+background: linear-gradient(to bottom, #55bac6 0%,#53b6bb 100%); 
+-webkit-box-shadow:inset 1px 1px 4px #000;
+-moz-box-shadow:inset 1px 1px 4px #000;
+box-shadow:inset 1px 1px 4px #000;
+}
+
+#game-and-watch-left {
+float:left;
+margin-right:10px;
+margin-left:20px;
+}
+
+#game-and-watch-screen {
+width:410px;
+height:290px;
+float:left;
+margin-top:25px;
+border-top:4px solid #222;
+border-left:4px solid #222;
+border-right:4px solid #222;
+border-bottom:4px solid #222;
+background:#444;
+padding:1px 5px 5px 5px;
+position:relative;
+z-index:999;
+-webkit-border-radius:6px;
+-moz-border-radius:6px;
+border-radius:6px;
+-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-screen-top {
+border-top:10px solid #777;
+border-left:7px solid transparent;
+border-right:7px solid transparent;
+height:0;
+margin-left:-4px;
+margin-right:-4px;
+}
+
+#gameboy-dotmatrix-box {
+display:none;
+}
+
+#game-and-watch-screen-bottom {
+border-bottom:10px solid #222;
+border-left:7px solid transparent;
+border-right:7px solid transparent;
+height: 0;
+margin-left:-5px;
+margin-right:-5px;
+}
+
+#game-and-watch-game {
+height:195px;
+padding:5px;
+background:#c4c6b8;
+margin-bottom:8px;
+border:5px solid #fff;
+overflow:hidden;
+margin-left:10px;
+margin-right:10px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow:inset -3px 4px 15px #000;
+-moz-box-shadow:inset -3px 4px 15px #000;
+box-shadow:inset -3px 4px 15px #000;
+}
+
+#game-and-watch-screen-sheen {
+height:205px;
+width:380px;
+margin-bottom:-294px;
+border:5px solid #fff;
+overflow:hidden;
+
+margin-left:auto;
+margin-right:auto;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow:inset -3px 4px 15px #000;
+-moz-box-shadow:inset -3px 4px 15px #000;
+box-shadow:inset -3px 4px 15px #000;
+position:relative;
+z-index:9999;
+}
+
+#game-and-watch-screen-sheen-in {
+height:205px;
+position:relative;
+z-index:9999;
+opacity:.2;
+background: -moz-linear-gradient(-45deg, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%); 
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f2f6f8), color-stop(50%,#d8e1e7), color-stop(51%,#b5c6d0), color-stop(100%,#e0eff9)); 
+background: -webkit-linear-gradient(-45deg, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); 
+background: -o-linear-gradient(-45deg, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); 
+background: -ms-linear-gradient(-45deg, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); 
+background: linear-gradient(135deg, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%);
+-webkit-box-shadow:inset -83px 94px 75px #5f62c1;
+-moz-box-shadow:inset -83px 94px 75px #5f62c1;
+box-shadow:inset -83px 94px 75px #5f62c1;
+}
+
+#game-and-watch-jr-coconut {
+margin-left:90px;
+margin-top:-15px;
+position:relative;
+}
+
+#game-and-watch-jr-coconut-main {
+width:12px;
+background:#000;
+margin-bottom:-20px;
+margin-left:auto;	
+margin-right:auto;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-jr-coconut-leaf {
+width:4px;
+height:7px;
+background:#000;
+border-bottom:1px solid #444;
+margin-top:-8px;
+margin-right:8px;
+float:right;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+-ms-transform:rotate (-40deg);
+transform:rotate(-40deg);
+}
+
+#game-and-watch-jr-coconut-main-highlight {
+width:5px;
+padding-top:2px;
+height:10px;
+background:#c4c6b8;
+margin-bottom:-20px;
+margin-left:1px;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-jr-coconut-string {
+border:1px solid #000;
+width:0;
+height:5px;
+margin-left:auto;
+margin-right:auto;
+}
+
+#game-and-watch-reeds {
+width:370px;
+height:35px;
+}
+
+#game-and-watch-reed {
+height:30px;
+width: 30px;
+margin-left:30px;
+margin-right:10px;
+float:right;
+}
+
+#game-and-watch-reed-tall {
+height:70px;
+width: 30px;
+margin-top:-50px;
+margin-left:30px;
+margin-right:10px;
+float:right;
+}
+
+#game-and-watch-reed-stem-tall {
+margin-left:15px;
+height:58px;
+width:2px;
+background:green;
+}
+
+.game-and-watch-reed-up {
+margin-top:-15px;
+}
+
+#game-and-watch-reed-stem {
+margin-left:15px;
+height:18px;
+width:2px;
+background:green;
+}
+
+#game-and-watch-reed-stem-leaf {
+background:green;
+float:left;
+padding:4px;
+margin-top:0;
+margin-left:15px;
+-webkit-border-top-left-radius:0;
+-webkit-border-top-right-radius:60px;
+-webkit-border-bottom-left-radius:90px;
+-webkit-border-bottom-right-radius:0;
+-moz-border-radius-topleft:0;
+-moz-border-radius-topright:60px;
+-moz-border-radius-bottomleft:90px;
+-moz-border-radius-bottomright:0;
+border-top-left-radius:0;
+border-top-right-radius:60px;
+border-bottom-left-radius:90px;
+border-bottom-right-radius:0px;
+}
+
+#game-and-watch-bottom-row #game-and-watch-reed {
+height:25px;
+width: 30px;
+margin-top:4px;
+margin-left:30px;
+margin-right:10px;
+float:right;
+-moz-transform:rotate(180deg);
+-webkit-transform:rotate(180deg);
+-o-transform:rotate(180deg);
+-ms-transform:rotate(180deg);
+transform:rotate(180deg);
+}
+
+#game-and-watch-key {
+width:20px;
+margin-top:-30px;
+}
+
+#game-and-watch-keybush {
+width:40px;
+height:20px;
+background:green;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#game-and-watch-keybush-in-one {
+margin-top:-10px;
+border-top:36px solid green;
+border-left:9px solid transparent;
+border-right:9px solid transparent;
+height: 0;
+width:0;
+-moz-transform:rotate(70deg);
+-webkit-transform:rotate(70deg);
+-o-transform:rotate(70deg);
+-ms-transform:rotate(70deg);
+transform:rotate(70deg);
+}
+
+#game-and-watch-keybush-in-two {
+margin-top:-45px;
+border-bottom:36px solid green;
+border-left:7px solid transparent;
+border-right:7px solid transparent;
+height: 0;
+width:0;
+margin-left:30px;
+-moz-transform:rotate(100deg);
+-webkit-transform:rotate(100deg);
+-o-transform:rotate(100deg);
+-ms-transform:rotate(100deg);
+transform:rotate(100deg);
+}
+
+#game-and-watch-keybush-in-three {
+margin-top:-45px;
+border-top:36px solid green;
+border-left:7px solid transparent;
+border-right:7px solid transparent;
+height: 0;
+width:0;
+-moz-transform:rotate(100deg);
+-webkit-transform:rotate(100deg);
+-o-transform:rotate(100deg);
+-ms-transform:rotate(100deg);
+transform:rotate(100deg);
+}
+
+#game-and-watch-keybush-in-four {
+margin-top:-5px;
+border-top:16px solid green;
+border-left:15px solid transparent;
+border-right:15px solid transparent;
+height: 0;
+width:0;
+margin-left:5px;
+-moz-transform:rotate(10deg);
+-webkit-transform:rotate(10deg);
+-o-transform:rotate(10deg);
+-ms-transform:rotate(10deg);
+transform:rotate(10deg);
+}
+
+#game-and-watch-keybush #game-and-watch-highlight-one, #game-and-watch-keybush #game-and-watch-highlight-two, #game-and-watch-keybush #game-and-watch-highlight-three {
+margin-top:-24px;
+float:left;
+}
+
+#game-and-watch-keybush-lower {
+width:40px;
+height:15px;
+margin-top:25px;
+margin-left:50px;
+background:green;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#game-and-watch-level-two-bush-right #game-and-watch-keybush-in-one  {
+margin-top: 20px;
+}
+
+#game-and-watch-key-string {
+border:1px solid #000;
+width:0;
+height:10px;
+margin-left:2px;
+}
+
+#game-and-watch-key-top {
+border:1px solid #000;
+width:4px;
+height:4px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#game-and-watch-key-main {
+border:1px solid #000;
+width:0;
+height:5px;
+margin-left:3px;
+}
+
+#game-and-watch-key-end {
+background:#000;
+width:4px;
+height:4px;
+margin-left:3px;
+}
+
+#game-and-watch-chain {
+clear:both;
+position:relative;
+margin-left:50px;
+}
+
+.game-and-watch-chain-link-top {
+border:2px solid #000;
+width:1px;
+height:3px;
+border-radius:10px;
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+-ms-transform:rotate(-40deg);
+transform:rotate(-40deg);
+}
+
+.game-and-watch-chain-link {
+border:2px solid #000;
+width:1px;
+height:2px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+.game-and-watch-chain-linkround {
+border:2px solid #000;
+width:3px;
+height:3px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#game-and-watch-chomp-flip {
+width:20px;
+margin-left:20px;
+}
+
+#game-and-watch-chomp {
+width:20px;
+margin-top:58px;
+height:10px;
+margin-left:60px;
+}
+
+.game-and-watch-chomp-tooth {
+float:right;
+margin-left:0;
+border-top:5px solid #000;
+border-left:2px solid transparent;
+border-right:2px solid transparent;
+}
+
+.game-and-watch-chomp-lower-tooth {
+float:right;
+margin-top:-3px;
+border-bottom:5px solid #000;
+border-left:2px solid transparent;
+border-right:2px solid transparent;
+}
+
+#game-and-watch-chomp-teeth {
+width:15px;
+border-top:3px solid #000;
+-moz-transform:rotate(-19deg);
+-webkit-transform:rotate(-19deg);
+-o-transform:rotate(-19deg);
+-ms-transform:rotate(-19deg);
+transform:rotate(-19deg);
+}
+
+#game-and-watch-chomp-teeth-lower {
+width:15px;
+margin-top:5px;
+margin-bottom:3px;
+border-bottom:3px solid #000;
+}
+
+#game-and-watch-level-two-branch {
+width:210px;
+height:8px;
+margin-right:50px;
+background:#96535a;
+float:right;
+}
+
+#game-and-watch-level-two-vinestep {
+width:35px;
+height:4px;
+margin-bottom:4px;
+background:green;
+margin-left:-5px;
+float:left;
+opacity:.6;
+-moz-transform:rotate(20deg);
+-webkit-transform:rotate(20deg);
+-o-transform:rotate(20deg);
+-ms-transform:rotate(20deg);
+transform:rotate(20deg);
+}
+
+#game-and-watch-level-two-vine {
+width:43px;
+height:4px;
+margin-top:4px;
+margin-left:-3px;
+background:green;
+float:left;
+opacity:.6;
+}
+
+#game-and-watch-level-two-seat {
+width:40px;
+height:8px;
+background:#96535a;
+float:left;
+margin-top:-6px;
+}
+
+#game-and-watch-level-two-floor {
+height:8px;
+clear:both;
+background:#96535a;
+margin-left:auto;
+margin-right:auto;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+border-radius:3px;
+}
+
+#game-and-watch-level-two-bush {
+width:38px;
+height:38px;
+float:left;
+margin-top:25px;
+margin-left:-15px;
+margin-bottom:-15px;
+background:green;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+}
+
+#game-and-watch-level-two-bush-in-one {
+margin-top:10px;
+border-left:20px solid green;
+border-top:7px solid transparent;
+border-bottom:7px solid transparent;
+height:0;
+width:0;
+margin-left:30px;
+-moz-transform:rotate(5deg);
+-webkit-transform:rotate(5deg);
+-o-transform:rotate(5deg);
+-ms-transform:rotate(5deg);
+transform:rotate(5deg);
+}
+
+#game-and-watch-level-two-bush-in-two {
+margin-top:-34px;
+border-bottom:15px solid green;
+border-left:7px solid transparent;
+border-right:7px solid transparent;
+height:0;
+width:0;
+margin-left:5px;
+-moz-transform:rotate(5deg);
+-webkit-transform:rotate(5deg);
+-o-transform:rotate(5deg);
+-ms-transform:rotate(5deg);
+transform:rotate(5deg);
+
+}
+#game-and-watch-level-two-bush-in-three {
+margin-top:-10px;
+border-bottom: 16px solid green;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+height:0;
+width:0;
+margin-left:25px;
+-moz-transform:rotate(25deg);
+-webkit-transform:rotate(25deg);
+-o-transform:rotate(25deg);
+-ms-transform:rotate(25deg);
+transform:rotate(25deg);
+}
+
+#game-and-watch-level-two-bush-in-four {
+margin-top:-5px;
+border-bottom: 20px solid green;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+height:0;
+width:0;
+margin-left:35px;
+-moz-transform:rotate(55deg);
+-webkit-transform:rotate(55deg);
+-o-transform:rotate(55deg);
+-ms-transform:rotate(55deg);
+transform:rotate(55deg);
+}
+
+#game-and-watch-highlight-one, #game-and-watch-highlight-two, #game-and-watch-highlight-three {
+border-bottom: 12px solid #70b269;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+height:0;
+width:0;
+-moz-transform:rotate(25deg);
+-webkit-transform:rotate(25deg);
+-o-transform:rotate(25deg);
+-ms-transform:rotate(25deg);
+transform:rotate(25deg);
+}
+
+#game-and-watch-level-two-bush-right #game-and-watch-highlight-one, #game-and-watch-level-two-bush-right #game-and-watch-highlight-two, #game-and-watch-level-two-bush-right #game-and-watch-highlight-three {
+margin-left:2px;
+margin-top:-5px;
+}
+
+#game-and-watch-highlight-one {
+margin-top:-18px;
+margin-left:13px;
+}
+
+#game-and-watch-highlight-two {
+margin-top:-12px;
+margin-left:18px;
+}
+
+#game-and-watch-highlight-three {
+margin-top:-7px;
+margin-left:22px;
+}
+
+#game-and-watch-level-two-bush-right {
+width:50px;
+height:80px;
+margin-right:-40px;
+margin-top:-26px;
+float:right;
+background:green;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+}
+
+.game-and-watch-level-two-plant {
+width:10px;
+float:left;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#dkjr-plant-one {
+margin-left:50px;
+height:18px;
+margin-top:36px;
+}
+
+#dkjr-plant-two {
+margin-left:30px;
+height:18px;
+margin-top:36px;
+}
+
+#dkjr-plant-three {
+margin-left:50px;
+height:3px;
+margin-top:51px;
+}
+
+#dkjr-plant-four {
+margin-left:40px;
+height:6px;
+margin-top:48px;
+}
+
+#dkjr-plant-five {
+margin-left:40px;
+height:3px;
+margin-top:50px;
+}
+
+#game-and-watch-badge {
+width:62px;
+height:40px;
+padding:6px 10px 10px;
+line-height:1em;
+font-size:1em;
+color:#222;
+font-style:italic;
+font-weight:bold;
+margin-top:25px;
+margin-bottom:50px;
+background:#fff;
+margin-left:auto;	
+margin-right:auto;	
+border-bottom:1px solid #555;
+border-top:1px solid #555;
+border-left:1px solid #555;
+border-right:1px solid #555;
+-webkit-border-radius:6px;
+-moz-border-radius:6px;
+border-radius:6px;
+}
+
+#game-and-watch-leftbutton {
+font-size:.5em;
+}
+
+#game-and-watch-character {
+margin-top:-20px;
+padding-bottom:55px;
+width:80px;
+}
+
+#game-and-watch-leftbutton-horizontal {
+width:98px;
+height:36px;
+background:#eee;
+margin-left:auto;	
+margin-right:auto;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;	
+border-radius:20px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-vertical {
+width:36px;
+height:98px;
+padding-top: 4px;
+background:#eee;
+margin-left:auto;
+margin-top:-69px;
+margin-right:auto;	
+margin-bottom:4px;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-top a {
+display:block;
+width:30px;
+margin-bottom:12px;
+height: 30px;
+background: red;
+margin-top:-2px;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+margin-left:auto;
+margin-right: auto;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+box-shadow:0 1px 2px rgba(0, 0, 0, .9);
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-leftbutton-cover {
+width:40px;
+height:35px;
+background: #eee;
+margin-left:-2px;
+margin-top:-10px;
+}
+
+#game-and-watch-leftbutton-bottom a {
+display:block;
+width:30px;
+height: 30px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+margin-left:auto;
+margin-right: auto;
+margin-top:-1px;
+-webkit-border-radius:40px;
+position:relative;
+z-index:9999;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-leftbutton-left a {
+display:block;
+width:30px;
+height: 30px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+float:left;
+margin-top:-62px;
+margin-left:-28px;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+cursor: -webkit-grab; cursor: -moz-grab;
+position:relative; /*prevents weird box around button */
+}
+
+#game-and-watch-leftbutton-right a {
+display:block;
+width:30px;
+height: 30px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+float:right;
+margin-top:-62px;
+margin-right:-28px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-rightbutton {
+clear:both;
+width:60px;
+margin-bottom:10px;
+}
+
+#game-and-watch-rightbutton-in {
+width:50px;
+height: 50px;
+border: 5px solid #fff;
+margin-bottom:10px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+}
+
+#game-and-watch-rightbutton-in a {
+width:50px;
+display:block;
+height: 50px;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-rightbutton-in a:active, #gameboy-rightbutton-in a:active {
+-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, .9);
+position:relative;
+z-index:9999;
+}
+
+#gameboy-rightbutton-in a:active {
+border-top:3px solid #000;
+}
+
+#game-and-watch-right {
+float:right;
+font-size:.4em;
+}
+
+#game-and-watch-game-start {
+width:30px;
+font-size:8px;
+margin-top:35px;
+margin-bottom:80px;
+height:130px;
+float:left;	
+}
+
+#game-and-watch-start-one, #game-and-watch-start-two, #game-and-watch-start-three {
+width:26px;
+height:13px;
+margin-top:5px;
+margin-left:auto;
+margin-right:auto;
+border-top:1px solid #777;
+border-bottom:1px solid #fff;
+background:#fff;
+margin-bottom:3px;
+position:relative;
+z-index:999;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-left-gloss {
+width:220px;
+height:226px;
+float:left;
+margin-top:-389px;
+margin-left:-70px;
+opacity:.2;
+border-left:126px solid #fff;
+-webkit-border-top-left-radius:550px;
+-webkit-border-top-right-radius:0;
+-moz-border-radius-topleft:550px;
+-moz-border-radius-topright:0;
+border-top-left-radius:550px;
+border-top-right-radius:0;
+-moz-transform:rotate(-90deg);
+-webkit-transform:rotate(-90deg);
+-o-transform:rotate(-90deg);
+-ms-transform:rotate (-90deg);
+transform:rotate(-90deg);
+}
+
+#game-and-watch-right-gloss {
+width:50px;
+height:226px;
+float:right;
+margin-top:-302px;
+margin-right:-160px;
+opacity:.2;
+border-left:326px solid #fff;
+-webkit-border-top-left-radius:550px;
+-webkit-border-top-right-radius:0;
+-moz-border-radius-topleft:550px;
+-moz-border-radius-topright:0;
+border-top-left-radius:550px;
+border-top-right-radius:0;
+-moz-transform:rotate(-90deg);
+-webkit-transform:rotate(-90deg);
+-o-transform:rotate(-90deg);
+-ms-transform:rotate (-90deg);
+transform:rotate(-90deg);
+}
+
+#game-and-watch-gamea-text, #game-and-watch-gameb-text, #game-and-watch-time-text {
+clear:both;
+line-height:1.2em;	
+margin-bottom:3px;
+}
+
+#game-and-watch-bottom-edge {
+border-top: 10px solid #ccc;
+border-left: 14px solid transparent;
+border-right: 14px solid transparent;
+margin-top:-1px;
+margin-left:3px;
+}
+
+#game-and-watch-bottom-edgetwo {
+margin-left:17px;
+margin-right:14px;
+border-top: 6px solid #444;
+border-left: 14px solid transparent;
+border-right: 14px solid transparent;
+}
+
+#game-and-watch-bottom-edgeshadow {
+margin-left:31px;
+margin-right:46px;
+margin-top:-9px;
+padding:3px;
+-webkit-box-shadow:0 10px 15px #444;
+-moz-box-shadow:0 10px 15px #444;
+box-shadow:0 10px 15px #444;
+}
+
+#game-and-watch-start-one, #game-and-watch-start-two, #game-and-watch-start-three {
+width:26px;
+float:left;
+margin-right:5px;
+height:13px;
+}
+
+#game-and-watch-start-two {
+width:26px;
+float:left;
+margin-top:6px;
+height:13px;
+}
+
+.game-and-watch-start-inner a {
+display:block;
+width:22px;
+height:9px;
+margin-top:2px;
+margin-left:auto;
+margin-right:auto;
+background:#999;
+margin-bottom:5px;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+
+.game-and-watch-start-inner a:active {
+-webkit-box-shadow:inset 0 3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow:inset 0 3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-game-settings {
+width:40px;
+height:100px;
+font-size:6px;
+margin-top:35px;
+margin-right:10px;
+float:right;	
+}
+
+#game-and-watch-game-tiny-pinhole {
+width:10px;
+height:10px;
+margin-top:10px;
+margin-bottom:3px;
+margin-left:auto;
+margin-right:auto;
+border-top:1px solid #333;
+border-bottom:1px solid #fff;
+background:#fff;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+-moz-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+}
+
+#game-and-watch-screen-in {
+font-family: PretendoRegular;
+text-transform:uppercase;
+border-bottom: 1px solid #eee;
+font-size:.8em;
+color:#222;
+background: rgb(238,238,238); 
+background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1)));
+background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
+background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
+background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
+-webkit-border-radius:6px;
+-moz-border-radius:6px;
+border-radius:6px;
+}
+
+#game-and-watch-nintendo-logo {
+text-transform:capitalize;
+width:100px;
+height:10px;
+font-size:1.3em;
+line-height:1em;
+margin-bottom:10px;
+margin-top:-4px;
+color:#000;
+margin-left:auto;
+margin-right:auto;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+}
+
+
+#mini-classic-logo {
+display:none;
+}
+
+#game-and-watch-leftbutton span {
+letter-spacing:-7px;
+margin-right:10px;
+display:none;
+font-size: 1.5em;
+}
+
+#game-and-watch-game-meta {
+line-height:1.5em;
+float:right;
+margin-top:-55px;
+margin-right:5px;
+font-family:DigitaldreamRegular, sans-serif;
+font-size:.6em;
+}
+
+#game-and-watch-meta-branch {
+width:190px;
+height:8px;
+margin-top:-20px;
+margin-left:-50px;
+background:#96535a;
+float:right;
+-moz-transform:rotate(11deg);
+-webkit-transform:rotate(11deg);
+-o-transform:rotate(11deg);
+-ms-transform:rotate(11deg);
+transform:rotate(11deg);
+}
+
+.game-and-watch-branch-pattern {
+background:#96535a;
+margin-top:3px;
+border-top:2px dashed #c4c6b8;
+}
+
+#game-and-watch-game-meta span {
+font-size:1.7em;
+margin-left:20px;
+}
+
+#game-and-watch-game-cage {
+float:left;
+margin-left:-4px;
+margin-top:-56px;
+}
+
+#game-and-watch-game-cage-in {
+border:3px solid #000;
+margin-left:7px;
+float:left;
+position:relative;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+}
+
+#game-and-watch-game-cage-lock {
+padding:3px;
+margin-top:37px;
+background:#000;
+float:left;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+border-radius:3px;
+}
+
+#game-and-watch-game-cage-key-top {
+height:4px;
+margin-left:auto;
+margin-right:auto;
+background:#c4c6b8;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#game-and-watch-game-cage-key-bottom {
+margin-left:auto;
+margin-right:auto;
+border-bottom:3px solid #c4c6b8;
+border-left:2px solid transparent;
+border-right:2px solid transparent;
+}
+
+.game-and-watch-game-cage-bar {
+width: 2px;
+height:44px;
+margin-left:7px;
+margin-right:7px;
+background:#000;
+float:left;
+position:relative;
+z-index:9999
+}
+
+#game-and-watch-game-cage-floor {
+padding:3px 3px;
+clear:both;
+background:brown;
+}
+
+#game-and-watch-game-rope {
+float:left;
+margin-top:-50px;
+margin-left:60px;
+}
+
+#game-and-watch-level-two {
+height:95px;	
+margin-top:-12px;
+clear: both;
+}
+
+
+
+/* Big Key */
+
+#game-and-watch-big-key {
+width:15px;	
+margin-bottom:-25px;
+margin-left:6px;
+-moz-transform:rotate(30deg);
+-webkit-transform:rotate(30deg);
+-o-transform:rotate(30deg);
+-ms-transform:rotate(30deg);
+transform:rotate(30deg);
+}
+
+#game-and-watch-big-key-head {
+height:20px;
+width:14px;	
+}
+
+#game-and-watch-big-key-stem {
+background:#ccc;
+height:25px;
+border:1px solid #333;
+width:5px;	
+margin-top:-10px;
+margin-left:auto;
+margin-right:auto;
+}
+
+#game-and-watch-big-key-end {
+background:#ccc;
+height:6px;
+width:10px;	
+border-right:1px solid #333;
+border-bottom:1px solid #333;
+margin-top:-10px;
+padding-top:5px;
+margin-left:5px;
+}
+
+#game-and-watch-big-key-cutout {
+background:#999;
+height:5px;
+width:5px;	
+margin-left:5px;
+}
+
+#game-and-watch-big-key-head-top {
+background:#ccc;
+height:7px;
+width:7px;	
+margin-left:4px;
+margin-right:4px;
+border-right:1px solid #333;
+border-bottom:1px solid #333;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+}
+
+#game-and-watch-big-key-head-left {
+background:#ccc;
+height:7px;
+float:left;
+width:7px;	
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+}
+
+#game-and-watch-big-key-head-right {
+background:#ccc;
+height:7px;
+width:7px;	
+float:right;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+}
+
+
+
+
+/* Jr Donkey Kong Character */
+
+#game-and-watch-char-jr {
+width: 26px;
+background:#e56f48;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+margin-bottom:-20px;
+}
+
+#game-and-watch-char-jr-head-up {
+width:20px;
+height:20px;
+background:#cfb885;
+border-bottom:1px solid #444;
+margin-top:-10px;
+margin-bottom:2px;
+position:relative;
+margin-left:-1px;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-char-jr-eye-l {
+width:6px;
+height:6px;
+background:#fff;
+float:left;
+border-bottom:1px solid #444;
+margin-top:5px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-char-jr-eye-r {
+width:6px;
+height:6px;
+float:right;
+position:relative;
+z-index:99;
+background:#fff;
+border-bottom:1px solid #444;
+margin-top:5px;
+margin-right:8px;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-char-jr-pupil-l {
+width:3px;
+height:3px;
+float:left;
+position:relative;
+z-index:99;
+background:#222;
+border-bottom:1px solid #444;
+margin-top:3px;
+margin-right:2px;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-char-jr-pupil-r {
+width:3px;
+height:3px;
+float:right;
+position:relative;
+z-index:99;
+background:#222;
+border-bottom:1px solid #444;
+margin-top:3px;
+margin-right:2px;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-char-jr-ear-r {
+width:8px;
+height:8px;
+background:#cfb885;
+border-top:1px solid #222;
+border-left:1px solid #222;
+margin-top:-15px;
+float:right;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#game-and-watch-char-jr-head-lower {
+width:24px;
+height:16px;
+background:#cfb885;
+border-bottom:1px solid #444;
+margin-top:-10px;
+margin-left:-1px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-char-jr-smile {
+width:20px;
+height:10px;
+background:#cfb885;
+border-bottom:1px solid #444;
+margin-top:5px;
+position:relative;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+-ms-transform:rotate(-20deg);
+transform:rotate(-20deg);
+}
+
+#game-and-watch-char-jr-shoulder {
+width: 29px;
+height:50px;
+margin-left:30px;
+background:#e56f48;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+margin-bottom:-20px;
+border-radius:30px;
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+-ms-transform:rotate(-20deg);
+transform:rotate(-20deg);
+}
+
+#game-and-watch-char-jr-left-hand {
+width:14px;
+height:16px;
+background:#cfb885;
+border:1px solid #666;
+margin-top:-10px;
+margin-bottom:-20px;
+margin-left:7px;
+position:relative;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-char-jr-body {
+width:20px;
+padding-top:5px;
+background:#e56f48;
+margin-left:-5px;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+}
+
+#game-and-watch-char-jr-foot-r {
+margin-top:0;
+margin-right:-10px;
+float:right;
+height:0;
+width:0;
+border-top:20px solid #cfb885;
+border-left:9px solid transparent;
+border-right:9px solid transparent;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(50deg);
+-webkit-transform:rotate(70deg);
+-o-transform:rotate(50deg);
+-ms-transform:rotate(50deg);
+transform:rotate(50deg);
+}
+
+
+
+
+/* Donkey Kong character */
+
+#game-and-watch-character-donkey {
+width:60px;
+height:40px;
+margin-left:auto;	
+margin-right:auto;	
+overflow:hidden;
+}
+
+#game-and-watch-character-donkey-hair {
+margin-bottom:-6px;
+position:relative;
+margin-left:auto;	
+margin-right:auto;	
+width:0;
+height:0;
+position:relative;
+z-index:99999999;
+border-top:5px solid #e56f48;
+border-left:10px solid transparent;
+border-right:10px solid transparent;
+}
+
+#game-and-watch-character-donkey-head {
+width:30px;
+height:20px;
+background:#cfb885;
+margin-left:auto;	
+margin-right:auto;	
+position:relative;
+z-index:9999;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-features {
+width:30px;
+height:30px;
+border-top:1px solid #222;
+position:relative;
+z-index:9999;
+margin-left:auto;	
+margin-right:auto;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-eye-l {
+width:6px;
+height:10px;
+float:left;
+background:#cfb885;
+border-top:1px solid #444;
+margin-top:5px;
+margin-left:5px;
+position:relative;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-eye-r {
+width:6px;
+height:10px;
+float:right;
+background:#cfb885;
+border-top:1px solid #444;
+margin-top:5px;
+margin-right:5px;
+position:relative;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-nostril-l {
+width:3px;
+height:7px;
+margin-top:0px;
+margin-left:10px;
+float:left;	
+background:#cfb885;
+border-top:1px solid #444;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;	
+}
+
+#game-and-watch-character-donkey-nostril-r {
+width:3px;
+height:4px;
+margin-top:0px;
+margin-right:10px;
+float:right;	
+background:#cfb885;
+border-top:1px solid #444;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-chin {
+width:40px;
+height:20px;
+background:#cfb885;
+border-bottom:1px solid #444;
+margin-top:-10px;
+margin-bottom:-20px;
+position:relative;
+margin-left:auto;	
+margin-right:auto;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-smile {
+width:30px;
+height:10px;
+background:#cfb885;
+border-bottom:1px solid #444;
+margin-top:5px;
+position:relative;
+margin-left:auto;	
+margin-right:auto;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-body {
+width:60px;
+height:40px;
+background:#e56f48;
+margin-left:auto;	
+margin-right:auto;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+}
+
+#game-and-watch-character-donkey-ear-l {
+width:8px;
+height:8px;
+background:#cfb885;
+margin-left:10px;
+margin-top:5px;
+float:left;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#game-and-watch-character-donkey-ear-r {
+width:8px;
+height:8px;
+background:#cfb885;
+margin-top:5px;
+margin-right:10px;
+float:right;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#game-and-watch-character-donkey-body-in {
+width:30px;
+height:40px;
+background:#cfb885;
+margin-left:auto;	
+border-left:1px solid #444;
+border-right:1px solid #444;
+margin-right:auto;	
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+#game-and-watch-character-donkey-frown {
+width:10px;
+height:5px;
+background:#cfb885;
+border-top:1px solid #444;
+position:relative;
+clear:both;
+margin-left:auto;	
+margin-right:auto;	
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-character-donkey-caged #game-and-watch-character-donkey-body {
+background:#b26a2f;
+}
+
+#game-and-watch-character-donkey-caged #game-and-watch-character-donkey-hair {
+border-top:5px solid #b26a2f;
+border-left:10px solid transparent;
+border-right:10px solid transparent;
+}
+
+#game-and-watch-character-donkey-hand-l {
+width:8px;
+height:12px;
+background:#cfb885;
+margin-top:-20px;
+border:1px solid #222;
+margin-left:10px;
+float:left;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#game-and-watch-character-donkey-hand-r {
+width:8px;
+height:12px;
+background:#cfb885;
+margin-top:-20px;
+border:1px solid #222;
+margin-right:10px;
+float:right;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#game-and-watch-character-donkey-foot-l {
+width:12px;
+height:8px;
+background:#cfb885;
+margin-left:10px;
+margin-top:-5px;
+float:left;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#game-and-watch-character-donkey-foot-r {
+width:12px;
+height:8px;
+background:#cfb885;
+margin-top:-5px;
+margin-right:10px;
+float:right;
+-webkit-border-radius:30px;
+-moz-border-radius:30px;	
+border-radius:30px;
+-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#game-and-watch-character-donkey-caged {
+width:60px;	
+margin-top:20px;
+}
+
+#game-and-watch-character-donkey-caged #game-and-watch-character-donkey-body {
+width:45px;
+}
+
+#game-and-watch-character-donkey-caged #game-and-watch-character-donkey-body-in {
+width:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Game Jr */
+
+#game-and-watch-jr {
+width:55px;
+margin-top:12px;
+height:42px;
+float:left;
+}
+
+#game-and-watch-jr-middle {
+clear:both;
+height:13px;
+}
+
+#game-and-watch-jr-head {
+width:16px;
+margin-left:20px;
+float:left;
+}
+
+#game-and-watch-jr-righthand {
+width:12px;
+height:10px;
+margin-top:5px;
+float:right;
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+-ms-transform:rotate(-20deg);
+transform:rotate(-20deg);
+}
+
+#game-and-watch-jr-righthandin {
+width:2px;
+height:5px;
+margin-top:-13px;
+margin-left:-4px;
+padding:1px;
+border:2px solid #222;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+-ms-transform:rotate(-40deg);
+transform:rotate(-40deg);
+}
+
+#game-and-watch-jr-rightarm {
+width:9px;
+height:6px;
+margin-top:6px;
+margin-left:-8px;
+background:#222;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+-moz-transform:rotate(-60deg);
+-webkit-transform:rotate(-60deg);
+-o-transform:rotate(-60deg);
+-ms-transform:rotate(-60deg);
+transform:rotate(-60deg);
+}
+
+#game-and-watch-jr-lefthand {
+width:15px;
+margin-left:16px;
+margin-top:1px;
+height:10px;
+float:left;
+-moz-transform:rotate(-10deg);
+-webkit-transform:rotate(-10deg);
+-o-transform:rotate(-10deg);
+-ms-transform:rotate(-10deg);
+transform:rotate(-10deg);
+}
+
+#game-and-watch-jr-lefthandin {
+width:3px;
+height:4px;
+padding:1px;
+margin-top:-10px;
+margin-right:7px;
+border:2px solid #222;
+float:right;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-jr-leftarm {
+width:10px;
+height:6px;
+background:#222;
+float:right;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-jr-eyes {
+width:8px;	
+height:8px;
+clear:both;
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+-ms-transform:rotate(-20deg);
+transform:rotate(-20deg);
+}
+
+#game-and-watch-jr-eye-r {
+width:3px;
+height:6px;
+float:right;
+background:#222;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-jr-eye-l {
+width:2px;
+height:6px;
+float:left;
+background:#222;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-jr-mouth {
+width:8px;
+margin-top:4px;
+border-top:2px solid #222;
+height:5px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-5deg);
+-webkit-transform:rotate(-5deg);
+-o-transform:rotate(-5deg);
+-ms-transform:rotate(-5deg);
+transform:rotate(-5deg);
+}
+
+#game-and-watch-jr-face {
+width:14px;
+margin-top:4px;
+border:2px solid #222;
+height:10px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+-ms-transform:rotate(-20deg);
+transform:rotate(-20deg);
+}
+
+#game-and-watch-jr-upperface {
+width:12px;
+height: 10px;
+margin-top:4px;
+margin-bottom:-10px;
+border-top:2px solid #222;
+border-left:2px solid #222;
+position:relative;
+z-index:9;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(20deg);
+-webkit-transform:rotate(20deg);
+-o-transform:rotate(20deg);
+-ms-transform:rotate(20deg);
+transform:rotate(20deg);
+}
+
+#game-and-watch-jr-body {
+width:4px;
+height:5px;
+float:right;
+border:2px solid #222;
+padding:3px;
+margin-top:-5px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+-ms-transform:rotate(-40deg);
+transform:rotate(-40deg);
+}
+
+#game-and-watch-jr-leg-r {
+width:10px;
+height:20px;
+float:right;
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+-ms-transform:rotate(-20deg);
+transform:rotate(-20deg);
+}
+
+#game-and-watch-jr-leg-rin {
+width:6px;
+border:2px solid #222;
+height:2px;
+margin-top:-4px;
+margin-left:4px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-50deg);
+-webkit-transform:rotate(-50deg);
+-o-transform:rotate(-50deg);
+-ms-transform:rotate(-50deg);
+transform:rotate(-50deg);
+}
+
+#game-and-watch-jr-thigh-r {
+border-bottom: 6px solid #222;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+height: 0;
+width:0;
+margin-left:-2px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+-moz-transform:rotate(-18deg);
+-webkit-transform:rotate(-18deg);
+-o-transform:rotate(-18deg);
+-ms-transform:rotate(-18deg);
+transform:rotate(-18deg);
+}
+
+#game-and-watch-jr-leg-l {
+width:10px;
+margin-top:-8px;
+margin-left:25px;
+}
+
+#game-and-watch-jr-leg-lin {
+width:6px;
+border:2px solid #222;
+height:2px;
+margin-top:-2px;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+#game-and-watch-jr-thigh-l {
+border-bottom: 6px solid #222;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+height:0;
+width:0;
+-webkit-border-radius:98px 98px 98px 98px/
+112px 112px 168px 168px ;
+border-radius:50% 50% 50% 50%/40% 40% 60% 60%;
+}
+
+
+
+#post h3 {
+font-weight:bold;
+margin-top:100px;
+}
+
+
+
+
+
+
+
+
+
+/* Devices */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	
+
+#game-and-watch-gameboy-speaker {
+height:70px;
+width:110px;
+float:right;
+margin-right:10px;
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+}
+
+#game-and-watch-game-rope, #dkjr-plant-one {
+display:none;
+}
+
+#game-and-watch-meta-branch {
+width:120px;	
+}
+
+#game-and-watch-level-two-branch {
+width:50px;		
+}
+
+#game-and-watch-gameboy-speaker li {
+background:#999;	
+height:60px;
+width:6px;
+float:right;
+margin-right:10px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow:inset 0 6px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow:inset 0 6px 2px rgba(0, 0, 0, .4);
+box-shadow:inset 0 6px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-gameboy-title {
+display:block;
+}
+
+.sharebox {
+clear:both;
+}
+
+#game-and-watch {
+width:350px;
+margin-bottom:30px;
+margin-top:10px;
+border:none;
+-webkit-box-reflect:none;
+}
+
+#game-and-watch-screen {
+width:340px;
+height:230px;
+float:none;
+margin-top:-330px;
+border:0;
+background:transparent;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-left {
+float:none;
+margin-top:280px;
+}
+
+#game-and-watch-right {
+float:none;
+}
+
+#game-and-watch-case-in {
+padding-top:60px;
+margin:0;
+box-shadow:none;
+background:transparent;
+}
+
+#game-and-watch-screen-sheen {
+height:205px;
+width:220px;
+margin-top:120px;
+margin-bottom:-282px;
+border:none;
+border-radius:0;
+-webkit-border-bottom-right-radius:0;
+-moz-border-radius-bottomright:0;
+border-bottom-right-radius:0;
+}
+
+#game-and-watch-screen-sheen-in {
+height:205px;
+width:225px;
+margin-top:-5px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+opacity:.2;
+-webkit-border-bottom-right-radius:0;
+-moz-border-radius-bottomright:0;
+border-bottom-right-radius:0;
+}
+
+#game-and-watch-gamea-text, #game-and-watch-gameb-text, #game-and-watch-time-text {
+display:none;
+}
+
+#game-and-watch-gameboy-title  {
+color:#315594;
+font-size:1em;	
+margin-top: 10px;
+text-align:left;
+font-style:italic;
+margin-left:30px;
+font-weight:bold;
+}
+
+#game-and-watch-gameboy-title span {
+font-family: PretendoRegular;
+font-style:normal;	
+font-weight:normal;
+font-size:.8em;
+text-transform:capitalize;
+}
+
+#game-and-watch-leftbutton-right a {
+display:block;
+float:right;
+margin-top:-48px;
+border-left:15px solid #333;
+border-top:7px solid transparent;
+border-bottom:6px solid transparent;
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-leftbutton-left a {
+float:left;
+margin-top:-48px;
+border-right:15px solid #333;
+border-top:7px solid transparent;
+border-bottom:6px solid transparent;
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-leftbutton {
+font-size:.5em;
+margin-top:-0px;
+margin-left:20px;
+text-indent:-99999em;
+float:left;
+}
+
+#game-and-watch-leftbutton-top a {
+border-bottom:15px solid #333;
+border-left:7px solid transparent;
+border-right:6px solid transparent;
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-leftbutton-bottom a {
+border-top:15px solid #333;
+border-left:7px solid transparent;
+border-right:6px solid transparent;
+background:none;
+margin-top:55px;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-right-gloss {
+width:50px;
+height:76px;
+margin-top:-99px;
+margin-right:-128px;
+opacity:.2;
+border-left:46px solid #fff;
+-webkit-border-top-left-radius:550px;
+-webkit-border-top-right-radius:0;
+-moz-border-radius-topleft:550px;
+-moz-border-radius-topright:0;
+border-top-left-radius:550px;
+border-top-right-radius:0;
+-moz-transform:rotate(-90deg);
+-webkit-transform:rotate(-90deg);
+-o-transform:rotate(-90deg);
+-ms-transform:rotate(-90deg);
+transform:rotate(-90deg);
+}
+
+#game-and-watch-badge, #game-and-watch-left-gloss, #game-and-watch-start-three, #game-and-watch-character-donkey {
+display:none;
+}
+
+#game-and-watch-leftbutton-cover {
+display:none;
+}
+
+#game-and-watch-rightbutton {
+float:right;
+margin-top:-100px;
+color:#444;
+}
+
+#game-and-watch-game-settings {
+display:none;
+}
+
+.name {
+display:none;
+}
+
+#classic-title {
+margin-top:20px;
+margin-bottom:20px;
+margin-left:10px;
+margin-right:10px;
+display:none;
+}
+
+#gameboy-title {
+margin-top:20px;
+margin-bottom:20px;
+display:block;
+text-align:center;
+margin-left:10px;
+margin-right:10px;
+}
+
+#gameboy-title span {
+color:#860a48;
+}
+
+#classic-title span {
+color:orange;
+}
+
+#game-and-watch-nintendo-logo {
+display:none;
+}
+
+#game-and-watch-game-tiny-pinhole a {
+display:block;
+width:10px;
+height:9px;
+margin-top:1px;
+background:#777;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-screen-in {
+font-size:.7em;
+background:transparent;
+border: none;
+}
+
+#game-and-watch-character {
+display:none;
+}
+
+#game-and-watch-rightbutton-in {
+margin-top:-20px;
+margin-left:-30px;
+border:none;
+height:40px;
+width:40px;
+}
+
+#game-and-watch-case {
+overflow:hidden;
+background:#eae8db;
+padding-top:0;
+height: 530px;;
+border-top:3px solid #eee;
+background: -moz-linear-gradient(left, rgba(183,180,174,1) 0%, rgba(216,215,203,1) 16%, rgba(234,232,219,1) 39%, rgba(234,232,219,1) 89%, rgba(216,215,203,1) 97%, rgba(183,180,174,1) 100%); 
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(183,180,174,1)), color-stop(16%,rgba(216,215,203,1)), color-stop(39%,rgba(234,232,219,1)), color-stop(89%,rgba(234,232,219,1)), color-stop(97%,rgba(216,215,203,1)), color-stop(100%,rgba(183,180,174,1))); 
+background: -webkit-linear-gradient(left, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+background: -o-linear-gradient(left, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+background: -ms-linear-gradient(left, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+background: linear-gradient(to right, rgba(183,180,174,1) 0%,rgba(216,215,203,1) 16%,rgba(234,232,219,1) 39%,rgba(234,232,219,1) 89%,rgba(216,215,203,1) 97%,rgba(183,180,174,1) 100%); 
+-webkit-border-top-left-radius:15px;
+-moz-border-radius-topleft:15px;
+border-top-left-radius:15px;
+-webkit-border-top-right-radius:15px;
+-moz-border-radius-topright:15px;
+border-top-right-radius:15px;
+-webkit-border-bottom-left-radius:10px;
+-moz-border-radius-bottomleft:10px;
+border-bottom-left-radius:10px;
+-webkit-border-bottom-right-radius:40px;
+-moz-border-radius-bottomright:40px;
+border-bottom-right-radius:40px;
+}
+
+#gameboy-start-text {
+float: left;
+display:block;
+margin-top:-20px;
+margin-left:-22px;	
+font-weight:bold;
+}
+
+#gameboy-settings-text {	
+color:#315594;
+font-weight:bold;
+display:block;
+margin-left:16px;	
+margin-top:15px;
+
+font-size:1.4em;
+}
+
+#gameboy-dotmatrix-box {
+display:block;
+margin-bottom:2px;
+}
+
+#gameboy-dotmatrix {
+display:block;
+font-family:sans-serif;
+color:#ccc;
+font-size:.7em;
+height:10px;
+margin-right:40px;
+padding-right:10px;
+line-height:1em;	
+margin-bottom:-18px;
+position:relative;
+z-index:99999;
+text-align:right;
+}
+
+#gameboy-dotmatrix-lineone {
+background:blue;
+padding:1px;
+opacity:.7;
+width:280px;
+margin-top:9px;
+margin-bottom:-13px;
+margin-left:auto;
+margin-right:auto;
+position:relative;
+z-index:99999;}
+
+#gameboy-dotmatrix-linetwo {
+background:red;
+padding:1px;
+width:280px;
+margin-top:15px;
+opacity:.7;
+margin-bottom:-9px;
+margin-left:auto;
+margin-right:auto;
+position:relative;
+z-index:99999;
+}
+
+#gameboy-button-text-a {
+width:50px;
+color:#315594;
+float:left;
+display:block;
+font-weight:bold;
+margin-left:230px;
+margin-top:-50px;
+-moz-transform:rotate(-32deg);
+-webkit-transform:rotate(-32deg);
+-o-transform:rotate(-32deg);
+-ms-transform:rotate(-32deg);
+transform:rotate(-32deg);
+}
+
+#gameboy-button-text-b {
+width:50px;
+display:block;
+float:left;
+color:#315594;
+font-weight:bold;
+margin-top:-80px;
+margin-left:280px;
+-moz-transform:rotate(-32deg);
+-webkit-transform:rotate(-32deg);
+-o-transform:rotate(-32deg);
+-ms-transform:rotate(-32deg);
+transform:rotate(-32deg);
+}
+
+#game-and-watch-rightbutton-text {
+display:none;	
+}
+
+#game-and-watch-bottom-edgeshadow {
+margin-left:33px;
+margin-right:66px;
+margin-top:-9px;
+padding:3px;
+-webkit-box-shadow:0 10px 15px #444;
+-moz-box-shadow:0 10px 15px #444;
+box-shadow:0 10px 15px #444;
+}
+
+#game-and-watch-gameboy-battery {
+display:block;	
+}
+
+#game-and-watch-gameboy-trim {
+border-top:1px solid #999;
+border-bottom:1px solid #eee;
+margin-bottom:13px;
+clear:both;
+padding:2px;
+background: #ccc;	
+-webkit-box-shadow:  0 -1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-gameboy-trim-onoff {
+border-right:1px solid #999;
+border-left:1px solid #eee;
+margin-left:6px;
+display:block;
+margin-top:5px;
+padding:2px;
+line-height: 1em;
+font-size:.7em;
+text-align:left;
+width:85px;
+float:left;
+height:11px;
+background: #ccc;	
+color: #ccc;
+text-shadow:#fff 0 -1px 0;
+position:relative;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, .4);
+-moz-box-shadow: 0 -1px 4px rgba(0, 0, 0, .4);
+box-shadow: 0 -1px 4px rgba(0, 0, 0, .4);
+}
+
+#gameboy-onleft {
+width:0;
+height:0;
+float:left;
+margin-right:10px;
+margin-top:2px;
+border-right:8px solid #eee;
+border-top:4px solid transparent;
+border-bottom:4px solid transparent;
+}
+
+#gameboy-onright {
+width:0;
+height:0;
+float:right;
+margin-top:-12px;
+border-left:8px solid #eee;
+border-top:4px solid transparent;
+border-bottom:4px solid transparent;
+}
+
+#game-and-watch-gameboy-trim-l {
+border-right:1px solid #999;
+border-left:1px solid #eee;
+margin-left:30px;
+padding:1px;
+width:2px;
+float:left;
+height:24px;
+background: #ccc;	
+position:relative;
+}
+
+#game-and-watch-gameboy-trim-r {
+border-right:1px solid #999;
+border-left:1px solid #eee;
+margin-right:30px;
+float:right;
+padding:1px;
+width:2px;
+height:24px;
+background: #ccc;	
+position:relative;
+}
+
+#game-and-watch-gameboy-light {
+width:10px;
+height: 10px;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:3px;
+opacity:.8;
+background: red;
+background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); 
+background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 -1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-gameboy-battery {
+width:25px;
+font-size:5px;
+text-align:center;	
+margin-top:95px;
+margin-bottom:-95px;
+margin-left:35px;
+position:relative;
+z-index:9999;
+}
+
+#game-and-watch-type-watch, #game-and-watch-type-mini-classic {
+display:none
+}
+
+#game-and-watch-type-gameboy {
+display:block
+}
+
+#game-and-watch-start-one, #game-and-watch-start-two {
+width:35px;
+height:8px;
+background:#999;
+}
+
+.game-and-watch-start-inner a {
+width:35px;
+}
+
+#game-and-watch-screen-top, #game-and-watch-screen-bottom {
+display:none;
+}
+
+#game-and-watch-game {
+margin-left: 15px;
+margin-right: 15px;
+margin-top: 0;
+border-top: solid 18px #777;
+border-left: solid 45px #777;
+border-right: solid 45px #777;
+border-bottom: solid 22px #777;
+margin-bottom:-17px;
+-webkit-border-bottom-right-radius:40px;
+-moz-border-radius-bottomright:40px;
+border-bottom-right-radius:40px;
+}
+
+#game-and-watch-bottom-row {
+height:70px;
+margin-top:28px;	
+}
+
+#game-and-watch-jr {
+margin-top: 20px;	
+}
+
+#game-and-watch-reed {
+margin-top:-5px;
+}
+#game-and-watch-reed.game-and-watch-reed-up {
+margin-top:-20px;
+}
+
+#game-and-watch-bottom-row #game-and-watch-reed {
+display: none;
+}
+
+
+#game-and-watch-leftbutton-vertical {
+background:#222;
+width:30px;
+height:88px;
+-webkit-border-radius:4px;
+border-top: solid 1px #999;
+border-left: solid 1px #000;
+border-right: solid 1px #000;
+border-bottom: solid 1px #000;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+border-radius:4px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-horizontal {
+background:#222;
+width:90px;
+height:30px;
+margin-top:-20px;
+margin-bottom:7px;
+border-top: solid 1px #999;
+border-left: solid 1px #000;
+border-right: solid 1px #000;
+border-bottom: solid 1px #000;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+border-radius:4px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-rightbutton-in a {
+width:40px;
+height: 40px;
+border: 0;
+background:#860a48;
+position:relative;
+z-index:9999;
+border-top:3px solid #de4491;
+background: -moz-linear-gradient(top, rgba(134,10,72,1) 0%, rgba(132,31,80,1) 44%, rgba(134,10,72,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(134,10,72,1)), color-stop(44%,rgba(132,31,80,1)), color-stop(100%,rgba(134,10,72,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); /* W3C */
+margin-right:20px;
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+}
+
+#game-and-watch-start-two {
+margin-top:26px;
+}
+
+#gameboy-rightbutton-in a {
+width:40px;
+height: 40px;
+border: 0;
+float:right;
+display:block;
+border-top:3px solid #de4491;
+position:relative;
+z-index:99;
+background:#860a48;
+background: -moz-linear-gradient(top, rgba(134,10,72,1) 0%, rgba(132,31,80,1) 44%, rgba(134,10,72,1) 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(134,10,72,1)), color-stop(44%,rgba(132,31,80,1)), color-stop(100%,rgba(134,10,72,1))); 
+background: -webkit-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+background: -o-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+background: -ms-linear-gradient(top, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+background: linear-gradient(to bottom, rgba(134,10,72,1) 0%,rgba(132,31,80,1) 44%,rgba(134,10,72,1) 100%); 
+margin-top:-95px;
+margin-right:100px;
+-webkit-border-radius:40px;
+-moz-border-radius:40px;
+border-radius:40px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#game-and-watch-bottom-edge {
+border-top: 10px solid #ccc;
+margin-right:31px;
+margin-left:5px;
+border-left: 14px solid transparent;
+border-right: 28px solid transparent;
+}
+
+#game-and-watch-game-start {
+margin-bottom:-50px;
+height:60px;
+color:#444;
+width:90px;
+margin-top:60px;
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+}
+
+#game-and-watch-bottom-edgetwo {
+margin-left:19px;
+margin-right:60px;
+border-top: 6px solid #444;
+border-left: 14px solid transparent;
+border-right: 24px solid transparent;
+}
+
+#game-and-watch-game-title  {
+display:none;
+}
+
+#game-and-watch-reeds {
+display:none;
+}
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+#game-and-watch-game-title {
+display:none;
+}
+
+#game-and-watch-mini-chain {
+margin-left:50px;
+display:block;
+width:50px;
+margin-top:-250px;
+}
+
+.game-and-watch-mini-chain-link-top {
+border:1px solid #999;
+width:30px;
+background:#ccc;
+padding:5px 15px 5px 5px;
+height:15px;
+margin-left:-30px;
+moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+-ms-transform:rotate (-40deg);
+transform:rotate(-40deg);
+-webkit-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+}
+
+.game-and-watch-mini-chain-linkin-top {
+border-top:1px solid #999;
+border-left:2px solid #777;
+border-right:1px solid #999;
+border-bottom:2px solid #999;
+width:30px;
+background:#2989d8;
+height:15px;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+}
+
+.game-and-watch-mini-chain-link {
+border:1px solid #999;
+width:10px;
+height:15px;
+padding:5px;
+background:#ccc;
+margin-left:-30px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+-webkit-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -20px 8px rgba(0, 0, 0, .4);
+}
+
+.game-and-watch-mini-chain-linkin {
+background:#2989d8;
+width:10px;
+height:15px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+.game-and-watch-mini-chain-bottom {
+background: rgb(239,202,134); 
+background: -moz-linear-gradient(-45deg, rgba(239,202,134,1) 0%, rgba(252,194,58,1) 100%); 
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(239,202,134,1)), color-stop(100%,rgba(252,194,58,1))); 
+background: -webkit-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -o-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -ms-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: linear-gradient(135deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+width:20px;
+height:20px;
+margin-bottom:-8px;
+margin-left:-30px;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+-webkit-box-shadow: inset 0 -1px 6px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -1px 6px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -1px 6px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch {
+width:240px;
+margin-bottom:30px;
+margin-top:80px;
+border:none;
+-webkit-box-reflect:none;
+-moz-transform:rotate(-11deg);
+-webkit-transform:rotate(-11deg);
+-o-transform:rotate(-11deg);
+-ms-transform:rotate(-11deg);
+transform:rotate(-11deg);
+}
+
+#game-and-watch-screen {
+width:230px;
+height:190px;
+float:none;
+margin-top:-270px;
+border:0;
+background:transparent;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#game-and-watch-screen-sheen {
+height:185px;
+width:228px;
+margin-top:60px;
+margin-bottom:-370px;
+border:none;
+-webkit-border-bottom-right-radius:25px;
+-moz-border-radius-bottomright:25px;
+border-bottom-right-radius:25px;
+display:none;
+}
+
+#game-and-watch-screen-sheen-in {
+height:165px;
+width:210px;
+margin-left:7px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+opacity:.2;
+display:none;
+}
+
+#game-and-watch-left {
+float:none;
+margin-top:200px;
+}
+
+#game-and-watch-right {
+float:none;
+}
+
+#game-and-watch-case-in {
+margin:0;
+background:transparent;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+}
+
+#mini-classic-rightbutton-text {
+display:block;
+margin-top:-70px;
+margin-left:-40px;
+width:80px;
+margin-bottom:80px;	
+}
+
+#game-and-watch-rightbutton-text {
+display:none;	
+}
+
+#game-and-watch-leftbutton-right a {
+float:right;
+border-left:15px solid #333;
+border-top:7px solid transparent;
+border-bottom:6px solid transparent;
+background:none;
+width:0;
+height:0;
+margin-top:-38px;
+margin-right:-22px;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-leftbutton-left a {
+float:left;
+margin-top:-38px;
+margin-left:-24px;
+border-right:15px solid #333;
+border-top:7px solid transparent;
+border-bottom:6px solid transparent;
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-leftbutton {
+font-size:0;
+float:left;
+}
+
+#game-and-watch-leftbutton-top a {
+border-bottom:15px solid #333;
+border-left:7px solid transparent;
+border-right:6px solid transparent;
+background:none;
+width:0;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-leftbutton-bottom a {
+border-top:15px solid #333;
+border-left:7px solid transparent;
+border-right:6px solid transparent;
+background:none;
+width:0;
+margin-top:33px;
+margin-left:3px;
+height:0;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+-webkit-box-shadow: none;
+-moz-box-shadow:none;
+box-shadow: none;
+}
+
+#game-and-watch-badge, #game-and-watch-right-gloss, #game-and-watch-left-gloss, #game-and-watch-start-two, #game-and-watch-start-three, #game-and-watch-character-donkey {
+display:none;
+}
+
+#game-and-watch-leftbutton-cover {
+display:none;
+}
+
+#game-and-watch-rightbutton {
+float:right;
+color:#444;
+margin-right:-30px;
+width:80px;
+}
+
+#game-and-watch-game-start {
+display:none;
+-moz-transform:rotate(-31deg);
+-webkit-transform:rotate(-31deg);
+-o-transform:rotate(-31deg);
+-ms-transform:rotate(-31deg);
+transform:rotate(-31deg);
+}
+
+#game-and-watch-game-settings {
+margin-top:-55px;
+margin-left:20px;
+color:#444;
+height:70px;
+float:left;
+}
+
+.name {
+display:none;
+}
+
+#classic-title {
+margin-top:20px;
+margin-bottom:20px;
+display:block;
+margin-left:10px;
+margin-right:10px;
+position:relative;
+z-index:9;
+}
+
+#classic-title span {
+color:orange;
+}
+
+#game-and-watch-game-tiny-pinhole a {
+display:block;
+width:10px;
+height:9px;
+margin-top:1px;
+background:#777;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-screen-in {
+font-size:.7em;
+background:transparent;
+border-bottom: none;
+}
+
+#game-and-watch-case {
+border-top:2px solid yellow;
+border-right:1px solid yellow;
+background: rgb(239,202,134); 
+background: -moz-linear-gradient(-45deg, rgba(239,202,134,1) 0%, rgba(252,194,58,1) 100%); 
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(239,202,134,1)), color-stop(100%,rgba(252,194,58,1))); 
+background: -webkit-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -o-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: -ms-linear-gradient(-45deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+background: linear-gradient(135deg, rgba(239,202,134,1) 0%,rgba(252,194,58,1) 100%); 
+-webkit-border-bottom-right-radius:40px;
+-moz-border-radius-bottomright:40px;
+border-bottom-right-radius:40px;
+}
+
+#game-and-watch-bottom-edgeshadow {
+margin-left:31px;
+margin-right:46px;
+margin-top:-9px;
+padding:3px;
+-webkit-box-shadow:0 10px 13px #444;
+-moz-box-shadow:0 10px 13px #444;
+box-shadow:0 10px 13px #ccc;
+}
+
+#game-and-watch-screen-top, #game-and-watch-screen-bottom {
+display:none;
+}
+
+#game-and-watch-game {
+height:155px;
+margin-left: 0;
+margin-right: 0;
+border-top: solid 18px #333;
+border-left: solid 8px #444;
+border-right: solid 8px #444;
+border-bottom: solid 22px #333;
+margin-bottom:-17px;
+-webkit-border-bottom-right-radius:25px;
+-moz-border-radius-bottomright:25px;
+border-bottom-right-radius:25px;
+}
+
+#game-and-watch-leftbutton-vertical {
+background:#222;
+border-radius:0;
+margin-top:-45px;
+width:20px;
+height:65px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-leftbutton-horizontal {
+background:#222;
+border-radius:0;
+margin-top:0;
+width:70px;
+height:20px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+}
+
+#game-and-watch-rightbutton-in  {
+margin-top:-80px;
+margin-left:-20px;
+border:none;
+}
+
+#game-and-watch-rightbutton-in a {
+width:50px;
+height: 50px;
+background: #444;
+border: 0;
+margin-right:20px;
+background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,1) 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,126,125,1)), color-stop(100%,rgba(14,14,14,1))); 
+background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+background: -o-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+background: -ms-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); 
+-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-bottom-edge {
+border-top:3px solid orange;
+margin-right:33px;
+}
+
+#game-and-watch-bottom-edgetwo {
+margin-left:17px;
+margin-right:47px;
+border-top: 2px solid #444;
+border-left: 14px solid transparent;
+border-right: 14px solid transparent;
+}
+
+#game-and-watch-game-tiny-pinhole {
+width:16px;
+height:16px;
+margin-top:30px;
+margin-bottom:3px;
+margin-left:auto;
+margin-right:auto;
+border-top:1px solid #333;
+border-bottom:1px solid #eee;
+background:#fff;
+-webkit-border-radius:15px;
+-moz-border-radius:15px;
+border-radius:15px;
+-webkit-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+-moz-box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+box-shadow:inset 0 4px 6px rgba(0, 0, 0, .5);
+}
+
+#game-and-watch-game-tiny-pinhole a {
+display:block;
+width:14px;
+height:14px;
+margin-top:1px;
+background:#777;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+-moz-box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .4);
+}
+
+#game-and-watch-type-gameboy, #game-and-watch-type-watch {
+display:none
+}
+
+#game-and-watch-type-mini-classic {
+display:block
+}
+
+.sharebox {clear:both;}
+
+
+#game-and-watch-game-rope {
+float:left;
+margin-top:-80px;
+margin-left:80px;
+}
+
+#game-and-watch-keybush-lower {
+display:none;
+}
+
+#game-and-watch-meta-branch {
+width:120px;	
+}
+
+#game-and-watch-jr-coconut {
+display:none
+}
+
+#game-and-watch-level-two-branch {
+width:55px;		
+}
+
+#game-and-watch-reed {
+height:10px;
+width: 20px;
+margin-left:0;
+margin-top:-5px;
+margin-right:6px;
+}
+
+#game-and-watch-reeds {
+width:210px;
+height:35px;
+}
+
+#game-and-watch-nintendo-logo {
+display:none;
+}
+
+
+#game-and-watch-gameboy-speaker {
+display:none;
+}
+
+
+#mini-classic-logo {
+display:block;
+margin-top:184px;
+font-family:PretendoRegular;
+margin-bottom:-230px;
+width:100px;
+line-height:1em;
+height:10px;
+padding-top:3px;
+border: 1px red solid;
+color:red;
+font-size:.5em;
+margin-left:auto;
+margin-right:auto;
+-webkit-border-radius:20px;
+-moz-border-radius:20px;
+border-radius:20px;
+position:relative;
+z-index:99999999999999;
+}
+
+#game-and-watch-character {
+visibility:hidden	
+}
+
+#game-and-watch-bottom-row {
+height:70px;
+}
+
+.game-and-watch-chain-link-top,.game-and-watch-chain-linkround, .game-and-watch-chain-link {
+border:1px solid #000;
+width:2px;
+height:2px;
+}
+
+#game-and-watch-level-two {
+height:65px;	
+}
+
+#game-and-watch-game-cage-in {
+border:2px solid #000;
+margin-left:5px;
+}
+
+#game-and-watch-level-two-seat {
+width:40px;
+height:8px;
+background:#96535a;
+float:left;
+margin-left:-60px;
+margin-top:6px;
+}
+
+#game-and-watch-level-two-vinestep {
+margin-top:14px;
+margin-left:-25px;
+-moz-transform:rotate(0deg);
+-webkit-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+transform:rotate(0deg);
+}
+
+#game-and-watch-level-two-vine {
+width:33px;
+height:4px;
+margin-top:10px;
+margin-left:-3px;
+}
+
+#game-and-watch-reed-tall {
+display:none;
+}
+#game-and-watch-character-donkey-caged {
+margin-left:-3px;
+}
+
+#gameboy-dotmatrix-box {
+display:none;
+}
+
+#game-and-watch-keybush-lower {
+display:none;
+}
+#game-and-watch-keybush {
+display:none;
+}
+
+}
+
+
+
+
+
