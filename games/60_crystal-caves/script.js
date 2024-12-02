@@ -5,7 +5,7 @@
 
 // Let's put our settings up top so we can change them easily
 let settings = {
-  spotlightRadius: 700,
+  spotlightRadius: 1250,
   boxCount: 350,
   moveSpeed: 1.2,
   turboSpeed: 7,
