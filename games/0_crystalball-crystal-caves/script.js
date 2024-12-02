@@ -1,11 +1,14 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 // This is a long one. I hope this over-commenting helps. Let's do this!
 
 // Let's put our settings up top so we can change them easily
 let settings = {
-  spotlightRadius: 400,
-  boxCount: 50,
-  moveSpeed: 1,
-  turboSpeed: 5,
+  spotlightRadius: 700,
+  boxCount: 350,
+  moveSpeed: 1.2,
+  turboSpeed: 7,
 }
 
 // Let's define our states, there's only one in this game at the moment
@@ -218,7 +221,7 @@ class Universe{
     this.generateBoxes();
 
     // And also add the light which hangs out on our mouse
-    this.light = new Light(width*.75,height*.35);
+    this.light = new Light(width*1.75,height*1.35);
   }
 
   generateBoxes(){
