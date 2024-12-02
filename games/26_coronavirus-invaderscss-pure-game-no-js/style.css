@@ -263,7 +263,7 @@ body {
   position: absolute;
   z-index: 22;
   left: 20px;
-  top: 20px;
+  top: 10%;
   font-size: 40rem;
 }
 .count-down .icon {
