@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 @charset "UTF-8";
 /****** More of My Resets *******/
 *,
@@ -31,6 +34,14 @@ body {
   counter-reset: corona;
   font-size: 16rem;
   font-family: arial;
+}
+
+.profileImg {
+  width: 75%;
+}
+
+.switch2 {
+  text-shadow: 0px 0px 10px limeGreen;
 }
 
 /***** Game Menu Frame *****/
