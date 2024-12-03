@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 .bubble {
   border-radius: 50%;
   position: absolute;
@@ -574,7 +577,7 @@ a:focus, a:active {
 
 .glow {
   position: absolute;
-  left: -350px;
+  left: -5%;
   top: -350px;
   width: 800px;
   height: 800px;
@@ -750,6 +753,20 @@ a:focus, a:active {
 .start-game .logo-holder .hint span {
   color: #FF4571;
 }
+
+.d474developmentsA {
+  text-decoration: none;
+  text-shadow: 0px 0px 3px white;
+}
+.d474developmentsH {
+  color: #FF4571;
+  font-size: 26px;
+  font-weight: 800;
+}
+.switch2 {
+  text-shadow: 0px 0px 3px white;
+}
+
 .start-game .how-to-play {
   display: flex;
   justify-content: space-around;

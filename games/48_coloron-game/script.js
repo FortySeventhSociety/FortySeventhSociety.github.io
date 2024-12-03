@@ -1,3 +1,5 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
 class Game {
 
   constructor() {
@@ -49,7 +51,7 @@ class Game {
   generateTweet() {
     let top = $(window).height() / 2 - 150;
     let left = $(window).width() / 2 - 300;
-    window.open("https://twitter.com/intent/tweet?url=https://codepen.io/gregh/full/yVLOyO&amp;text=I scored " + this.score + " points on Coloron! Can you beat my score?&amp;via=greghvns&amp;hashtags=coloron", "TweetWindow", "width=600px,height=300px,top=" + top + ",left=" + left);
+    window.open("https://twitter.com/intent/tweet?url=https://fortyseventhsociety.github.io&text=I scored " + this.score + " points on Paintswap: The Game! Can you beat my score?&via=d474designs&hashtags=PaintswapTheGame,FortySeventhSociety", "TweetWindow", "width=600px,height=300px,top=" + top + ",left=" + left);
   }
 
   /**
