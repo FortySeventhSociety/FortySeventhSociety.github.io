@@ -13,6 +13,7 @@
   top: 20%;
   z-index: 777;
   min-height: 254px;
+  align-content: center;
 }
 
 /* Hide the images by default */
