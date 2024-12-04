@@ -1,3 +1,16 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
+.backgroundText {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  text-shadow: 0px 0px 1px black;
+}
+
+.backgroundText:hover {
+  color: powderBlue;
+}
+
 .level {
   transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1), opacity 600ms cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0;
@@ -230,6 +243,13 @@ input:checked + .button {
   width: 50rem;
   height: 50rem;
   transform: perspective(100rem) translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
+
+/*/ D474designs | Create support for mobile gaming //////*/
+@media only screen and (max-width: 1024px) {
+  .center {
+    width: 1%;
+  }
 }
 
 html {

@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 /*
   _    _ _   _ _ _ _        _          
  | |  | | | (_) (_) |      (_)         
@@ -571,7 +574,7 @@ class Labirynthe {
 	chargement() {
 		this.prop.compte += 1;
 		if (this.prop.compte === this.prop.nombreImg) {
-			console.log("les images sont chargées :)");
+			console.log("les images sont chargées");
 			this.ctx.fillRect(0, 0, this.L, this.H);
 			this.chargerTerrain();
 		} else {
@@ -871,12 +874,12 @@ class Labirynthe {
 						this.ctx.fillRect(0, 0, this.L, this.H);
 						this.ctx.fillStyle = '#00e435';
 						this.ctx.textAlign = "center";
-						this.ctx.font = "20px Arial";
-						this.ctx.fillText("Hey, you made it ! thanks for playing :)", this.L / 2, this.H / 2 - 40);
+						this.ctx.font = "28px Arial";
+						this.ctx.fillText("Hey, you made it; thanks for playing!", this.L / 2, this.H / 2 - 40);
 						this.ctx.fillText("Please share your thoughts in the comments", this.L / 2, this.H / 2 - 14);
-						this.ctx.fillText("Your score : " + this.score, this.L / 2, this.H / 2 + 20);
-						this.ctx.font = "12px Arial";
-						this.ctx.fillText("Little game by Gtibo", this.L / 2, this.H - 20);
+						this.ctx.fillText("Your Score : " + this.score, this.L / 2, this.H / 2 + 20);
+						this.ctx.font = "16px Arial";
+						this.ctx.fillText("Data The Destroyer", this.L / 2, this.H - 20);
 					}
 					break;
 				case "point":
