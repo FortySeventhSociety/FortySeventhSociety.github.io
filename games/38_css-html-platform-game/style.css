@@ -64,7 +64,7 @@ input:checked + .level {
 }
 .button:hover, .goal:hover {
   transform: translateX(0.5rem) translateY(-0.5rem);
-  box-shadow: 0rem 0rem 3rem powderblue;
+  box-shadow: 0rem 0rem 2.5rem powderblue;
 }
 .button:active, .goal:active {
   transform: translateX(-0.5rem) translateY(0.5rem);
