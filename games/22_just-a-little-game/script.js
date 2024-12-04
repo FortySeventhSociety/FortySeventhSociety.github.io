@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 var game = {
   points : 0,
   delay  : 510,
@@ -77,7 +80,7 @@ var game = {
   
   addPoints : function(){ 
     game.points++;
-    game.tweet.setAttribute('href', "https://twitter.com/intent/tweet?&text="+encodeURIComponent("I scored '"+game.points+"' in this Little Game https://cdpn.io/JjBhk"))
+    game.tweet.setAttribute('href', "https://twitter.com/intent/tweet?&text="+encodeURIComponent("I scored '"+game.points+"' in ○ggANBU○ https://fortyseventhsociety.github.io"))
     game.point.innerHTML = game.points;
   },
   

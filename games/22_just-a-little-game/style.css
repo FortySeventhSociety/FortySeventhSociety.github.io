@@ -1,3 +1,19 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: yellow;
+}
+h1 {
+  text-shadow: 0px 3px 10px deepskyblue;
+}
+#tweet {
+  text-shadow: 0px 3px 10px deepskyblue;
+}
+
 ul{
   display:block;
   width:500px;
@@ -13,7 +29,7 @@ li{
   display:block;
   float:left;
   
-  background:rgba(60,60,60,1);
+  background: lightSeaGreen;
   
   width:50px;
   height:50px;
