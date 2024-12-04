@@ -1,6 +1,7 @@
 /*/ D474designs | JOCV-III ///////
 // All Rights Reserved //////*/
 
+/*/ D474designs | Create background text with an easter egg //////*/
 .backgroundText {
   color: white;
   text-shadow: 0px 0px 5px white;
@@ -8,9 +9,11 @@
 }
 .backgroundText:hover {
   color: lightsteelblue;
+  text-shadow: 0px 0px 5px powderblue;
+  text-shadow: 0px 0px 1px white;
 }
 .switch2 {
-  text-shadow: 0px 0px 2px lightsteelblue;
+  text-shadow: 0px 0px 2px #478575;
 }
 
 .level {
@@ -48,6 +51,7 @@ input:checked + .level {
   transform: translateY(20rem) translateX(-20rem) !important;
 }
 
+/*/ D474designs | Create glowing orb, that glows brighter when grabbed //////*/
 .button, .goal {
   position: absolute;
   top: 5%;
