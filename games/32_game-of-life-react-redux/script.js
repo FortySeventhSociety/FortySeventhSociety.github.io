@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 //Game of Life React + Redux Implementation
 //You may prefer to view the source here:  
 //https://github.com/thepeted/game-of-life-redux
@@ -275,7 +278,7 @@ const Counter = connect(mapStateToProps_3)(Counter_);
 
 const App = () => /*#__PURE__*/
 React.createElement("div", null, /*#__PURE__*/
-React.createElement("h1", null, "Game of Life (React + Redux)"), /*#__PURE__*/
+React.createElement("h1", null, ""), /*#__PURE__*/
 React.createElement(Board, null), /*#__PURE__*/
 React.createElement(Control, null), /*#__PURE__*/
 React.createElement(Counter, null));

@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
@@ -9,6 +12,7 @@ h1 {
   text-align: center;
   font-size: 2em;
   font-weight: 500;
+  color: orangered;
 }
 
 td {
@@ -22,13 +26,13 @@ td:hover:not(.alive):not(.new-born) {
 
 /* Width to match app grid size */
 .container {
-  margin: 1.5em auto;
-  max-width: 40em;
+  margin: 0em auto;
+  max-width: 25em;
 }
 
 /* Grid styles */
 table {
-  margin: 1em 0;
+  margin: 0em 0;
 }
 
 .alive {
