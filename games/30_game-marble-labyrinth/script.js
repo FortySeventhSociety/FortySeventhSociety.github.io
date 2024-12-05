@@ -876,7 +876,7 @@ class Labirynthe {
 						this.ctx.textAlign = "center";
 						this.ctx.font = "28px Arial";
 						this.ctx.fillText("Hey, you made it; thanks for playing!", this.L / 2, this.H / 2 - 40);
-						this.ctx.fillText("Please share your thoughts in the comments", this.L / 2, this.H / 2 - 14);
+						this.ctx.fillText("Remember to share...", this.L / 2, this.H / 2 - 14);
 						this.ctx.fillText("Your Score : " + this.score, this.L / 2, this.H / 2 + 20);
 						this.ctx.font = "16px Arial";
 						this.ctx.fillText("Data The Destroyer", this.L / 2, this.H - 20);
