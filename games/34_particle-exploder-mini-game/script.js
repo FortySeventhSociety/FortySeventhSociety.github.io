@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 var w=window.innerWidth,
     h=window.innerHeight,
     amount=((w*h)/10000)|0;
