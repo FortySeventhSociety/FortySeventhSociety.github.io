@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 "use strict"
 		var stage = {
 			w:1280,
