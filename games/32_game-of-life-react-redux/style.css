@@ -5,7 +5,11 @@ body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
   color: #505050;
-  background: #F8F8F8;
+    background: radial-gradient(ellipse at top, white, transparent),
+              radial-gradient(ellipse at bottom, royalblue, transparent),
+              radial-gradient(ellipse at right, seagreen, transparent),
+              radial-gradient(ellipse at left, deepskyblue, transparent),
+              radial-gradient(farthest-corner at 40px 40px, white 0%, springgreen 100%);
 }
 
 h1 {
@@ -22,6 +26,10 @@ td {
 }
 td:hover:not(.alive):not(.new-born) {
   background: #DDD;
+}
+
+.sig {
+  font-weight: 800;
 }
 
 /* Width to match app grid size */
