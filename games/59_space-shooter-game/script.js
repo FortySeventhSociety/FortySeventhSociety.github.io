@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 const DEV_MODE = false;
 
 const stage = document.createElement('canvas'),

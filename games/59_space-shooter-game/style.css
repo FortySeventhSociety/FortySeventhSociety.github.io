@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 .key, button {
   border: 1px solid currentColor;
   border-radius: 5px;
@@ -97,7 +100,7 @@ button:focus, button:hover {
   opacity: 1;
   padding: 1rem;
   position: fixed;
-  top: 0;
+  top: 10%;
   transition: opacity 0.07s linear 0.5s;
   width: 100%;
 }
