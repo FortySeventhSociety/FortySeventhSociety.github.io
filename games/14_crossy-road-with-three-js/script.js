@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 const counterDOM = document.getElementById('counter');  
 const endDOM = document.getElementById('end');  
 
