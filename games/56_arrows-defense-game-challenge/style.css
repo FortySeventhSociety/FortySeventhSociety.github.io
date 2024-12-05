@@ -13,6 +13,30 @@ canvas {background:#ecf0f1;}
 	z-index: 0;
 	text-shadow: 0px 0px 2px white;
 	text-align: center;
+	cursor: pointer;
+	visibility: visible;
+}
+/* Unvisited links */
+.backgroundText:link {
+  color: red;
+}
+/* Visited links */
+.backgroundText:visited {
+  color: deepskyblue;
+  visibility: hidden;
+}
+/* Hovered links */
+.backgroundText:hover {
+  background: yellow;
+}
+/* Active links */
+.backgroundText:active {
+  color: red;
+}
+
+/* Active paragraphs */
+.backgroundText:active {
+  background: #eee;
 }
 .switch2 {
 	text-shadow: 0px 0px 2px white;
