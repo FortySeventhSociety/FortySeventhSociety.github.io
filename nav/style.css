@@ -31,7 +31,7 @@ nav.top-right {
 }
 @media only screen and (max-width: 900px) {
   nav.top-right {
-    top: 33.3%;
+    top: 25%;
     left: -10%;
   }
 }
