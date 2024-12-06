@@ -537,7 +537,7 @@ a.labs-follow-me {
   left: 0%;
   top: -7%;
   padding-left: 47%;
-  z-index: 9997;
+  z-index: 9996;
   /*
   display: flex;
   align-items: flex-end;
@@ -548,6 +548,9 @@ a.labs-follow-me {
   top: unset;
   text-align: center;
   */
+}
+a.labs-follow-me:hover {
+  z-index: 9999;
 }
 a.labs-follow-me svg {
   width: 14vmin;
