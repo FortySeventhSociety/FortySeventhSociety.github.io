@@ -17,7 +17,9 @@
 }
 
 .level {
-  transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1), opacity 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    transform 600ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 600ms cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0;
   transform: translateY(-20rem) translateX(20rem);
   pointer-events: none;
@@ -31,7 +33,9 @@
   transform: scale(1);
   opacity: 1;
   pointer-events: auto;
-  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), opacity 200ms linear;
+  transition:
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 200ms linear;
 }
 
 input {
@@ -52,7 +56,8 @@ input:checked + .level {
 }
 
 /*/ D474designs | Create glowing orb, that glows brighter when grabbed //////*/
-.button, .goal {
+.button,
+.goal {
   position: absolute;
   top: 5%;
   left: 20%;
@@ -63,14 +68,18 @@ input:checked + .level {
   text-align: center;
   line-height: 8rem;
   box-shadow: 0rem 0rem 2rem powderblue;
-  transition: box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
 }
-.button:hover, .goal:hover {
+.button:hover,
+.goal:hover {
   transform: translateX(0.5rem) translateY(-0.5rem);
   box-shadow: 0rem 0rem 2.5rem powderblue;
 }
-.button:active, .goal:active {
+.button:active,
+.goal:active {
   transform: translateX(-0.5rem) translateY(0.5rem);
   box-shadow: 0rem 0rem 1rem powderblue;
 }
@@ -100,9 +109,12 @@ input:checked + .button {
   opacity: 0;
   transform: translateY(5rem) translateX(-5rem);
   pointer-events: none;
-  transition: transform 600ms cubic-bezier(0.755, 0.05, 0.855, 0.06), opacity 600ms linear;
+  transition:
+    transform 600ms cubic-bezier(0.755, 0.05, 0.855, 0.06),
+    opacity 600ms linear;
 }
-.step:before, .step:after {
+.step:before,
+.step:after {
   content: "";
   position: absolute;
   top: 0;
@@ -125,18 +137,28 @@ input:checked + .button {
   transform: skewX(-45deg);
   height: 20%;
 }
-.step.start:before, .step.finish:before {
+.step.start:before,
+.step.finish:before {
   left: -50%;
   width: 50%;
 }
-.step.start:after, .step.finish:after {
+.step.start:after,
+.step.finish:after {
   height: 50%;
 }
-.step.start, .step:hover, .step:hover + .step, .step:hover + .path > .step:first-child, .step:hover + .path + .step, .step:hover + .bridge > input:checked + .step, .step:hover + .bridge > input:not(:checked) + .step + .step {
+.step.start,
+.step:hover,
+.step:hover + .step,
+.step:hover + .path > .step:first-child,
+.step:hover + .path + .step,
+.step:hover + .bridge > input:checked + .step,
+.step:hover + .bridge > input:not(:checked) + .step + .step {
   transform: scale(1);
   opacity: 1;
   pointer-events: auto;
-  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), opacity 200ms linear;
+  transition:
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 200ms linear;
 }
 .step[r="1"] {
   top: 10rem;
@@ -292,7 +314,9 @@ p {
   font-family: "Teko", sans-serif;
   color: #366358;
   box-shadow: -0.5rem 0.5rem 0.5rem #366358;
-  transition: box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
 }
 .share:hover {
