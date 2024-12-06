@@ -10,7 +10,7 @@ body {
 
 nav {
   display: block;
-  position: fixed;
+  position: absolute;
   width: 500px;
   height: 500px;
   -webkit-user-select: none;
@@ -40,6 +40,11 @@ nav.top-right {
   nav.top-right {
     top: 25%;
     left: -10%;
+  }
+}
+}
+@media only screen and (max-width: 600px) {
+  nav.top-right {
   }
 }
 nav a:link {
