@@ -27,6 +27,7 @@ nav.open {
 }
 nav.open a {
   text-decoration: none;
+  text-shadow: 0px 0px 2px black;
 }
 nav.top-right {
   top: -10%;
@@ -37,6 +38,18 @@ nav.top-right {
     top: 25%;
     left: -10%;
   }
+}
+nav a:link {
+  color: royalblue;
+}
+nav a:active {
+  color: deepPink;
+}
+nav a:visited {
+  color: deepSkyBlue;
+}
+nav a:hover {
+  color: yellowGreen;
 }
 
 .disc {
