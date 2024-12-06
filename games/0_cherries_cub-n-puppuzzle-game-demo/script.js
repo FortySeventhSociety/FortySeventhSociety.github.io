@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 /**
  * EvEmitter v1.0.2
  * Lil' event emitter
