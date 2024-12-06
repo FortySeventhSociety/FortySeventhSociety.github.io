@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 /*
 
 If you want to know how this game works, you can find a source code walkthrough video here: https://youtu.be/bTk6dcAckuI
