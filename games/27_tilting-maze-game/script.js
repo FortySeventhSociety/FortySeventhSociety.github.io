@@ -340,10 +340,10 @@ function resetGame() {
     `;
 
   if (hardMode) {
-    noteElement.innerHTML = `Click the joystick to start!
+    noteElement.innerHTML = `Click the joystick to start!!!
         <p>Hard mode, Avoid black holes. Back to easy mode? Press E</p>`;
   } else {
-    noteElement.innerHTML = `Click the joystick to start!
+    noteElement.innerHTML = `Click the joystick to start!!!
         <p>Move every ball to the center. Ready for hard mode? Press H</p>`;
   }
   noteElement.style.opacity = 1;
@@ -663,12 +663,12 @@ function main(timestamp) {
         (ball) => distance2D(ball, { x: 350 / 2, y: 315 / 2 }) < 65 / 2
       )
     ) {
-      noteElement.innerHTML = `Congrats, you did it!
+      noteElement.innerHTML = `Congrats, you did it!!!
         ${!hardMode ? "<p>Press H for hard mode</p>" : ""}
         <p>
           Follow me
-          <a href="https://twitter.com/HunorBorbely" , target="_top"
-            >@HunorBorbely</a
+          <a href="https://twitter.com/D474designs" , target="_top"
+            >@D474designs</a
           >
         </p>`;
       noteElement.style.opacity = 1;
@@ -679,7 +679,8 @@ function main(timestamp) {
     }
   } catch (error) {
     if (error.message == "The ball fell into a hole") {
-      noteElement.innerHTML = `A ball fell into a black hole! Press space to reset the game.
+      noteElement.innerHTML = `A ball fell into a black hole!!!
+      Press space to reset the game.
         <p>
           Back to easy? Press E
         </p>`;
