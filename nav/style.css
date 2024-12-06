@@ -26,7 +26,7 @@ nav.open a {
   text-decoration: none;
 }
 nav.top-right {
-  top: -10%;
+  top: -20%;
   right: -5%;
 }
 @media only screen and (max-width: 900px) {
