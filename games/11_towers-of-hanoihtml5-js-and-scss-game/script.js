@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 // Alert box using SweetAlert2 - https://limonte.github.io/sweetalert2
 $(document).ready(function() {
 
@@ -54,10 +57,10 @@ $(document).ready(function() {
 					allowEscapeKey: false,
 					allowOutsideClick: false,
 					title: 'Congratulations! You Won!',
-					text: "Boom Shaka Lak",
+					text: "Boom Shaka Laka Boom!",
 					type: 'success',
 					confirmButtonColor: '#8bc34a',
-					confirmButtonText: 'Play again!'
+					confirmButtonText: 'Play again!!!'
 				}).then(function(isConfirm) {
 					if (isConfirm) {
 						initGame($tower.eq(0));
@@ -102,12 +105,12 @@ $(document).ready(function() {
 				allowEscapeKey: false,
 				allowOutsideClick: false,
 				title: 'Are you sure?',
-				text: "Your progress will be Lost!",
+				text: "Your progress will be lost!!!",
 				type: 'warning',
 				showCancelButton: true,
 				confirmButtonColor: '#8bc34a',
 				cancelButtonColor: '#e91e63',
-				confirmButtonText: 'Yes, Restart Game!'
+				confirmButtonText: 'Yes, Restart Game'
 		}).then(function(isConfirm) {
 				if (isConfirm) {
 					initGame($tower.eq(0));
