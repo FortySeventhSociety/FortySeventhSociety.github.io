@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 "use strict";
 console.clear();
 let PIECE_DIR_CALC = 0;
