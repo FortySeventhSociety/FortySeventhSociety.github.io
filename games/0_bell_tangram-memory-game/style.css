@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -21,6 +24,37 @@ p {
   font-family: Montserrat, sans-serif;
   font-weight: 300;
   margin: 0 0 1.5rem;
+}
+
+.d474 {
+  font-weight: 300;
+  font-family: "Ribeye Marrow", sans-serif;
+  text-decoration: none;
+  color: wheat;
+}
+.d474:hover {
+  color: wheat;
+}
+.d474:active {
+  color: wheat;
+}
+.d474:visited {
+  color: wheat;
+}
+.d474:link {
+  color: wheat;
+}
+
+.reload {
+  height: 5%;
+  width: 12.5%;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  text-shadow: 0px 0px 2px white;
+  margin: 5px;
+  background-color: wheat;
+  color: black;
+  padding: 3px;
 }
 
 .t svg {
