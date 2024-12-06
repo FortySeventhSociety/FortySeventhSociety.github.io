@@ -26,13 +26,13 @@ nav.open a {
   text-decoration: none;
 }
 nav.top-right {
-  top: 3px;
-  right: -20%;
+  top: -10%;
+  right: -5%;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 900px) {
   nav.top-right {
     top: 33.3%;
-    left: -20%;
+    left: -10%;
   }
 }
 
