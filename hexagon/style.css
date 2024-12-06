@@ -552,8 +552,18 @@ a.labs-follow-me {
 a.labs-follow-me svg {
   width: 14vmin;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
   a.labs-follow-me {
+  top: -8%;
+  padding-left: 45%;
+  }
+  a.labs-follow-me svg {
+  }
+}
+@media only screen and (max-width: 512px) {
+  a.labs-follow-me {
+  top: -9%;
+  padding-left: 44%;
   }
   a.labs-follow-me svg {
   }
