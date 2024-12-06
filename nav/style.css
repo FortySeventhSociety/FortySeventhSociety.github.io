@@ -22,6 +22,9 @@ nav.open {
   transform: translate3d(0, 0, 0);
   z-index: 9999;
 }
+nav.open a {
+  text-decoration: none;
+}
 nav.top-right {
   top: 3px;
   right: -20%;
