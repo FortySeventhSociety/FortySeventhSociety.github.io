@@ -1,7 +1,7 @@
 toggle = document.querySelectorAll(".toggle")[0];
 nav = document.querySelectorAll("nav")[0];
-toggle_open_text = '≡';
-toggle_close_text = '≡';
+toggle_open_text = '';
+toggle_close_text = '';
 
 toggle.addEventListener('click', function() {
 	nav.classList.toggle('open');
