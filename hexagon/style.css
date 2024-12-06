@@ -243,17 +243,28 @@ body:before {
 }
 
 a.labs-follow-me {
+  position: absolute;
+  left: 0%;
+  top: -7%;
+  padding-left: 5%;
+  z-index: 7;
+  /*
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  /*
   left: 2rem;
   right: 2rem;
   bottom: 0.5vh;
   top: unset;
-  */
   text-align: center;
+  */
 }
 a.labs-follow-me svg {
   width: 14vmin;
+}
+@media only screen and (max-width: 600px) {
+  a.labs-follow-me {
+  }
+  a.labs-follow-me svg {
+  }
 }
