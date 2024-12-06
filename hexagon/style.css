@@ -211,6 +211,7 @@
 .switch.checked:after {
   transform: translateX(2vmin);
   content: "🕶️";
+  z-index: 9998;
 }
 
 body {
@@ -267,4 +268,11 @@ a.labs-follow-me svg {
   }
   a.labs-follow-me svg {
   }
+}
+.dtd {
+  position: absolute;
+  color: black;
+  bottom: 20px;
+  z-index: 9999;
+  font-weight: 700;
 }
