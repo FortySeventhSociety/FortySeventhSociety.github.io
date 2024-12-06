@@ -11,7 +11,7 @@
   position: absolute;
   left: 3px;
   top: 20%;
-  z-index: 9995;
+  z-index: 9997;
   min-height: 254px;
   align-content: center;
 }
@@ -58,6 +58,7 @@
   bottom: 16px;
   width: 100%;
   text-align: center;
+  z-index: 99999;
 }
 
 /* Number text (1/3 etc) */
