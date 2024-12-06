@@ -54,12 +54,11 @@
   display: flex;
   align-items: center;
   position: absolute;
-  z-index: 77;
   top: 10%;
   left: 33.3%;
   padding: 5px;
   margin: 0px;
-  z-index: 9998;
+  z-index: 9999;
 }
 .container .column {
   margin: 0 -0.2vmin;
@@ -80,6 +79,7 @@
 }
 
 .hexagon {
+  z-index: 99999;
   --mix-percentage: calc(var(--column) * var(--index) * 3%);
   width: var(--hexagon-size);
   aspect-ratio: 1;
