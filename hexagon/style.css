@@ -535,7 +535,7 @@ body:before {
 a.labs-follow-me {
   position: absolute;
   left: 0%;
-  top: -7%;
+  top: -6%;
   padding-left: 47%;
   z-index: 9996;
   /*
@@ -557,7 +557,7 @@ a.labs-follow-me svg {
 }
 @media only screen and (max-width: 1024px) {
   a.labs-follow-me {
-  top: -8%;
+  top: -7%;
   padding-left: 45%;
   }
   a.labs-follow-me svg {
@@ -565,7 +565,7 @@ a.labs-follow-me svg {
 }
 @media only screen and (max-width: 512px) {
   a.labs-follow-me {
-  top: -9%;
+  top: -8%;
   padding-left: 44%;
   }
   a.labs-follow-me svg {
