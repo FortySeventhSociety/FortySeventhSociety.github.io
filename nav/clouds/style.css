@@ -50,12 +50,10 @@
   animation-timing-function: linear;
   -webkit-animation-name: Float, FadeFloat;
   animation-name: Float, FadeFloat;
-  z-index: 1;
 }
 .Cloud.Foreground {
   height: 10%;
   min-height: 20px;
-  z-index: 3;
 }
 .Cloud.Background {
   height: 9.09090909%;
