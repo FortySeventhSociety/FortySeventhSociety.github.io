@@ -550,7 +550,7 @@ a.labs-follow-me {
   */
 }
 a.labs-follow-me:hover {
-  z-index: 9999;
+  z-index: 9998;
 }
 a.labs-follow-me svg {
   width: 14vmin;
