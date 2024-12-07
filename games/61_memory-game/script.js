@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 // Memory Game
 // © 2014 Nate Wiley
 // License -- MIT

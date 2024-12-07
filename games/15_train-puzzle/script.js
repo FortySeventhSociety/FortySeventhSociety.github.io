@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 const lerp = (norm, min, max) => {
   return (max - min) * norm + min;
 }

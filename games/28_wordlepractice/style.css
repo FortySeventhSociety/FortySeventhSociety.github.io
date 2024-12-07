@@ -1,6 +1,15 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 body {
   background: #111;
   font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+#newGameButton {
+  background-color: teal;
+}
+#giveUpButton {
+  background-color: teal;
 }
 #controls {
   display: flex;
