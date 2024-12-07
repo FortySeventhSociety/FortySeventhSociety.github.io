@@ -383,7 +383,7 @@ $('#highScore').on('submit', (e) => {
     type: "POST",
     contentType: "application/json",
     success: (data) => {
-      $('#highScore').html( '<h4>Thank You!</h4>' );
+      $('#highScore').html( '<h4>Thank You!!!</h4>' );
     },
     error: (xhr, status, err) => {
       console.log(err);
