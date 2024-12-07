@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 * {
   box-sizing: border-box;
 }
@@ -213,7 +216,7 @@ input[type=checkbox]:checked:after {
 .game-over h1 {
   padding: 1em 0 3.5em;
   background: white;
-}
+  padding-top: 10%;
 
 @-webkit-keyframes appear {
   from {
