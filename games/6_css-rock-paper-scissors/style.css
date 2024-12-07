@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
 
 @keyframes changeOrder {
@@ -98,9 +101,9 @@ div.thumb {
 }
 
 div.arm {
-  width: 22px;
+  width: 82px;
   height: 70px;
-  left: 20px;
+  left: -40px;
   top: 70px;
   border: 0;
   border-top: 2px solid black;
