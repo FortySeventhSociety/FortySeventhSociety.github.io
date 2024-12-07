@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 /*
 * SPOILER ALERT! 
 * WORDS FOR THE GAME ARE IN THIS FILE ;)
@@ -232,7 +235,7 @@ Fonts from Google Fonts
 
     win: function(){
       var rating = this.rating();
-      this.msgTitle.html("Awesome, You Won!");
+      this.msgTitle.html("Awesome, You Won!!!");
       // this is messy
       this.msgText.html("You solved the word in <span class='highlight'>" + rating.guesses + "</span> Guesses!<br>Score: <span class='highlight'>" + rating.rating + "%</span>");
       this.showMsg();

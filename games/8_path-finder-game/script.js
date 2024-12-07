@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 ////////////////
 // helpers
 ////////////////
@@ -324,14 +327,14 @@ app.end = function(win) {
   if (win) {
     app.launchScreen(
       app.score.number,
-      "Well done!",
-      "Your score is: " + sessionStorage.getItem("results") + ' The next level will be harder.',
-      "PLAY NEXT LEVEL"
+      "Well done!!!",
+      "Your score is: " + sessionStorage.getItem("results") + ' The next level will be harder...',
+      "NEXT LEVEL"
     );
   } else {
     app.launchScreen(
       0,
-      "Game over!",
+      "Game over...",
       "Your final score is: " + sessionStorage.getItem("results"),
       "PLAY AGAIN"
     );
@@ -343,6 +346,6 @@ app.end = function(win) {
 app.launchScreen(
   0,
   "Path finder",
-  "Find the nearest yellow dot.",
+  "Find the nearest yellow dot...",
   "PLAY"
 );

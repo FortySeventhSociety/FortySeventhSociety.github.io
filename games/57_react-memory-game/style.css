@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -17,6 +20,7 @@ pre {
 }
 
 .content {
+	padding-top: 2vw;
 	max-width: 500px;
 	margin: 20px auto;
 }
@@ -96,4 +100,6 @@ button {
 	right: 30px;
 	color: rgba(33, 150, 243, 1);
 	text-decoration: none;
+	background-color: #222;
+	padding: 3px;
 }

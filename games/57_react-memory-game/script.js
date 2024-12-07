@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 class GenNumber extends React.Component {
   componentDidUpdate() {
     let time, digit;
