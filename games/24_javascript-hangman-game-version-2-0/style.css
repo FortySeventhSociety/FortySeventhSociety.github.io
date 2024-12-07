@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 /* Variabes */
 /* Mixin's 
 ***************************** */
@@ -27,6 +30,10 @@ body {
   height: 100%;
   text-align: center;
   font-size: 18px;
+}
+
+.title a {
+  color: #90c8ac;
 }
 
 .wrapper {
@@ -262,6 +269,7 @@ h3 {
   font-size: 24px;
   width: 100%;
   text-align: left;
+  color: #90c8ac;
 }
 .guess-holder-list {
   list-style: none;
@@ -448,6 +456,9 @@ h3 {
 
 .footer {
   color: #e7f6f2;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
 }
 .footer a {
   color: #90c8ac;

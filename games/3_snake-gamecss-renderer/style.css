@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 /*================================================
 
 General
@@ -35,8 +38,9 @@ Score
   color: rgba(255, 255, 255, 0.5);
   font-size: 16px;
   font-weight: bold;
-  padding-top: 5px;
-  text-align: center;
+  padding: 5px;
+
+  text-align: right;
 }
 
 /*================================================
