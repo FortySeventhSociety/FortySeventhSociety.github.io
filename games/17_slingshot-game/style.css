@@ -1,0 +1,29 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #14151f;
+}
+
+.matter-demo-title {
+  padding-top: 5%;
+}
+@media only screen and (max-width: 600px) {
+  .matter-demo-title {
+    padding-top: 15%;
+    padding-left: 45%;
+  }
+}
+
+.matter-logo {
+  visibility: hidden;
+}
+
+#slingshot {
+}

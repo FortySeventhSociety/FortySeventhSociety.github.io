@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 // Matter.js - http://brm.io/matter-js/
 
 var Example = Example || {};
@@ -107,8 +110,8 @@ Example.slingshot = function() {
 
 MatterTools.Demo.create({
   toolbar: {
-    title: 'matter-js',
-    url: 'https://github.com/liabru/matter-js',
+    title: 'D474 th3 D357R0Y3R',
+    url: 'https://D474.github.io',
     reset: true,
     source: true,
     fullscreen: true,
@@ -121,7 +124,7 @@ MatterTools.Demo.create({
       name: 'Slingshot',
       id: 'slingshot',
       init: Example.slingshot,
-      sourceLink: 'https://github.com/liabru/matter-js/blob/master/examples/slingshot.js'
+      sourceLink: 'https://github.com/d474designs'
     }
   ]
 });
