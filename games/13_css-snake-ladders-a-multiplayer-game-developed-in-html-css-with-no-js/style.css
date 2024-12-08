@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 @charset "UTF-8";
 /***** dice animation */
 @import url("https://fonts.googleapis.com/css?family=Dosis|Roboto");
@@ -19,6 +22,10 @@
 }
 input {
   display: none;
+}
+
+#player-info {
+  margin-top: 6rem;
 }
 
 .fx-sound {
@@ -502,7 +509,7 @@ body {
 }
 
 #show-instructions-1:checked ~ #instructions #step {
-  top: 0;
+  top: 6rem;
   left: 1rem;
   width: calc(100px + 2rem);
   height: calc(6rem);
@@ -512,7 +519,7 @@ body {
 }
 
 #show-instructions-2:checked ~ #instructions #step {
-  top: 6rem;
+  top: 12rem;
   left: 1rem;
   width: 5rem;
   height: 5rem;
@@ -573,7 +580,7 @@ body {
   position: absolute;
   display: none;
   visibility: visible;
-  top: 6rem;
+  top: 12rem;
   left: 1rem;
   width: 3rem;
   height: 3rem;

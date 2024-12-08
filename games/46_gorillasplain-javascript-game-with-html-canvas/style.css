@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap");
 
 body {
@@ -33,7 +36,7 @@ button:hover {
 #info-left,
 #info-right {
   position: absolute;
-  top: 20px;
+  top: 10%;
 }
 
 #info-left {

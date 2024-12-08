@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 /*
 
 Learn how to code this game step-by-step on YouTube:

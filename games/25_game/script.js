@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 var LEVELS = [
   ["                                                                                ",
    "                                                                                ",
