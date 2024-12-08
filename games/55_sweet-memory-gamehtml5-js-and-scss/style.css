@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 html,
 body {
   width: 100%;
@@ -12,6 +15,10 @@ body {
   background: #FF9090;
   overflow: hidden;
   font-family: "Coda", cursive;
+}
+
+.switch2 {
+  text-shadow: 0px 0px 5px #FFFA62;
 }
 
 .deck {

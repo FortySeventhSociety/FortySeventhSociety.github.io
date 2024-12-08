@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 var symbols = ['bicycle', 'bicycle', 'leaf', 'leaf', 'cube', 'cube', 'anchor', 'anchor', 'paper-plane-o', 'paper-plane-o', 'bolt', 'bolt', 'bomb', 'bomb', 'diamond', 'diamond'],
 		opened = [],
 		match = 0,
@@ -76,7 +79,9 @@ function endGame(moves, score) {
 
 // Restart Game
 $restart.on('click', function() {
-  swal({
+
+	// D474designs | Fix transpilation error in instantiation ///////
+  new swal({
     allowEscapeKey: false,
     allowOutsideClick: false,
     title: 'Are you sure?',
