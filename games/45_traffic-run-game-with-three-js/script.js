@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 /*
 
 Three.js video tutorial explaining the source code
@@ -852,6 +855,23 @@ accelerateButton.addEventListener("mouseup", function () {
 decelerateButton.addEventListener("mouseup", function () {
   decelerate = false;
 });
+
+// D474designs | Add touch functionality to the buttons ///////
+accelerateButton.addEventListener("touchstart", function () {
+  startGame();
+  accelerate = true;
+});
+decelerateButton.addEventListener("touchstart", function () {
+  startGame();
+  decelerate = true;
+});
+accelerateButton.addEventListener("touchend", function () {
+  accelerate = false;
+});
+decelerateButton.addEventListener("touchend", function () {
+  decelerate = false;
+});
+
 window.addEventListener("keydown", function (event) {
   if (event.key == "ArrowUp") {
     startGame();

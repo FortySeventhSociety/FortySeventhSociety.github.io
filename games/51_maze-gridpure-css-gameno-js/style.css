@@ -1,4 +1,28 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+.bold {
+  font-weight: 700;
+}
+.bolder {
+  font-weight: 800;
+  text-shadow: 0px 0px 8px darkred;
+}
+a {
+  color: limegreen;
+}
+a:hover {
+  color: red;
+}
+a:visited {
+  color: darkred;
+}
+a:active {
+  color: darkgoldenrod;
+}
+
 .ip-twitter-icon {
   background-image: url("https://assets.codepen.io/44572/twitter_1.png");
   background-color: white;
@@ -25,17 +49,20 @@
   box-sizing: border-box;
   outline: 0;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-*:before, *:after {
+*:before,
+*:after {
   background-repeat: no-repeat;
   box-sizing: border-box;
   outline: 0;
 }
 
-html, body, .wrapper {
+html,
+body,
+.wrapper {
   align-items: center;
   background-color: #12798e;
   display: grid;
@@ -68,7 +95,7 @@ html, body, .wrapper {
   }
 
   .instruction,
-.game {
+  .game {
     display: none;
   }
 }
@@ -79,6 +106,8 @@ html, body, .wrapper {
 
   .instruction {
     display: flex;
+    line-height: 0.8;
+    margin-top: 5%;
   }
 
   .game {
@@ -106,9 +135,9 @@ html, body, .wrapper {
     text-shadow: 1px 1px 2px black;
     width: 100%;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   .gameover:hover {
     display: flex;
@@ -159,11 +188,12 @@ html, body, .wrapper {
     transform: perspective(100rem) translate3d(-50%, -50%, 0) rotateZ(-45deg);
     transition: opacity 0.3s;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
-  .maze:before, .maze:after {
+  .maze:before,
+  .maze:after {
     content: "";
     display: block;
     position: absolute;
@@ -479,7 +509,9 @@ html, body, .wrapper {
     height: 0;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.3s, height 0.3s;
+    transition:
+      opacity 0.3s,
+      height 0.3s;
   }
   .maze .path--end:hover {
     height: 100%;
@@ -573,8 +605,15 @@ footer {
   right: 0;
 }
 footer a {
+  font-weight: 800;
+  text-decoration: none;
   color: white;
+  text-shadow: 0px 0px 2px white;
 }
+.switch2 {
+  text-shadow: 0px 0px 5px limegreen;
+}
+
 footer .center {
   justify-content: center;
 }

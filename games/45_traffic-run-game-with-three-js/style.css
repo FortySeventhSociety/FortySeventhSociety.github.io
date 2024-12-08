@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 
 body {
@@ -17,6 +20,21 @@ button {
 a,
 a:visited {
   color: inherit;
+}
+
+.followMe {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+.reset {
+  width: 100%;
+  height: 40px;
+  background-color: powderBlue;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: black;
 }
 
 #score {
@@ -47,10 +65,11 @@ a:visited {
 #controls #instructions {
   margin-left: 20px;
   max-width: 300px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.35);
   padding: 20px;
   opacity: 0;
   transition: opacity 2s;
+  margin-bottom: 20%;
 }
 
 #controls button {
