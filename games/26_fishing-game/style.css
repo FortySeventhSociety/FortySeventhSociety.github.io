@@ -1,3 +1,6 @@
+/*/ D474designs | JOCV-III ///////
+// All Rights Reserved //////*/
+
 html {
   box-sizing: border-box;
 }
@@ -23,6 +26,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.instructions {
+  background: white;
+  padding: 5px;
+  box-shadow: 3px 3px red, -4px -4px deepskyblue;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  font-size: 18px;
+}
+.switch2 {
+  text-shadow: 2px 2px red, -3px -3px deepskyblue;
 }
 
 .game {

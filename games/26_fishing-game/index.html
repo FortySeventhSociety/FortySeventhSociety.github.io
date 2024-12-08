@@ -1,0 +1,148 @@
+<!-- // D474designs | JOCV-III ///////
+// All Rights Reserved /////// -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fished</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+    <meta
+      name="description"
+      content="The 47th Society | We Welcome You!
+  Free games available online! Visit us today!"
+    />
+    <meta name="author" content="D474designs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="games, video games, free games, online games, browser games, free game, game, miniclip, ugotgames, you got games, yougotgames, flash games, flash, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, money, income, passive income, refferals, reffer, refferer, ads, links, work from home, steady income, start your own business, graphic design, seo, get paid, job, internet, advertisement, rich, dollars, work, daily, every day, get paid everyday, thathill, thathill.webs.com, https://thathill.webs.com, emoneyspace, emoneyspace.com/d474, emoneyspace.com, https://www.emoneyspace.com, grind, collect, collect money, collect money from home, influencer, how to make money as an influencer, how to create a passive income, part-time job, part time, part time job, how to start a business from home, how to start a business, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, media company, online media, original content, representation, agent, online media company, advertisement, promotion, get noticed, ads, post ads, professional, professional advertisement service, professional advertisement firm, ad firm, advertisement firm, promotion firm, go viral, viral promotion, viral promotion firm, media firm, media agency, mass media, worldwide, global, world wide, world-wide advertisement, global advertisement, social media advertisement, social media promotion, social, influencer, how to make money as an influencer, how to gain a following, instagram, facebook, snapchat, tumblr, wordpress, blog, vlog, youtube, youtube channel, youtube channel promotion, youtube channel advertisement, grow my youtube, grow my youtube channel, grow my social media, grow my instagram, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, datadesigns, datamedia, data, designer, design, designs, sound engineer, sound engineering, audio, audio production, graphic design, graphics, dj, dj data, dj d474, video, photo, photography, video work, videography, choreography, director, directing, acting, actor, writer, ghost writer, musician, artist, production, producer, beats, beat, rap, concert, rave, d474designs.webs.com, https://d474designs.webs.com, d474forex, that hill, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, datadesigns, datamedia, data, designer, design, designs, sound engineer, sound engineering, audio, audio production, graphic design, graphics, dj, dj data, dj d474, video, photo, photography, video work, videography, choreography, director, directing, acting, actor, writer, ghost writer, musician, artist, production, producer, beats, beat, rap, concert, rave, d474designs.webs.com, https://d474designs.webs.com, d474forex, that hill"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+
+  <body>
+    <div class="switch2" id="switch2"></div>
+
+    <span class="instructions">
+      Keep the <b>fish</b> within the <b>white bar</b> to win!
+    </span><br/>
+
+    <!-- partial:index.partial.html -->
+    <div class="game">
+      <!-- /////////// -->
+      <!-- Fishing rod -->
+      <!-- /////////// -->
+
+      <div class="fishing-rod">
+        <img
+          class="fill-container"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-fishing-rod.svg"
+          alt=""
+        />
+        <canvas
+          class="reel-line-tension"
+          data-element="reel-line-tension"
+        ></canvas>
+        <div class="reel-handle">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-reel-handle.svg"
+            alt=""
+          />
+        </div>
+        <div class="reel-line"></div>
+      </div>
+
+      <!-- ///////// -->
+      <!-- Game body -->
+      <!-- ///////// -->
+
+      <div class="game-body">
+        <img
+          class="fill-container"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-game-body-bg.svg"
+          alt=""
+        />
+        <canvas class="bubbles" data-element="bubbles"></canvas>
+        <canvas class="seaweed" data-element="seaweed"></canvas>
+        <img
+          class="seafloor fill-container"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-sea-floor.svg"
+          alt=""
+        />
+        <div class="fish">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-fish.svg"
+            alt=""
+          />
+        </div>
+        <div class="indicator">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-indicator.svg"
+            alt=""
+          />
+        </div>
+        <img
+          class="glass fill-container"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-glass.svg"
+          alt=""
+        />
+      </div>
+
+      <!-- //////////// -->
+      <!-- Progress bar -->
+      <!-- //////////// -->
+
+      <div class="progress-bar">
+        <img
+          class="fill-container"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-progress-bar-bg.svg"
+          alt=""
+        />
+        <div class="progress-gradient-wrapper">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-progress-gradient.svg"
+            class="progress-gradient"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- .game -->
+
+    <!-- /////// -->
+    <!-- Success -->
+    <!-- /////// -->
+
+    <div class="success">
+      <img
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-nice-catch.png"
+        alt=""
+        class="nice-catch"
+      />
+      <img
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/game-perfect.png"
+        alt=""
+        class="perfect"
+      />
+    </div>
+
+    <script src="../../script.js"></script>
+    <script
+      type="text/javascript"
+      src="//pl25057831.profitablecpmrate.com/46/61/55/466155727ec532244c3332d42a4c6007.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://udbaa.com/slider.php?section=FortySeventhSocietyGames&pub=554336&ga=g&side=random"
+    ></script>
+
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
