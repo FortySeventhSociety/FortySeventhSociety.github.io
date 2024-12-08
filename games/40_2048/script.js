@@ -1,3 +1,6 @@
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
+
 let game = null;
 let bestScore = 0;
 const scoreDiv = document.getElementById('score');
