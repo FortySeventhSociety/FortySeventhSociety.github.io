@@ -3,6 +3,7 @@
 
 // Canvas Pie Chart & CSS Bar Chart
 
+/*
 const percentageArray = [30.63, 26.25, 14.38, 28.75];
 const answerArray = ['Public transport', 'Car', 'Bicycle', 'Walking'];
 
@@ -117,6 +118,7 @@ $.fn.chart = function (optionvariables) {
 };
 
 $('#live-poll-area .answer-list').createBarchart();
+*/
 
 
 
