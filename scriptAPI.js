@@ -159,6 +159,16 @@ $(function () {
 
 
 
+// Analytics Dashboard
+
+$('li.nav-item').click( function() {
+   $(this).toggleClass('open');
+});
+
+
+
+
+
 // 
 
 
