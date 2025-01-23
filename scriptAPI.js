@@ -1,3 +1,6 @@
+/* // D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved /////// */
+
 // Canvas Pie Chart & CSS Bar Chart
 
 const percentageArray = [30.63, 26.25, 14.38, 28.75];
@@ -155,3 +158,11 @@ $(function () {
 
 
 // 
+
+
+
+
+
+
+/* // D474designs | Modifications, and fixes by JOCV-III ///////
+// All Rights Reserved /////// */
