@@ -1,6 +1,15 @@
 /* // D474designs | Modifications, and fixes by JOCV-III ///////
 // All Rights Reserved /////// */
 
+@font-face {
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  
+}
+
 /* Canvas Pie Chart & CSS Bar Chart */
 
 /*
@@ -165,34 +174,10 @@ text {
 
 
 
-@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700);
-@font-face {
-  font-family: "stroke";
-  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/137754/stroke.eot?d7yf1v");
-  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/137754/stroke.eot?#iefixd7yf1v") format("embedded-opentype"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/137754/stroke.woff?d7yf1v") format("woff"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/137754/stroke.ttf?d7yf1v") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-[class^=stroke-], [class*=" stroke-"] {
-  display: inline-block;
-  font-family: "stroke";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-}
 
 .html2, .body2 {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -209,7 +194,7 @@ text {
   background-image: linear-gradient(to bottom, #436F60, #D2C493, #3D3739, #233E4F);
 }
 
-.main2.main {
+.main.main {
   background: rgba(0, 0, 0, 0.5);
   height: 100vh;
   width: calc(100% - 250px);
@@ -278,15 +263,15 @@ text {
   font-size: 18px;
 }
 
-.a2 {
+#a2 {
   color: #56A1DB;
   text-decoration: none;
 }
-.a2:hover, a2.selected {
+#a2:hover, a2.selected {
   color: #287cbc;
 }
 
-.input2:focus, .button:focus {
+.input:focus, .button:focus {
   outline: none;
 }
 
@@ -706,6 +691,76 @@ section.content-section:nth-of-type(5) .content-item .graph:nth-last-of-type(2) 
 .avatar img {
   width: 100%;
 }
+
+
+
+
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif; 
+  margin: 1em;
+  background: #293950;
+  color: #ecf0f0;
+}
+section {
+  margin: 0 auto;
+}
+h1 {
+  font-weight: normal;
+  font-size: 2.4em;
+  margin-bottom: 0;
+}
+a {
+  color: gold;
+}
+/* 
+ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
+*/
+
+/* Northern America */
+.bm, .ca, .gl, .pm, .us,
+.noram {fill: #DF4949; background: #DF4949;}
+
+/* Latin America and the Caribbean */
+.ai, .ag, .aw, .bs, .bb, .bq, .vg, .ky, .cu, .cw, .dm, .do, .gp, .ht, .jm, .mq, .ms, .pr, .bl, .kn, .lc, .mf, .vc, .sx, .tt, .vi,
+.bz, .crr, .sv, .gt, .hn, .mx, .ni, .pa,
+.ar, .bo, .br, .cl, .co, .ec, .fk, .gf, .gy, .py, .pe, .sr, .uy, .ve,  
+.latam {fill: #E27A3F; background: #E27A3F;}
+
+/* Europe */
+.by, .bg, .cz, .hu, .md, .pl, .ro, .ru, .sk, .ua, 
+.ax, .dk, .ee, .fo, .fi, .gg, .is, .ie, .je, .lv, .lt, .im, .no, .sj, .se, .gb,
+.al, .ad, .ba, .hr, .gi, .gr, .va, .it, .mk, .mt, .me, .pt, .sm, .rs, .si, .es,
+.at, .be, .fr, .de, .li, .lu, .mc, .nl, .ch,
+.eu { fill: #EFC94C; background: #EFC94C;}
+
+/* Asia */
+.kz, .kg, .tj, .tm, .uz,
+.cn, .hk, .mo, .jp, .kp, .kr, .mn, .tw,
+.af, .bd, .bt, .in, .ir, .mv, .np, .pk, .lk,
+.bn, .kh, .id, .la, .my, .mm, .ph, .sg, .th, .tl, .vn,
+.am, .az, .bh, .cy, .ge, .iq, .il, .jo, .kw, .lb, .ps, .om, .qa, .sa, .sy, .tr, .ae, .ye, 
+.asia { fill: #9B59B6; background:  #9B59B6;}
+
+/* Oceania */
+.au, .cx, .cc, .nz, .nf,
+.fj, .nc, .pg, .sb, .vu,
+.gu, .ki, .mh, .fm, .nr, .mp, .pw,
+.as, .ck, .pf, .nu, .pn, .ws, .tk, .to, .tv, .wf,  
+.oceania {fill: #3498db; background: #3498db;}
+
+/* Africa */
+.bi, .km, .dj, .er, .et, .ke, .mg, .mw, .mu, .yt, .mz, .re, .rw, .sc, .so, .tz, .ug, .zm, .zw,
+.ao, .cm, .cf, .td, .cg, .cd, .gq, .ga, .st,
+.dz, .eg, .ly, .ma, .ss, .sd, .tn, .eh,
+.bw, .ls, .na,  .za, .sz,
+.bj, .bf, .cv, .gm, .gh, .gn, .gw, .lr, .ml, .mr, .ne, .ng, .sh, .sn, .sl, .tg, 
+.africa {fill: #F495A3; background: #F495A3;}
+
+/* Unclassified */
+.aq, .bv, .io, .tf, .hm, .gs, .um, 
+.a1, .a2, .o1, 
+.other { fill: #45B29D; background: #45B29D;}
 
 
 
