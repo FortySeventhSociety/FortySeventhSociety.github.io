@@ -696,21 +696,21 @@ section.content-section:nth-of-type(5) .content-item .graph:nth-last-of-type(2) 
 
 
 
-body {
+.body3 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif; 
   margin: 1em;
   background: #293950;
   color: #ecf0f0;
 }
-section {
+.section3 {
   margin: 0 auto;
 }
-h1 {
+.h13 {
   font-weight: normal;
   font-size: 2.4em;
   margin-bottom: 0;
 }
-a {
+.a3 {
   color: gold;
 }
 /* 
