@@ -7,7 +7,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 * {
-  
 }
 
 /* Canvas Pie Chart & CSS Bar Chart */
@@ -108,10 +107,6 @@
 }
 */
 
-
-
-
-
 /* Responsive SVG Chart */
 
 .html1 {
@@ -126,7 +121,12 @@
 .body1 {
   background-color: #222;
   color: #fff;
-  font: lighter normal 18px/22px "Source Sans Pro Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:
+    lighter normal 18px/22px "Source Sans Pro Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
   height: 100%;
   padding: 0 50px;
 }
@@ -170,13 +170,10 @@ text {
   vector-effect: non-scaling-stroke;
 }
 
-
-
-
-
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700);
 
-.html2, .body2 {
+.html2,
+.body2 {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -191,14 +188,20 @@ text {
 .body2 {
   display: flex;
   overflow: hidden;
-  background-image: linear-gradient(to bottom, #436F60, #D2C493, #3D3739, #233E4F);
+  background-image: linear-gradient(
+    to bottom,
+    #436f60,
+    #d2c493,
+    #3d3739,
+    #233e4f
+  );
 }
 
 .main.main {
   background: rgba(0, 0, 0, 0.5);
   height: 100vh;
   width: calc(100% - 250px);
-  color: #EFEFEF;
+  color: #efefef;
   display: flex;
   flex-direction: column;
 }
@@ -214,7 +217,11 @@ text {
   width: 60px;
   height: 100%;
   content: "";
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
   position: absolute;
   top: 0;
   left: -60px;
@@ -223,7 +230,11 @@ text {
   width: 60px;
   height: 100%;
   content: "";
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
   position: absolute;
   top: 0;
   right: -60px;
@@ -264,32 +275,35 @@ text {
 }
 
 #a2 {
-  color: #56A1DB;
+  color: #56a1db;
   text-decoration: none;
 }
-#a2:hover, a2.selected {
+#a2:hover,
+a2.selected {
   color: #287cbc;
 }
 
-.input:focus, .button:focus {
+.input:focus,
+.button:focus {
   outline: none;
 }
 
 .button {
-  color: #FFF;
-  background: #56A1DB;
+  color: #fff;
+  background: #56a1db;
   border: none;
   padding: 10px 40px;
   text-align: center;
   font-size: 1rem;
   display: block;
 }
-.button:hover, .button.selected {
+.button:hover,
+.button.selected {
   background: #1b527d;
 }
 
 .user-dashboard {
-  background: #F9F9F9;
+  background: #f9f9f9;
   color: #343434;
   width: 250px;
   height: 100vh;
@@ -335,16 +349,16 @@ nav.main li.nav-item span {
   width: 100%;
   text-transform: uppercase;
   color: #484848;
-  background: #FFF;
+  background: #fff;
   padding: 16px 20px 16px 40px;
   border-top: 1px solid #e3e3e3;
   border-bottom: 1px solid transparent;
   cursor: pointer;
   position: relative;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 nav.main li.nav-item span::before {
   content: "";
@@ -384,34 +398,34 @@ nav.main li.nav-item:last-of-type span {
   border-bottom: 1px solid #e3e3e3;
 }
 nav.main li.nav-item:first-of-type span::before {
-  border-color: #28D8B2;
+  border-color: #28d8b2;
 }
 nav.main li.nav-item:first-of-type li a::before {
-  background: #28D8B2;
+  background: #28d8b2;
 }
 nav.main li.nav-item:nth-of-type(2) span::before {
-  border-color: #F47264;
+  border-color: #f47264;
 }
 nav.main li.nav-item:nth-of-type(2) li a::before {
-  background: #F47264;
+  background: #f47264;
 }
 nav.main li.nav-item:nth-of-type(3) span::before {
-  border-color: #56A1DB;
+  border-color: #56a1db;
 }
 nav.main li.nav-item:nth-of-type(3) li a::before {
-  background: #56A1DB;
+  background: #56a1db;
 }
 nav.main li.nav-item:nth-of-type(4) span::before {
-  border-color: #FBD046;
+  border-color: #fbd046;
 }
 nav.main li.nav-item:nth-of-type(4) li a::before {
-  background: #FBD046;
+  background: #fbd046;
 }
 nav.main li.nav-item:nth-of-type(5) span::before {
-  border-color: #735FA4;
+  border-color: #735fa4;
 }
 nav.main li.nav-item:nth-of-type(5) li a::before {
-  background: #735FA4;
+  background: #735fa4;
 }
 nav.main li.nav-item ul.subnav {
   visibility: hidden;
@@ -429,7 +443,7 @@ nav.main li.nav-item ul.subnav a {
   position: relative;
 }
 nav.main li.nav-item ul.subnav a:hover {
-  background: dadrken(#F9F9F9, 10%);
+  background: dadrken(#f9f9f9, 10%);
 }
 nav.main li.nav-item ul.subnav li a::before {
   content: "";
@@ -458,7 +472,11 @@ header.main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
   flex: 0 0 auto;
   position: relative;
 }
@@ -489,7 +507,7 @@ header.main h5::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "";
-  color: #D8D7D7;
+  color: #d8d7d7;
   font-size: 28px;
   position: absolute;
   left: 0;
@@ -521,22 +539,26 @@ header.main form.input-container label::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "";
-  color: #D8D7D7;
+  color: #d8d7d7;
 }
-header.main form.input-container input[type=search] {
+header.main form.input-container input[type="search"] {
   background: none;
   border: none;
-  border-bottom: 1px solid #F9F9F9;
+  border-bottom: 1px solid #f9f9f9;
   line-height: 22px;
   width: 240px;
-  color: #EFEFEF;
+  color: #efefef;
   font-size: 22px;
   font-weight: 300;
   display: none;
 }
 
 section.content-section {
-  background-image: linear-gradient(to right, rgba(95, 99, 109, 0.5), rgba(76, 95, 113, 0.8));
+  background-image: linear-gradient(
+    to right,
+    rgba(95, 99, 109, 0.5),
+    rgba(76, 95, 113, 0.8)
+  );
   margin-bottom: 10px;
   border-radius: 3px;
   overflow: hidden;
@@ -561,7 +583,7 @@ section.content-section .content-item .content-header h5::after {
   content: "";
   width: 8px;
   height: 8px;
-  background: #F47264;
+  background: #f47264;
   position: absolute;
   top: 50%;
   left: 0;
@@ -573,7 +595,7 @@ section.content-section .content-item .content-header .content-menu {
   width: 26px;
   height: 26px;
   font-size: 26px;
-  color: #D8D7D7;
+  color: #d8d7d7;
   overflow: hidden;
   text-align: center;
 }
@@ -600,14 +622,22 @@ section.content-section .content-item .content-body .content-body-item .stat {
   font-size: 32px;
   font-weight: 100;
 }
-section.content-section .content-item .content-body .content-body-item .stat.negative::before {
+section.content-section
+  .content-item
+  .content-body
+  .content-body-item
+  .stat.negative::before {
   content: "-";
-  color: #F47264;
+  color: #f47264;
   padding-right: 4px;
 }
-section.content-section .content-item .content-body .content-body-item .stat.positive::before {
+section.content-section
+  .content-item
+  .content-body
+  .content-body-item
+  .stat.positive::before {
   content: "+";
-  color: #28D8B2;
+  color: #28d8b2;
   padding-right: 4px;
 }
 section.content-section .content-item .content-body .content-body-item .graph {
@@ -618,66 +648,102 @@ section.content-section .content-item .content-body .content-body-item .graph {
   height: 170px;
   opacity: 0.9;
 }
-section.content-section .content-item .content-body .content-body-item .graph svg {
+section.content-section
+  .content-item
+  .content-body
+  .content-body-item
+  .graph
+  svg {
   width: 100%;
   height: 170px;
 }
 section.content-section .content-item .content-body .content-body-item:hover {
-  background: #F9F9F9;
+  background: #f9f9f9;
 }
-section.content-section .content-item .content-body .content-body-item:hover h4 {
+section.content-section
+  .content-item
+  .content-body
+  .content-body-item:hover
+  h4 {
   color: #959595;
 }
-section.content-section .content-item .content-body .content-body-item:hover .stat {
+section.content-section
+  .content-item
+  .content-body
+  .content-body-item:hover
+  .stat {
   color: #7b7b7b;
   font-weight: 300;
 }
-section.content-section .content-item .content-body .content-body-item:last-of-type {
+section.content-section
+  .content-item
+  .content-body
+  .content-body-item:last-of-type {
   border-right: none;
 }
 section.content-section:first-of-type .content-item .content-header h5::after {
-  background: #F47264;
+  background: #f47264;
 }
 section.content-section:first-of-type .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:first-of-type .content-item .graph:nth-last-of-type(2) svg polygon {
+section.content-section:first-of-type
+  .content-item
+  .graph:nth-last-of-type(2)
+  svg
+  polygon {
   fill: #e22410;
 }
 section.content-section:nth-of-type(2) .content-item .content-header h5::after {
-  background: #56A1DB;
+  background: #56a1db;
 }
 section.content-section:nth-of-type(2) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(2) .content-item .graph:nth-last-of-type(2) svg polygon {
+section.content-section:nth-of-type(2)
+  .content-item
+  .graph:nth-last-of-type(2)
+  svg
+  polygon {
   fill: #246ea7;
 }
 section.content-section:nth-of-type(3) .content-item .content-header h5::after {
-  background: #FBD046;
+  background: #fbd046;
 }
 section.content-section:nth-of-type(3) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(3) .content-item .graph:nth-last-of-type(2) svg polygon {
+section.content-section:nth-of-type(3)
+  .content-item
+  .graph:nth-last-of-type(2)
+  svg
+  polygon {
   fill: #d6a505;
 }
 section.content-section:nth-of-type(4) .content-item .content-header h5::after {
-  background: #28D8B2;
+  background: #28d8b2;
 }
 section.content-section:nth-of-type(4) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(4) .content-item .graph:nth-last-of-type(2) svg polygon {
+section.content-section:nth-of-type(4)
+  .content-item
+  .graph:nth-last-of-type(2)
+  svg
+  polygon {
   fill: #18826b;
 }
 section.content-section:nth-of-type(5) .content-item .content-header h5::after {
-  background: #735FA4;
+  background: #735fa4;
 }
 section.content-section:nth-of-type(5) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(5) .content-item .graph:nth-last-of-type(2) svg polygon {
+section.content-section:nth-of-type(5)
+  .content-item
+  .graph:nth-last-of-type(2)
+  svg
+  polygon {
   fill: #453964;
 }
 
@@ -686,18 +752,16 @@ section.content-section:nth-of-type(5) .content-item .graph:nth-last-of-type(2) 
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  background: #F47264;
+  background: #f47264;
 }
 .avatar img {
   width: 100%;
 }
 
-
-
-
-
 .body3 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    "Roboto Light", "Segoe UI Web Light", "Segoe UI Light",
+    "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif;
   margin: 1em;
   background: #293950;
   color: #ecf0f0;
@@ -718,53 +782,295 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
 */
 
 /* Northern America */
-.bm, .ca, .gl, .pm, .us,
-.noram {fill: #DF4949; background: #DF4949;}
+.bm,
+.ca,
+.gl,
+.pm,
+.us,
+.noram {
+  fill: #df4949;
+  background: #df4949;
+}
 
 /* Latin America and the Caribbean */
-.ai, .ag, .aw, .bs, .bb, .bq, .vg, .ky, .cu, .cw, .dm, .do, .gp, .ht, .jm, .mq, .ms, .pr, .bl, .kn, .lc, .mf, .vc, .sx, .tt, .vi,
-.bz, .crr, .sv, .gt, .hn, .mx, .ni, .pa,
-.ar, .bo, .br, .cl, .co, .ec, .fk, .gf, .gy, .py, .pe, .sr, .uy, .ve,  
-.latam {fill: #E27A3F; background: #E27A3F;}
+.ai,
+.ag,
+.aw,
+.bs,
+.bb,
+.bq,
+.vg,
+.ky,
+.cu,
+.cw,
+.dm,
+.do,
+.gp,
+.ht,
+.jm,
+.mq,
+.ms,
+.pr,
+.bl,
+.kn,
+.lc,
+.mf,
+.vc,
+.sx,
+.tt,
+.vi,
+.bz,
+.crr,
+.sv,
+.gt,
+.hn,
+.mx,
+.ni,
+.pa,
+.ar,
+.bo,
+.br,
+.cl,
+.co,
+.ec,
+.fk,
+.gf,
+.gy,
+.py,
+.pe,
+.sr,
+.uy,
+.ve,
+.latam {
+  fill: #e27a3f;
+  background: #e27a3f;
+}
 
 /* Europe */
-.by, .bg, .cz, .hu, .md, .pl, .ro, .ru, .sk, .ua, 
-.ax, .dk, .ee, .fo, .fi, .gg, .is, .ie, .je, .lv, .lt, .im, .no, .sj, .se, .gb,
-.al, .ad, .ba, .hr, .gi, .gr, .va, .it, .mk, .mt, .me, .pt, .sm, .rs, .si, .es,
-.at, .be, .fr, .de, .li, .lu, .mc, .nl, .ch,
-.eu { fill: #EFC94C; background: #EFC94C;}
+.by,
+.bg,
+.cz,
+.hu,
+.md,
+.pl,
+.ro,
+.ru,
+.sk,
+.ua,
+.ax,
+.dk,
+.ee,
+.fo,
+.fi,
+.gg,
+.is,
+.ie,
+.je,
+.lv,
+.lt,
+.im,
+.no,
+.sj,
+.se,
+.gb,
+.al,
+.ad,
+.ba,
+.hr,
+.gi,
+.gr,
+.va,
+.it,
+.mk,
+.mt,
+.me,
+.pt,
+.sm,
+.rs,
+.si,
+.es,
+.at,
+.be,
+.fr,
+.de,
+.li,
+.lu,
+.mc,
+.nl,
+.ch,
+.eu {
+  fill: #efc94c;
+  background: #efc94c;
+}
 
 /* Asia */
-.kz, .kg, .tj, .tm, .uz,
-.cn, .hk, .mo, .jp, .kp, .kr, .mn, .tw,
-.af, .bd, .bt, .in, .ir, .mv, .np, .pk, .lk,
-.bn, .kh, .id, .la, .my, .mm, .ph, .sg, .th, .tl, .vn,
-.am, .az, .bh, .cy, .ge, .iq, .il, .jo, .kw, .lb, .ps, .om, .qa, .sa, .sy, .tr, .ae, .ye, 
-.asia { fill: #9B59B6; background:  #9B59B6;}
+.kz,
+.kg,
+.tj,
+.tm,
+.uz,
+.cn,
+.hk,
+.mo,
+.jp,
+.kp,
+.kr,
+.mn,
+.tw,
+.af,
+.bd,
+.bt,
+.in,
+.ir,
+.mv,
+.np,
+.pk,
+.lk,
+.bn,
+.kh,
+.id,
+.la,
+.my,
+.mm,
+.ph,
+.sg,
+.th,
+.tl,
+.vn,
+.am,
+.az,
+.bh,
+.cy,
+.ge,
+.iq,
+.il,
+.jo,
+.kw,
+.lb,
+.ps,
+.om,
+.qa,
+.sa,
+.sy,
+.tr,
+.ae,
+.ye,
+.asia {
+  fill: #9b59b6;
+  background: #9b59b6;
+}
 
 /* Oceania */
-.au, .cx, .cc, .nz, .nf,
-.fj, .nc, .pg, .sb, .vu,
-.gu, .ki, .mh, .fm, .nr, .mp, .pw,
-.as, .ck, .pf, .nu, .pn, .ws, .tk, .to, .tv, .wf,  
-.oceania {fill: #3498db; background: #3498db;}
+.au,
+.cx,
+.cc,
+.nz,
+.nf,
+.fj,
+.nc,
+.pg,
+.sb,
+.vu,
+.gu,
+.ki,
+.mh,
+.fm,
+.nr,
+.mp,
+.pw,
+.as,
+.ck,
+.pf,
+.nu,
+.pn,
+.ws,
+.tk,
+.to,
+.tv,
+.wf,
+.oceania {
+  fill: #3498db;
+  background: #3498db;
+}
 
 /* Africa */
-.bi, .km, .dj, .er, .et, .ke, .mg, .mw, .mu, .yt, .mz, .re, .rw, .sc, .so, .tz, .ug, .zm, .zw,
-.ao, .cm, .cf, .td, .cg, .cd, .gq, .ga, .st,
-.dz, .eg, .ly, .ma, .ss, .sd, .tn, .eh,
-.bw, .ls, .na,  .za, .sz,
-.bj, .bf, .cv, .gm, .gh, .gn, .gw, .lr, .ml, .mr, .ne, .ng, .sh, .sn, .sl, .tg, 
-.africa {fill: #F495A3; background: #F495A3;}
+.bi,
+.km,
+.dj,
+.er,
+.et,
+.ke,
+.mg,
+.mw,
+.mu,
+.yt,
+.mz,
+.re,
+.rw,
+.sc,
+.so,
+.tz,
+.ug,
+.zm,
+.zw,
+.ao,
+.cm,
+.cf,
+.td,
+.cg,
+.cd,
+.gq,
+.ga,
+.st,
+.dz,
+.eg,
+.ly,
+.ma,
+.ss,
+.sd,
+.tn,
+.eh,
+.bw,
+.ls,
+.na,
+.za,
+.sz,
+.bj,
+.bf,
+.cv,
+.gm,
+.gh,
+.gn,
+.gw,
+.lr,
+.ml,
+.mr,
+.ne,
+.ng,
+.sh,
+.sn,
+.sl,
+.tg,
+.africa {
+  fill: #f495a3;
+  background: #f495a3;
+}
 
 /* Unclassified */
-.aq, .bv, .io, .tf, .hm, .gs, .um, 
-.a1, .a2, .o1, 
-.other { fill: #45B29D; background: #45B29D;}
-
-
-
-
+.aq,
+.bv,
+.io,
+.tf,
+.hm,
+.gs,
+.um,
+.a1,
+.a2,
+.o1,
+.other {
+  fill: #45b29d;
+  background: #45b29d;
+}
 
 /* // D474designs | Modifications, and fixes by JOCV-III ///////
 // All Rights Reserved /////// */
