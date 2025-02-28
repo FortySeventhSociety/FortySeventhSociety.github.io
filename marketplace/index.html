@@ -596,23 +596,18 @@ const resourceColors = {
 
 });
 
-// Reload Page Function //
-function reloadPage() {
-    var currentDocumentTimestamp = new Date(performance.timing.domLoading).getTime();
-    // Current Time //
-    var now = Date.now();
-    // Total Process Lenght as Minutes //
-    var oneSec = 1 * 1000;
-    // End Time of Process //
-    var plusOneSec = currentDocumentTimestamp + oneSec;
-    if (now > plusOneSec) {
-        location.reload();
-    }
+var refresh = window.localStorage.getItem('refresh');
+console.log(refresh);
+setTimeout(function() {
+if (refresh===null){
+    window.location.reload();
+    window.localStorage.setItem('refresh', "1");
 }
+}, 500); // 1500 milliseconds = 1.5 seconds
 
-
-// You can call it in somewhere //
-reloadPage();
+setTimeout(function() {
+localStorage.removeItem('refresh')
+}, 1000); // 1700 milliseconds = 1.7 seconds
 </script>
 
 <script src="theme.js"></script>
