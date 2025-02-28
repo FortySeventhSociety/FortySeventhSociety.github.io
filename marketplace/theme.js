@@ -20,7 +20,7 @@
 
         // Ripristina la scelta dell'utente dal localStorage
         function restoreCSS() {
-            var selectedCSS = localStorage.getItem('selectedCSS') || 'default.css';
+            var selectedCSS = localStorage.getItem('selectedCSS') || 'css/default.css';
             var selectElement = document.getElementById('css-selector');
 
             if (selectElement) {
