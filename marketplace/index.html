@@ -594,9 +594,6 @@ const resourceColors = {
     'fries': '#F4A460',      // Sabbia (più distintivo per le patatine)
 };
 
-loadInfoData();
-loadRankingData();
-
 });
 
 // Reload Page Function //
@@ -610,12 +607,6 @@ function reloadPage() {
     var plusOneSec = currentDocumentTimestamp + oneSec;
     if (now > plusOneSec) {
         location.reload();
-    }
-}
-
-
-// You can call it in somewhere //
-reloadPage();
 </script>
 
 <script src="theme.js"></script>

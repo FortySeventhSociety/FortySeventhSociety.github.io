@@ -6,7 +6,7 @@
 /* Importazione del font */
 @font-face {
     font-family: 'Dodec';
-    src: url('fonts/dodec.ttf') format('truetype');
+    src: url('../fonts/dodec.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
