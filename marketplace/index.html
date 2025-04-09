@@ -78,59 +78,6 @@
         ); /* Effetto al passaggio del mouse (trasparente con sfumatura leggera) */
       }
     </style>
-
-    <!-- style>
-      .chart-container {
-        display: flex;
-        justify-content: space-between; /* Distribuisce il grafico e le etichette con spazio tra loro */
-        align-items: center;
-        width: 70%; /* Mantiene la larghezza del contenitore al 100% */
-        height: 500px; /* Imposta un'altezza fissa per il contenitore */
-      }
-
-      #resourceChart {
-        width: 60%; /* Assegna il 60% della larghezza al grafico */
-        height: 100%; /* Imposta l'altezza del grafico per adattarsi al contenitore */
-      }
-
-      #legendContainer {
-        width: 35%; /* Assegna il 35% della larghezza alle etichette */
-        padding-left: 20px; /* Aggiunge spazio tra il grafico e le etichette */
-      }
-
-      /* Include the Dodec font */
-      @font-face {
-        font-family: "Dodec";
-        src: url("fonts/Dodec.ttf") format("truetype");
-      }
-
-      .dodec-font {
-        font-family: "Dodec", sans-serif;
-      }
-
-      .custom-font {
-        font-size: 24px; /* Dimensione del font */
-        padding: 10px; /* Spaziatura interna */
-        text-align: center; /* Centra il testo */
-      }
-
-      #refreshButton {
-        background-color: transparent; /* Sfondo trasparente */
-        border: none;
-        padding: 2px 2px; /* Spaziatura interna */
-        font-size: 18px; /* Dimensione del testo */
-        cursor: pointer; /* Cambia il cursore quando si passa sopra il bottone */
-      }
-
-      #refreshButton:hover {
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.1
-        ); /* Effetto al passaggio del mouse (trasparente con sfumatura leggera) */
-      }
-    </style -->
   </head>
 
   <body>
@@ -249,29 +196,28 @@
               >
             </h4>
             <h5>
-              * The information provided on this website does not constitute
+              *The information provided on this website does not constitute
               investment advice, financial advice, trading advice, or any other
               sort of advice and you should not treat any of the website’s
-              content as such. Thought Canopy Co SASU does not recommend that
-              any cryptocurrency should be bought, sold, or held by you.
+              content as such.
             </h5>
             <h3>🎓 Get started</h3>
             <h4>
               This section will guide you through the initial steps to play
-              Kingdom on either mobile or desktop.
+              NomStead on either mobile or desktop.
             </h4>
             <h3>Create your account</h3>
             <h4>
-              Creating an account on kingdom.so is simple and free.
+              Creating an account on NomStead is simple and free.
               <br />
-              Go to kingdom.so on desktop or mobile and click on Play Now
+              Go to NomStead on desktop or mobile and click on Play Now
               <br />
               Choose your username and avatar
               <br />
               Sign in with email and password or with a Google account
               <br />
-              That’s it! Your avatar arrive on the central tile of kingdom, and
-              you can now explore the world.
+              That is it! Your avatar arrive on the central tile of NomStead,
+              and you can now explore the world.
             </h4>
             <h5>Alpha phase warning</h5>
             <h6>
@@ -771,7 +717,7 @@
           $("#" + tabId).addClass("active");
         });
 
-        const apiUrl = "https://api.kingdom.so/open/marketplace";
+        const apiUrl = "https://api.nomstead.com/open/marketplace";
 
         function createRow(item, type) {
           return [
