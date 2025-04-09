@@ -2,437 +2,451 @@
 // All Rights Reserved //////*/
 
 @font-face {
-    font-family: 'Dodec';
-    src: url('fonts/dodec.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Dodec";
+  src: url("fonts/dodec.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Stili generali del corpo */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a002d; /* Sfondo viola scuro */
-    color: #FFD700; /* Testo principale grigio chiaro */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-    font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  background-color: #1a002d; /* Sfondo viola scuro */
+  color: #ffd700; /* Testo principale grigio chiaro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  font-size: 14px;
 }
 
 /* Stili per intestazioni */
-h1, h2 {
-    text-align: center;
-    margin: 20px 0;
+h1,
+h2 {
+  text-align: center;
+  margin: 20px 0;
 }
 
 h1 {
-    color: #FFD700; /* Neon turchese */
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 2px 2px 0 #00a3a3, -2px -2px 0 #00a3a3, 2px -2px 0 #00a3a3, -2px 2px 0 #00a3a3; /* Effetto neon */
+  color: #ffd700; /* Neon turchese */
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow:
+    2px 2px 0 #00a3a3,
+    -2px -2px 0 #00a3a3,
+    2px -2px 0 #00a3a3,
+    -2px 2px 0 #00a3a3; /* Effetto neon */
 }
 
 h2 {
-    color: #f7a1d5; /* Neon rosa */
-    font-size: 1.5em;
-    text-shadow: 
-        2px 2px 0 #1f0033,
-       -2px -2px 0 #1f0033,  
-        2px -2px 0 #1f0033,  
-       -2px 2px 0 #1f0033; /* Colore del bordo e dimensione */
+  color: #f7a1d5; /* Neon rosa */
+  font-size: 1.5em;
+  text-shadow:
+    2px 2px 0 #1f0033,
+    -2px -2px 0 #1f0033,
+    2px -2px 0 #1f0033,
+    -2px 2px 0 #1f0033; /* Colore del bordo e dimensione */
 }
 
 h3 {
-    color: #ff6600; /* Neon arancione */
-    font-size: 1.2em;
+  color: #ff6600; /* Neon arancione */
+  font-size: 1.2em;
+}
+
+h1 a {
+  color: #ffffff; /* Colore del testo del link: verde scuro */
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
 }
 
 h2 a {
-    color: #f7a1d5; /* Testo del link neon rosa */
-    text-decoration: none;
+  color: #f7a1d5; /* Testo del link neon rosa */
+  text-decoration: none;
 }
 
 h2 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Sezione dell'intestazione */
 .header-section {
-    background-image: url('img/cybercity.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    color: white;
-    padding: 0px 20px;
-    text-align: center;
+  background-image: url("img/cybercity.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  padding: 0px 20px;
+  text-align: center;
 }
 
 .header-section h1 {
-    font-size: 60px;
-    margin: 60px 0 0 0;
-    font-weight: bold;
+  font-size: 60px;
+  margin: 60px 0 0 0;
+  font-weight: bold;
 }
 
 .header-section h2 {
-    font-size: 30px;
-    margin: 10px 0 60px 0;
-    font-weight: normal;
+  font-size: 30px;
+  margin: 10px 0 60px 0;
+  font-weight: normal;
 }
 
 /* Stili per contenitori di tabelle */
 .table-container {
-    display: flex;
-    flex: 1;
-    gap: 20px;
-    padding: 10px;
-    box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 /* Stili per le sezioni delle tabelle */
 .table-section {
-    flex: 1;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow-y: scroll;
-    max-height: 100%;
-    position: relative;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  max-height: 100%;
+  position: relative;
 }
 
 /* Stili per le tabelle 'buy' */
 .table-section.buy {
-    background-color: #1f0033; /* Sfondo viola scuro */
-    color: #FFD700; /* Neon turchese */
-    border: 2px solid #FFD700; /* Bordo neon turchese */
+  background-color: #1f0033; /* Sfondo viola scuro */
+  color: #ffd700; /* Neon turchese */
+  border: 2px solid #ffd700; /* Bordo neon turchese */
 }
 
 /* Stili per le tabelle 'sell' */
 .table-section.sell {
-    background-color: #1a0a1a; /* Sfondo viola scuro */
-    color: #f7a1d5; /* Neon rosa */
-    border: 2px solid #f7a1d5; /* Bordo neon rosa */
+  background-color: #1a0a1a; /* Sfondo viola scuro */
+  color: #f7a1d5; /* Neon rosa */
+  border: 2px solid #f7a1d5; /* Bordo neon rosa */
 }
 
 /* Bordo delle tabelle 'buy' */
-.table-section.buy table, 
-.table-section.buy th, 
+.table-section.buy table,
+.table-section.buy th,
 .table-section.buy td {
-    border-color: #FFD700;
+  border-color: #ffd700;
 }
 
 /* Bordo delle tabelle 'sell' */
-.table-section.sell table, 
-.table-section.sell th, 
+.table-section.sell table,
+.table-section.sell th,
 .table-section.sell td {
-    border-color: #f7a1d5;
+  border-color: #f7a1d5;
 }
 
 .button {
-    display: inline-block;
-    padding: 2px 5px;
-    margin: 1px;
-    border: 2px solid #FFD700;
-    border-radius: 2px;
-    background-color: #1a0a1a;
-    color: #FFD700;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Dodec', monospace;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 1px;
+  border: 2px solid #ffd700;
+  border-radius: 2px;
+  background-color: #1a0a1a;
+  color: #ffd700;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Dodec", monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .button.sell {
-    border-color: #f7a1d5;
-    color: #f7a1d5;
+  border-color: #f7a1d5;
+  color: #f7a1d5;
 }
 
 .button:hover {
-    background-color: #FFD700;
-    color: #1a0a1a;
+  background-color: #ffd700;
+  color: #1a0a1a;
 }
 
 .button.sell:hover {
-    background-color: #f7a1d5;
-    color: #000;
+  background-color: #f7a1d5;
+  color: #000;
 }
 
 .button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
-
 
 /* Stili per le tabelle */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-    table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: auto;
 }
 
-table, th, td {
-    border: 1px solid;
+table,
+th,
+td {
+  border: 1px solid;
 }
 
-th, td {
-    padding: 8px;
-    text-align: center;
+th,
+td {
+  padding: 8px;
+  text-align: center;
 }
 
 th {
-    background-color: #2a0038; /* Sfondo viola scuro per le intestazioni */
-    font-size: 12px;
-    position: relative;
-    cursor: pointer;
+  background-color: #2a0038; /* Sfondo viola scuro per le intestazioni */
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
 }
 
 /* Colori delle intestazioni delle tabelle 'buy' e 'sell' */
 .table-section.buy th {
-    color: #FFD700; /* Neon turchese */
+  color: #ffd700; /* Neon turchese */
 }
 
 .table-section.sell th {
-    color: #f7a1d5; /* Neon rosa */
+  color: #f7a1d5; /* Neon rosa */
 }
 
 /* Stili per i filtri per la ricerca e la lunghezza */
 .dataTables_wrapper .dataTables_filter input {
-    border: 1px solid #FFD700; /* Bordo neon turchese */
-    background-color: #1a002d; /* Sfondo viola scuro */
-    color: #FFD700; /* Testo neon turchese */
-    font-family: 'Dodec', monospace;
-    padding: 4px;
+  border: 1px solid #ffd700; /* Bordo neon turchese */
+  background-color: #1a002d; /* Sfondo viola scuro */
+  color: #ffd700; /* Testo neon turchese */
+  font-family: "Dodec", monospace;
+  padding: 4px;
 }
 
 .dataTables_wrapper .dataTables_length select {
-    border: 1px solid #f7a1d5; /* Bordo neon rosa */
-    background-color: #1a002d; /* Sfondo viola scuro */
-    color: #f7a1d5; /* Testo neon rosa */
-    font-family: 'Dodec', monospace;
-    padding: 4px;
+  border: 1px solid #f7a1d5; /* Bordo neon rosa */
+  background-color: #1a002d; /* Sfondo viola scuro */
+  color: #f7a1d5; /* Testo neon rosa */
+  font-family: "Dodec", monospace;
+  padding: 4px;
 }
 
 /* Stili per informazioni e paginazione */
-.dataTables_wrapper .dataTables_info, 
+.dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate {
-    color: #FFD700; /* Testo neon turchese */
-    font-family: 'Dodec', monospace;
-    padding: 4px;
+  color: #ffd700; /* Testo neon turchese */
+  font-family: "Dodec", monospace;
+  padding: 4px;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-    color: #1a002d;
-    border: 1px solid #FFD700; /* Bordo neon turchese */
-    background-color: #FFD700; /* Sfondo neon turchese */
-    padding: 4px;
-    margin: 2px;
-    border-radius: 4px;
-    cursor: pointer;
+  color: #1a002d;
+  border: 1px solid #ffd700; /* Bordo neon turchese */
+  background-color: #ffd700; /* Sfondo neon turchese */
+  padding: 4px;
+  margin: 2px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    background-color: #1a002d; /* Sfondo viola scuro */
-    color: #FFD700; /* Testo neon turchese */
+  background-color: #1a002d; /* Sfondo viola scuro */
+  color: #ffd700; /* Testo neon turchese */
 }
 
 /* Selettore per i menu a tendina nella tabella sell */
 .filter-group.sell select {
-    border: 1px solid #f7a1d5; /* Bordo neon rosa */
-    background-color: #1a002d; /* Sfondo viola scuro */
-    color: #f7a1d5; /* Testo neon rosa */
-    font-family: 'Dodec', monospace;
-    padding: 4px;
+  border: 1px solid #f7a1d5; /* Bordo neon rosa */
+  background-color: #1a002d; /* Sfondo viola scuro */
+  color: #f7a1d5; /* Testo neon rosa */
+  font-family: "Dodec", monospace;
+  padding: 4px;
 }
 
 .filter-group.buy select {
-    border: 1px solid #FFD700; /* Bordo neon turchese */
-    background-color: #1a002d; /* Sfondo viola scuro */
-    color: #FFD700; /* Testo neon turchese */
-    font-family: 'Dodec', monospace;
-    padding: 4px;
+  border: 1px solid #ffd700; /* Bordo neon turchese */
+  background-color: #1a002d; /* Sfondo viola scuro */
+  color: #ffd700; /* Testo neon turchese */
+  font-family: "Dodec", monospace;
+  padding: 4px;
 }
 
 /* Imposta il colore delle frecce di ordinamento per tutte le intestazioni delle colonne */
 .dataTables_wrapper th.sorting::after,
 .dataTables_wrapper th.sorting_asc::after,
 .dataTables_wrapper th.sorting_desc::after {
-    color: #FFD700; /* Frecce neon turchese */
-    font-size: 14px;
-    margin-left: 5px;
+  color: #ffd700; /* Frecce neon turchese */
+  font-size: 14px;
+  margin-left: 5px;
 }
 
 /* Freccia per l'ordinamento crescente */
 .dataTables_wrapper th.sorting_asc::after {
-    content: "\25B4"; /* Freccia verso l'alto */
+  content: "\25B4"; /* Freccia verso l'alto */
 }
 
 /* Freccia per l'ordinamento decrescente */
 .dataTables_wrapper th.sorting_desc::after {
-    content: "\25BE"; /* Freccia verso il basso */
+  content: "\25BE"; /* Freccia verso il basso */
 }
 
 /* Stili per il piÃ¨ di pagina */
 footer {
-    background-color: #1a0a1a; /* Colore viola scuro */
-    color: #e0e0e0; /* Testo principale */
-    text-align: center;
-    padding: 5px;
-    border-top: 2px solid #f7a1d5; /* Bordo neon rosa */
+  background-color: #1a0a1a; /* Colore viola scuro */
+  color: #e0e0e0; /* Testo principale */
+  text-align: center;
+  padding: 5px;
+  border-top: 2px solid #f7a1d5; /* Bordo neon rosa */
 }
 
 footer a {
-    color: #f7a1d5; /* Colore neon rosa per i link */
-    text-decoration: none;
+  color: #f7a1d5; /* Colore neon rosa per i link */
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-
 .menu2 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .menu2 select {
-    background-color: #1a0a1a; /* Sfondo bianco */
-    color: #FFD700;/* Testo scuro */
-    border: 1px solid #ff69b4; /* Bordo rosa chiaro */
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Dodec', monospace;
+  background-color: #1a0a1a; /* Sfondo bianco */
+  color: #ffd700; /* Testo scuro */
+  border: 1px solid #ff69b4; /* Bordo rosa chiaro */
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Dodec", monospace;
 }
 
 .menu2 label span {
-    color: #FFD700;
+  color: #ffd700;
 }
 
-
 .tabs {
-    display: flex;
-    cursor: pointer;
-    margin-bottom: 0px;
-	font-size: 14px;
-    height: auto; /* Imposta l'altezza in modo che si adatti al contenuto */
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 0px;
+  font-size: 14px;
+  height: auto; /* Imposta l'altezza in modo che si adatti al contenuto */
 }
 
 .tab {
-    padding: 10px;
-    background-color: #2A0038;
-    border: 2px solid #FFD700;
-	color: #FFD700;
-    border-bottom: none;
-    margin-right: 5px;
-    border-radius: 4px 4px 0 0;
+  padding: 10px;
+  background-color: #2a0038;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  border-bottom: none;
+  margin-right: 5px;
+  border-radius: 4px 4px 0 0;
 }
 
 .tab.active {
-    background-color: #FFD700;
-	color: #2A0038;
-    border-bottom: 2px solid #2A0038;
+  background-color: #ffd700;
+  color: #2a0038;
+  border-bottom: 2px solid #2a0038;
 }
 
 .tab-content {
-height: 100%;
-    overflow: auto;  /* Permetti lo scrolling se il contenuto Ã¨ piÃ¹ grande */
-    display: none;
-    padding: 10px;
-    background-color: #2A0038;
-    flex-grow: 1; /* Permette al contenuto di espandersi */
-	border: 2px solid #FFD700; 
+  height: 100%;
+  overflow: auto; /* Permetti lo scrolling se il contenuto Ã¨ piÃ¹ grande */
+  display: none;
+  padding: 10px;
+  background-color: #2a0038;
+  flex-grow: 1; /* Permette al contenuto di espandersi */
+  border: 2px solid #ffd700;
 }
 
 .tab-content.active {
-    display: block;
-    height: 100%;
+  display: block;
+  height: 100%;
 }
 
-.table-container, .table-section {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Lascia che l'altezza si adatti al contenitore principale */
-    flex-grow: 1; /* Permetti al contenitore di espandersi */
+.table-container,
+.table-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Lascia che l'altezza si adatti al contenitore principale */
+  flex-grow: 1; /* Permetti al contenitore di espandersi */
 }
 
-
-	/* Personalizzazione delle barre di scorrimento per i contenitori di tabelle */
+/* Personalizzazione delle barre di scorrimento per i contenitori di tabelle */
 .table-section::-webkit-scrollbar {
-    width: 8px; /* Larghezza della scrollbar */
+  width: 8px; /* Larghezza della scrollbar */
 }
 
 /* Sfondo della track della scrollbar */
 .table-section::-webkit-scrollbar-track {
-    background: #1F0033; /* Sfondo nero per la track */
-    border: 2px solid #FFD700; /* Bordo verde acido per la track (per le tabelle buy) */
-    border-radius: 0; /* Angoli squadrati per la track */
+  background: #1f0033; /* Sfondo nero per la track */
+  border: 2px solid #ffd700; /* Bordo verde acido per la track (per le tabelle buy) */
+  border-radius: 0; /* Angoli squadrati per la track */
 }
 
 .table-section.sell::-webkit-scrollbar-track {
-    border: 2px solid #f7a1d5; /* Bordo rosso per la track (per le tabelle sell) */
+  border: 2px solid #f7a1d5; /* Bordo rosso per la track (per le tabelle sell) */
 }
 
 /* Parte scorrevole della scrollbar */
 .table-section::-webkit-scrollbar-thumb {
-    background: #FFD700; /* Colore della parte scorrevole per le tabelle "buy" */
-    border-radius: 0; /* Angoli squadrati per il thumb */
-    border: 2px solid #FFD700; /* Bordo verde acido per il thumb */
-    height: 30px; /* Altezza del thumb per rendere il thumb meno lungo */
+  background: #ffd700; /* Colore della parte scorrevole per le tabelle "buy" */
+  border-radius: 0; /* Angoli squadrati per il thumb */
+  border: 2px solid #ffd700; /* Bordo verde acido per il thumb */
+  height: 30px; /* Altezza del thumb per rendere il thumb meno lungo */
 }
 
 .table-section.sell::-webkit-scrollbar-thumb {
-    background: #f7a1d5; /* Colore della parte scorrevole per le tabelle "sell" */
-    border: 2px solid #f7a1d5; /* Bordo rosso per il thumb */
+  background: #f7a1d5; /* Colore della parte scorrevole per le tabelle "sell" */
+  border: 2px solid #f7a1d5; /* Bordo rosso per il thumb */
 }
 
 /* Bottoni della scrollbar (freccette) */
 .table-section::-webkit-scrollbar-button {
-    background-color: #1F0033; /* Sfondo delle frecce */
-    border: 2px solid #FFD700; /* Bordo verde acido per le frecce delle tabelle "buy" */
-    border-radius: 0; /* Angoli squadrati per le frecce */
+  background-color: #1f0033; /* Sfondo delle frecce */
+  border: 2px solid #ffd700; /* Bordo verde acido per le frecce delle tabelle "buy" */
+  border-radius: 0; /* Angoli squadrati per le frecce */
 }
 
 .table-section.sell::-webkit-scrollbar-button {
-    border: 2px solid #f7a1d5; /* Bordo rosso per le frecce delle tabelle "sell" */
+  border: 2px solid #f7a1d5; /* Bordo rosso per le frecce delle tabelle "sell" */
 }
 
 /* Nascondere i bottoni delle scrollbar se non necessari */
 .table-section::-webkit-scrollbar-button {
-    display: none; /* Nasconde i bottoni per un aspetto piÃ¹ pulito */
+  display: none; /* Nasconde i bottoni per un aspetto piÃ¹ pulito */
 }
 
-
-
 @media (max-width: 768px) {
-    .menu2 {
-        position: absolute; /* Assicurati che l'elemento non sia assoluto se non necessario */
-        top: 10px; /* Regola la posizione su dispositivi mobili */
-        right: 10px; /* Regola la distanza dal bordo destro su dispositivi mobili */
-        z-index: 1000; /* Assicurati che il menu sia sopra altri elementi se necessario */
-		margin-bottom: 50px; /* Aggiungi spazio sotto il menu */
-    }
-	
-	.menu2 span {
-	display: none;
-	}
+  .menu2 {
+    position: absolute; /* Assicurati che l'elemento non sia assoluto se non necessario */
+    top: 10px; /* Regola la posizione su dispositivi mobili */
+    right: 10px; /* Regola la distanza dal bordo destro su dispositivi mobili */
+    z-index: 1000; /* Assicurati che il menu sia sopra altri elementi se necessario */
+    margin-bottom: 50px; /* Aggiungi spazio sotto il menu */
+  }
 
-    .header-container h1 {
-        margin-top: 150px; /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
-        font-size: 30px; /* Riduci la dimensione del font per dispositivi mobili */
-        line-height: 1.2; /* Migliora la leggibilitÃ  su schermi piccoli */
-    }
+  .menu2 span {
+    display: none;
+  }
 
-    .header-container h2 {
-        font-size: 20px; /* Riduci la dimensione del font per h2 sui dispositivi mobili */
-        margin-top: 10px; /* Spazio sopra l'h2 */
-        margin-bottom: 0px; /* Spazio sotto l'h2 */
-    }
+  .header-container h1 {
+    margin-top: 150px; /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
+    font-size: 30px; /* Riduci la dimensione del font per dispositivi mobili */
+    line-height: 1.2; /* Migliora la leggibilitÃ  su schermi piccoli */
+  }
+
+  .header-container h2 {
+    font-size: 20px; /* Riduci la dimensione del font per h2 sui dispositivi mobili */
+    margin-top: 10px; /* Spazio sopra l'h2 */
+    margin-bottom: 0px; /* Spazio sotto l'h2 */
+  }
 }

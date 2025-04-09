@@ -1,615 +1,973 @@
 <!-- // D474designs | Modifications, and fixes by JOCV-III ///////
 // All Rights Reserved /////// -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>47th Marketplace</title>
-    <meta name="description" content="The 47th Society | We Welcome You!
-    Free games available online! Visit us today!">
-    <meta name="author" content="D474designs">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="games, video games, free games, online games, browser games, free game, game, miniclip, ugotgames, you got games, yougotgames, flash games, flash, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, money, income, passive income, refferals, reffer, refferer, ads, links, work from home, steady income, start your own business, graphic design, seo, get paid, job, internet, advertisement, rich, dollars, work, daily, every day, get paid everyday, thathill, thathill.webs.com, https://thathill.webs.com, emoneyspace, emoneyspace.com/d474, emoneyspace.com, https://www.emoneyspace.com, grind, collect, collect money, collect money from home, influencer, how to make money as an influencer, how to create a passive income, part-time job, part time, part time job, how to start a business from home, how to start a business, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, media company, online media, original content, representation, agent, online media company, advertisement, promotion, get noticed, ads, post ads, professional, professional advertisement service, professional advertisement firm, ad firm, advertisement firm, promotion firm, go viral, viral promotion, viral promotion firm, media firm, media agency, mass media, worldwide, global, world wide, world-wide advertisement, global advertisement, social media advertisement, social media promotion, social, influencer, how to make money as an influencer, how to gain a following, instagram, facebook, snapchat, tumblr, wordpress, blog, vlog, youtube, youtube channel, youtube channel promotion, youtube channel advertisement, grow my youtube, grow my youtube channel, grow my social media, grow my instagram, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, datadesigns, datamedia, data, designer, design, designs, sound engineer, sound engineering, audio, audio production, graphic design, graphics, dj, dj data, dj d474, video, photo, photography, video work, videography, choreography, director, directing, acting, actor, writer, ghost writer, musician, artist, production, producer, beats, beat, rap, concert, rave, d474designs.webs.com, https://d474designs.webs.com, d474forex, that hill">
-    <link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-2.1.3/datatables.min.css">
-	<link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="../style.css">
+    <meta
+      name="description"
+      content="The 47th Society | We Welcome You!
+    Free games available online! Visit us today!"
+    />
+    <meta name="author" content="D474designs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="games, video games, free games, online games, browser games, free game, game, miniclip, ugotgames, you got games, yougotgames, flash games, flash, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, money, income, passive income, refferals, reffer, refferer, ads, links, work from home, steady income, start your own business, graphic design, seo, get paid, job, internet, advertisement, rich, dollars, work, daily, every day, get paid everyday, thathill, thathill.webs.com, https://thathill.webs.com, emoneyspace, emoneyspace.com/d474, emoneyspace.com, https://www.emoneyspace.com, grind, collect, collect money, collect money from home, influencer, how to make money as an influencer, how to create a passive income, part-time job, part time, part time job, how to start a business from home, how to start a business, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, media company, online media, original content, representation, agent, online media company, advertisement, promotion, get noticed, ads, post ads, professional, professional advertisement service, professional advertisement firm, ad firm, advertisement firm, promotion firm, go viral, viral promotion, viral promotion firm, media firm, media agency, mass media, worldwide, global, world wide, world-wide advertisement, global advertisement, social media advertisement, social media promotion, social, influencer, how to make money as an influencer, how to gain a following, instagram, facebook, snapchat, tumblr, wordpress, blog, vlog, youtube, youtube channel, youtube channel promotion, youtube channel advertisement, grow my youtube, grow my youtube channel, grow my social media, grow my instagram, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, datadesigns, datamedia, data, designer, design, designs, sound engineer, sound engineering, audio, audio production, graphic design, graphics, dj, dj data, dj d474, video, photo, photography, video work, videography, choreography, director, directing, acting, actor, writer, ghost writer, musician, artist, production, producer, beats, beat, rap, concert, rave, d474designs.webs.com, https://d474designs.webs.com, d474forex, that hill"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/v/dt/dt-2.1.3/datatables.min.css"
+    />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="../style.css" />
 
-	<style>
-.chart-container {
-    display: flex;
-    justify-content: space-between; /* Distribuisce il grafico e le etichette con spazio tra loro */
-    align-items: center;
-    width: 70%; /* Mantiene la larghezza del contenitore al 100% */
-    height: 500px; /* Imposta un'altezza fissa per il contenitore */
-}
+    <style>
+      .chart-container {
+        display: flex;
+        justify-content: space-between; /* Distribuisce il grafico e le etichette con spazio tra loro */
+        align-items: center;
+        width: 70%; /* Mantiene la larghezza del contenitore al 100% */
+        height: 500px; /* Imposta un'altezza fissa per il contenitore */
+      }
 
-#resourceChart {
-    width: 60%; /* Assegna il 60% della larghezza al grafico */
-    height: 100%; /* Imposta l'altezza del grafico per adattarsi al contenitore */
-}
+      #resourceChart {
+        width: 60%; /* Assegna il 60% della larghezza al grafico */
+        height: 100%; /* Imposta l'altezza del grafico per adattarsi al contenitore */
+      }
 
-#legendContainer {
-    width: 35%; /* Assegna il 35% della larghezza alle etichette */
-    padding-left: 20px; /* Aggiunge spazio tra il grafico e le etichette */
-}
+      #legendContainer {
+        width: 35%; /* Assegna il 35% della larghezza alle etichette */
+        padding-left: 20px; /* Aggiunge spazio tra il grafico e le etichette */
+      }
 
+      /* Include the Dodec font */
+      @font-face {
+        font-family: "Dodec";
+        src: url("fonts/Dodec.ttf") format("truetype");
+      }
 
-        /* Include the Dodec font */
-        @font-face {
-            font-family: 'Dodec';
-            src: url('fonts/Dodec.ttf') format('truetype');
-        }
+      .dodec-font {
+        font-family: "Dodec", sans-serif;
+      }
 
-        .dodec-font {
-            font-family: 'Dodec', sans-serif;
-        }
+      .custom-font {
+        font-size: 24px; /* Dimensione del font */
+        padding: 10px; /* Spaziatura interna */
+        text-align: center; /* Centra il testo */
+      }
 
-.custom-font {
-    font-size: 24px; /* Dimensione del font */
-    padding: 10px; /* Spaziatura interna */
-    text-align: center; /* Centra il testo */
-}
+      #refreshButton {
+        background-color: transparent; /* Sfondo trasparente */
+        border: none;
+        padding: 2px 2px; /* Spaziatura interna */
+        font-size: 18px; /* Dimensione del testo */
+        cursor: pointer; /* Cambia il cursore quando si passa sopra il bottone */
+      }
 
-#refreshButton {
-    background-color: transparent;  /* Sfondo trasparente */
-    border: none;  
-    padding: 2px 2px;             /* Spaziatura interna */
-    font-size: 18px;                /* Dimensione del testo */
-    cursor: pointer;                /* Cambia il cursore quando si passa sopra il bottone */
-}
+      #refreshButton:hover {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.1
+        ); /* Effetto al passaggio del mouse (trasparente con sfumatura leggera) */
+      }
+    </style>
 
-#refreshButton:hover {
-    background-color: rgba(0, 0, 0, 0.1);  /* Effetto al passaggio del mouse (trasparente con sfumatura leggera) */
-}
-</style>
-</head>
+    <!-- style>
+      .chart-container {
+        display: flex;
+        justify-content: space-between; /* Distribuisce il grafico e le etichette con spazio tra loro */
+        align-items: center;
+        width: 70%; /* Mantiene la larghezza del contenitore al 100% */
+        height: 500px; /* Imposta un'altezza fissa per il contenitore */
+      }
 
-<body>
-    <div class="switch3" id="switch3">
-    </div>
+      #resourceChart {
+        width: 60%; /* Assegna il 60% della larghezza al grafico */
+        height: 100%; /* Imposta l'altezza del grafico per adattarsi al contenitore */
+      }
+
+      #legendContainer {
+        width: 35%; /* Assegna il 35% della larghezza alle etichette */
+        padding-left: 20px; /* Aggiunge spazio tra il grafico e le etichette */
+      }
+
+      /* Include the Dodec font */
+      @font-face {
+        font-family: "Dodec";
+        src: url("fonts/Dodec.ttf") format("truetype");
+      }
+
+      .dodec-font {
+        font-family: "Dodec", sans-serif;
+      }
+
+      .custom-font {
+        font-size: 24px; /* Dimensione del font */
+        padding: 10px; /* Spaziatura interna */
+        text-align: center; /* Centra il testo */
+      }
+
+      #refreshButton {
+        background-color: transparent; /* Sfondo trasparente */
+        border: none;
+        padding: 2px 2px; /* Spaziatura interna */
+        font-size: 18px; /* Dimensione del testo */
+        cursor: pointer; /* Cambia il cursore quando si passa sopra il bottone */
+      }
+
+      #refreshButton:hover {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.1
+        ); /* Effetto al passaggio del mouse (trasparente con sfumatura leggera) */
+      }
+    </style -->
+  </head>
+
+  <body>
+    <div class="switch3" id="switch3"></div>
+
+    <!-- D474designs ----------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------->
 
     <div class="menu2">
-        <label for="css-selector"><span>Themes:</span></label>
-        <select id="css-selector" onchange="changeCSS(this.value)">
-            <option value="css/default.css">Default</option>
-			 <option value="css/cyber.css">Cyber</option>
-            <option value="css/girls.css">Girls</option>
-			<option value="css/neon.css">Neon</option>
-            <!-- Aggiungi qui altre opzioni per i tuoi file CSS -->
-        </select>
+      <label for="css-selector"><span>Themes:</span></label>
+      <select id="css-selector" onchange="changeCSS(this.value)">
+        <option value="css/default.css">Default</option>
+        <option value="css/cyber.css">Cyber</option>
+        <option value="css/girls.css">Girls</option>
+        <option value="css/neon.css">Neon</option>
+        <!-- Aggiungi qui altre opzioni per i tuoi file CSS -->
+      </select>
     </div>
-	<div class="header-section">
-	<h1>Data The Destroyer's</h1>
-        <h2><a href="https://kingdom.so/?ref=btrpazme" target="_blank">Kingdom.so Marketplace</a></h2>
-	<div class="tabs">
+    <div class="header-section">
+      <h1>
+        <a href="https://nomstead.com/?ref=btrpazme" target="_blank"
+          >Data The Destroyer's</a
+        >
+      </h1>
+      <h2>
+        <a href="https://nomstead.com/?ref=btrpazme" target="_blank"
+          >NomStead Marketplace</a
+        >
+      </h2>
+      <div class="tabs">
         <div class="tab" data-tab="tab1">🏰</div>
-        <div class="tab" data-tab="tab2">👜</div>
-        <div class="tab active" data-tab="tab3">Buy items</div>
+        <div class="tab" data-tab="tab2">🔖</div>
+        <div class="tab active" data-tab="tab3">Buy Items</div>
         <div class="tab" data-tab="tab4">Sell Items</div>
+      </div>
     </div>
-	</div>
- <div id="tab3" class="tab-content active">
-        <div class="table-section buy">
-            <div class="filter-group buy">
-                <label for="categoryFilterBuy">Category:</label>
-                <select id="categoryFilterBuy">
-                    <option value="">All</option>
-                </select>
-                <label for="subcategoryFilterBuy">Subcategory:</label>
-                <select id="subcategoryFilterBuy">
-                    <option value="">All</option>
-                </select>
-            </div>
-
-            <table id="toBuyTable" class="display" style="width:100%">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Object</th>
-                        <th>Category</th>
-                        <th>Subcategory</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th></th>
-                        <th>Seller</th>
-                    </tr>
-                </thead>
-            </table>
+    <div id="tab3" class="tab-content active">
+      <div class="table-section buy">
+        <div class="filter-group buy">
+          <label for="categoryFilterBuy">Category:</label>
+          <select id="categoryFilterBuy">
+            <option value="">All</option>
+          </select>
+          <label for="subcategoryFilterBuy">Subcategory:</label>
+          <select id="subcategoryFilterBuy">
+            <option value="">All</option>
+          </select>
         </div>
-		</div>
-		
 
-	<div id="tab4" class="tab-content">
-        <div class="table-section sell">
-            <div class="filter-group sell">
-                <label for="categoryFilterSell">Category:</label>
-                <select id="categoryFilterSell">
-                    <option value="">All</option>
-                </select>
-                <label for="subcategoryFilterSell">Subcategory:</label>
-                <select id="subcategoryFilterSell">
-                    <option value="">All</option>
-                </select>
-            </div>
-
-            <table id="toSellTable" class="display" style="width:100%">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Object</th>
-                        <th>Category</th>
-                        <th>Subcategory</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th></th>
-                        <th>Seller</th>
-                    </tr>
-                </thead>
-            </table>
+        <table id="toBuyTable" class="display" style="width: 100%">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Object</th>
+              <th>Category</th>
+              <th>Subcategory</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th></th>
+              <th>Seller</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
     </div>
-	</div>
 
-<div id="tab1" class="tab-content">
-    <div class="table-section sell"> <!-- Usa la classe 'sell' per copiare lo stile -->
-    <div class="dodec-font">
-        <!--
+    <div id="tab4" class="tab-content">
+      <div class="table-section sell">
+        <div class="filter-group sell">
+          <label for="categoryFilterSell">Category:</label>
+          <select id="categoryFilterSell">
+            <option value="">All</option>
+          </select>
+          <label for="subcategoryFilterSell">Subcategory:</label>
+          <select id="subcategoryFilterSell">
+            <option value="">All</option>
+          </select>
+        </div>
+
+        <table id="toSellTable" class="display" style="width: 100%">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Object</th>
+              <th>Category</th>
+              <th>Subcategory</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th></th>
+              <th>Seller</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <div id="tab1" class="tab-content">
+      <div class="table-section sell">
+        <!-- Usa la classe 'sell' per copiare lo stile -->
+        <div class="dodec-font">
+          <!--
         <div class="dodec-font"><div class="custom-font">The Politics Of The Forty Seventh Society Kingdoms</div></div>
     -->
-    <br/>
-<center>
-<h3>Introduction</h3>
+          <br />
+          <center>
+            <h3>Introduction</h3>
 
-<h4>Kingdom is a multiplayer casual, cozy web3 game with a player-controlled economy where you can create your own kingdom, collect resources, make friends, craft objects, farm and trade.
-<br/>
-You can play kingdom on desktop and mobile directly at <a href="https://kingdom.so/?ref=btrpazme" target="_blank">Kingdom.so</a></h4>
-<h5>* The information provided on this website does not constitute investment advice, financial advice, trading advice, or any other sort of advice and you should not treat any of the website’s content as such. Thought Canopy Co SASU does not recommend that any cryptocurrency should be bought, sold, or held by you.</h5>
-<h3>🎓 Get started</h3>
-<h4>This section will guide you through the initial steps to play Kingdom on either mobile or desktop.</h4>
-<h3>Create your account</h3>
-<h4>Creating an account on kingdom.so is simple and free. 
-<br/>
-Go to kingdom.so on desktop or mobile and click on Play Now
-<br/>
-Choose your username and avatar
-<br/>
-Sign in with email and password or with a Google account
-<br/>
-That’s it! Your avatar arrive on the central tile of kingdom, and you can now explore the world.</h4>
-<h5>Alpha phase warning</h5>
-<h6>Alpha means that the game is still a work in progress. By playing the alpha version you are contributing greatly to the future game’s development—but you must expect setbacks and bugs.
-<br/>
-In exchange for your understanding and patience, the devs will often reward early adopters with special items, advantages, unique sales, exclusive access, and more.</h6>
-<h5>Discord</h5>
-<h6>We highly recommend joining us on <a href="https://discord.gg/3B5FedjYDE" target="_blank">Discord</a> to chat with the developers and discover new features and content.</h6>
-</center>
-<br/>
-<br/>
+            <h4>
+              NomStead is a multiplayer casual, cozy web3 game with a
+              player-controlled economy where you can create your own kingdom,
+              collect resources, make friends, craft objects, farm and trade.
+              <br />
+              You can play kingdom on desktop and mobile directly at
+              <a href="https://nomstead.com/?ref=btrpazme" target="_blank"
+                >NomStead</a
+              >
+            </h4>
+            <h5>
+              * The information provided on this website does not constitute
+              investment advice, financial advice, trading advice, or any other
+              sort of advice and you should not treat any of the website’s
+              content as such. Thought Canopy Co SASU does not recommend that
+              any cryptocurrency should be bought, sold, or held by you.
+            </h5>
+            <h3>🎓 Get started</h3>
+            <h4>
+              This section will guide you through the initial steps to play
+              Kingdom on either mobile or desktop.
+            </h4>
+            <h3>Create your account</h3>
+            <h4>
+              Creating an account on kingdom.so is simple and free.
+              <br />
+              Go to kingdom.so on desktop or mobile and click on Play Now
+              <br />
+              Choose your username and avatar
+              <br />
+              Sign in with email and password or with a Google account
+              <br />
+              That’s it! Your avatar arrive on the central tile of kingdom, and
+              you can now explore the world.
+            </h4>
+            <h5>Alpha phase warning</h5>
+            <h6>
+              Alpha means that the game is still a work in progress. By playing
+              the alpha version you are contributing greatly to the future
+              game’s development—but you must expect setbacks and bugs.
+              <br />
+              In exchange for your understanding and patience, the devs will
+              often reward early adopters with special items, advantages, unique
+              sales, exclusive access, and more.
+            </h6>
+            <h5>Discord</h5>
+            <h6>
+              We highly recommend joining us on
+              <a href="https://discord.gg/3B5FedjYDE" target="_blank"
+                >Discord</a
+              >
+              to chat with the developers and discover new features and content.
+            </h6>
+          </center>
+          <br />
+          <br />
+        </div>
+      </div>
     </div>
-    </div>
-</div>
 
     <div id="tab2" class="tab-content">
-        <div class="table-section buy">
-                        <div class="dodec-font"><div class="custom-font">Some Of The Items From Kingdom.so</div>
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap; width: 100%;">
-    <table id="resourceTable" class="display" style="width: 18%; margin: 5px;">
-        <thead>
-            <tr>
-                <th style="width: 50px;"></th>
-                <th style="width: 100px;">Materials</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="https://kingdom.so/_nuxt/img/gold.b8469d8.png" style="width:30px; height:30px;"></td>
-                <td>Gold</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/wood_plank.png" style="width:30px; height:30px;"></td>
-                <td>Wood Plank</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/stone_brick.png" style="width:30px; height:30px;"></td>
-                <td>Stone Brick</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/clay_brick.png" style="width:30px; height:30px;"></td>
-                <td>Clay Brick</td>
-            </tr>
-        </tbody>
-    </table>
+      <div class="table-section buy">
+        <div class="dodec-font">
+          <div class="custom-font">Some Of The Items From Kingdom.so</div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              width: 100%;
+            "
+          >
+            <table
+              id="resourceTable"
+              class="display"
+              style="width: 18%; margin: 5px"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 50px"></th>
+                  <th style="width: 100px">Materials</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/_nuxt/img/gold.b8469d8.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Gold</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/wood_plank.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Wood Plank</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/stone_brick.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Stone Brick</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/clay_brick.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Clay Brick</td>
+                </tr>
+              </tbody>
+            </table>
 
-    <table id="resourceTable" class="display" style="width: 18%; margin: 5px;">
-        <thead>
-            <tr>
-                <th style="width: 50px;"></th>
-                <th style="width: 100px;">Gems</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/amethyst.png" style="width:30px; height:30px;"></td>
-                <td>Amethyst</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/emerald.png" style="width:30px; height:30px;"></td>
-                <td>Emerald</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/ruby.png" style="width:30px; height:30px;"></td>
-                <td>Ruby</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/sapphire.png" style="width:30px; height:30px;"></td>
-                <td>Sapphire</td>
-            </tr>
-        </tbody>
-    </table>
+            <table
+              id="resourceTable"
+              class="display"
+              style="width: 18%; margin: 5px"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 50px"></th>
+                  <th style="width: 100px">Gems</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/amethyst.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Amethyst</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/emerald.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Emerald</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/ruby.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Ruby</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/sapphire.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Sapphire</td>
+                </tr>
+              </tbody>
+            </table>
 
-    <table id="resourceTable" class="display" style="width: 18%; margin: 5px;">
-        <thead>
-            <tr>
-                <th style="width: 50px;"></th>
-                <th style="width: 100px;">Raw Goods</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/ingot_gold.png" style="width:30px; height:30px;"></td>
-                <td>Ingot Gold</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/ingot_silver.png" style="width:30px; height:30px;"></td>
-                <td>Ingot Silver</td>
-            </tr>
-                        <tr>
-                <td><img src="https://kingdom.so/images/objects/ingot_iron.png" style="width:30px; height:30px;"></td>
-                <td>Ingot Iron</td>
-            </tr>
-                                    <tr>
-                <td><img src="https://kingdom.so/images/objects/cotton_thread.png" style="width:30px; height:30px;"></td>
-                <td>Cotton Thread</td>
-            </tr>
-        </tbody>
-    </table>
+            <table
+              id="resourceTable"
+              class="display"
+              style="width: 18%; margin: 5px"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 50px"></th>
+                  <th style="width: 100px">Raw Goods</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/ingot_gold.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Ingot Gold</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/ingot_silver.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Ingot Silver</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/ingot_iron.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Ingot Iron</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/cotton_thread.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Cotton Thread</td>
+                </tr>
+              </tbody>
+            </table>
 
-    <table id="resourceTable" class="display" style="width: 18%; margin: 5px;">
-        <thead>
-            <tr>
-                <th style="width: 50px;"></th>
-                <th style="width: 100px;">Thread</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/cotton_thread_brown.png" style="width:30px; height:30px;"></td>
-                <td>Brown Cotton Thread</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/cotton_thread_green.png" style="width:30px; height:30px;"></td>
-                <td>Green Cotton Thread</td>
-            </tr>
-                        <tr>
-                <td><img src="https://kingdom.so/images/objects/cotton_thread_orange.png" style="width:30px; height:30px;"></td>
-                <td>Orange Cotton Thread</td>
-            </tr>
-                        <tr>
-                <td><img src="https://kingdom.so/images/objects/cotton_thread_red.png" style="width:30px; height:30px;"></td>
-                <td>Red Cotton Thread</td>
-            </tr>
-                        <tr>
-                <td><img src="https://kingdom.so/images/objects/cotton_thread_yellow.png" style="width:30px; height:30px;"></td>
-                <td>Yellow Cotton Thread</td>
-            </tr>
-                                    <tr>
-                <td><img src="https://kingdom.so/images/objects/cotton_thread_blue.png" style="width:30px; height:30px;"></td>
-                <td>Blue Cotton Thread</td>
-            </tr>
-        </tbody>
-    </table>
-        <table id="resourceTable" class="display" style="width: 18%; margin: 5px;">
-        <thead>
-            <tr>
-                <th style="width: 50px;"></th>
-                <th style="width: 100px;">Foodstuffs</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/wrapped_potato.png" style="width:30px; height:30px;"></td>
-                <td>Wrapped Potato</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/salad.png" style="width:30px; height:30px;"></td>
-                <td>Salad</td>
-            </tr>
-                        <tr>
-                <td><img src="https://kingdom.so/images/objects/mushroom_soup.png" style="width:30px; height:30px;"></td>
-                <td>Mushroom Soup</td>
-            </tr>
-                        <tr>
-                <td><img src="https://kingdom.so/images/objects/fries.png" style="width:30px; height:30px;"></td>
-                <td>Fries</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <table
+              id="resourceTable"
+              class="display"
+              style="width: 18%; margin: 5px"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 50px"></th>
+                  <th style="width: 100px">Thread</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/cotton_thread_brown.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Brown Cotton Thread</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/cotton_thread_green.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Green Cotton Thread</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/cotton_thread_orange.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Orange Cotton Thread</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/cotton_thread_red.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Red Cotton Thread</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/cotton_thread_yellow.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Yellow Cotton Thread</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/cotton_thread_blue.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Blue Cotton Thread</td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              id="resourceTable"
+              class="display"
+              style="width: 18%; margin: 5px"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 50px"></th>
+                  <th style="width: 100px">Foodstuffs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/wrapped_potato.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Wrapped Potato</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/salad.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Salad</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/mushroom_soup.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Mushroom Soup</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="https://nomstead.com/images/objects/fries.png"
+                      style="width: 30px; height: 30px"
+                    />
+                  </td>
+                  <td>Fries</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-<br/>
-<br/>
-                        </div>
-<div class="dodec-font" style="display: flex; justify-content: space-between;">
-    <div style="width: 48%;">
-        <table class="display" style="width: 100%;">
-            <tr>
-                <th style="width: 50px;"></th>
+          <br />
+          <br />
+        </div>
+        <div
+          class="dodec-font"
+          style="display: flex; justify-content: space-between"
+        >
+          <div style="width: 48%">
+            <table class="display" style="width: 100%">
+              <tr>
+                <th style="width: 50px"></th>
                 <th>Name</th>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/bread_oven.png" style="width:30px; height:30px;"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/bread_oven.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
                 <td>Bread Oven</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/dyeing_vat.png" style="width:30px; height:30px;"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/dyeing_vat.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
                 <td>Dyeing Vat</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/furnace.png" style="width:30px; height:30px;"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/furnace.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
                 <td>Furnace</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/mill.png" style="width:30px; height:30px;"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/mill.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
                 <td>Mill</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/sawmill.png" style="width:30px; height:30px;"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/sawmill.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
                 <td>Sawmill</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/spinning_wheel.png" style="width:30px; height:30px;"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/spinning_wheel.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
                 <td>Spinning Wheel</td>
-            </tr>
-            <tr>
-                <td><img src="https://kingdom.so/images/objects/stonecutter.png" style="width:30px; height:30px;"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/stonecutter.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
                 <td>Stone Cutter</td>
-            </tr>
-        </table>
-    </div>
+              </tr>
+            </table>
+          </div>
 
-    <div style="width: 48%;">
-        <table class="display" style="width: 100%;">
-            <tr>
+          <div style="width: 48%">
+            <table class="display" style="width: 100%">
+              <tr>
                 <th>Resource</th>
                 <th></th>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Wood</td>
-                <td><img src="https://kingdom.so/images/objects/wood.png" style="width:30px; height:30px;"></td>
-            </tr>
-            <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/wood.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
+              </tr>
+              <tr>
                 <td>Stone</td>
-                <td><img src="https://kingdom.so/images/objects/stone.png" style="width:30px; height:30px;"></td>
-            </tr>
-            <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/stone.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
+              </tr>
+              <tr>
                 <td>Iron</td>
-                <td><img src="https://kingdom.so/images/objects/iron.png" style="width:30px; height:30px;"></td>
-            </tr>
-            <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/iron.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
+              </tr>
+              <tr>
                 <td>Silver</td>
-                <td><img src="https://kingdom.so/images/objects/silver.png" style="width:30px; height:30px;"></td>
-            </tr>
-            <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/silver.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
+              </tr>
+              <tr>
                 <td>Gold Ore</td>
-                <td><img src="https://kingdom.so/images/objects/gold.png" style="width:30px; height:30px;"></td>
-            </tr>
-            <tr>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/gold.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
+              </tr>
+              <tr>
                 <td>Clay</td>
-                <td><img src="https://kingdom.so/images/objects/clay.png" style="width:30px; height:30px;"></td>
-            </tr>
-        </table>
-    </div>
-</div>
+                <td>
+                  <img
+                    src="https://nomstead.com/images/objects/clay.png"
+                    style="width: 30px; height: 30px"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
 
     <footer>
-        <p><span id="year"></span>❤️ <a href="https://kingdom.so/?ref=btrpazme" target="_blank">Data The Destroyer</a></p>
+      <p>
+        <span id="year"></span>❤️
+        <a href="https://nomstead.com/?ref=btrpazme" target="_blank"
+          >Data The Destroyer</a
+        >
+      </p>
     </footer>
 
-    <script  src="../script2.js">
-    </script>
+    <script src="../script2.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-$.fn.dataTable.ext.errMode = 'none';
-$(document).ready(function() {
-    // Inizializza DataTables per ogni tabella
-    $('#table1').DataTable();
-    $('#table2').DataTable();
-    $('#table3').DataTable({
-        pageLength: 30  // Imposta la lunghezza della pagina a 30
-    });
-	$('#table4').DataTable();
-$('#ranking_table').DataTable();
-$('#multiplied_ranking_table').DataTable();
+    <script>
+      $.fn.dataTable.ext.errMode = "none";
+      $(document).ready(function () {
+        // Inizializza DataTables per ogni tabella
+        $("#table1").DataTable();
+        $("#table2").DataTable();
+        $("#table3").DataTable({
+          pageLength: 30, // Imposta la lunghezza della pagina a 30
+        });
+        $("#table4").DataTable();
+        $("#ranking_table").DataTable();
+        $("#multiplied_ranking_table").DataTable();
 
-    // Altre inizializzazioni
+        // Altre inizializzazioni
 
-    // Gestione del click sulle tab
-    $('.tab').on('click', function() {
-        var tabId = $(this).data('tab');
+        // Gestione del click sulle tab
+        $(".tab").on("click", function () {
+          var tabId = $(this).data("tab");
 
-        // Attiva la tab cliccata
-        $('.tab').removeClass('active');
-        $(this).addClass('active');
+          // Attiva la tab cliccata
+          $(".tab").removeClass("active");
+          $(this).addClass("active");
 
-        // Mostra il contenuto corrispondente alla tab cliccata
-        $('.tab-content').removeClass('active');
-        $('#' + tabId).addClass('active');
-    });
+          // Mostra il contenuto corrispondente alla tab cliccata
+          $(".tab-content").removeClass("active");
+          $("#" + tabId).addClass("active");
+        });
 
-    const apiUrl = 'https://api.kingdom.so/open/marketplace';
+        const apiUrl = "https://api.kingdom.so/open/marketplace";
 
-    function createRow(item, type) {
-        return [
+        function createRow(item, type) {
+          return [
             `<img src="${item.object.thumbnailImageUrl}" alt="${item.object.metadata.title}" style="width:16px; height:16px;">`,
             item.object.metadata.title,
             item.object.category,
             item.object.subCategory,
             item.pricing.unitPrice || item.pricing.desiredQuantity,
             item.pricing.availableQuantity || item.pricing.desiredQuantity,
-            `<a href="${item.tile.url}" target="_blank" class="button ${type === 'buy' ? '' : 'sell'}">${type === 'buy' ? 'Buy' : 'Sell'}</a>`,
-            item.tile.owner
-        ];
-    }
-
-    function initDataTable(tableId, data, type) {
-        // Verifica se DataTable è già inizializzato
-        if ($.fn.DataTable.isDataTable(tableId)) {
-            // Se sì, distruggilo prima di reinizializzare
-            $(tableId).DataTable().clear().destroy();
+            `<a href="${item.tile.url}" target="_blank" class="button ${type === "buy" ? "" : "sell"}">${type === "buy" ? "Buy" : "Sell"}</a>`,
+            item.tile.owner,
+          ];
         }
 
-        // Inizializza DataTable
-        $(tableId).DataTable({
-            data: data.map(item => createRow(item, type)),
+        function initDataTable(tableId, data, type) {
+          // Verifica se DataTable è già inizializzato
+          if ($.fn.DataTable.isDataTable(tableId)) {
+            // Se sì, distruggilo prima di reinizializzare
+            $(tableId).DataTable().clear().destroy();
+          }
+
+          // Inizializza DataTable
+          $(tableId).DataTable({
+            data: data.map((item) => createRow(item, type)),
             columns: [
-                { title: "", orderable: false },
-                { title: "Object" },
-                { title: "Category" },
-                { title: "Subcategory" },
-                { title: "Price" },
-                { title: "Quantity" },
-                { title: "", orderable: false },
-                { title: "Owner" }
+              { title: "", orderable: false },
+              { title: "Object" },
+              { title: "Category" },
+              { title: "Subcategory" },
+              { title: "Price" },
+              { title: "Quantity" },
+              { title: "", orderable: false },
+              { title: "Owner" },
             ],
-            pageLength: 75,  // Imposta il numero di voci da mostrare a 75
-            order: [[2, 'asc'], [3, 'asc'], [4, 'asc']],
-            createdRow: function(row, data, dataIndex) {
-                $(row).addClass(type === 'buy' ? 'buy-row' : 'sell-row');
+            pageLength: 75, // Imposta il numero di voci da mostrare a 75
+            order: [
+              [2, "asc"],
+              [3, "asc"],
+              [4, "asc"],
+            ],
+            createdRow: function (row, data, dataIndex) {
+              $(row).addClass(type === "buy" ? "buy-row" : "sell-row");
             },
             language: {
-                paginate: {
-                    previous: "<",
-                    next: ">"
-                },
-                lengthMenu: "Show _MENU_ entries",
-                info: "Showing _START_ to _END_ of _TOTAL_ entries",
-                infoFiltered: "(filtered from _MAX_ total entries)",
-                search: "Search:"
-            }
-        });
-    }
+              paginate: {
+                previous: "<",
+                next: ">",
+              },
+              lengthMenu: "Show _MENU_ entries",
+              info: "Showing _START_ to _END_ of _TOTAL_ entries",
+              infoFiltered: "(filtered from _MAX_ total entries)",
+              search: "Search:",
+            },
+          });
+        }
 
-    function populateFilters(data, categoryFilter, subcategoryFilter) {
-        const categories = [...new Set(data.map(item => item.object.category))];
-        const subCategories = [...new Set(data.map(item => item.object.subCategory))];
+        function populateFilters(data, categoryFilter, subcategoryFilter) {
+          const categories = [
+            ...new Set(data.map((item) => item.object.category)),
+          ];
+          const subCategories = [
+            ...new Set(data.map((item) => item.object.subCategory)),
+          ];
 
-        categoryFilter.empty();
-        subcategoryFilter.empty();
+          categoryFilter.empty();
+          subcategoryFilter.empty();
 
-        // Aggiungi l'opzione "ALL" per le categorie
-        categoryFilter.append(new Option("All", ""));
-        categories.forEach(category => {
+          // Aggiungi l'opzione "ALL" per le categorie
+          categoryFilter.append(new Option("All", ""));
+          categories.forEach((category) => {
             categoryFilter.append(new Option(category, category));
-        });
+          });
 
-        // Aggiungi l'opzione "ALL" per le sottocategorie
-        subcategoryFilter.append(new Option("All", ""));
-        subCategories.forEach(subCategory => {
+          // Aggiungi l'opzione "ALL" per le sottocategorie
+          subcategoryFilter.append(new Option("All", ""));
+          subCategories.forEach((subCategory) => {
             subcategoryFilter.append(new Option(subCategory, subCategory));
-        });
-    }
+          });
+        }
 
-    function filterTableByCategoryAndSubcategory(tableId, categoryFilter, subcategoryFilter) {
-        $(categoryFilter).on('change', function() {
+        function filterTableByCategoryAndSubcategory(
+          tableId,
+          categoryFilter,
+          subcategoryFilter,
+        ) {
+          $(categoryFilter).on("change", function () {
             const category = $(this).val();
             const subcategory = $(subcategoryFilter).val();
             const table = $(tableId).DataTable();
 
             // Filtra in base alla categoria e sottocategoria
-            table.columns(2).search(category || '').columns(3).search(subcategory || '').draw();
-        });
+            table
+              .columns(2)
+              .search(category || "")
+              .columns(3)
+              .search(subcategory || "")
+              .draw();
+          });
 
-        $(subcategoryFilter).on('change', function() {
+          $(subcategoryFilter).on("change", function () {
             const subcategory = $(this).val();
             const category = $(categoryFilter).val();
             const table = $(tableId).DataTable();
 
             // Filtra in base alla sottocategoria e categoria
-            table.columns(3).search(subcategory || '').columns(2).search(category || '').draw();
-        });
-    }
+            table
+              .columns(3)
+              .search(subcategory || "")
+              .columns(2)
+              .search(category || "")
+              .draw();
+          });
+        }
 
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            const sortedToBuy = data.toBuy.sort((a, b) => a.object.category.localeCompare(b.object.category));
-            const sortedToSell = data.toSell.sort((a, b) => a.object.category.localeCompare(b.object.category));
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const sortedToBuy = data.toBuy.sort((a, b) =>
+              a.object.category.localeCompare(b.object.category),
+            );
+            const sortedToSell = data.toSell.sort((a, b) =>
+              a.object.category.localeCompare(b.object.category),
+            );
 
-            initDataTable('#toBuyTable', sortedToBuy, 'buy');
-            initDataTable('#toSellTable', sortedToSell, 'sell');
+            initDataTable("#toBuyTable", sortedToBuy, "buy");
+            initDataTable("#toSellTable", sortedToSell, "sell");
 
-            populateFilters(sortedToBuy, $('#categoryFilterBuy'), $('#subcategoryFilterBuy'));
-            populateFilters(sortedToSell, $('#categoryFilterSell'), $('#subcategoryFilterSell'));
+            populateFilters(
+              sortedToBuy,
+              $("#categoryFilterBuy"),
+              $("#subcategoryFilterBuy"),
+            );
+            populateFilters(
+              sortedToSell,
+              $("#categoryFilterSell"),
+              $("#subcategoryFilterSell"),
+            );
 
-            filterTableByCategoryAndSubcategory('#toBuyTable', '#categoryFilterBuy', '#subcategoryFilterBuy');
-            filterTableByCategoryAndSubcategory('#toSellTable', '#categoryFilterSell', '#subcategoryFilterSell');
-        });
+            filterTableByCategoryAndSubcategory(
+              "#toBuyTable",
+              "#categoryFilterBuy",
+              "#subcategoryFilterBuy",
+            );
+            filterTableByCategoryAndSubcategory(
+              "#toSellTable",
+              "#categoryFilterSell",
+              "#subcategoryFilterSell",
+            );
+          });
 
-                // Mappa dei colori distintivi per le risorse
-const resourceColors = {
-    'wood': '#8B4513',              // Marrone legno
-    'stone': '#A9A9A9',             // Grigio scuro
-    'iron': '#6B6B6B',              // Grigio scuro per il ferro
-    'silver': '#C0C0C0',            // Argento
-    'gold': '#FFD700',              // Oro
-    'amethyst': '#9966CC',          // Viola ametista
-    'clay': '#D2691E',              // Terracotta
-    'clay_brick': '#FF6347',        // Rosso arancio (diverso da argilla)
-    'ruby': '#C72C41',              // Rosso rubino
-    'sapphire': '#0033A0',          // Blu zaffiro scuro
-    'emerald': '#50C878',           // Verde smeraldo
-    'stone_brick': '#7B8D82',       // Mattone verde
-    'cotton_thread': '#F0E5DE',     // Beige chiaro
-    'wood_plank': '#D4A30A',        // Legno dorato
-    'ingot_gold': '#B8860B',        // Oro (mantieni questo come oro)
-    'ingot_silver': '#B0C4DE',      // Grigio acciaio (leggermente più chiaro di argento)
-    'ingot_iron': '#4B4B4B',        // Grigio scuro per il ferro
-    'cotton_thread_brown': '#A0522D', // Marrone chiaro (diverso da legno)
-    'cotton_thread_green': '#228B22', // Verde
-    'cotton_thread_orange': '#FFA500', // Arancione
-    'cotton_thread_red': '#FF4500', // Rosso
-    'cotton_thread_yellow': '#FFF700', // Giallo (mantieni lo stesso per continuità)
-    'cotton_thread_blue': '#0000FF', // Giallo (mantieni lo stesso per continuità)
-    'wrapped_potato': '#DEB887',    // Beige marrone (diverso da altri marroni)
-    'salad': '#66CDAA',      // Verde acqua (diverso dall’insalata)
-    'mushroom_soup': '#FFE4B5',     // Pesca chiaro (diverso da zuppa di funghi)
-    'fries': '#F4A460',      // Sabbia (più distintivo per le patatine)
-};
+        // Mappa dei colori distintivi per le risorse
+        const resourceColors = {
+          wood: "#8B4513", // Marrone legno
+          stone: "#A9A9A9", // Grigio scuro
+          iron: "#6B6B6B", // Grigio scuro per il ferro
+          silver: "#C0C0C0", // Argento
+          gold: "#FFD700", // Oro
+          amethyst: "#9966CC", // Viola ametista
+          clay: "#D2691E", // Terracotta
+          clay_brick: "#FF6347", // Rosso arancio (diverso da argilla)
+          ruby: "#C72C41", // Rosso rubino
+          sapphire: "#0033A0", // Blu zaffiro scuro
+          emerald: "#50C878", // Verde smeraldo
+          stone_brick: "#7B8D82", // Mattone verde
+          cotton_thread: "#F0E5DE", // Beige chiaro
+          wood_plank: "#D4A30A", // Legno dorato
+          ingot_gold: "#B8860B", // Oro (mantieni questo come oro)
+          ingot_silver: "#B0C4DE", // Grigio acciaio (leggermente più chiaro di argento)
+          ingot_iron: "#4B4B4B", // Grigio scuro per il ferro
+          cotton_thread_brown: "#A0522D", // Marrone chiaro (diverso da legno)
+          cotton_thread_green: "#228B22", // Verde
+          cotton_thread_orange: "#FFA500", // Arancione
+          cotton_thread_red: "#FF4500", // Rosso
+          cotton_thread_yellow: "#FFF700", // Giallo (mantieni lo stesso per continuità)
+          cotton_thread_blue: "#0000FF", // Giallo (mantieni lo stesso per continuità)
+          wrapped_potato: "#DEB887", // Beige marrone (diverso da altri marroni)
+          salad: "#66CDAA", // Verde acqua (diverso dall’insalata)
+          mushroom_soup: "#FFE4B5", // Pesca chiaro (diverso da zuppa di funghi)
+          fries: "#F4A460", // Sabbia (più distintivo per le patatine)
+        };
+      });
 
-});
+      var refresh = window.localStorage.getItem("refresh");
+      console.log(refresh);
+      setTimeout(function () {
+        if (refresh === null) {
+          window.location.reload();
+          window.localStorage.setItem("refresh", "1");
+        }
+      }, 500); // 1500 milliseconds = 1.5 seconds
 
-var refresh = window.localStorage.getItem('refresh');
-console.log(refresh);
-setTimeout(function() {
-if (refresh===null){
-    window.location.reload();
-    window.localStorage.setItem('refresh', "1");
-}
-}, 500); // 1500 milliseconds = 1.5 seconds
+      setTimeout(function () {
+        localStorage.removeItem("refresh");
+      }, 1000); // 1700 milliseconds = 1.7 seconds
+    </script>
 
-setTimeout(function() {
-localStorage.removeItem('refresh')
-}, 1000); // 1700 milliseconds = 1.7 seconds
-</script>
-
-<script src="theme.js"></script>
-</body>
+    <script src="theme.js"></script>
+  </body>
 </html>

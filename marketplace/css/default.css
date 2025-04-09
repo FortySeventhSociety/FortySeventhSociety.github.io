@@ -1,520 +1,537 @@
 /*/ D474designs | Modifications, and fixes by JOCV-III ///////
 // All Rights Reserved //////*/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* Importazione del font */
 @font-face {
-    font-family: 'Dodec';
-    src: url('../fonts/dodec.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Dodec";
+  src: url("../fonts/dodec.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Stili generali del corpo */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f8e7; /* Colore di sfondo chiaro ispirato alla palette di Zelda */
-    color: #3b3b3b; /* Colore del testo principale, neutro */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-    font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f8e7; /* Colore di sfondo chiaro ispirato alla palette di Zelda */
+  color: #3b3b3b; /* Colore del testo principale, neutro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  font-size: 14px;
 }
 
 /* Stili per intestazioni */
-h1, h2 {
-    text-align: center;
-    margin: 20px 0;
+h1,
+h2 {
+  text-align: center;
+  margin: 20px 0;
 }
 
 h1 {
-    font-family: 'Dodec', monospace;
-    color: #ffffff; /* Verde scuro per il titolo principale, richiamando la vegetazione */
-    font-size: 3em;
-    font-weight: bold;
-	text-shadow: 
-        2px 2px 0 #006400,  
-       -2px -2px 0 #006400,
-        2px -2px 0 #006400,
-       -2px 2px 0 #006400; /* Colore del bordo e dimensione */
+  font-family: "Dodec", monospace;
+  color: #ffffff; /* Verde scuro per il titolo principale, richiamando la vegetazione */
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow:
+    2px 2px 0 #006400,
+    -2px -2px 0 #006400,
+    2px -2px 0 #006400,
+    -2px 2px 0 #006400; /* Colore del bordo e dimensione */
 }
 
 h2 {
-    font-family: 'Dodec', monospace;
-    color: #ffffff; /* Verde scuro per i sottotitoli */
-    font-size: 1.5em;
-		text-shadow: 
-        2px 2px 0 #006400,  
-       -2px -2px 0 #006400,
-        2px -2px 0 #006400,
-       -2px 2px 0 #006400; /* Colore del bordo e dimensione */
+  font-family: "Dodec", monospace;
+  color: #ffffff; /* Verde scuro per i sottotitoli */
+  font-size: 1.5em;
+  text-shadow:
+    2px 2px 0 #006400,
+    -2px -2px 0 #006400,
+    2px -2px 0 #006400,
+    -2px 2px 0 #006400; /* Colore del bordo e dimensione */
 }
 
 h3 {
-    color: #006400; /* Verde scuro */
-    font-size: 1.2em;
+  color: #006400; /* Verde scuro */
+  font-size: 1.2em;
+}
+
+h1 a {
+  color: #ffffff; /* Colore del testo del link: verde scuro */
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
 }
 
 h2 a {
-    color: #ffffff; /* Colore del testo del link: verde scuro */
-    text-decoration: none;
+  color: #ffffff; /* Colore del testo del link: verde scuro */
+  text-decoration: none;
 }
 
 h2 a:hover {
-    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
 }
 
 .header-section {
-    background-image: url('img/kingdom.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; /* Assicura che l'immagine copra l'intera area senza ripetersi */
-    color: white; /* Colore del testo */
-    padding: 0px 20px; /* Spazio interno per rendere il contenuto piÃ¹ visibile */
-    text-align: center; /* Allinea il testo al centro */
+  background-image: url("img/kingdom.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Assicura che l'immagine copra l'intera area senza ripetersi */
+  color: white; /* Colore del testo */
+  padding: 0px 20px; /* Spazio interno per rendere il contenuto piÃ¹ visibile */
+  text-align: center; /* Allinea il testo al centro */
 }
 
 .header-section h1 {
-    font-family: 'Dodec', monospace;
-    font-size: 60px; /* Modifica la dimensione del titolo */
-    margin: 60px 0 0 0; /* Aggiunto margine superiore */
-    font-weight: bold; /* Rende il titolo piÃ¹ spesso */
+  font-family: "Dodec", monospace;
+  font-size: 60px; /* Modifica la dimensione del titolo */
+  margin: 60px 0 0 0; /* Aggiunto margine superiore */
+  font-weight: bold; /* Rende il titolo piÃ¹ spesso */
 }
 
 .header-section h2 {
-    font-family: 'Dodec', monospace;
-    font-size: 30px; /* Modifica la dimensione del sottotitolo */
-    margin: 10px 0 60px 0; /* Rimuove margine superiore e aggiunge uno spazio tra h1 e h2 */
-    font-weight: normal; /* Modifica lo spessore del testo del sottotitolo */
+  font-family: "Dodec", monospace;
+  font-size: 30px; /* Modifica la dimensione del sottotitolo */
+  margin: 10px 0 60px 0; /* Rimuove margine superiore e aggiunge uno spazio tra h1 e h2 */
+  font-weight: normal; /* Modifica lo spessore del testo del sottotitolo */
 }
 
 /* Stili per contenitori di tabelle */
 .table-container {
-    display: flex;
-    flex: 1;
-    gap: 20px;
-    padding: 10px;
-    box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 /* Stili per le sezioni delle tabelle */
 .table-section {
-    flex: 1;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow-y: scroll;
-    max-height: 100%;
-    position: relative;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  max-height: 100%;
+  position: relative;
 }
 
 /* Stili per le tabelle 'buy' */
 .table-section.buy {
-    background-color: #ffffff; /* Sfondo bianco */
-    color: #006400; /* Verde scuro per il testo */
-    border: 2px solid #006400; /* Bordo verde scuro */
+  background-color: #ffffff; /* Sfondo bianco */
+  color: #006400; /* Verde scuro per il testo */
+  border: 2px solid #006400; /* Bordo verde scuro */
 }
 
 /* Stili per le tabelle 'sell' */
 .table-section.sell {
-    background-color: #ffffff; /* Sfondo bianco */
-    color: #601814; /* Arancione scuro per il testo, evocativo del Triforce */
-    border: 2px solid #601814; /* Bordo arancione scuro */
+  background-color: #ffffff; /* Sfondo bianco */
+  color: #601814; /* Arancione scuro per il testo, evocativo del Triforce */
+  border: 2px solid #601814; /* Bordo arancione scuro */
 }
 
 /* Bordo delle tabelle 'buy' */
-.table-section.buy table, 
-.table-section.buy th, 
+.table-section.buy table,
+.table-section.buy th,
 .table-section.buy td {
-    border-color: #006400;
+  border-color: #006400;
 }
 
 /* Bordo delle tabelle 'sell' */
-.table-section.sell table, 
-.table-section.sell th, 
+.table-section.sell table,
+.table-section.sell th,
 .table-section.sell td {
-    border-color: #601814;
+  border-color: #601814;
 }
 
 /* Stili per le tabelle */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-	table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: auto;
 }
 
-table, th, td {
-    border: 1px solid;
+table,
+th,
+td {
+  border: 1px solid;
 }
 
-th, td {
-    padding: 8px;
-    text-align: center;
+th,
+td {
+  padding: 8px;
+  text-align: center;
 }
 
 th {
-    background-color: #f2f2e6; /* Sfondo crema chiaro per le intestazioni */
-    font-size: 12px;
-    position: relative;
-    cursor: pointer;
+  background-color: #f2f2e6; /* Sfondo crema chiaro per le intestazioni */
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
 }
 
 /* Colori delle intestazioni delle tabelle 'buy' e 'sell' */
 .table-section.buy th {
-    color: #006400; /* Verde scuro per le intestazioni */
+  color: #006400; /* Verde scuro per le intestazioni */
 }
 
 .table-section.sell th {
-    color: #601814; /* Arancione scuro per le intestazioni */
+  color: #601814; /* Arancione scuro per le intestazioni */
 }
 
 /* Stili per i filtri per la ricerca e la lunghezza */
 .dataTables_wrapper .dataTables_filter input {
-    border: 1px solid #006400; /* Bordo verde scuro */
-    background-color: #fff; /* Sfondo bianco */
-    color: #006400; /* Testo verde scuro */
-    padding: 4px;
+  border: 1px solid #006400; /* Bordo verde scuro */
+  background-color: #fff; /* Sfondo bianco */
+  color: #006400; /* Testo verde scuro */
+  padding: 4px;
 }
 
 .dataTables_wrapper .dataTables_length select {
-    border: 1px solid #006400; /* Bordo verde scuro */
-    background-color: #fff; /* Sfondo bianco */
-    color: #006400; /* Testo verde scuro */
-    padding: 4px;
+  border: 1px solid #006400; /* Bordo verde scuro */
+  background-color: #fff; /* Sfondo bianco */
+  color: #006400; /* Testo verde scuro */
+  padding: 4px;
 }
 
 .dataTables_wrapper .dataTables_filter label {
-    margin-bottom: 20px; /* Aggiungi spazio sotto l'etichetta */
-    display: block; /* Assicurati che l'etichetta si comporti come un blocco per il margine inferiore */
+  margin-bottom: 20px; /* Aggiungi spazio sotto l'etichetta */
+  display: block; /* Assicurati che l'etichetta si comporti come un blocco per il margine inferiore */
 }
 
 .dataTables_wrapper .dataTables_length {
-    margin-top: 5px; /* Aggiungi spazio sopra il selettore "Show entries" */
-    margin-bottom: 5px; /* Aggiungi spazio sotto il selettore "Show entries" */
+  margin-top: 5px; /* Aggiungi spazio sopra il selettore "Show entries" */
+  margin-bottom: 5px; /* Aggiungi spazio sotto il selettore "Show entries" */
 }
 
 /* Stili per informazioni e paginazione */
-.dataTables_wrapper .dataTables_info, 
+.dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate {
-    color: #006400; /* Colore del testo verde scuro */
-    padding: 4px;
+  color: #006400; /* Colore del testo verde scuro */
+  padding: 4px;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-    color: #ffffff;
-    border: 1px solid #006400; /* Bordo verde scuro */
-    background-color: #006400; /* Sfondo verde scuro */
-    padding: 4px;
-    margin: 2px;
-    border-radius: 4px;
-    cursor: pointer;
+  color: #ffffff;
+  border: 1px solid #006400; /* Bordo verde scuro */
+  background-color: #006400; /* Sfondo verde scuro */
+  padding: 4px;
+  margin: 2px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    background-color: #ffffff; /* Sfondo bianco */
-    color: #006400; /* Testo verde scuro */
+  background-color: #ffffff; /* Sfondo bianco */
+  color: #006400; /* Testo verde scuro */
 }
 
 /* Selettore per i menu a tendina nella tabella sell */
 .filter-group.sell select {
-    border: 1px solid #601814; /* Bordo arancione scuro */
-    background-color: #fff; /* Sfondo bianco */
-    color: #601814; /* Testo arancione scuro */
-    padding: 4px;
+  border: 1px solid #601814; /* Bordo arancione scuro */
+  background-color: #fff; /* Sfondo bianco */
+  color: #601814; /* Testo arancione scuro */
+  padding: 4px;
 }
 
 .filter-group.buy select {
-    border: 1px solid #006400; /* Bordo verde scuro */
-    background-color: #fff; /* Sfondo bianco */
-    color: #006400; /* Testo verde scuro */
-    padding: 4px;
+  border: 1px solid #006400; /* Bordo verde scuro */
+  background-color: #fff; /* Sfondo bianco */
+  color: #006400; /* Testo verde scuro */
+  padding: 4px;
 }
 
 /* Imposta il colore delle frecce di ordinamento per tutte le intestazioni delle colonne */
 .dataTables_wrapper th.sorting::after,
 .dataTables_wrapper th.sorting_asc::after,
 .dataTables_wrapper th.sorting_desc::after {
-    color: #006400; /* Colore verde scuro per le frecce di ordinamento */
-    font-size: 14px; /* Dimensione della freccia */
-    margin-left: 5px; /* Spazio tra il testo dell'intestazione e la freccia */
+  color: #006400; /* Colore verde scuro per le frecce di ordinamento */
+  font-size: 14px; /* Dimensione della freccia */
+  margin-left: 5px; /* Spazio tra il testo dell'intestazione e la freccia */
 }
 
 /* Freccia per l'ordinamento crescente */
 .dataTables_wrapper th.sorting_asc::after {
-    content: "\25B4"; /* Freccia verso l'alto (Unicode) */
+  content: "\25B4"; /* Freccia verso l'alto (Unicode) */
 }
 
 /* Freccia per l'ordinamento decrescente */
 .dataTables_wrapper th.sorting_desc::after {
-    content: "\25BE"; /* Freccia verso il basso (Unicode) */
+  content: "\25BE"; /* Freccia verso il basso (Unicode) */
 }
 
 /* Stili per il piÃ¨ di pagina */
 footer {
-    font-family: 'Dodec', monospace;
-    background-color: #f2f2e6; /* Colore crema chiaro per il piÃ¨ di pagina */
-    color: #3b3b3b; /* Colore del testo */
-    text-align: center;
-    padding: 5px;
-    border-top: 2px solid #601814; /* Bordo arancione scuro */
+  font-family: "Dodec", monospace;
+  background-color: #f2f2e6; /* Colore crema chiaro per il piÃ¨ di pagina */
+  color: #3b3b3b; /* Colore del testo */
+  text-align: center;
+  padding: 5px;
+  border-top: 2px solid #601814; /* Bordo arancione scuro */
 }
 
 footer a {
-    color: #601814; /* Colore arancione scuro per i link */
-    text-decoration: none;
+  color: #601814; /* Colore arancione scuro per i link */
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
 }
 
 /* Selezione del menu */
 .menu2 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-	color: #ffffff; /* Testo scuro */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ffffff; /* Testo scuro */
 }
 
 .menu2 select {
-    font-family: 'Dodec', monospace;
-    background-color: #f0f8e7; /* Sfondo bianco */
-    color: #006400; /* Testo scuro */
-    border: 1px solid #006400; /* Bordo verde scuro */
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Dodec', monospace;
+  font-family: "Dodec", monospace;
+  background-color: #f0f8e7; /* Sfondo bianco */
+  color: #006400; /* Testo scuro */
+  border: 1px solid #006400; /* Bordo verde scuro */
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Dodec", monospace;
 }
 
 .menu2 label span {
-    font-family: 'Dodec', monospace;
-    color: #f0f8e7;
+  font-family: "Dodec", monospace;
+  color: #f0f8e7;
 }
-
 
 /* Immagini in celle della tabella */
 td img {
-    width: 16px;
-    height: 16px;
-    object-fit: cover;
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
 }
 
 /* Tooltip */
 .tooltip-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .tooltip-text {
-    visibility: hidden;
-    width: 200px;
-    background-color: #3b3b3b; /* Colore scuro per il background del tooltip */
-    color: #ffffff; /* Colore del testo del tooltip */
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1000;
-    bottom: -30px;
-    left: 100%;
-    transform: translateX(10px);
-    margin-bottom: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    white-space: nowrap;
-    max-width: 300px;
+  visibility: hidden;
+  width: 200px;
+  background-color: #3b3b3b; /* Colore scuro per il background del tooltip */
+  color: #ffffff; /* Colore del testo del tooltip */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1000;
+  bottom: -30px;
+  left: 100%;
+  transform: translateX(10px);
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap;
+  max-width: 300px;
 }
 
 .tooltip-container:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Stili per i bottoni */
 .button {
-    display: inline-block;
-    padding: 2px 5px;
-    margin: 1px;
-    border: 2px solid #006400; /* Bordo verde scuro */
-    border-radius: 2px;
-    background-color: #fff; /* Sfondo bianco */
-    color: #006400; /* Testo verde scuro */
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Dodec', monospace;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 1px;
+  border: 2px solid #006400; /* Bordo verde scuro */
+  border-radius: 2px;
+  background-color: #fff; /* Sfondo bianco */
+  color: #006400; /* Testo verde scuro */
+  text-align: center;
+  text-decoration: none;
+  font-family: "Dodec", monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .button.sell {
-    border-color: #601814; /* Bordo arancione scuro */
-    color: #601814; /* Testo arancione scuro */
+  border-color: #601814; /* Bordo arancione scuro */
+  color: #601814; /* Testo arancione scuro */
 }
 
 .button:hover {
-    background-color: #006400; /* Sfondo verde scuro */
-    color: #ffffff; /* Testo bianco */
+  background-color: #006400; /* Sfondo verde scuro */
+  color: #ffffff; /* Testo bianco */
 }
 
 .button.sell:hover {
-    background-color: #601814; /* Sfondo arancione scuro */
-    color: #ffffff; /* Testo bianco */
+  background-color: #601814; /* Sfondo arancione scuro */
+  color: #ffffff; /* Testo bianco */
 }
 
 .button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 /* Bottone di ricarica */
 .reload-button {
-    display: block;
-    margin: 10px auto;
-    background-color: #006400; /* Verde scuro */
-    color: #ffffff; /* Testo bianco */
-    border: 2px solid #006400; /* Bordo verde scuro */
-    border-radius: 2px;
-    padding: 5px 10px;
-    font-family: 'Dodec', monospace;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  display: block;
+  margin: 10px auto;
+  background-color: #006400; /* Verde scuro */
+  color: #ffffff; /* Testo bianco */
+  border: 2px solid #006400; /* Bordo verde scuro */
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-family: "Dodec", monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .reload-button:hover {
-    background-color: #ffffff; /* Sfondo bianco */
-    color: #006400; /* Testo verde scuro */
+  background-color: #ffffff; /* Sfondo bianco */
+  color: #006400; /* Testo verde scuro */
 }
 
 /* Personalizzazione delle barre di scorrimento per i contenitori di tabelle */
 .table-section::-webkit-scrollbar {
-    width: 8px; /* Larghezza della scrollbar */
+  width: 8px; /* Larghezza della scrollbar */
 }
 
 /* Sfondo della track della scrollbar per le tabelle 'buy' */
 .table-section.buy::-webkit-scrollbar-track {
-    background: #ffffff; /* Sfondo bianco per la track */
-    border: 2px solid #006400; /* Bordo verde scuro per la track */
-    border-radius: 0; /* Angoli squadrati per la track */
+  background: #ffffff; /* Sfondo bianco per la track */
+  border: 2px solid #006400; /* Bordo verde scuro per la track */
+  border-radius: 0; /* Angoli squadrati per la track */
 }
 
 /* Sfondo della track della scrollbar per le tabelle 'sell' */
 .table-section.sell::-webkit-scrollbar-track {
-    background: #ffffff; /* Sfondo bianco per la track */
-    border: 2px solid #601814; /* Bordo arancione scuro per la track */
+  background: #ffffff; /* Sfondo bianco per la track */
+  border: 2px solid #601814; /* Bordo arancione scuro per la track */
 }
 
 /* Parte scorrevole della scrollbar per le tabelle 'buy' */
 .table-section.buy::-webkit-scrollbar-thumb {
-    background: #006400; /* Colore della parte scorrevole verde scuro */
-    border-radius: 0; /* Angoli squadrati per il thumb */
-    border: 2px solid #006400; /* Bordo verde scuro per il thumb */
-    height: 30px; /* Altezza del thumb */
+  background: #006400; /* Colore della parte scorrevole verde scuro */
+  border-radius: 0; /* Angoli squadrati per il thumb */
+  border: 2px solid #006400; /* Bordo verde scuro per il thumb */
+  height: 30px; /* Altezza del thumb */
 }
 
 /* Parte scorrevole della scrollbar per le tabelle 'sell' */
 .table-section.sell::-webkit-scrollbar-thumb {
-    background: #601814; /* Colore della parte scorrevole arancione scuro */
-    border: 2px solid #601814; /* Bordo arancione scuro per il thumb */
+  background: #601814; /* Colore della parte scorrevole arancione scuro */
+  border: 2px solid #601814; /* Bordo arancione scuro per il thumb */
 }
 
 /* Bottoni della scrollbar (freccette) */
 .table-section::-webkit-scrollbar-button {
-    background-color: #ffffff; /* Sfondo delle frecce */
-    border: 2px solid #006400; /* Bordo verde scuro per le frecce */
-    border-radius: 0; /* Angoli squadrati per le frecce */
+  background-color: #ffffff; /* Sfondo delle frecce */
+  border: 2px solid #006400; /* Bordo verde scuro per le frecce */
+  border-radius: 0; /* Angoli squadrati per le frecce */
 }
 
 .table-section.sell::-webkit-scrollbar-button {
-    border: 2px solid #601814; /* Bordo arancione scuro per le frecce */
+  border: 2px solid #601814; /* Bordo arancione scuro per le frecce */
 }
 
 /* Nascondere i bottoni delle scrollbar se non necessari */
 .table-section::-webkit-scrollbar-button {
-    display: none; /* Nasconde i bottoni */
+  display: none; /* Nasconde i bottoni */
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .tabs {
-    display: flex;
-    cursor: pointer;
-    margin-bottom: 0px;
-    font-size: 14px;
-    height: auto; /* Imposta l'altezza in modo che si adatti al contenuto */
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 0px;
+  font-size: 14px;
+  height: auto; /* Imposta l'altezza in modo che si adatti al contenuto */
 }
 
 .tab {
-    font-family: 'Dodec', monospace;
-    padding: 10px;
-    background-color: #f0f8e7;
-    border: 2px solid #006400; /* Bordo verde scuro */
-    color: #006400; /* Testo verde scuro */
-    border-bottom: none;
-    margin-right: 5px;
-    border-radius: 4px 4px 0 0;
+  font-family: "Dodec", monospace;
+  padding: 10px;
+  background-color: #f0f8e7;
+  border: 2px solid #006400; /* Bordo verde scuro */
+  color: #006400; /* Testo verde scuro */
+  border-bottom: none;
+  margin-right: 5px;
+  border-radius: 4px 4px 0 0;
 }
 
 .tab.active {
-    background-color: #006400;
-    color: #ffffff; /* Testo verde scuro */
-    border-bottom: 2px solid #006400;
+  background-color: #006400;
+  color: #ffffff; /* Testo verde scuro */
+  border-bottom: 2px solid #006400;
 }
 
 .tab-content {
-    height: 100%;
-    overflow: auto;  /* Permetti lo scrolling se il contenuto Ã¨ piÃ¹ grande */
-    display: none;
-    padding: 10px;
-    background-color: #f0f8e7;
-    flex-grow: 1; /* Permette al contenuto di espandersi */
-	border: 2px solid #006400; /* Bordo verde scuro */
+  height: 100%;
+  overflow: auto; /* Permetti lo scrolling se il contenuto Ã¨ piÃ¹ grande */
+  display: none;
+  padding: 10px;
+  background-color: #f0f8e7;
+  flex-grow: 1; /* Permette al contenuto di espandersi */
+  border: 2px solid #006400; /* Bordo verde scuro */
 }
 
 .tab-content.active {
-    display: block;
-    height: 100%;
+  display: block;
+  height: 100%;
 }
 
-.table-container, .table-section {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Lascia che l'altezza si adatti al contenitore principale */
-    flex-grow: 1; /* Permetti al contenitore di espandersi */
+.table-container,
+.table-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Lascia che l'altezza si adatti al contenitore principale */
+  flex-grow: 1; /* Permetti al contenitore di espandersi */
 }
 
 @media (max-width: 768px) {
-    .menu2 {
-        position: absolute; /* Assicurati che l'elemento non sia assoluto se non necessario */
-        top: 10px; /* Regola la posizione su dispositivi mobili */
-        right: 10px; /* Regola la distanza dal bordo destro su dispositivi mobili */
-        z-index: 1000; /* Assicurati che il menu sia sopra altri elementi se necessario */
-		margin-bottom: 50px; /* Aggiungi spazio sotto il menu */
-    }
-	
-	.menu2 span {
-	display: none;
-	}
+  .menu2 {
+    position: absolute; /* Assicurati che l'elemento non sia assoluto se non necessario */
+    top: 10px; /* Regola la posizione su dispositivi mobili */
+    right: 10px; /* Regola la distanza dal bordo destro su dispositivi mobili */
+    z-index: 1000; /* Assicurati che il menu sia sopra altri elementi se necessario */
+    margin-bottom: 50px; /* Aggiungi spazio sotto il menu */
+  }
 
-    .header-container h1 {
-        margin-top: 150px; /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
-        font-size: 30px; /* Riduci la dimensione del font per dispositivi mobili */
-        line-height: 1.2; /* Migliora la leggibilitÃ  su schermi piccoli */
-    }
+  .menu2 span {
+    display: none;
+  }
 
-    .header-container h2 {
-        font-size: 20px; /* Riduci la dimensione del font per h2 sui dispositivi mobili */
-        margin-top: 10px; /* Spazio sopra l'h2 */
-        margin-bottom: 0px; /* Spazio sotto l'h2 */
-    }
+  .header-container h1 {
+    margin-top: 150px; /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
+    font-size: 30px; /* Riduci la dimensione del font per dispositivi mobili */
+    line-height: 1.2; /* Migliora la leggibilitÃ  su schermi piccoli */
+  }
+
+  .header-container h2 {
+    font-size: 20px; /* Riduci la dimensione del font per h2 sui dispositivi mobili */
+    margin-top: 10px; /* Spazio sopra l'h2 */
+    margin-bottom: 0px; /* Spazio sotto l'h2 */
+  }
 }
