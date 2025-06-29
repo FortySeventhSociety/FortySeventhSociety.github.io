@@ -626,6 +626,8 @@ a.labs-follow-me svg {
   z-index: 99998;
   left: 3%;
   bottom: -35%;
+  text-shadow: 0px 0px 15px white;
+  -webkit-text-stroke: 1px black;
 }
 @media only screen and (max-width: 900px) {
   .sitemap {
@@ -633,6 +635,8 @@ a.labs-follow-me svg {
     z-index: 9999;
     right: -30%;
     bottom: -35%;
+    text-shadow: 0px 0px 15px white;
+    -webkit-text-stroke: 1px black;
   }
 }
 @media only screen and (max-width: 512px) {
@@ -641,6 +645,8 @@ a.labs-follow-me svg {
     z-index: 9999;
     right: -30%;
     bottom: -35%;
+    text-shadow: 0px 0px 15px white;
+    -webkit-text-stroke: 1px black;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -649,6 +655,8 @@ a.labs-follow-me svg {
     z-index: 9999;
     right: -60%;
     bottom: -45%;
+    text-shadow: 0px 0px 15px white;
+    -webkit-text-stroke: 1px black;
   }
 }
 
@@ -656,8 +664,12 @@ a.labs-follow-me svg {
   font-size: 2rem;
   cursor: pointer;
   transition: color 0.3s ease;
+  text-shadow: 0px 0px 15px white;
+  -webkit-text-stroke: 1px black;
 }
 
 .scramble:hover {
   color: #0ff;
+  text-shadow: 0px 0px 15px white;
+  -webkit-text-stroke: 1px black;
 }
