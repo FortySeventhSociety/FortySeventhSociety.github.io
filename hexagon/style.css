@@ -557,16 +557,16 @@ a.labs-follow-me svg {
 }
 @media only screen and (max-width: 1024px) {
   a.labs-follow-me {
-  top: -7%;
-  padding-left: 45%;
+    top: -7%;
+    padding-left: 45%;
   }
   a.labs-follow-me svg {
   }
 }
 @media only screen and (max-width: 512px) {
   a.labs-follow-me {
-  top: -8%;
-  padding-left: 44%;
+    top: -8%;
+    padding-left: 44%;
   }
   a.labs-follow-me svg {
   }
@@ -619,4 +619,37 @@ a.labs-follow-me svg {
 }
 .dtd a:active {
   color: black;
+}
+
+.sitemap {
+  position: absolute;
+  z-index: 999;
+  left: 3%;
+  bottom: -35%;
+}
+@media only screen and (max-width: 512px) {
+  .sitemap {
+    position: absolute;
+    z-index: 999;
+    right: -30%;
+    bottom: -35%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .sitemap {
+    position: absolute;
+    z-index: 999;
+    right: -60%;
+    bottom: -45%;
+  }
+}
+
+.scramble {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.scramble:hover {
+  color: #0ff;
 }
