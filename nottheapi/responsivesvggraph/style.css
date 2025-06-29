@@ -12,7 +12,12 @@ html {
 body {
   background-color: #222;
   color: #fff;
-  font: lighter normal 18px/22px "Source Sans Pro Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:
+    lighter normal 18px/22px "Source Sans Pro Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
   height: 100%;
   padding: 0 50px;
 }
