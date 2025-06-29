@@ -9,6 +9,18 @@
 * {
 }
 
+html {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+body {
+  height: 100%;
+  width: 71%;
+  align-items: center;
+}
+
 /* Canvas Pie Chart & CSS Bar Chart */
 
 /*
@@ -758,12 +770,9 @@ section.content-section:nth-of-type(5)
   width: 100%;
 }
 
-
-
-
-
 .body3 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  font-family:
+    "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
     "Roboto Light", "Segoe UI Web Light", "Segoe UI Light",
     "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif;
   margin: 1em;
@@ -1076,10 +1085,6 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   background: #45b29d;
 }
 
-
-
-
-
 #resumeProficiencies {
   float: left;
   clear: right;
@@ -1104,40 +1109,58 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
 }
 
 .progress {
-  background:#e9e5e2;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#e9e5e2));
+  background: #e9e5e2;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#dddddd),
+    to(#e9e5e2)
+  );
   background-image: -webkit-linear-gradient(top, #dddddd, #e9e5e2);
   background-image: -moz-linear-gradient(top, #dddddd, #e9e5e2);
   background-image: -ms-linear-gradient(top, #dddddd, #e9e5e2);
   background-image: -o-linear-gradient(top, #dddddd, #e9e5e2);
-  background-image: linear-gradient(top, #dddddd, #e9e5e2);  
-  height:20px; 
+  background-image: linear-gradient(top, #dddddd, #e9e5e2);
+  height: 20px;
   border-radius: 0px;
-  -moz-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;   
-  -webkit-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;  
-  box-shadow: 0 1px 0px #bbbbbb inset, 0 1px 0 #fcfcfc;   
+  -moz-box-shadow:
+    0 1px 0px #bebbb9 inset,
+    0 1px 0 #fcfcfc;
+  -webkit-box-shadow:
+    0 1px 0px #bebbb9 inset,
+    0 1px 0 #fcfcfc;
+  box-shadow:
+    0 1px 0px #bbbbbb inset,
+    0 1px 0 #fcfcfc;
 }
 
-.adobe, .html4, .css, .jquery, .javascript, .bootstrap, .wordpress, .ui, .ux, .rwd, .mobile, .rapidproto {
+.adobe,
+.html4,
+.css,
+.jquery,
+.javascript,
+.bootstrap,
+.wordpress,
+.ui,
+.ux,
+.rwd,
+.mobile,
+.rapidproto {
+  -webkit-transition: width 4.5s ease !important;
+  -moz-transition: width 4.5s ease !important;
+  -o-transition: width 4.5s ease !important;
+  transition: width 4.5s ease !important;
+}
 
- -webkit-transition: width 4.50s ease !important;
- -moz-transition: width 4.50s ease !important;
-   -o-transition: width 4.50s ease !important;
-      transition: width 4.50s ease !important;
- }
-
-
-
-
-
-.html5,
-.body5 {
+.html3,
+.body4 {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.body5 {
+.body4 {
   background: #1b1e23;
   color: white;
   font-family: sans-serif;
@@ -1148,12 +1171,13 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   margin-bottom: 2em;
 }
 
-.h15, .h25 {
+.h15,
+.h25 {
   font-size: 1.5rem;
   text-align: center;
 }
 
-.html5 {
+.html3 {
   box-sizing: border-box;
 }
 
@@ -1229,7 +1253,7 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   padding: 0.66em 0.33em;
   font-weight: bold;
   -webkit-animation: float 0.3s ease-out forwards;
-          animation: float 0.3s ease-out forwards;
+  animation: float 0.3s ease-out forwards;
 }
 
 @-webkit-keyframes float {
@@ -1254,32 +1278,31 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   }
 }
 
-
-
-
-
 @font-face {
-  font-family: 'Cabin';
+  font-family: "Cabin";
   font-style: italic;
   font-weight: 400;
   font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4V0qWljRw-Pd815fNqc8T_wAFcX-c37MPiNYlWniJ2hJXHx_KVxUbq.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4V0qWljRw-Pd815fNqc8T_wAFcX-c37MPiNYlWniJ2hJXHx_KVxUbq.ttf)
+    format("truetype");
 }
 @font-face {
-  font-family: 'Cabin';
+  font-family: "Cabin";
   font-style: normal;
   font-weight: 400;
   font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7alwg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7alwg.ttf)
+    format("truetype");
 }
 @font-face {
-  font-family: 'Cabin';
+  font-family: "Cabin";
   font-style: normal;
   font-weight: 700;
   font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alwg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alwg.ttf)
+    format("truetype");
 }
-body,
+.body5,
 input,
 button,
 textarea,
@@ -1325,76 +1348,508 @@ figure {
   transition: all 0.25s ease-in;
 }
 [peak-chart] > [face]:nth-child(1) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(192, 60%, 50%), hsl(192, 60%, 50%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(192, 60%, 50%), hsl(192, 60%, 50%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(192, 60%, 50%),
+        hsl(192, 60%, 50%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(192, 60%, 50%),
+      hsl(192, 60%, 50%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(2) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(192, 60%, 60%), hsl(192, 60%, 60%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(192, 60%, 60%), hsl(192, 60%, 60%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(192, 60%, 60%),
+        hsl(192, 60%, 60%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(192, 60%, 60%),
+      hsl(192, 60%, 60%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(3) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(207, 60%, 50%), hsl(207, 60%, 50%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(207, 60%, 50%), hsl(207, 60%, 50%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(207, 60%, 50%),
+        hsl(207, 60%, 50%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(207, 60%, 50%),
+      hsl(207, 60%, 50%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(4) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(207, 60%, 60%), hsl(207, 60%, 60%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(207, 60%, 60%), hsl(207, 60%, 60%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(207, 60%, 60%),
+        hsl(207, 60%, 60%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(207, 60%, 60%),
+      hsl(207, 60%, 60%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(5) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(234, 32%, 50%), hsl(234, 32%, 50%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(234, 32%, 50%), hsl(234, 32%, 50%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(234, 32%, 50%),
+        hsl(234, 32%, 50%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(234, 32%, 50%),
+      hsl(234, 32%, 50%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(6) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(234, 32%, 60%), hsl(234, 32%, 60%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(234, 32%, 60%), hsl(234, 32%, 60%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(234, 32%, 60%),
+        hsl(234, 32%, 60%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(234, 32%, 60%),
+      hsl(234, 32%, 60%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(7) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(345, 58%, 50%), hsl(345, 58%, 50%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(345, 58%, 50%), hsl(345, 58%, 50%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(345, 58%, 50%),
+        hsl(345, 58%, 50%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(345, 58%, 50%),
+      hsl(345, 58%, 50%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(8) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(345, 58%, 60%), hsl(345, 58%, 60%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(345, 58%, 60%), hsl(345, 58%, 60%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(345, 58%, 60%),
+        hsl(345, 58%, 60%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(345, 58%, 60%),
+      hsl(345, 58%, 60%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(9) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(185, 27%, 50%), hsl(185, 27%, 50%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(185, 27%, 50%), hsl(185, 27%, 50%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(185, 27%, 50%),
+        hsl(185, 27%, 50%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(185, 27%, 50%),
+      hsl(185, 27%, 50%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(10) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(185, 27%, 60%), hsl(185, 27%, 60%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(185, 27%, 60%), hsl(185, 27%, 60%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(185, 27%, 60%),
+        hsl(185, 27%, 60%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(185, 27%, 60%),
+      hsl(185, 27%, 60%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(11) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(298, 29%, 50%), hsl(298, 29%, 50%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(298, 29%, 50%), hsl(298, 29%, 50%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(298, 29%, 50%),
+        hsl(298, 29%, 50%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(298, 29%, 50%),
+      hsl(298, 29%, 50%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(12) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(298, 29%, 60%), hsl(298, 29%, 60%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(298, 29%, 60%), hsl(298, 29%, 60%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(298, 29%, 60%),
+        hsl(298, 29%, 60%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(298, 29%, 60%),
+      hsl(298, 29%, 60%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(13) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(220, 6%, 80%),
+        hsl(220, 6%, 80%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(220, 6%, 80%),
+      hsl(220, 6%, 80%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(14) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(220, 6%, 90%),
+        hsl(220, 6%, 90%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(220, 6%, 90%),
+      hsl(220, 6%, 90%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(15) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(220, 6%, 80%),
+        hsl(220, 6%, 80%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(220, 6%, 80%),
+      hsl(220, 6%, 80%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(16) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(220, 6%, 90%),
+        hsl(220, 6%, 90%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(220, 6%, 90%),
+      hsl(220, 6%, 90%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(17) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(220, 6%, 80%),
+        hsl(220, 6%, 80%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(220, 6%, 80%),
+      hsl(220, 6%, 80%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > [face]:nth-child(18) {
-  background-image: -webkit-linear-gradient(bottom right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), -webkit-linear-gradient(bottom right, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%);
-  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%);
+  background-image:
+    -webkit-linear-gradient(
+      bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    -webkit-linear-gradient(
+        bottom right,
+        hsl(220, 6%, 90%),
+        hsl(220, 6%, 90%) 50%,
+        transparent 50%
+      );
+  background-image:
+    linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to top left,
+      hsl(220, 6%, 90%),
+      hsl(220, 6%, 90%) 50%,
+      transparent 50%
+    );
 }
 [peak-chart] > label {
   position: absolute;
@@ -1405,43 +1860,51 @@ figure {
   transition: all 0.25s ease-in;
 }
 [peak-chart] > label:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 6px;
   height: 6px;
   border-radius: 3px;
-  background-image: -webkit-linear-gradient(top right, hsl(207.00000000000006, 60%, 89.99999999999999%), hsl(207.00000000000003, 59.999999999999986%, 60%));
-  background-image: linear-gradient(to bottom left, hsl(207.00000000000006, 60%, 89.99999999999999%), hsl(207.00000000000003, 59.999999999999986%, 60%));
+  background-image: -webkit-linear-gradient(
+    top right,
+    hsl(207.00000000000006, 60%, 89.99999999999999%),
+    hsl(207.00000000000003, 59.999999999999986%, 60%)
+  );
+  background-image: linear-gradient(
+    to bottom left,
+    hsl(207.00000000000006, 60%, 89.99999999999999%),
+    hsl(207.00000000000003, 59.999999999999986%, 60%)
+  );
 }
-[peak-chart] > label[point=bottomright] {
+[peak-chart] > label[point="bottomright"] {
   padding-right: 6px;
   padding-bottom: 9px;
 }
-[peak-chart] > label[point=bottomright]:before {
+[peak-chart] > label[point="bottomright"]:before {
   right: -3px;
   bottom: 3px;
 }
-[peak-chart] > label[point=bottomleft] {
+[peak-chart] > label[point="bottomleft"] {
   padding-left: 6px;
   padding-bottom: 9px;
 }
-[peak-chart] > label[point=bottomleft]:before {
+[peak-chart] > label[point="bottomleft"]:before {
   left: -3px;
   bottom: 3px;
 }
-[peak-chart] > label[point=topleft] {
+[peak-chart] > label[point="topleft"] {
   padding-left: 4px;
   padding-top: 4px;
 }
-[peak-chart] > label[point=topleft]:before {
+[peak-chart] > label[point="topleft"]:before {
   left: -3px;
   top: -3px;
 }
-[peak-chart] > label[point=topright] {
+[peak-chart] > label[point="topright"] {
   padding-right: 4px;
   padding-top: 4px;
 }
-[peak-chart] > label[point=topright]:before {
+[peak-chart] > label[point="topright"]:before {
   right: -3px;
   top: -3px;
 }
@@ -1464,9 +1927,192 @@ figcaption button:hover {
   background: rgba(0, 0, 0, 0.04);
 }
 
+/* Article - https://bitsofco.de/github-contribution-graph-css-grid/ */
 
+/* Grid-related CSS */
 
+:root {
+  --square-size: 15px;
+  --square-gap: 5px;
+  --week-width: calc(var(--square-size) + var(--square-gap));
+}
 
+.months {
+  grid-area: months;
+}
+.days {
+  grid-area: days;
+}
+.squares {
+  grid-area: squares;
+}
+
+.graph {
+  display: inline-grid;
+  grid-template-areas:
+    "empty months"
+    "days squares";
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+}
+
+.months {
+  display: grid;
+  grid-template-columns:
+    calc(var(--week-width) * 4) /* Jan */
+    calc(var(--week-width) * 4) /* Feb */
+    calc(var(--week-width) * 4) /* Mar */
+    calc(var(--week-width) * 5) /* Apr */
+    calc(var(--week-width) * 4) /* May */
+    calc(var(--week-width) * 4) /* Jun */
+    calc(var(--week-width) * 5) /* Jul */
+    calc(var(--week-width) * 4) /* Aug */
+    calc(var(--week-width) * 4) /* Sep */
+    calc(var(--week-width) * 5) /* Oct */
+    calc(var(--week-width) * 4) /* Nov */
+    calc(var(--week-width) * 5) /* Dec */;
+}
+
+.days,
+.squares {
+  display: grid;
+  grid-gap: var(--square-gap);
+  grid-template-rows: repeat(7, var(--square-size));
+}
+
+.squares {
+  grid-auto-flow: column;
+  grid-auto-columns: var(--square-size);
+}
+
+/* Other styling */
+
+.body5 {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+}
+
+.graph {
+  padding: 20px;
+  border: 1px #e1e4e8 solid;
+  margin: 20px;
+}
+
+.days li:nth-child(odd) {
+  visibility: hidden;
+}
+
+.squares li {
+  background-color: #ebedf0;
+}
+
+.squares li[data-level="1"] {
+  background-color: #c6e48b;
+}
+
+.squares li[data-level="2"] {
+  background-color: #7bc96f;
+}
+
+.squares li[data-level="3"] {
+  background-color: #196127;
+}
+
+.body6 {
+  padding: 50px 16px;
+  background: #cceffc;
+}
+#live-poll-area {
+  overflow: auto;
+  width: 100%;
+  max-width: 244px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.graph-container .graph {
+  width: 110px;
+  margin: 0 auto 25px auto;
+}
+.graph-container .graph canvas {
+  max-width: 110px;
+  height: auto;
+}
+.bar-chart {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 244px;
+}
+.bar-chart li {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.45;
+  overflow: auto;
+}
+.bar-chart span {
+  display: block;
+}
+.bar-chart .label {
+  font-weight: 700;
+  width: 70%;
+  float: left;
+}
+.bar-chart .percentage {
+  width: 30%;
+  float: right;
+  font-size: 12px;
+  text-align: right;
+}
+.bar-chart .bar-track {
+  clear: both;
+  display: block;
+  background: #e6f0f2;
+  box-shadow: 0 2px 0 #cccccc;
+  height: 5px;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+.bar-chart .bar {
+  display: block;
+  height: 5px;
+}
+.bar-chart .answer-0 .bar {
+  background-color: #ce0f42;
+  box-shadow: 0 2px 0 #99102e;
+}
+.bar-chart .answer-1 .bar {
+  background-color: #72be44;
+  box-shadow: 0 2px 0 #538e32;
+}
+.bar-chart .answer-2 .bar {
+  background-color: #f15637;
+  box-shadow: 0 2px 0 #bd4429;
+}
+.bar-chart .answer-3 .bar {
+  background-color: #8b1851;
+  box-shadow: 0 2px 0 #53002c;
+}
+
+@media only screen and (min-width: 600px) {
+  #live-poll-area {
+    max-width: 384px;
+    flex-direction: row;
+  }
+  .graph-container .graph {
+    margin: 0 30px 0 0;
+    padding: 0;
+  }
+  .bar-chart {
+    min-width: 244px;
+  }
+}
 
 /* // D474designs | Modifications, and fixes by JOCV-III ///////
 // All Rights Reserved /////// */

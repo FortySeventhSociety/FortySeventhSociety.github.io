@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive SVG Info Graph</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<svg class="bgGradSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin slice">
+<linearGradient id="bgGrad" gradientUnits="userSpaceOnUse" x1="400" y1="-1.795888e-008" x2="400" y2="600">
+	<stop  offset="0" style="stop-color:#22A4CA"/>
+	<stop  offset="0.61" style="stop-color:#115F9A"/>
+</linearGradient>
+<rect fill="url(#bgGrad)" width="100%" height="100%"/>  
+</svg>
+
+
+<svg class="mainSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+<defs>
+      <filter id="glow" x="-100%" y="-100%" width="350%" height="350%" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="5" result="coloredBlur" />
+        <feOffset dx="0" dy="20" result="offsetblur"></feOffset>
+        <feFlood id="glowAlpha" flood-color="#000" flood-opacity="0.123"></feFlood>
+        <feComposite in2="offsetblur" operator="in"></feComposite>
+        <feMerge>
+          <feMergeNode/>          
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>  
+</defs>
+
+<g id="graphTextGroup" opacity="0.5">
+<text transform="translate(48.33 473.71)" font-size="18" fill="#fff" font-family="Roboto" font-weight="700">0</text>
+    <text transform="translate(48.33 301.71)" font-size="18" fill="#fff" font-family="Roboto">200</text>
+    <text transform="translate(48.33 101.71)" font-size="18" fill="#fff" font-family="Roboto">400</text>   
+  </g>
+<g id="horizontalLinesGroup"   fill="none" stroke="#FFF" stroke-miterlimit="10">
+	<line  x1="780" y1="481.7" opacity="0.1" x2="30" y2="481.7"/>
+	<line  x1="780" y1="381.7" opacity="0.1" x2="30" y2="381.7"/>
+	<line  x1="780" y1="281.7" opacity="0.1" x2="30" y2="281.7"/>
+	<line  x1="780" y1="181.7" opacity="0.1" x2="30" y2="181.7"/>
+	<line  x1="780" y1="81.7"  opacity="0.1" x2="30" y2="81.7"/>
+     
+</g>  
+  <g id="uiGroup" filter="url(#glow)">
+<path id="graphLine" fill="none" stroke-linecap="round" stroke="#F79819" stroke-width="4" stroke-miterlimit="10" d="M94.6,405.1
+	c62.9-95,109.2-111.7,142.4-103.8c44.6,10.6,74.8,67.9,143.4,63.8c35-2.1,32.7-17.4,73.9-21.7c77.7-8.2,105.9,44,136.3,13.6
+	c30.6-30.5,10.8-91.7,44.9-127.5c29.1-30.6,56.7,0,94.1-33.9c20.6-18.6,32.6-46.2,39.6-66.5"/>
+    <g id="connectorGroup">
+    <line id="connector" x1="92" x2="92" y1="0" y2="0" stroke="#FFF" />
+    </g>
+ <g class="box">
+  <rect x="0" width="80" height="40" rx="20" ry="20" fill="#FFF"/>
+  <text id="boxLabel" x="40" y="28"></text>
+  </g> 
+  </g>
+    
+  <circle id="nullDot" fill="red" cx="0" cy="0" r="0"/>
+  <circle id="graphDot" fill="#FFF" cx="0" cy="0" r="10"/>
+  <circle id="dragger" fill="rgba(240,240,240,0.1)" cx="0" cy="0" r="15" stroke="rgba(240,240,240,0.05)" stroke-width="10"/>
+  <linearGradient id="boxGrad" gradientUnits="userSpaceOnUse" x1="65.7809" y1="25.7808" x2="14.2194" y2="25.7808" gradientTransform="matrix(-5.857245e-007 -1 1 -5.872379e-007 14.2192 65.7809)">
+	<stop  offset="0.3858" style="stop-color:#E4386D"/>
+	<stop  offset="0.7513" style="stop-color:#CF2156"/>
+</linearGradient>
+
+</svg>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js'></script>
+<script src='//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=12'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/AnticipateEase.min.js'></script>
+<script src='//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

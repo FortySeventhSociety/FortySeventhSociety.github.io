@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 3D Animated Chart</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main ng-app="myApp">
+  <figure ng-controller="chartCtrl">
+    <div peak-chart data="data">
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      <span face></span>
+      
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+    </div>
+    <figcaption>
+      Some data. &nbsp;&nbsp;
+      <button ng-click="paused=!paused">
+        {{ paused && '\u25b8' || '\u2759\u2759' }}
+      </button>
+    </figcaption>
+  </figure>
+</main>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
