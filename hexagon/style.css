@@ -628,6 +628,7 @@ a.labs-follow-me svg {
   bottom: -35%;
   text-shadow: 0px 0px 15px white;
   -webkit-text-stroke: 1px black;
+  animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
 }
 @media only screen and (max-width: 900px) {
   .sitemap {
@@ -637,6 +638,7 @@ a.labs-follow-me svg {
     bottom: -35%;
     text-shadow: 0px 0px 15px white;
     -webkit-text-stroke: 1px black;
+    animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
   }
 }
 @media only screen and (max-width: 512px) {
@@ -647,6 +649,7 @@ a.labs-follow-me svg {
     bottom: -35%;
     text-shadow: 0px 0px 15px white;
     -webkit-text-stroke: 1px black;
+    animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
   }
 }
 @media only screen and (max-width: 375px) {
@@ -657,6 +660,7 @@ a.labs-follow-me svg {
     bottom: -45%;
     text-shadow: 0px 0px 15px white;
     -webkit-text-stroke: 1px black;
+    animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
   }
 }
 
@@ -666,10 +670,24 @@ a.labs-follow-me svg {
   transition: color 0.3s ease;
   text-shadow: 0px 0px 15px white;
   -webkit-text-stroke: 1px black;
+  animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
 }
 
 .scramble:hover {
   color: #0ff;
   text-shadow: 0px 0px 15px white;
   -webkit-text-stroke: 1px black;
+  animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
+}
+
+@keyframes glowBright {
+  0% {
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #00ff00, 0 0 30px #0000ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ff00, 0 0 30px #0000ff, 0 0 10px #ff0000;
+  }
+  100% {
+    text-shadow: 0 0 30px #0000ff, 0 0 10px #ff0000, 0 0 20px #00ff00;
+  }
 }

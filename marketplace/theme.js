@@ -29,5 +29,10 @@
             }
         }
 
+            setTimeout(function() {
+                $(".dt-input").focus();
+        }, 5000);
+            
+
         // Ripristina il CSS quando la pagina viene caricata
         window.onload = restoreCSS;
