@@ -33,9 +33,21 @@
                 $(".dt-input").focus();
         }, 1000);
 
+        setTimeout(function() {
+                $(".dt-input").focus();
+        }, 3000);
+
             setTimeout(function() {
                 $(".dt-input").focus();
         }, 5000);
+
+            setTimeout(function() {
+                $(".dt-input").focus();
+        }, 7000);
+
+            setTimeout(function() {
+                $(".dt-input").focus();
+        }, 10000);
             
 
         // Ripristina il CSS quando la pagina viene caricata
