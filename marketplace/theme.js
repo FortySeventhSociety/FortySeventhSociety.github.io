@@ -29,6 +29,10 @@
             }
         }
 
+        setTimeout(function() {
+                $(".dt-input").focus();
+        }, 1000);
+
             setTimeout(function() {
                 $(".dt-input").focus();
         }, 5000);
