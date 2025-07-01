@@ -140,7 +140,7 @@
 
                     if (settings.yLines) {
 
-                    $(document.createElementNS("http://www.w3.org/2000/svg", "line"))
+                    $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
                         .attr({
                             class: "graphiq__y-division",
                             x1: xAxis,
@@ -158,7 +158,7 @@
                     // Draw the line
                     
 
-                    $(document.createElementNS("http://www.w3.org/2000/svg", "line"))
+                    $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
                         .attr({
                             class: "graphiq__line",
                             x1: xAxis ,
@@ -173,7 +173,7 @@
                     // Draw the circle
 
                
-                    $(document.createElementNS("http://www.w3.org/2000/svg", "circle"))
+                    $(document.createElementNS("https://www.w3.org/2000/svg", "circle"))
                         .attr({
                             class: "graphiq__graph-dot",
                             cx: xAxis,
@@ -230,7 +230,7 @@
 
                 for (i=0; i < settings.xLineCount; i++) {
 
-                        $(document.createElementNS("http://www.w3.org/2000/svg", "line"))
+                        $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
                         .attr({
                             class: "graphiq__x-line",
                             y1: iteration * i + (settings.dotRadius + settings.dotStrokeWeight),
