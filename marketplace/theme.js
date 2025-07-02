@@ -30,23 +30,23 @@
         }
 
         setTimeout(function() {
-                $(".dt-input").focus();
+                $(".dt-input").select();
         }, 1000);
 
         setTimeout(function() {
-                $(".dt-input").focus();
+                $(".dt-input").select();
         }, 3000);
 
             setTimeout(function() {
-                $(".dt-input").focus();
+                $(".dt-input").select();
         }, 5000);
 
             setTimeout(function() {
-                $(".dt-input").focus();
+                $(".dt-input").select();
         }, 7000);
 
             setTimeout(function() {
-                $(".dt-input").focus();
+                $(".dt-input").select();
         }, 10000);
             
 
