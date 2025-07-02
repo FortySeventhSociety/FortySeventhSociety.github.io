@@ -51,14 +51,18 @@
         }, 10000);
             */
 
-              const searchInput = $('.dt-input');
+          const searchInput = $('.dt-input');
 
-            while (searchInput) {
+            while (true) {
+                if (searchInput) {
                 searchInput.focus();
-            } else {
-              setTimeout(function() {
-              }, 5000);
+                    break;
+                } else {
+                  setTimeout(function() {
+                  }, 1000);
+                }
             }
+            
             
 
         // Ripristina il CSS quando la pagina viene caricata
