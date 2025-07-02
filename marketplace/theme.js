@@ -32,35 +32,35 @@
         const input = $(".dt-input")
 
         setTimeout(function() {
-            let inputElement = document.getElementById('dt-input');
+            let inputElement = input;
             inputElement.selectionStart = inputElement.value.length;
             inputElement.selectionEnd = inputElement.value.length;
             inputElement.select();
         }, 1000);
 
         setTimeout(function() {
-            let inputElement = document.getElementById('dt-input');
+            let inputElement = input;
             inputElement.selectionStart = inputElement.value.length;
             inputElement.selectionEnd = inputElement.value.length;
             inputElement.select();
         }, 3000);
 
             setTimeout(function() {
-            let inputElement = document.getElementById('dt-input');
+            let inputElement = input;
             inputElement.selectionStart = inputElement.value.length;
             inputElement.selectionEnd = inputElement.value.length;
             inputElement.select();
         }, 5000);
 
             setTimeout(function() {
-            let inputElement = document.getElementById('dt-input');
+            let inputElement = input;
             inputElement.selectionStart = inputElement.value.length;
             inputElement.selectionEnd = inputElement.value.length;
             inputElement.select();
         }, 7000);
 
             setTimeout(function() {
-            let inputElement = document.getElementById('dt-input');
+            let inputElement = input;
             inputElement.selectionStart = inputElement.value.length;
             inputElement.selectionEnd = inputElement.value.length;
             inputElement.select();
