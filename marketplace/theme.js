@@ -50,6 +50,15 @@
                 $(".dt-input").focus();
         }, 10000);
             */
+
+              const searchInput = $('.dt-input');
+
+            while (searchInput) {
+                searchInput.focus();
+            } else {
+              setTimeout(function() {
+              }, 5000);
+            }
             
 
         // Ripristina il CSS quando la pagina viene caricata
