@@ -29,42 +29,26 @@
             }
         }
 
-        const input = $(".dt-input")
-
         setTimeout(function() {
-            let inputElement = input;
-            inputElement.selectionStart = inputElement.value.length;
-            inputElement.selectionEnd = inputElement.value.length;
-            inputElement.select();
+                $(".dt-input").focus();
         }, 1000);
 
         setTimeout(function() {
-            let inputElement = input;
-            inputElement.selectionStart = inputElement.value.length;
-            inputElement.selectionEnd = inputElement.value.length;
-            inputElement.select();
+                $(".dt-input").focus();
         }, 3000);
 
             setTimeout(function() {
-            let inputElement = input;
-            inputElement.selectionStart = inputElement.value.length;
-            inputElement.selectionEnd = inputElement.value.length;
-            inputElement.select();
+                $(".dt-input").focus();
         }, 5000);
 
             setTimeout(function() {
-            let inputElement = input;
-            inputElement.selectionStart = inputElement.value.length;
-            inputElement.selectionEnd = inputElement.value.length;
-            inputElement.select();
+                $(".dt-input").focus();
         }, 7000);
 
             setTimeout(function() {
-            let inputElement = input;
-            inputElement.selectionStart = inputElement.value.length;
-            inputElement.selectionEnd = inputElement.value.length;
-            inputElement.select();
+                $(".dt-input").focus();
         }, 10000);
             
+
         // Ripristina il CSS quando la pagina viene caricata
         window.onload = restoreCSS;
