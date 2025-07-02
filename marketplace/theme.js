@@ -51,11 +51,9 @@
         }, 10000);
             */
 
-          const searchInput = $('.dt-input');
-
             while (true) {
-                if (searchInput) {
-                searchInput.focus();
+                if ($('.dt-input')) {
+                $('.dt-input').focus();
                     break;
                 } else {
                   setTimeout(function() {
