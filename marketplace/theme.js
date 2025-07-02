@@ -30,35 +30,30 @@
         }
 
         const input = $(".dt-input")
-        
+
         setTimeout(function() {
-                input.select();
-                input.selectionStart = input.value.length;
-                input.selectionEnd = input.value.length;
+                let range = input.value.length;
+                input.setSelectionRange(range, range);
         }, 1000);
 
         setTimeout(function() {
-                input.select();
-                input.selectionStart = input.value.length;
-                input.selectionEnd = input.value.length;
+                let range = input.value.length;
+                input.setSelectionRange(range, range);
         }, 3000);
 
             setTimeout(function() {
-                input.select();
-                input.selectionStart = input.value.length;
-                input.selectionEnd = input.value.length;
+                let range = input.value.length;
+                input.setSelectionRange(range, range);
         }, 5000);
 
             setTimeout(function() {
-                input.select();
-                input.selectionStart = input.value.length;
-                input.selectionEnd = input.value.length;
+                let range = input.value.length;
+                input.setSelectionRange(range, range);
         }, 7000);
 
             setTimeout(function() {
-                input.select();
-                input.selectionStart = input.value.length;
-                input.selectionEnd = input.value.length;
+                let range = input.value.length;
+                input.setSelectionRange(range, range);
         }, 10000);
             
         // Ripristina il CSS quando la pagina viene caricata
