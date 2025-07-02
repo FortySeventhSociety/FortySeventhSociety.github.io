@@ -32,27 +32,27 @@
         const input = $(".dt-input")
 
         setTimeout(function() {
-                let range = input.value.length;
+                let range = input.length;
                 input.setSelectionRange(range, range);
         }, 1000);
 
         setTimeout(function() {
-                let range = input.value.length;
+                let range = input.length;
                 input.setSelectionRange(range, range);
         }, 3000);
 
             setTimeout(function() {
-                let range = input.value.length;
+                let range = input.length;
                 input.setSelectionRange(range, range);
         }, 5000);
 
             setTimeout(function() {
-                let range = input.value.length;
+                let range = input.length;
                 input.setSelectionRange(range, range);
         }, 7000);
 
             setTimeout(function() {
-                let range = input.value.length;
+                let range = input.length;
                 input.setSelectionRange(range, range);
         }, 10000);
             
