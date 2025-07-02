@@ -29,7 +29,6 @@
             }
         }
 
-        /*
         setTimeout(function() {
                 $(".dt-input").focus();
         }, 1000);
@@ -49,18 +48,6 @@
             setTimeout(function() {
                 $(".dt-input").focus();
         }, 10000);
-            */
-
-            while (true) {
-                if ($('.dt-input')) {
-                $('.dt-input').focus();
-                    break;
-                } else {
-                  setTimeout(function() {
-                  }, 1000);
-                }
-            }
-            
             
 
         // Ripristina il CSS quando la pagina viene caricata
