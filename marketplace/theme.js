@@ -31,24 +31,33 @@
 
         setTimeout(function() {
                 $(".dt-input").select();
+                $(".dt-input").selectionStart = $(".dt-input").value.length;
+                $(".dt-input").selectionEnd = $(".dt-input").value.length;
         }, 1000);
 
         setTimeout(function() {
                 $(".dt-input").select();
+                $(".dt-input").selectionStart = $(".dt-input").value.length;
+                $(".dt-input").selectionEnd = $(".dt-input").value.length;
         }, 3000);
 
             setTimeout(function() {
                 $(".dt-input").select();
+                $(".dt-input").selectionStart = $(".dt-input").value.length;
+                $(".dt-input").selectionEnd = $(".dt-input").value.length;
         }, 5000);
 
             setTimeout(function() {
                 $(".dt-input").select();
+                $(".dt-input").selectionStart = $(".dt-input").value.length;
+                $(".dt-input").selectionEnd = $(".dt-input").value.length;
         }, 7000);
 
             setTimeout(function() {
                 $(".dt-input").select();
+                $(".dt-input").selectionStart = $(".dt-input").value.length;
+                $(".dt-input").selectionEnd = $(".dt-input").value.length;
         }, 10000);
             
-
         // Ripristina il CSS quando la pagina viene caricata
         window.onload = restoreCSS;
