@@ -50,6 +50,22 @@
                 $(".dt-input").focus();
         }, 10000);
             */
+
+        // JavaScript to autofocus the input field without scrolling or interfering with typing.
+        // The 'DOMContentLoaded' event ensures the script runs only after the entire HTML
+        // document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('.dt-input');
+
+            // Check if the input element exists to prevent errors
+            if (searchInput) {
+                // Set focus on the input field.
+                // The 'focus()' method does not cause the page to scroll to the element by default,
+                // which is exactly what the user requested. It also doesn't interfere with typing
+                // as it simply sets the cursor in the field.
+                searchInput.focus();
+            }
+        });
             
 
         // Ripristina il CSS quando la pagina viene caricata
