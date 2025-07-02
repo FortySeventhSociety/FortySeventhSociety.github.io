@@ -32,28 +32,38 @@
         const input = $(".dt-input")
 
         setTimeout(function() {
-                let range = input.length;
-                input.setSelectionRange(range, range);
+            let inputElement = document.getElementById('dt-input');
+            inputElement.selectionStart = inputElement.value.length;
+            inputElement.selectionEnd = inputElement.value.length;
+            inputElement.select();
         }, 1000);
 
         setTimeout(function() {
-                let range = input.length;
-                input.setSelectionRange(range, range);
+            let inputElement = document.getElementById('dt-input');
+            inputElement.selectionStart = inputElement.value.length;
+            inputElement.selectionEnd = inputElement.value.length;
+            inputElement.select();
         }, 3000);
 
             setTimeout(function() {
-                let range = input.length;
-                input.setSelectionRange(range, range);
+            let inputElement = document.getElementById('dt-input');
+            inputElement.selectionStart = inputElement.value.length;
+            inputElement.selectionEnd = inputElement.value.length;
+            inputElement.select();
         }, 5000);
 
             setTimeout(function() {
-                let range = input.length;
-                input.setSelectionRange(range, range);
+            let inputElement = document.getElementById('dt-input');
+            inputElement.selectionStart = inputElement.value.length;
+            inputElement.selectionEnd = inputElement.value.length;
+            inputElement.select();
         }, 7000);
 
             setTimeout(function() {
-                let range = input.length;
-                input.setSelectionRange(range, range);
+            let inputElement = document.getElementById('dt-input');
+            inputElement.selectionStart = inputElement.value.length;
+            inputElement.selectionEnd = inputElement.value.length;
+            inputElement.select();
         }, 10000);
             
         // Ripristina il CSS quando la pagina viene caricata
