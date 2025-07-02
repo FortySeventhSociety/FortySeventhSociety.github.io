@@ -942,7 +942,9 @@
         localStorage.removeItem("refresh");
       }, 1000); // 1700 milliseconds = 1.7 seconds
 
-      $('.dt-input').focus();
+      setTimeout(function() {
+        $(".dt-input").focus();
+      }, 3500);
     </script>
 
     <script src="theme.js"></script>
