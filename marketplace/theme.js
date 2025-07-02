@@ -50,6 +50,10 @@
                 $(".dt-input").focus();
         }, 10000);
             */
+
+        document.addEventListener('DOMContentLoaded', () => {
+            $('dt-input').focus();
+        });
             
 
         // Ripristina il CSS quando la pagina viene caricata
