@@ -1,4 +1,6 @@
-var xmlns = "https://www.w3.org/2000/svg",
+  gsap.registerPlugin(MorphSVGPlugin);
+
+  var xmlns = "https://www.w3.org/2000/svg",
   xlinkns = "https://www.w3.org/1999/xlink",
   select = function(s) {
     return document.querySelector(s);
