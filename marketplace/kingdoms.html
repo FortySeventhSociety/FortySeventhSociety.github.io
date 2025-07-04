@@ -27,6 +27,29 @@
             max-width: 800px;
             margin-top: 50px;
         }
+        /* Styles for the header buttons */
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+            margin-bottom: 25px;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        }
+        .header-buttons .btn-header {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            background-color: #e0e7ff; /* Lighter blue background */
+            color: #4f46e5; /* Darker blue text */
+            box-shadow: 0 2px 4px rgba(79, 70, 229, 0.1);
+            border: 1px solid #c7d2fe;
+        }
+        .header-buttons .btn-header:hover {
+            background-color: #c7d2fe; /* Slightly darker on hover */
+            transform: translateY(-1px);
+        }
         .input-group {
             margin-bottom: 15px;
         }
@@ -230,10 +253,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Saved Links</h1>
+        
 
-        <!-- User ID display removed as it's not applicable without Firebase Auth -->
+            <div class="container">
+                <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Save Your Links!</h1>
+                <div class="header-buttons">
+            <button class="btn-header">
+                <i class="fa-solid fa-house mr-2"></i> 47th Kingdom
+            </button>
+            <button class="btn-header">
+                <i class="fa-solid fa-leaf mr-2"></i> Ahnx Respite
+            </button>
+            <button class="btn-header">
+                <i class="fa-solid fa-gear mr-2"></i> Dubrok Mill
+            </button>
+            <button class="btn-header">
+                <i class="fa-solid fa-tint mr-2"></i> Thread Society
+            </button>
+            <button class="btn-header">
+                <i class="fa-solid fa-beer-mug-empty mr-2"></i> Goblin Alley
+            </button>
+            <button class="btn-header">
+                <i class="fa-solid fa-compass mr-2"></i> Arkhenax
+            </button>
+        </div>
 
         <div class="input-group">
             <label for="linkUrl">Link</label>
