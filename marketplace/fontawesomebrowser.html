@@ -1,479 +1,1149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Awesome Icon Browser</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 100%;
-            max-width: 900px;
-            margin-top: 50px;
-        }
-        .search-input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-            margin-bottom: 20px;
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: #4f46e5;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
-        }
-        .icon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 15px;
-            max-height: 600px; /* Limit height for scrollability */
-            overflow-y: auto; /* Enable vertical scrolling */
-            padding-right: 10px; /* Space for scrollbar */
-        }
-        .icon-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 10px;
-            background-color: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-            text-align: center;
-        }
-        .icon-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background-color: #eef2ff;
-        }
-        .icon-item i {
-            font-size: 2.5rem;
-            color: #4f46e5;
-            margin-bottom: 8px;
-        }
-        .icon-item span {
-            font-size: 0.8rem;
-            color: #4b5563;
-            word-break: break-all;
-        }
-        .no-results {
-            text-align: center;
-            color: #6b7280;
-            font-size: 1.1rem;
-            padding: 20px;
-        }
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .modal.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal-content {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            transform: translateY(-20px);
-            transition: transform 0.3s;
-        }
-        .modal.show .modal-content {
-            transform: translateY(0);
-        }
-        .modal-content h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 15px;
-        }
-        .modal-content p {
-            color: #4b5563;
-            margin-bottom: 25px;
-        }
-        .modal-content button {
-            background-color: #4f46e5;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .modal-content button:hover {
-            background-color: #4338ca;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Font Awesome Icons</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Font Awesome Icon Browser</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Font Awesome CDN for icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: #f3f4f6;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                min-height: 100vh;
+                padding: 20px;
+            }
+            .container {
+                background-color: #ffffff;
+                border-radius: 15px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                width: 100%;
+                max-width: 900px;
+                margin-top: 50px;
+            }
+            .search-input {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #d1d5db;
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: border-color 0.2s;
+                margin-bottom: 20px;
+            }
+            .search-input:focus {
+                outline: none;
+                border-color: #4f46e5;
+                box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+            }
+            .icon-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 15px;
+                max-height: 600px; /* Limit height for scrollability */
+                overflow-y: auto; /* Enable vertical scrolling */
+                padding-right: 10px; /* Space for scrollbar */
+            }
+            .icon-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 15px 10px;
+                background-color: #f9fafb;
+                border: 1px solid #e5e7eb;
+                border-radius: 10px;
+                cursor: pointer;
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s,
+                    background-color 0.2s;
+                text-align: center;
+            }
+            .icon-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                background-color: #eef2ff;
+            }
+            .icon-item i {
+                font-size: 2.5rem;
+                color: #4f46e5;
+                margin-bottom: 8px;
+            }
+            .icon-item span {
+                font-size: 0.8rem;
+                color: #4b5563;
+                word-break: break-all;
+            }
+            .no-results {
+                text-align: center;
+                color: #6b7280;
+                font-size: 1.1rem;
+                padding: 20px;
+            }
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transition:
+                    opacity 0.3s,
+                    visibility 0.3s;
+            }
+            .modal.show {
+                opacity: 1;
+                visibility: visible;
+            }
+            .modal-content {
+                background-color: #ffffff;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                max-width: 400px;
+                text-align: center;
+                transform: translateY(-20px);
+                transition: transform 0.3s;
+            }
+            .modal.show .modal-content {
+                transform: translateY(0);
+            }
+            .modal-content h3 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #1f2937;
+                margin-bottom: 15px;
+            }
+            .modal-content p {
+                color: #4b5563;
+                margin-bottom: 25px;
+            }
+            .modal-content button {
+                background-color: #4f46e5;
+                color: #ffffff;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+            .modal-content button:hover {
+                background-color: #4338ca;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">
+                Font Awesome Icons
+            </h1>
 
-        <input type="text" id="iconSearchInput" class="search-input" placeholder="Search icons (e.g., star, user, home)">
+            <input
+                type="text"
+                id="iconSearchInput"
+                class="search-input"
+                placeholder="Search icons (e.g., star, user, home)"
+            />
 
-        <div id="iconGrid" class="icon-grid">
-            <!-- Icons will be dynamically loaded here -->
+            <div id="iconGrid" class="icon-grid">
+                <!-- Icons will be dynamically loaded here -->
+            </div>
+            <p id="noResultsMessage" class="no-results hidden">
+                No icons found matching your search.
+            </p>
         </div>
-        <p id="noResultsMessage" class="no-results hidden">No icons found matching your search.</p>
-    </div>
 
-    <!-- Message Modal -->
-    <div id="messageModal" class="modal">
-        <div class="modal-content">
-            <h3 id="modalTitle"></h3>
-            <p id="modalMessage"></p>
-            <button id="modalCloseBtn">OK</button>
+        <!-- Message Modal -->
+        <div id="messageModal" class="modal">
+            <div class="modal-content">
+                <h3 id="modalTitle"></h3>
+                <p id="modalMessage"></p>
+                <button id="modalCloseBtn">OK</button>
+            </div>
         </div>
-    </div>
 
-    <script type="module">
-        const iconSearchInput = document.getElementById('iconSearchInput');
-        const iconGrid = document.getElementById('iconGrid');
-        const noResultsMessage = document.getElementById('noResultsMessage');
+        <script type="module">
+            const iconSearchInput = document.getElementById("iconSearchInput");
+            const iconGrid = document.getElementById("iconGrid");
+            const noResultsMessage =
+                document.getElementById("noResultsMessage");
 
-        // Message Modal elements
-        const messageModal = document.getElementById('messageModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalMessage = document.getElementById('modalMessage');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
+            // Message Modal elements
+            const messageModal = document.getElementById("messageModal");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalMessage = document.getElementById("modalMessage");
+            const modalCloseBtn = document.getElementById("modalCloseBtn");
 
-        // Function to show custom message modal
-        function showMessage(title, message) {
-            modalTitle.textContent = title;
-            modalMessage.textContent = message;
-            messageModal.classList.add('show');
-        }
-
-        // Function to hide custom message modal
-        function hideMessage() {
-            messageModal.classList.remove('show');
-        }
-
-        modalCloseBtn.addEventListener('click', hideMessage);
-
-        // A curated list of common Font Awesome 6 icon classes
-        // Note: This list is not exhaustive but covers many popular icons.
-        // For a full list, refer to the Font Awesome documentation.
-        const allIcons = [
-            'fa-solid fa-star', 'fa-solid fa-heart', 'fa-solid fa-home', 'fa-solid fa-user',
-            'fa-solid fa-envelope', 'fa-solid fa-gear', 'fa-solid fa-bell', 'fa-solid fa-image',
-            'fa-solid fa-magnifying-glass', 'fa-solid fa-trash-alt', 'fa-solid fa-pencil', 'fa-solid fa-check',
-            'fa-solid fa-times', 'fa-solid fa-info-circle', 'fa-solid fa-exclamation-triangle', 'fa-solid fa-download',
-            'fa-solid fa-upload', 'fa-solid fa-folder', 'fa-solid fa-file', 'fa-solid fa-calendar-alt',
-            'fa-solid fa-clock', 'fa-solid fa-map-marker-alt', 'fa-solid fa-phone', 'fa-solid fa-mobile-alt',
-            'fa-solid fa-laptop', 'fa-solid fa-tablet-alt', 'fa-solid fa-camera', 'fa-solid fa-video',
-            'fa-solid fa-music', 'fa-solid fa-microphone', 'fa-solid fa-headphones', 'fa-solid fa-gamepad',
-            'fa-solid fa-book', 'fa-solid fa-graduation-cap', 'fa-solid fa-briefcase', 'fa-solid fa-shopping-cart',
-            'fa-solid fa-credit-card', 'fa-solid fa-dollar-sign', 'fa-solid fa-chart-bar', 'fa-solid fa-cog',
-            'fa-solid fa-wrench', 'fa-solid fa-tools', 'fa-solid fa-sliders-h', 'fa-solid fa-filter',
-            'fa-solid fa-plus', 'fa-solid fa-minus', 'fa-solid fa-share-alt', 'fa-solid fa-link',
-            'fa-solid fa-external-link-alt', 'fa-solid fa-paperclip', 'fa-solid fa-comment', 'fa-solid fa-comments',
-            'fa-solid fa-quote-left', 'fa-solid fa-tag', 'fa-solid fa-tags', 'fa-solid fa-thumbtack',
-            'fa-solid fa-bookmark', 'fa-solid fa-lightbulb', 'fa-solid fa-fire', 'fa-solid fa-bolt',
-            'fa-solid fa-cloud', 'fa-solid fa-sun', 'fa-solid fa-moon', 'fa-solid fa-snowflake',
-            'fa-solid fa-umbrella', 'fa-solid fa-tint', 'fa-solid fa-tree', 'fa-solid fa-leaf',
-            'fa-solid fa-paw', 'fa-solid fa-fish', 'fa-solid fa-bug', 'fa-solid fa-robot',
-            'fa-solid fa-car', 'fa-solid fa-bus', 'fa-solid fa-train', 'fa-solid fa-plane',
-            'fa-solid fa-ship', 'fa-solid fa-bicycle', 'fa-solid fa-walking', 'fa-solid fa-running',
-            'fa-solid fa-swimmer', 'fa-solid fa-dumbbell', 'fa-solid fa-pizza-slice', 'fa-solid fa-coffee',
-            'fa-solid fa-beer-mug-empty', 'fa-solid fa-utensils', 'fa-solid fa-cookie-bite', 'fa-solid fa-birthday-cake',
-            'fa-solid fa-gift', 'fa-solid fa-trophy', 'fa-solid fa-medal', 'fa-solid fa-crown',
-            'fa-solid fa-gem', 'fa-solid fa-key', 'fa-solid fa-lock', 'fa-solid fa-unlock',
-            'fa-solid fa-shield-alt', 'fa-solid fa-fingerprint', 'fa-solid fa-eye', 'fa-solid fa-eye-slash',
-            'fa-solid fa-hand-point-right', 'fa-solid fa-thumbs-up', 'fa-solid fa-thumbs-down', 'fa-solid fa-smile',
-            'fa-solid fa-frown', 'fa-solid fa-meh', 'fa-solid fa-grin', 'fa-solid fa-sad-tear',
-            'fa-solid fa-angry', 'fa-solid fa-dizzy', 'fa-solid fa-surprise', 'fa-solid fa-tired',
-            'fa-solid fa-head-side-mask', 'fa-solid fa-syringe', 'fa-solid fa-pills', 'fa-solid fa-hospital',
-            'fa-solid fa-ambulance', 'fa-solid fa-medkit', 'fa-solid fa-microscope', 'fa-solid fa-dna',
-            'fa-solid fa-flask', 'fa-solid fa-atom', 'fa-solid fa-globe', 'fa-solid fa-earth-americas',
-            'fa-solid fa-compass', 'fa-solid fa-mountain', 'fa-solid fa-campground', 'fa-solid fa-tree-city',
-            'fa-solid fa-building', 'fa-solid fa-city', 'fa-solid fa-landmark', 'fa-solid fa-gavel',
-            'fa-solid fa-balance-scale', 'fa-solid fa-scale-balanced', 'fa-solid fa-handshake', 'fa-solid fa-user-tie',
-            'fa-solid fa-user-secret', 'fa-solid fa-id-card', 'fa-solid fa-address-book', 'fa-solid fa-address-card',
-            'fa-solid fa-clipboard', 'fa-solid fa-paste', 'fa-solid fa-cut', 'fa-solid fa-copy',
-            'fa-solid fa-save', 'fa-solid fa-print', 'fa-solid fa-keyboard', 'fa-solid fa-mouse',
-            'fa-solid fa-joystick', 'fa-solid fa-gamepad', 'fa-solid fa-vr-cardboard', 'fa-solid fa-desktop',
-            'fa-solid fa-server', 'fa-solid fa-database', 'fa-solid fa-terminal', 'fa-solid fa-code',
-            'fa-solid fa-sitemap', 'fa-solid fa-network-wired', 'fa-solid fa-wifi', 'fa-solid fa-bluetooth',
-            'fa-solid fa-usb', 'fa-solid fa-plug', 'fa-solid fa-battery-full', 'fa-solid fa-battery-half',
-            'fa-solid fa-battery-empty', 'fa-solid fa-power-off', 'fa-solid fa-redo', 'fa-solid fa-undo',
-            'fa-solid fa-history', 'fa-solid fa-sync-alt', 'fa-solid fa-spinner', 'fa-solid fa-circle-notch',
-            'fa-solid fa-ellipsis-h', 'fa-solid fa-ellipsis-v', 'fa-solid fa-bars', 'fa-solid fa-grip-lines',
-            'fa-solid fa-grip-lines-vertical', 'fa-solid fa-grip-horizontal', 'fa-solid fa-grip-vertical', 'fa-solid fa-grip',
-            'fa-solid fa-table', 'fa-solid fa-columns', 'fa-solid fa-th-large', 'fa-solid fa-th',
-            'fa-solid fa-list', 'fa-solid fa-list-alt', 'fa-solid fa-list-ol', 'fa-solid fa-list-ul',
-            'fa-solid fa-indent', 'fa-solid fa-outdent', 'fa-solid fa-align-left', 'fa-solid fa-align-center',
-            'fa-solid fa-align-right', 'fa-solid fa-align-justify', 'fa-solid fa-bold', 'fa-solid fa-italic',
-            'fa-solid fa-underline', 'fa-solid fa-strikethrough', 'fa-solid fa-superscript', 'fa-solid fa-subscript',
-            'fa-solid fa-font', 'fa-solid fa-text-height', 'fa-solid fa-text-width', 'fa-solid fa-palette',
-            'fa-solid fa-paint-brush', 'fa-solid fa-fill-drip', 'fa-solid fa-spray-can', 'fa-solid fa-ruler',
-            'fa-solid fa-ruler-combined', 'fa-solid fa-vector-square', 'fa-solid fa-bezier-curve', 'fa-solid fa-pen-nib',
-            'fa-solid fa-stamp', 'fa-solid fa-eraser', 'fa-solid fa-crop', 'fa-solid fa-crop-alt',
-            'fa-solid fa-expand', 'fa-solid fa-compress', 'fa-solid fa-arrows-alt', 'fa-solid fa-arrows-alt-h',
-            'fa-solid fa-arrows-alt-v', 'fa-solid fa-exchange-alt', 'fa-solid fa-random', 'fa-solid fa-retweet',
-            'fa-solid fa-reply', 'fa-solid fa-reply-all', 'fa-solid fa-forward', 'fa-solid fa-backward',
-            'fa-solid fa-play', 'fa-solid fa-pause', 'fa-solid fa-stop', 'fa-solid fa-fast-forward',
-            'fa-solid fa-fast-backward', 'fa-solid fa-step-forward', 'fa-solid fa-step-backward', 'fa-solid fa-volume-up',
-            'fa-solid fa-volume-down', 'fa-solid fa-volume-mute', 'fa-solid fa-volume-off', 'fa-solid fa-redo-alt',
-            'fa-solid fa-undo-alt', 'fa-solid fa-sync', 'fa-solid fa-sync-alt', 'fa-solid fa-crosshairs',
-            'fa-solid fa-location-arrow', 'fa-solid fa-directions', 'fa-solid fa-road', 'fa-solid fa-route',
-            'fa-solid fa-map', 'fa-solid fa-map-marked', 'fa-solid fa-map-pin', 'fa-solid fa-thumbtack',
-            'fa-solid fa-globe-americas', 'fa-solid fa-globe-asia', 'fa-solid fa-globe-europe', 'fa-solid fa-globe-africa',
-            'fa-solid fa-globe-oceania', 'fa-solid fa-globe-stand', 'fa-solid fa-mountain-sun', 'fa-solid fa-cloud-sun',
-            'fa-solid fa-cloud-moon', 'fa-solid fa-cloud-showers-heavy', 'fa-solid fa-cloud-rain', 'fa-solid fa-cloud-snow',
-            'fa-solid fa-wind', 'fa-solid fa-smog', 'fa-solid fa-temperature-high', 'fa-solid fa-temperature-low',
-            'fa-solid fa-thermometer-half', 'fa-solid fa-water', 'fa-solid fa-droplet', 'fa-solid fa-fire-extinguisher',
-            'fa-solid fa-burn', 'fa-solid fa-radiation', 'fa-solid fa-biohazard', 'fa-solid fa-skull-crossbones',
-            'fa-solid fa-poo', 'fa-solid fa-toilet', 'fa-solid fa-hand-sparkles', 'fa-solid fa-pump-soap',
-            'fa-solid fa-soap', 'fa-solid fa-hands-wash', 'fa-solid fa-hand-holding-medical', 'fa-solid fa-house-user',
-            'fa-solid fa-hospital-user', 'fa-solid fa-clinic-medical', 'fa-solid fa-vial', 'fa-solid fa-capsules',
-            'fa-solid fa-prescription-bottle', 'fa-solid fa-band-aid', 'fa-solid fa-first-aid', 'fa-solid fa-crutch',
-            'fa-solid fa-wheelchair', 'fa-solid fa-stethoscope', 'fa-solid fa-x-ray', 'fa-solid fa-microscope',
-            'fa-solid fa-syringe', 'fa-solid fa-pills', 'fa-solid fa-head-side-cough', 'fa-solid fa-head-side-virus',
-            'fa-solid fa-virus', 'fa-solid fa-viruses', 'fa-solid fa-virus-slash', 'fa-solid fa-hand-holding-heart',
-            'fa-solid fa-heartbeat', 'fa-solid fa-lungs', 'fa-solid fa-brain', 'fa-solid fa-tooth',
-            'fa-solid fa-bone', 'fa-solid fa-joint', 'fa-solid fa-dna', 'fa-solid fa-bacteria',
-            'fa-solid fa-fungus', 'fa-solid fa-robot', 'fa-solid fa-ghost', 'fa-solid fa-spider',
-            'fa-solid fa-dragon', 'fa-solid fa-crow', 'fa-solid fa-cat', 'fa-solid fa-dog',
-            'fa-solid fa-horse', 'fa-solid fa-dove', 'fa-solid fa-feather', 'fa-solid fa-frog',
-            'fa-solid fa-otter', 'fa-solid fa-hippo', 'fa-solid fa-fish-fins', 'fa-solid fa-shrimp',
-            'fa-solid fa-carrot', 'fa-solid fa-apple-whole', 'fa-solid fa-lemon', 'fa-solid fa-pepper-hot',
-            'fa-solid fa-cheese', 'fa-solid fa-egg', 'fa-solid fa-bread-slice', 'fa-solid fa-hamburger',
-            'fa-solid fa-hotdog', 'fa-solid fa-pizza-slice', 'fa-solid fa-ice-cream', 'fa-solid fa-candy-cane',
-            'fa-solid fa-mug-hot', 'fa-solid fa-wine-glass', 'fa-solid fa-cocktail', 'fa-solid fa-beer',
-            'fa-solid fa-blender', 'fa-solid fa-coffee-pot', 'fa-solid fa-kitchen-set', 'fa-solid fa-oven',
-            'fa-solid fa-microwave', 'fa-solid fa-refrigerator', 'fa-solid fa-dishwasher', 'fa-solid fa-washing-machine',
-            'fa-solid fa-dryer', 'fa-solid fa-couch', 'fa-solid fa-chair', 'fa-solid fa-bed',
-            'fa-solid fa-toilet-paper', 'fa-solid fa-shower', 'fa-solid fa-bath', 'fa-solid fa-sink',
-            'fa-solid fa-door-open', 'fa-solid fa-door-closed', 'fa-solid fa-window-frame', 'fa-solid fa-window-maximize',
-            'fa-solid fa-window-minimize', 'fa-solid fa-window-restore', 'fa-solid fa-building-columns', 'fa-solid fa-building-flag',
-            'fa-solid fa-building-lock', 'fa-solid fa-building-user', 'fa-solid fa-building-wheat', 'fa-solid fa-city',
-            'fa-solid fa-house', 'fa-solid fa-house-chimney', 'fa-solid fa-house-crack', 'fa-solid fa-house-fire',
-            'fa-solid fa-house-flood-water', 'fa-solid fa-house-laptop', 'fa-solid fa-house-medical', 'fa-solid fa-house-signal',
-            'fa-solid fa-house-tsunami', 'fa-solid fa-house-user', 'fa-solid fa-industry', 'fa-solid fa-landmark',
-            'fa-solid fa-monument', 'fa-solid fa-mosque', 'fa-solid fa-place-of-worship', 'fa-solid fa-school',
-            'fa-solid fa-store', 'fa-solid fa-store-alt', 'fa-solid fa-warehouse', 'fa-solid fa-bar-chart',
-            'fa-solid fa-chart-area', 'fa-solid fa-chart-line', 'fa-solid fa-chart-pie', 'fa-solid fa-gauge',
-            'fa-solid fa-gauge-high', 'fa-solid fa-gauge-low', 'fa-solid fa-tachometer-alt', 'fa-solid fa-signal',
-            'fa-solid fa-broadcast-tower', 'fa-solid fa-satellite', 'fa-solid fa-satellite-dish', 'fa-solid fa-wifi',
-            'fa-solid fa-rss', 'fa-solid fa-sitemap', 'fa-solid fa-code-branch', 'fa-solid fa-code-fork',
-            'fa-solid fa-terminal', 'fa-solid fa-bug', 'fa-solid fa-laptop-code', 'fa-solid fa-file-code',
-            'fa-solid fa-git-alt', 'fa-solid fa-github', 'fa-solid fa-gitlab', 'fa-solid fa-bitbucket',
-            'fa-solid fa-stack-overflow', 'fa-solid fa-dev', 'fa-solid fa-discord', 'fa-solid fa-slack',
-            'fa-solid fa-microsoft', 'fa-solid fa-apple', 'fa-solid fa-google', 'fa-solid fa-amazon',
-            'fa-solid fa-facebook', 'fa-solid fa-twitter', 'fa-solid fa-instagram', 'fa-solid fa-linkedin',
-            'fa-solid fa-youtube', 'fa-solid fa-pinterest', 'fa-solid fa-snapchat', 'fa-solid fa-tiktok',
-            'fa-solid fa-whatsapp', 'fa-solid fa-telegram', 'fa-solid fa-reddit', 'fa-solid fa-tumblr',
-            'fa-solid fa-flickr', 'fa-solid fa-vimeo', 'fa-solid fa-twitch', 'fa-solid fa-spotify',
-            'fa-solid fa-soundcloud', 'fa-solid fa-paypal', 'fa-solid fa-stripe', 'fa-solid fa-cc-visa',
-            'fa-solid fa-cc-mastercard', 'fa-solid fa-cc-amex', 'fa-solid fa-cc-discover', 'fa-solid fa-cc-jcb',
-            'fa-solid fa-cc-diners-club', 'fa-solid fa-cc-paypal', 'fa-solid fa-bitcoin', 'fa-solid fa-ethereum',
-            'fa-solid fa-litecoin-sign', 'fa-solid fa-dog-leashed', 'fa-solid fa-cat-space', 'fa-solid fa-fish-cooked',
-            'fa-solid fa-burger-soda', 'fa-solid fa-pizza', 'fa-solid fa-hotdog', 'fa-solid fa-ice-cream',
-            'fa-solid fa-cookie', 'fa-solid fa-mug-saucer', 'fa-solid fa-cocktail', 'fa-solid fa-whiskey-glass',
-            'fa-solid fa-wine-bottle', 'fa-solid fa-champagne-glasses', 'fa-solid fa-martini-glass', 'fa-solid fa-beer-mug-empty',
-            'fa-solid fa-blender-phone', 'fa-solid fa-oven', 'fa-solid fa-sink', 'fa-solid fa-toilet',
-            'fa-solid fa-shower', 'fa-solid fa-bath', 'fa-solid fa-bed', 'fa-solid fa-couch',
-            'fa-solid fa-chair', 'fa-solid fa-table-tennis-paddle-ball', 'fa-solid fa-volleyball-ball', 'fa-solid fa-basketball-ball',
-            'fa-solid fa-baseball-ball', 'fa-solid fa-football-ball', 'fa-solid fa-bowling-ball', 'fa-solid fa-golf-ball-tee',
-            'fa-solid fa-hockey-puck', 'fa-solid fa-quidditch', 'fa-solid fa-billiards', 'fa-solid fa-chess',
-            'fa-solid fa-chess-king', 'fa-solid fa-chess-queen', 'fa-solid fa-chess-rook', 'fa-solid fa-chess-bishop',
-            'fa-solid fa-chess-knight', 'fa-solid fa-chess-pawn', 'fa-solid fa-dice', 'fa-solid fa-dice-d6',
-            'fa-solid fa-dice-d20', 'fa-solid fa-puzzle-piece', 'fa-solid fa-gamepad', 'fa-solid fa-vr-cardboard',
-            'fa-solid fa-headset', 'fa-solid fa-microphone', 'fa-solid fa-microphone-alt', 'fa-solid fa-headphones',
-            'fa-solid fa-ear-listen', 'fa-solid fa-volume-high', 'fa-solid fa-volume-low', 'fa-solid fa-volume-off',
-            'fa-solid fa-bell', 'fa-solid fa-bell-slash', 'fa-solid fa-bullhorn', 'fa-solid fa-comment-dots',
-            'fa-solid fa-comment-slash', 'fa-solid fa-comments', 'fa-solid fa-quote-right', 'fa-solid fa-tags',
-            'fa-solid fa-bookmark', 'fa-solid fa-star-half-stroke', 'fa-solid fa-thumbs-up', 'fa-solid fa-thumbs-down',
-            'fa-solid fa-face-smile', 'fa-solid fa-face-frown', 'fa-solid fa-face-meh', 'fa-solid fa-face-grin',
-            'fa-solid fa-face-sad-tear', 'fa-solid fa-face-angry', 'fa-solid fa-face-dizzy', 'fa-solid fa-face-surprise',
-            'fa-solid fa-face-tired', 'fa-solid fa-hand-peace', 'fa-solid fa-hand-rock', 'fa-solid fa-hand-paper',
-            'fa-solid fa-hand-scissors', 'fa-solid fa-hand-lizard', 'fa-solid fa-hand-spock', 'fa-solid fa-hand-point-up',
-            'fa-solid fa-hand-point-down', 'fa-solid fa-hand-point-left', 'fa-solid fa-hand-point-right', 'fa-solid fa-fingerprint',
-            'fa-solid fa-id-card', 'fa-solid fa-address-book', 'fa-solid fa-address-card', 'fa-solid fa-passport',
-            'fa-solid fa-user-circle', 'fa-solid fa-user-plus', 'fa-solid fa-user-minus', 'fa-solid fa-user-times',
-            'fa-solid fa-user-lock', 'fa-solid fa-user-shield', 'fa-solid fa-user-secret', 'fa-solid fa-user-cog',
-            'fa-solid fa-users', 'fa-solid fa-users-cog', 'fa-solid fa-user-friends', 'fa-solid fa-user-group',
-            'fa-solid fa-child', 'fa-solid fa-baby', 'fa-solid fa-person', 'fa-solid fa-person-dress',
-            'fa-solid fa-person-walking', 'fa-solid fa-person-running', 'fa-solid fa-person-swimming', 'fa-solid fa-person-biking',
-            'fa-solid fa-person-hiking', 'fa-solid fa-person-skiing', 'fa-solid fa-person-falling-burst', 'fa-solid fa-person-falling',
-            'fa-solid fa-person-shelter', 'fa-solid fa-person-booth', 'fa-solid fa-male', 'fa-solid fa-female',
-            'fa-solid fa-genderless', 'fa-solid fa-venus', 'fa-solid fa-mars', 'fa-solid fa-mercury',
-            'fa-solid fa-transgender', 'fa-solid fa-transgender-alt', 'fa-solid fa-neuter', 'fa-solid fa-syringe',
-            'fa-solid fa-pills', 'fa-solid fa-prescription-bottle-alt', 'fa-solid fa-medkit', 'fa-solid fa-hospital',
-            'fa-solid fa-hospital-alt', 'fa-solid fa-h-square', 'fa-solid fa-plus-square', 'fa-solid fa-minus-square',
-            'fa-solid fa-check-square', 'fa-solid fa-times-circle', 'fa-solid fa-info-circle', 'fa-solid fa-exclamation-circle',
-            'fa-solid fa-question-circle', 'fa-solid fa-lightbulb', 'fa-solid fa-star', 'fa-solid fa-heart',
-            'fa-solid fa-thumbs-up', 'fa-solid fa-thumbs-down', 'fa-solid fa-smile', 'fa-solid fa-frown',
-            'fa-solid fa-meh', 'fa-solid fa-grin', 'fa-solid fa-sad-tear', 'fa-solid fa-angry',
-            'fa-solid fa-dizzy', 'fa-solid fa-surprise', 'fa-solid fa-tired', 'fa-solid fa-laugh',
-            'fa-solid fa-laugh-squint', 'fa-solid fa-laugh-wink', 'fa-solid fa-grin-alt', 'fa-solid fa-grin-beam',
-            'fa-solid fa-grin-beam-sweat', 'fa-solid fa-grin-hearts', 'fa-solid fa-grin-squint', 'fa-solid fa-grin-squint-tears',
-            'fa-solid fa-grin-stars', 'fa-solid fa-grin-tongue', 'fa-solid fa-grin-tongue-squint', 'fa-solid fa-grin-tongue-wink',
-            'fa-solid fa-grin-wink', 'fa-solid fa-kiss', 'fa-solid fa-kiss-beam', 'fa-solid fa-kiss-wink-heart',
-            'fa-solid fa-flushed', 'fa-solid fa-dizzy', 'fa-solid fa-grimace', 'fa-solid fa-grin-tears',
-            'fa-solid fa-sad-cry', 'fa-solid fa-angry', 'fa-solid fa-tired', 'fa-solid fa-surprise',
-            'fa-solid fa-sleepy', 'fa-solid fa-pouting-face', 'fa-solid fa-face-rolling-eyes', 'fa-solid fa-face-laugh-beam',
-            'fa-solid fa-face-laugh-squint', 'fa-solid fa-face-laugh-wink', 'fa-solid fa-face-grin-squint', 'fa-solid fa-face-grin-tongue',
-            'fa-solid fa-face-grin-wink', 'fa-solid fa-face-kiss', 'fa-solid fa-face-kiss-wink-heart', 'fa-solid fa-face-flushed',
-            'fa-solid fa-face-grimace', 'fa-solid fa-face-sad-cry', 'fa-solid fa-face-angry', 'fa-solid fa-face-tired',
-            'fa-solid fa-face-surprise', 'fa-solid fa-face-sleepy', 'fa-solid fa-face-pouting', 'fa-solid fa-face-rolling-eyes',
-            // Brands (fa-brands) - a small selection
-            'fa-brands fa-github', 'fa-brands fa-twitter', 'fa-brands fa-facebook', 'fa-brands fa-instagram',
-            'fa-brands fa-linkedin', 'fa-brands fa-youtube', 'fa-brands fa-google', 'fa-brands fa-apple',
-            'fa-brands fa-windows', 'fa-brands fa-android', 'fa-brands fa-linux', 'fa-brands fa-html5',
-            'fa-brands fa-css3-alt', 'fa-brands fa-js', 'fa-brands fa-react', 'fa-brands fa-angular',
-            'fa-brands fa-vuejs', 'fa-brands fa-node-js', 'fa-brands fa-python', 'fa-brands fa-java',
-            'fa-brands fa-php', 'fa-brands fa-wordpress', 'fa-brands fa-shopify', 'fa-brands fa-paypal',
-            'fa-brands fa-stripe', 'fa-brands fa-aws', 'fa-brands fa-google-cloud', 'fa-brands fa-docker',
-            'fa-brands fa-git', 'fa-brands fa-npm', 'fa-brands fa-yarn', 'fa-brands fa-stack-overflow',
-            'fa-brands fa-dev', 'fa-brands fa-discord', 'fa-brands fa-slack', 'fa-brands fa-twitch',
-            'fa-brands fa-pinterest', 'fa-brands fa-reddit', 'fa-brands fa-snapchat', 'fa-brands fa-tiktok',
-            'fa-brands fa-whatsapp', 'fa-brands fa-telegram', 'fa-brands fa-vimeo', 'fa-brands fa-spotify',
-            'fa-brands fa-soundcloud', 'fa-brands fa-medium', 'fa-brands fa-quora', 'fa-brands fa-stack-exchange',
-            'fa-brands fa-microsoft', 'fa-brands fa-app-store', 'fa-brands fa-google-play', 'fa-brands fa-xbox',
-            'fa-brands fa-playstation', 'fa-brands fa-steam', 'fa-brands fa-discord', 'fa-brands fa-skype',
-            'fa-brands fa-wechat', 'fa-brands fa-qq', 'fa-brands fa-vk', 'fa-brands fa-line',
-            'fa-brands fa-font-awesome', 'fa-brands fa-bootstrap', 'fa-brands fa-sass', 'fa-brands fa-less',
-            'fa-brands fa-gulp', 'fa-brands fa-grunt', 'fa-brands fa-webpack', 'fa-brands fa-jira',
-            'fa-brands fa-confluence', 'fa-brands fa-bitbucket', 'fa-brands fa-gitlab', 'fa-brands fa-trello',
-            'fa-brands fa-dropbox', 'fa-brands fa-google-drive', 'fa-brands fa-onedrive', 'fa-brands fa-figma',
-            'fa-brands fa-sketch', 'fa-brands fa-adobe', 'fa-brands fa-magento', 'fa-brands fa-opencart',
-            'fa-brands fa-joomla', 'fa-brands fa-drupal', 'fa-brands fa-blogger', 'fa-brands fa-tumblr',
-            'fa-brands fa-wordpress-simple', 'fa-brands fa-wix', 'fa-brands fa-squarespace', 'fa-brands fa-ello',
-            'fa-brands fa-mastodon', 'fa-brands fa-dribbble', 'fa-brands fa-behance', 'fa-brands fa-devianart',
-            'fa-brands fa-flickr', 'fa-brands fa-500px', 'fa-brands fa-etsy', 'fa-brands fa-ebay',
-            'fa-brands fa-amazon-pay', 'fa-brands fa-apple-pay', 'fa-brands fa-google-pay', 'fa-brands fa-cc-visa',
-            'fa-brands fa-cc-mastercard', 'fa-brands fa-cc-amex', 'fa-brands fa-cc-discover', 'fa-brands fa-cc-jcb',
-            'fa-brands fa-cc-diners-club', 'fa-brands fa-cc-paypal', 'fa-brands fa-bitcoin', 'fa-brands fa-ethereum',
-            'fa-brands fa-bitcoin', 'fa-brands fa-ethereum', 'fa-brands fa-litecoin', 'fa-brands fa-dog-leashed',
-            'fa-brands fa-cat-space', 'fa-brands fa-fish-cooked', 'fa-brands fa-burger-soda', 'fa-brands fa-pizza',
-            'fa-brands fa-hotdog', 'fa-brands fa-ice-cream', 'fa-brands fa-cookie', 'fa-brands fa-mug-saucer',
-            'fa-brands fa-cocktail', 'fa-brands fa-whiskey-glass', 'fa-brands fa-wine-bottle', 'fa-brands fa-champagne-glasses',
-            'fa-brands fa-martini-glass', 'fa-brands fa-beer-mug-empty', 'fa-brands fa-blender-phone', 'fa-brands fa-oven',
-            'fa-brands fa-sink', 'fa-brands fa-toilet', 'fa-brands fa-shower', 'fa-brands fa-bath',
-            'fa-brands fa-bed', 'fa-brands fa-couch', 'fa-brands fa-chair', 'fa-brands fa-table-tennis-paddle-ball',
-            'fa-brands fa-volleyball-ball', 'fa-brands fa-basketball-ball', 'fa-brands fa-baseball-ball', 'fa-brands fa-football-ball',
-            'fa-brands fa-bowling-ball', 'fa-brands fa-golf-ball-tee', 'fa-brands fa-hockey-puck', 'fa-brands fa-quidditch',
-            'fa-brands fa-billiards', 'fa-brands fa-chess', 'fa-brands fa-chess-king', 'fa-brands fa-chess-queen',
-            'fa-brands fa-chess-rook', 'fa-brands fa-chess-bishop', 'fa-brands fa-chess-knight', 'fa-brands fa-chess-pawn',
-            'fa-brands fa-dice', 'fa-brands fa-dice-d6', 'fa-brands fa-dice-d20', 'fa-brands fa-puzzle-piece',
-            'fa-brands fa-gamepad', 'fa-brands fa-vr-cardboard', 'fa-brands fa-headset', 'fa-brands fa-microphone',
-            'fa-brands fa-microphone-alt', 'fa-brands fa-headphones', 'fa-brands fa-ear-listen', 'fa-brands fa-volume-high',
-            'fa-brands fa-volume-low', 'fa-brands fa-volume-off', 'fa-brands fa-bell', 'fa-brands fa-bell-slash',
-            'fa-brands fa-bullhorn', 'fa-brands fa-comment-dots', 'fa-brands fa-comment-slash', 'fa-brands fa-comments',
-            'fa-brands fa-quote-right', 'fa-brands fa-tags', 'fa-brands fa-bookmark', 'fa-brands fa-star-half-stroke',
-            'fa-brands fa-thumbs-up', 'fa-brands fa-thumbs-down', 'fa-brands fa-face-smile', 'fa-brands fa-face-frown',
-            'fa-brands fa-face-meh', 'fa-brands fa-face-grin', 'fa-brands fa-face-sad-tear', 'fa-brands fa-face-angry',
-            'fa-brands fa-face-dizzy', 'fa-brands fa-face-surprise', 'fa-brands fa-face-tired', 'fa-brands fa-face-laugh',
-            'fa-brands fa-face-laugh-squint', 'fa-brands fa-face-laugh-wink', 'fa-brands fa-face-grin-squint', 'fa-brands fa-face-grin-tongue',
-            'fa-brands fa-face-grin-wink', 'fa-brands fa-face-kiss', 'fa-brands fa-face-kiss-wink-heart', 'fa-brands fa-face-flushed',
-            'fa-brands fa-face-grimace', 'fa-brands fa-face-sad-cry', 'fa-brands fa-face-angry', 'fa-brands fa-face-tired',
-            'fa-brands fa-face-surprise', 'fa-brands fa-face-sleepy', 'fa-brands fa-face-pouting', 'fa-brands fa-face-rolling-eyes',
-        ];
-
-
-        /**
-         * Renders the icons in the grid based on the provided list.
-         * @param {string[]} iconsToDisplay - An array of Font Awesome class strings.
-         */
-        function renderIcons(iconsToDisplay) {
-            iconGrid.innerHTML = ''; // Clear existing icons
-            if (iconsToDisplay.length === 0) {
-                noResultsMessage.classList.remove('hidden');
-                return;
-            } else {
-                noResultsMessage.classList.add('hidden');
+            // Function to show custom message modal
+            function showMessage(title, message) {
+                modalTitle.textContent = title;
+                modalMessage.textContent = message;
+                messageModal.classList.add("show");
             }
 
-            iconsToDisplay.forEach(iconClass => {
-                const iconItem = document.createElement('div');
-                iconItem.className = 'icon-item';
-                iconItem.title = `Click to copy: ${iconClass}`; // Tooltip for copying
+            // Function to hide custom message modal
+            function hideMessage() {
+                messageModal.classList.remove("show");
+            }
 
-                const iconElement = document.createElement('i');
-                iconElement.className = iconClass;
-                iconItem.appendChild(iconElement);
+            modalCloseBtn.addEventListener("click", hideMessage);
 
-                const iconName = document.createElement('span');
-                // Extract the meaningful part of the class for display (e.g., 'star' from 'fa-solid fa-star')
-                iconName.textContent = iconClass.split(' ').pop().replace('fa-', '');
-                iconItem.appendChild(iconName);
+            // A curated list of common Font Awesome 6 icon classes
+            // Note: This list is not exhaustive but covers many popular icons.
+            // For a full list, refer to the Font Awesome documentation.
+            const allIcons = [
+                "fa-solid fa-star",
+                "fa-solid fa-heart",
+                "fa-solid fa-home",
+                "fa-solid fa-user",
+                "fa-solid fa-envelope",
+                "fa-solid fa-gear",
+                "fa-solid fa-bell",
+                "fa-solid fa-image",
+                "fa-solid fa-magnifying-glass",
+                "fa-solid fa-trash-alt",
+                "fa-solid fa-pencil",
+                "fa-solid fa-check",
+                "fa-solid fa-times",
+                "fa-solid fa-info-circle",
+                "fa-solid fa-exclamation-triangle",
+                "fa-solid fa-download",
+                "fa-solid fa-upload",
+                "fa-solid fa-folder",
+                "fa-solid fa-file",
+                "fa-solid fa-calendar-alt",
+                "fa-solid fa-clock",
+                "fa-solid fa-map-marker-alt",
+                "fa-solid fa-phone",
+                "fa-solid fa-mobile-alt",
+                "fa-solid fa-laptop",
+                "fa-solid fa-tablet-alt",
+                "fa-solid fa-camera",
+                "fa-solid fa-video",
+                "fa-solid fa-music",
+                "fa-solid fa-microphone",
+                "fa-solid fa-headphones",
+                "fa-solid fa-gamepad",
+                "fa-solid fa-book",
+                "fa-solid fa-graduation-cap",
+                "fa-solid fa-briefcase",
+                "fa-solid fa-shopping-cart",
+                "fa-solid fa-credit-card",
+                "fa-solid fa-dollar-sign",
+                "fa-solid fa-chart-bar",
+                "fa-solid fa-cog",
+                "fa-solid fa-wrench",
+                "fa-solid fa-tools",
+                "fa-solid fa-sliders-h",
+                "fa-solid fa-filter",
+                "fa-solid fa-plus",
+                "fa-solid fa-minus",
+                "fa-solid fa-share-alt",
+                "fa-solid fa-link",
+                "fa-solid fa-external-link-alt",
+                "fa-solid fa-paperclip",
+                "fa-solid fa-comment",
+                "fa-solid fa-comments",
+                "fa-solid fa-quote-left",
+                "fa-solid fa-tag",
+                "fa-solid fa-tags",
+                "fa-solid fa-thumbtack",
+                "fa-solid fa-bookmark",
+                "fa-solid fa-lightbulb",
+                "fa-solid fa-fire",
+                "fa-solid fa-bolt",
+                "fa-solid fa-cloud",
+                "fa-solid fa-sun",
+                "fa-solid fa-moon",
+                "fa-solid fa-snowflake",
+                "fa-solid fa-umbrella",
+                "fa-solid fa-tint",
+                "fa-solid fa-tree",
+                "fa-solid fa-leaf",
+                "fa-solid fa-paw",
+                "fa-solid fa-fish",
+                "fa-solid fa-bug",
+                "fa-solid fa-robot",
+                "fa-solid fa-car",
+                "fa-solid fa-bus",
+                "fa-solid fa-train",
+                "fa-solid fa-plane",
+                "fa-solid fa-ship",
+                "fa-solid fa-bicycle",
+                "fa-solid fa-walking",
+                "fa-solid fa-running",
+                "fa-solid fa-swimmer",
+                "fa-solid fa-dumbbell",
+                "fa-solid fa-pizza-slice",
+                "fa-solid fa-coffee",
+                "fa-solid fa-beer-mug-empty",
+                "fa-solid fa-utensils",
+                "fa-solid fa-cookie-bite",
+                "fa-solid fa-birthday-cake",
+                "fa-solid fa-gift",
+                "fa-solid fa-trophy",
+                "fa-solid fa-medal",
+                "fa-solid fa-crown",
+                "fa-solid fa-gem",
+                "fa-solid fa-key",
+                "fa-solid fa-lock",
+                "fa-solid fa-unlock",
+                "fa-solid fa-shield-alt",
+                "fa-solid fa-fingerprint",
+                "fa-solid fa-eye",
+                "fa-solid fa-eye-slash",
+                "fa-solid fa-hand-point-right",
+                "fa-solid fa-thumbs-up",
+                "fa-solid fa-thumbs-down",
+                "fa-solid fa-smile",
+                "fa-solid fa-frown",
+                "fa-solid fa-meh",
+                "fa-solid fa-grin",
+                "fa-solid fa-sad-tear",
+                "fa-solid fa-angry",
+                "fa-solid fa-dizzy",
+                "fa-solid fa-surprise",
+                "fa-solid fa-tired",
+                "fa-solid fa-head-side-mask",
+                "fa-solid fa-syringe",
+                "fa-solid fa-pills",
+                "fa-solid fa-hospital",
+                "fa-solid fa-ambulance",
+                "fa-solid fa-medkit",
+                "fa-solid fa-microscope",
+                "fa-solid fa-dna",
+                "fa-solid fa-flask",
+                "fa-solid fa-atom",
+                "fa-solid fa-globe",
+                "fa-solid fa-earth-americas",
+                "fa-solid fa-compass",
+                "fa-solid fa-mountain",
+                "fa-solid fa-campground",
+                "fa-solid fa-tree-city",
+                "fa-solid fa-building",
+                "fa-solid fa-city",
+                "fa-solid fa-landmark",
+                "fa-solid fa-gavel",
+                "fa-solid fa-balance-scale",
+                "fa-solid fa-scale-balanced",
+                "fa-solid fa-handshake",
+                "fa-solid fa-user-tie",
+                "fa-solid fa-user-secret",
+                "fa-solid fa-id-card",
+                "fa-solid fa-address-book",
+                "fa-solid fa-address-card",
+                "fa-solid fa-clipboard",
+                "fa-solid fa-paste",
+                "fa-solid fa-cut",
+                "fa-solid fa-copy",
+                "fa-solid fa-save",
+                "fa-solid fa-print",
+                "fa-solid fa-keyboard",
+                "fa-solid fa-mouse",
+                "fa-solid fa-joystick",
+                "fa-solid fa-gamepad",
+                "fa-solid fa-vr-cardboard",
+                "fa-solid fa-desktop",
+                "fa-solid fa-server",
+                "fa-solid fa-database",
+                "fa-solid fa-terminal",
+                "fa-solid fa-code",
+                "fa-solid fa-sitemap",
+                "fa-solid fa-network-wired",
+                "fa-solid fa-wifi",
+                "fa-solid fa-bluetooth",
+                "fa-solid fa-usb",
+                "fa-solid fa-plug",
+                "fa-solid fa-battery-full",
+                "fa-solid fa-battery-half",
+                "fa-solid fa-battery-empty",
+                "fa-solid fa-power-off",
+                "fa-solid fa-redo",
+                "fa-solid fa-undo",
+                "fa-solid fa-history",
+                "fa-solid fa-sync-alt",
+                "fa-solid fa-spinner",
+                "fa-solid fa-circle-notch",
+                "fa-solid fa-ellipsis-h",
+                "fa-solid fa-ellipsis-v",
+                "fa-solid fa-bars",
+                "fa-solid fa-grip-lines",
+                "fa-solid fa-grip-lines-vertical",
+                "fa-solid fa-grip-horizontal",
+                "fa-solid fa-grip-vertical",
+                "fa-solid fa-grip",
+                "fa-solid fa-table",
+                "fa-solid fa-columns",
+                "fa-solid fa-th-large",
+                "fa-solid fa-th",
+                "fa-solid fa-list",
+                "fa-solid fa-list-alt",
+                "fa-solid fa-list-ol",
+                "fa-solid fa-list-ul",
+                "fa-solid fa-indent",
+                "fa-solid fa-outdent",
+                "fa-solid fa-align-left",
+                "fa-solid fa-align-center",
+                "fa-solid fa-align-right",
+                "fa-solid fa-align-justify",
+                "fa-solid fa-bold",
+                "fa-solid fa-italic",
+                "fa-solid fa-underline",
+                "fa-solid fa-strikethrough",
+                "fa-solid fa-superscript",
+                "fa-solid fa-subscript",
+                "fa-solid fa-font",
+                "fa-solid fa-text-height",
+                "fa-solid fa-text-width",
+                "fa-solid fa-palette",
+                "fa-solid fa-paint-brush",
+                "fa-solid fa-fill-drip",
+                "fa-solid fa-spray-can",
+                "fa-solid fa-ruler",
+                "fa-solid fa-ruler-combined",
+                "fa-solid fa-vector-square",
+                "fa-solid fa-bezier-curve",
+                "fa-solid fa-pen-nib",
+                "fa-solid fa-stamp",
+                "fa-solid fa-eraser",
+                "fa-solid fa-crop",
+                "fa-solid fa-crop-alt",
+                "fa-solid fa-expand",
+                "fa-solid fa-compress",
+                "fa-solid fa-arrows-alt",
+                "fa-solid fa-arrows-alt-h",
+                "fa-solid fa-arrows-alt-v",
+                "fa-solid fa-exchange-alt",
+                "fa-solid fa-random",
+                "fa-solid fa-retweet",
+                "fa-solid fa-reply",
+                "fa-solid fa-reply-all",
+                "fa-solid fa-forward",
+                "fa-solid fa-backward",
+                "fa-solid fa-play",
+                "fa-solid fa-pause",
+                "fa-solid fa-stop",
+                "fa-solid fa-fast-forward",
+                "fa-solid fa-fast-backward",
+                "fa-solid fa-step-forward",
+                "fa-solid fa-step-backward",
+                "fa-solid fa-volume-up",
+                "fa-solid fa-volume-down",
+                "fa-solid fa-volume-mute",
+                "fa-solid fa-volume-off",
+                "fa-solid fa-redo-alt",
+                "fa-solid fa-undo-alt",
+                "fa-solid fa-sync",
+                "fa-solid fa-sync-alt",
+                "fa-solid fa-crosshairs",
+                "fa-solid fa-location-arrow",
+                "fa-solid fa-directions",
+                "fa-solid fa-road",
+                "fa-solid fa-route",
+                "fa-solid fa-map",
+                "fa-solid fa-map-marked",
+                "fa-solid fa-map-pin",
+                "fa-solid fa-thumbtack",
+                "fa-solid fa-globe-americas",
+                "fa-solid fa-globe-asia",
+                "fa-solid fa-globe-europe",
+                "fa-solid fa-globe-africa",
+                "fa-solid fa-globe-oceania",
+                "fa-solid fa-globe-stand",
+                "fa-solid fa-mountain-sun",
+                "fa-solid fa-cloud-sun",
+                "fa-solid fa-cloud-moon",
+                "fa-solid fa-cloud-showers-heavy",
+                "fa-solid fa-cloud-rain",
+                "fa-solid fa-cloud-snow",
+                "fa-solid fa-wind",
+                "fa-solid fa-smog",
+                "fa-solid fa-temperature-high",
+                "fa-solid fa-temperature-low",
+                "fa-solid fa-thermometer-half",
+                "fa-solid fa-water",
+                "fa-solid fa-droplet",
+                "fa-solid fa-fire-extinguisher",
+                "fa-solid fa-burn",
+                "fa-solid fa-radiation",
+                "fa-solid fa-biohazard",
+                "fa-solid fa-skull-crossbones",
+                "fa-solid fa-poo",
+                "fa-solid fa-toilet",
+                "fa-solid fa-hand-sparkles",
+                "fa-solid fa-pump-soap",
+                "fa-solid fa-soap",
+                "fa-solid fa-hands-wash",
+                "fa-solid fa-hand-holding-medical",
+                "fa-solid fa-house-user",
+                "fa-solid fa-hospital-user",
+                "fa-solid fa-clinic-medical",
+                "fa-solid fa-vial",
+                "fa-solid fa-capsules",
+                "fa-solid fa-prescription-bottle",
+                "fa-solid fa-band-aid",
+                "fa-solid fa-first-aid",
+                "fa-solid fa-crutch",
+                "fa-solid fa-wheelchair",
+                "fa-solid fa-stethoscope",
+                "fa-solid fa-x-ray",
+                "fa-solid fa-microscope",
+                "fa-solid fa-syringe",
+                "fa-solid fa-pills",
+                "fa-solid fa-head-side-cough",
+                "fa-solid fa-head-side-virus",
+                "fa-solid fa-virus",
+                "fa-solid fa-viruses",
+                "fa-solid fa-virus-slash",
+                "fa-solid fa-hand-holding-heart",
+                "fa-solid fa-heartbeat",
+                "fa-solid fa-lungs",
+                "fa-solid fa-brain",
+                "fa-solid fa-tooth",
+                "fa-solid fa-bone",
+                "fa-solid fa-joint",
+                "fa-solid fa-dna",
+                "fa-solid fa-bacteria",
+                "fa-solid fa-fungus",
+                "fa-solid fa-robot",
+                "fa-solid fa-ghost",
+                "fa-solid fa-spider",
+                "fa-solid fa-dragon",
+                "fa-solid fa-crow",
+                "fa-solid fa-cat",
+                "fa-solid fa-dog",
+                "fa-solid fa-horse",
+                "fa-solid fa-dove",
+                "fa-solid fa-feather",
+                "fa-solid fa-frog",
+                "fa-solid fa-otter",
+                "fa-solid fa-hippo",
+                "fa-solid fa-fish-fins",
+                "fa-solid fa-shrimp",
+                "fa-solid fa-carrot",
+                "fa-solid fa-apple-whole",
+                "fa-solid fa-lemon",
+                "fa-solid fa-pepper-hot",
+                "fa-solid fa-cheese",
+                "fa-solid fa-egg",
+                "fa-solid fa-bread-slice",
+                "fa-solid fa-hamburger",
+                "fa-solid fa-hotdog",
+                "fa-solid fa-pizza-slice",
+                "fa-solid fa-ice-cream",
+                "fa-solid fa-candy-cane",
+                "fa-solid fa-mug-hot",
+                "fa-solid fa-wine-glass",
+                "fa-solid fa-cocktail",
+                "fa-solid fa-beer",
+                "fa-solid fa-blender",
+                "fa-solid fa-coffee-pot",
+                "fa-solid fa-kitchen-set",
+                "fa-solid fa-oven",
+                "fa-solid fa-microwave",
+                "fa-solid fa-refrigerator",
+                "fa-solid fa-dishwasher",
+                "fa-solid fa-washing-machine",
+                "fa-solid fa-dryer",
+                "fa-solid fa-couch",
+                "fa-solid fa-chair",
+                "fa-solid fa-bed",
+                "fa-solid fa-toilet-paper",
+                "fa-solid fa-shower",
+                "fa-solid fa-bath",
+                "fa-solid fa-sink",
+                "fa-solid fa-door-open",
+                "fa-solid fa-door-closed",
+                "fa-solid fa-window-frame",
+                "fa-solid fa-window-maximize",
+                "fa-solid fa-window-minimize",
+                "fa-solid fa-window-restore",
+                "fa-solid fa-building-columns",
+                "fa-solid fa-building-flag",
+                "fa-solid fa-building-lock",
+                "fa-solid fa-building-user",
+                "fa-solid fa-building-wheat",
+                "fa-solid fa-city",
+                "fa-solid fa-house",
+                "fa-solid fa-house-chimney",
+                "fa-solid fa-house-crack",
+                "fa-solid fa-house-fire",
+                "fa-solid fa-house-flood-water",
+                "fa-solid fa-house-laptop",
+                "fa-solid fa-house-medical",
+                "fa-solid fa-house-signal",
+                "fa-solid fa-house-tsunami",
+                "fa-solid fa-house-user",
+                "fa-solid fa-industry",
+                "fa-solid fa-landmark",
+                "fa-solid fa-monument",
+                "fa-solid fa-mosque",
+                "fa-solid fa-place-of-worship",
+                "fa-solid fa-school",
+                "fa-solid fa-store",
+                "fa-solid fa-store-alt",
+                "fa-solid fa-warehouse",
+                "fa-solid fa-bar-chart",
+                "fa-solid fa-chart-area",
+                "fa-solid fa-chart-line",
+                "fa-solid fa-chart-pie",
+                "fa-solid fa-gauge",
+                "fa-solid fa-gauge-high",
+                "fa-solid fa-gauge-low",
+                "fa-solid fa-tachometer-alt",
+                "fa-solid fa-signal",
+                "fa-solid fa-broadcast-tower",
+                "fa-solid fa-satellite",
+                "fa-solid fa-satellite-dish",
+                "fa-solid fa-wifi",
+                "fa-solid fa-rss",
+                "fa-solid fa-sitemap",
+                "fa-solid fa-code-branch",
+                "fa-solid fa-code-fork",
+                "fa-solid fa-terminal",
+                "fa-solid fa-bug",
+                "fa-solid fa-laptop-code",
+                "fa-solid fa-file-code",
+                "fa-solid fa-git-alt",
+                "fa-solid fa-github",
+                "fa-solid fa-gitlab",
+                "fa-solid fa-bitbucket",
+                "fa-solid fa-stack-overflow",
+                "fa-solid fa-dev",
+                "fa-solid fa-discord",
+                "fa-solid fa-slack",
+                "fa-solid fa-microsoft",
+                "fa-solid fa-apple",
+                "fa-solid fa-google",
+                "fa-solid fa-amazon",
+                "fa-solid fa-facebook",
+                "fa-solid fa-twitter",
+                "fa-solid fa-instagram",
+                "fa-solid fa-linkedin",
+                "fa-solid fa-youtube",
+                "fa-solid fa-pinterest",
+                "fa-solid fa-snapchat",
+                "fa-solid fa-tiktok",
+                "fa-solid fa-whatsapp",
+                "fa-solid fa-telegram",
+                "fa-solid fa-reddit",
+                "fa-solid fa-tumblr",
+                "fa-solid fa-flickr",
+                "fa-solid fa-vimeo",
+                "fa-solid fa-twitch",
+                "fa-solid fa-spotify",
+                "fa-solid fa-soundcloud",
+                "fa-solid fa-paypal",
+                "fa-solid fa-stripe",
+                "fa-solid fa-cc-visa",
+                "fa-solid fa-cc-mastercard",
+                "fa-solid fa-cc-amex",
+                "fa-solid fa-cc-discover",
+                "fa-solid fa-cc-jcb",
+                "fa-solid fa-cc-diners-club",
+                "fa-solid fa-cc-paypal",
+                "fa-solid fa-bitcoin",
+                "fa-solid fa-ethereum",
+                "fa-solid fa-litecoin-sign",
+                "fa-solid fa-dog-leashed",
+                "fa-solid fa-cat-space",
+                "fa-solid fa-fish-cooked",
+                "fa-solid fa-burger-soda",
+                "fa-solid fa-pizza",
+                "fa-solid fa-hotdog",
+                "fa-solid fa-ice-cream",
+                "fa-solid fa-cookie",
+                "fa-solid fa-mug-saucer",
+                "fa-solid fa-cocktail",
+                "fa-solid fa-whiskey-glass",
+                "fa-solid fa-wine-bottle",
+                "fa-solid fa-champagne-glasses",
+                "fa-solid fa-martini-glass",
+                "fa-solid fa-beer-mug-empty",
+                "fa-solid fa-blender-phone",
+                "fa-solid fa-oven",
+                "fa-solid fa-sink",
+                "fa-solid fa-toilet",
+                "fa-solid fa-shower",
+                "fa-solid fa-bath",
+                "fa-solid fa-bed",
+                "fa-solid fa-couch",
+                "fa-solid fa-chair",
+                "fa-solid fa-table-tennis-paddle-ball",
+                "fa-solid fa-volleyball-ball",
+                "fa-solid fa-basketball-ball",
+                "fa-solid fa-baseball-ball",
+                "fa-solid fa-football-ball",
+                "fa-solid fa-bowling-ball",
+                "fa-solid fa-golf-ball-tee",
+                "fa-solid fa-hockey-puck",
+                "fa-solid fa-quidditch",
+                "fa-solid fa-billiards",
+                "fa-solid fa-chess",
+                "fa-solid fa-chess-king",
+                "fa-solid fa-chess-queen",
+                "fa-solid fa-chess-rook",
+                "fa-solid fa-chess-bishop",
+                "fa-solid fa-chess-knight",
+                "fa-solid fa-chess-pawn",
+                "fa-solid fa-dice",
+                "fa-solid fa-dice-d6",
+                "fa-solid fa-dice-d20",
+                "fa-solid fa-puzzle-piece",
+                "fa-solid fa-gamepad",
+                "fa-solid fa-vr-cardboard",
+                "fa-solid fa-headset",
+                "fa-solid fa-microphone",
+                "fa-solid fa-microphone-alt",
+                "fa-solid fa-headphones",
+                "fa-solid fa-ear-listen",
+                "fa-solid fa-volume-high",
+                "fa-solid fa-volume-low",
+                "fa-solid fa-volume-off",
+                "fa-solid fa-bell",
+                "fa-solid fa-bell-slash",
+                "fa-solid fa-bullhorn",
+                "fa-solid fa-comment-dots",
+                "fa-solid fa-comment-slash",
+                "fa-solid fa-comments",
+                "fa-solid fa-quote-right",
+                "fa-solid fa-tags",
+                "fa-solid fa-bookmark",
+                "fa-solid fa-star-half-stroke",
+                "fa-solid fa-thumbs-up",
+                "fa-solid fa-thumbs-down",
+                "fa-solid fa-face-smile",
+                "fa-solid fa-face-frown",
+                "fa-solid fa-face-meh",
+                "fa-solid fa-face-grin",
+                "fa-solid fa-face-sad-tear",
+                "fa-solid fa-face-angry",
+                "fa-solid fa-face-dizzy",
+                "fa-solid fa-face-surprise",
+                "fa-solid fa-face-tired",
+                "fa-solid fa-hand-peace",
+                "fa-solid fa-hand-rock",
+                "fa-solid fa-hand-paper",
+                "fa-solid fa-hand-scissors",
+                "fa-solid fa-hand-lizard",
+                "fa-solid fa-hand-spock",
+                "fa-solid fa-hand-point-up",
+                "fa-solid fa-hand-point-down",
+                "fa-solid fa-hand-point-left",
+                "fa-solid fa-hand-point-right",
+                "fa-solid fa-fingerprint",
+                "fa-solid fa-id-card",
+                "fa-solid fa-address-book",
+                "fa-solid fa-address-card",
+                "fa-solid fa-passport",
+                "fa-solid fa-user-circle",
+                "fa-solid fa-user-plus",
+                "fa-solid fa-user-minus",
+                "fa-solid fa-user-times",
+                "fa-solid fa-user-lock",
+                "fa-solid fa-user-shield",
+                "fa-solid fa-user-secret",
+                "fa-solid fa-user-cog",
+                "fa-solid fa-users",
+                "fa-solid fa-users-cog",
+                "fa-solid fa-user-friends",
+                "fa-solid fa-user-group",
+                "fa-solid fa-child",
+                "fa-solid fa-baby",
+                "fa-solid fa-person",
+                "fa-solid fa-person-dress",
+                "fa-solid fa-person-walking",
+                "fa-solid fa-person-running",
+                "fa-solid fa-person-swimming",
+                "fa-solid fa-person-biking",
+                "fa-solid fa-person-hiking",
+                "fa-solid fa-person-skiing",
+                "fa-solid fa-person-falling-burst",
+                "fa-solid fa-person-falling",
+                "fa-solid fa-person-shelter",
+                "fa-solid fa-person-booth",
+                "fa-solid fa-male",
+                "fa-solid fa-female",
+                "fa-solid fa-genderless",
+                "fa-solid fa-venus",
+                "fa-solid fa-mars",
+                "fa-solid fa-mercury",
+                "fa-solid fa-transgender",
+                "fa-solid fa-transgender-alt",
+                "fa-solid fa-neuter",
+                "fa-solid fa-syringe",
+                "fa-solid fa-pills",
+                "fa-solid fa-prescription-bottle-alt",
+                "fa-solid fa-medkit",
+                "fa-solid fa-hospital",
+                "fa-solid fa-hospital-alt",
+                "fa-solid fa-h-square",
+                "fa-solid fa-plus-square",
+                "fa-solid fa-minus-square",
+                "fa-solid fa-check-square",
+                "fa-solid fa-times-circle",
+                "fa-solid fa-info-circle",
+                "fa-solid fa-exclamation-circle",
+                "fa-solid fa-question-circle",
+                "fa-solid fa-lightbulb",
+                "fa-solid fa-star",
+                "fa-solid fa-heart",
+                "fa-solid fa-thumbs-up",
+                "fa-solid fa-thumbs-down",
+                "fa-solid fa-smile",
+                "fa-solid fa-frown",
+                "fa-solid fa-meh",
+                "fa-solid fa-grin",
+                "fa-solid fa-sad-tear",
+                "fa-solid fa-angry",
+                "fa-solid fa-dizzy",
+                "fa-solid fa-surprise",
+                "fa-solid fa-tired",
+                "fa-solid fa-laugh",
+                "fa-solid fa-laugh-squint",
+                "fa-solid fa-laugh-wink",
+                "fa-solid fa-grin-alt",
+                "fa-solid fa-grin-beam",
+                "fa-solid fa-grin-beam-sweat",
+                "fa-solid fa-grin-hearts",
+                "fa-solid fa-grin-squint",
+                "fa-solid fa-grin-squint-tears",
+                "fa-solid fa-grin-stars",
+                "fa-solid fa-grin-tongue",
+                "fa-solid fa-grin-tongue-squint",
+                "fa-solid fa-grin-tongue-wink",
+                "fa-solid fa-grin-wink",
+                "fa-solid fa-kiss",
+                "fa-solid fa-kiss-beam",
+                "fa-solid fa-kiss-wink-heart",
+                "fa-solid fa-flushed",
+                "fa-solid fa-dizzy",
+                "fa-solid fa-grimace",
+                "fa-solid fa-grin-tears",
+                "fa-solid fa-sad-cry",
+                "fa-solid fa-angry",
+                "fa-solid fa-tired",
+                "fa-solid fa-surprise",
+                "fa-solid fa-sleepy",
+                "fa-solid fa-pouting-face",
+                "fa-solid fa-face-rolling-eyes",
+                "fa-solid fa-face-laugh-beam",
+                "fa-solid fa-face-laugh-squint",
+                "fa-solid fa-face-laugh-wink",
+                "fa-solid fa-face-grin-squint",
+                "fa-solid fa-face-grin-tongue",
+                "fa-solid fa-face-grin-wink",
+                "fa-solid fa-face-kiss",
+                "fa-solid fa-face-kiss-wink-heart",
+                "fa-solid fa-face-flushed",
+                "fa-solid fa-face-grimace",
+                "fa-solid fa-face-sad-cry",
+                "fa-solid fa-face-angry",
+                "fa-solid fa-face-tired",
+                "fa-solid fa-face-surprise",
+                "fa-solid fa-face-sleepy",
+                "fa-solid fa-face-pouting",
+                "fa-solid fa-face-rolling-eyes",
+                // Brands (fa-brands) - a small selection
+                "fa-brands fa-github",
+                "fa-brands fa-twitter",
+                "fa-brands fa-facebook",
+                "fa-brands fa-instagram",
+                "fa-brands fa-linkedin",
+                "fa-brands fa-youtube",
+                "fa-brands fa-google",
+                "fa-brands fa-apple",
+                "fa-brands fa-windows",
+                "fa-brands fa-android",
+                "fa-brands fa-linux",
+                "fa-brands fa-html5",
+                "fa-brands fa-css3-alt",
+                "fa-brands fa-js",
+                "fa-brands fa-react",
+                "fa-brands fa-angular",
+                "fa-brands fa-vuejs",
+                "fa-brands fa-node-js",
+                "fa-brands fa-python",
+                "fa-brands fa-java",
+                "fa-brands fa-php",
+                "fa-brands fa-wordpress",
+                "fa-brands fa-shopify",
+                "fa-brands fa-paypal",
+                "fa-brands fa-stripe",
+                "fa-brands fa-aws",
+                "fa-brands fa-google-cloud",
+                "fa-brands fa-docker",
+                "fa-brands fa-git",
+                "fa-brands fa-npm",
+                "fa-brands fa-yarn",
+                "fa-brands fa-stack-overflow",
+                "fa-brands fa-dev",
+                "fa-brands fa-discord",
+                "fa-brands fa-slack",
+                "fa-brands fa-twitch",
+                "fa-brands fa-pinterest",
+                "fa-brands fa-reddit",
+                "fa-brands fa-snapchat",
+                "fa-brands fa-tiktok",
+                "fa-brands fa-whatsapp",
+                "fa-brands fa-telegram",
+                "fa-brands fa-vimeo",
+                "fa-brands fa-spotify",
+                "fa-brands fa-soundcloud",
+                "fa-brands fa-medium",
+                "fa-brands fa-quora",
+                "fa-brands fa-stack-exchange",
+                "fa-brands fa-microsoft",
+                "fa-brands fa-app-store",
+                "fa-brands fa-google-play",
+                "fa-brands fa-xbox",
+                "fa-brands fa-playstation",
+                "fa-brands fa-steam",
+                "fa-brands fa-discord",
+                "fa-brands fa-skype",
+                "fa-brands fa-wechat",
+                "fa-brands fa-qq",
+                "fa-brands fa-vk",
+                "fa-brands fa-line",
+                "fa-brands fa-font-awesome",
+                "fa-brands fa-bootstrap",
+                "fa-brands fa-sass",
+                "fa-brands fa-less",
+                "fa-brands fa-gulp",
+                "fa-brands fa-grunt",
+                "fa-brands fa-webpack",
+                "fa-brands fa-jira",
+                "fa-brands fa-confluence",
+                "fa-brands fa-bitbucket",
+                "fa-brands fa-gitlab",
+                "fa-brands fa-trello",
+                "fa-brands fa-dropbox",
+                "fa-brands fa-google-drive",
+                "fa-brands fa-onedrive",
+                "fa-brands fa-figma",
+                "fa-brands fa-sketch",
+                "fa-brands fa-adobe",
+                "fa-brands fa-magento",
+                "fa-brands fa-opencart",
+                "fa-brands fa-joomla",
+                "fa-brands fa-drupal",
+                "fa-brands fa-blogger",
+                "fa-brands fa-tumblr",
+                "fa-brands fa-wordpress-simple",
+                "fa-brands fa-wix",
+                "fa-brands fa-squarespace",
+                "fa-brands fa-ello",
+                "fa-brands fa-mastodon",
+                "fa-brands fa-dribbble",
+                "fa-brands fa-behance",
+                "fa-brands fa-devianart",
+                "fa-brands fa-flickr",
+                "fa-brands fa-500px",
+                "fa-brands fa-etsy",
+                "fa-brands fa-ebay",
+                "fa-brands fa-amazon-pay",
+                "fa-brands fa-apple-pay",
+                "fa-brands fa-google-pay",
+                "fa-brands fa-cc-visa",
+                "fa-brands fa-cc-mastercard",
+                "fa-brands fa-cc-amex",
+                "fa-brands fa-cc-discover",
+                "fa-brands fa-cc-jcb",
+                "fa-brands fa-cc-diners-club",
+                "fa-brands fa-cc-paypal",
+                "fa-brands fa-bitcoin",
+                "fa-brands fa-ethereum",
+                "fa-brands fa-bitcoin",
+                "fa-brands fa-ethereum",
+                "fa-brands fa-litecoin",
+                "fa-brands fa-dog-leashed",
+                "fa-brands fa-cat-space",
+                "fa-brands fa-fish-cooked",
+                "fa-brands fa-burger-soda",
+                "fa-brands fa-pizza",
+                "fa-brands fa-hotdog",
+                "fa-brands fa-ice-cream",
+                "fa-brands fa-cookie",
+                "fa-brands fa-mug-saucer",
+                "fa-brands fa-cocktail",
+                "fa-brands fa-whiskey-glass",
+                "fa-brands fa-wine-bottle",
+                "fa-brands fa-champagne-glasses",
+                "fa-brands fa-martini-glass",
+                "fa-brands fa-beer-mug-empty",
+                "fa-brands fa-blender-phone",
+                "fa-brands fa-oven",
+                "fa-brands fa-sink",
+                "fa-brands fa-toilet",
+                "fa-brands fa-shower",
+                "fa-brands fa-bath",
+                "fa-brands fa-bed",
+                "fa-brands fa-couch",
+                "fa-brands fa-chair",
+                "fa-brands fa-table-tennis-paddle-ball",
+                "fa-brands fa-volleyball-ball",
+                "fa-brands fa-basketball-ball",
+                "fa-brands fa-baseball-ball",
+                "fa-brands fa-football-ball",
+                "fa-brands fa-bowling-ball",
+                "fa-brands fa-golf-ball-tee",
+                "fa-brands fa-hockey-puck",
+                "fa-brands fa-quidditch",
+                "fa-brands fa-billiards",
+                "fa-brands fa-chess",
+                "fa-brands fa-chess-king",
+                "fa-brands fa-chess-queen",
+                "fa-brands fa-chess-rook",
+                "fa-brands fa-chess-bishop",
+                "fa-brands fa-chess-knight",
+                "fa-brands fa-chess-pawn",
+                "fa-brands fa-dice",
+                "fa-brands fa-dice-d6",
+                "fa-brands fa-dice-d20",
+                "fa-brands fa-puzzle-piece",
+                "fa-brands fa-gamepad",
+                "fa-brands fa-vr-cardboard",
+                "fa-brands fa-headset",
+                "fa-brands fa-microphone",
+                "fa-brands fa-microphone-alt",
+                "fa-brands fa-headphones",
+                "fa-brands fa-ear-listen",
+                "fa-brands fa-volume-high",
+                "fa-brands fa-volume-low",
+                "fa-brands fa-volume-off",
+                "fa-brands fa-bell",
+                "fa-brands fa-bell-slash",
+                "fa-brands fa-bullhorn",
+                "fa-brands fa-comment-dots",
+                "fa-brands fa-comment-slash",
+                "fa-brands fa-comments",
+                "fa-brands fa-quote-right",
+                "fa-brands fa-tags",
+                "fa-brands fa-bookmark",
+                "fa-brands fa-star-half-stroke",
+                "fa-brands fa-thumbs-up",
+                "fa-brands fa-thumbs-down",
+                "fa-brands fa-face-smile",
+                "fa-brands fa-face-frown",
+                "fa-brands fa-face-meh",
+                "fa-brands fa-face-grin",
+                "fa-brands fa-face-sad-tear",
+                "fa-brands fa-face-angry",
+                "fa-brands fa-face-dizzy",
+                "fa-brands fa-face-surprise",
+                "fa-brands fa-face-tired",
+                "fa-brands fa-face-laugh",
+                "fa-brands fa-face-laugh-squint",
+                "fa-brands fa-face-laugh-wink",
+                "fa-brands fa-face-grin-squint",
+                "fa-brands fa-face-grin-tongue",
+                "fa-brands fa-face-grin-wink",
+                "fa-brands fa-face-kiss",
+                "fa-brands fa-face-kiss-wink-heart",
+                "fa-brands fa-face-flushed",
+                "fa-brands fa-face-grimace",
+                "fa-brands fa-face-sad-cry",
+                "fa-brands fa-face-angry",
+                "fa-brands fa-face-tired",
+                "fa-brands fa-face-surprise",
+                "fa-brands fa-face-sleepy",
+                "fa-brands fa-face-pouting",
+                "fa-brands fa-face-rolling-eyes",
+            ];
 
-                iconItem.addEventListener('click', () => copyIconClass(iconClass));
-                iconGrid.appendChild(iconItem);
+            /**
+             * Renders the icons in the grid based on the provided list.
+             * @param {string[]} iconsToDisplay - An array of Font Awesome class strings.
+             */
+            function renderIcons(iconsToDisplay) {
+                iconGrid.innerHTML = ""; // Clear existing icons
+                if (iconsToDisplay.length === 0) {
+                    noResultsMessage.classList.remove("hidden");
+                    return;
+                } else {
+                    noResultsMessage.classList.add("hidden");
+                }
+
+                iconsToDisplay.forEach((iconClass) => {
+                    const iconItem = document.createElement("div");
+                    iconItem.className = "icon-item";
+                    iconItem.title = `Click to copy: ${iconClass}`; // Tooltip for copying
+
+                    const iconElement = document.createElement("i");
+                    iconElement.className = iconClass;
+                    iconItem.appendChild(iconElement);
+
+                    const iconName = document.createElement("span");
+                    // Extract the meaningful part of the class for display (e.g., 'star' from 'fa-solid fa-star')
+                    iconName.textContent = iconClass
+                        .split(" ")
+                        .pop()
+                        .replace("fa-", "");
+                    iconItem.appendChild(iconName);
+
+                    iconItem.addEventListener("click", () =>
+                        copyIconClass(iconClass),
+                    );
+                    iconGrid.appendChild(iconItem);
+                });
+            }
+
+            /**
+             * Copies the given icon class string to the clipboard.
+             * @param {string} iconClass - The Font Awesome class string to copy.
+             */
+            function copyIconClass(iconClass) {
+                // Use execCommand for broader compatibility in iframes
+                const tempInput = document.createElement("textarea");
+                tempInput.value = iconClass;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand("copy");
+                    showMessage(
+                        "Copied!",
+                        `"${iconClass}" copied to clipboard.`,
+                    );
+                } catch (err) {
+                    showMessage(
+                        "Copy Error",
+                        "Failed to copy icon class. Please try again or copy manually.",
+                    );
+                    console.error("Failed to copy text:", err);
+                } finally {
+                    document.body.removeChild(tempInput);
+                }
+            }
+
+            // Filter icons based on search input
+            iconSearchInput.addEventListener("input", (event) => {
+                const searchTerm = event.target.value.toLowerCase();
+                const filteredIcons = allIcons.filter((iconClass) =>
+                    iconClass.toLowerCase().includes(searchTerm),
+                );
+                renderIcons(filteredIcons);
             });
-        }
 
-        /**
-         * Copies the given icon class string to the clipboard.
-         * @param {string} iconClass - The Font Awesome class string to copy.
-         */
-        function copyIconClass(iconClass) {
-            // Use execCommand for broader compatibility in iframes
-            const tempInput = document.createElement('textarea');
-            tempInput.value = iconClass;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            try {
-                document.execCommand('copy');
-                showMessage("Copied!", `"${iconClass}" copied to clipboard.`);
-            } catch (err) {
-                showMessage("Copy Error", "Failed to copy icon class. Please try again or copy manually.");
-                console.error('Failed to copy text:', err);
-            } finally {
-                document.body.removeChild(tempInput);
-            }
-        }
-
-        // Filter icons based on search input
-        iconSearchInput.addEventListener('input', (event) => {
-            const searchTerm = event.target.value.toLowerCase();
-            const filteredIcons = allIcons.filter(iconClass =>
-                iconClass.toLowerCase().includes(searchTerm)
-            );
-            renderIcons(filteredIcons);
-        });
-
-        // Initial render of all icons when the page loads
-        window.onload = () => {
-            renderIcons(allIcons);
-        };
-    </script>
-</body>
+            // Initial render of all icons when the page loads
+            window.onload = () => {
+                renderIcons(allIcons);
+            };
+        </script>
+    </body>
 </html>
