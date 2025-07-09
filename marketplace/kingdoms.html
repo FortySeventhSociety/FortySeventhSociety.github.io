@@ -90,7 +90,34 @@
                 background-color: #c7d2fe; /* Slightly darker on hover */
                 transform: translateY(-1px);
             }
-            .input-group {
+            @media (max-width: 768px) {
+                .header-buttons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 3px; /* Space between buttons */
+                    margin-bottom: 11px;
+                    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+                    font-size: 4vw;
+                }
+                .header-buttons .btn-header {
+                    padding: 5px 9px;
+                    border-radius: 4px;
+                    font-weight: 450;
+                    cursor: pointer;
+                    transition:
+                        background-color 0.2s,
+                        transform 0.1s;
+                    background-color: #e0e7ff; /* Lighter blue background */
+                    color: #4f46e5; /* Darker blue text */
+                    box-shadow: 0 1px 3px rgba(79, 70, 229, 0.1);
+                    border: 1px solid #c7d2fe;
+                }
+                .header-buttons .btn-header:hover {
+                    background-color: #c7d2fe; /* Slightly darker on hover */
+                    t
+                }
+            }
+           .input-group {
                 margin-bottom: 15px;
             }
             .input-group label {
