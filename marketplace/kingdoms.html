@@ -21,6 +21,41 @@
                 min-height: 100vh;
                 padding: 20px;
             }
+            .toggle-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .switch {
+                width: 60px;
+                height: 30px;
+                background: #4f46e5;
+                border-radius: 50px;
+                position: relative;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .thumb {
+                width: 24px;
+                height: 24px;
+                background: #e0e7ff;
+                border-radius: 50%;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                transition: all 0.3s ease;
+            }
+
+            input:checked + .switch {
+                background: #e0e7ff;
+            }
+
+            input:checked + .switch .thumb {
+                background: #4f46e5;
+                transform: translateX(30px);
+            }
             .container {
                 background-color: #ffffff;
                 border-radius: 15px;
@@ -382,63 +417,89 @@
                 >
             </h2>
 
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">
+            <h1
+                class="text-4xl font-bold text-center text-gray-800 mb-8"
+                onclick="toggleVisibility()"
+            >
                 Save Your Links!
             </h1>
+            <center>
+                <div class="toggle-wrapper">
+                    <input type="checkbox" id="toggle" hidden />
+                    <label for="toggle" class="switch">
+                        <div class="thumb"></div>
+                    </label>
+                </div>
+            </center>
+            <div id="saveables" style="display: none">
+                <div class="input-group">
+                    <label for="linkUrl">Link</label>
+                    <input
+                        type="url"
+                        id="linkUrl"
+                        placeholder="e.g., https://www.example.com/page"
+                        required
+                    />
+                </div>
 
-            <div class="input-group">
-                <label for="linkUrl">Link</label>
-                <input
-                    type="url"
-                    id="linkUrl"
-                    placeholder="e.g., https://www.example.com/page"
-                    required
-                />
-            </div>
+                <div class="input-group">
+                    <label for="linkTitle">Title</label>
+                    <input
+                        type="text"
+                        id="linkTitle"
+                        placeholder="e.g., My Favorite Page"
+                        required
+                    />
+                </div>
 
-            <div class="input-group">
-                <label for="linkTitle">Title</label>
-                <input
-                    type="text"
-                    id="linkTitle"
-                    placeholder="e.g., My Favorite Page"
-                    required
-                />
-            </div>
+                <div class="input-group">
+                    <label for="iconType">Icon</label>
+                    <select
+                        id="iconType"
+                        class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    >
+                        <option value="fa">Font Awesome Icon</option>
+                        <option value="url">Image URL</option>
+                    </select>
+                </div>
 
-            <div class="input-group">
-                <label for="iconType"
-                    >Icon</label
-                >
-                <select
-                    id="iconType"
-                    class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                    <option value="fa">Font Awesome Icon</option>
-                    <option value="url">Image URL</option>
-                </select>
-            </div>
+                <div class="input-group" id="iconInputGroup">
+                    <label for="linkIcon"
+                        >Font Awesome Icon Class (e.g., fa-solid fa-star)</label
+                    >
+                    <input
+                        type="text"
+                        id="linkIcon"
+                        placeholder="e.g., fa-solid fa-star"
+                    />
+                </div>
 
-            <div class="input-group" id="iconInputGroup">
-                <label for="linkIcon"
-                    >Font Awesome Icon Class (e.g., fa-solid fa-star)</label
-                >
-                <input
-                    type="text"
-                    id="linkIcon"
-                    placeholder="e.g., fa-solid fa-star"
-                />
-            </div>
-
-            <div class="flex justify-end mt-6">
-                <button id="addLinkBtn" class="btn btn-primary mr-2">
-                    <i class="fas fa-plus mr-2"></i> Add Link
-                </button>
-                <button id="downloadBackupBtn" class="btn btn-secondary">
-                    <i class="fas fa-download mr-2"></i> Download Backup
-                </button>
+                <div class="flex justify-end mt-6">
+                    <button id="addLinkBtn" class="btn btn-primary mr-2">
+                        <i class="fas fa-plus mr-2"></i> Add Link
+                    </button>
+                    <button id="downloadBackupBtn" class="btn btn-secondary">
+                        <i class="fas fa-download mr-2"></i> Download Backup
+                    </button>
+                </div>
             </div>
         </div>
+
+        <script>
+            function toggleVisibility() {
+                var element = document.getElementById("saveables");
+                if (element.style.display === "none") {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            }
+            document
+                .getElementById("toggle")
+                .addEventListener("change", (e) => {
+                    toggleVisibility();
+                });
+        </script>
 
         <script type="module">
             const STORAGE_KEY = "linkSaverLinks"; // Key for localStorage

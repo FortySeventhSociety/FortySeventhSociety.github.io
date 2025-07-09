@@ -21,6 +21,41 @@
                 min-height: 100vh;
                 padding: 20px;
             }
+            .toggle-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .switch {
+                width: 60px;
+                height: 30px;
+                background: #555;
+                border-radius: 50px;
+                position: relative;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .thumb {
+                width: 24px;
+                height: 24px;
+                background: #00ffd5;
+                border-radius: 50%;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                transition: all 0.3s ease;
+            }
+
+            input:checked + .switch {
+                background: #00ffd5;
+            }
+
+            input:checked + .switch .thumb {
+                background: #111;
+                transform: translateX(30px);
+            }
             .container {
                 background-color: #ffffff;
                 border-radius: 15px;
