@@ -185,6 +185,9 @@
     </head>
     <body>
         <div class="container">
+                        <button id="sYLb" onclick="changeio();" style="float: right">
+                ⚪
+            </button>
             <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">
                 Font Awesome Icons
             </h1>
@@ -212,6 +215,58 @@
                 <button id="modalCloseBtn">OK</button>
             </div>
         </div>
+
+        <script>
+                  function getRandomHexColor() {
+        // Generate a random integer between 0 and 16777215 (which is FFFFFF in hexadecimal)
+        const randomInt = Math.floor(Math.random() * 16777216);
+
+        // Convert the integer to a hexadecimal string
+        let hexColor = randomInt.toString(16);
+
+        // Pad the hexadecimal string with leading zeros if necessary to ensure 6 characters
+        while (hexColor.length < 6) {
+          hexColor = "0" + hexColor;
+        }
+
+        // Prepend '#' to form a valid CSS hexadecimal color code
+        return "#" + hexColor;
+      }
+
+            function changeio() {
+              let color = getRandomHexColor();
+              document.body.style.background = color;
+              console.log(color); // e.g., #a3b4c5
+            }
+
+            const emojis = [
+              "🙂",
+              "🔥",
+              "👍",
+              "🐝",
+              "🌐",
+              "💌",
+              "✌️",
+              "🎟️",
+              "💰",
+              "⏳",
+              "🔔",
+              "📯",
+              "🗡️",
+              "🛡️",
+              "⚪",
+              "🗯️",
+              "😶‍",
+              "🤣",
+              "🦝",
+            ];
+            function changeEmoji() {
+              const randomIndex = Math.floor(Math.random() * emojis.length);
+              const randomEmoji = emojis[randomIndex];
+              document.getElementById("sYLb").textContent = randomEmoji;
+            }
+              document.getElementById("sYLb").addEventListener("click", changeEmoji);
+        </script>
 
         <script type="module">
             const iconSearchInput = document.getElementById("iconSearchInput");
