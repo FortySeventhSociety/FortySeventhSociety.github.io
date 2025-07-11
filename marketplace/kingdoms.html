@@ -450,6 +450,7 @@
             <h1
                 class="text-4xl font-bold text-center text-gray-800 mb-8"
                 onclick="toggleVisibility()"
+                id="linker"
             >
                 Save Your Links!
             </h1>
@@ -516,68 +517,78 @@
         </div>
 
         <script>
-                  function toggleVisibility() {
-                      var element = document.getElementById("saveables");
-                      if (element.style.display === "none") {
-                          element.style.display = "block";
-                      } else {
-                          element.style.display = "none";
-                      }
-                  }
-                  document
-                      .getElementById("toggle")
-                      .addEventListener("change", (e) => {
-                          toggleVisibility();
-                      });
-                            function getRandomHexColor() {
-              // Generate a random integer between 0 and 16777215 (which is FFFFFF in hexadecimal)
-              const randomInt = Math.floor(Math.random() * 16777216);
+            function toggleVisibility() {
+                var element = document.getElementById("saveables");
+                if (element.style.display === "none") {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            }
+            document
+                .getElementById("toggle")
+                .addEventListener("change", (e) => {
+                    toggleVisibility();
+                });
 
-              // Convert the integer to a hexadecimal string
-              let hexColor = randomInt.toString(16);
+            const checkbox = document.getElementById("toggle");
+            const toggleButton = document.getElementById("linker");
 
-              // Pad the hexadecimal string with leading zeros if necessary to ensure 6 characters
-              while (hexColor.length < 6) {
-                hexColor = "0" + hexColor;
-              }
+            toggleButton.addEventListener("click", () => {
+                checkbox.checked = !checkbox.checked;
+            });
 
-              // Prepend '#' to form a valid CSS hexadecimal color code
-              return "#" + hexColor;
+            function getRandomHexColor() {
+                // Generate a random integer between 0 and 16777215 (which is FFFFFF in hexadecimal)
+                const randomInt = Math.floor(Math.random() * 16777216);
+
+                // Convert the integer to a hexadecimal string
+                let hexColor = randomInt.toString(16);
+
+                // Pad the hexadecimal string with leading zeros if necessary to ensure 6 characters
+                while (hexColor.length < 6) {
+                    hexColor = "0" + hexColor;
+                }
+
+                // Prepend '#' to form a valid CSS hexadecimal color code
+                return "#" + hexColor;
             }
 
             function changeio() {
-              let color = getRandomHexColor();
-              document.body.style.background = color;
-              console.log(color); // e.g., #a3b4c5
+                let color = getRandomHexColor();
+                document.body.style.background = color;
+                console.log(color); // e.g., #a3b4c5
             }
 
             const emojis = [
-              "🙂",
-              "🔥",
-              "👍",
-              "🐝",
-              "🌐",
-              "💌",
-              "✌️",
-              "🎟️",
-              "💰",
-              "⏳",
-              "🔔",
-              "📯",
-              "🗡️",
-              "🛡️",
-              "⚪",
-              "🗯️",
-              "😶‍",
-              "🤣",
-              "🦝",
+                "🙂",
+                "🔥",
+                "👍",
+                "🐝",
+                "🌐",
+                "💌",
+                "✌️",
+                "🎟️",
+                "💰",
+                "⏳",
+                "🔔",
+                "📯",
+                "🗡️",
+                "🛡️",
+                "⚪",
+                "🗯️",
+                "😶‍",
+                "🤣",
+                "🦝",
             ];
             function changeEmoji() {
-              const randomIndex = Math.floor(Math.random() * emojis.length);
-              const randomEmoji = emojis[randomIndex];
-              document.getElementById("sYLb").textContent = randomEmoji;
+                const randomIndex = Math.floor(Math.random() * emojis.length);
+                const randomEmoji = emojis[randomIndex];
+                document.getElementById("sYLb").textContent = randomEmoji;
             }
-              document.getElementById("sYLb").addEventListener("click", changeEmoji);
+            document
+                .getElementById("sYLb")
+                .addEventListener("click", changeEmoji);
         </script>
 
         <script type="module">
