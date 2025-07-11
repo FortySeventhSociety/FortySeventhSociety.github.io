@@ -38,14 +38,14 @@ nav.top-right {
 }
 @media only screen and (max-width: 900px) {
   nav.top-right {
-    top: 5%;
+    top: -15%;
     left: -10%;
   }
 }
 @media only screen and (max-width: 600px) {
   nav.top-right {
-    top: -35%;
-    left: -35;
+    top: -20%;
+    left: -25;
   }
 }
 nav a:link {
