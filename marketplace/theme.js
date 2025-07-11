@@ -87,8 +87,7 @@
             }
         }
 
-        fetchDataAndProcess();
-            
-
         // Ripristina il CSS quando la pagina viene caricata
         window.onload = restoreCSS;
+
+        fetchDataAndProcess();
