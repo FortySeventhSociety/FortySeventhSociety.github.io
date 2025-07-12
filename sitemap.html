@@ -96,6 +96,16 @@
         background-position: center center;
       }
 
+      .marketplace {
+        transition: all 0.2s ease-in-out;
+      }
+      .marketplace:hover {
+        transform: scale(1.2);
+      }
+      .marketplace:active {
+        transform: scale(1.5);
+      }
+
       .slideshow-container {
         bottom: 0vh;
         right: 0vw;
@@ -103,16 +113,16 @@
       }
       @media only screen and (max-width: 512px) {
         .slideshow-container {
-        bottom: -250px;
-        right: -250px;
-        z-index: 9;
+          bottom: -250px;
+          right: -250px;
+          z-index: 9;
         }
       }
       @media only screen and (max-width: 375px) {
         .slideshow-container {
-        bottom: -250px;
-        right: -250px;
-        z-index: 9;
+          bottom: -250px;
+          right: -250px;
+          z-index: 9;
         }
       }
 
@@ -288,6 +298,7 @@ https://www.reddit.com/r/47thSociety/ -->
           left: 5px;
           height: 12%;
         "
+        class="marketplace"
       />
     </a>
     <a
