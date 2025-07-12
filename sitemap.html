@@ -1317,7 +1317,11 @@ https://www.reddit.com/r/47thSociety/ -->
       // Function to set the game link on the button
       function setGameLink(link, name) {
         // Basic URL validation
-        if (link.startsWith("http://") || link.startsWith("https://") || link.startsWith("./")) {
+        if (
+          link.startsWith("http://") ||
+          link.startsWith("https://") ||
+          link.startsWith("./")
+        ) {
           gameLinkButton.textContent = `Play ${name}`; // Update button text
           gameLinkButton.onclick = () => window.open(link, "_blank"); // Open in new tab
           // Optionally, add a visual cue that the link is set
