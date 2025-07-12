@@ -1268,6 +1268,21 @@ https://www.reddit.com/r/47thSociety/ -->
           return;
         }
 
+        
+       // Reset the game link button on new scene load
+                gameLinkButton.textContent = "Add Your Game Link Here";
+                gameLinkButton.classList.remove(
+                    "bg-green-600",
+                    "from-green-600",
+                    "to-emerald-600",
+                );
+                gameLinkButton.classList.add(
+                    "bg-purple-600",
+                    "from-purple-600",
+                    "to-indigo-600",
+                );
+                gameLinkButton.onclick = showGameLinkSelectionModal; // Reset its click handler
+
         // Fade out the old background
         backgroundLayersContainer.style.opacity = "0";
 
