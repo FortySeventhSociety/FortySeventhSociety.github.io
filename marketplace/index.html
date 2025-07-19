@@ -127,6 +127,7 @@
         <div class="tab" data-tab="tab4">Sell Items</div>
         <div class="tab" data-tab="tab5">⭐</div>
         <div class="tab" data-tab="tab6" id="nft">💎</div>
+        <div class="tab" data-tab="tab7" id="nomstead">📜</div>
       </div>
     </div>
     <div id="tab3" class="tab-content active">
@@ -770,6 +771,21 @@
       </div>
     </div>
 
+    <div id="tab7" class="tab-content">
+      <div class="table-section sell">
+        <!-- Usa la classe 'sell' per copiare lo stile -->
+        <div class="dodec-font">
+          <iframe
+            id="docs"
+            width="100%"
+            height="1500vh"
+            src="https://docs.kingdom.so/"
+            src="about:blank"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <p>
         <span id="year"></span>❤️
@@ -798,6 +814,11 @@
 
       $("#nft").click(function () {
         var iframe = $("#chests");
+        iframe.attr("src", iframe.data("src"));
+      });
+
+      $("#nomstead").click(function () {
+        var iframe = $("#docs");
         iframe.attr("src", iframe.data("src"));
       });
     </script>
