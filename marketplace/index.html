@@ -586,7 +586,7 @@
             <table class="display" style="width: 100%">
               <tr>
                 <th style="width: 50px"></th>
-                <th>Name</th>
+                <th>Buildings</th>
               </tr>
               <tr>
                 <td>
@@ -910,13 +910,13 @@
           $(tableId).DataTable({
             data: data.map((item) => createRow(item, type)),
             columns: [
-              { title: "🌿", orderable: false, "className": "dt-center" },
+              { title: "🌿", orderable: false, className: "dt-center" },
               { title: "Object" },
               { title: "Category" },
               { title: "Subcategory" },
               { title: "Price" },
               { title: "Quantity" },
-              { title: "💲", orderable: false, "className": "dt-center" },
+              { title: "💲", orderable: false, className: "dt-center" },
               { title: "Owner" },
             ],
             pageLength: 75, // Imposta il numero di voci da mostrare a 75
