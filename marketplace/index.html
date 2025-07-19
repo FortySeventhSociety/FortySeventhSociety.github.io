@@ -126,6 +126,7 @@
         <div class="tab active" data-tab="tab3">Buy Items</div>
         <div class="tab" data-tab="tab4">Sell Items</div>
         <div class="tab" data-tab="tab5">⭐</div>
+        <div class="tab" data-tab="tab6" id="nft">💎</div>
       </div>
     </div>
     <div id="tab3" class="tab-content active">
@@ -732,10 +733,10 @@
             height="1500vh"
             src="./kingdoms.html"
             id="sYL"
-            style="scroll-margin-top: 3.5vh;"
+            style="scroll-margin-top: 3.5vh"
           >
           </iframe>
-          
+
           <hr class="table-section" />
           <button onclick="scrollei();" style="float: right">➕</button>
           <button onclick="window.location.reload();" style="float: right">
@@ -747,9 +748,24 @@
             height="1000vh"
             src="./fontawesomebrowser.html"
             id="fAI"
-            style="scroll-margin-top: 3.5vh;"
+            style="scroll-margin-top: 3.5vh"
           >
           </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab6" class="tab-content">
+      <div class="table-section sell">
+        <!-- Usa la classe 'sell' per copiare lo stile -->
+        <div class="dodec-font">
+          <iframe
+            id="chests"
+            width="100%"
+            height="1500vh"
+            src="https://chests.nomstead.com/"
+            src="about:blank"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -779,6 +795,11 @@
         document.getElementById("sYL").scrollIntoView({ behavior: "smooth" });
         console.log("Tracing... [47]");
       }
+
+      $("#nft").click(function () {
+        var iframe = $("#chests");
+        iframe.attr("src", iframe.data("src"));
+      });
     </script>
 
     <script>
