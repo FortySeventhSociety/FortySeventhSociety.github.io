@@ -910,13 +910,13 @@
           $(tableId).DataTable({
             data: data.map((item) => createRow(item, type)),
             columns: [
-              { title: "", orderable: false },
+              { title: "🌿", orderable: false, "className": "dt-center" },
               { title: "Object" },
               { title: "Category" },
               { title: "Subcategory" },
               { title: "Price" },
               { title: "Quantity" },
-              { title: "", orderable: false },
+              { title: "💲", orderable: false, "className": "dt-center" },
               { title: "Owner" },
             ],
             pageLength: 75, // Imposta il numero di voci da mostrare a 75
