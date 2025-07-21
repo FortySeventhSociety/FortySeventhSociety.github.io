@@ -195,6 +195,7 @@
                 margin-bottom: 15px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
                 transition: transform 0.2s, box-shadow 0.2s;
+                cursor: pointer; /* Indicate clickability for the whole item */
             }
             .link-item:hover {
                 transform: translateY(-2px);
@@ -222,13 +223,40 @@
             }
             .link-item .details {
                 flex-grow: 1;
+                /* Ensure title and URL stack vertically within details */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
+
+
+            .link-item .details .link-title { /* Added class for title for clarity */
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #1f2937;
+                text-decoration: none; /* Remove underline by default */
+                word-break: break-all; /* Break long URLs */
+                margin-bottom: 2px; /* Small space between title and URL */
+            }
+            .link-item .details .link-url { /* Added class for url for clarity */
+                font-size: 0.9rem;
+                color: #6b7280;
+                word-break: break-all; /* Break long URLs */
+            }
+            .link-item .details .link-title:active {
+                color: rgb(22 101 52 / var(--tw-text-opacity, 1));
+            }
+            .link-item .details .link-title:hover {
+                color: #4f46e5;
+            }
+
+            /*
             .link-item .details a {
                 font-size: 1.1rem;
                 font-weight: 600;
                 color: #1f2937;
                 text-decoration: none;
-                word-break: break-all; /* Break long URLs */
+                word-break: break-all;
             }
             .link-item .details a:hover {
                 color: #4f46e5;
@@ -236,8 +264,10 @@
             .link-item .details p {
                 font-size: 0.9rem;
                 color: #6b7280;
-                word-break: break-all; /* Break long URLs */
+                word-break: break-all;
             }
+            */
+
             .link-item .actions {
                 margin-left: 15px;
                 display: flex;
@@ -809,6 +839,16 @@
                     linkItem.className = "link-item";
                     linkItem.dataset.id = link.id;
 
+                    // Event listener for the entire link item (for navigation)
+                    linkItem.addEventListener('click', (event) => {
+                    // Check if the click originated from an action button (edit/delete)
+                    // If so, prevent the navigation to allow the button's action to proceed
+                    if (event.target.closest('.actions button')) {
+                        return;
+                    }
+                    window.open(link.url, '_blank'); // Open the link in a new tab
+                });
+
                     const iconContainer = document.createElement("div");
                     iconContainer.className = "icon-container";
 
@@ -834,16 +874,17 @@
                     const detailsDiv = document.createElement("div");
                     detailsDiv.className = "details";
 
-                    const linkAnchor = document.createElement("a");
-                    linkAnchor.href = link.url;
-                    linkAnchor.target = "_blank";
-                    linkAnchor.rel = "noopener noreferrer";
-                    linkAnchor.textContent = link.title || link.url;
+                // Title element - now a span, as the whole item is clickable
+                const linkTitleSpan = document.createElement('span');
+                linkTitleSpan.className = 'link-title';
+                linkTitleSpan.textContent = link.title || link.url; // Display title, fallback to URL
+
 
                     const urlParagraph = document.createElement("p");
+                    urlParagraph.className = 'link-url';
                     urlParagraph.textContent = link.url;
 
-                    detailsDiv.appendChild(linkAnchor);
+                    detailsDiv.appendChild(linkTitleSpan);
                     detailsDiv.appendChild(urlParagraph);
 
                     const actionsDiv = document.createElement("div");
@@ -854,9 +895,10 @@
                     editButton.innerHTML = '<i class="fas fa-edit"></i>';
                     editButton.id = "editBtn";
                     editButton.title = "Edit Link";
-                    editButton.addEventListener("click", () =>
-                        editLink(link.id),
-                    );
+                    editButton.addEventListener('click', (event) => {
+                        event.stopPropagation(); // Prevent click from bubbling up to linkItem
+                        editLink(link.id);
+                     });
                     editButton.addEventListener("click", () =>
                         toggleVisibilityEdit(),
                     );
