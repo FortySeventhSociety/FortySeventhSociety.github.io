@@ -627,6 +627,22 @@
         </script>
 
         <script type="module">
+            function toggleVisibilityEdit() {
+                var element = document.getElementById("saveables");
+                if (element.style.display === "none") {
+                    element.style.display = "block";
+                    checkbox.checked = !checkbox.checked;
+                }
+            }
+
+            function toggleVisibilityCancel() {
+                var element = document.getElementById("saveables");
+                if (element.style.display === "block") {
+                    element.style.display = "none";
+                    checkbox.checked = !checkbox.checked;
+                }
+            }
+
             const STORAGE_KEY = "linkSaverLinks"; // Key for localStorage
 
             const linkListDiv = document.getElementById("linkList");
@@ -634,14 +650,9 @@
             const mainActionButton =
                 document.getElementById("mainActionButton"); // Renamed from addLinkBtn
             const cancelEditBtn = document.getElementById("cancelEditBtn");
-            
-                    cancelEditBtn.addEventListener("click", () =>
-                        toggleVisibility(),
-                    );
-                    cancelEditBtn.addEventListener(
-                        "click",
-                        () => (checkbox.checked = !checkbox.checked),
-                    );
+            cancelEditBtn.addEventListener("click", () =>
+                toggleVisibilityCancel(),
+            );
             const downloadBackupBtn =
                 document.getElementById("downloadBackupBtn");
             const uploadBackupBtn = document.getElementById("uploadBackupBtn");
@@ -847,13 +858,8 @@
                         editLink(link.id),
                     );
                     editButton.addEventListener("click", () =>
-                        toggleVisibility(),
+                        toggleVisibilityEdit(),
                     );
-                    editButton.addEventListener(
-                        "click",
-                        () => (checkbox.checked = !checkbox.checked),
-                    );
-
                     actionsDiv.appendChild(editButton);
 
                     // Delete Button
