@@ -686,7 +686,7 @@
                 } catch (e) {
                     showMessage(
                         "Storage Error",
-                        "Could not save links. Local storage might be full or unavailable.",
+                        "Could not save links. Local storage might be full, or unavailable.",
                     );
                     console.error("Error saving to localStorage:", e);
                 }
@@ -720,7 +720,7 @@
                 } catch (e) {
                     showMessage(
                         "Storage Error",
-                        "Could not load links. Data might be corrupted.",
+                        "Could not load links due to an error.",
                     );
                     console.error("Error loading from localStorage:", e);
                     links = []; // Reset links on error
