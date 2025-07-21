@@ -256,20 +256,23 @@ th {
 }
 
 /* Stili per i gruppi di filtri */
+/*
 .filter-group {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
 }
-
+*/
 /* Stili per i filtri specifici */
+/*
 .filter-group label,
 .filter-group select,
 .filter-group input,
 .filter-group button {
   margin: 0 5px;
 }
+*/
 
 .filter-group.buy select {
   border: 1px solid #00ff00; /* Bordo verde per le tabelle buy */
