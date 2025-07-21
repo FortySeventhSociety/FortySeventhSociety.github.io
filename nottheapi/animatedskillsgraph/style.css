@@ -43,3 +43,9 @@
    -o-transition: width 4.50s ease !important;
       transition: width 4.50s ease !important;
  }
+
+ .cloudCastle {
+ 	position: absolute;
+ 	width: 80%;
+ 	padding-left: 40%;
+}

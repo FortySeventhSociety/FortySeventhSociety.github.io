@@ -286,13 +286,13 @@ var coffees = {
    };
 
 var cats = {
-    "10/12" : 1,
-    "10/13" : 4,
+    "10/12" : 11,
+    "10/13" : 24,
     "10/14" : 15,
     "10/15" : 27,
     "10/16" : 48,
     "10/17" : 34,
-    "10/18" : 12,
+    "10/18" : 52,
 }
 
 var reddit = {
@@ -361,7 +361,7 @@ $('.graph-songs').graphiq({
     dots: false,
     colorLine: "#efede5",
     colorLabels: "#efede5",
-    fill: false
+    fill: true
   });
 
       $('.graph-hours').graphiq({
