@@ -1,26 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NōmStead Directory</title>
-        <!-- Tailwind CSS CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Font Awesome CDN for icons -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        />
-        <style>
-             body {
-                 font-family: "Inter", sans-serif;
-                 background-color: #f3f4f6;
-                 display: flex;
-                 justify-content: center;
-                 align-items: flex-start;
-                 min-height: 100vh;
-                 padding: 20px;
-             }
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
              .toggle-wrapper {
                  display: flex;
                  justify-content: center;
@@ -56,15 +53,16 @@
                  background: #4f46e5;
                  transform: translateX(30px);
              }
-             .container {
-                 background-color: #ffffff;
-                 border-radius: 15px;
-                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                 padding: 30px;
-                 width: 100%;
-                 max-width: 800px;
-                 margin-top: 50px;
-             }
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 50px;
+        }
+
              /* Styles for the header buttons */
              .header-buttons {
                  display: flex;
@@ -117,216 +115,239 @@
                      t
                  }
              }
-            .input-group {
-                 margin-bottom: 15px;
-             }
-             .input-group label {
-                 display: block;
-                 margin-bottom: 8px;
-                 font-weight: 600;
-                 color: #374151;
-             }
-             .input-group input,
-             .input-group select {
-                 width: 100%;
-                 padding: 12px;
-                 border: 1px solid #d1d5db;
-                 border-radius: 8px;
-                 font-size: 1rem;
-                 transition: border-color 0.2s;
-             }
-             .input-group input:focus,
-             .input-group select:focus {
-                 outline: none;
-                 border-color: #4f46e5;
-                 box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
-             }
-             .btn {
-                 padding: 12px 20px;
-                 border-radius: 8px;
-                 font-weight: 600;
-                 cursor: pointer;
-                 transition:
-                     background-color 0.2s,
-                     transform 0.1s;
-                 display: inline-flex;
-                 align-items: center;
-                 justify-content: center;
-             }
-             .btn-primary {
-                 background-color: #4f46e5;
-                 color: #ffffff;
-                 box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
-             }
-             .btn-primary:hover {
-                 background-color: #4338ca;
-                 transform: translateY(-1px);
-             }
-             .btn-secondary {
-                 background-color: #6b7280;
-                 color: #ffffff;
-                 box-shadow: 0 4px 6px rgba(107, 114, 128, 0.3);
-                 margin-left: 10px;
-             }
-             .btn-secondary:hover {
-                 background-color: #4b5563;
-                 transform: translateY(-1px);
-             }
-             .link-list {
-                 margin-top: 30px;
-                 border-top: 1px solid #e5e7eb;
-                 padding-top: 20px;
-             }
-             .link-item {
-                 display: flex;
-                 align-items: center;
-                 background-color: #f9fafb;
-                 border: 1px solid #e5e7eb;
-                 border-radius: 10px;
-                 padding: 15px;
-                 margin-bottom: 15px;
-                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                 transition:
-                     transform 0.2s,
-                     box-shadow 0.2s;
-             }
-             .link-item:hover {
-                 transform: translateY(-2px);
-                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-             }
-             .link-item .icon-container {
-                 width: 40px;
-                 height: 40px;
-                 min-width: 40px; /* Ensure it doesn't shrink */
-                 min-height: 40px; /* Ensure it doesn't shrink */
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 background-color: #e0e7ff;
-                 border-radius: 8px;
-                 margin-right: 15px;
-                 color: #4f46e5;
-                 font-size: 1.2rem;
-                 overflow: hidden; /* Hide overflow for image icons */
-             }
-             .link-item .icon-container img {
-                 width: 100%;
-                 height: 100%;
-                 object-fit: cover; /* Cover the container */
-             }
-             .link-item .details {
-                 flex-grow: 1;
-             }
-             .link-item .details a {
-                 font-size: 1.1rem;
-                 font-weight: 600;
-                 color: #1f2937;
-                 text-decoration: none;
-                 word-break: break-all; /* Break long URLs */
-             }
-             .link-item .details a:hover {
-                 color: #4f46e5;
-             }
-             .link-item .details p {
-                 font-size: 0.9rem;
-                 color: #6b7280;
-                 word-break: break-all; /* Break long URLs */
-             }
-             .link-item .actions {
-                 margin-left: 15px;
-             }
-             .link-item .actions button {
-                 background: none;
-                 border: none;
-                 color: #dc2626;
-                 cursor: pointer;
-                 font-size: 1.1rem;
-                 transition: color 0.2s;
-             }
-             .link-item .actions button:hover {
-                 color: #b91c1c;
-             }
-             .modal {
-                 position: fixed;
-                 top: 0;
-                 left: 0;
-                 width: 100%;
-                 height: 100%;
-                 background-color: rgba(0, 0, 0, 0.5);
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 z-index: 1000;
-                 opacity: 0;
-                 visibility: hidden;
-                 transition:
-                     opacity 0.3s,
-                     visibility 0.3s;
-             }
-             .modal.show {
-                 opacity: 1;
-                 visibility: visible;
-             }
-             .modal-content {
-                 background-color: #ffffff;
-                 padding: 30px;
-                 border-radius: 15px;
-                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-                 width: 90%;
-                 max-width: 400px;
-                 text-align: center;
-                 transform: translateY(-20px);
-                 transition: transform 0.3s;
-             }
-             .modal.show .modal-content {
-                 transform: translateY(0);
-             }
-             .modal-content h3 {
-                 font-size: 1.5rem;
-                 font-weight: 700;
-                 color: #1f2937;
-                 margin-bottom: 15px;
-             }
-             .modal-content p {
-                 color: #4b5563;
-                 margin-bottom: 25px;
-             }
-             .modal-content button {
-                 background-color: #4f46e5;
-                 color: #ffffff;
-                 padding: 10px 20px;
-                 border-radius: 8px;
-                 font-weight: 600;
-                 cursor: pointer;
-                 transition: background-color 0.2s;
-             }
-             .modal-content button:hover {
-                 background-color: #4338ca;
-             }
-             /* Styles for confirmation modal, distinct from general message modal */
-             #confirmationModal .modal-content {
-                 padding: 25px;
-             }
-             #confirmationModal .modal-buttons {
-                 display: flex;
-                 justify-content: center;
-                 gap: 15px;
-                 margin-top: 20px;
-             }
-             #confirmationModal .modal-buttons button {
-                 flex: 1;
-                 max-width: 120px;
-             }
-             #confirmationModal .modal-buttons .btn-cancel {
-                 background-color: #ef4444;
-             }
-             #confirmationModal .modal-buttons .btn-cancel:hover {
-                 background-color: #dc2626;
-             }
-        </style>
-    </head>
-    <body>
-        <div class="container">
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+        .btn {
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-primary {
+            background-color: #4f46e5;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #4338ca;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: #6b7280;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(107, 114, 128, 0.3);
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background-color: #4b5563;
+            transform: translateY(-1px);
+        }
+        .btn-danger {
+            background-color: #ef4444;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+        }
+        .btn-danger:hover {
+            background-color: #dc2626;
+            transform: translateY(-1px);
+        }
+        .link-list {
+            margin-top: 30px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .link-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .link-item .icon-container {
+            width: 40px;
+            height: 40px;
+            min-width: 40px; /* Ensure it doesn't shrink */
+            min-height: 40px; /* Ensure it doesn't shrink */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e0e7ff;
+            border-radius: 8px;
+            margin-right: 15px;
+            color: #4f46e5;
+            font-size: 1.2rem;
+            overflow: hidden; /* Hide overflow for image icons */
+        }
+        .link-item .icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the container */
+        }
+        .link-item .details {
+            flex-grow: 1;
+        }
+        .link-item .details a {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            text-decoration: none;
+            word-break: break-all; /* Break long URLs */
+        }
+        .link-item .details a:hover {
+            color: #4f46e5;
+        }
+        .link-item .details p {
+            font-size: 0.9rem;
+            color: #6b7280;
+            word-break: break-all; /* Break long URLs */
+        }
+        .link-item .actions {
+            margin-left: 15px;
+            display: flex;
+            gap: 8px; /* Space between action buttons */
+        }
+        .link-item .actions button {
+            background: none;
+            border: none;
+            color: #4f46e5; /* Default action button color */
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+            padding: 5px; /* Add padding for easier clicking */
+            border-radius: 5px;
+        }
+        .link-item .actions button:hover {
+            background-color: #e0e7ff;
+        }
+        .link-item .actions .delete-btn {
+            color: #dc2626; /* Specific color for delete */
+        }
+        .link-item .actions .delete-btn:hover {
+            background-color: #fee2e2;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            transform: translateY(-20px);
+            transition: transform 0.3s;
+        }
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+        .modal-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        .modal-content p {
+            color: #4b5563;
+            margin-bottom: 25px;
+        }
+        .modal-content button {
+            background-color: #4f46e5;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .modal-content button:hover {
+            background-color: #4338ca;
+        }
+        /* Styles for confirmation modal, distinct from general message modal */
+        #confirmationModal .modal-content {
+            padding: 25px;
+        }
+        #confirmationModal .modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        #confirmationModal .modal-buttons button {
+            flex: 1;
+            max-width: 120px;
+        }
+        #confirmationModal .modal-buttons .btn-cancel {
+            background-color: #ef4444;
+        }
+        #confirmationModal .modal-buttons .btn-cancel:hover {
+            background-color: #dc2626;
+        }
+        .button-row {
+            display: flex;
+            justify-content: flex-end; /* Align buttons to the right */
+            gap: 10px; /* Space between buttons */
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        }
+        .button-row .btn {
+            margin-left: 0; /* Override default margin-left for .btn-secondary */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
             <button id="sYLb" onclick="changeio();" style="float: right">
                 ⚪
             </button>
@@ -405,40 +426,16 @@
                 </button>
             </div>
 
-            <div class="link-list" id="linkList">
-                <h2 class="text-2xl font-semibold text-gray-700 mb-4">
-                    Directory Listings:
-                </h2>
-                <!-- Links will be dynamically added here -->
-                <p id="noLinksMessage" class="text-gray-500 text-center">
-                    No links saved yet; Add one above!
-                </p>
-            </div>
 
-            <!-- General Message Modal -->
-            <div id="messageModal" class="modal">
-                <div class="modal-content">
-                    <h3 id="modalTitle"></h3>
-                    <p id="modalMessage"></p>
-                    <button id="modalCloseBtn">OK</button>
-                </div>
-            </div>
+        <div class="link-list" id="linkList">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
+                    Directory Listings:</h1>
+            <!-- Links will be dynamically added here -->
+            <p id="noLinksMessage" class="text-gray-500 text-center">
+                    No links saved yet; Add one above!</p>
+        </div>
 
-            <!-- Confirmation Modal (for delete) -->
-            <div id="confirmationModal" class="modal">
-                <div class="modal-content">
-                    <h3 id="confirmModalTitle">Confirm Action:</h3>
-                    <p id="confirmModalMessage"></p>
-                    <div class="modal-buttons">
-                        <button id="confirmYesBtn" class="btn btn-primary">
-                            Yes
-                        </button>
-                        <button id="confirmNoBtn" class="btn btn-cancel">
-                            No
-                        </button>
-                    </div>
-                </div>
-            </div>
+
 
             <h2 class="text-2xl font-bold text-center text-green-800 mb-8">
                 <a href="https://nomstead.com/?ref=btrpazme" target="_blank"
@@ -462,61 +459,72 @@
                     </label>
                 </div>
             </center>
+
             <div id="saveables" style="display: none">
-                <div class="input-group">
-                    <label for="linkUrl">Link</label>
-                    <input
-                        type="url"
-                        id="linkUrl"
-                        placeholder="e.g., https://www.example.com/page"
-                        required
-                    />
-                </div>
-
-                <div class="input-group">
-                    <label for="linkTitle">Title</label>
-                    <input
-                        type="text"
-                        id="linkTitle"
-                        placeholder="e.g., My Favorite Page"
-                        required
-                    />
-                </div>
-
-                <div class="input-group">
-                    <label for="iconType">Icon</label>
-                    <select
-                        id="iconType"
-                        class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    >
-                        <option value="fa">Font Awesome Icon</option>
-                        <option value="url">Image URL</option>
-                    </select>
-                </div>
-
-                <div class="input-group" id="iconInputGroup">
-                    <label for="linkIcon"
-                        >Font Awesome Icon Class (e.g., fa-solid fa-star)</label
-                    >
-                    <input
-                        type="text"
-                        id="linkIcon"
-                        placeholder="e.g., fa-solid fa-star"
-                    />
-                </div>
-
-                <div class="flex justify-end mt-6">
-                    <button id="addLinkBtn" class="btn btn-primary mr-2">
-                        <i class="fas fa-plus mr-2"></i> Add Link
-                    </button>
-                    <button id="downloadBackupBtn" class="btn btn-secondary">
-                        <i class="fas fa-download mr-2"></i> Download Backup
-                    </button>
-                </div>
-            </div>
+        <div class="input-group">
+            <label for="linkUrl">Link</label>
+            <input type="url" id="linkUrl" placeholder="e.g., https://www.example.com/page" required>
         </div>
 
-        <script>
+        <div class="input-group">
+            <label for="linkTitle">Title</label>
+            <input type="text" id="linkTitle" placeholder="e.g., My Favorite Page" required>
+        </div>
+
+        <div class="input-group">
+            <label for="iconType">Icon</label>
+            <select id="iconType" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="fa">Font Awesome Icon</option>
+                <option value="url">Image URL</option>
+            </select>
+        </div>
+
+        <div class="input-group" id="iconInputGroup">
+            <label for="linkIcon">Font Awesome Icon Class (e.g., fa-solid fa-star)</label>
+            <input type="text" id="linkIcon" placeholder="e.g., fa-solid fa-star">
+        </div>
+
+        <div class="button-row">
+            <button id="mainActionButton" class="btn btn-primary">
+                <i class="fas fa-plus mr-2"></i> Add Link
+            </button>
+            <button id="cancelEditBtn" class="btn btn-danger hidden">
+                <i class="fas fa-times mr-2"></i> Cancel Edit
+            </button>
+            <button id="downloadBackupBtn" class="btn btn-secondary">
+                <i class="fas fa-download mr-2"></i> Download Backup
+            </button>
+            <input type="file" id="uploadBackupInput" accept=".json" class="hidden">
+            <button id="uploadBackupBtn" class="btn btn-secondary">
+                <i class="fas fa-upload mr-2"></i> Upload Backup
+            </button>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- General Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+            <button id="modalCloseBtn">OK</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal (for delete) -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h3 id="confirmModalTitle">Confirm Action</h3>
+            <p id="confirmModalMessage"></p>
+            <div class="modal-buttons">
+                <button id="confirmYesBtn" class="btn btn-primary">Yes</button>
+                <button id="confirmNoBtn" class="btn btn-cancel">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
             function toggleVisibility() {
                 var element = document.getElementById("saveables");
                 if (element.style.display === "none") {
@@ -591,273 +599,312 @@
                 .addEventListener("click", changeEmoji);
         </script>
 
-        <script type="module">
-            const STORAGE_KEY = "linkSaverLinks"; // Key for localStorage
+    <script type="module">
+        const STORAGE_KEY = 'linkSaverLinks'; // Key for localStorage
 
-            const linkListDiv = document.getElementById("linkList");
-            const noLinksMessage = document.getElementById("noLinksMessage");
-            const addLinkBtn = document.getElementById("addLinkBtn");
-            const downloadBackupBtn =
-                document.getElementById("downloadBackupBtn");
-            const linkUrlInput = document.getElementById("linkUrl");
-            const linkTitleInput = document.getElementById("linkTitle");
-            const linkIconInput = document.getElementById("linkIcon");
-            const iconTypeSelect = document.getElementById("iconType");
-            const iconInputGroup = document.getElementById("iconInputGroup");
+        const linkListDiv = document.getElementById('linkList');
+        const noLinksMessage = document.getElementById('noLinksMessage');
+        const mainActionButton = document.getElementById('mainActionButton'); // Renamed from addLinkBtn
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+        const downloadBackupBtn = document.getElementById('downloadBackupBtn');
+        const uploadBackupBtn = document.getElementById('uploadBackupBtn');
+        const uploadBackupInput = document.getElementById('uploadBackupInput');
+        const linkUrlInput = document.getElementById('linkUrl');
+        const linkTitleInput = document.getElementById('linkTitle');
+        const linkIconInput = document.getElementById('linkIcon');
+        const iconTypeSelect = document.getElementById('iconType');
+        const iconInputGroup = document.getElementById('iconInputGroup');
 
-            // Message Modal elements
-            const messageModal = document.getElementById("messageModal");
-            const modalTitle = document.getElementById("modalTitle");
-            const modalMessage = document.getElementById("modalMessage");
-            const modalCloseBtn = document.getElementById("modalCloseBtn");
+        // Message Modal elements
+        const messageModal = document.getElementById('messageModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
 
-            // Confirmation Modal elements
-            const confirmationModal =
-                document.getElementById("confirmationModal");
-            const confirmModalTitle =
-                document.getElementById("confirmModalTitle");
-            const confirmModalMessage = document.getElementById(
-                "confirmModalMessage",
-            );
-            const confirmYesBtn = document.getElementById("confirmYesBtn");
-            const confirmNoBtn = document.getElementById("confirmNoBtn");
+        // Confirmation Modal elements
+        const confirmationModal = document.getElementById('confirmationModal');
+        const confirmModalTitle = document.getElementById('confirmModalTitle');
+        const confirmModalMessage = document.getElementById('confirmModalMessage');
+        const confirmYesBtn = document.getElementById('confirmYesBtn');
+        const confirmNoBtn = document.getElementById('confirmNoBtn');
 
-            let links = []; // Array to hold all link objects
+        let links = []; // Array to hold all link objects
+        let editingLinkId = null; // Stores the ID of the link being edited
 
-            // Function to show custom message modal
-            function showMessage(title, message) {
-                modalTitle.textContent = title;
-                modalMessage.textContent = message;
-                messageModal.classList.add("show");
+        // Function to show custom message modal
+        function showMessage(title, message) {
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            messageModal.classList.add('show');
+        }
+
+        // Function to hide custom message modal
+        function hideMessage() {
+            modalMessage.textContent = '';
+            modalTitle.textContent = '';
+            messageModal.classList.remove('show');
+        }
+
+        modalCloseBtn.addEventListener('click', hideMessage);
+
+        // Function to show custom confirmation modal
+        function showConfirmation(title, message, onConfirm) {
+            confirmModalTitle.textContent = title;
+            confirmModalMessage.textContent = message;
+            confirmationModal.classList.add('show');
+
+            // Remove previous listeners to prevent multiple calls
+            confirmYesBtn.onclick = null;
+            confirmNoBtn.onclick = null;
+
+            confirmYesBtn.onclick = () => {
+                hideConfirmation();
+                onConfirm(true);
+            };
+            confirmNoBtn.onclick = () => {
+                hideConfirmation();
+                onConfirm(false);
+            };
+        }
+
+        // Function to hide custom confirmation modal
+        function hideConfirmation() {
+            confirmationModal.classList.remove('show');
+        }
+
+        // Handle icon type change
+        iconTypeSelect.addEventListener('change', (event) => {
+            if (event.target.value === 'fa') {
+                linkIconInput.placeholder = 'e.g., fa-solid fa-star';
+                iconInputGroup.querySelector('label').textContent = 'Font Awesome Icon Class (e.g., fa-solid fa-star)';
+            } else {
+                linkIconInput.placeholder = 'e.g., https://www.example.com/icon.png';
+                iconInputGroup.querySelector('label').textContent = 'Image URL (e.g., https://www.example.com/icon.png)';
             }
+        });
 
-            // Function to hide custom message modal
-            function hideMessage() {
-                messageModal.classList.remove("show");
+        /**
+         * Saves the current links array to localStorage.
+         */
+        function saveLinksToLocalStorage() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(links));
+            } catch (e) {
+                showMessage("Storage Error", "Could not save links. Local storage might be full or unavailable.");
+                console.error("Error saving to localStorage:", e);
             }
+        }
 
-            modalCloseBtn.addEventListener("click", hideMessage);
-
-            // Function to show custom confirmation modal
-            function showConfirmation(title, message, onConfirm) {
-                confirmModalTitle.textContent = title;
-                confirmModalMessage.textContent = message;
-                confirmationModal.classList.add("show");
-
-                // Remove previous listeners to prevent multiple calls
-                confirmYesBtn.onclick = null;
-                confirmNoBtn.onclick = null;
-
-                confirmYesBtn.onclick = () => {
-                    hideConfirmation();
-                    onConfirm(true);
-                };
-                confirmNoBtn.onclick = () => {
-                    hideConfirmation();
-                    onConfirm(false);
-                };
-            }
-
-            // Function to hide custom confirmation modal
-            function hideConfirmation() {
-                confirmationModal.classList.remove("show");
-            }
-
-            // Handle icon type change
-            iconTypeSelect.addEventListener("change", (event) => {
-                if (event.target.value === "fa") {
-                    linkIconInput.placeholder = "e.g., fa-solid fa-star";
-                    iconInputGroup.querySelector("label").textContent =
-                        "Font Awesome Icon Class (e.g., fa-solid fa-star)";
-                } else {
-                    linkIconInput.placeholder =
-                        "e.g., https://www.example.com/icon.png";
-                    iconInputGroup.querySelector("label").textContent =
-                        "Image URL (e.g., https://www.example.com/icon.png)";
-                }
-            });
-
-            /**
-             * Saves the current links array to localStorage.
-             */
-            function saveLinksToLocalStorage() {
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(links));
-                } catch (e) {
-                    showMessage(
-                        "Storage Error",
-                        "Could not save links. Local storage might be full or unavailable.",
-                    );
-                    console.error("Error saving to localStorage:", e);
-                }
-            }
-
-            /**
-             * Loads links from localStorage and updates the global links array.
-             */
-            function loadLinksFromLocalStorage() {
-                try {
-                    const storedLinks = localStorage.getItem(STORAGE_KEY);
-                    if (storedLinks) {
-                        links = JSON.parse(storedLinks);
-                        // Ensure timestamps are Date objects if needed for sorting, or keep as string/number
-                        // For this app, we'll keep them as numbers (timestamp) for sorting simplicity
-                        links.forEach((link) => {
-                            if (typeof link.timestamp === "string") {
-                                link.timestamp = new Date(
-                                    link.timestamp,
-                                ).getTime();
-                            }
-                        });
-                    } else {
-                        links = [];
-                    }
-                    // Sort links by timestamp in descending order (most recent first)
-                    links.sort(
-                        (a, b) => (b.timestamp || 0) - (a.timestamp || 0),
-                    );
-                    displayLinks();
-                } catch (e) {
-                    showMessage(
-                        "Storage Error",
-                        "Could not load links. Data might be corrupted.",
-                    );
-                    console.error("Error loading from localStorage:", e);
-                    links = []; // Reset links on error
-                }
-            }
-
-            /**
-             * Dynamically displays links in the UI.
-             */
-            function displayLinks() {
-                // Clear existing links except the heading and message
-                const existingLinkItems =
-                    linkListDiv.querySelectorAll(".link-item");
-                existingLinkItems.forEach((item) => item.remove());
-
-                if (links.length === 0) {
-                    noLinksMessage.style.display = "block";
-                    return;
-                } else {
-                    noLinksMessage.style.display = "none";
-                }
-
-                links.forEach((link) => {
-                    const linkItem = document.createElement("div");
-                    linkItem.className = "link-item";
-                    // Use a simple unique ID for local operations, e.g., timestamp + random number
-                    linkItem.dataset.id = link.id;
-
-                    const iconContainer = document.createElement("div");
-                    iconContainer.className = "icon-container";
-
-                    if (link.iconType === "url" && link.icon) {
-                        const img = document.createElement("img");
-                        img.src = link.icon;
-                        img.alt = link.title || "Link icon";
-                        img.onerror = () => {
-                            img.src =
-                                "https://placehold.co/40x40/cccccc/333333?text=IMG"; // Placeholder on error
-                        };
-                        iconContainer.appendChild(img);
-                    } else if (link.icon) {
-                        const icon = document.createElement("i");
-                        icon.className = link.icon; // Assume Font Awesome class
-                        iconContainer.appendChild(icon);
-                    } else {
-                        const defaultIcon = document.createElement("i");
-                        defaultIcon.className = "fa-solid fa-link"; // Default icon if none provided
-                        iconContainer.appendChild(defaultIcon);
-                    }
-
-                    const detailsDiv = document.createElement("div");
-                    detailsDiv.className = "details";
-
-                    const linkAnchor = document.createElement("a");
-                    linkAnchor.href = link.url;
-                    linkAnchor.target = "_blank";
-                    linkAnchor.rel = "noopener noreferrer";
-                    linkAnchor.textContent = link.title || link.url;
-
-                    const urlParagraph = document.createElement("p");
-                    urlParagraph.textContent = link.url;
-
-                    detailsDiv.appendChild(linkAnchor);
-                    detailsDiv.appendChild(urlParagraph);
-
-                    const actionsDiv = document.createElement("div");
-                    actionsDiv.className = "actions";
-
-                    const deleteButton = document.createElement("button");
-                    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-                    deleteButton.title = "Delete Link";
-                    deleteButton.addEventListener("click", () => {
-                        showConfirmation(
-                            "Confirm Deletion",
-                            `Are you sure you want to delete "${link.title || link.url}"?`,
-                            (confirmed) => {
-                                if (confirmed) {
-                                    // Filter out the link to be deleted
-                                    links = links.filter(
-                                        (item) => item.id !== link.id,
-                                    );
-                                    saveLinksToLocalStorage();
-                                    displayLinks(); // Re-render the list
-                                    showMessage(
-                                        "Success",
-                                        "Link deleted successfully!",
-                                    );
-                                }
-                            },
-                        );
+        /**
+         * Loads links from localStorage and updates the global links array.
+         */
+        function loadLinksFromLocalStorage() {
+            try {
+                const storedLinks = localStorage.getItem(STORAGE_KEY);
+                if (storedLinks) {
+                    links = JSON.parse(storedLinks);
+                    // Ensure timestamps are numbers for sorting consistency
+                    links.forEach(link => {
+                        if (typeof link.timestamp === 'string') {
+                            link.timestamp = new Date(link.timestamp).getTime();
+                        }
                     });
+                } else {
+                    links = [];
+                }
+                // Sort links by timestamp in descending order (most recent first)
+                links.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                displayLinks();
+            } catch (e) {
+                showMessage("Storage Error", "Could not load links. Data might be corrupted.");
+                console.error("Error loading from localStorage:", e);
+                links = []; // Reset links on error
+            }
+        }
 
-                    actionsDiv.appendChild(deleteButton);
+        /**
+         * Dynamically displays links in the UI.
+         */
+        function displayLinks() {
+            // Clear existing links except the heading and message
+            const existingLinkItems = linkListDiv.querySelectorAll('.link-item');
+            existingLinkItems.forEach(item => item.remove());
 
-                    linkItem.appendChild(iconContainer);
-                    linkItem.appendChild(detailsDiv);
-                    linkItem.appendChild(actionsDiv);
-
-                    linkListDiv.appendChild(linkItem);
-                });
+            if (links.length === 0) {
+                noLinksMessage.style.display = 'block';
+                return;
+            } else {
+                noLinksMessage.style.display = 'none';
             }
 
-            // Add a new link
-            addLinkBtn.addEventListener("click", () => {
-                const url = linkUrlInput.value.trim();
-                const title = linkTitleInput.value.trim();
-                const icon = linkIconInput.value.trim();
-                const iconType = iconTypeSelect.value;
+            links.forEach(link => {
+                const linkItem = document.createElement('div');
+                linkItem.className = 'link-item';
+                linkItem.dataset.id = link.id;
 
-                if (!url) {
-                    showMessage("Validation Error", "Link URL is required.");
-                    return;
+                const iconContainer = document.createElement('div');
+                iconContainer.className = 'icon-container';
+
+                if (link.iconType === 'url' && link.icon) {
+                    const img = document.createElement('img');
+                    img.src = link.icon;
+                    img.alt = link.title || 'Link icon';
+                    img.onerror = () => {
+                        img.src = 'https://placehold.co/40x40/cccccc/333333?text=IMG'; // Placeholder on error
+                    };
+                    iconContainer.appendChild(img);
+                } else if (link.icon) {
+                    const icon = document.createElement('i');
+                    icon.className = link.icon; // Assume Font Awesome class
+                    iconContainer.appendChild(icon);
+                } else {
+                    const defaultIcon = document.createElement('i');
+                    defaultIcon.className = 'fa-solid fa-link'; // Default icon if none provided
+                    iconContainer.appendChild(defaultIcon);
                 }
 
-                // Basic URL validation
-                try {
-                    new URL(url);
-                } catch (e) {
-                    showMessage(
-                        "Validation Error",
-                        "Please enter a valid URL.",
-                    );
-                    return;
+                const detailsDiv = document.createElement('div');
+                detailsDiv.className = 'details';
+
+                const linkAnchor = document.createElement('a');
+                linkAnchor.href = link.url;
+                linkAnchor.target = '_blank';
+                linkAnchor.rel = 'noopener noreferrer';
+                linkAnchor.textContent = link.title || link.url;
+
+                const urlParagraph = document.createElement('p');
+                urlParagraph.textContent = link.url;
+
+                detailsDiv.appendChild(linkAnchor);
+                detailsDiv.appendChild(urlParagraph);
+
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'actions';
+
+                // Edit Button
+                const editButton = document.createElement('button');
+                editButton.innerHTML = '<i class="fas fa-edit"></i>';
+                editButton.title = 'Edit Link';
+                editButton.addEventListener('click', () => editLink(link.id));
+                actionsDiv.appendChild(editButton);
+
+                // Delete Button
+                const deleteButton = document.createElement('button');
+                deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                deleteButton.title = 'Delete Link';
+                deleteButton.className = 'delete-btn'; // Add specific class for styling
+                deleteButton.addEventListener('click', () => {
+                    showConfirmation("Confirm Deletion", `Are you sure you want to delete "${link.title || link.url}"?`, (confirmed) => {
+                        if (confirmed) {
+                            // Filter out the link to be deleted
+                            links = links.filter(item => item.id !== link.id);
+                            saveLinksToLocalStorage();
+                            displayLinks(); // Re-render the list
+                            showMessage("Success", "Link deleted successfully!");
+                            // If the deleted link was being edited, cancel edit mode
+                            if (editingLinkId === link.id) {
+                                cancelEdit();
+                            }
+                        }
+                    });
+                });
+                actionsDiv.appendChild(deleteButton);
+
+                linkItem.appendChild(iconContainer);
+                linkItem.appendChild(detailsDiv);
+                linkItem.appendChild(actionsDiv);
+
+                linkListDiv.appendChild(linkItem);
+            });
+        }
+
+        /**
+         * Enters edit mode for a specific link.
+         * @param {string} id - The ID of the link to edit.
+         */
+        function editLink(id) {
+            const linkToEdit = links.find(link => link.id === id);
+            if (linkToEdit) {
+                editingLinkId = id;
+                linkUrlInput.value = linkToEdit.url;
+                linkTitleInput.value = linkToEdit.title;
+                linkIconInput.value = linkToEdit.icon || '';
+                iconTypeSelect.value = linkToEdit.iconType || 'fa';
+                iconTypeSelect.dispatchEvent(new Event('change')); // Trigger change to update label/placeholder
+
+                mainActionButton.innerHTML = '<i class="fas fa-save mr-2"></i> Update Link';
+                mainActionButton.classList.remove('btn-primary');
+                mainActionButton.classList.add('btn-secondary'); // Use secondary style for update
+                cancelEditBtn.classList.remove('hidden');
+            } else {
+                showMessage("Error", "Link not found for editing.");
+            }
+        }
+
+        /**
+         * Exits edit mode and clears the form.
+         */
+        function cancelEdit() {
+            editingLinkId = null;
+            linkUrlInput.value = '';
+            linkTitleInput.value = '';
+            linkIconInput.value = '';
+            iconTypeSelect.value = 'fa';
+            iconTypeSelect.dispatchEvent(new Event('change')); // Trigger change to update label/placeholder
+
+            mainActionButton.innerHTML = '<i class="fas fa-plus mr-2"></i> Add Link';
+            mainActionButton.classList.remove('btn-secondary');
+            mainActionButton.classList.add('btn-primary');
+            cancelEditBtn.classList.add('hidden');
+        }
+
+        // Main action button (Add/Update)
+        mainActionButton.addEventListener('click', () => {
+            const url = linkUrlInput.value.trim();
+            const title = linkTitleInput.value.trim();
+            const icon = linkIconInput.value.trim();
+            const iconType = iconTypeSelect.value;
+
+            if (!url) {
+                showMessage("Validation Error", "Link URL is required.");
+                return;
+            }
+
+            // Basic URL validation
+            try {
+                new URL(url);
+            } catch (e) {
+                showMessage("Validation Error", "Please enter a valid URL.");
+                return;
+            }
+
+            if (editingLinkId) {
+                // Update existing link
+                const index = links.findIndex(link => link.id === editingLinkId);
+                if (index !== -1) {
+                    links[index].url = url;
+                    links[index].title = title;
+                    links[index].icon = icon;
+                    links[index].iconType = iconType;
+                    // Optionally update timestamp if you want "last modified" behavior
+                    // links[index].timestamp = Date.now();
+                    saveLinksToLocalStorage();
+                    displayLinks();
+                    showMessage("Success", "Link updated successfully!");
+                    cancelEdit(); // Exit edit mode
+                } else {
+                    showMessage("Error", "Could not find link to update.");
                 }
-
-                // Create a simple unique ID for the link
-                const newLinkId =
-                    Date.now().toString() +
-                    Math.random().toString(36).substring(2, 9);
-
+            } else {
+                // Add new link
+                const newLinkId = Date.now().toString() + Math.random().toString(36).substring(2, 9);
                 const newLink = {
                     id: newLinkId,
                     url: url,
                     title: title,
                     icon: icon,
                     iconType: iconType,
-                    timestamp: Date.now(), // Store timestamp as a number for sorting
+                    timestamp: Date.now() // Store timestamp as a number for sorting
                 };
 
                 links.unshift(newLink); // Add new link to the beginning of the array
@@ -867,40 +914,107 @@
 
                 showMessage("Success", "Link added successfully!");
                 // Clear input fields
-                linkUrlInput.value = "";
-                linkTitleInput.value = "";
-                linkIconInput.value = "";
-                iconTypeSelect.value = "fa"; // Reset to default
-                iconTypeSelect.dispatchEvent(new Event("change")); // Trigger change event to update label/placeholder
-            });
+                linkUrlInput.value = '';
+                linkTitleInput.value = '';
+                linkIconInput.value = '';
+                iconTypeSelect.value = 'fa'; // Reset to default
+                iconTypeSelect.dispatchEvent(new Event('change')); // Trigger change event to update label/placeholder
+            }
+        });
 
-            // Download backup
-            downloadBackupBtn.addEventListener("click", () => {
+        // Cancel Edit button listener
+        cancelEditBtn.addEventListener('click', cancelEdit);
+
+        // Download backup
+        downloadBackupBtn.addEventListener('click', () => {
+            try {
+                const jsonString = JSON.stringify(links, null, 2);
+                const blob = new Blob([jsonString], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `link_saver_backup_${new Date().toISOString().slice(0, 10)}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showMessage("Success", "Backup downloaded successfully!");
+            } catch (e) {
+                showMessage("Error", `Error downloading backup: ${e.message}`);
+                console.error("Error downloading backup:", e);
+            }
+        });
+
+        // Upload backup
+        uploadBackupBtn.addEventListener('click', () => {
+            uploadBackupInput.click(); // Trigger the hidden file input click
+        });
+
+        uploadBackupInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (!file) {
+                return;
+            }
+
+            if (file.type !== 'application/json') {
+                showMessage("Invalid File Type", "Please upload a JSON file.");
+                // Clear the file input value to allow re-uploading the same file if needed
+                uploadBackupInput.value = '';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
                 try {
-                    const jsonString = JSON.stringify(links, null, 2);
-                    const blob = new Blob([jsonString], {
-                        type: "application/json",
-                    });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement("a");
-                    a.href = url;
-                    a.download = `link_saver_backup_${new Date().toISOString().slice(0, 10)}.json`;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    showMessage("Success", "Backup downloaded successfully!");
-                } catch (e) {
-                    showMessage(
-                        "Error",
-                        `Error downloading backup: ${e.message}`,
-                    );
-                    console.error("Error downloading backup:", e);
-                }
-            });
+                    const uploadedData = JSON.parse(e.target.result);
 
-            // Load links when the window loads
-            window.onload = loadLinksFromLocalStorage;
-        </script>
-    </body>
+                    if (!Array.isArray(uploadedData)) {
+                        showMessage("Invalid Data", "The uploaded JSON file does not contain a valid array of links.");
+                        uploadBackupInput.value = '';
+                        return;
+                    }
+
+                    // Add uploaded links, generating new IDs to avoid conflicts
+                    uploadedData.forEach(uploadedLink => {
+                        // Basic validation for uploaded link structure
+                        if (uploadedLink.url) {
+                            const newLinkId = Date.now().toString() + Math.random().toString(36).substring(2, 9);
+                            links.push({
+                                id: newLinkId,
+                                url: uploadedLink.url,
+                                title: uploadedLink.title || '',
+                                icon: uploadedLink.icon || '',
+                                iconType: uploadedLink.iconType || 'fa',
+                                timestamp: uploadedLink.timestamp || Date.now() // Use existing or new timestamp
+                            });
+                        }
+                    });
+
+                    // Sort and save
+                    links.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                    saveLinksToLocalStorage();
+                    displayLinks();
+                    showMessage("Upload Success", `${uploadedData.length} links uploaded and added to your list.`);
+                } catch (parseError) {
+                    showMessage("Parsing Error", `Error parsing JSON file: ${parseError.message}`);
+                    console.error("Error parsing uploaded JSON:", parseError);
+                } finally {
+                    // Clear the file input value after processing
+                    uploadBackupInput.value = '';
+                }
+            };
+
+            reader.onerror = () => {
+                showMessage("File Read Error", "Failed to read the file.");
+                console.error("Error reading file:", reader.error);
+                uploadBackupInput.value = '';
+            };
+
+            reader.readAsText(file);
+        });
+
+        // Load links when the window loads
+        window.onload = loadLinksFromLocalStorage;
+    </script>
+</body>
 </html>

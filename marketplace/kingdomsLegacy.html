@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NōmStead Directory</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Font Awesome CDN for icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+             body {
+                 font-family: "Inter", sans-serif;
+                 background-color: #f3f4f6;
+                 display: flex;
+                 justify-content: center;
+                 align-items: flex-start;
+                 min-height: 100vh;
+                 padding: 20px;
+             }
+             .toggle-wrapper {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+             }
+
+             .switch {
+                 width: 60px;
+                 height: 30px;
+                 background: #4f46e5;
+                 border-radius: 50px;
+                 position: relative;
+                 cursor: pointer;
+                 transition: background 0.3s ease;
+             }
+
+             .thumb {
+                 width: 24px;
+                 height: 24px;
+                 background: #e0e7ff;
+                 border-radius: 50%;
+                 position: absolute;
+                 top: 3px;
+                 left: 3px;
+                 transition: all 0.3s ease;
+             }
+
+             input:checked + .switch {
+                 background: #e0e7ff;
+             }
+
+             input:checked + .switch .thumb {
+                 background: #4f46e5;
+                 transform: translateX(30px);
+             }
+             .container {
+                 background-color: #ffffff;
+                 border-radius: 15px;
+                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                 padding: 30px;
+                 width: 100%;
+                 max-width: 800px;
+                 margin-top: 50px;
+             }
+             /* Styles for the header buttons */
+             .header-buttons {
+                 display: flex;
+                 justify-content: center;
+                 gap: 10px; /* Space between buttons */
+                 margin-bottom: 25px;
+                 flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+             }
+             .header-buttons .btn-header {
+                 padding: 10px 18px;
+                 border-radius: 8px;
+                 font-weight: 600;
+                 cursor: pointer;
+                 transition:
+                     background-color 0.2s,
+                     transform 0.1s;
+                 background-color: #e0e7ff; /* Lighter blue background */
+                 color: #4f46e5; /* Darker blue text */
+                 box-shadow: 0 2px 4px rgba(79, 70, 229, 0.1);
+                 border: 1px solid #c7d2fe;
+             }
+             .header-buttons .btn-header:hover {
+                 background-color: #c7d2fe; /* Slightly darker on hover */
+                 transform: translateY(-1px);
+             }
+             @media (max-width: 768px) {
+                 .header-buttons {
+                     display: flex;
+                     justify-content: center;
+                     gap: 3px; /* Space between buttons */
+                     margin-bottom: 11px;
+                     flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+                     font-size: 4vw;
+                 }
+                 .header-buttons .btn-header {
+                     padding: 5px 9px;
+                     border-radius: 4px;
+                     font-weight: 450;
+                     cursor: pointer;
+                     transition:
+                         background-color 0.2s,
+                         transform 0.1s;
+                     background-color: #e0e7ff; /* Lighter blue background */
+                     color: #4f46e5; /* Darker blue text */
+                     box-shadow: 0 1px 3px rgba(79, 70, 229, 0.1);
+                     border: 1px solid #c7d2fe;
+                 }
+                 .header-buttons .btn-header:hover {
+                     background-color: #c7d2fe; /* Slightly darker on hover */
+                     t
+                 }
+             }
+            .input-group {
+                 margin-bottom: 15px;
+             }
+             .input-group label {
+                 display: block;
+                 margin-bottom: 8px;
+                 font-weight: 600;
+                 color: #374151;
+             }
+             .input-group input,
+             .input-group select {
+                 width: 100%;
+                 padding: 12px;
+                 border: 1px solid #d1d5db;
+                 border-radius: 8px;
+                 font-size: 1rem;
+                 transition: border-color 0.2s;
+             }
+             .input-group input:focus,
+             .input-group select:focus {
+                 outline: none;
+                 border-color: #4f46e5;
+                 box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+             }
+             .btn {
+                 padding: 12px 20px;
+                 border-radius: 8px;
+                 font-weight: 600;
+                 cursor: pointer;
+                 transition:
+                     background-color 0.2s,
+                     transform 0.1s;
+                 display: inline-flex;
+                 align-items: center;
+                 justify-content: center;
+             }
+             .btn-primary {
+                 background-color: #4f46e5;
+                 color: #ffffff;
+                 box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+             }
+             .btn-primary:hover {
+                 background-color: #4338ca;
+                 transform: translateY(-1px);
+             }
+             .btn-secondary {
+                 background-color: #6b7280;
+                 color: #ffffff;
+                 box-shadow: 0 4px 6px rgba(107, 114, 128, 0.3);
+                 margin-left: 10px;
+             }
+             .btn-secondary:hover {
+                 background-color: #4b5563;
+                 transform: translateY(-1px);
+             }
+             .link-list {
+                 margin-top: 30px;
+                 border-top: 1px solid #e5e7eb;
+                 padding-top: 20px;
+             }
+             .link-item {
+                 display: flex;
+                 align-items: center;
+                 background-color: #f9fafb;
+                 border: 1px solid #e5e7eb;
+                 border-radius: 10px;
+                 padding: 15px;
+                 margin-bottom: 15px;
+                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                 transition:
+                     transform 0.2s,
+                     box-shadow 0.2s;
+             }
+             .link-item:hover {
+                 transform: translateY(-2px);
+                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+             }
+             .link-item .icon-container {
+                 width: 40px;
+                 height: 40px;
+                 min-width: 40px; /* Ensure it doesn't shrink */
+                 min-height: 40px; /* Ensure it doesn't shrink */
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 background-color: #e0e7ff;
+                 border-radius: 8px;
+                 margin-right: 15px;
+                 color: #4f46e5;
+                 font-size: 1.2rem;
+                 overflow: hidden; /* Hide overflow for image icons */
+             }
+             .link-item .icon-container img {
+                 width: 100%;
+                 height: 100%;
+                 object-fit: cover; /* Cover the container */
+             }
+             .link-item .details {
+                 flex-grow: 1;
+             }
+             .link-item .details a {
+                 font-size: 1.1rem;
+                 font-weight: 600;
+                 color: #1f2937;
+                 text-decoration: none;
+                 word-break: break-all; /* Break long URLs */
+             }
+             .link-item .details a:hover {
+                 color: #4f46e5;
+             }
+             .link-item .details p {
+                 font-size: 0.9rem;
+                 color: #6b7280;
+                 word-break: break-all; /* Break long URLs */
+             }
+             .link-item .actions {
+                 margin-left: 15px;
+             }
+             .link-item .actions button {
+                 background: none;
+                 border: none;
+                 color: #dc2626;
+                 cursor: pointer;
+                 font-size: 1.1rem;
+                 transition: color 0.2s;
+             }
+             .link-item .actions button:hover {
+                 color: #b91c1c;
+             }
+             .modal {
+                 position: fixed;
+                 top: 0;
+                 left: 0;
+                 width: 100%;
+                 height: 100%;
+                 background-color: rgba(0, 0, 0, 0.5);
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 z-index: 1000;
+                 opacity: 0;
+                 visibility: hidden;
+                 transition:
+                     opacity 0.3s,
+                     visibility 0.3s;
+             }
+             .modal.show {
+                 opacity: 1;
+                 visibility: visible;
+             }
+             .modal-content {
+                 background-color: #ffffff;
+                 padding: 30px;
+                 border-radius: 15px;
+                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                 width: 90%;
+                 max-width: 400px;
+                 text-align: center;
+                 transform: translateY(-20px);
+                 transition: transform 0.3s;
+             }
+             .modal.show .modal-content {
+                 transform: translateY(0);
+             }
+             .modal-content h3 {
+                 font-size: 1.5rem;
+                 font-weight: 700;
+                 color: #1f2937;
+                 margin-bottom: 15px;
+             }
+             .modal-content p {
+                 color: #4b5563;
+                 margin-bottom: 25px;
+             }
+             .modal-content button {
+                 background-color: #4f46e5;
+                 color: #ffffff;
+                 padding: 10px 20px;
+                 border-radius: 8px;
+                 font-weight: 600;
+                 cursor: pointer;
+                 transition: background-color 0.2s;
+             }
+             .modal-content button:hover {
+                 background-color: #4338ca;
+             }
+             /* Styles for confirmation modal, distinct from general message modal */
+             #confirmationModal .modal-content {
+                 padding: 25px;
+             }
+             #confirmationModal .modal-buttons {
+                 display: flex;
+                 justify-content: center;
+                 gap: 15px;
+                 margin-top: 20px;
+             }
+             #confirmationModal .modal-buttons button {
+                 flex: 1;
+                 max-width: 120px;
+             }
+             #confirmationModal .modal-buttons .btn-cancel {
+                 background-color: #ef4444;
+             }
+             #confirmationModal .modal-buttons .btn-cancel:hover {
+                 background-color: #dc2626;
+             }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button id="sYLb" onclick="changeio();" style="float: right">
+                ⚪
+            </button>
+            <div class="header-buttons">
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/The-47th-Society/62a3030c1b7f268d4bcfcd03', '_blank')"
+                >
+                    <i class="fa-solid fa-house mr-2"></i> 47th Kingdom
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/The-47th-Society/650925764ca8e147b10054e5', '_blank')"
+                >
+                    <i class="fa-solid fa-leaf mr-2"></i> Ahnx Respite
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/The-47th-Society/65c106417d8c2c075d336757', '_blank')"
+                >
+                    <i class="fa-solid fa-mountain mr-2"></i> Ourorax Range
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/The-47th-Society/65c106417d8c2c075d336757', '_blank')"
+                >
+                    <i class="fa-solid fa-gear mr-2"></i> Dubrok Mill
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/The-47th-Society/663cbf92f38cf3334950c41a', '_blank')"
+                >
+                    <i class="fa-solid fa-tint mr-2"></i> Society Thread
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/Goblin-Alley/65c878605ae8756fa69d2ff2', '_blank')"
+                >
+                    <i class="fa-solid fa-beer-mug-empty mr-2"></i> Goblin Alley
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/Arkhenax/652517e7fde173534024a8ce', '_blank')"
+                >
+                    <i class="fa-solid fa-compass mr-2"></i> Arkhenax
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://www.youtube.com/@DataTheDestroyer', '_blank')"
+                >
+                    <i class="fa-brands fa-youtube mr-2"></i> YouTube
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://odysee.com/@d474th3d357r0y3r', '_blank')"
+                >
+                    <i class="fa-solid fa-fire mr-2"></i> Odysee
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://d474com.wordpress.com/', '_blank')"
+                >
+                    <i class="fa-brands fa-wordpress mr-2"></i> WordPress
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://discord.gg/gnDVaZF53h', '_blank')"
+                >
+                    <i class="fa-brands fa-discord mr-2"></i> Discord
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://www.reddit.com/r/47thSociety', '_blank')"
+                >
+                    <i class="fa-brands fa-reddit mr-2"></i> Reddit
+                </button>
+            </div>
+
+            <div class="link-list" id="linkList">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">
+                    Directory Listings:
+                </h2>
+                <!-- Links will be dynamically added here -->
+                <p id="noLinksMessage" class="text-gray-500 text-center">
+                    No links saved yet; Add one above!
+                </p>
+            </div>
+
+            <!-- General Message Modal -->
+            <div id="messageModal" class="modal">
+                <div class="modal-content">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalMessage"></p>
+                    <button id="modalCloseBtn">OK</button>
+                </div>
+            </div>
+
+            <!-- Confirmation Modal (for delete) -->
+            <div id="confirmationModal" class="modal">
+                <div class="modal-content">
+                    <h3 id="confirmModalTitle">Confirm Action:</h3>
+                    <p id="confirmModalMessage"></p>
+                    <div class="modal-buttons">
+                        <button id="confirmYesBtn" class="btn btn-primary">
+                            Yes
+                        </button>
+                        <button id="confirmNoBtn" class="btn btn-cancel">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-center text-green-800 mb-8">
+                <a href="https://nomstead.com/?ref=btrpazme" target="_blank"
+                    >Join NōmStead Now!<br />Click Here And Join The Forty
+                    Seventh Society!</a
+                >
+            </h2>
+
+            <h1
+                class="text-4xl font-bold text-center text-gray-800 mb-8"
+                onclick="toggleVisibility()"
+                id="linker"
+            >
+                Save Your Links!
+            </h1>
+            <center>
+                <div class="toggle-wrapper">
+                    <input type="checkbox" id="toggle" hidden />
+                    <label for="toggle" class="switch">
+                        <div class="thumb"></div>
+                    </label>
+                </div>
+            </center>
+            <div id="saveables" style="display: none">
+                <div class="input-group">
+                    <label for="linkUrl">Link</label>
+                    <input
+                        type="url"
+                        id="linkUrl"
+                        placeholder="e.g., https://www.example.com/page"
+                        required
+                    />
+                </div>
+
+                <div class="input-group">
+                    <label for="linkTitle">Title</label>
+                    <input
+                        type="text"
+                        id="linkTitle"
+                        placeholder="e.g., My Favorite Page"
+                        required
+                    />
+                </div>
+
+                <div class="input-group">
+                    <label for="iconType">Icon</label>
+                    <select
+                        id="iconType"
+                        class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    >
+                        <option value="fa">Font Awesome Icon</option>
+                        <option value="url">Image URL</option>
+                    </select>
+                </div>
+
+                <div class="input-group" id="iconInputGroup">
+                    <label for="linkIcon"
+                        >Font Awesome Icon Class (e.g., fa-solid fa-star)</label
+                    >
+                    <input
+                        type="text"
+                        id="linkIcon"
+                        placeholder="e.g., fa-solid fa-star"
+                    />
+                </div>
+
+                <div class="flex justify-end mt-6">
+                    <button id="addLinkBtn" class="btn btn-primary mr-2">
+                        <i class="fas fa-plus mr-2"></i> Add Link
+                    </button>
+                    <button id="downloadBackupBtn" class="btn btn-secondary">
+                        <i class="fas fa-download mr-2"></i> Download Backup
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleVisibility() {
+                var element = document.getElementById("saveables");
+                if (element.style.display === "none") {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            }
+            document
+                .getElementById("toggle")
+                .addEventListener("change", (e) => {
+                    toggleVisibility();
+                });
+
+            const checkbox = document.getElementById("toggle");
+            const toggleButton = document.getElementById("linker");
+
+            toggleButton.addEventListener("click", () => {
+                checkbox.checked = !checkbox.checked;
+            });
+
+            function getRandomHexColor() {
+                // Generate a random integer between 0 and 16777215 (which is FFFFFF in hexadecimal)
+                const randomInt = Math.floor(Math.random() * 16777216);
+
+                // Convert the integer to a hexadecimal string
+                let hexColor = randomInt.toString(16);
+
+                // Pad the hexadecimal string with leading zeros if necessary to ensure 6 characters
+                while (hexColor.length < 6) {
+                    hexColor = "0" + hexColor;
+                }
+
+                // Prepend '#' to form a valid CSS hexadecimal color code
+                return "#" + hexColor;
+            }
+
+            function changeio() {
+                let color = getRandomHexColor();
+                document.body.style.background = color;
+                console.log(color); // e.g., #a3b4c5
+            }
+
+            const emojis = [
+                "🙂",
+                "🔥",
+                "👍",
+                "🐝",
+                "🌐",
+                "💌",
+                "✌️",
+                "🎟️",
+                "💰",
+                "⏳",
+                "🔔",
+                "📯",
+                "🗡️",
+                "🛡️",
+                "⚪",
+                "🗯️",
+                "😶‍",
+                "🤣",
+                "🦝",
+            ];
+            function changeEmoji() {
+                const randomIndex = Math.floor(Math.random() * emojis.length);
+                const randomEmoji = emojis[randomIndex];
+                document.getElementById("sYLb").textContent = randomEmoji;
+            }
+            document
+                .getElementById("sYLb")
+                .addEventListener("click", changeEmoji);
+        </script>
+
+        <script type="module">
+            const STORAGE_KEY = "linkSaverLinks"; // Key for localStorage
+
+            const linkListDiv = document.getElementById("linkList");
+            const noLinksMessage = document.getElementById("noLinksMessage");
+            const addLinkBtn = document.getElementById("addLinkBtn");
+            const downloadBackupBtn =
+                document.getElementById("downloadBackupBtn");
+            const linkUrlInput = document.getElementById("linkUrl");
+            const linkTitleInput = document.getElementById("linkTitle");
+            const linkIconInput = document.getElementById("linkIcon");
+            const iconTypeSelect = document.getElementById("iconType");
+            const iconInputGroup = document.getElementById("iconInputGroup");
+
+            // Message Modal elements
+            const messageModal = document.getElementById("messageModal");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalMessage = document.getElementById("modalMessage");
+            const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+            // Confirmation Modal elements
+            const confirmationModal =
+                document.getElementById("confirmationModal");
+            const confirmModalTitle =
+                document.getElementById("confirmModalTitle");
+            const confirmModalMessage = document.getElementById(
+                "confirmModalMessage",
+            );
+            const confirmYesBtn = document.getElementById("confirmYesBtn");
+            const confirmNoBtn = document.getElementById("confirmNoBtn");
+
+            let links = []; // Array to hold all link objects
+
+            // Function to show custom message modal
+            function showMessage(title, message) {
+                modalTitle.textContent = title;
+                modalMessage.textContent = message;
+                messageModal.classList.add("show");
+            }
+
+            // Function to hide custom message modal
+            function hideMessage() {
+                messageModal.classList.remove("show");
+            }
+
+            modalCloseBtn.addEventListener("click", hideMessage);
+
+            // Function to show custom confirmation modal
+            function showConfirmation(title, message, onConfirm) {
+                confirmModalTitle.textContent = title;
+                confirmModalMessage.textContent = message;
+                confirmationModal.classList.add("show");
+
+                // Remove previous listeners to prevent multiple calls
+                confirmYesBtn.onclick = null;
+                confirmNoBtn.onclick = null;
+
+                confirmYesBtn.onclick = () => {
+                    hideConfirmation();
+                    onConfirm(true);
+                };
+                confirmNoBtn.onclick = () => {
+                    hideConfirmation();
+                    onConfirm(false);
+                };
+            }
+
+            // Function to hide custom confirmation modal
+            function hideConfirmation() {
+                confirmationModal.classList.remove("show");
+            }
+
+            // Handle icon type change
+            iconTypeSelect.addEventListener("change", (event) => {
+                if (event.target.value === "fa") {
+                    linkIconInput.placeholder = "e.g., fa-solid fa-star";
+                    iconInputGroup.querySelector("label").textContent =
+                        "Font Awesome Icon Class (e.g., fa-solid fa-star)";
+                } else {
+                    linkIconInput.placeholder =
+                        "e.g., https://www.example.com/icon.png";
+                    iconInputGroup.querySelector("label").textContent =
+                        "Image URL (e.g., https://www.example.com/icon.png)";
+                }
+            });
+
+            /**
+             * Saves the current links array to localStorage.
+             */
+            function saveLinksToLocalStorage() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(links));
+                } catch (e) {
+                    showMessage(
+                        "Storage Error",
+                        "Could not save links. Local storage might be full or unavailable.",
+                    );
+                    console.error("Error saving to localStorage:", e);
+                }
+            }
+
+            /**
+             * Loads links from localStorage and updates the global links array.
+             */
+            function loadLinksFromLocalStorage() {
+                try {
+                    const storedLinks = localStorage.getItem(STORAGE_KEY);
+                    if (storedLinks) {
+                        links = JSON.parse(storedLinks);
+                        // Ensure timestamps are Date objects if needed for sorting, or keep as string/number
+                        // For this app, we'll keep them as numbers (timestamp) for sorting simplicity
+                        links.forEach((link) => {
+                            if (typeof link.timestamp === "string") {
+                                link.timestamp = new Date(
+                                    link.timestamp,
+                                ).getTime();
+                            }
+                        });
+                    } else {
+                        links = [];
+                    }
+                    // Sort links by timestamp in descending order (most recent first)
+                    links.sort(
+                        (a, b) => (b.timestamp || 0) - (a.timestamp || 0),
+                    );
+                    displayLinks();
+                } catch (e) {
+                    showMessage(
+                        "Storage Error",
+                        "Could not load links. Data might be corrupted.",
+                    );
+                    console.error("Error loading from localStorage:", e);
+                    links = []; // Reset links on error
+                }
+            }
+
+            /**
+             * Dynamically displays links in the UI.
+             */
+            function displayLinks() {
+                // Clear existing links except the heading and message
+                const existingLinkItems =
+                    linkListDiv.querySelectorAll(".link-item");
+                existingLinkItems.forEach((item) => item.remove());
+
+                if (links.length === 0) {
+                    noLinksMessage.style.display = "block";
+                    return;
+                } else {
+                    noLinksMessage.style.display = "none";
+                }
+
+                links.forEach((link) => {
+                    const linkItem = document.createElement("div");
+                    linkItem.className = "link-item";
+                    // Use a simple unique ID for local operations, e.g., timestamp + random number
+                    linkItem.dataset.id = link.id;
+
+                    const iconContainer = document.createElement("div");
+                    iconContainer.className = "icon-container";
+
+                    if (link.iconType === "url" && link.icon) {
+                        const img = document.createElement("img");
+                        img.src = link.icon;
+                        img.alt = link.title || "Link icon";
+                        img.onerror = () => {
+                            img.src =
+                                "https://placehold.co/40x40/cccccc/333333?text=IMG"; // Placeholder on error
+                        };
+                        iconContainer.appendChild(img);
+                    } else if (link.icon) {
+                        const icon = document.createElement("i");
+                        icon.className = link.icon; // Assume Font Awesome class
+                        iconContainer.appendChild(icon);
+                    } else {
+                        const defaultIcon = document.createElement("i");
+                        defaultIcon.className = "fa-solid fa-link"; // Default icon if none provided
+                        iconContainer.appendChild(defaultIcon);
+                    }
+
+                    const detailsDiv = document.createElement("div");
+                    detailsDiv.className = "details";
+
+                    const linkAnchor = document.createElement("a");
+                    linkAnchor.href = link.url;
+                    linkAnchor.target = "_blank";
+                    linkAnchor.rel = "noopener noreferrer";
+                    linkAnchor.textContent = link.title || link.url;
+
+                    const urlParagraph = document.createElement("p");
+                    urlParagraph.textContent = link.url;
+
+                    detailsDiv.appendChild(linkAnchor);
+                    detailsDiv.appendChild(urlParagraph);
+
+                    const actionsDiv = document.createElement("div");
+                    actionsDiv.className = "actions";
+
+                    const deleteButton = document.createElement("button");
+                    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                    deleteButton.title = "Delete Link";
+                    deleteButton.addEventListener("click", () => {
+                        showConfirmation(
+                            "Confirm Deletion",
+                            `Are you sure you want to delete "${link.title || link.url}"?`,
+                            (confirmed) => {
+                                if (confirmed) {
+                                    // Filter out the link to be deleted
+                                    links = links.filter(
+                                        (item) => item.id !== link.id,
+                                    );
+                                    saveLinksToLocalStorage();
+                                    displayLinks(); // Re-render the list
+                                    showMessage(
+                                        "Success",
+                                        "Link deleted successfully!",
+                                    );
+                                }
+                            },
+                        );
+                    });
+
+                    actionsDiv.appendChild(deleteButton);
+
+                    linkItem.appendChild(iconContainer);
+                    linkItem.appendChild(detailsDiv);
+                    linkItem.appendChild(actionsDiv);
+
+                    linkListDiv.appendChild(linkItem);
+                });
+            }
+
+            // Add a new link
+            addLinkBtn.addEventListener("click", () => {
+                const url = linkUrlInput.value.trim();
+                const title = linkTitleInput.value.trim();
+                const icon = linkIconInput.value.trim();
+                const iconType = iconTypeSelect.value;
+
+                if (!url) {
+                    showMessage("Validation Error", "Link URL is required.");
+                    return;
+                }
+
+                // Basic URL validation
+                try {
+                    new URL(url);
+                } catch (e) {
+                    showMessage(
+                        "Validation Error",
+                        "Please enter a valid URL.",
+                    );
+                    return;
+                }
+
+                // Create a simple unique ID for the link
+                const newLinkId =
+                    Date.now().toString() +
+                    Math.random().toString(36).substring(2, 9);
+
+                const newLink = {
+                    id: newLinkId,
+                    url: url,
+                    title: title,
+                    icon: icon,
+                    iconType: iconType,
+                    timestamp: Date.now(), // Store timestamp as a number for sorting
+                };
+
+                links.unshift(newLink); // Add new link to the beginning of the array
+                links.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0)); // Re-sort
+                saveLinksToLocalStorage();
+                displayLinks(); // Re-render the list
+
+                showMessage("Success", "Link added successfully!");
+                // Clear input fields
+                linkUrlInput.value = "";
+                linkTitleInput.value = "";
+                linkIconInput.value = "";
+                iconTypeSelect.value = "fa"; // Reset to default
+                iconTypeSelect.dispatchEvent(new Event("change")); // Trigger change event to update label/placeholder
+            });
+
+            // Download backup
+            downloadBackupBtn.addEventListener("click", () => {
+                try {
+                    const jsonString = JSON.stringify(links, null, 2);
+                    const blob = new Blob([jsonString], {
+                        type: "application/json",
+                    });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = `link_saver_backup_${new Date().toISOString().slice(0, 10)}.json`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showMessage("Success", "Backup downloaded successfully!");
+                } catch (e) {
+                    showMessage(
+                        "Error",
+                        `Error downloading backup: ${e.message}`,
+                    );
+                    console.error("Error downloading backup:", e);
+                }
+            });
+
+            // Load links when the window loads
+            window.onload = loadLinksFromLocalStorage;
+        </script>
+    </body>
+</html>
