@@ -1075,14 +1075,14 @@
       console.log(refresh);
       setTimeout(function () {
         if (refresh === null) {
-          window.location.reload();
           window.localStorage.setItem("refresh", "1");
+          window.location.reload();
         }
       }, 500); // 1500 milliseconds = 1.5 seconds
 
       setTimeout(function () {
         localStorage.removeItem("refresh");
-      }, 1000); // 1700 milliseconds = 1.7 seconds
+      }, 3000); // 1700 milliseconds = 1.7 seconds
     </script>
 
     <script src="theme.js"></script>
