@@ -461,7 +461,7 @@
                 </button>
             </div>
 
-            <div class="link-list" id="linkList">
+            <div class="link-list" id="linkList" style="scroll-margin-top: 10vh">
                 <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
                     Directory Listings:
                 </h1>
@@ -500,6 +500,7 @@
                     <input
                         type="url"
                         id="linkUrl"
+                        style="scroll-margin-top: 10vh"
                         placeholder="e.g., https://www.example.com/page"
                         required
                     />
@@ -664,6 +665,9 @@
                 if (element.style.display === "none") {
                     element.style.display = "block";
                     checkbox.checked = !checkbox.checked;
+                    document.getElementById("linkUrl").scrollIntoView({ behavior: "smooth" });
+                    console.log("Tracing... [FS]");
+
                 }
             }
 
@@ -672,6 +676,8 @@
                 if (element.style.display === "block") {
                     element.style.display = "none";
                     checkbox.checked = !checkbox.checked;
+                     document.getElementById("linkList").scrollIntoView({ behavior: "smooth" });
+                     console.log("Tracing... [S]");
                 }
             }
 
