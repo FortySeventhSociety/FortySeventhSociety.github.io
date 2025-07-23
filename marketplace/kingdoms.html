@@ -461,7 +461,11 @@
                 </button>
             </div>
 
-            <div class="link-list" id="linkList" style="scroll-margin-top: 10vh">
+            <div
+                class="link-list"
+                id="linkList"
+                style="scroll-margin-top: 10vh"
+            >
                 <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
                     Directory Listings:
                 </h1>
@@ -665,9 +669,10 @@
                 if (element.style.display === "none") {
                     element.style.display = "block";
                     checkbox.checked = !checkbox.checked;
-                    document.getElementById("linkUrl").scrollIntoView({ behavior: "smooth" });
+                    document
+                        .getElementById("linkUrl")
+                        .scrollIntoView({ behavior: "smooth" });
                     console.log("Tracing... [FS]");
-
                 }
             }
 
@@ -676,10 +681,57 @@
                 if (element.style.display === "block") {
                     element.style.display = "none";
                     checkbox.checked = !checkbox.checked;
-                     document.getElementById("linkList").scrollIntoView({ behavior: "smooth" });
-                     console.log("Tracing... [S]");
+                    document
+                        .getElementById("linkList")
+                        .scrollIntoView({ behavior: "smooth" });
+                    console.log("Tracing... [S]");
                 }
             }
+
+            /*
+            function updateScroll() {
+                var element = document.getElementById("saveables");
+                if (element.style.display === "block") {
+                    element.style.display = "none";
+                    checkbox.checked = !checkbox.checked;
+                }
+                document
+                    .getElementById("messageModal")
+                    .scrollIntoView({ behavior: "smooth" });
+                console.log("Tracing... [Forty Seven]");
+            }
+
+            const mainButton = document.getElementById("mainActionButton");
+            mainButton.addEventListener("click", function (e) {
+                updateScroll();
+            });
+            */
+
+            document.getElementById("mainActionButton").addEventListener("click", function() {
+              const modalContent = document.querySelector(".container"); // Or your specific selector
+                modalContent.scrollIntoView({
+                  behavior: "smooth", // Optional: for smooth scrolling animation
+                  block: "center" // Aligns the top of the element with the top of the visible area
+                });
+                var element = document.getElementById("saveables");
+                if (element.style.display === "block") {
+                    element.style.display = "none";
+                    checkbox.checked = !checkbox.checked;
+                }
+                console.log("Tracing... [Forty Seven]");
+            });
+
+            function okScroll() {
+                document
+                    .getElementById("linkList")
+                    .scrollIntoView({ behavior: "smooth" });
+                console.log("Tracing... [Seventy Four]");
+            }
+
+            const okButton = document.getElementById("modalCloseBtn");
+            okButton.addEventListener("click", function (e) {
+                okScroll();
+            });
 
             const STORAGE_KEY = "linkSaverLinks"; // Key for localStorage
 
@@ -848,14 +900,14 @@
                     linkItem.dataset.id = link.id;
 
                     // Event listener for the entire link item (for navigation)
-                    linkItem.addEventListener('click', (event) => {
-                    // Check if the click originated from an action button (edit/delete)
-                    // If so, prevent the navigation to allow the button's action to proceed
-                    if (event.target.closest('.actions button')) {
-                        return;
-                    }
-                    window.open(link.url, '_blank'); // Open the link in a new tab
-                });
+                    linkItem.addEventListener("click", (event) => {
+                        // Check if the click originated from an action button (edit/delete)
+                        // If so, prevent the navigation to allow the button's action to proceed
+                        if (event.target.closest(".actions button")) {
+                            return;
+                        }
+                        window.open(link.url, "_blank"); // Open the link in a new tab
+                    });
 
                     const iconContainer = document.createElement("div");
                     iconContainer.className = "icon-container";
@@ -882,14 +934,13 @@
                     const detailsDiv = document.createElement("div");
                     detailsDiv.className = "details";
 
-                // Title element - now a span, as the whole item is clickable
-                const linkTitleSpan = document.createElement('span');
-                linkTitleSpan.className = 'link-title';
-                linkTitleSpan.textContent = link.title || link.url; // Display title, fallback to URL
-
+                    // Title element - now a span, as the whole item is clickable
+                    const linkTitleSpan = document.createElement("span");
+                    linkTitleSpan.className = "link-title";
+                    linkTitleSpan.textContent = link.title || link.url; // Display title, fallback to URL
 
                     const urlParagraph = document.createElement("p");
-                    urlParagraph.className = 'link-url';
+                    urlParagraph.className = "link-url";
                     urlParagraph.textContent = link.url;
 
                     detailsDiv.appendChild(linkTitleSpan);
@@ -903,10 +954,10 @@
                     editButton.innerHTML = '<i class="fas fa-edit"></i>';
                     editButton.id = "editBtn";
                     editButton.title = "Edit Link";
-                    editButton.addEventListener('click', (event) => {
+                    editButton.addEventListener("click", (event) => {
                         event.stopPropagation(); // Prevent click from bubbling up to linkItem
                         editLink(link.id);
-                     });
+                    });
                     editButton.addEventListener("click", () =>
                         toggleVisibilityEdit(),
                     );
