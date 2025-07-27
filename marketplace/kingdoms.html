@@ -429,6 +429,8 @@
                 >
                     <i class="fa-solid fa-compass mr-2"></i> Arkhenax
                 </button>
+            </div>
+            <div class="header-buttons">
                 <button
                     class="btn-header"
                     onclick="window.open('https://www.youtube.com/@DataTheDestroyer', '_blank')"
@@ -458,6 +460,32 @@
                     onclick="window.open('https://www.reddit.com/r/47thSociety', '_blank')"
                 >
                     <i class="fa-brands fa-reddit mr-2"></i> Reddit
+                </button>
+            </div>
+            <div class="header-buttons">
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/nomura/60555c57b90cbe0ff06cde9e', '_blank')"
+                >
+                    <i class="fa-solid fa-user-cog mr-2"></i> Tom
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/nomura/6029eae39c6d299b75aa5875', '_blank')"
+                >
+                    <i class="fa-solid fa-user-minus mr-2"></i> Sarah
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/nomura/6063f48645d88f0fafc3c0f6', '_blank')"
+                >
+                    <i class="fa-solid fa-user-plus mr-2"></i> Lily
+                </button>
+                <button
+                    class="btn-header"
+                    onclick="window.open('https://nomstead.com/nomura/5f76ab6a61b079cf08f25df9', '_blank')"
+                >
+                    <i class="fa-solid fa-user-clock mr-2"></i> Gus
                 </button>
             </div>
 
@@ -707,19 +735,21 @@
             });
             */
 
-            document.getElementById("mainActionButton").addEventListener("click", function() {
-              const modalContent = document.querySelector(".container"); // Or your specific selector
-                modalContent.scrollIntoView({
-                  behavior: "smooth", // Optional: for smooth scrolling animation
-                  block: "center" // Aligns the top of the element with the top of the visible area
+            document
+                .getElementById("mainActionButton")
+                .addEventListener("click", function () {
+                    const modalContent = document.querySelector(".container"); // Or your specific selector
+                    modalContent.scrollIntoView({
+                        behavior: "smooth", // Optional: for smooth scrolling animation
+                        block: "center", // Aligns the top of the element with the top of the visible area
+                    });
+                    var element = document.getElementById("saveables");
+                    if (element.style.display === "block") {
+                        element.style.display = "none";
+                        checkbox.checked = !checkbox.checked;
+                    }
+                    console.log("Tracing... [Forty Seven]");
                 });
-                var element = document.getElementById("saveables");
-                if (element.style.display === "block") {
-                    element.style.display = "none";
-                    checkbox.checked = !checkbox.checked;
-                }
-                console.log("Tracing... [Forty Seven]");
-            });
 
             function okScroll() {
                 document
