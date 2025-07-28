@@ -492,6 +492,9 @@
                 style="scroll-margin-top: 10vh"
             >
                 <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
+                <button id="adder" onclick="addition();" style="float: left; background: #e5e7eb;">
+                    &nbsp;&nbsp;+&nbsp;&nbsp;
+                </button>
                     Directory Listings:
                 </h1>
                 <!-- Links will be dynamically added here -->
@@ -686,6 +689,18 @@
             document
                 .getElementById("sYLb")
                 .addEventListener("click", changeEmoji);
+
+            function addition() {
+                var element = document.getElementById("saveables");
+                if (element.style.display === "none") {
+                    element.style.display = "block";
+                    checkbox.checked = !checkbox.checked;
+                    document
+                        .getElementById("linkUrl")
+                        .scrollIntoView({ behavior: "smooth" });
+                    console.log("Tracing... [Adder]");
+                }
+            }
         </script>
 
         <script type="module">
@@ -989,11 +1004,15 @@
                     // Edit Button
                     const editButton = document.createElement("button");
                     editButton.innerHTML = '<i class="fas fa-edit"></i>';
+                    editButton.id = "editBtn";
                     editButton.title = "Edit Link";
                     editButton.addEventListener("click", (event) => {
                         event.stopPropagation(); // Prevent click from bubbling up to linkItem
                         editLink(link.id);
                     });
+                    editButton.addEventListener("click", () =>
+                        toggleVisibilityEdit(),
+                    );
                     actionsDiv.appendChild(editButton);
 
                     // Delete Button
