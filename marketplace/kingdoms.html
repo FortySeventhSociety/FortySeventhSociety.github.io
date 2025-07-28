@@ -202,6 +202,15 @@
                 transform: translateY(-2px);
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
+            /* Drag and Drop Styles */
+            .link-item.dragging {
+                opacity: 0.5;
+                border: 2px dashed #4f46e5;
+            }
+            .link-item.drag-over {
+                border: 2px solid #4f46e5;
+                box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+            }
             .link-item .icon-container {
                 width: 40px;
                 height: 40px;
@@ -791,6 +800,7 @@
 
             let links = []; // Array to hold all link objects
             let editingLinkId = null; // Stores the ID of the link being edited
+            let draggedItem = null; // Stores the HTML element being dragged
 
             // Function to show custom message modal
             function showMessage(title, message) {
@@ -916,6 +926,14 @@
                     const linkItem = document.createElement("div");
                     linkItem.className = "link-item";
                     linkItem.dataset.id = link.id;
+                    linkItem.draggable = true; // Make the item draggable
+
+                    // Drag and Drop Event Listeners
+                    linkItem.addEventListener("dragstart", handleDragStart);
+                    linkItem.addEventListener("dragover", handleDragOver);
+                    linkItem.addEventListener("dragleave", handleDragLeave);
+                    linkItem.addEventListener("drop", handleDrop);
+                    linkItem.addEventListener("dragend", handleDragEnd);
 
                     // Event listener for the entire link item (for navigation)
                     linkItem.addEventListener("click", (event) => {
@@ -957,6 +975,7 @@
                     linkTitleSpan.className = "link-title";
                     linkTitleSpan.textContent = link.title || link.url; // Display title, fallback to URL
 
+                    // URL paragraph - separate line
                     const urlParagraph = document.createElement("p");
                     urlParagraph.className = "link-url";
                     urlParagraph.textContent = link.url;
@@ -970,15 +989,11 @@
                     // Edit Button
                     const editButton = document.createElement("button");
                     editButton.innerHTML = '<i class="fas fa-edit"></i>';
-                    editButton.id = "editBtn";
                     editButton.title = "Edit Link";
                     editButton.addEventListener("click", (event) => {
                         event.stopPropagation(); // Prevent click from bubbling up to linkItem
                         editLink(link.id);
                     });
-                    editButton.addEventListener("click", () =>
-                        toggleVisibilityEdit(),
-                    );
                     actionsDiv.appendChild(editButton);
 
                     // Delete Button
@@ -986,7 +1001,8 @@
                     deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
                     deleteButton.title = "Delete Link";
                     deleteButton.className = "delete-btn"; // Add specific class for styling
-                    deleteButton.addEventListener("click", () => {
+                    deleteButton.addEventListener("click", (event) => {
+                        event.stopPropagation(); // Prevent click from bubbling up to linkItem
                         showConfirmation(
                             "Confirm Deletion",
                             `Are you sure you want to delete "${link.title || link.url}"?`,
@@ -1018,6 +1034,82 @@
 
                     linkListDiv.appendChild(linkItem);
                 });
+            }
+
+            /**
+             * Drag and Drop Handlers
+             */
+            function handleDragStart(e) {
+                draggedItem = this; // 'this' refers to the linkItem being dragged
+                e.dataTransfer.effectAllowed = "move";
+                e.dataTransfer.setData("text/plain", this.dataset.id); // Store the ID of the dragged item
+                setTimeout(() => {
+                    this.classList.add("dragging"); // Add dragging class after a short delay
+                }, 0);
+            }
+
+            function handleDragOver(e) {
+                e.preventDefault(); // Necessary to allow dropping
+                if (
+                    e.target.closest(".link-item") &&
+                    e.target.closest(".link-item") !== draggedItem
+                ) {
+                    const targetItem = e.target.closest(".link-item");
+                    // Determine if we are dragging over the top or bottom half of the target item
+                    const rect = targetItem.getBoundingClientRect();
+                    const offsetY = e.clientY - rect.top;
+                    const isAfter = offsetY > rect.height / 2;
+
+                    // Remove drag-over from all items first
+                    document
+                        .querySelectorAll(".link-item")
+                        .forEach((item) => item.classList.remove("drag-over"));
+
+                    // Add drag-over to the target item
+                    targetItem.classList.add("drag-over");
+                }
+            }
+
+            function handleDragLeave(e) {
+                e.target.closest(".link-item")?.classList.remove("drag-over");
+            }
+
+            function handleDrop(e) {
+                e.preventDefault();
+                const targetItem = e.target.closest(".link-item");
+
+                if (targetItem && targetItem !== draggedItem) {
+                    const draggedId = draggedItem.dataset.id;
+                    const targetId = targetItem.dataset.id;
+
+                    const draggedIndex = links.findIndex(
+                        (link) => link.id === draggedId,
+                    );
+                    const targetIndex = links.findIndex(
+                        (link) => link.id === targetId,
+                    );
+
+                    if (draggedIndex !== -1 && targetIndex !== -1) {
+                        const [removed] = links.splice(draggedIndex, 1); // Remove dragged item
+                        links.splice(targetIndex, 0, removed); // Insert at target position
+
+                        saveLinksToLocalStorage();
+                        displayLinks(); // Re-render to reflect new order
+                    }
+                }
+                // Clean up drag-over class from all items
+                document
+                    .querySelectorAll(".link-item")
+                    .forEach((item) => item.classList.remove("drag-over"));
+            }
+
+            function handleDragEnd(e) {
+                this.classList.remove("dragging"); // Remove dragging class from the original item
+                // Ensure any lingering drag-over classes are removed
+                document
+                    .querySelectorAll(".link-item")
+                    .forEach((item) => item.classList.remove("drag-over"));
+                draggedItem = null; // Clear dragged item reference
             }
 
             /**
@@ -1119,9 +1211,7 @@
                     };
 
                     links.unshift(newLink); // Add new link to the beginning of the array
-                    links.sort(
-                        (a, b) => (b.timestamp || 0) - (a.timestamp || 0),
-                    ); // Re-sort
+                    // No need to sort by timestamp here, as drag-and-drop will determine order
                     saveLinksToLocalStorage();
                     displayLinks(); // Re-render the list
 
