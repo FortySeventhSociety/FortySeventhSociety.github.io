@@ -899,7 +899,7 @@
                     const storedLinks = localStorage.getItem(STORAGE_KEY);
                     if (storedLinks) {
                         links = JSON.parse(storedLinks);
-                        // Ensure timestamps are numbers for sorting consistency
+                        // Ensure timestamps are numbers
                         links.forEach((link) => {
                             if (typeof link.timestamp === "string") {
                                 link.timestamp = new Date(
@@ -910,15 +910,11 @@
                     } else {
                         links = [];
                     }
-                    // Initial sort by timestamp (most recent first)
-                    links.sort(
-                        (a, b) => (b.timestamp || 0) - (a.timestamp || 0),
-                    );
                     displayLinks();
                 } catch (e) {
                     showMessage(
                         "Storage Error",
-                        "Could not load links. Data might be corrupted.",
+                        "Could not load links due to an error.",
                     );
                     console.error("Error loading from localStorage:", e);
                     links = []; // Reset links on error
@@ -1230,7 +1226,7 @@
                         title: title,
                         icon: icon,
                         iconType: iconType,
-                        timestamp: Date.now(), // Store timestamp as a number for sorting
+                        timestamp: Date.now(), // Store timestamp as a number
                     };
 
                     links.unshift(newLink); // Add new link to the beginning of the array
@@ -1329,11 +1325,6 @@
                                 });
                             }
                         });
-
-                        // Sort and save - re-sort by timestamp after upload to maintain consistency if new items are added
-                        links.sort(
-                            (a, b) => (b.timestamp || 0) - (a.timestamp || 0),
-                        );
                         saveLinksToLocalStorage();
                         displayLinks();
                         showMessage(
