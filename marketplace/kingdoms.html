@@ -1330,7 +1330,7 @@
                             }
                         });
 
-                        // Sort and save
+                        // Sort and save - re-sort by timestamp after upload to maintain consistency if new items are added
                         links.sort(
                             (a, b) => (b.timestamp || 0) - (a.timestamp || 0),
                         );
