@@ -492,9 +492,13 @@
                 style="scroll-margin-top: 10vh"
             >
                 <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
-                <button id="adder" onclick="addition();" style="float: left; background: #e5e7eb;">
-                    &nbsp;&nbsp;+&nbsp;&nbsp;
-                </button>
+                    <button
+                        id="adder"
+                        onclick="addition();"
+                        style="float: left; background: #e5e7eb"
+                    >
+                        &nbsp;&nbsp;+&nbsp;&nbsp;
+                    </button>
                     Directory Listings:
                 </h1>
                 <!-- Links will be dynamically added here -->
@@ -906,7 +910,7 @@
                     } else {
                         links = [];
                     }
-                    // Sort links by timestamp in descending order (most recent first)
+                    // Initial sort by timestamp (most recent first)
                     links.sort(
                         (a, b) => (b.timestamp || 0) - (a.timestamp || 0),
                     );
@@ -914,7 +918,7 @@
                 } catch (e) {
                     showMessage(
                         "Storage Error",
-                        "Could not load links due to an error.",
+                        "Could not load links. Data might be corrupted.",
                     );
                     console.error("Error loading from localStorage:", e);
                     links = []; // Reset links on error
