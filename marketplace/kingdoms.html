@@ -388,6 +388,9 @@
             .button-row .btn {
                 margin-left: 0; /* Override default margin-left for .btn-secondary */
             }
+            @media only screen and (max-width: 1100px) {
+
+            }
         </style>
     </head>
     <body>
@@ -400,31 +403,36 @@
                     class="btn-header"
                     onclick="window.open('https://d474com.wordpress.com/contact/', '_blank')"
                 >
-                    <i class="fa-solid fa-address-book mr-2"></i> Buy This Button!
+                    <i class="fa-solid fa-address-book mr-2"></i> Buy This
+                    Button!
                 </button>
                 <button
                     class="btn-header"
                     onclick="window.open('https://d474com.wordpress.com/contact/', '_blank')"
                 >
-                    <i class="fa-solid fa-address-book mr-2"></i> Buy This Button!
+                    <i class="fa-solid fa-address-book mr-2"></i> Buy This
+                    Button!
                 </button>
                 <button
                     class="btn-header"
                     onclick="window.open('https://d474com.wordpress.com/contact/', '_blank')"
                 >
-                    <i class="fa-solid fa-address-book mr-2"></i> Buy This Button!
+                    <i class="fa-solid fa-address-book mr-2"></i> Buy This
+                    Button!
                 </button>
                 <button
                     class="btn-header"
                     onclick="window.open('https://d474com.wordpress.com/contact/', '_blank')"
                 >
-                    <i class="fa-solid fa-address-book mr-2"></i> Buy This Button!
+                    <i class="fa-solid fa-address-book mr-2"></i> Buy This
+                    Button!
                 </button>
                 <button
                     class="btn-header"
                     onclick="window.open('https://d474com.wordpress.com/contact/', '_blank')"
                 >
-                    <i class="fa-solid fa-address-book mr-2"></i> Buy This Button!
+                    <i class="fa-solid fa-address-book mr-2"></i> Buy This
+                    Button!
                 </button>
             </div>
             <div class="header-buttons">
@@ -647,12 +655,7 @@
                     <button id="confirmYesBtn" class="btn btn-primary">
                         Yes
                     </button>
-                    <button
-                        id="confirmNoBtn"
-                        class="btn btn-cancel"
-                    >
-                        No
-                    </button>
+                    <button id="confirmNoBtn" class="btn btn-cancel">No</button>
                 </div>
             </div>
         </div>
@@ -829,12 +832,31 @@
                 document
                     .getElementById("linkList")
                     .scrollIntoView({ behavior: "smooth" });
-                console.log("Tracing... [Nya]");
+                console.log("Tracing... [Nya!]");
             }
 
             const noButton = document.getElementById("confirmNoBtn");
             noButton.addEventListener("click", function (e) {
                 noScroll();
+            });
+
+            function backupScroll() {
+                const modalContent3 = document.querySelector(".container"); // Or your specific selector
+                modalContent3.scrollIntoView({
+                    behavior: "smooth", // Optional: for smooth scrolling animation
+                    block: "center", // Aligns the top of the element with the top of the visible area
+                });
+                console.log("Tracing... [Freezies...]");
+            }
+
+            const uploadButton = document.getElementById("uploadBackupBtn");
+            uploadButton.addEventListener("click", function (e) {
+                backupScroll();
+            });
+
+            const downloadButton = document.getElementById("downloadBackupBtn");
+            downloadButton.addEventListener("click", function (e) {
+                backupScroll();
             });
 
             const STORAGE_KEY = "linkSaverLinks"; // Key for localStorage
