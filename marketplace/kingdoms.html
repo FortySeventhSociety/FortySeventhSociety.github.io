@@ -615,7 +615,12 @@
                     <button id="confirmYesBtn" class="btn btn-primary">
                         Yes
                     </button>
-                    <button id="confirmNoBtn" class="btn btn-cancel">No</button>
+                    <button
+                        id="confirmNoBtn"
+                        class="btn btn-cancel"
+                    >
+                        No
+                    </button>
                 </div>
             </div>
         </div>
@@ -767,6 +772,15 @@
                     console.log("Tracing... [Forty Seven]");
                 });
 
+            function deleteScroll() {
+                const modalContent2 = document.querySelector(".container"); // Or your specific selector
+                modalContent2.scrollIntoView({
+                    behavior: "smooth", // Optional: for smooth scrolling animation
+                    block: "center", // Aligns the top of the element with the top of the visible area
+                });
+                console.log("Tracing... [CTRL + ALT + DEL]");
+            }
+
             function okScroll() {
                 document
                     .getElementById("linkList")
@@ -777,6 +791,18 @@
             const okButton = document.getElementById("modalCloseBtn");
             okButton.addEventListener("click", function (e) {
                 okScroll();
+            });
+
+            function noScroll() {
+                document
+                    .getElementById("linkList")
+                    .scrollIntoView({ behavior: "smooth" });
+                console.log("Tracing... [Nya]");
+            }
+
+            const noButton = document.getElementById("confirmNoBtn");
+            noButton.addEventListener("click", function (e) {
+                noScroll();
             });
 
             const STORAGE_KEY = "linkSaverLinks"; // Key for localStorage
@@ -1021,6 +1047,7 @@
                     deleteButton.title = "Delete Link";
                     deleteButton.className = "delete-btn"; // Add specific class for styling
                     deleteButton.addEventListener("click", (event) => {
+                        deleteScroll();
                         event.stopPropagation(); // Prevent click from bubbling up to linkItem
                         showConfirmation(
                             "Confirm Deletion",
