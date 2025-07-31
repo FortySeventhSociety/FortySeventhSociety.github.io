@@ -83,7 +83,7 @@ async function fetchDataAndProcess() {
         );
         setTimeout(function () {
             $(".dt-input").focus();
-        }, 3500);
+        }, 1500);
     } catch (error) {
         console.error("Error fetching data:", error);
     }
