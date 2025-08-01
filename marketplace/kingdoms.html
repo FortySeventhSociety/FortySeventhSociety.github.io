@@ -912,6 +912,13 @@
 
             modalCloseBtn.addEventListener("click", hideMessage);
 
+            // Close message modal when clicking outside
+            messageModal.addEventListener("click", (event) => {
+                if (event.target === messageModal) {
+                    hideMessage();
+                }
+            });
+
             // Function to show custom confirmation modal
             function showConfirmation(title, message, onConfirm) {
                 confirmModalTitle.textContent = title;
@@ -936,6 +943,13 @@
             function hideConfirmation() {
                 confirmationModal.classList.remove("show");
             }
+
+            // Close confirmation modal when clicking outside
+            confirmationModal.addEventListener("click", (event) => {
+                if (event.target === confirmationModal) {
+                    hideConfirmation();
+                }
+            });
 
             // Handle icon type change
             iconTypeSelect.addEventListener("change", (event) => {
