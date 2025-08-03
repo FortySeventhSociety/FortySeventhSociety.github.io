@@ -91,6 +91,39 @@
           0.1
         ); /* Effetto al passaggio del mouse (trasparente con sfumatura leggera) */
       }
+
+      .star:nth-child(1) {
+        animation-delay: -0.8s;
+        background: rgb(30, 243, 225);
+        box-shadow: 0 0 30px rgb(30, 243, 225);
+      }
+      .star:nth-child(2) {
+        animation-delay: -1s;
+        background: rgb(99, 247, 136);
+        box-shadow: 0 0 30px rgb(99, 247, 136);
+      }
+      .star:nth-child(3) {
+        animation-delay: -1.2s;
+        background: yellow;
+        box-shadow: 0 0 30px yellow;
+      }
+      .star:nth-child(4) {
+        animation-delay: -0.4s;
+        background: rgb(247, 61, 176);
+        box-shadow: 0 0 30px rgb(247, 61, 176);
+      }
+      .star:nth-child(5) {
+        animation-delay: -0.6s;
+        background: rgb(241, 58, 58);
+        box-shadow: 0 0 30px rgb(241, 58, 58);
+      }
+      .neon-ads {
+        display: grid;
+      }
+      .neon-ads h3 {
+        color: white; /* Set the fill color of the text */
+        -webkit-text-stroke: .5px black; /* Apply a 1px black stroke */
+      }
     </style>
   </head>
 
@@ -130,6 +163,12 @@
         <div class="tab" data-tab="tab7" id="nomstead">📜</div>
       </div>
     </div>
+    <div class="neon-ads">
+      <button class="star" onclick="window.open('https://d474com.wordpress.com/contact/', '_blank');"><h2 style="line-height: 0">Advertise Here; Contact Us!</h2></button>
+      <button class="star" onclick="window.open('./donate.html', '_blank');"><h2>Donate To The 𝟒𝟕th Marketplace!</h2></button>
+      <button class="star" onclick="window.open('https://discord.gg/fkQCH6sbnc', '_blank');"><h2 style="line-height: 0">Become A Member Of Our Discord Server!</h2></button>
+      <button class="star" onclick="window.open('https://www.reddit.com/r/47thSociety/', '_blank');"><h2 style="line-height: 0">Join The Discussion On Our Reddit Community!</h2></button>
+      <button class="star" onclick="window.open('https://cointr.ee/d474', '_blank');"><h2 style="line-height: 0">Alternate Means Of Donations!</h2></button>
     <div id="tab3" class="tab-content active">
       <div class="table-section buy">
         <div class="filter-group buy">
