@@ -163,6 +163,11 @@
         .neon-ads h3 {
 
         }
+        .star {
+          color: black;
+          color: white; /* Set the fill color of the text */
+          -webkit-text-stroke: .5px black; /* Apply a 1px black stroke */
+        }
       }
     </style>
   </head>
@@ -194,7 +199,7 @@
         >
       </h2>
     </div>
-    <div class="neon-ads">
+    <div class="neon-ads" id="weber">
       <button class="star" onclick="crypto0();"><h2 style="line-height: 0">USDT [TRC-𝟐𝟎]:</h2><h3 style="line-height: 0">TH1n6tHLmuGb5ELiRbFxahDzKqB9wP5APm</h3></button>
       <button class="star" onclick="crypto1();"><h2 style="line-height: 0">USDC [ERC-𝟐𝟎]:</h2><h3 style="line-height: 0">0xaeb84f1bd806afa65f253ed2f5a04af632bee116</h3></button>
       <button class="star" onclick="crypto2();"><h2 style="line-height: 0">BTC [Bitcoin]:</h2><h3>(Only from addresses starting with "1", "3", "bc1p" and "bc1q")<br />19DTLLZPyuMe9ajNWNbYt7o5pwiioAeCCE</h3></button>
@@ -209,6 +214,21 @@
       <button class="star" onclick="crypto11();"><h2 style="line-height: 0">ADA [Cardano]:</h2><h3 style="line-height: 0">addr1vy5yuq0mgw3asw8v6kee3rc2y6j9t0v4f684swk6p9k798gqvfpp8</h3></button>
       <button class="star" onclick="crypto12();"><h2>Alternate Donations</h2></button>
     </div>
+    <div class="neon-ads" id="mobi">
+      <button class="star" onclick="crypto0();"><h5 style="line-height: 0">USDT [TRC-𝟐𝟎]:</h5><h6 style="line-height: 0">TH1n6tHLmuGb5ELiRbFxahDzKqB9wP5APm</h6></button>
+      <button class="star" onclick="crypto1();"><h5 style="line-height: 0">USDC [ERC-𝟐𝟎]:</h5><h6 style="line-height: 0">0xaeb84f1bd806afa65f253ed2f5a04af632bee116</h6></button>
+      <button class="star" onclick="crypto2();"><h5 style="line-height: 0">BTC [Bitcoin]:</h5><h6>(Only from addresses starting with "1", "3", "bc1p" and "bc1q")<br />19DTLLZPyuMe9ajNWNbYt7o5pwiioAeCCE</h6></button>
+      <button class="star" onclick="crypto3();"><h5 style="line-height: 0">ETH [ERC-𝟐𝟎]:</h5><h6>(Do not send validator rewards! They won’t be credited and you may lose your assets.)<br />0xaeb84f1bd806afa65f253ed2f5a04af632bee116</h6></button>
+      <button class="star" onclick="crypto4();"><h5 style="line-height: 0">BNB [BEP-𝟐𝟎]:</h5><h6 style="line-height: 0">0xaeb84f1bd806afa65f253ed2f5a04af632bee116</h6></button>
+      <button class="star" onclick="crypto5();"><h5 style="line-height: 0">SOL [Solana]:</h5><h6>(Please note that SOL addresses are case sensitive!)<br />CUNFbtjJUXYiXQj1giGhhLhzoRq1yvwXR4yaCz1SGgut</h6></button>
+      <button class="star" onclick="crypto6();"><h5 style="line-height: 0">TRX [TRC-𝟐𝟎]:</h5><h6 style="line-height: 0">TH1n6tHLmuGb5ELiRbFxahDzKqB9wP5APm</h6></button>
+      <button class="star" onclick="crypto7();"><h5 style="line-height: 0">LTC [Litecoin]:</h5><h6>(Please note that confidential deposits via the MWEB function are not supported, and will result in deposits being lost!)<br />LXtq2yuGLUUmT85maciSVpFKx7KAtyPNYw</h6></button>
+      <button class="star" onclick="crypto8();"><h5 style="line-height: 0">RVN [Ravencoin]:</h5><h6 style="line-height: 0">RQwMHA86MXHm1Js5EXrRierxEhe8AwBqyy</h6></button>
+      <button class="star" onclick="crypto9();"><h5 style="line-height: 0">DOGE [Dogecoin]:</h5><h6 style="line-height: 0">DJQRARJ1HpvmuA2GyQPWagUiqMjq7c7o54</h6></button>
+      <button class="star" onclick="crypto10();"><h5 style="line-height: 0">POL [Polygon POS]:</h5><h6 style="line-height: 0">0xaeb84f1bd806afa65f253ed2f5a04af632bee116</h6></button>
+      <button class="star" onclick="crypto11();"><h5 style="line-height: 0">ADA [Cardano]:</h5><h6 style="line-height: 0">addr1vy5yuq0mgw3asw8v6kee3rc2y6j9t0v4f684swk6p9k798gqvfpp8</h6></button>
+      <button class="star" onclick="crypto12();"><h5>Alternate Donations</h5></button>
+    </div>
 
     <footer>
       <p>
@@ -218,7 +238,9 @@
         >
       </p>
     </footer>
+
     <script src="../script2.js"></script>
+
     <script>
       function crypto() {
         // Crypto Address
