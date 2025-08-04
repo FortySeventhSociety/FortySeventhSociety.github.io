@@ -188,10 +188,10 @@
                 const items = {};
                 if (data.toBuy) {
                     data.toBuy.forEach(item => {
-                        const slug = item.object.slug;
+                        const slug = item.object.metadata.title;
                         if (!items[slug]) {
                             items[slug] = {
-                                itemTitle: item.object.slug.replace(/-/g, ' ').split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' '),
+                                itemTitle:  item.object.metadata.title.replace(/-/g, ' ').split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' '),
                                 buy_orders: 0,
                                 sell_orders: 0,
                                 buy_volume: 0,
@@ -208,10 +208,10 @@
                 
                 if (data.toSell) {
                     data.toSell.forEach(item => {
-                        const slug = item.object.slug;
+                        const slug = item.object.metadata.title;
                         if (!items[slug]) {
                             items[slug] = {
-                                itemTitle: item.object.slug.replace(/-/g, ' ').split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' '),
+                                itemTitle:  item.object.metadata.title.replace(/-/g, ' ').split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' '),
                                 buy_orders: 0,
                                 sell_orders: 0,
                                 buy_volume: 0,
