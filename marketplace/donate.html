@@ -128,12 +128,41 @@
         background: rgb(241, 58, 58);
         box-shadow: 0 0 30px rgb(241, 58, 58);
       }
+        .star {
+          cursor: pointer;
+        }
+        .star:hover {
+          background: white;
+        }
+        .star:active {
+          background: black;
+        }
       .neon-ads {
         display: grid;
       }
       .neon-ads h3 {
         color: white; /* Set the fill color of the text */
         -webkit-text-stroke: .5px black; /* Apply a 1px black stroke */
+      }
+        #weber {
+          display: grid;
+        }
+        #mobi {
+          display: none;
+        }
+      @media (max-width: 1080px) {
+        #weber {
+          display: none;
+        }
+        #mobi {
+          display: grid;
+        }
+        .neon-ads {
+
+        }
+        .neon-ads h3 {
+
+        }
       }
     </style>
   </head>
@@ -179,6 +208,7 @@
       <button class="star" onclick="crypto10();"><h2 style="line-height: 0">POL [Polygon POS]:</h2><h3 style="line-height: 0">0xaeb84f1bd806afa65f253ed2f5a04af632bee116</h3></button>
       <button class="star" onclick="crypto11();"><h2 style="line-height: 0">ADA [Cardano]:</h2><h3 style="line-height: 0">addr1vy5yuq0mgw3asw8v6kee3rc2y6j9t0v4f684swk6p9k798gqvfpp8</h3></button>
       <button class="star" onclick="crypto12();"><h2>Alternate Donations</h2></button>
+    </div>
 
     <footer>
       <p>

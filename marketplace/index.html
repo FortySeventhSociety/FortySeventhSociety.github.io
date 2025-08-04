@@ -117,12 +117,46 @@
         background: rgb(241, 58, 58);
         box-shadow: 0 0 30px rgb(241, 58, 58);
       }
+        .star {
+          cursor: pointer;
+        }
+        .star:hover {
+          background: white;
+        }
+        .star:active {
+          background: black;
+        }
       .neon-ads {
         display: grid;
       }
       .neon-ads h3 {
         color: white; /* Set the fill color of the text */
         -webkit-text-stroke: .5px black; /* Apply a 1px black stroke */
+      }
+        #weber {
+          display: grid;
+        }
+        #mobi {
+          display: none;
+        }
+      @media (max-width: 1080px) {
+        #weber {
+          display: none;
+        }
+        #mobi {
+          display: grid;
+        }
+        .neon-ads {
+
+        }
+        .neon-ads h3 {
+
+        }
+        .star {
+          color: black;
+        color: white; /* Set the fill color of the text */
+        -webkit-text-stroke: .5px black; /* Apply a 1px black stroke */
+        }
       }
       .noSpaceHeader {
         line-height: 0;
@@ -166,12 +200,19 @@
         <div class="tab" data-tab="tab7" id="nomstead">📜</div>
       </div>
     </div>
-    <div class="neon-ads">
+    <div class="neon-ads" id="weber">
       <button class="star" onclick="window.open('https://d474com.wordpress.com/contact/', '_blank');"><h2 class="noSpaceHeader">Advertise Here; Contact Us!</h2></button>
       <button class="star" onclick="window.open('./donate.html', '_blank');"><h2>Donate To The 𝟒𝟕th Marketplace!</h2></button>
       <button class="star" onclick="window.open('https://discord.gg/fkQCH6sbnc', '_blank');"><h2 class="noSpaceHeader">Become A Member Of Our Discord Server!</h2></button>
       <button class="star" onclick="window.open('https://www.reddit.com/r/47thSociety/', '_blank');"><h2 class="noSpaceHeader">Join The Discussion On Our Reddit Community!</h2></button>
       <button class="star" onclick="window.open('https://cointr.ee/d474', '_blank');"><h2 class="noSpaceHeader">Alternate Means Of Donations!</h2></button>
+    </div>
+    <div class="neon-ads" id="mobi">
+      <button class="star" onclick="window.open('https://d474com.wordpress.com/contact/', '_blank');"><h5 class="noSpaceHeader">Advertise Here; Contact Us!</h5></button>
+      <button class="star" onclick="window.open('./donate.html', '_blank');"><h5>Donate To The 𝟒𝟕th Marketplace!</h5></button>
+      <button class="star" onclick="window.open('https://discord.gg/fkQCH6sbnc', '_blank');"><h5 class="noSpaceHeader">Become A Member Of Our Discord Server!</h5></button>
+      <button class="star" onclick="window.open('https://www.reddit.com/r/47thSociety/', '_blank');"><h5 class="noSpaceHeader">Join The Discussion On Our Reddit Community!</h5></button>
+      <button class="star" onclick="window.open('https://cointr.ee/d474', '_blank');"><h5 class="noSpaceHeader">Alternate Means Of Donations!</h5></button>
     </div>
     <div id="tab3" class="tab-content active">
       <div class="table-section buy">
