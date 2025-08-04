@@ -124,6 +124,9 @@
         color: white; /* Set the fill color of the text */
         -webkit-text-stroke: .5px black; /* Apply a 1px black stroke */
       }
+      .noSpaceHeader {
+        line-height: 0;
+      }
     </style>
   </head>
 
@@ -164,11 +167,12 @@
       </div>
     </div>
     <div class="neon-ads">
-      <button class="star" onclick="window.open('https://d474com.wordpress.com/contact/', '_blank');"><h2 style="line-height: 0">Advertise Here; Contact Us!</h2></button>
+      <button class="star" onclick="window.open('https://d474com.wordpress.com/contact/', '_blank');"><h2 class="noSpaceHeader">Advertise Here; Contact Us!</h2></button>
       <button class="star" onclick="window.open('./donate.html', '_blank');"><h2>Donate To The 𝟒𝟕th Marketplace!</h2></button>
-      <button class="star" onclick="window.open('https://discord.gg/fkQCH6sbnc', '_blank');"><h2 style="line-height: 0">Become A Member Of Our Discord Server!</h2></button>
-      <button class="star" onclick="window.open('https://www.reddit.com/r/47thSociety/', '_blank');"><h2 style="line-height: 0">Join The Discussion On Our Reddit Community!</h2></button>
-      <button class="star" onclick="window.open('https://cointr.ee/d474', '_blank');"><h2 style="line-height: 0">Alternate Means Of Donations!</h2></button>
+      <button class="star" onclick="window.open('https://discord.gg/fkQCH6sbnc', '_blank');"><h2 class="noSpaceHeader">Become A Member Of Our Discord Server!</h2></button>
+      <button class="star" onclick="window.open('https://www.reddit.com/r/47thSociety/', '_blank');"><h2 class="noSpaceHeader">Join The Discussion On Our Reddit Community!</h2></button>
+      <button class="star" onclick="window.open('https://cointr.ee/d474', '_blank');"><h2 class="noSpaceHeader">Alternate Means Of Donations!</h2></button>
+    </div>
     <div id="tab3" class="tab-content active">
       <div class="table-section buy">
         <div class="filter-group buy">
@@ -782,7 +786,6 @@
             style="scroll-margin-top: 3.5vh"
           >
           </iframe>
-
           <hr class="table-section" />
           <button onclick="scrollei();" style="float: right">➕</button>
           <button onclick="window.location.reload();" style="float: right">
