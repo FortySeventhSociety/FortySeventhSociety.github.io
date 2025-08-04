@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-G2VWYG5L58"
+    ></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>47th Marketplace Analytics</title>
+    <meta
+      name="description"
+      content="The 47th Society | We Welcome You!
+    Free games available online! Visit us today!"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="author" content="D474designs" />
+    <meta
+      name="keywords"
+      content="games, video games, free games, online games, browser games, free game, game, miniclip, ugotgames, you got games, yougotgames, flash games, flash, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, money, income, passive income, refferals, reffer, refferer, ads, links, work from home, steady income, start your own business, graphic design, seo, get paid, job, internet, advertisement, rich, dollars, work, daily, every day, get paid everyday, thathill, thathill.webs.com, https://thathill.webs.com, emoneyspace, emoneyspace.com/d474, emoneyspace.com, https://www.emoneyspace.com, grind, collect, collect money, collect money from home, influencer, how to make money as an influencer, how to create a passive income, part-time job, part time, part time job, how to start a business from home, how to start a business, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, media company, online media, original content, representation, agent, online media company, advertisement, promotion, get noticed, ads, post ads, professional, professional advertisement service, professional advertisement firm, ad firm, advertisement firm, promotion firm, go viral, viral promotion, viral promotion firm, media firm, media agency, mass media, worldwide, global, world wide, world-wide advertisement, global advertisement, social media advertisement, social media promotion, social, influencer, how to make money as an influencer, how to gain a following, instagram, facebook, snapchat, tumblr, wordpress, blog, vlog, youtube, youtube channel, youtube channel promotion, youtube channel advertisement, grow my youtube, grow my youtube channel, grow my social media, grow my instagram, d474, d474media, d474designs, data the destroyer, d474th3d357r0y3r, datadesigns, datamedia, data, designer, design, designs, sound engineer, sound engineering, audio, audio production, graphic design, graphics, dj, dj data, dj d474, video, photo, photography, video work, videography, choreography, director, directing, acting, actor, writer, ghost writer, musician, artist, production, producer, beats, beat, rap, concert, rave, d474designs.webs.com, https://d474designs.webs.com, d474forex, that hill"
+    />
+    <!-- Use Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import Chart.js for creating the graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        /* Custom styles to enhance the design */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0; /* Light text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .card {
+            background-color: #2d3748; /* Darker card background */
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .header {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #cbd5e0;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #a0aec0;
+            margin-bottom: 1rem;
+        }
+        select, input {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            border: 1px solid #4a5568;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            max-width: 300px;
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        select:focus, input:focus {
+            outline: none;
+            border-color: #63b3ed;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+        .loading-message {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 1.25rem;
+            color: #a0aec0;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="switch3" id="switch3"></div>
+
+    <!-- Main container for the app -->
+    <div class="container">
+
+        <!-- Header and item selection -->
+        <div class="header">
+            <div class="mt-8 w-full max-w-sm flex flex-col items-center">
+                <label for="item-search" class="block text-gray-300 font-medium mb-2"></label>
+                <input type="text" id="item-search" class="w-full px-4 py-2 rounded-lg bg-[#4a5568] text-white focus:outline-none focus:ring-2 focus:ring-[#63b3ed] mb-2" placeholder="Search for an item...">
+                <select id="item-select">
+                    <!-- Options will be dynamically populated by JavaScript -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Loading message -->
+        <div id="loading-message" class="loading-message hidden">
+            <p>Loading marketplace data...</p>
+        </div>
+
+        <!-- Card for Buy vs Sell Orders graph -->
+        <div id="buy-sell-card" class="card col-span-1 hidden">
+            <h2 class="text-gray-300">Buy vs. Sell Orders</h2>
+            <canvas id="buy-sell-orders-chart"></canvas>
+        </div>
+
+        <!-- Card for Available Items graph -->
+        <div id="available-card" class="card col-span-1 hidden">
+            <h2 class="text-gray-300">Available Item Volume</h2>
+            <canvas id="available-items-chart"></canvas>
+        </div>
+
+        <!-- Card for Pricing graph -->
+        <div id="pricing-card" class="card col-span-1 md:col-span-2 lg:col-span-1 hidden">
+            <h2 class="text-gray-300">Price Distribution</h2>
+            <canvas id="pricing-chart"></canvas>
+        </div>
+    <br />
+    <footer>
+        <center>
+      <p>
+        <span id="year"></span>❤️
+        <a href="https://nomstead.com/?ref=btrpazme" target="_blank"
+          >Data The Destroyer</a
+        >
+      </p> 
+    </center>
+    </footer>
+    </div>
+    <script src="../script2.js"></script>
+
+    <script>
+        // Use a single object to hold all chart instances for easy management
+        const charts = {};
+        let marketplaceData = null; // Store fetched data here
+        let allMarketplaceItems = []; // Store a complete list of item objects with slugs and titles
+
+        /**
+         * Simulates fetching market data from an API.
+         * @returns {Promise<Object>} - A promise that resolves with the API data.
+         */
+        const fetchMarketData = async () => {
+            const loadingElement = document.getElementById('loading-message');
+            loadingElement.classList.remove('hidden');
+
+            try {
+                const response = await fetch('https://api.nomstead.com/open/marketplace');
+                const data = await response.json();
+                
+                // Process the raw data into a more usable format
+                const items = {};
+                if (data.toBuy) {
+                    data.toBuy.forEach(item => {
+                        const slug = item.object.slug;
+                        if (!items[slug]) {
+                            items[slug] = {
+                                itemTitle: item.object.slug.replace(/-/g, ' ').split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' '),
+                                buy_orders: 0,
+                                sell_orders: 0,
+                                buy_volume: 0,
+                                sell_volume: 0,
+                                buy_prices: [],
+                                sell_prices: []
+                            };
+                        }
+                        items[slug].buy_orders++;
+                        items[slug].buy_volume += item.pricing.availableQuantity;
+                        items[slug].buy_prices.push(item.pricing.unitPrice);
+                    });
+                }
+                
+                if (data.toSell) {
+                    data.toSell.forEach(item => {
+                        const slug = item.object.slug;
+                        if (!items[slug]) {
+                            items[slug] = {
+                                itemTitle: item.object.slug.replace(/-/g, ' ').split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' '),
+                                buy_orders: 0,
+                                sell_orders: 0,
+                                buy_volume: 0,
+                                sell_volume: 0,
+                                buy_prices: [],
+                                sell_prices: []
+                            };
+                        }
+                        items[slug].sell_orders++;
+                        items[slug].sell_volume += item.pricing.desiredQuantity;
+                        items[slug].sell_prices.push(item.pricing.unitPrice);
+                    });
+                }
+
+                return items;
+            } catch (error) {
+                console.error('Error fetching data from API:', error);
+                return null;
+            } finally {
+                loadingElement.classList.add('hidden');
+            }
+        };
+
+        /**
+         * Creates or updates the Buy vs. Sell Orders chart.
+         * @param {Object} data - The market data containing buy and sell orders.
+         */
+        const createBuySellOrdersChart = (data) => {
+            const ctx = document.getElementById('buy-sell-orders-chart').getContext('2d');
+            const chartData = {
+                labels: ['Buy Orders', 'Sell Orders'],
+                datasets: [{
+                    data: [data.buy_orders, data.sell_orders],
+                    backgroundColor: ['#4299e1', '#f56565'], // Blue for Buy, Red for Sell
+                    hoverOffset: 4,
+                }]
+            };
+            const options = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#e2e8f0',
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return ` ${tooltipItem.label}: ${tooltipItem.raw}`;
+                            }
+                        }
+                    }
+                }
+            };
+            // Destroy existing chart before creating a new one to prevent memory leaks
+            if (charts['buy-sell-orders-chart']) {
+                charts['buy-sell-orders-chart'].destroy();
+            }
+            charts['buy-sell-orders-chart'] = new Chart(ctx, {
+                type: 'doughnut',
+                data: chartData,
+                options: options
+            });
+        };
+
+        /**
+         * Creates or updates the Available Items Volume chart.
+         * @param {Object} data - The market data containing buy and sell volume.
+         */
+        const createAvailableItemsChart = (data) => {
+            const ctx = document.getElementById('available-items-chart').getContext('2d');
+            const chartData = {
+                labels: ['Buy Volume', 'Sell Volume'],
+                datasets: [{
+                    label: 'Item Volume',
+                    data: [data.buy_volume, data.sell_volume],
+                    backgroundColor: ['#48bb78', '#f6e05e'], // Green for Buy, Yellow for Sell
+                    borderColor: ['#38a169', '#d69e2e'],
+                    borderWidth: 1
+                }]
+            };
+            const options = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false,
+                        labels: {
+                            color: '#e2e8f0',
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return ` ${tooltipItem.label}: ${tooltipItem.raw}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#e2e8f0'
+                        },
+                        grid: {
+                            color: '#4a5568'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#e2e8f0'
+                        },
+                        grid: {
+                            color: '#4a5568'
+                        }
+                    }
+                }
+            };
+            if (charts['available-items-chart']) {
+                charts['available-items-chart'].destroy();
+            }
+            charts['available-items-chart'] = new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: options
+            });
+        };
+
+        /**
+         * Creates or updates the Pricing Distribution chart.
+         * @param {Object} data - The market data containing buy and sell prices.
+         */
+        const createPricingChart = (data) => {
+            const ctx = document.getElementById('pricing-chart').getContext('2d');
+
+            // Sort prices from least to most expensive
+            const sortedBuyPrices = [...data.buy_prices].sort((a, b) => a - b);
+            const sortedSellPrices = [...data.sell_prices].sort((a, b) => a - b);
+            
+            // Create labels for the x-axis, using a combined set of prices
+            const allPrices = [...new Set([...sortedBuyPrices, ...sortedSellPrices])].sort((a, b) => a - b);
+
+            const chartData = {
+                labels: allPrices,
+                datasets: [
+                    {
+                        label: 'Buy Order Prices',
+                        data: sortedBuyPrices,
+                        borderColor: '#4299e1',
+                        backgroundColor: 'rgba(66, 153, 225, 0.2)',
+                        fill: false,
+                        tension: 0.1,
+                        pointRadius: 2
+                    },
+                    {
+                        label: 'Sell Order Prices',
+                        data: sortedSellPrices,
+                        borderColor: '#f56565',
+                        backgroundColor: 'rgba(245, 101, 101, 0.2)',
+                        fill: false,
+                        tension: 0.1,
+                        pointRadius: 2
+                    }
+                ]
+            };
+            const options = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#e2e8f0',
+                        }
+                    },
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Price (in Gold)',
+                            color: '#e2e8f0'
+                        },
+                        ticks: {
+                            color: '#e2e8f0'
+                        },
+                        grid: {
+                            color: '#4a5568'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Order Index',
+                            color: '#e2e8f0'
+                        },
+                        ticks: {
+                            color: '#e2e8f0',
+                            callback: function(val, index) {
+                                // Only show price labels at certain intervals to prevent clutter
+                                return index % 2 === 0 ? this.getLabelForValue(val) : '';
+                            }
+                        },
+                        grid: {
+                            color: '#4a5568'
+                        }
+                    }
+                }
+            };
+            if (charts['pricing-chart']) {
+                charts['pricing-chart'].destroy();
+            }
+            charts['pricing-chart'] = new Chart(ctx, {
+                type: 'line',
+                data: chartData,
+                options: options
+            });
+        };
+
+        /**
+         * Main function to render all charts for a given item.
+         * @param {string} selectedItemSlug - The slug of the item to display.
+         */
+        const renderGraphs = (selectedItemSlug) => {
+            const data = marketplaceData[selectedItemSlug];
+            
+            if (data) {
+                // Show cards and render charts
+                document.getElementById('buy-sell-card').classList.remove('hidden');
+                document.getElementById('available-card').classList.remove('hidden');
+                document.getElementById('pricing-card').classList.remove('hidden');
+
+                createBuySellOrdersChart(data);
+                createAvailableItemsChart(data);
+                createPricingChart(data);
+            } else {
+                // Hide cards if no data is found for the selected item
+                document.getElementById('buy-sell-card').classList.add('hidden');
+                document.getElementById('available-card').classList.add('hidden');
+                document.getElementById('pricing-card').classList.add('hidden');
+            }
+        };
+
+        /**
+         * Populates the dropdown menu with items, filtered by a search query.
+         * @param {Array<Object>} filteredItems - An array of item objects to display.
+         */
+        const updateDropdown = (filteredItems) => {
+            const itemSelect = document.getElementById('item-select');
+            itemSelect.innerHTML = ''; // Clear existing options
+
+            if (filteredItems.length > 0) {
+                filteredItems.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.slug; // Use slug for the value
+                    option.textContent = item.itemTitle; // Use title for the display text
+                    itemSelect.appendChild(option);
+                });
+                // Set the first item as the default and render its graphs
+                itemSelect.value = filteredItems[0].slug;
+                renderGraphs(itemSelect.value);
+            } else {
+                itemSelect.innerHTML = '<option>No items found</option>';
+                renderGraphs(null); // Clear graphs if no items are found
+            }
+        };
+
+        // Main function to initialize the application
+        const init = async () => {
+            const itemSearch = document.getElementById('item-search');
+            const itemSelect = document.getElementById('item-select');
+
+            // Fetch data and populate the dropdown
+            marketplaceData = await fetchMarketData();
+            if (marketplaceData) {
+                allMarketplaceItems = Object.keys(marketplaceData).map(slug => ({
+                    slug: slug,
+                    itemTitle: marketplaceData[slug].itemTitle
+                }));
+                
+                if (allMarketplaceItems.length > 0) {
+                    updateDropdown(allMarketplaceItems);
+                } else {
+                    itemSelect.innerHTML = '<option>No items available</option>';
+                }
+            } else {
+                itemSelect.innerHTML = '<option>Failed to load data</option>';
+            }
+
+            // Add event listener for the search input
+            itemSearch.addEventListener('input', (event) => {
+                const searchTerm = event.target.value.toLowerCase();
+                const filteredItems = allMarketplaceItems.filter(item =>
+                    item.itemTitle.toLowerCase().includes(searchTerm)
+                );
+                updateDropdown(filteredItems);
+            });
+
+            // Add event listener to the dropdown to update charts on change
+            itemSelect.addEventListener('change', (event) => {
+                renderGraphs(event.target.value);
+            });
+        };
+
+        // Initial application setup
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
