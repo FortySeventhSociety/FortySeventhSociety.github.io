@@ -192,10 +192,40 @@
       .noSpaceHeader {
         line-height: 0;
       }
+      /* Styling for the loading screen overlay */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease-out; /* Smooth transition for fading out */
+        z-index: 9999; /* Ensure it's on top of everything */
+      }
+      .loadingContainer {
+      }
+      .loadingImage {
+        position: absolute;
+        z-index: 999999;
+        height: 20vh;
+        width: 20vw;
+        top: 40%;
+        left: 40%;
+      }
     </style>
   </head>
 
   <body>
+    <!-- The loading screen overlay -->
+    <div id="loading-screen">
+      <div class="loadingContainer">
+        <img class="loadingImage" id="randomImage" src="./img/transparency.png" alt="Wares" />
+      </div>
+    </div>
     <div class="switch3" id="switch3"></div>
 
     <!-- D474designs ----------------------------------------------------------------------------------------------------->
@@ -1028,6 +1058,69 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+      const images = [
+        "./img/0.png",
+        "./img/1.png",
+        "./img/2.png",
+        "./img/3.png",
+        "./img/4.png",
+        "./img/5.png",
+        "./img/6.png",
+        "./img/7.png",
+        "./img/8.png",
+        "./img/9.png",
+        "./img/10.png",
+      ];
+
+      const imageElement = document.getElementById("randomImage");
+
+      // Function to change the image by pre-loading it first
+      const changeImage = () => {
+        // Get a random index from the images array
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const newImageUrl = images[randomIndex];
+
+        // Create a temporary Image object to pre-load the image
+        const tempImage = new Image();
+
+        // Set the onload event handler. This function will run once the image is fully loaded.
+        tempImage.onload = () => {
+          // Update the main image's src only after the temp image is ready
+          imageElement.src = newImageUrl;
+        };
+
+        // Start loading the new image by setting its src
+        tempImage.src = newImageUrl;
+      };
+
+      // Call the function once to display an initial image immediately
+      changeImage();
+
+      // Set an interval to change the image every 250 milliseconds (0.25 seconds)
+      setInterval(changeImage, 500);
+
+      // Get a reference to the loading screen and main content elements
+      const loadingScreen = document.getElementById("loading-screen");
+
+      // Wait for the entire page to load before starting the timer
+      // Use setTimeout to hide the loading screen after 3 seconds (3000 milliseconds)
+      setTimeout(() => {
+        // Fade out the loading screen by setting its opacity to 0
+        loadingScreen.style.opacity = "0";
+
+        // After the fade-out transition is complete (0.5s in our CSS), hide the loading screen completely
+        // and show the main content. We use another setTimeout for this.
+        setTimeout(() => {
+          loadingScreen.style.display = "none";
+
+          // Now, show the main content by adding the 'visible' class
+          mainContent.style.display = "block";
+          setTimeout(() => {
+            mainContent.classList.add("visible");
+          }, 10); // Small delay to ensure the display change is registered before the opacity transition
+        }, 0); // This delay should match the CSS transition duration
+      }, 1000); // 3-second delay for the loading screen
+
       function scrollex() {
         document.getElementById("fAI").scrollIntoView({ behavior: "smooth" });
         console.log("Tracing... [B]");
