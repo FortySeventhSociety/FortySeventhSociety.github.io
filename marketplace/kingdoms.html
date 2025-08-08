@@ -761,10 +761,10 @@
                     element.style.display = "none";
                     checkbox.checked = !checkbox.checked;
                 }
-                    document
-                        .getElementById("linkList")
-                        .scrollIntoView({ behavior: "smooth" });
-                    console.log("Tracing... [S]");
+                document
+                    .getElementById("linkList")
+                    .scrollIntoView({ behavior: "smooth" });
+                console.log("Tracing... [S]");
             }
 
             /*
@@ -810,18 +810,6 @@
                 });
                 console.log("Tracing... [CTRL + ALT + DEL]");
             }
-
-            function okScroll() {
-                document
-                    .getElementById("linkList")
-                    .scrollIntoView({ behavior: "smooth" });
-                console.log("Tracing... [Seventy Four]");
-            }
-
-            const okButton = document.getElementById("modalCloseBtn");
-            okButton.addEventListener("click", function (e) {
-                okScroll();
-            });
 
             function noScroll() {
                 document
@@ -1112,6 +1100,8 @@
                     deleteButton.addEventListener("click", (event) => {
                         deleteScroll();
                         event.stopPropagation(); // Prevent click from bubbling up to linkItem
+                        // Capture the position before the item is removed
+                        const scrollPosition = linkItem.offsetTop;
                         showConfirmation(
                             "Confirm Deletion",
                             `Are you sure you want to delete "${link.title || link.url}"?`,
@@ -1131,6 +1121,12 @@
                                     if (editingLinkId === link.id) {
                                         cancelEdit();
                                     }
+                                    // Scroll to the saved position after the list re-renders
+                                    window.scrollTo({
+                                        top: scrollPosition,
+                                        behavior: "smooth",
+                                    });
+                                    console.log("Tracing... [Seventy Four]");
                                 }
                             },
                         );
@@ -1300,6 +1296,18 @@
                         // links[index].timestamp = Date.now();
                         saveLinksToLocalStorage();
                         displayLinks();
+
+                        // Find the updated link item in the DOM and scroll to it
+                        const updatedLinkElement = linkListDiv.querySelector(
+                            `[data-id='${editingLinkId}']`,
+                        );
+                        if (updatedLinkElement) {
+                            updatedLinkElement.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center", // Align the item to the center of the viewport
+                            });
+                        }
+
                         showMessage("Success", "Link updated successfully!");
                         cancelEdit(); // Exit edit mode
                     } else {
