@@ -1297,50 +1297,61 @@
                         saveLinksToLocalStorage();
                         displayLinks();
 
-                        // Find the updated link item in the DOM and scroll to it
-                        const updatedLinkElement = linkListDiv.querySelector(
-                            `[data-id='${editingLinkId}']`,
-                        );
-                        if (updatedLinkElement) {
-                            updatedLinkElement.scrollIntoView({
-                                behavior: "smooth",
-                                block: "center", // Align the item to the center of the viewport
-                            });
-                        }
+                              // Find the updated link item in the DOM and scroll to it
+      const updatedLinkElement = linkListDiv.querySelector(
+        `[data-id='${editingLinkId}']`
+      );
+      if (updatedLinkElement) {
+        updatedLinkElement.scrollIntoView({
+          behavior: "smooth",
+          block: "center", // Align the item to the center of the viewport
+        });
+      }
 
-                        showMessage("Success", "Link updated successfully!");
-                        cancelEdit(); // Exit edit mode
-                    } else {
-                        showMessage("Error", "Could not find link to update.");
-                    }
-                } else {
-                    // Add new link
-                    const newLinkId =
-                        Date.now().toString() +
-                        Math.random().toString(36).substring(2, 9);
-                    const newLink = {
-                        id: newLinkId,
-                        url: url,
-                        title: title,
-                        icon: icon,
-                        iconType: iconType,
-                        timestamp: Date.now(), // Store timestamp as a number
-                    };
+      showMessage("Success", "Link updated successfully!");
+      cancelEdit(); // Exit edit mode
+    } else {
+      showMessage("Error", "Could not find link to update.");
+    }
+  } else {
+    // Add new link
+    const newLinkId =
+      Date.now().toString() +
+      Math.random().toString(36).substring(2, 9);
+    const newLink = {
+      id: newLinkId,
+      url: url,
+      title: title,
+      icon: icon,
+      iconType: iconType,
+      timestamp: Date.now(), // Store timestamp as a number
+    };
 
-                    links.unshift(newLink); // Add new link to the beginning of the array
-                    // No need to sort by timestamp here, as drag-and-drop will determine order
-                    saveLinksToLocalStorage();
-                    displayLinks(); // Re-render the list
+    links.unshift(newLink); // Add new link to the beginning of the array
+    // No need to sort by timestamp here, as drag-and-drop will determine order
+    saveLinksToLocalStorage();
+    displayLinks(); // Re-render the list
 
-                    showMessage("Success", "Link added successfully!");
-                    // Clear input fields
-                    linkUrlInput.value = "";
-                    linkTitleInput.value = "";
-                    linkIconInput.value = "";
-                    iconTypeSelect.value = "fa"; // Reset to default
-                    iconTypeSelect.dispatchEvent(new Event("change")); // Trigger change event to update label/placeholder
-                }
-            });
+    // Find the newly added link item and scroll to it
+    const newLinkElement = linkListDiv.querySelector(
+      `[data-id='${newLinkId}']`
+    );
+    if (newLinkElement) {
+      newLinkElement.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // Align the item to the center of the viewport
+      });
+    }
+
+    showMessage("Success", "Link added successfully!");
+    // Clear input fields
+    linkUrlInput.value = "";
+    linkTitleInput.value = "";
+    linkIconInput.value = "";
+    iconTypeSelect.value = "fa"; // Reset to default
+    iconTypeSelect.dispatchEvent(new Event("change")); // Trigger change event to update label/placeholder
+  }
+});
 
             // Cancel Edit button listener
             cancelEditBtn.addEventListener("click", cancelEdit);
