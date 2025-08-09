@@ -222,6 +222,86 @@
         <script src="../script2.js"></script>
 
         <script>
+            var refresh = window.localStorage.getItem("refresh");
+            console.log(refresh);
+            setTimeout(function () {
+                if (refresh === null) {
+                    window.localStorage.setItem(
+                        "refresh",
+                        "Information Updated!",
+                    );
+                    window.location.reload();
+                }
+            }, 500);
+
+            setTimeout(function () {
+                localStorage.removeItem("refresh");
+                var elementToHide = document.getElementById("loadingScreen");
+                if (elementToHide) {
+                    elementToHide.style.display = "none";
+                }
+            }, 3000);
+
+            const images = [
+                "./img/0.png",
+                "./img/1.png",
+                "./img/2.png",
+                "./img/3.png",
+                "./img/4.png",
+                "./img/5.png",
+                "./img/6.png",
+                "./img/7.png",
+                "./img/8.png",
+                "./img/9.png",
+                "./img/10.png",
+            ];
+
+            const imageElement = document.getElementById("randomImage");
+
+            // Function to change the image by pre-loading it first
+            const changeImage = () => {
+                // Get a random index from the images array
+                const randomIndex = Math.floor(Math.random() * images.length);
+                const newImageUrl = images[randomIndex];
+
+                // Create a temporary Image object to pre-load the image
+                const tempImage = new Image();
+
+                // Set the onload event handler. This function will run once the image is fully loaded.
+                tempImage.onload = () => {
+                    // Update the main image's src only after the temp image is ready
+                    imageElement.src = newImageUrl;
+                };
+
+                // Start loading the new image by setting its src
+                tempImage.src = newImageUrl;
+            };
+
+            // Call the function once to display an initial image immediately
+            changeImage();
+
+            // Set an interval to change the image every 250 milliseconds (0.25 seconds)
+            setInterval(changeImage, 250);
+
+            // Get a reference to the loading screen and main content elements
+            const loadingScreen = document.getElementById("loading-screen");
+
+            // Wait for the entire page to load before starting the timer
+            // Use setTimeout to hide the loading screen after 3 seconds (3000 milliseconds)
+
+            if (refresh) {
+                setTimeout(() => {
+                    // Fade out the loading screen by setting its opacity to 0
+                    loadingScreen.style.opacity = "0";
+
+                    // After the fade-out transition is complete (0.5s in our CSS), hide the loading screen completely
+                    // and show the main content. We use another setTimeout for this.
+                    setTimeout(() => {
+                        loadingScreen.style.display = "none";
+                    }, 0); // This delay should match the CSS transition duration
+                }, 1000);
+            }
+
             function getRandomHexColor() {
                 // Generate a random integer between 0 and 16777215 (which is FFFFFF in hexadecimal)
                 const randomInt = Math.floor(Math.random() * 16777216);
@@ -271,69 +351,6 @@
             document
                 .getElementById("sYLb")
                 .addEventListener("click", changeEmoji);
-
-            const images = [
-                "./img/0.png",
-                "./img/1.png",
-                "./img/2.png",
-                "./img/3.png",
-                "./img/4.png",
-                "./img/5.png",
-                "./img/6.png",
-                "./img/7.png",
-                "./img/8.png",
-                "./img/9.png",
-                "./img/10.png",
-            ];
-
-            const imageElement = document.getElementById("randomImage");
-
-            // Function to change the image by pre-loading it first
-            const changeImage = () => {
-                // Get a random index from the images array
-                const randomIndex = Math.floor(Math.random() * images.length);
-                const newImageUrl = images[randomIndex];
-
-                // Create a temporary Image object to pre-load the image
-                const tempImage = new Image();
-
-                // Set the onload event handler. This function will run once the image is fully loaded.
-                tempImage.onload = () => {
-                    // Update the main image's src only after the temp image is ready
-                    imageElement.src = newImageUrl;
-                };
-
-                // Start loading the new image by setting its src
-                tempImage.src = newImageUrl;
-            };
-
-            // Call the function once to display an initial image immediately
-            changeImage();
-
-            // Set an interval to change the image every 250 milliseconds (0.25 seconds)
-            setInterval(changeImage, 250);
-
-            // Get a reference to the loading screen and main content elements
-            const loadingScreen = document.getElementById("loading-screen");
-
-            // Wait for the entire page to load before starting the timer
-            // Use setTimeout to hide the loading screen after 3 seconds (3000 milliseconds)
-            setTimeout(() => {
-                // Fade out the loading screen by setting its opacity to 0
-                loadingScreen.style.opacity = "0";
-
-                // After the fade-out transition is complete (0.5s in our CSS), hide the loading screen completely
-                // and show the main content. We use another setTimeout for this.
-                setTimeout(() => {
-                    loadingScreen.style.display = "none";
-
-                    // Now, show the main content by adding the 'visible' class
-                    mainContent.style.display = "block";
-                    setTimeout(() => {
-                        mainContent.classList.add("visible");
-                    }, 10); // Small delay to ensure the display change is registered before the opacity transition
-                }, 0); // This delay should match the CSS transition duration
-            }, 1000); // 3-second delay for the loading screen
 
             // Use a single object to hold all chart instances for easy management
             const charts = {};

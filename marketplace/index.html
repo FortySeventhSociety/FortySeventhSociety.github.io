@@ -1062,6 +1062,23 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+      var refresh = window.localStorage.getItem("refresh");
+      console.log(refresh);
+      setTimeout(function () {
+        if (refresh === null) {
+          window.localStorage.setItem("refresh", "Information Updated!");
+          window.location.reload();
+        }
+      }, 500);
+
+      setTimeout(function () {
+        localStorage.removeItem("refresh");
+        var elementToHide = document.getElementById("loadingScreen");
+        if (elementToHide) {
+          elementToHide.style.display = "none";
+        }
+      }, 3000);
+
       const images = [
         "./img/0.png",
         "./img/1.png",
@@ -1108,22 +1125,19 @@
 
       // Wait for the entire page to load before starting the timer
       // Use setTimeout to hide the loading screen after 3 seconds (3000 milliseconds)
-      setTimeout(() => {
-        // Fade out the loading screen by setting its opacity to 0
-        loadingScreen.style.opacity = "0";
 
-        // After the fade-out transition is complete (0.5s in our CSS), hide the loading screen completely
-        // and show the main content. We use another setTimeout for this.
+      if (refresh) {
         setTimeout(() => {
-          loadingScreen.style.display = "none";
+          // Fade out the loading screen by setting its opacity to 0
+          loadingScreen.style.opacity = "0";
 
-          // Now, show the main content by adding the 'visible' class
-          mainContent.style.display = "block";
+          // After the fade-out transition is complete (0.5s in our CSS), hide the loading screen completely
+          // and show the main content. We use another setTimeout for this.
           setTimeout(() => {
-            mainContent.classList.add("visible");
-          }, 10); // Small delay to ensure the display change is registered before the opacity transition
-        }, 0); // This delay should match the CSS transition duration
-      }, 1000); // 3-second delay for the loading screen
+            loadingScreen.style.display = "none";
+          }, 0); // This delay should match the CSS transition duration
+        }, 1000);
+      }
 
       function scrollex() {
         document.getElementById("fAI").scrollIntoView({ behavior: "smooth" });
@@ -1386,19 +1400,6 @@
           fries: "#F4A460", // Sabbia (più distintivo per le patatine)
         };
       });
-
-      var refresh = window.localStorage.getItem("refresh");
-      console.log(refresh);
-      setTimeout(function () {
-        if (refresh === null) {
-          window.localStorage.setItem("refresh", "1");
-          window.location.reload();
-        }
-      }, 500); // 1500 milliseconds = 1.5 seconds
-
-      setTimeout(function () {
-        localStorage.removeItem("refresh");
-      }, 3000); // 1700 milliseconds = 1.7 seconds
 
       function setFocus() {
         setTimeout(function () {
