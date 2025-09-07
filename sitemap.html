@@ -486,7 +486,7 @@ https://www.reddit.com/r/47thSociety/ -->
     </div>
 
     <script>
-      // Game data: scenes, descriptions, choices, and background styles (CSS gradients/colors)
+        // Game data: scenes, descriptions, choices, and background styles (CSS gradients/colors)
         const gameData = {
             'start': {
                 description: "You awaken in the Whispering Woods, a mystical forest bathed in an ethereal glow. Ancient trees with shimmering leaves loom above, and a faint melody drifts through the air. A winding path leads deeper into the woods, and a narrow, overgrown trail branches off to your left.",
@@ -513,6 +513,7 @@ https://www.reddit.com/r/47thSociety/ -->
                     { text: "Investigate the flickering light", nextScene: "flickeringLight" },
                     { text: "Cross the vine bridge", nextScene: "vineBridge" },
                     { text: "Venture deeper into the dark forest", nextScene: "darkForest" },
+                    { text: "Follow the sound of trickling water", nextScene: "enchantedFountain" },
                     { text: "Return to the Whispering Woods", nextScene: "start" }
                 ]
             },
@@ -624,7 +625,8 @@ https://www.reddit.com/r/47thSociety/ -->
                 choices: [
                     { text: "Follow the glowing fungi trail", nextScene: "flickeringLight" },
                     { text: "Try to find a way out of the dense woods", nextScene: "overgrownTrail" },
-                    { text: "Rest beneath an ancient, gnarled tree", nextScene: "endingPeace" } // Leads to specific ending
+                    { text: "Rest beneath an ancient, gnarled tree", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Seek the ominous Obsidian Tower", nextScene: "obsidianTower" }
                 ]
             },
             'mountainPeak': {
@@ -697,6 +699,7 @@ https://www.reddit.com/r/47thSociety/ -->
                 choices: [
                     { text: "Commune with the forest spirits", nextScene: "endingPeace" }, // Leads to specific ending
                     { text: "Follow a path of glowing orbs", nextScene: "sweetScent" },
+                    { text: "Follow a trail to a hidden village", nextScene: "ancientTreehouseVillage" },
                     { text: "Return to the Whispering Woods", nextScene: "start" }
                 ]
             },
@@ -751,7 +754,7 @@ https://www.reddit.com/r/47thSociety/ -->
                 choices: [
                     { text: "Swim towards the mist-shrouded island", nextScene: "forgottenShrine" },
                     { text: "Follow the lake shore to a bustling market", nextScene: "magicalMarket" },
-                    { text: "Return to the shimmering river", nextScene: "shimmeringRiver" }
+                    { text: "Return to the shimmering lake", nextScene: "shimmeringRiver" }
                 ]
             },
             'forgottenShrine': {
@@ -824,6 +827,51 @@ https://www.reddit.com/r/47thSociety/ -->
                     { text: "Look through the grand telescope", nextScene: "endingKnowledge" }, // Leads to specific ending
                     { text: "Study the constellations", nextScene: "celestialObservatory" },
                     { text: "Return to the rocky incline", nextScene: "rockyIncline" }
+                ]
+            },
+            'enchantedFountain': {
+                description: "Following the trickling sound, you find a small, moss-covered fountain. The water within glows with a gentle, blue light, and strange, luminous insects drink from it. A sense of magic and tranquility fills the air.",
+                backgroundStyle: "linear-gradient(to bottom, #4A90E2, #8E44AD)",
+                choices: [
+                    { text: "Drink from the fountain", nextScene: "endingPeace" },
+                    { text: "Investigate the glowing insects", nextScene: "endingKnowledge" },
+                    { text: "Return to the overgrown trail", nextScene: "overgrownTrail" }
+                ]
+            },
+            'cloudCitadel': {
+                description: "You find yourself at the gates of a majestic citadel carved from the clouds. Its spires reach for the heavens, and the sound of wind chimes echoes through its crystalline archways. This legendary city is a marvel of both architecture and magic.",
+                backgroundStyle: "linear-gradient(to top, #B0E0E6, #ADD8E6)",
+                choices: [
+                    { text: "Enter the citadel", nextScene: "endingSuccess" },
+                    { text: "Seek out a guide to learn its history", nextScene: "endingKnowledge" },
+                    { text: "Look for a way back to the mountains", nextScene: "rockyIncline" }
+                ]
+            },
+            'obsidianTower': {
+                description: "A foreboding tower of smooth, black obsidian pierces the sky, its surface seeming to absorb all light. An eerie silence surrounds it, and a palpable sense of ancient, dark magic hangs in the air. A single, ominous door stands at its base.",
+                backgroundStyle: "linear-gradient(to bottom, #111111, #333333)",
+                choices: [
+                    { text: "Open the ominous door", nextScene: "endingChallenge" },
+                    { text: "Search for another entrance", nextScene: "endingKnowledge" },
+                    { text: "Turn back and leave the tower behind", nextScene: "darkForest" }
+                ]
+            },
+            'deepSeaTrench': {
+                description: "You descend into a mysterious deep-sea trench, where bioluminescent creatures drift silently in the crushing darkness. The pressure is immense, and the only light comes from the strange, glowing life forms that inhabit this abyss. An ancient, coral-covered artifact sits on the seabed.",
+                backgroundStyle: "linear-gradient(to bottom, #000033, #000000)",
+                choices: [
+                    { text: "Examine the artifact", nextScene: "endingKnowledge" },
+                    { text: "Follow a school of glowing fish", nextScene: "endingPeace" },
+                    { text: "Ascend back to the surface", nextScene: "shimmeringLake" }
+                ]
+            },
+            'whisperingGrove': {
+                description: "The path leads you to a grove of ancient, twisted trees that seem to breathe with a life of their own. Leaves of silver and gold rustle in a breeze that isn't there, and a chorus of soft whispers surrounds you, telling stories of ages past.",
+                backgroundStyle: "linear-gradient(to bottom, #1A3A1A, #3A5A3A)",
+                choices: [
+                    { text: "Listen to the whispers", nextScene: "endingKnowledge" },
+                    { text: "Meditate in the grove", nextScene: "endingPeace" },
+                    { text: "Return to the clearing", nextScene: "enchantedForestClearing" }
                 ]
             },
             // --- NEW ENDING SCENES ---
