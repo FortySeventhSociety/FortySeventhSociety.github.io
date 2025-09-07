@@ -487,618 +487,379 @@ https://www.reddit.com/r/47thSociety/ -->
 
     <script>
       // Game data: scenes, descriptions, choices, and background styles (CSS gradients/colors)
-      const gameData = {
-        start: {
-          description:
-            "You awaken in the Whispering Woods, a mystical forest bathed in an ethereal glow. Ancient trees with shimmering leaves loom above, and a faint melody drifts through the air. A winding path leads deeper into the woods, and a narrow, overgrown trail branches off to your left.",
-          backgroundStyle: "linear-gradient(to bottom right, #2c3e50, #4a6c8a)", // Dark forest feel
-          choices: [
-            { text: "Follow the winding path", nextScene: "windingPath" },
-            { text: "Take the overgrown trail", nextScene: "overgrownTrail" },
-            {
-              text: "Seek the heart of the Enchanted Forest",
-              nextScene: "enchantedForestClearing",
+        const gameData = {
+            'start': {
+                description: "You awaken in the Whispering Woods, a mystical forest bathed in an ethereal glow. Ancient trees with shimmering leaves loom above, and a faint melody drifts through the air. A winding path leads deeper into the woods, and a narrow, overgrown trail branches off to your left.",
+                backgroundStyle: "linear-gradient(to bottom right, #2c3e50, #4a6c8a)", // Dark forest feel
+                choices: [
+                    { text: "Follow the winding path", nextScene: "windingPath" },
+                    { text: "Take the overgrown trail", nextScene: "overgrownTrail" },
+                    { text: "Seek the heart of the Enchanted Forest", nextScene: "enchantedForestClearing" } // New choice
+                ]
             },
-          ],
-        },
-        windingPath: {
-          description:
-            "The winding path leads you to a clearing dominated by a colossal, ancient oak. Its branches reach towards the sky like gnarled arms, and at its base, a small, intricately carved wooden door is nestled among its roots. Beyond the oak, you see a shimmering river.",
-          backgroundStyle: "linear-gradient(to top left, #34495e, #7f8c8d)", // Ancient clearing, earthy tones
-          choices: [
-            { text: "Examine the wooden door", nextScene: "woodenDoor" },
-            {
-              text: "Head towards the shimmering river",
-              nextScene: "shimmeringRiver",
+            'windingPath': {
+                description: "The winding path leads you to a clearing dominated by a colossal, ancient oak. Its branches reach towards the sky like gnarled arms, and at its base, a small, intricately carved wooden door is nestled among its roots. Beyond the oak, you see a shimmering river.",
+                backgroundStyle: "linear-gradient(to top left, #34495e, #7f8c8d)", // Ancient clearing, earthy tones
+                choices: [
+                    { text: "Examine the wooden door", nextScene: "woodenDoor" },
+                    { text: "Head towards the shimmering river", nextScene: "shimmeringRiver" },
+                    { text: "Go back to the Whispering Woods", nextScene: "start" }
+                ]
             },
-            { text: "Go back to the Whispering Woods", nextScene: "start" },
-          ],
-        },
-        overgrownTrail: {
-          description:
-            "The overgrown trail is dark and narrow, leading you into a dense thicket. The air grows heavy, and strange whispers seem to emanate from the shadows. You spot a faint light flickering in the distance, and a sturdy bridge made of vines spans a small chasm.",
-          backgroundStyle: "linear-gradient(to top, #1a1a1a, #333333)", // Dense, dark thicket
-          choices: [
-            {
-              text: "Investigate the flickering light",
-              nextScene: "flickeringLight",
+            'overgrownTrail': {
+                description: "The overgrown trail is dark and narrow, leading you into a dense thicket. The air grows heavy, and strange whispers seem to emanate from the shadows. You spot a faint light flickering in the distance, and a sturdy bridge made of vines spans a small chasm.",
+                backgroundStyle: "linear-gradient(to top, #1a1a1a, #333333)", // Dense, dark thicket
+                choices: [
+                    { text: "Investigate the flickering light", nextScene: "flickeringLight" },
+                    { text: "Cross the vine bridge", nextScene: "vineBridge" },
+                    { text: "Venture deeper into the dark forest", nextScene: "darkForest" },
+                    { text: "Return to the Whispering Woods", nextScene: "start" }
+                ]
             },
-            { text: "Cross the vine bridge", nextScene: "vineBridge" },
-            {
-              text: "Venture deeper into the dark forest",
-              nextScene: "darkForest",
+            'woodenDoor': {
+                description: "The wooden door is warm to the touch, adorned with symbols you don't recognize. As you touch it, a soft hum resonates, and the door slowly creaks open, revealing a spiral staircase descending into darkness.",
+                backgroundStyle: "linear-gradient(to bottom, #5a3d2b, #2c1a12)", // Woody, mysterious door
+                choices: [
+                    { text: "Descend the staircase", nextScene: "undergroundChamber" },
+                    { text: "Explore the ancient ruins nearby", nextScene: "ancientRuins" },
+                    { text: "Seek an ancient library within the ruins", nextScene: "ancientLibrary" }, // New choice
+                    { text: "Go back to the Ancient Oak Clearing", nextScene: "windingPath" }
+                ]
             },
-            { text: "Return to the Whispering Woods", nextScene: "start" },
-          ],
-        },
-        woodenDoor: {
-          description:
-            "The wooden door is warm to the touch, adorned with symbols you don't recognize. As you touch it, a soft hum resonates, and the door slowly creaks open, revealing a spiral staircase descending into darkness.",
-          backgroundStyle: "linear-gradient(to bottom, #5a3d2b, #2c1a12)", // Woody, mysterious door
-          choices: [
-            { text: "Descend the staircase", nextScene: "undergroundChamber" },
-            {
-              text: "Explore the ancient ruins nearby",
-              nextScene: "ancientRuins",
+            'shimmeringRiver': {
+                description: "The river shimmers with an otherworldly light, its waters clear and inviting. On the far bank, you see a small, abandoned boat tied to a weathered dock. The gentle lapping of the water is soothing.",
+                backgroundStyle: "linear-gradient(to right, #3498db, #87ceeb)", // Shimmering blue river
+                choices: [
+                    { text: "Attempt to cross the river", nextScene: "crossRiver" },
+                    { text: "Follow the riverbank", nextScene: "riverbank" },
+                    { text: "Search for a hidden cave along the river", nextScene: "deepRiverCave" },
+                    { text: "Dive into the shimmering waters to find a sunken temple", nextScene: "sunkenTemple" }, // New choice
+                    { text: "Explore the shimmering lake further upstream", nextScene: "shimmeringLake" } // New choice
+                ]
             },
-            {
-              text: "Seek an ancient library within the ruins",
-              nextScene: "ancientLibrary",
+            'flickeringLight': {
+                description: "The flickering light leads you to a small, hidden grotto. Inside, a single, luminous crystal pulsates with a soft glow, illuminating ancient carvings on the cave walls. The air is cool and still.",
+                backgroundStyle: "linear-gradient(to bottom, #4b0082, #8a2be2)", // Deep purple, glowing crystal
+                choices: [
+                    { text: "Examine the crystal", nextScene: "examineCrystal" },
+                    { text: "Study the carvings", nextScene: "studyCarvings" },
+                    { text: "Venture deeper into the mystic cave system", nextScene: "mysticCave" }, // New choice
+                    { text: "Go back to the Dense Thicket", nextScene: "overgrownTrail" }
+                ]
             },
-            {
-              text: "Go back to the Ancient Oak Clearing",
-              nextScene: "windingPath",
+            'vineBridge': {
+                description: "The vine bridge sways precariously as you cross, spanning a deep, mist-filled chasm. On the other side, a path leads up a rocky incline, and a faint, sweet scent fills the air.",
+                backgroundStyle: "linear-gradient(to top, #6d4c41, #3e2723)", // Earthy, chasm feel
+                choices: [
+                    { text: "Ascend the rocky incline", nextScene: "rockyIncline" },
+                    { text: "Follow the sweet scent", nextScene: "sweetScent" },
+                    { text: "Go back to the Dense Thicket", nextScene: "overgrownTrail" }
+                ]
             },
-          ],
-        },
-        shimmeringRiver: {
-          description:
-            "The river shimmers with an otherworldly light, its waters clear and inviting. On the far bank, you see a small, abandoned boat tied to a weathered dock. The gentle lapping of the water is soothing.",
-          backgroundStyle: "linear-gradient(to right, #3498db, #87ceeb)", // Shimmering blue river
-          choices: [
-            { text: "Attempt to cross the river", nextScene: "crossRiver" },
-            { text: "Follow the riverbank", nextScene: "riverbank" },
-            {
-              text: "Search for a hidden cave along the river",
-              nextScene: "deepRiverCave",
+            'undergroundChamber': {
+                description: "You descend into a vast underground chamber, lit by glowing moss. In the center, a pedestal holds a single, ornate key. The air is still and silent.",
+                backgroundStyle: "linear-gradient(to bottom, #222222, #444444)", // Dark, mossy chamber
+                choices: [
+                    { text: "Take the key", nextScene: "endingSuccess" }, // Leads to specific ending
+                    { text: "Explore the crystal caverns beyond", nextScene: "crystalCaverns" }, // New choice
+                    { text: "Go back up the staircase", nextScene: "woodenDoor" }
+                ]
             },
-            {
-              text: "Dive into the shimmering waters to find a sunken temple",
-              nextScene: "sunkenTemple",
+            'crossRiver': {
+                description: "You carefully cross the shimmering river, feeling a strange energy invigorate you. On the far side, a path leads into a vibrant meadow filled with exotic flowers.",
+                backgroundStyle: "linear-gradient(to right, #2ecc71, #27ae60)", // Vibrant green meadow
+                choices: [
+                    { text: "Explore the meadow", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Go back to the Shimmering River", nextScene: "shimmeringRiver" }
+                ]
             },
-            {
-              text: "Explore the shimmering lake further upstream",
-              nextScene: "shimmeringLake",
+            'riverbank': {
+                description: "Following the riverbank, you discover a hidden waterfall cascading into a serene pool. The sound of the water is mesmerizing.",
+                backgroundStyle: "linear-gradient(to bottom, #1abc9c, #16a085)", // Serene waterfall pool
+                choices: [
+                    { text: "Swim in the pool", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Discover the whispering falls' secret", nextScene: "whisperingFalls" }, // New choice
+                    { text: "Go back to the Shimmering River", nextScene: "shimmeringRiver" }
+                ]
             },
-          ],
-        },
-        flickeringLight: {
-          description:
-            "The flickering light leads you to a small, hidden grotto. Inside, a single, luminous crystal pulsates with a soft glow, illuminating ancient carvings on the cave walls. The air is cool and still.",
-          backgroundStyle: "linear-gradient(to bottom, #4b0082, #8a2be2)", // Deep purple, glowing crystal
-          choices: [
-            { text: "Examine the crystal", nextScene: "examineCrystal" },
-            { text: "Study the carvings", nextScene: "studyCarvings" },
-            {
-              text: "Venture deeper into the mystic cave system",
-              nextScene: "mysticCave",
+            'examineCrystal': {
+                description: "As you touch the crystal, visions of ancient times flash before your eyes, revealing forgotten knowledge. You feel a surge of understanding.",
+                backgroundStyle: "linear-gradient(to top, #9b59b6, #8e44ad)", // Mystical crystal visions
+                choices: [
+                    { text: "Continue your journey", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Go back to the Hidden Grotto", nextScene: "flickeringLight" }
+                ]
             },
-            {
-              text: "Go back to the Dense Thicket",
-              nextScene: "overgrownTrail",
+            'studyCarvings': {
+                description: "The carvings depict a prophecy of a hero who will unite the realms. You realize your journey is part of a greater destiny.",
+                backgroundStyle: "linear-gradient(to bottom, #7f8c8d, #34495e)", // Stone carvings, ancient feel
+                choices: [
+                    { text: "Embrace your destiny", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Go back to the Hidden Grotto", nextScene: "flickeringLight" }
+                ]
             },
-          ],
-        },
-        vineBridge: {
-          description:
-            "The vine bridge sways precariously as you cross, spanning a deep, mist-filled chasm. On the other side, a path leads up a rocky incline, and a faint, sweet scent fills the air.",
-          backgroundStyle: "linear-gradient(to top, #6d4c41, #3e2723)", // Earthy, chasm feel
-          choices: [
-            { text: "Ascend the rocky incline", nextScene: "rockyIncline" },
-            { text: "Follow the sweet scent", nextScene: "sweetScent" },
-            {
-              text: "Go back to the Dense Thicket",
-              nextScene: "overgrownTrail",
+            'rockyIncline': {
+                description: "Ascending the rocky incline, you reach a high vantage point overlooking the entire Whispering Woods. The view is breathtaking, and a sense of accomplishment fills you.",
+                backgroundStyle: "linear-gradient(to top, #6c7a89, #4b5a6c)", // Rocky incline, panoramic
+                choices: [
+                    { text: "Enjoy the view", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Climb higher to the mountain peak", nextScene: "mountainPeak" },
+                    { text: "Look for a celestial observatory on a distant peak", nextScene: "celestialObservatory" }, // New choice
+                    { text: "Venture into the perilous mountain pass", nextScene: "perilousPass" } // New choice
+                ]
             },
-          ],
-        },
-        undergroundChamber: {
-          description:
-            "You descend into a vast underground chamber, lit by glowing moss. In the center, a pedestal holds a single, ornate key. The air is still and silent.",
-          backgroundStyle: "linear-gradient(to bottom, #222222, #444444)", // Dark, mossy chamber
-          choices: [
-            { text: "Take the key", nextScene: "endingSuccess" }, // Leads to specific ending
-            {
-              text: "Explore the crystal caverns beyond",
-              nextScene: "crystalCaverns",
+            'sweetScent': {
+                description: "The sweet scent leads you to a garden of luminescent flowers. Their petals glow softly, and their fragrance is intoxicating. You feel a deep sense of peace.",
+                backgroundStyle: "linear-gradient(to bottom, #f1c40f, #f39c12)", // Luminescent garden, warm glow
+                choices: [
+                    { text: "Rest among the flowers", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Discover the secret garden's heart", nextScene: "secretGarden" },
+                    { text: "Go back to the Vine Bridge", nextScene: "vineBridge" }
+                ]
             },
-            { text: "Go back up the staircase", nextScene: "woodenDoor" },
-          ],
-        },
-        crossRiver: {
-          description:
-            "You carefully cross the shimmering river, feeling a strange energy invigorate you. On the far side, a path leads into a vibrant meadow filled with exotic flowers.",
-          backgroundStyle: "linear-gradient(to right, #2ecc71, #27ae60)", // Vibrant green meadow
-          choices: [
-            { text: "Explore the meadow", nextScene: "endingPeace" }, // Leads to specific ending
-            {
-              text: "Go back to the Shimmering River",
-              nextScene: "shimmeringRiver",
+            // --- EXISTING NEW SCENES ---
+            'darkForest': {
+                description: "You push deeper into the dark forest. The trees here are twisted and ancient, their branches forming a dense canopy that blocks out most of the light. Strange, glowing fungi dot the forest floor, and the air is thick with an earthy, damp smell. You feel a sense of ancient power here, both comforting and unsettling.",
+                backgroundStyle: "linear-gradient(to bottom, #101010, #2a2a2a)",
+                choices: [
+                    { text: "Follow the glowing fungi trail", nextScene: "flickeringLight" },
+                    { text: "Try to find a way out of the dense woods", nextScene: "overgrownTrail" },
+                    { text: "Rest beneath an ancient, gnarled tree", nextScene: "endingPeace" } // Leads to specific ending
+                ]
             },
-          ],
-        },
-        riverbank: {
-          description:
-            "Following the riverbank, you discover a hidden waterfall cascading into a serene pool. The sound of the water is mesmerizing.",
-          backgroundStyle: "linear-gradient(to bottom, #1abc9c, #16a085)", // Serene waterfall pool
-          choices: [
-            { text: "Swim in the pool", nextScene: "endingPeace" }, // Leads to specific ending
-            {
-              text: "Discover the whispering falls' secret",
-              nextScene: "whisperingFalls",
+            'mountainPeak': {
+                description: "After a strenuous climb, you reach the summit of the tallest mountain. The wind whips around you, carrying the scent of pine and distant snow. Below, the entire Mystic Realms spread out like a living map, bathed in the golden light of the setting sun. A small, weathered shrine stands at the very edge of the peak.",
+                backgroundStyle: "linear-gradient(to top, #7f8c8d, #bdc3c7)",
+                choices: [
+                    { text: "Examine the shrine", nextScene: "forgottenShrine" }, // Leads to new scene
+                    { text: "Descend back down the incline", nextScene: "rockyIncline" },
+                    { text: "Take a moment to absorb the view", nextScene: "endingPeace" } // Leads to specific ending
+                ]
             },
-            {
-              text: "Go back to the Shimmering River",
-              nextScene: "shimmeringRiver",
+            'secretGarden': {
+                description: "You follow the intoxicating scent to a hidden clearing, where flowers of every color imaginable glow with an inner light. Butterflies with iridescent wings flutter among them, and a gentle, melodic hum fills the air. This place feels like a sanctuary, untouched by the outside world.",
+                backgroundStyle: "linear-gradient(to bottom, #f39c12, #f1c40f)",
+                choices: [
+                    { text: "Spend more time in the garden", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Gather some luminescent flowers", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Return to the vine bridge area", nextScene: "sweetScent" }
+                ]
             },
-          ],
-        },
-        examineCrystal: {
-          description:
-            "As you touch the crystal, visions of ancient times flash before your eyes, revealing forgotten knowledge. You feel a surge of understanding.",
-          backgroundStyle: "linear-gradient(to top, #9b59b6, #8e44ad)", // Mystical crystal visions
-          choices: [
-            { text: "Continue your journey", nextScene: "endingKnowledge" }, // Leads to specific ending
-            {
-              text: "Go back to the Hidden Grotto",
-              nextScene: "flickeringLight",
+            'ancientRuins': {
+                description: "Hidden behind a veil of ivy, you discover the crumbling remains of an ancient structure. Moss-covered stones hint at forgotten grandeur, and a sense of history permeates the air. Faint inscriptions adorn a large stone tablet in the center of the ruins.",
+                backgroundStyle: "linear-gradient(to bottom, #7f8c8d, #95a5a6)",
+                choices: [
+                    { text: "Decipher the inscriptions", nextScene: "studyCarvings" },
+                    { text: "Search for artifacts", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Go back to the wooden door", nextScene: "woodenDoor" }
+                ]
             },
-          ],
-        },
-        studyCarvings: {
-          description:
-            "The carvings depict a prophecy of a hero who will unite the realms. You realize your journey is part of a greater destiny.",
-          backgroundStyle: "linear-gradient(to bottom, #7f8c8d, #34495e)", // Stone carvings, ancient feel
-          choices: [
-            { text: "Embrace your destiny", nextScene: "endingKnowledge" }, // Leads to specific ending
-            {
-              text: "Go back to the Hidden Grotto",
-              nextScene: "flickeringLight",
+            'deepRiverCave': {
+                description: "Following the river's edge, you find a hidden entrance to a damp, echoing cave. The sound of the river is amplified here, and small, glowing fish dart through the subterranean waters. A narrow path winds deeper into the darkness.",
+                backgroundStyle: "linear-gradient(to bottom, #2c3e50, #34495e)",
+                choices: [
+                    { text: "Follow the path deeper into the cave", nextScene: "undergroundChamber" },
+                    { text: "Return to the shimmering river", nextScene: "shimmeringRiver" },
+                    { text: "Try to catch a glowing fish", nextScene: "endingPeace" } // Leads to specific ending
+                ]
             },
-          ],
-        },
-        rockyIncline: {
-          description:
-            "Ascending the rocky incline, you reach a high vantage point overlooking the entire Whispering Woods. The view is breathtaking, and a sense of accomplishment fills you.",
-          backgroundStyle: "linear-gradient(to top, #6c7a89, #4b5a6c)", // Rocky incline, panoramic
-          choices: [
-            { text: "Enjoy the view", nextScene: "endingPeace" }, // Leads to specific ending
-            {
-              text: "Climb higher to the mountain peak",
-              nextScene: "mountainPeak",
+            // --- ADDITIONAL NEW SCENES ---
+            'mysticCave': {
+                description: "The mystic cave glows with an otherworldly bioluminescence. Strange, ancient symbols shimmer on the walls, hinting at forgotten rituals. The air is cool and carries a faint, sweet smell.",
+                backgroundStyle: "linear-gradient(to bottom, #1a0a2a, #3a1a5a)",
+                choices: [
+                    { text: "Touch the shimmering symbols", nextScene: "examineCrystal" },
+                    { text: "Search for hidden passages", nextScene: "crystalCaverns" },
+                    { text: "Return to the flickering light grotto", nextScene: "flickeringLight" }
+                ]
             },
-            {
-              text: "Look for a celestial observatory on a distant peak",
-              nextScene: "celestialObservatory",
+            'sunkenTemple': {
+                description: "You find yourself in a breathtaking underwater temple, its ancient stones covered in vibrant coral and schools of colorful fish. Light filters through the water from above, creating dazzling patterns on the submerged altars. A sense of profound peace fills this sacred place.",
+                backgroundStyle: "linear-gradient(to bottom, #0a3a4a, #1a5a6a)",
+                choices: [
+                    { text: "Explore the temple's main hall", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Search for hidden treasures", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Return to the shimmering river", nextScene: "shimmeringRiver" }
+                ]
             },
-            {
-              text: "Venture into the perilous mountain pass",
-              nextScene: "perilousPass",
+            'celestialObservatory': {
+                description: "Perched atop the highest peak, an ancient observatory stands open to the cosmos. Intricate mechanisms of brass and crystal hum softly, focusing on the swirling nebulae and distant stars. The air here is thin and crisp, filled with the silence of the universe.",
+                backgroundStyle: "linear-gradient(to top, #0a0a2a, #2a1a4a)",
+                choices: [
+                    { text: "Look through the grand telescope", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Study the celestial charts", nextScene: "studyCarvings" },
+                    { text: "Descend back to the rocky incline", nextScene: "rockyIncline" }
+                ]
             },
-          ],
-        },
-        sweetScent: {
-          description:
-            "The sweet scent leads you to a garden of luminescent flowers. Their petals glow softly, and their fragrance is intoxicating. You feel a deep sense of peace.",
-          backgroundStyle: "linear-gradient(to bottom, #f1c40f, #f39c12)", // Luminescent garden, warm glow
-          choices: [
-            { text: "Rest among the flowers", nextScene: "endingPeace" }, // Leads to specific ending
-            {
-              text: "Discover the secret garden's heart",
-              nextScene: "secretGarden",
+            'enchantedForestClearing': {
+                description: "You step into a clearing where the trees seem to dance and the very air shimmers with magic. Tiny, glowing orbs float gently, and the ground is carpeted with flowers that hum with soft energy. This is truly the heart of the Enchanted Forest.",
+                backgroundStyle: "linear-gradient(to bottom right, #3a6a3a, #5a8a5a)",
+                choices: [
+                    { text: "Commune with the forest spirits", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Follow a path of glowing orbs", nextScene: "sweetScent" },
+                    { text: "Return to the Whispering Woods", nextScene: "start" }
+                ]
             },
-            { text: "Go back to the Vine Bridge", nextScene: "vineBridge" },
-          ],
-        },
-        // --- EXISTING NEW SCENES ---
-        darkForest: {
-          description:
-            "You push deeper into the dark forest. The trees here are twisted and ancient, their branches forming a dense canopy that blocks out most of the light. Strange, glowing fungi dot the forest floor, and the air is thick with an earthy, damp smell. You feel a sense of ancient power here, both comforting and unsettling.",
-          backgroundStyle: "linear-gradient(to bottom, #101010, #2a2a2a)",
-          choices: [
-            {
-              text: "Follow the glowing fungi trail",
-              nextScene: "flickeringLight",
+            'ancientLibrary': {
+                description: "Deep within the ruins, you discover a hidden library, miraculously preserved. Shelves filled with ancient tomes line the walls, and a faint, scholarly scent of old parchment fills the air. A single, glowing book rests on a central pedestal.",
+                backgroundStyle: "linear-gradient(to bottom, #4a3a2a, #6a5a4a)",
+                choices: [
+                    { text: "Read the glowing book", nextScene: "examineCrystal" },
+                    { text: "Browse the ancient tomes", nextScene: "studyCarvings" },
+                    { text: "Return to the ancient ruins", nextScene: "ancientRuins" }
+                ]
             },
-            {
-              text: "Try to find a way out of the dense woods",
-              nextScene: "overgrownTrail",
+            'crystalCaverns': {
+                description: "The path leads you into vast caverns where every surface glitters with countless crystals. Stalactites and stalagmites of pure, luminous crystal hang from the ceiling and rise from the floor, reflecting light in a dazzling display. A deep, resonant hum vibrates through the air.",
+                backgroundStyle: "linear-gradient(to bottom, #0a4a4a, #1a6a6a)",
+                choices: [
+                    { text: "Admire the crystal formations", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Search for rare crystal specimens", nextScene: "examineCrystal" },
+                    { text: "Return to the underground chamber", nextScene: "undergroundChamber" }
+                ]
             },
-            {
-              text: "Rest beneath an ancient, gnarled tree",
-              nextScene: "endingPeace",
-            }, // Leads to specific ending
-          ],
-        },
-        mountainPeak: {
-          description:
-            "After a strenuous climb, you reach the summit of the tallest mountain. The wind whips around you, carrying the scent of pine and distant snow. Below, the entire Mystic Realms spread out like a living map, bathed in the golden light of the setting sun. A small, weathered shrine stands at the very edge of the peak.",
-          backgroundStyle: "linear-gradient(to top, #7f8c8d, #bdc3c7)",
-          choices: [
-            { text: "Examine the shrine", nextScene: "forgottenShrine" },
-            {
-              text: "Descend back down the incline",
-              nextScene: "rockyIncline",
+            'whisperingFalls': {
+                description: "You arrive at a series of hidden waterfalls, where the water cascades down moss-covered rocks into pools that glow with a soft, ethereal light. The sound of the falling water creates a soothing, almost hypnotic whisper that seems to carry ancient secrets.",
+                backgroundStyle: "linear-gradient(to bottom, #1a4a5a, #3a6a7a)",
+                choices: [
+                    { text: "Listen closely to the whispers", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Meditate by the glowing pools", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Return to the riverbank", nextScene: "riverbank" }
+                ]
             },
-            {
-              text: "Take a moment to absorb the view",
-              nextScene: "endingPeace",
-            }, // Leads to specific ending
-          ],
-        },
-        secretGarden: {
-          description:
-            "You follow the intoxicating scent to a hidden clearing, where flowers of every color imaginable glow with an inner light. Butterflies with iridescent wings flutter among them, and a gentle, melodic hum fills the air. This place feels like a sanctuary, untouched by the outside world.",
-          backgroundStyle: "linear-gradient(to bottom, #f39c12, #f1c40f)",
-          choices: [
-            { text: "Spend more time in the garden", nextScene: "endingPeace" }, // Leads to specific ending
-            {
-              text: "Gather some luminescent flowers",
-              nextScene: "endingPeace",
-            }, // Leads to specific ending
-            { text: "Return to the vine bridge area", nextScene: "sweetScent" },
-          ],
-        },
-        ancientRuins: {
-          description:
-            "Hidden behind a veil of ivy, you discover the crumbling remains of an ancient structure. Moss-covered stones hint at forgotten grandeur, and a sense of history permeates the air. Faint inscriptions adorn a large stone tablet in the center of the ruins.",
-          backgroundStyle: "linear-gradient(to bottom, #7f8c8d, #95a5a6)",
-          choices: [
-            { text: "Decipher the inscriptions", nextScene: "studyCarvings" },
-            { text: "Search for artifacts", nextScene: "endingKnowledge" }, // Leads to specific ending
-            { text: "Go back to the wooden door", nextScene: "woodenDoor" },
-          ],
-        },
-        deepRiverCave: {
-          description:
-            "Following the river's edge, you find a hidden entrance to a damp, echoing cave. The sound of the river is amplified here, and small, glowing fish dart through the subterranean waters. A narrow path winds deeper into the darkness.",
-          backgroundStyle: "linear-gradient(to bottom, #2c3e50, #34495e)",
-          choices: [
-            {
-              text: "Follow the path deeper into the cave",
-              nextScene: "undergroundChamber",
+            'starfallDesert': {
+                description: "You find yourself in a vast, arid desert under a sky ablaze with falling stars. The sand glows faintly with captured starlight, and ancient, weathered rock formations rise like silent sentinels. A sense of immense solitude and cosmic wonder fills the air.",
+                backgroundStyle: "linear-gradient(to bottom, #4a2a0a, #6a3a1a)",
+                choices: [
+                    { text: "Search for fallen star fragments", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Navigate by the constellations", nextScene: "celestialObservatory" },
+                    { text: "Look for an oasis", nextScene: "endingPeace" } // Leads to specific ending
+                ]
             },
-            {
-              text: "Return to the shimmering river",
-              nextScene: "shimmeringRiver",
+            'floatingIslands': {
+                description: "You discover a series of magnificent islands floating effortlessly in the sky, connected by shimmering bridges of pure light. Lush greenery and exotic flora cover their surfaces, and the clouds drift lazily below your feet. The air is fresh and filled with a sense of boundless freedom.",
+                backgroundStyle: "linear-gradient(to top, #87ceeb, #add8e6)",
+                choices: [
+                    { text: "Cross a shimmering bridge", nextScene: "endingSuccess" }, // Leads to specific ending
+                    { text: "Explore a new island", nextScene: "endingSuccess" }, // Leads to specific ending
+                    { text: "Look for a way back down", nextScene: "rockyIncline" }
+                ]
             },
-            { text: "Try to catch a glowing fish", nextScene: "endingPeace" }, // Leads to specific ending
-          ],
-        },
-        // --- ADDITIONAL NEW SCENES ---
-        mysticCave: {
-          description:
-            "The mystic cave glows with an otherworldly bioluminescence. Strange, ancient symbols shimmer on the walls, hinting at forgotten rituals. The air is cool and carries a faint, sweet smell.",
-          backgroundStyle: "linear-gradient(to bottom, #1a0a2a, #3a1a5a)",
-          choices: [
-            {
-              text: "Touch the shimmering symbols",
-              nextScene: "examineCrystal",
+            'shimmeringLake': {
+                description: "The shimmering river widens into a vast, tranquil lake, its surface reflecting the sky like a perfect mirror. Strange, glowing lilies float on the water, and a small, mist-shrouded island can be seen in the distance.",
+                backgroundStyle: "linear-gradient(to bottom, #4682b4, #6a5acd)", // Steel blue to lavender
+                choices: [
+                    { text: "Swim towards the mist-shrouded island", nextScene: "forgottenShrine" },
+                    { text: "Follow the lake shore to a bustling market", nextScene: "magicalMarket" },
+                    { text: "Return to the shimmering river", nextScene: "shimmeringRiver" }
+                ]
             },
-            { text: "Search for hidden passages", nextScene: "crystalCaverns" },
-            {
-              text: "Return to the flickering light grotto",
-              nextScene: "flickeringLight",
+            'forgottenShrine': {
+                description: "On the mist-shrouded island, you find a small, ancient shrine, overgrown with moss and glowing vines. A faint, melodic hum emanates from within, and a weathered stone altar stands at its center.",
+                backgroundStyle: "linear-gradient(to bottom right, #5a5a5a, #8a8a8a)", // Stone, ancient feel
+                choices: [
+                    { text: "Examine the altar", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Meditate within the shrine", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Return to the shimmering lake", nextScene: "shimmeringLake" }
+                ]
             },
-          ],
-        },
-        sunkenTemple: {
-          description:
-            "You find yourself in a breathtaking underwater temple, its ancient stones covered in vibrant coral and schools of colorful fish. Light filters through the water from above, creating dazzling patterns on the submerged altars. A sense of profound peace fills this sacred place.",
-          backgroundStyle: "linear-gradient(to bottom, #0a3a4a, #1a5a6a)",
-          choices: [
-            {
-              text: "Explore the temple's main hall",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            {
-              text: "Search for hidden treasures",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            {
-              text: "Return to the shimmering river",
-              nextScene: "shimmeringRiver",
+            'magicalMarket': {
+                description: "Following the lake shore, you arrive at a vibrant, bustling magical market. Stalls overflow with enchanted trinkets, glowing potions, and exotic goods. Strange creatures and diverse people haggle and chat, filling the air with a cacophony of sounds and scents.",
+                backgroundStyle: "linear-gradient(to top, #8a2be2, #4b0082)", // Vibrant, mystical market colors
+                choices: [
+                    { text: "Browse the enchanted trinkets", nextScene: "endingSuccess" }, // Leads to specific ending
+                    { text: "Seek out a wise merchant for guidance", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Return to the shimmering lake", nextScene: "shimmeringLake" }
+                ]
             },
-          ],
-        },
-        celestialObservatory: {
-          description:
-            "Perched atop the highest peak, an ancient observatory stands open to the cosmos. Intricate mechanisms of brass and crystal hum softly, focusing on the swirling nebulae and distant stars. The air here is thin and crisp, filled with the silence of the universe.",
-          backgroundStyle: "linear-gradient(to top, #0a0a2a, #2a1a4a)",
-          choices: [
-            {
-              text: "Look through the grand telescope",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            { text: "Study the celestial charts", nextScene: "studyCarvings" },
-            {
-              text: "Descend back to the rocky incline",
-              nextScene: "rockyIncline",
+            'perilousPass': {
+                description: "The mountain pass narrows into a treacherous trail, winding along the edge of a dizzying abyss. Strong winds howl, and loose rocks tumble from above. This path is clearly not for the faint of heart, but you can see a faint light in the distance.",
+                backgroundStyle: "linear-gradient(to bottom, #36454F, #2F4F4F)", // Dark, dangerous mountain
+                choices: [
+                    { text: "Brave the perilous pass towards the light", nextScene: "celestialObservatory" },
+                    { text: "Look for a safer route back down", nextScene: "rockyIncline" },
+                    { text: "Seek shelter from the wind", nextScene: "endingChallenge" } // Leads to specific ending
+                ]
             },
-          ],
-        },
-        enchantedForestClearing: {
-          description:
-            "You step into a clearing where the trees seem to dance and the very air shimmers with magic. Tiny, glowing orbs float gently, and the ground is carpeted with flowers that hum with soft energy. This is truly the heart of the Enchanted Forest.",
-          backgroundStyle: "linear-gradient(to bottom right, #3a6a3a, #5a8a5a)",
-          choices: [
-            {
-              text: "Commune with the forest spirits",
-              nextScene: "endingPeace",
-            }, // Leads to specific ending
-            { text: "Follow a path of glowing orbs", nextScene: "sweetScent" },
-            { text: "Return to the Whispering Woods", nextScene: "start" },
-          ],
-        },
-        ancientLibrary: {
-          description:
-            "Deep within the ruins, you discover a hidden library, miraculously preserved. Shelves filled with ancient tomes line the walls, and a faint, scholarly scent of old parchment fills the air. A single, glowing book rests on a central pedestal.",
-          backgroundStyle: "linear-gradient(to bottom, #4a3a2a, #6a5a4a)",
-          choices: [
-            { text: "Read the glowing book", nextScene: "examineCrystal" },
-            { text: "Browse the ancient tomes", nextScene: "studyCarvings" },
-            { text: "Return to the ancient ruins", nextScene: "ancientRuins" },
-          ],
-        },
-        crystalCaverns: {
-          description:
-            "The path leads you into vast caverns where every surface glitters with countless crystals. Stalactites and stalagmites of pure, luminous crystal hang from the ceiling and rise from the floor, reflecting light in a dazzling display. A deep, resonant hum vibrates through the air.",
-          backgroundStyle: "linear-gradient(to bottom, #0a4a4a, #1a6a6a)",
-          choices: [
-            {
-              text: "Admire the crystal formations",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            {
-              text: "Search for rare crystal specimens",
-              nextScene: "examineCrystal",
+            'ancientTreehouseVillage': {
+                description: "Hidden high in the canopy of the oldest trees, you discover an ancient treehouse village. Wooden bridges connect intricately built homes, and the air is filled with the gentle rustling of leaves and soft, melodic chimes. Friendly faces peek from windows, inviting you in.",
+                backgroundStyle: "linear-gradient(to bottom, #4CAF50, #8BC34A)", // Lush green, natural
+                choices: [
+                    { text: "Visit the village elder", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Explore the treehouse homes", nextScene: "endingSuccess" }, // Leads to specific ending
+                    { text: "Descend back to the forest floor", nextScene: "enchantedForestClearing" }
+                ]
             },
-            {
-              text: "Return to the underground chamber",
-              nextScene: "undergroundChamber",
+            'sunkenGrotto': {
+                description: "Beneath the whispering falls, you find a hidden, sunlit grotto. The water here is crystal clear, revealing a floor of smooth, colorful pebbles. A sense of tranquility washes over you as you take in the beauty of this secluded spot.",
+                backgroundStyle: "linear-gradient(to bottom, #5F9EA0, #4682B4)", // Cadet blue to steel blue
+                choices: [
+                    { text: "Rest by the clear waters", nextScene: "endingPeace" }, // Leads to specific ending
+                    { text: "Search for unique pebbles", nextScene: "endingSuccess" }, // Leads to specific ending
+                    { text: "Return to the whispering falls", nextScene: "whisperingFalls" }
+                ]
             },
-          ],
-        },
-        whisperingFalls: {
-          description:
-            "You arrive at a series of hidden waterfalls, where the water cascades down moss-covered rocks into pools that glow with a soft, ethereal light. The sound of the falling water creates a soothing, almost hypnotic whisper that seems to carry ancient secrets.",
-          backgroundStyle: "linear-gradient(to bottom, #1a4a5a, #3a6a7a)",
-          choices: [
-            {
-              text: "Listen closely to the whispers",
-              nextScene: "endingPeace",
-            }, // Leads to specific ending
-            { text: "Meditate by the glowing pools", nextScene: "endingPeace" }, // Leads to specific ending
-            { text: "Return to the riverbank", nextScene: "riverbank" },
-          ],
-        },
-        starfallDesert: {
-          description:
-            "You find yourself in a vast, arid desert under a sky ablaze with falling stars. The sand glows faintly with captured starlight, and ancient, weathered rock formations rise like silent sentinels. A sense of immense solitude and cosmic wonder fills the air.",
-          backgroundStyle: "linear-gradient(to bottom, #4a2a0a, #6a3a1a)",
-          choices: [
-            {
-              text: "Search for fallen star fragments",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            {
-              text: "Navigate by the constellations",
-              nextScene: "celestialObservatory",
+            'echoingChasm': {
+                description: "The vine bridge leads you to an immense, echoing chasm. The sheer drop into the darkness is dizzying, and the wind carries strange, distant sounds from below. A narrow ledge seems to lead around the chasm's edge.",
+                backgroundStyle: "linear-gradient(to bottom, #1C2833, #2C3E50)", // Dark, deep chasm
+                choices: [
+                    { text: "Attempt to traverse the narrow ledge", nextScene: "endingChallenge" }, // Leads to specific ending
+                    { text: "Look for another way around the chasm", nextScene: "vineBridge" },
+                    { text: "Call out into the chasm", nextScene: "endingChallenge" } // Leads to specific ending
+                ]
             },
-            { text: "Look for an oasis", nextScene: "endingPeace" }, // Leads to specific ending
-          ],
-        },
-        floatingIslands: {
-          description:
-            "You discover a series of magnificent islands floating effortlessly in the sky, connected by shimmering bridges of pure light. Lush greenery and exotic flora cover their surfaces, and the clouds drift lazily below your feet. The air is fresh and filled with a sense of boundless freedom.",
-          backgroundStyle: "linear-gradient(to top, #87ceeb, #add8e6)",
-          choices: [
-            { text: "Cross a shimmering bridge", nextScene: "endingSuccess" }, // Leads to specific ending
-            { text: "Explore a new island", nextScene: "endingSuccess" }, // Leads to specific ending
-            { text: "Look for a way back down", nextScene: "rockyIncline" },
-          ],
-        },
-        shimmeringLake: {
-          description:
-            "The shimmering river widens into a vast, tranquil lake, its surface reflecting the sky like a perfect mirror. Strange, glowing lilies float on the water, and a small, mist-shrouded island can be seen in the distance.",
-          backgroundStyle: "linear-gradient(to bottom, #4682b4, #6a5acd)", // Steel blue to lavender
-          choices: [
-            {
-              text: "Swim towards the mist-shrouded island",
-              nextScene: "forgottenShrine",
+            'glowingForestPath': {
+                description: "The path through the dark forest is illuminated by an increasing number of glowing fungi and bioluminescent plants. The air feels alive with a soft, magical energy, guiding your way deeper into the heart of the woods.",
+                backgroundStyle: "linear-gradient(to bottom, #333333, #556B2F)", // Dark forest with glowing elements
+                choices: [
+                    { text: "Follow the most brightly glowing path", nextScene: "secretGarden" },
+                    { text: "Investigate a particularly large glowing mushroom", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Return towards the dense thicket", nextScene: "darkForest" }
+                ]
             },
-            {
-              text: "Follow the lake shore to a bustling market",
-              nextScene: "magicalMarket",
+            'ancientObservatory': {
+                description: "You arrive at the ancient observatory, a structure of weathered stone and gleaming brass. The air is filled with the quiet hum of ancient machinery, and through a large opening, you can see the night sky, impossibly clear and filled with countless stars.",
+                backgroundStyle: "linear-gradient(to top, #0A0A2A, #2A1A4A)", // Deep space, observatory feel
+                choices: [
+                    { text: "Look through the grand telescope", nextScene: "endingKnowledge" }, // Leads to specific ending
+                    { text: "Study the constellations", nextScene: "celestialObservatory" },
+                    { text: "Return to the rocky incline", nextScene: "rockyIncline" }
+                ]
             },
-            {
-              text: "Return to the shimmering river",
-              nextScene: "shimmeringRiver",
+            // --- NEW ENDING SCENES ---
+            'endingSuccess': {
+                description: "Congratulations, brave adventurer! You have successfully navigated the Mystic Realms, faced its challenges, and uncovered its many wonders. Your journey has been a testament to your courage, wisdom, and perseverance. The echoes of your footsteps will forever resonate through these enchanted lands. May your future adventures be just as fulfilling, and may you always carry the spirit of discovery within you. The realms await your next grand tale! Farewell, and may your path always be illuminated by the magic you've found.\n\n<div style='text-align: center;'>✨🌟🏆</div>",
+                backgroundStyle: "linear-gradient(to bottom right, #000000, #333333)",
+                choices: [
+                    { text: "Start a new adventure", nextScene: "start" },
+                    { text: "Reflect on your journey", nextScene: "endingSuccess" }
+                ]
             },
-          ],
-        },
-        forgottenShrine: {
-          description:
-            "On the mist-shrouded island, you find a small, ancient shrine, overgrown with moss and glowing vines. A faint, melodic hum emanates from within, and a weathered stone altar stands at its center.",
-          backgroundStyle: "linear-gradient(to bottom right, #5a5a5a, #8a8a8a)", // Stone, ancient feel
-          choices: [
-            { text: "Examine the altar", nextScene: "endingKnowledge" }, // Leads to specific ending
-            { text: "Meditate within the shrine", nextScene: "endingPeace" }, // Leads to specific ending
-            {
-              text: "Return to the shimmering lake",
-              nextScene: "shimmeringLake",
+            'endingKnowledge': {
+                description: "Your quest for understanding has led you to the deepest truths of the Mystic Realms. You've unraveled ancient mysteries, deciphered forgotten lore, and gained insights that few mortals ever achieve. The knowledge you've acquired is a treasure more valuable than gold, empowering you for whatever lies ahead. The universe whispers its secrets to you, and you are now a true scholar of the arcane.\n\n<div style='text-align: center;'>📚🔮🧠</div>",
+                backgroundStyle: "linear-gradient(to bottom right, #1a0a2a, #3a1a5a)",
+                choices: [
+                    { text: "Start a new adventure with newfound wisdom", nextScene: "start" },
+                    { text: "Delve deeper into your studies", nextScene: "endingKnowledge" }
+                ]
             },
-          ],
-        },
-        magicalMarket: {
-          description:
-            "Following the lake shore, you arrive at a vibrant, bustling magical market. Stalls overflow with enchanted trinkets, glowing potions, and exotic goods. Strange creatures and diverse people haggle and chat, filling the air with a cacophony of sounds and scents.",
-          backgroundStyle: "linear-gradient(to top, #8a2be2, #4b0082)", // Vibrant, mystical market colors
-          choices: [
-            {
-              text: "Browse the enchanted trinkets",
-              nextScene: "endingSuccess",
-            }, // Leads to specific ending
-            {
-              text: "Seek out a wise merchant for guidance",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            {
-              text: "Return to the shimmering lake",
-              nextScene: "shimmeringLake",
+            'endingPeace': {
+                description: "You have found profound tranquility amidst the wonders of the Mystic Realms. Your journey has been one of harmony with nature, discovering serene havens and experiencing the gentle magic of the land. A deep sense of calm now resides within you, a testament to the peace you've cultivated. The whispers of the wind and the gentle flow of water will forever guide your spirit.\n\n<div style='text-align: center;'>🍃💧🧘</div>",
+                backgroundStyle: "linear-gradient(to bottom right, #27ae60, #1abc9c)",
+                choices: [
+                    { text: "Start a new, peaceful adventure", nextScene: "start" },
+                    { text: "Bask in the serenity", nextScene: "endingPeace" }
+                ]
             },
-          ],
-        },
-        perilousPass: {
-          description:
-            "The mountain pass narrows into a treacherous trail, winding along the edge of a dizzying abyss. Strong winds howl, and loose rocks tumble from above. This path is clearly not for the faint of heart, but you can see a faint light in the distance.",
-          backgroundStyle: "linear-gradient(to bottom, #36454F, #2F4F4F)", // Dark, dangerous mountain
-          choices: [
-            {
-              text: "Brave the perilous pass towards the light",
-              nextScene: "celestialObservatory",
-            },
-            {
-              text: "Look for a safer route back down",
-              nextScene: "rockyIncline",
-            },
-            {
-              text: "Seek shelter from the wind",
-              nextScene: "endingChallenge",
-            }, // Leads to specific ending
-          ],
-        },
-        ancientTreehouseVillage: {
-          description:
-            "Hidden high in the canopy of the oldest trees, you discover an ancient treehouse village. Wooden bridges connect intricately built homes, and the air is filled with the gentle rustling of leaves and soft, melodic chimes. Friendly faces peek from windows, inviting you in.",
-          backgroundStyle: "linear-gradient(to bottom, #4CAF50, #8BC34A)", // Lush green, natural
-          choices: [
-            { text: "Visit the village elder", nextScene: "endingPeace" }, // Leads to specific ending
-            { text: "Explore the treehouse homes", nextScene: "endingSuccess" }, // Leads to specific ending
-            {
-              text: "Descend back to the forest floor",
-              nextScene: "enchantedForestClearing",
-            },
-          ],
-        },
-        sunkenGrotto: {
-          description:
-            "Beneath the whispering falls, you find a hidden, sunlit grotto. The water here is crystal clear, revealing a floor of smooth, colorful pebbles. A sense of tranquility washes over you as you take in the beauty of this secluded spot.",
-          backgroundStyle: "linear-gradient(to bottom, #5F9EA0, #4682B4)", // Cadet blue to steel blue
-          choices: [
-            { text: "Rest by the clear waters", nextScene: "endingPeace" }, // Leads to specific ending
-            { text: "Search for unique pebbles", nextScene: "endingSuccess" }, // Leads to specific ending
-            {
-              text: "Return to the whispering falls",
-              nextScene: "whisperingFalls",
-            },
-          ],
-        },
-        echoingChasm: {
-          description:
-            "The vine bridge leads you to an immense, echoing chasm. The sheer drop into the darkness is dizzying, and the wind carries strange, distant sounds from below. A narrow ledge seems to lead around the chasm's edge.",
-          backgroundStyle: "linear-gradient(to bottom, #1C2833, #2C3E50)", // Dark, deep chasm
-          choices: [
-            {
-              text: "Attempt to traverse the narrow ledge",
-              nextScene: "endingChallenge",
-            }, // Leads to specific ending
-            {
-              text: "Look for another way around the chasm",
-              nextScene: "vineBridge",
-            },
-            { text: "Call out into the chasm", nextScene: "endingChallenge" }, // Leads to specific ending
-          ],
-        },
-        glowingForestPath: {
-          description:
-            "The path through the dark forest is illuminated by an increasing number of glowing fungi and bioluminescent plants. The air feels alive with a soft, magical energy, guiding your way deeper into the heart of the woods.",
-          backgroundStyle: "linear-gradient(to bottom, #333333, #556B2F)", // Dark forest with glowing elements
-          choices: [
-            {
-              text: "Follow the most brightly glowing path",
-              nextScene: "secretGarden",
-            },
-            {
-              text: "Investigate a particularly large glowing mushroom",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            {
-              text: "Return towards the dense thicket",
-              nextScene: "darkForest",
-            },
-          ],
-        },
-        ancientObservatory: {
-          description:
-            "You arrive at the ancient observatory, a structure of weathered stone and gleaming brass. The air is filled with the quiet hum of ancient machinery, and through a large opening, you can see the night sky, impossibly clear and filled with countless stars.",
-          backgroundStyle: "linear-gradient(to top, #0A0A2A, #2A1A4A)", // Deep space, observatory feel
-          choices: [
-            {
-              text: "Look through the grand telescope",
-              nextScene: "endingKnowledge",
-            }, // Leads to specific ending
-            {
-              text: "Study the constellations",
-              nextScene: "celestialObservatory",
-            },
-            { text: "Return to the rocky incline", nextScene: "rockyIncline" },
-          ],
-        },
-        // --- NEW ENDING SCENES ---
-        endingSuccess: {
-          description:
-            "Congratulations, brave adventurer! You have successfully navigated the Mystic Realms, faced its challenges, and uncovered its many wonders. Your journey has been a testament to your courage, wisdom, and perseverance. The echoes of your footsteps will forever resonate through these enchanted lands. May your future adventures be just as fulfilling, and may you always carry the spirit of discovery within you. The realms await your next grand tale! Farewell, and may your path always be illuminated by the magic you've found.\n\n✨🌟🏆",
-          backgroundStyle: "linear-gradient(to bottom right, #000000, #333333)",
-          choices: [
-            { text: "Start a new adventure", nextScene: "start" },
-            { text: "Reflect on your journey", nextScene: "endingSuccess" },
-          ],
-        },
-        endingKnowledge: {
-          description:
-            "Your quest for understanding has led you to the deepest truths of the Mystic Realms. You've unraveled ancient mysteries, deciphered forgotten lore, and gained insights that few mortals ever achieve. The knowledge you've acquired is a treasure more valuable than gold, empowering you for whatever lies ahead. The universe whispers its secrets to you, and you are now a true scholar of the arcane.\n\n📚🔮🧠",
-          backgroundStyle: "linear-gradient(to bottom right, #1a0a2a, #3a1a5a)",
-          choices: [
-            {
-              text: "Start a new adventure with newfound wisdom",
-              nextScene: "start",
-            },
-            {
-              text: "Delve deeper into your studies",
-              nextScene: "endingKnowledge",
-            },
-          ],
-        },
-        endingPeace: {
-          description:
-            "You have found profound tranquility amidst the wonders of the Mystic Realms. Your journey has been one of harmony with nature, discovering serene havens and experiencing the gentle magic of the land. A deep sense of calm now resides within you, a testament to the peace you've cultivated. The whispers of the wind and the gentle flow of water will forever guide your spirit.\n\n🍃💧🧘",
-          backgroundStyle: "linear-gradient(to bottom right, #27ae60, #1abc9c)",
-          choices: [
-            { text: "Start a new, peaceful adventure", nextScene: "start" },
-            { text: "Bask in the serenity", nextScene: "endingPeace" },
-          ],
-        },
-        endingChallenge: {
-          description:
-            "You have faced the most daunting trials of the Mystic Realms and emerged victorious! Your courage and resilience have been tested, and you have proven yourself to be a true champion. Every perilous step and every obstacle overcome has forged you into a formidable adventurer. The scars of your journey are badges of honor, and your legend will be whispered among the brave for generations to come.\n\n⚔️🛡️🔥",
-          backgroundStyle: "linear-gradient(to bottom right, #6d4c41, #3e2723)",
-          choices: [
-            { text: "Embark on another challenging quest", nextScene: "start" },
-            { text: "Relive your heroic deeds", nextScene: "endingChallenge" },
-          ],
-        },
-      };
+            'endingChallenge': {
+                description: "You have faced the most daunting trials of the Mystic Realms and emerged victorious! Your courage and resilience have been tested, and you have proven yourself to be a true champion. Every perilous step and every obstacle overcome has forged you into a formidable adventurer. The scars of your journey are badges of honor, and your legend will be whispered among the brave for generations to come.\n\n<div style='text-align: center;'>⚔️🛡️🔥</div>",
+                backgroundStyle: "linear-gradient(to bottom right, #6d4c41, #3e2723)",
+                choices: [
+                    { text: "Embark on another challenging quest", nextScene: "start" },
+                    { text: "Relive your heroic deeds", nextScene: "endingChallenge" }
+                ]
+            }
+        };
 
       // Default predefined list of game links
       const defaultPredefinedGameLinks = [
