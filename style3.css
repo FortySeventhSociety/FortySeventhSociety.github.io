@@ -16,6 +16,14 @@
   align-content: center;
 }
 
+.slideshow-container2 {
+  width: 250px;
+  position: absolute;
+  z-index: 9999;
+  min-height: 254px;
+  align-content: center;
+}
+
 /* Hide the images by default */
 .mySlides {
   display: none;
