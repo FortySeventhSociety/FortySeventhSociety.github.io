@@ -328,12 +328,12 @@ $(document).ready(function () {
 
     parent.append(
       '<div class="graphiq__graph-values"></div><div class="graphiq__graph-layout"><svg class="graphiq__graph" viewBox="0 0 960 ' +
-        (settings.height + 10) +
-        '" shape-rendering="geometricPrecision"><path fill="' +
-        settings.colorFill +
-        '" style="opacity: ' +
-        settings.fillOpacity +
-        '" class="graphiq__fill-path" d="" stroke-width="0" stroke="#000" fill="cyan"/></svg><div class="graphiq__graph-key"></div></div>',
+      (settings.height + 10) +
+      '" shape-rendering="geometricPrecision"><path fill="' +
+      settings.colorFill +
+      '" style="opacity: ' +
+      settings.fillOpacity +
+      '" class="graphiq__fill-path" d="" stroke-width="0" stroke="#000" fill="cyan"/></svg><div class="graphiq__graph-key"></div></div>',
     );
     if (settings.fluidParent) {
       this.closest(".col").css("overflow", "auto");
@@ -346,10 +346,10 @@ $(document).ready(function () {
     for (var key in settings.data) {
       this.find(".graphiq__graph-key").append(
         '<div class="key" style="color: ' +
-          settings.colorLabels +
-          '">' +
-          key +
-          "</div>",
+        settings.colorLabels +
+        '">' +
+        key +
+        "</div>",
       );
     }
 
@@ -357,16 +357,16 @@ $(document).ready(function () {
 
     this.find(".graphiq__graph-values").append(
       '<span style="color: ' +
-        settings.colorRange +
-        "; opacity: " +
-        settings.rangeOpacity +
-        '">' +
-        maxVal +
-        '</span><span style="color: ' +
-        settings.colorRange +
-        "; opacity: " +
-        settings.rangeOpacity +
-        '" >0</span>',
+      settings.colorRange +
+      "; opacity: " +
+      settings.rangeOpacity +
+      '">' +
+      maxVal +
+      '</span><span style="color: ' +
+      settings.colorRange +
+      "; opacity: " +
+      settings.rangeOpacity +
+      '" >0</span>',
     );
 
     // Set even spacing in the graph depending on amount of data
@@ -519,14 +519,14 @@ $(document).ready(function () {
         .attr(
           "d",
           "M  " +
-            (4 + settings.dotStrokeWeight) +
-            " " +
-            (settings.height + 5 + settings.dotStrokeWeight) +
-            pathPoints +
-            " L " +
-            (width - settings.dotRadius - settings.dotStrokeWeight) +
-            " " +
-            (settings.height + 5 + settings.dotStrokeWeight),
+          (4 + settings.dotStrokeWeight) +
+          " " +
+          (settings.height + 5 + settings.dotStrokeWeight) +
+          pathPoints +
+          " L " +
+          (width - settings.dotRadius - settings.dotStrokeWeight) +
+          " " +
+          (settings.height + 5 + settings.dotStrokeWeight),
         );
     }
 
@@ -557,12 +557,12 @@ $(document).ready(function () {
           .each(function (index) {
             $("body").append(
               '<span style="color: ' +
-                settings.colorUnits +
-                '" class="graphiq__value-dialog value-' +
-                index +
-                '">' +
-                $(this).attr("data-value") +
-                "</span>",
+              settings.colorUnits +
+              '" class="graphiq__value-dialog value-' +
+              index +
+              '">' +
+              $(this).attr("data-value") +
+              "</span>",
             );
             $(".value-" + index).css({
               top: $(this).position().top - 20,
@@ -896,7 +896,7 @@ angular.module("myApp", []).directive("peakChart", [
         ns.mozTransform =
         ns.msTransform =
         ns.transform =
-          trans;
+        trans;
     }
 
     function deg(x) {
@@ -1086,9 +1086,9 @@ angular.module("myApp2", []).directive("graph", function () {
                 psty.webkitTransform =
                   psty.msTransform =
                   psty.transform =
-                    "rotate(" +
-                    (-Math.PI / 2 + Math.atan2(delta, sectWidth)) +
-                    "rad)";
+                  "rotate(" +
+                  (-Math.PI / 2 + Math.atan2(delta, sectWidth)) +
+                  "rad)";
               }
             }
           });

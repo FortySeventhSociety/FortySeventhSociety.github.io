@@ -24,8 +24,8 @@ document.querySelectorAll(".scramble").forEach((el) => {
   });
 });
 
-<!-- // D474designs | JOCV-III ///////
-// All Rights Reserved /////// -->
+// D474designs | JOCV-III ///////
+// All Rights Reserved ///////
 
 var urls = [
   "./theAPI.html",
