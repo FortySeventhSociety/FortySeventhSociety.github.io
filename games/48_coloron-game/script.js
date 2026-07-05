@@ -39,7 +39,7 @@ class Game {
   generateSticks() {
     let numberOfSticks = Math.ceil(this.steps);
     for (let i = 0; i <= numberOfSticks; i++)
-    new Stick();
+      new Stick();
   }
 
   generateBall() {
@@ -69,21 +69,23 @@ class Game {
     let introTl = new TimelineMax();
     let ball = new TimelineMax({ repeat: -1, delay: 3 });
     introTl.
-    fromTo('.start-game .logo-holder', 0.9, { opacity: 0 }, { opacity: 1 }).
-    staggerFromTo('.start-game .logo span', 0.5, { opacity: 0 }, { opacity: 1 }, 0.08).
-    staggerFromTo('.start-game .bar', 1.6, { y: '+100%' }, { y: '0%', ease: Elastic.easeOut.config(1, 0.3) }, 0.08).
-    staggerFromTo('.start-game .ball-demo', 1, { scale: 0 }, { scale: 1, ease: Elastic.easeOut.config(1, 0.3) }, 0.8, 2);
+      fromTo('.start-game .logo-holder', 0.9, { opacity: 0 }, { opacity: 1 }).
+      staggerFromTo('.start-game .logo span', 0.5, { opacity: 0 }, { opacity: 1 }, 0.08).
+      staggerFromTo('.start-game .bar', 1.6, { y: '+100%' }, { y: '0%', ease: Elastic.easeOut.config(1, 0.3) }, 0.08).
+      staggerFromTo('.start-game .ball-demo', 1, { scale: 0 }, { scale: 1, ease: Elastic.easeOut.config(1, 0.3) }, 0.8, 2);
 
 
     ball.fromTo('.start-game .section-1 .ball-demo', 0.5, { y: "0px" }, { y: "100px", scaleY: 1.1, transformOrigin: "bottom", ease: Power2.easeIn }).
-    to('.start-game .section-1 .ball-demo', 0.5, { y: "0px", scaleY: 1, transformOrigin: "bottom", ease: Power2.easeOut,
-      onStart: () => {
-        while (this.prevColor == this.color) {
-          this.color = new Color().getRandomColor();
+      to('.start-game .section-1 .ball-demo', 0.5, {
+        y: "0px", scaleY: 1, transformOrigin: "bottom", ease: Power2.easeOut,
+        onStart: () => {
+          while (this.prevColor == this.color) {
+            this.color = new Color().getRandomColor();
+          }
+          this.prevColor = this.color;
+          TweenMax.to('.start-game .section-1 .ball-demo', 0.5, { backgroundColor: this.color });
         }
-        this.prevColor = this.color;
-        TweenMax.to('.start-game .section-1 .ball-demo', 0.5, { backgroundColor: this.color });
-      } });
+      });
 
   }
 
@@ -99,9 +101,9 @@ class Game {
 
     let resultTimeline = new TimelineMax();
     resultTimeline.
-    fromTo('.stop-game .score-container', 0.7, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1.25, 0.5) }).
-    fromTo('.stop-game .final-score', 2, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(2, 0.5) }, 0).
-    fromTo('.stop-game .result', 1, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(1.5, 0.5) }, 0.3);
+      fromTo('.stop-game .score-container', 0.7, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1.25, 0.5) }).
+      fromTo('.stop-game .final-score', 2, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(2, 0.5) }, 0).
+      fromTo('.stop-game .result', 1, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(1.5, 0.5) }, 0.3);
 
 
   }
@@ -112,14 +114,14 @@ class Game {
    * @return {string} grade
    */
   showGrade(score) {
-    if (score > 30) return "Chuck Norris?";else
-    if (score > 25) return "You're da man";else
-    if (score > 20) return "Awesome";else
-    if (score > 15) return "Great!";else
-    if (score > 13) return "Nice!";else
-    if (score > 10) return "Good Job!";else
-    if (score > 5) return "Really?";else
-    return "Poor...";
+    if (score > 30) return "Chuck Norris?"; else
+      if (score > 25) return "You're da man"; else
+        if (score > 20) return "Awesome"; else
+          if (score > 15) return "Great!"; else
+            if (score > 13) return "Nice!"; else
+              if (score > 10) return "Good Job!"; else
+                if (score > 5) return "Really?"; else
+                  return "Poor...";
   }
 
   start() {
@@ -174,10 +176,10 @@ class Game {
     this.calculateScale();
 
     $('.container').
-    css('transform', 'scale(' + this.scale + ')').
-    css('height', height / this.scale).
-    css('width', width / this.scale).
-    css('transformOrigin', 'left top');
+      css('transform', 'scale(' + this.scale + ')').
+      css('height', height / this.scale).
+      css('width', width / this.scale).
+      css('transformOrigin', 'left top');
 
     $('#sticks').width(this.screen / this.scale + 3 * this.stickWidth / this.scale);
 
@@ -210,23 +212,25 @@ class Game {
     let tip = new TimelineMax({ delay: 2 });
 
     tip.
-    fromTo('.learn-to-play', 1, { scale: 0 }, { scale: 1, opacity: 1, ease: Elastic.easeOut.config(1.25, 0.5) }).
-    to('.learn-to-play', 1, { scale: 0, opacity: 0, ease: Elastic.easeOut.config(1.25, 0.5) }, 3);
+      fromTo('.learn-to-play', 1, { scale: 0 }, { scale: 1, opacity: 1, ease: Elastic.easeOut.config(1.25, 0.5) }).
+      to('.learn-to-play', 1, { scale: 0, opacity: 0, ease: Elastic.easeOut.config(1.25, 0.5) }, 3);
 
     TweenMax.fromTo('#ball', this.time,
-    {
-      scale: 0 },
+      {
+        scale: 0
+      },
 
-    {
-      scale: 1,
-      delay: this.time * (this.steps - 3 - 1.5),
-      onComplete: () => {
-        this.balltween.play();
-      } });
+      {
+        scale: 1,
+        delay: this.time * (this.steps - 3 - 1.5),
+        onComplete: () => {
+          this.balltween.play();
+        }
+      });
 
 
     this.timeline.add(
-    TweenMax.fromTo('#sticks', this.time * this.steps, { x: this.screen / this.scale }, { x: 0, ease: Power0.easeNone }));
+      TweenMax.fromTo('#sticks', this.time * this.steps, { x: this.screen / this.scale }, { x: 0, ease: Power0.easeNone }));
 
   }
 
@@ -236,7 +240,7 @@ class Game {
   moveScene() {
 
     this.timeline.add(
-    TweenMax.to('#sticks', this.time, { x: '-=180px', ease: Power0.easeNone, repeat: -1, onRepeat: () => {this.rearrange();} }));
+      TweenMax.to('#sticks', this.time, { x: '-=180px', ease: Power0.easeNone, repeat: -1, onRepeat: () => { this.rearrange(); } }));
 
 
   }
@@ -272,18 +276,18 @@ class Game {
     if (this.score > 15) {
       return 1.5;
     } else
-    if (this.score > 12) {
-      return 1.4;
-    } else
-    if (this.score > 10) {
-      return 1.3;
-    } else
-    if (this.score > 8) {
-      return 1.2;
-    } else
-    if (this.score > 5) {
-      return 1.1;
-    }
+      if (this.score > 12) {
+        return 1.4;
+      } else
+        if (this.score > 10) {
+          return 1.3;
+        } else
+          if (this.score > 8) {
+            return 1.2;
+          } else
+            if (this.score > 5) {
+              return 1.1;
+            }
     return 1;
   }
 
@@ -295,22 +299,26 @@ class Game {
   bounce() {
 
     this.balltween.
-    to('#ball', this.time / 2, { y: '+=250px', scaleY: 0.7, transformOrigin: "bottom", ease: Power2.easeIn,
-      onComplete: () => {
-        this.checkColor();
-      } }).
-    to('#ball', this.time / 2, { y: '-=250px', scaleY: 1.1, transformOrigin: "bottom", ease: Power2.easeOut,
-      onStart: () => {
-        while (this.prevColor == this.color) {
-          this.color = new Color().getRandomColor();
+      to('#ball', this.time / 2, {
+        y: '+=250px', scaleY: 0.7, transformOrigin: "bottom", ease: Power2.easeIn,
+        onComplete: () => {
+          this.checkColor();
         }
-        this.prevColor = this.color;
-        TweenMax.to('#ball', 0.5, { backgroundColor: this.color });
-        $('#ball').removeClass('red').
-        removeClass('yellow').
-        removeClass('purple').
-        addClass(new Color().colorcodeToName(this.color));
-      } });
+      }).
+      to('#ball', this.time / 2, {
+        y: '-=250px', scaleY: 1.1, transformOrigin: "bottom", ease: Power2.easeOut,
+        onStart: () => {
+          while (this.prevColor == this.color) {
+            this.color = new Color().getRandomColor();
+          }
+          this.prevColor = this.color;
+          TweenMax.to('#ball', 0.5, { backgroundColor: this.color });
+          $('#ball').removeClass('red').
+            removeClass('yellow').
+            removeClass('purple').
+            addClass(new Color().colorcodeToName(this.color));
+        }
+      });
 
   }
 
@@ -339,7 +347,8 @@ class Game {
     });
 
     this.score = score;
-  }}
+  }
+}
 
 
 
@@ -352,7 +361,8 @@ class Stick {
   addStick() {
     this.stick = $('#sticks').append('<div class="stick inactive"></div>');
     return this.stick;
-  }}
+  }
+}
 
 
 
@@ -384,17 +394,16 @@ class Color {
    */
   changeColor(el) {
     let index = el.data("index");
-    if (index === undefined) {index = 0;} else
-    {index += 1;}
+    if (index === undefined) { index = 0; } else { index += 1; }
     if (index == 3) index = 0;
     el.
-    css('background-color', this.colors[index]).
-    data('index', index);
+      css('background-color', this.colors[index]).
+      data('index', index);
 
     el.removeClass('red').
-    removeClass('yellow').
-    removeClass('purple').
-    addClass(this.colorcodeToName(this.colors[index]));
+      removeClass('yellow').
+      removeClass('purple').
+      addClass(this.colorcodeToName(this.colors[index]));
 
     if (el.hasClass('inactive')) {
       this.setEffect(el);
@@ -444,7 +453,8 @@ class Color {
         return classes[i];
       }
     }
-  }}
+  }
+}
 
 
 class Animation {
@@ -485,14 +495,16 @@ class Animation {
   playTriangle(el) {
     let triangle = new TimelineMax();
     triangle.staggerFromTo(el.find('.triangle'), 0.3, { scale: 0.1 }, { scale: 1 }, 0.03).
-    staggerTo(el.find('.triangle'), 1.5, {
-      cycle: {
-        rotationY: [0, 360],
-        rotationX: [360, 0] },
+      staggerTo(el.find('.triangle'), 1.5, {
+        cycle: {
+          rotationY: [0, 360],
+          rotationX: [360, 0]
+        },
 
-      repeat: -1,
-      repeatDelay: 0.1 },
-    0.1);
+        repeat: -1,
+        repeatDelay: 0.1
+      },
+        0.1);
   }
 
   playBlock(el) {
@@ -500,20 +512,24 @@ class Animation {
     let block2 = new TimelineMax({ delay: 0.69 });
 
     block.staggerFromTo(el.find('.block'), 0.3, { scale: 0.1 }, { scale: 1 }, 0.03).
-    staggerTo(el.find('.block .inner:not(.inner-2)'), 1, {
-      cycle: {
-        x: ["+200%", "-200%"] },
+      staggerTo(el.find('.block .inner:not(.inner-2)'), 1, {
+        cycle: {
+          x: ["+200%", "-200%"]
+        },
 
-      repeat: -1,
-      repeatDelay: 0.6 },
-    0.1);
+        repeat: -1,
+        repeatDelay: 0.6
+      },
+        0.1);
     block2.staggerTo(el.find('.block .inner-2'), 1, {
       cycle: {
-        x: ["+200%", "-200%"] },
+        x: ["+200%", "-200%"]
+      },
 
       repeat: -1,
-      repeatDelay: 0.6 },
-    0.1);
+      repeatDelay: 0.6
+    },
+      0.1);
   }
 
   static sceneAnimation() {
@@ -538,7 +554,8 @@ class Animation {
 
     var clouds = TweenMax.to('.clouds', speed * 3, { backgroundPositionX: '-=1001px', repeat: -1, ease: Power0.easeNone });
 
-  }}
+  }
+}
 
 
 

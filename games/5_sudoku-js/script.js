@@ -1,12 +1,12 @@
 // D474designs | JOCV-III ///////
 // All Rights Reserved ///////
 
-(function(global) {
+(function (global) {
 	"use strict";
 
 	// Helper utilities
 	var util = {
-		extend: function(src, props) {
+		extend: function (src, props) {
 			props = props || {};
 			var p;
 			for (p in src) {
@@ -16,7 +16,7 @@
 			}
 			return props;
 		},
-		each: function(a, b, c) {
+		each: function (a, b, c) {
 			if ("[object Object]" === Object.prototype.toString.call(a)) {
 				for (var d in a) {
 					if (Object.prototype.hasOwnProperty.call(a, d)) {
@@ -29,10 +29,10 @@
 				}
 			}
 		},
-		isNumber: function(n) {
+		isNumber: function (n) {
 			return !isNaN(parseFloat(n)) && isFinite(n);
 		},
-		includes: function(a, b) {
+		includes: function (a, b) {
 			return a.indexOf(b) > -1;
 		},
 	};
@@ -81,7 +81,7 @@
 		 * Build the game GUI
 		 * @returns {HTMLTableElement} Table containing 9x9 input matrix
 		 */
-		buildGUI: function() {
+		buildGUI: function () {
 			var td, tr;
 
 			this.table = document.createElement("table");
@@ -122,7 +122,7 @@
 				// Append to table
 				this.table.appendChild(tr);
 			}
-			
+
 			this.table.addEventListener("mousedown", this.onMouseDown.bind(this));
 
 			// Return the GUI table
@@ -134,7 +134,7 @@
 		 *
 		 * @param {Event} e Keyup event
 		 */
-		onKeyUp: function(e) {
+		onKeyUp: function (e) {
 			var sectRow,
 				sectCol,
 				secIndex,
@@ -172,11 +172,11 @@
 			this.matrix.col[col][row] = val;
 			this.matrix.sect[sectRow][sectCol][secIndex] = val;
 		},
-		
-		onMouseDown: function(e) {
+
+		onMouseDown: function (e) {
 			var t = e.target;
-			
-			if ( t.nodeName === "INPUT" && t.classList.contains("disabled") ) {
+
+			if (t.nodeName === "INPUT" && t.classList.contains("disabled")) {
 				e.preventDefault();
 			}
 		},
@@ -184,7 +184,7 @@
 		/**
 		 * Reset the board and the game parameters
 		 */
-		resetGame: function() {
+		resetGame: function () {
 			this.resetValidationMatrices();
 			for (var row = 0; row < 9; row++) {
 				for (var col = 0; col < 9; col++) {
@@ -195,7 +195,7 @@
 
 			var inputs = this.table.getElementsByTagName("input");
 
-			util.each(inputs, function(i, input) {
+			util.each(inputs, function (i, input) {
 				input.classList.remove("disabled");
 				input.tabIndex = 1;
 			});
@@ -206,7 +206,7 @@
 		/**
 		 * Reset and rebuild the validation matrices
 		 */
-		resetValidationMatrices: function() {
+		resetValidationMatrices: function () {
 			this.matrix = {
 				row: {},
 				col: {},
@@ -246,7 +246,7 @@
 		 * @param {String} oldNum The previous value
 		 * @returns {Boolean} Valid or invalid input
 		 */
-		validateNumber: function(num, rowID, colID, oldNum) {
+		validateNumber: function (num, rowID, colID, oldNum) {
 			var isValid = true,
 				// Section
 				sectRow = Math.floor(rowID / 3),
@@ -311,7 +311,7 @@
 		 * Validate the entire matrix
 		 * @returns {Boolean} Valid or invalid matrix
 		 */
-		validateMatrix: function() {
+		validateMatrix: function () {
 			var isValid, val, $element, hasError = false;
 
 			// Go over entire board, and compare to the cached
@@ -335,7 +335,7 @@
 		 * game. Algorithm is based on the StackOverflow answer
 		 * http://stackoverflow.com/questions/18168503/recursively-solving-a-sudoku-puzzle-using-backtracking-theoretically
 		 */
-		solveGame: function(row, col, string) {
+		solveGame: function (row, col, string) {
 			var cval,
 				sqRow,
 				sqCol,
@@ -401,7 +401,7 @@
 		 * @returns {jQuery} Input element of the closest empty
 		 *  square
 		 */
-		findClosestEmptySquare: function(row, col) {
+		findClosestEmptySquare: function (row, col) {
 			var walkingRow, walkingCol, found = false;
 			for (var i = col + 9 * row; i < 81; i++) {
 				walkingRow = Math.floor(i / 9);
@@ -421,7 +421,7 @@
 		 * @param {Number} col Column id
 		 * @returns {Array} An array of available numbers
 		 */
-		findLegalValuesForSquare: function(row, col) {
+		findLegalValuesForSquare: function (row, col) {
 			var temp,
 				legalVals,
 				legalNums,
@@ -528,7 +528,7 @@
 		}
 	}
 
-	var Sudoku = function(container, settings) {
+	var Sudoku = function (container, settings) {
 		this.container = container;
 
 		if (typeof container === "string") {
@@ -545,15 +545,15 @@
 		 * Return a visual representation of the board
 		 * @returns {jQuery} Game table
 		 */
-		getGameBoard: function() {
+		getGameBoard: function () {
 			return this.game.buildGUI();
 		},
 
-		newGame: function() {
+		newGame: function () {
 			var that = this;
 			this.reset();
 
-			setTimeout(function() {
+			setTimeout(function () {
 				that.start();
 			}, 20);
 		},
@@ -561,7 +561,7 @@
 		/**
 		 * Start a game.
 		 */
-		start: function() {
+		start: function () {
 			var arr = [],
 				x = 0,
 				values,
@@ -576,8 +576,8 @@
 			// Solve the game to get the solution
 			this.game.solveGame(0, 0);
 
-			util.each(rows, function(i, row) {
-				util.each(row, function(r, val) {
+			util.each(rows, function (i, row) {
+				util.each(row, function (r, val) {
 					arr.push({
 						index: x,
 						value: val
@@ -592,7 +592,7 @@
 			// Reset the game
 			this.reset();
 
-			util.each(values, function(i, data) {
+			util.each(values, function (i, data) {
 				var input = inputs[data.index];
 				input.value = data.value;
 				input.classList.add("disabled");
@@ -604,7 +604,7 @@
 		/**
 		 * Reset the game board.
 		 */
-		reset: function() {
+		reset: function () {
 			this.game.resetGame();
 		},
 
@@ -612,7 +612,7 @@
 		 * Call for a validation of the game board.
 		 * @returns {Boolean} Whether the board is valid
 		 */
-		validate: function() {
+		validate: function () {
 			var isValid;
 
 			isValid = this.game.validateMatrix();
@@ -623,7 +623,7 @@
 		 * Call for the solver routine to solve the current
 		 * board.
 		 */
-		solve: function() {
+		solve: function () {
 			var isValid;
 			// Make sure the board is valid first
 			if (!this.game.validateMatrix()) {
@@ -639,7 +639,7 @@
 			if (isValid) {
 				var inputs = this.game.table.getElementsByTagName("input");
 
-				util.each(inputs, function(i, input) {
+				util.each(inputs, function (i, input) {
 					input.classList.add("disabled");
 					input.tabIndex = -1;
 				});
@@ -660,16 +660,16 @@ const container = document.querySelector(".sudoku-container");
 const inputs = Array.from(document.querySelectorAll("input"));
 container.addEventListener("click", e => {
 	const el = e.target.closest("input");
-	
-	if ( el ) {
+
+	if (el) {
 		inputs.forEach(input => {
-			input.classList.toggle("highlight", input.value && input.value === el.value );
+			input.classList.toggle("highlight", input.value && input.value === el.value);
 		});
 	}
 }, false);
 
 
-document.getElementById("controls").addEventListener("click", function(e) {
+document.getElementById("controls").addEventListener("click", function (e) {
 
 	var t = e.target;
 

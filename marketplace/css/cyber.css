@@ -11,8 +11,10 @@
 /* Stili generali del corpo */
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #1a002d; /* Sfondo viola scuro */
-  color: #ffd700; /* Testo principale grigio chiaro */
+  background-color: #1a002d;
+  /* Sfondo viola scuro */
+  color: #ffd700;
+  /* Testo principale grigio chiaro */
   margin: 0;
   padding: 0;
   display: flex;
@@ -30,42 +32,50 @@ h2 {
 }
 
 h1 {
-  color: #ffd700; /* Neon turchese */
+  color: #ffd700;
+  /* Neon turchese */
   font-size: 3em;
   font-weight: bold;
   text-shadow:
     2px 2px 0 #00a3a3,
     -2px -2px 0 #00a3a3,
     2px -2px 0 #00a3a3,
-    -2px 2px 0 #00a3a3; /* Effetto neon */
+    -2px 2px 0 #00a3a3;
+  /* Effetto neon */
 }
 
 h2 {
-  color: #f7a1d5; /* Neon rosa */
+  color: #f7a1d5;
+  /* Neon rosa */
   font-size: 1.5em;
   text-shadow:
     2px 2px 0 #1f0033,
     -2px -2px 0 #1f0033,
     2px -2px 0 #1f0033,
-    -2px 2px 0 #1f0033; /* Colore del bordo e dimensione */
+    -2px 2px 0 #1f0033;
+  /* Colore del bordo e dimensione */
 }
 
 h3 {
-  color: #ff6600; /* Neon arancione */
+  color: #ff6600;
+  /* Neon arancione */
   font-size: 1.2em;
 }
 
 h1 a {
-  color: #f7a1d5; /* Colore del testo del link: verde scuro */
+  color: #f7a1d5;
+  /* Colore del testo del link: verde scuro */
   text-decoration: none;
 }
 
 h1 a:hover {
-  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+  text-decoration: underline;
+  /* Sottolinea il link al passaggio del mouse */
 }
 
 h2 a {
-  color: #f7a1d5; /* Testo del link neon rosa */
+  color: #f7a1d5;
+  /* Testo del link neon rosa */
   text-decoration: none;
 }
 
@@ -118,16 +128,22 @@ h2 a:hover {
 
 /* Stili per le tabelle 'buy' */
 .table-section.buy {
-  background-color: #1f0033; /* Sfondo viola scuro */
-  color: #ffd700; /* Neon turchese */
-  border: 2px solid #ffd700; /* Bordo neon turchese */
+  background-color: #1f0033;
+  /* Sfondo viola scuro */
+  color: #ffd700;
+  /* Neon turchese */
+  border: 2px solid #ffd700;
+  /* Bordo neon turchese */
 }
 
 /* Stili per le tabelle 'sell' */
 .table-section.sell {
-  background-color: #1a0a1a; /* Sfondo viola scuro */
-  color: #f7a1d5; /* Neon rosa */
-  border: 2px solid #f7a1d5; /* Bordo neon rosa */
+  background-color: #1a0a1a;
+  /* Sfondo viola scuro */
+  color: #f7a1d5;
+  /* Neon rosa */
+  border: 2px solid #f7a1d5;
+  /* Bordo neon rosa */
 }
 
 /* Bordo delle tabelle 'buy' */
@@ -202,7 +218,8 @@ td {
 }
 
 th {
-  background-color: #2a0038; /* Sfondo viola scuro per le intestazioni */
+  background-color: #2a0038;
+  /* Sfondo viola scuro per le intestazioni */
   font-size: 12px;
   position: relative;
   cursor: pointer;
@@ -210,26 +227,34 @@ th {
 
 /* Colori delle intestazioni delle tabelle 'buy' e 'sell' */
 .table-section.buy th {
-  color: #ffd700; /* Neon turchese */
+  color: #ffd700;
+  /* Neon turchese */
 }
 
 .table-section.sell th {
-  color: #f7a1d5; /* Neon rosa */
+  color: #f7a1d5;
+  /* Neon rosa */
 }
 
 /* Stili per i filtri per la ricerca e la lunghezza */
 .dataTables_wrapper .dataTables_filter input {
-  border: 1px solid #ffd700; /* Bordo neon turchese */
-  background-color: #1a002d; /* Sfondo viola scuro */
-  color: #ffd700; /* Testo neon turchese */
+  border: 1px solid #ffd700;
+  /* Bordo neon turchese */
+  background-color: #1a002d;
+  /* Sfondo viola scuro */
+  color: #ffd700;
+  /* Testo neon turchese */
   font-family: "Dodec", monospace;
   padding: 4px;
 }
 
 .dataTables_wrapper .dataTables_length select {
-  border: 1px solid #f7a1d5; /* Bordo neon rosa */
-  background-color: #1a002d; /* Sfondo viola scuro */
-  color: #f7a1d5; /* Testo neon rosa */
+  border: 1px solid #f7a1d5;
+  /* Bordo neon rosa */
+  background-color: #1a002d;
+  /* Sfondo viola scuro */
+  color: #f7a1d5;
+  /* Testo neon rosa */
   font-family: "Dodec", monospace;
   padding: 4px;
 }
@@ -237,15 +262,18 @@ th {
 /* Stili per informazioni e paginazione */
 .dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate {
-  color: #ffd700; /* Testo neon turchese */
+  color: #ffd700;
+  /* Testo neon turchese */
   font-family: "Dodec", monospace;
   padding: 4px;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: #1a002d;
-  border: 1px solid #ffd700; /* Bordo neon turchese */
-  background-color: #ffd700; /* Sfondo neon turchese */
+  border: 1px solid #ffd700;
+  /* Bordo neon turchese */
+  background-color: #ffd700;
+  /* Sfondo neon turchese */
   padding: 4px;
   margin: 2px;
   border-radius: 4px;
@@ -254,23 +282,31 @@ th {
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  background-color: #1a002d; /* Sfondo viola scuro */
-  color: #ffd700; /* Testo neon turchese */
+  background-color: #1a002d;
+  /* Sfondo viola scuro */
+  color: #ffd700;
+  /* Testo neon turchese */
 }
 
 /* Selettore per i menu a tendina nella tabella sell */
 .filter-group.sell select {
-  border: 1px solid #f7a1d5; /* Bordo neon rosa */
-  background-color: #1a002d; /* Sfondo viola scuro */
-  color: #f7a1d5; /* Testo neon rosa */
+  border: 1px solid #f7a1d5;
+  /* Bordo neon rosa */
+  background-color: #1a002d;
+  /* Sfondo viola scuro */
+  color: #f7a1d5;
+  /* Testo neon rosa */
   font-family: "Dodec", monospace;
   padding: 4px;
 }
 
 .filter-group.buy select {
-  border: 1px solid #ffd700; /* Bordo neon turchese */
-  background-color: #1a002d; /* Sfondo viola scuro */
-  color: #ffd700; /* Testo neon turchese */
+  border: 1px solid #ffd700;
+  /* Bordo neon turchese */
+  background-color: #1a002d;
+  /* Sfondo viola scuro */
+  color: #ffd700;
+  /* Testo neon turchese */
   font-family: "Dodec", monospace;
   padding: 4px;
 }
@@ -279,32 +315,39 @@ th {
 .dataTables_wrapper th.sorting::after,
 .dataTables_wrapper th.sorting_asc::after,
 .dataTables_wrapper th.sorting_desc::after {
-  color: #ffd700; /* Frecce neon turchese */
+  color: #ffd700;
+  /* Frecce neon turchese */
   font-size: 14px;
   margin-left: 5px;
 }
 
 /* Freccia per l'ordinamento crescente */
 .dataTables_wrapper th.sorting_asc::after {
-  content: "\25B4"; /* Freccia verso l'alto */
+  content: "\25B4";
+  /* Freccia verso l'alto */
 }
 
 /* Freccia per l'ordinamento decrescente */
 .dataTables_wrapper th.sorting_desc::after {
-  content: "\25BE"; /* Freccia verso il basso */
+  content: "\25BE";
+  /* Freccia verso il basso */
 }
 
 /* Stili per il piÃ¨ di pagina */
 footer {
-  background-color: #1a0a1a; /* Colore viola scuro */
-  color: #e0e0e0; /* Testo principale */
+  background-color: #1a0a1a;
+  /* Colore viola scuro */
+  color: #e0e0e0;
+  /* Testo principale */
   text-align: center;
   padding: 5px;
-  border-top: 2px solid #f7a1d5; /* Bordo neon rosa */
+  border-top: 2px solid #f7a1d5;
+  /* Bordo neon rosa */
 }
 
 footer a {
-  color: #f7a1d5; /* Colore neon rosa per i link */
+  color: #f7a1d5;
+  /* Colore neon rosa per i link */
   text-decoration: none;
 }
 
@@ -319,9 +362,12 @@ footer a:hover {
 }
 
 .menu2 select {
-  background-color: #1a0a1a; /* Sfondo bianco */
-  color: #ffd700; /* Testo scuro */
-  border: 1px solid #ff69b4; /* Bordo rosa chiaro */
+  background-color: #1a0a1a;
+  /* Sfondo bianco */
+  color: #ffd700;
+  /* Testo scuro */
+  border: 1px solid #ff69b4;
+  /* Bordo rosa chiaro */
   padding: 5px;
   font-size: 14px;
   border-radius: 4px;
@@ -338,7 +384,8 @@ footer a:hover {
   cursor: pointer;
   margin-bottom: 0px;
   font-size: 14px;
-  height: auto; /* Imposta l'altezza in modo che si adatti al contenuto */
+  height: auto;
+  /* Imposta l'altezza in modo che si adatti al contenuto */
 }
 
 .tab {
@@ -359,11 +406,13 @@ footer a:hover {
 
 .tab-content {
   height: 100%;
-  overflow: auto; /* Permetti lo scrolling se il contenuto Ã¨ piÃ¹ grande */
+  overflow: auto;
+  /* Permetti lo scrolling se il contenuto Ã¨ piÃ¹ grande */
   display: none;
   padding: 10px;
   background-color: #2a0038;
-  flex-grow: 1; /* Permette al contenuto di espandersi */
+  flex-grow: 1;
+  /* Permette al contenuto di espandersi */
   border: 2px solid #ffd700;
 }
 
@@ -376,62 +425,85 @@ footer a:hover {
 .table-section {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Lascia che l'altezza si adatti al contenitore principale */
-  flex-grow: 1; /* Permetti al contenitore di espandersi */
+  height: 100%;
+  /* Lascia che l'altezza si adatti al contenitore principale */
+  flex-grow: 1;
+  /* Permetti al contenitore di espandersi */
 }
 
 /* Personalizzazione delle barre di scorrimento per i contenitori di tabelle */
 .table-section::-webkit-scrollbar {
-  width: 8px; /* Larghezza della scrollbar */
+  width: 8px;
+  /* Larghezza della scrollbar */
 }
 
 /* Sfondo della track della scrollbar */
 .table-section::-webkit-scrollbar-track {
-  background: #1f0033; /* Sfondo nero per la track */
-  border: 2px solid #ffd700; /* Bordo verde acido per la track (per le tabelle buy) */
-  border-radius: 0; /* Angoli squadrati per la track */
+  background: #1f0033;
+  /* Sfondo nero per la track */
+  border: 2px solid #ffd700;
+  /* Bordo verde acido per la track (per le tabelle buy) */
+  border-radius: 0;
+  /* Angoli squadrati per la track */
 }
 
 .table-section.sell::-webkit-scrollbar-track {
-  border: 2px solid #f7a1d5; /* Bordo rosso per la track (per le tabelle sell) */
+  border: 2px solid #f7a1d5;
+  /* Bordo rosso per la track (per le tabelle sell) */
 }
 
 /* Parte scorrevole della scrollbar */
 .table-section::-webkit-scrollbar-thumb {
-  background: #ffd700; /* Colore della parte scorrevole per le tabelle "buy" */
-  border-radius: 0; /* Angoli squadrati per il thumb */
-  border: 2px solid #ffd700; /* Bordo verde acido per il thumb */
-  height: 30px; /* Altezza del thumb per rendere il thumb meno lungo */
+  background: #ffd700;
+  /* Colore della parte scorrevole per le tabelle "buy" */
+  border-radius: 0;
+  /* Angoli squadrati per il thumb */
+  border: 2px solid #ffd700;
+  /* Bordo verde acido per il thumb */
+  height: 30px;
+  /* Altezza del thumb per rendere il thumb meno lungo */
 }
 
 .table-section.sell::-webkit-scrollbar-thumb {
-  background: #f7a1d5; /* Colore della parte scorrevole per le tabelle "sell" */
-  border: 2px solid #f7a1d5; /* Bordo rosso per il thumb */
+  background: #f7a1d5;
+  /* Colore della parte scorrevole per le tabelle "sell" */
+  border: 2px solid #f7a1d5;
+  /* Bordo rosso per il thumb */
 }
 
 /* Bottoni della scrollbar (freccette) */
 .table-section::-webkit-scrollbar-button {
-  background-color: #1f0033; /* Sfondo delle frecce */
-  border: 2px solid #ffd700; /* Bordo verde acido per le frecce delle tabelle "buy" */
-  border-radius: 0; /* Angoli squadrati per le frecce */
+  background-color: #1f0033;
+  /* Sfondo delle frecce */
+  border: 2px solid #ffd700;
+  /* Bordo verde acido per le frecce delle tabelle "buy" */
+  border-radius: 0;
+  /* Angoli squadrati per le frecce */
 }
 
 .table-section.sell::-webkit-scrollbar-button {
-  border: 2px solid #f7a1d5; /* Bordo rosso per le frecce delle tabelle "sell" */
+  border: 2px solid #f7a1d5;
+  /* Bordo rosso per le frecce delle tabelle "sell" */
 }
 
 /* Nascondere i bottoni delle scrollbar se non necessari */
 .table-section::-webkit-scrollbar-button {
-  display: none; /* Nasconde i bottoni per un aspetto piÃ¹ pulito */
+  display: none;
+  /* Nasconde i bottoni per un aspetto piÃ¹ pulito */
 }
 
 @media (max-width: 768px) {
   .menu2 {
-    position: absolute; /* Assicurati che l'elemento non sia assoluto se non necessario */
-    top: 10px; /* Regola la posizione su dispositivi mobili */
-    right: 10px; /* Regola la distanza dal bordo destro su dispositivi mobili */
-    z-index: 1000; /* Assicurati che il menu sia sopra altri elementi se necessario */
-    margin-bottom: 50px; /* Aggiungi spazio sotto il menu */
+    position: absolute;
+    /* Assicurati che l'elemento non sia assoluto se non necessario */
+    top: 10px;
+    /* Regola la posizione su dispositivi mobili */
+    right: 10px;
+    /* Regola la distanza dal bordo destro su dispositivi mobili */
+    z-index: 1000;
+    /* Assicurati che il menu sia sopra altri elementi se necessario */
+    margin-bottom: 50px;
+    /* Aggiungi spazio sotto il menu */
   }
 
   .menu2 span {
@@ -439,14 +511,20 @@ footer a:hover {
   }
 
   .header-container h1 {
-    margin-top: 150px; /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
-    font-size: 30px; /* Riduci la dimensione del font per dispositivi mobili */
-    line-height: 1.2; /* Migliora la leggibilitÃ  su schermi piccoli */
+    margin-top: 150px;
+    /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
+    font-size: 30px;
+    /* Riduci la dimensione del font per dispositivi mobili */
+    line-height: 1.2;
+    /* Migliora la leggibilitÃ  su schermi piccoli */
   }
 
   .header-container h2 {
-    font-size: 20px; /* Riduci la dimensione del font per h2 sui dispositivi mobili */
-    margin-top: 10px; /* Spazio sopra l'h2 */
-    margin-bottom: 0px; /* Spazio sotto l'h2 */
+    font-size: 20px;
+    /* Riduci la dimensione del font per h2 sui dispositivi mobili */
+    margin-top: 10px;
+    /* Spazio sopra l'h2 */
+    margin-bottom: 0px;
+    /* Spazio sotto l'h2 */
   }
 }

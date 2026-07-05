@@ -12,7 +12,7 @@ class Color {
     this.maxLevel = maxLevel;
     this.level = level;
     this.color = Array.from({ length: 3 }, () =>
-    randomNumber(this.maxLevel, 255));
+      randomNumber(this.maxLevel, 255));
 
     this.colorVariant = this._makeColorVariant();
   }
@@ -32,7 +32,8 @@ class Color {
 
   correct() {
     return this.print(this.colorVariant);
-  }}
+  }
+}
 
 
 class Game {
@@ -45,7 +46,8 @@ class Game {
     this.stage = new Konva.Stage({
       container: "#app",
       width: this.gameWidth,
-      height: this.gameWidth });
+      height: this.gameWidth
+    });
 
 
     this.levelLayer = new Konva.Layer();
@@ -75,7 +77,8 @@ class Game {
       y: 0,
       fill: "black",
       width: this.gameWidth,
-      height: this.gameWidth });
+      height: this.gameWidth
+    });
 
 
     // add the shapes to the layer
@@ -94,7 +97,8 @@ If you like, I would appreciate your ❤️
       opacity: 0,
       width: this.gameWidth,
       fill: "white",
-      align: "center" });
+      align: "center"
+    });
 
 
     text.y(this.gameWidth / 2 - text.getHeight());
@@ -106,7 +110,8 @@ If you like, I would appreciate your ❤️
       fontSize: 10,
       opacity: 0,
       fill: "white",
-      align: "center" });
+      align: "center"
+    });
 
 
     emoji.y(this.gameWidth / 2 - emoji.getHeight() + this.gameWidth / 4);
@@ -117,14 +122,16 @@ If you like, I would appreciate your ❤️
       easing: Konva.Easings.ElasticEaseOut,
       opacity: 1,
       duration: 0.7,
-      fontSize: 20 });
+      fontSize: 20
+    });
 
 
     emoji.to({
       easing: Konva.Easings.EaseIn,
       opacity: 1,
       duration: 0.4,
-      fontSize: 50 });
+      fontSize: 50
+    });
 
 
     this.gameWinLayer.draw();
@@ -143,7 +150,8 @@ If you like, I would appreciate your ❤️
       y: 0,
       fill: "black",
       width: this.gameWidth,
-      height: this.gameWidth });
+      height: this.gameWidth
+    });
 
 
     // add the shapes to the layer
@@ -162,7 +170,8 @@ If you like, I'd appreciated your ❤️
       opacity: 0,
       width: this.gameWidth,
       fill: "white",
-      align: "center" });
+      align: "center"
+    });
 
 
     text.y(this.gameWidth / 2 - text.getHeight());
@@ -174,7 +183,8 @@ If you like, I'd appreciated your ❤️
       fontSize: 10,
       opacity: 0,
       fill: "white",
-      align: "center" });
+      align: "center"
+    });
 
 
     emoji.y(this.gameWidth / 2 - emoji.getHeight() + this.gameWidth / 4);
@@ -185,14 +195,16 @@ If you like, I'd appreciated your ❤️
       easing: Konva.Easings.ElasticEaseOut,
       opacity: 1,
       duration: 0.7,
-      fontSize: 20 });
+      fontSize: 20
+    });
 
 
     emoji.to({
       easing: Konva.Easings.EaseIn,
       opacity: 1,
       duration: 0.4,
-      fontSize: 50 });
+      fontSize: 50
+    });
 
 
     this.gameOverLayer.draw();
@@ -238,7 +250,7 @@ If you like, I'd appreciated your ❤️
     const mapSize = this.size ** 2;
     const tileGutter = 10;
     const tileWidth =
-    Math.round(this.gameWidth / this.size) - tileGutter / this.size;
+      Math.round(this.gameWidth / this.size) - tileGutter / this.size;
     const correctTile = randomNumber(0, mapSize);
 
     this._clearLevel();
@@ -247,7 +259,8 @@ If you like, I'd appreciated your ❤️
       this.level.push({
         x: i % this.size,
         y: Math.floor(i / this.size),
-        win: i === correctTile });
+        win: i === correctTile
+      });
 
     }
 
@@ -259,15 +272,16 @@ If you like, I'd appreciated your ❤️
         y: y * tileWidth + tileGutter,
         width: tileWidth - tileGutter,
         height: tileWidth - tileGutter,
-        fill: tileColor }).
-
-      on("mousedown touchstart", () => this._clickHandler(id)).
-      on("mouseenter", ({ target }) => {
-        this.stage.container().style.cursor = "pointer";
+        fill: tileColor
       }).
-      on("mouseleave", ({ target }) => {
-        this.stage.container().style.cursor = "default";
-      });
+
+        on("mousedown touchstart", () => this._clickHandler(id)).
+        on("mouseenter", ({ target }) => {
+          this.stage.container().style.cursor = "pointer";
+        }).
+        on("mouseleave", ({ target }) => {
+          this.stage.container().style.cursor = "default";
+        });
     });
 
     this.scene.forEach(tile => {
@@ -275,7 +289,8 @@ If you like, I'd appreciated your ❤️
     });
 
     this.levelLayer.draw();
-  }}
+  }
+}
 
 
 new Game();

@@ -2,6 +2,7 @@
 // All Rights Reserved //////*/
 
 @charset "UTF-8";
+
 /* Variables
 -------------------------------------------------------------- */
 /* Body and Notice styling
@@ -29,170 +30,210 @@ h5 {
   position: relative;
   width: 300px;
 }
+
 @media (min-width: 450px) {
   .tic-tac-toe {
     height: 450px;
     width: 450px;
   }
 }
+
 .tic-tac-toe input[type="radio"] {
   display: none;
 }
-.tic-tac-toe input[type="radio"]:checked + label {
+
+.tic-tac-toe input[type="radio"]:checked+label {
   cursor: default;
   z-index: 10 !important;
 }
-.tic-tac-toe input[type="radio"].player-1 + label:after {
+
+.tic-tac-toe input[type="radio"].player-1+label:after {
   content: "X";
 }
-.tic-tac-toe input[type="radio"].player-2 + label:after {
+
+.tic-tac-toe input[type="radio"].player-2+label:after {
   content: "O";
 }
-.tic-tac-toe input[type="radio"].player-1:checked + label:after, .tic-tac-toe input[type="radio"].player-2:checked + label:after {
+
+.tic-tac-toe input[type="radio"].player-1:checked+label:after,
+.tic-tac-toe input[type="radio"].player-2:checked+label:after {
   opacity: 1;
 }
-.tic-tac-toe input[type="radio"].player-1:checked + label {
+
+.tic-tac-toe input[type="radio"].player-1:checked+label {
   background-color: #dc685a;
 }
-.tic-tac-toe input[type="radio"].player-2:checked + label {
+
+.tic-tac-toe input[type="radio"].player-2:checked+label {
   background-color: #ecaf4f;
 }
-.tic-tac-toe input[type="radio"].turn-1 + label {
+
+.tic-tac-toe input[type="radio"].turn-1+label {
   z-index: 1;
 }
-.tic-tac-toe input[type="radio"].turn-2 + label {
+
+.tic-tac-toe input[type="radio"].turn-2+label {
   z-index: 2;
 }
-.tic-tac-toe input[type="radio"].turn-3 + label {
+
+.tic-tac-toe input[type="radio"].turn-3+label {
   z-index: 3;
 }
-.tic-tac-toe input[type="radio"].turn-4 + label {
+
+.tic-tac-toe input[type="radio"].turn-4+label {
   z-index: 4;
 }
-.tic-tac-toe input[type="radio"].turn-5 + label {
+
+.tic-tac-toe input[type="radio"].turn-5+label {
   z-index: 5;
 }
-.tic-tac-toe input[type="radio"].turn-6 + label {
+
+.tic-tac-toe input[type="radio"].turn-6+label {
   z-index: 6;
 }
-.tic-tac-toe input[type="radio"].turn-7 + label {
+
+.tic-tac-toe input[type="radio"].turn-7+label {
   z-index: 7;
 }
-.tic-tac-toe input[type="radio"].turn-8 + label {
+
+.tic-tac-toe input[type="radio"].turn-8+label {
   z-index: 8;
 }
-.tic-tac-toe input[type="radio"].turn-9 + label {
+
+.tic-tac-toe input[type="radio"].turn-9+label {
   z-index: 9;
 }
-.tic-tac-toe input[type="radio"].turn-1 + label {
+
+.tic-tac-toe input[type="radio"].turn-1+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-1:checked ~ .turn-2 + label {
+
+.tic-tac-toe input[type="radio"].turn-1:checked~.turn-2+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-2:checked ~ .turn-3 + label {
+
+.tic-tac-toe input[type="radio"].turn-2:checked~.turn-3+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-3:checked ~ .turn-4 + label {
+
+.tic-tac-toe input[type="radio"].turn-3:checked~.turn-4+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-4:checked ~ .turn-5 + label {
+
+.tic-tac-toe input[type="radio"].turn-4:checked~.turn-5+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-5:checked ~ .turn-6 + label {
+
+.tic-tac-toe input[type="radio"].turn-5:checked~.turn-6+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-6:checked ~ .turn-7 + label {
+
+.tic-tac-toe input[type="radio"].turn-6:checked~.turn-7+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-7:checked ~ .turn-8 + label {
+
+.tic-tac-toe input[type="radio"].turn-7:checked~.turn-8+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].turn-8:checked ~ .turn-9 + label {
+
+.tic-tac-toe input[type="radio"].turn-8:checked~.turn-9+label {
   display: block;
 }
-.tic-tac-toe input[type="radio"].left + label {
+
+.tic-tac-toe input[type="radio"].left+label {
   left: 0;
 }
-.tic-tac-toe input[type="radio"].top + label {
+
+.tic-tac-toe input[type="radio"].top+label {
   top: 0;
 }
-.tic-tac-toe input[type="radio"].middle + label {
+
+.tic-tac-toe input[type="radio"].middle+label {
   left: 100px;
 }
-.tic-tac-toe input[type="radio"].right + label {
+
+.tic-tac-toe input[type="radio"].right+label {
   left: 200px;
 }
-.tic-tac-toe input[type="radio"].center + label {
+
+.tic-tac-toe input[type="radio"].center+label {
   top: 100px;
 }
-.tic-tac-toe input[type="radio"].bottom + label {
+
+.tic-tac-toe input[type="radio"].bottom+label {
   top: 200px;
 }
+
 @media (min-width: 450px) {
-  .tic-tac-toe input[type="radio"].middle + label {
+  .tic-tac-toe input[type="radio"].middle+label {
     left: 150px;
   }
-  .tic-tac-toe input[type="radio"].right + label {
+
+  .tic-tac-toe input[type="radio"].right+label {
     left: 300px;
   }
-  .tic-tac-toe input[type="radio"].center + label {
+
+  .tic-tac-toe input[type="radio"].center+label {
     top: 150px;
   }
-  .tic-tac-toe input[type="radio"].bottom + label {
+
+  .tic-tac-toe input[type="radio"].bottom+label {
     top: 300px;
   }
 }
-.tic-tac-toe input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~
-input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~
-input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ .end {
+
+.tic-tac-toe input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~.end {
   display: block;
 }
-.tic-tac-toe input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~
-input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~
-input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ .end > h3:before {
+
+.tic-tac-toe input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~input[type="radio"]:checked~.end>h3:before {
   content: "It is a Tie!";
 }
-.tic-tac-toe .player-1.first-column:checked ~ .player-1.first-column:checked ~ .player-1.first-column:checked ~ .end,
-.tic-tac-toe .player-1.second-column:checked ~ .player-1.second-column:checked ~ .player-1.second-column:checked ~ .end,
-.tic-tac-toe .player-1.third-column:checked ~ .player-1.third-column:checked ~ .player-1.third-column:checked ~ .end,
-.tic-tac-toe .player-1.first-row:checked ~ .player-1.first-row:checked ~ .player-1.first-row:checked ~ .end,
-.tic-tac-toe .player-1.second-row:checked ~ .player-1.second-row:checked ~ .player-1.second-row:checked ~ .end,
-.tic-tac-toe .player-1.third-row:checked ~ .player-1.third-row:checked ~ .player-1.third-row:checked ~ .end,
-.tic-tac-toe .player-1.first-diagonal:checked ~ .player-1.first-diagonal:checked ~ .player-1.first-diagonal:checked ~ .end,
-.tic-tac-toe .player-1.second-diagonal:checked ~ .player-1.second-diagonal:checked ~ .player-1.second-diagonal:checked ~ .end {
+
+.tic-tac-toe .player-1.first-column:checked~.player-1.first-column:checked~.player-1.first-column:checked~.end,
+.tic-tac-toe .player-1.second-column:checked~.player-1.second-column:checked~.player-1.second-column:checked~.end,
+.tic-tac-toe .player-1.third-column:checked~.player-1.third-column:checked~.player-1.third-column:checked~.end,
+.tic-tac-toe .player-1.first-row:checked~.player-1.first-row:checked~.player-1.first-row:checked~.end,
+.tic-tac-toe .player-1.second-row:checked~.player-1.second-row:checked~.player-1.second-row:checked~.end,
+.tic-tac-toe .player-1.third-row:checked~.player-1.third-row:checked~.player-1.third-row:checked~.end,
+.tic-tac-toe .player-1.first-diagonal:checked~.player-1.first-diagonal:checked~.player-1.first-diagonal:checked~.end,
+.tic-tac-toe .player-1.second-diagonal:checked~.player-1.second-diagonal:checked~.player-1.second-diagonal:checked~.end {
   display: block;
 }
-.tic-tac-toe .player-1.first-column:checked ~ .player-1.first-column:checked ~ .player-1.first-column:checked ~ .end h3:before,
-.tic-tac-toe .player-1.second-column:checked ~ .player-1.second-column:checked ~ .player-1.second-column:checked ~ .end h3:before,
-.tic-tac-toe .player-1.third-column:checked ~ .player-1.third-column:checked ~ .player-1.third-column:checked ~ .end h3:before,
-.tic-tac-toe .player-1.first-row:checked ~ .player-1.first-row:checked ~ .player-1.first-row:checked ~ .end h3:before,
-.tic-tac-toe .player-1.second-row:checked ~ .player-1.second-row:checked ~ .player-1.second-row:checked ~ .end h3:before,
-.tic-tac-toe .player-1.third-row:checked ~ .player-1.third-row:checked ~ .player-1.third-row:checked ~ .end h3:before,
-.tic-tac-toe .player-1.first-diagonal:checked ~ .player-1.first-diagonal:checked ~ .player-1.first-diagonal:checked ~ .end h3:before,
-.tic-tac-toe .player-1.second-diagonal:checked ~ .player-1.second-diagonal:checked ~ .player-1.second-diagonal:checked ~ .end h3:before {
+
+.tic-tac-toe .player-1.first-column:checked~.player-1.first-column:checked~.player-1.first-column:checked~.end h3:before,
+.tic-tac-toe .player-1.second-column:checked~.player-1.second-column:checked~.player-1.second-column:checked~.end h3:before,
+.tic-tac-toe .player-1.third-column:checked~.player-1.third-column:checked~.player-1.third-column:checked~.end h3:before,
+.tic-tac-toe .player-1.first-row:checked~.player-1.first-row:checked~.player-1.first-row:checked~.end h3:before,
+.tic-tac-toe .player-1.second-row:checked~.player-1.second-row:checked~.player-1.second-row:checked~.end h3:before,
+.tic-tac-toe .player-1.third-row:checked~.player-1.third-row:checked~.player-1.third-row:checked~.end h3:before,
+.tic-tac-toe .player-1.first-diagonal:checked~.player-1.first-diagonal:checked~.player-1.first-diagonal:checked~.end h3:before,
+.tic-tac-toe .player-1.second-diagonal:checked~.player-1.second-diagonal:checked~.player-1.second-diagonal:checked~.end h3:before {
   content: "Player 1 Wins!" !important;
 }
-.tic-tac-toe .player-2.first-column:checked ~ .player-2.first-column:checked ~ .player-2.first-column:checked ~ .end,
-.tic-tac-toe .player-2.second-column:checked ~ .player-2.second-column:checked ~ .player-2.second-column:checked ~ .end,
-.tic-tac-toe .player-2.third-column:checked ~ .player-2.third-column:checked ~ .player-2.third-column:checked ~ .end,
-.tic-tac-toe .player-2.first-row:checked ~ .player-2.first-row:checked ~ .player-2.first-row:checked ~ .end,
-.tic-tac-toe .player-2.second-row:checked ~ .player-2.second-row:checked ~ .player-2.second-row:checked ~ .end,
-.tic-tac-toe .player-2.third-row:checked ~ .player-2.third-row:checked ~ .player-2.third-row:checked ~ .end,
-.tic-tac-toe .player-2.first-diagonal:checked ~ .player-2.first-diagonal:checked ~ .player-2.first-diagonal:checked ~ .end,
-.tic-tac-toe .player-2.second-diagonal:checked ~ .player-2.second-diagonal:checked ~ .player-2.second-diagonal:checked ~ .end {
+
+.tic-tac-toe .player-2.first-column:checked~.player-2.first-column:checked~.player-2.first-column:checked~.end,
+.tic-tac-toe .player-2.second-column:checked~.player-2.second-column:checked~.player-2.second-column:checked~.end,
+.tic-tac-toe .player-2.third-column:checked~.player-2.third-column:checked~.player-2.third-column:checked~.end,
+.tic-tac-toe .player-2.first-row:checked~.player-2.first-row:checked~.player-2.first-row:checked~.end,
+.tic-tac-toe .player-2.second-row:checked~.player-2.second-row:checked~.player-2.second-row:checked~.end,
+.tic-tac-toe .player-2.third-row:checked~.player-2.third-row:checked~.player-2.third-row:checked~.end,
+.tic-tac-toe .player-2.first-diagonal:checked~.player-2.first-diagonal:checked~.player-2.first-diagonal:checked~.end,
+.tic-tac-toe .player-2.second-diagonal:checked~.player-2.second-diagonal:checked~.player-2.second-diagonal:checked~.end {
   display: block;
 }
-.tic-tac-toe .player-2.first-column:checked ~ .player-2.first-column:checked ~ .player-2.first-column:checked ~ .end h3:before,
-.tic-tac-toe .player-2.second-column:checked ~ .player-2.second-column:checked ~ .player-2.second-column:checked ~ .end h3:before,
-.tic-tac-toe .player-2.third-column:checked ~ .player-2.third-column:checked ~ .player-2.third-column:checked ~ .end h3:before,
-.tic-tac-toe .player-2.first-row:checked ~ .player-2.first-row:checked ~ .player-2.first-row:checked ~ .end h3:before,
-.tic-tac-toe .player-2.second-row:checked ~ .player-2.second-row:checked ~ .player-2.second-row:checked ~ .end h3:before,
-.tic-tac-toe .player-2.third-row:checked ~ .player-2.third-row:checked ~ .player-2.third-row:checked ~ .end h3:before,
-.tic-tac-toe .player-2.first-diagonal:checked ~ .player-2.first-diagonal:checked ~ .player-2.first-diagonal:checked ~ .end h3:before,
-.tic-tac-toe .player-2.second-diagonal:checked ~ .player-2.second-diagonal:checked ~ .player-2.second-diagonal:checked ~ .end h3:before {
+
+.tic-tac-toe .player-2.first-column:checked~.player-2.first-column:checked~.player-2.first-column:checked~.end h3:before,
+.tic-tac-toe .player-2.second-column:checked~.player-2.second-column:checked~.player-2.second-column:checked~.end h3:before,
+.tic-tac-toe .player-2.third-column:checked~.player-2.third-column:checked~.player-2.third-column:checked~.end h3:before,
+.tic-tac-toe .player-2.first-row:checked~.player-2.first-row:checked~.player-2.first-row:checked~.end h3:before,
+.tic-tac-toe .player-2.second-row:checked~.player-2.second-row:checked~.player-2.second-row:checked~.end h3:before,
+.tic-tac-toe .player-2.third-row:checked~.player-2.third-row:checked~.player-2.third-row:checked~.end h3:before,
+.tic-tac-toe .player-2.first-diagonal:checked~.player-2.first-diagonal:checked~.player-2.first-diagonal:checked~.end h3:before,
+.tic-tac-toe .player-2.second-diagonal:checked~.player-2.second-diagonal:checked~.player-2.second-diagonal:checked~.end h3:before {
   content: "Player 2 Wins!" !important;
 }
+
 .tic-tac-toe label {
   background-color: #78bec5;
   border-radius: 14px;
@@ -208,18 +249,22 @@ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
+
 @media (min-width: 450px) {
   .tic-tac-toe label {
     height: 140px;
     width: 140px;
   }
 }
+
 .tic-tac-toe label:hover {
   background-color: #3d4250;
 }
+
 .tic-tac-toe label:hover:after {
   opacity: .4;
 }
+
 .tic-tac-toe label:after {
   left: 0;
   font-family: "FontAwesome";
@@ -232,12 +277,14 @@ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:
   top: 50%;
   width: 100%;
 }
+
 @media (min-width: 450px) {
   .tic-tac-toe label:after {
     font-size: 70px;
     margin-top: -35px;
   }
 }
+
 .tic-tac-toe .end {
   background: rgba(255, 255, 255, 0.8);
   bottom: 5px;
@@ -251,20 +298,24 @@ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:
   text-align: center;
   z-index: 11;
 }
+
 @media (min-width: 450px) {
   .tic-tac-toe .end {
     padding-top: 110px;
   }
 }
+
 .tic-tac-toe .end h3 {
   font-size: 30px;
   font-weight: 300;
 }
+
 @media (min-width: 450px) {
   .tic-tac-toe .end h3 {
     font-size: 40px;
   }
 }
+
 .tic-tac-toe .end a {
   background-color: #3d4250;
   border-radius: 4px;
@@ -276,6 +327,7 @@ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
+
 .tic-tac-toe .end a:hover {
   background-color: #262934;
   cursor: pointer;
@@ -321,16 +373,16 @@ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: darkseagreen;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px darkseagreen;
 
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);

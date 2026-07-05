@@ -1,7 +1,8 @@
 /*/ D474designs | JOCV-III ///////
 // All Rights Reserved //////*/
 
-#canves #score-panel, html,
+#canves #score-panel,
+html,
 body {
   margin: 0;
   padding: 0;
@@ -37,6 +38,7 @@ body {
   align-items: flex-end;
   position: relative;
 }
+
 #canves #score-panel {
   width: 180px;
   height: 53px;
@@ -47,10 +49,12 @@ body {
   font-size: 23px;
   text-align: center;
 }
+
 #canves #score-panel li {
   list-style: none;
   display: inline-block;
 }
+
 #canves #score-panel li:last-child {
   font-family: "Coda", cursive;
   display: block;
@@ -81,9 +85,11 @@ body {
   align-items: center;
   cursor: pointer;
 }
+
 .tower#tower-3 {
   margin: 0;
 }
+
 .tower:before {
   width: 4px;
   height: 116px;
@@ -105,6 +111,7 @@ body {
   font-size: 0;
   z-index: 20;
 }
+
 .disk.hold {
   position: absolute;
   top: -50px;

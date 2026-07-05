@@ -42,11 +42,11 @@
         }
 
         parent.append(
-            '<div class="graphiq__graph-values"></div><div class="graphiq__graph-layout"><svg class="graphiq__graph" viewBox="0 0 960 '+ (settings.height + 10) +'" shape-rendering="geometricPrecision"><path fill="'+ settings.colorFill +'" style="opacity: '+ settings.fillOpacity +'" class="graphiq__fill-path" d="" stroke-width="0" stroke="#000" fill="cyan"/></svg><div class="graphiq__graph-key"></div></div>'
+            '<div class="graphiq__graph-values"></div><div class="graphiq__graph-layout"><svg class="graphiq__graph" viewBox="0 0 960 ' + (settings.height + 10) + '" shape-rendering="geometricPrecision"><path fill="' + settings.colorFill + '" style="opacity: ' + settings.fillOpacity + '" class="graphiq__fill-path" d="" stroke-width="0" stroke="#000" fill="cyan"/></svg><div class="graphiq__graph-key"></div></div>'
         );
-            if (settings.fluidParent) {
-                this.closest(".col").css("overflow", "auto");
-            }
+        if (settings.fluidParent) {
+            this.closest(".col").css("overflow", "auto");
+        }
         parent.addClass('graphiq');
 
         var graph = this.find(".graphiq__graph");
@@ -66,7 +66,7 @@
         // Set even spacing in the graph depending on amount of data
 
         var width = parent.find(".graphiq__graph-layout").width();
-        
+
         if (settings.xLines) {
             unitLines(width, maxVal);
         }
@@ -79,8 +79,8 @@
             layoutGraph(width, false);
         });
 
-       // buildFillPath();
-   
+        // buildFillPath();
+
         function percentageOf(max, current) {
             return (current / max * 100) * scaleFactor;
         }
@@ -98,27 +98,27 @@
 
 
             for (i = 0; i < values.length; i++) {
-           
+
                 var offset;
-       
+
                 if (i == 0) {
                     offset = (settings.dotRadius + (settings.dotStrokeWeight)) + 1;
-                } 
-            
-                 else if (i == values.length - 1) {
-                    offset = ((settings.dotRadius + (settings.dotStrokeWeight )) * -1) - 1;
+                }
+
+                else if (i == values.length - 1) {
+                    offset = ((settings.dotRadius + (settings.dotStrokeWeight)) * -1) - 1;
                 } else {
                     offset = 0;
                 }
-           
+
                 var lineOffset = i == values.length - 2 ? (settings.dotRadius + (settings.dotStrokeWeight)) / 2 : 0;
 
                 let nextI = i + 1;
                 let xAxis = (entryDivision * i) + offset;
                 let xAxis2 = entryDivision * nextI;
-                
+
                 console.log(offset);
-           
+
 
                 let yAxis = dataRange - percentageOf(maxVal, values[i]);
 
@@ -129,8 +129,8 @@
                     xAxis2 = xAxis;
                 }
 
-              pathPoints += " L " + xAxis + " " + yAxis;
-             
+                pathPoints += " L " + xAxis + " " + yAxis;
+
 
                 if (i == values.length - 1 && settings.fill) {
                     buildFillPath(pathPoints);
@@ -140,28 +140,28 @@
 
                     if (settings.yLines) {
 
-                    $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
-                        .attr({
-                            class: "graphiq__y-division",
-                            x1: xAxis,
-                            y1: yAxis,
-                            x2: xAxis,
-                            y2: settings.height + 5,
-                            stroke: settings.colorYGrid,
-                            "stroke-dasharray": "5 6",
-                            "stroke-width": 1
-                        })
-                        .prependTo(graph);
+                        $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
+                            .attr({
+                                class: "graphiq__y-division",
+                                x1: xAxis,
+                                y1: yAxis,
+                                x2: xAxis,
+                                y2: settings.height + 5,
+                                stroke: settings.colorYGrid,
+                                "stroke-dasharray": "5 6",
+                                "stroke-width": 1
+                            })
+                            .prependTo(graph);
 
                     }
 
                     // Draw the line
-                    
+
 
                     $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
                         .attr({
                             class: "graphiq__line",
-                            x1: xAxis ,
+                            x1: xAxis,
                             y1: yAxis,
                             x2: xAxis2 - lineOffset,
                             y2: yAxis2 + (settings.dotStrokeWeight / 2),
@@ -172,7 +172,7 @@
 
                     // Draw the circle
 
-               
+
                     $(document.createElementNS("https://www.w3.org/2000/svg", "circle"))
                         .attr({
                             class: "graphiq__graph-dot",
@@ -186,7 +186,7 @@
                             "vector-effect": "non-scaling-stroke"
                         })
                         .appendTo(graph);
-                    
+
 
                     // Resize instead of draw, used in resize
                 } else {
@@ -218,8 +218,8 @@
         }
 
         function buildFillPath(pathPoints) {
-          
-          parent.find('.graphiq__fill-path').attr("d", "M  " + (4 + settings.dotStrokeWeight) + " " + (settings.height + 5 + settings.dotStrokeWeight) + pathPoints +  " L " + (width - settings.dotRadius - settings.dotStrokeWeight) + " " + (settings.height + 5 + settings.dotStrokeWeight))
+
+            parent.find('.graphiq__fill-path').attr("d", "M  " + (4 + settings.dotStrokeWeight) + " " + (settings.height + 5 + settings.dotStrokeWeight) + pathPoints + " L " + (width - settings.dotRadius - settings.dotStrokeWeight) + " " + (settings.height + 5 + settings.dotStrokeWeight))
         }
 
         function unitLines(width, maxVal) {
@@ -228,28 +228,28 @@
             var iteration = 100 / (settings.xLineCount - 1);
 
 
-                for (i=0; i < settings.xLineCount; i++) {
+            for (i = 0; i < settings.xLineCount; i++) {
 
-                        $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
-                        .attr({
-                            class: "graphiq__x-line",
-                            y1: iteration * i + (settings.dotRadius + settings.dotStrokeWeight),
-                            x2: width,
-                            y2: iteration * i +  (settings.dotRadius + settings.dotStrokeWeight),
-                            stroke: settings.colorXGrid,
-                            // "stroke-dasharray": "5 6",
-                            "stroke-width": 1
-                        })
-                        .prependTo(graph);
+                $(document.createElementNS("https://www.w3.org/2000/svg", "line"))
+                    .attr({
+                        class: "graphiq__x-line",
+                        y1: iteration * i + (settings.dotRadius + settings.dotStrokeWeight),
+                        x2: width,
+                        y2: iteration * i + (settings.dotRadius + settings.dotStrokeWeight),
+                        stroke: settings.colorXGrid,
+                        // "stroke-dasharray": "5 6",
+                        "stroke-width": 1
+                    })
+                    .prependTo(graph);
 
-                }
- 
+            }
+
         }
 
         parent.hover(function () {
-        
+
             $(this).find('.graphiq__graph-dot').each(function (index) {
-                $('body').append('<span style="color: '+ settings.colorUnits +'" class="graphiq__value-dialog value-' + index + '">' + $(this).attr("data-value") + '</span>');
+                $('body').append('<span style="color: ' + settings.colorUnits + '" class="graphiq__value-dialog value-' + index + '">' + $(this).attr("data-value") + '</span>');
                 $('.value-' + index).css({
                     top: $(this).position().top - 20,
                     left: $(this).position().left - ($('.value-' + index).outerWidth() / 2) + 3
@@ -265,59 +265,59 @@
 
 // Initiate graphs
 
-  var songs = {
-  "Mon" : 80,
-  "Tues": 40,
-  "Wed" : 60,
-  "Thu" : 80,
-  "Fri": 40,
-  "Sat" : 60,
+var songs = {
+    "Mon": 80,
+    "Tues": 40,
+    "Wed": 60,
+    "Thu": 80,
+    "Fri": 40,
+    "Sat": 60,
 
-   };
+};
 
 var coffees = {
-  "Mon" : 3,
-  "Tues": 2,
-  "Wed" : 3,
-  "Thu" : 2,
-  "Fri" : 1.5,
-  "Sat" : 1,
-  "Sun" : 2
-   };
+    "Mon": 3,
+    "Tues": 2,
+    "Wed": 3,
+    "Thu": 2,
+    "Fri": 1.5,
+    "Sat": 1,
+    "Sun": 2
+};
 
 var cats = {
-    "10/12" : 11,
-    "10/13" : 24,
-    "10/14" : 15,
-    "10/15" : 27,
-    "10/16" : 48,
-    "10/17" : 34,
-    "10/18" : 52,
+    "10/12": 11,
+    "10/13": 24,
+    "10/14": 15,
+    "10/15": 27,
+    "10/16": 48,
+    "10/17": 34,
+    "10/18": 52,
 }
 
 var reddit = {
-    "10/12" : 3.5,
-    "10/13" : 2.3,
-    "10/14" : 2,
-    "10/15" : 1.5,
-    "10/16" : 3,
-    "10/17" : 4,
-    "10/18" : 7,
+    "10/12": 3.5,
+    "10/13": 2.3,
+    "10/14": 2,
+    "10/15": 1.5,
+    "10/16": 3,
+    "10/17": 4,
+    "10/18": 7,
 }
 
 var feature = {
-    "1am" : 20,
-    "2am" : 15,
-    "3am" : 26,
-    "4am" : 23,
-    "5am" : 36,
-    "6am" : 48,
-    "7am" : 89,
-    "8am" : 109,
-    "9am" : 140,
-    "10am" : 162,
-    "11am" : 173,
-    "12pm" : 201
+    "1am": 20,
+    "2am": 15,
+    "3am": 26,
+    "4am": 23,
+    "5am": 36,
+    "6am": 48,
+    "7am": 89,
+    "8am": 109,
+    "9am": 140,
+    "10am": 162,
+    "11am": 173,
+    "12pm": 201
 }
 
 
@@ -333,9 +333,9 @@ $('.graph-songs').graphiq({
     fillOpacity: 0.5,
     fill: true,
     colorUnits: "#c3ecf7"
-  });
+});
 
-  $('.graph-coffees').graphiq({
+$('.graph-coffees').graphiq({
     data: coffees,
     fluidParent: ".col",
     height: 100,
@@ -351,9 +351,9 @@ $('.graph-songs').graphiq({
     colorFill: "#3a2f23",
     dotStrokeWeight: 3,
 
-  });
+});
 
-    $('.graph-cats').graphiq({
+$('.graph-cats').graphiq({
     data: cats,
     fluidParent: ".col",
     yLines: false,
@@ -362,9 +362,9 @@ $('.graph-songs').graphiq({
     colorLine: "#efede5",
     colorLabels: "#efede5",
     fill: true
-  });
+});
 
-      $('.graph-hours').graphiq({
+$('.graph-hours').graphiq({
     data: reddit,
     fluidParent: ".col",
     height: 100,
@@ -378,14 +378,14 @@ $('.graph-songs').graphiq({
     colorXGrid: "#788476",
     colorUnits: "#A3F7B5",
     colorFill: "#2a4151"
-  });
+});
 
 $('.graph-feature').graphiq({
     data: feature,
     fluidParent: ".col",
     colorFill: "#0B4F6C",
-  colorRange: "#0B4F6C",
-  colorLabels: "#0B4F6C",
+    colorRange: "#0B4F6C",
+    colorLabels: "#0B4F6C",
     colorLine: "#145C9E",
     fillOpacity: 0.6,
     yLines: false,

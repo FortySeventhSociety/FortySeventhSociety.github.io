@@ -5,11 +5,11 @@ body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
   color: #505050;
-    background: radial-gradient(ellipse at top, white, transparent),
-              radial-gradient(ellipse at bottom, royalblue, transparent),
-              radial-gradient(ellipse at right, seagreen, transparent),
-              radial-gradient(ellipse at left, deepskyblue, transparent),
-              radial-gradient(farthest-corner at 40px 40px, white 0%, springgreen 100%);
+  background: radial-gradient(ellipse at top, white, transparent),
+    radial-gradient(ellipse at bottom, royalblue, transparent),
+    radial-gradient(ellipse at right, seagreen, transparent),
+    radial-gradient(ellipse at left, deepskyblue, transparent),
+    radial-gradient(farthest-corner at 40px 40px, white 0%, springgreen 100%);
 }
 
 h1 {
@@ -24,6 +24,7 @@ td {
   height: 1em;
   width: 1em;
 }
+
 td:hover:not(.alive):not(.new-born) {
   background: #DDD;
 }
@@ -55,9 +56,9 @@ table {
 .controls {
   float: left;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .button {
@@ -71,6 +72,7 @@ table {
   color: #fff;
   cursor: pointer;
 }
+
 .button:hover {
   background: #ff5b0f;
 }
@@ -78,15 +80,19 @@ table {
 .button-group {
   display: inline-block;
 }
+
 .button-group .button {
   border-right: 1px solid #c23d00;
   margin-right: 0px;
 }
+
 .button-group .button:last-child {
   border-right: 0;
 }
 
-.fa-pause, .fa-play, .fa-step-forward {
+.fa-pause,
+.fa-play,
+.fa-step-forward {
   width: 1em;
   text-align: center;
 }

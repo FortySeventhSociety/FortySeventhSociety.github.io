@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $('.adobe').css('width', '100%');
   $('.html').css('width', '100%');
   $('.css').css('width', '100%');

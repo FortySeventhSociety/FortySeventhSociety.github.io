@@ -12,11 +12,16 @@ body {
   line-height: 16px;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   color: #666;
   text-decoration: none;
 }
-a:hover, a:visited:hover, a:active:hover {
+
+a:hover,
+a:visited:hover,
+a:active:hover {
   color: #222;
 }
 
@@ -33,6 +38,7 @@ a:hover, a:visited:hover, a:active:hover {
   margin: 20px auto 40px;
   left: -10px;
 }
+
 #game canvas {
   border: 10px solid white;
 }

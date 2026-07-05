@@ -2,11 +2,13 @@
 // All Rights Reserved //////*/
 
 @import url(https://fonts.googleapis.com/css?family=Londrina+Solid|Nunito:400,300);
+
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -19,6 +21,7 @@ a {
   text-decoration: none;
   font-size: 14px;
 }
+
 a:hover {
   color: #86d1ff;
 }
@@ -49,6 +52,7 @@ p {
     transform: translateY(-5px) scale(1.05);
   }
 }
+
 .letter {
   display: inline-block;
   color: transparent;
@@ -74,9 +78,12 @@ p {
 .guessForm {
   margin: 20px auto 0;
 }
-.guessForm input, .guessForm .guessButton {
+
+.guessForm input,
+.guessForm .guessButton {
   font-family: "Londrina Solid", cursive;
 }
+
 .guessForm input[type=text] {
   outline: none;
   padding: 10px;
@@ -86,6 +93,7 @@ p {
   border: 1px solid #aaa;
   color: gray;
 }
+
 .guessForm .guessButton {
   border: none;
   font-size: 30px;
@@ -97,6 +105,7 @@ p {
   margin: 10px 0;
   text-shadow: 1px 2px 0 #20a9ff;
 }
+
 .guessForm .guessButton:hover {
   background: #20a9ff;
 }
@@ -104,9 +113,11 @@ p {
 .wrongLetters {
   font-size: 20px;
 }
+
 .wrongLetters p {
   margin-bottom: 10px;
 }
+
 .wrongLetters li {
   display: inline-block;
   font-size: 40px;
@@ -132,26 +143,32 @@ p {
   background: #0091ec;
   z-index: 12402402;
 }
+
 .message h1 {
   display: none;
   color: white;
   text-shadow: 1px 2px 0 #ccc;
 }
+
 .message .highlight {
   color: yellow;
   text-transform: capitalize;
 }
+
 .message .text {
   color: white;
   font-size: 30px;
   display: none;
 }
+
 .message .text p {
   color: white;
 }
+
 .message .text .highlight {
   font-size: 40px;
 }
+
 .message .muted {
   margin: 20px auto;
   color: #86d1ff;
@@ -170,6 +187,7 @@ p {
   text-shadow: 1px 2px 0 #2EB933;
   font-family: "Londrina Solid", cursive;
 }
+
 .button:hover {
   background: #71dc75;
 }

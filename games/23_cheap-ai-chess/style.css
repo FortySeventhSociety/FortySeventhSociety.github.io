@@ -13,11 +13,9 @@
   --color-board-hue: 30;
   --color-board-sat: 40%;
   --color-shadow: hsl(var(--color-board-hue), var(--color-board-sat), 50%);
-  --color-shadow-lighter: hsl(
-    var(--color-board-hue),
-    var(--color-board-sat),
-    55%
-  );
+  --color-shadow-lighter: hsl(var(--color-board-hue),
+      var(--color-board-sat),
+      55%);
   --transition-ease: cubic-bezier(0.25, 1, 0.5, 1);
   --color-background: var(--color-black);
 }
@@ -32,18 +30,22 @@ aside {
   width: 100%;
   z-index: 999;
 }
+
 aside div {
   align-items: center;
   color: white;
   display: flex;
 }
-aside div > * {
+
+aside div>* {
   align-items: center;
   display: flex;
 }
-aside div > * + * {
+
+aside div>*+* {
   margin-left: calc(var(--border-width) * 2);
 }
+
 aside div h3,
 aside div label {
   font-size: calc(var(--edge-width) * 0.3);
@@ -53,18 +55,21 @@ aside div label {
   margin-top: 0;
   text-transform: uppercase;
 }
+
 aside div label {
   cursor: pointer;
 }
+
 aside div input {
   left: -99999px;
   position: absolute;
 }
 
-aside div input + * {
+aside div input+* {
   opacity: 0.5;
 }
-aside div input:checked + * {
+
+aside div input:checked+* {
   font-weight: bold;
   opacity: 1;
 }
@@ -91,8 +96,7 @@ body {
     0 0 0 calc(var(--border-width) * 3) var(--color-shadow-lighter),
     0 0 0 var(--edge-width) var(--color-shadow);
   height: var(--diameter-board);
-  margin: calc((100vh - var(--diameter-board)) * 0.5)
-    calc((100vw - var(--diameter-board)) * 0.5);
+  margin: calc((100vh - var(--diameter-board)) * 0.5) calc((100vw - var(--diameter-board)) * 0.5);
   position: relative;
   width: var(--diameter-board);
 }
@@ -145,12 +149,12 @@ body {
 .perspective-white .board .row:nth-child(odd) .tile:nth-child(even) {
   color: hsl(var(--color-board-hue), var(--color-board-sat), 70%);
 }
-.board .row .tile.highlight-active {
-}
-.board .row .tile.highlight-capture {
-}
-.board .row .tile.highlight-move {
-}
+
+.board .row .tile.highlight-active {}
+
+.board .row .tile.highlight-capture {}
+
+.board .row .tile.highlight-move {}
 
 .board .row .tile .move,
 .board .row .tile .moves,
@@ -173,16 +177,18 @@ body {
   align-content: center;
   align-items: center;
 }
+
 .board .row .tile .captures {
   align-items: flex-start;
   justify-content: space-between;
 }
+
 .board .row .tile:not(.occupied) .captures {
   align-items: center;
   justify-content: center;
 }
 
-.board .row .tile > div > svg {
+.board .row .tile>div>svg {
   --stroke: transparent;
   box-sizing: border-box;
   height: var(--di);
@@ -205,34 +211,42 @@ body {
 .board .row .tile.occupied .captures svg {
   position: absolute;
 }
+
 .board .row .tile.occupied .captures svg:nth-child(1) {
   top: 0;
   left: 0;
 }
+
 .board .row .tile.occupied .captures svg:nth-child(2) {
   top: 0;
   right: 0;
 }
+
 .board .row .tile.occupied .captures svg:nth-child(3) {
   bottom: calc(var(--di) * 0.1);
   left: 0;
 }
+
 .board .row .tile.occupied .captures svg:nth-child(4) {
   bottom: calc(var(--di) * 0.1);
   right: 0;
 }
+
 .board .row .tile.occupied .captures svg:nth-child(5) {
   top: calc(50% - var(--di) * 0.55);
   left: 0;
 }
+
 .board .row .tile.occupied .captures svg:nth-child(6) {
   top: calc(50% - var(--di) * 0.55);
   right: 0;
 }
+
 .board .row .tile.occupied .captures svg:nth-child(7) {
   top: 0;
   left: calc(50% - var(--di) * 0.5);
 }
+
 .board .row .tile.occupied .captures svg:nth-child(8) {
   bottom: calc(var(--di) * 0.1);
   left: calc(50% - var(--di) * 0.5);
@@ -267,6 +281,7 @@ svg {
 svg.white {
   --fill: var(--color-white);
 }
+
 svg.black {
   --fill: var(--color-black);
 }
@@ -285,9 +300,11 @@ svg.black {
 .pieces .piece.white {
   --pos-row: -1;
 }
+
 .pieces .piece.black {
   --pos-row: 8;
 }
+
 .pieces .piece {
   --pos-col: 3.5;
   --scale: 0;
@@ -298,23 +315,18 @@ svg.black {
   height: var(--diameter-tile);
   position: absolute;
   left: 0;
-  transform: translate(
-      calc(var(--pos-col) * 100%),
-      calc(var(--pos-row) * -100%)
-    )
-    translateZ(0);
+  transform: translate(calc(var(--pos-col) * 100%),
+      calc(var(--pos-row) * -100%)) translateZ(0);
   transform-origin: 50% 50%;
-  transition: all var(--transition-duration) var(--transition-ease)
-    var(--transition-delay);
+  transition: all var(--transition-duration) var(--transition-ease) var(--transition-delay);
   width: var(--diameter-tile);
 }
+
 .perspective-black .pieces .piece {
-  transform: translate(
-      calc((7 - var(--pos-col)) * 100%),
-      calc((7 - var(--pos-row)) * -100%)
-    )
-    translateZ(0);
+  transform: translate(calc((7 - var(--pos-col)) * 100%),
+      calc((7 - var(--pos-row)) * -100%)) translateZ(0);
 }
+
 .pieces .piece svg {
   display: block;
   left: 50%;
@@ -328,6 +340,7 @@ svg.black {
     fill var(--transition-duration) var(--transition-ease),
     opacity var(--transition-duration) var(--transition-ease);
 }
+
 .turn-white .pieces .piece:not(.highlight-capture) svg.black,
 .turn-black .pieces .piece:not(.highlight-capture) svg.white,
 .turn-black .pieces .piece:not(.can-move):not(.can-capture) svg.black,
@@ -337,32 +350,39 @@ svg.black {
 }
 
 @-webkit-keyframes wobble {
+
   0%,
   50%,
   100% {
     transform: translate(-50%, -50%) translateZ(0) scale(1) rotate(0deg);
   }
+
   25% {
     transform: translate(-50%, -50%) translateZ(0) scale(1.1) rotate(-2deg);
   }
+
   75% {
     transform: translate(-50%, -50%) translateZ(0) scale(1.1) rotate(2deg);
   }
 }
 
 @keyframes wobble {
+
   0%,
   50%,
   100% {
     transform: translate(-50%, -50%) translateZ(0) scale(1) rotate(0deg);
   }
+
   25% {
     transform: translate(-50%, -50%) translateZ(0) scale(1.1) rotate(-2deg);
   }
+
   75% {
     transform: translate(-50%, -50%) translateZ(0) scale(1.1) rotate(2deg);
   }
 }
+
 .pieces .piece.highlight-active svg {
   -webkit-animation: wobble 500ms linear infinite;
   animation: wobble 500ms linear infinite;

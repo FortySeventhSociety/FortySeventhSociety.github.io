@@ -22,30 +22,41 @@
 }
 
 .progress {
-	background:#e9e5e2;
+	background: #e9e5e2;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#e9e5e2));
 	background-image: -webkit-linear-gradient(top, #dddddd, #e9e5e2);
 	background-image: -moz-linear-gradient(top, #dddddd, #e9e5e2);
 	background-image: -ms-linear-gradient(top, #dddddd, #e9e5e2);
 	background-image: -o-linear-gradient(top, #dddddd, #e9e5e2);
-	background-image: linear-gradient(top, #dddddd, #e9e5e2);  
-	height:20px; 
+	background-image: linear-gradient(top, #dddddd, #e9e5e2);
+	height: 20px;
 	border-radius: 0px;
-	-moz-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;	 
-	-webkit-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;	 
-	box-shadow: 0 1px 0px #bbbbbb inset, 0 1px 0 #fcfcfc;	  
+	-moz-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
+	-webkit-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
+	box-shadow: 0 1px 0px #bbbbbb inset, 0 1px 0 #fcfcfc;
 }
 
-.adobe, .html, .css, .jquery, .javascript, .bootstrap, .wordpress, .ui, .ux, .rwd, .mobile, .rapidproto {
+.adobe,
+.html,
+.css,
+.jquery,
+.javascript,
+.bootstrap,
+.wordpress,
+.ui,
+.ux,
+.rwd,
+.mobile,
+.rapidproto {
 
- -webkit-transition: width 4.50s ease !important;
- -moz-transition: width 4.50s ease !important;
-   -o-transition: width 4.50s ease !important;
-      transition: width 4.50s ease !important;
- }
+	-webkit-transition: width 4.50s ease !important;
+	-moz-transition: width 4.50s ease !important;
+	-o-transition: width 4.50s ease !important;
+	transition: width 4.50s ease !important;
+}
 
- .cloudCastle {
- 	position: absolute;
- 	width: 80%;
- 	padding-left: 40%;
+.cloudCastle {
+	position: absolute;
+	width: 80%;
+	padding-left: 40%;
 }

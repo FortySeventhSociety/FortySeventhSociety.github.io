@@ -5,19 +5,19 @@
 // Utility
 // ----------
 Util = {};
-Util.timeStamp = function() {
+Util.timeStamp = function () {
   return window.performance.now();
 };
-Util.random = function(min, max) {
+Util.random = function (min, max) {
   return min + Math.random() * (max - min);
 };
-Util.array2D = function(tableau, largeur) {
+Util.array2D = function (tableau, largeur) {
   var result = [];
   for (var i = 0; i < tableau.length; i += largeur)
     result.push(tableau.slice(i, i + largeur));
   return result;
 };
-Util.toDio = function(array) {
+Util.toDio = function (array) {
   let tab = array.map(x => {
     if (x !== 0) {
       return x - 1;
@@ -28,22 +28,22 @@ Util.toDio = function(array) {
   let render = Util.array2D(tab, 16);
   return JSON.stringify(render);
 };
-Util.map = function(a, b, c, d, e) {
+Util.map = function (a, b, c, d, e) {
   return (a - b) / (c - b) * (e - d) + d;
 };
-Util.lerp = function(value1, value2, amount) {
+Util.lerp = function (value1, value2, amount) {
   return value1 + (value2 - value1) * amount;
 };
-Util.linearTween = function(currentTime, start, degreeOfChange, duration) {
+Util.linearTween = function (currentTime, start, degreeOfChange, duration) {
   return degreeOfChange * currentTime / duration + start;
 };
-Util.easeInOutQuad = function(t, b, c, d) {
+Util.easeInOutQuad = function (t, b, c, d) {
   t /= d / 2;
   if (t < 1) return c / 2 * t * t + b;
   t--;
   return -c / 2 * (t * (t - 2) - 1) + b;
 };
-Util.easeInOutExpo = function(t, b, c, d) {
+Util.easeInOutExpo = function (t, b, c, d) {
   t /= d / 2;
   if (t < 1) return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
   t--;
@@ -63,10 +63,10 @@ class Scene {
     this.world = world;
     this.ctx = world.ctx;
   }
-  keyEvents(event) {}
-  init() {}
-  render() {}
-  addEntity() {}
+  keyEvents(event) { }
+  init() { }
+  render() { }
+  addEntity() { }
 }
 class Entity {
   constructor(scene, x, y) {
@@ -150,11 +150,11 @@ class Sprite {
       this.size.x,
       this.size.y,
       this.entity.body.position.x +
-        (this.tile_size / 2 - this.size.x / 2) +
-        this.offset.x,
+      (this.tile_size / 2 - this.size.x / 2) +
+      this.offset.x,
       this.entity.body.position.y +
-        (this.tile_size / 2 - this.size.x / 2) +
-        this.offset.y,
+      (this.tile_size / 2 - this.size.x / 2) +
+      this.offset.y,
       this.size.x,
       this.size.y
     );
@@ -882,7 +882,7 @@ class Diorama {
         let positionX = x * this.tile_size + layer.offset.x,
           positionY = y * this.tile_size + layer.offset.y;
         let sourceX =
-            Math.floor(id % this.terrain.tileset_size.width) * this.tile_size,
+          Math.floor(id % this.terrain.tileset_size.width) * this.tile_size,
           sourceY =
             Math.floor(id / this.terrain.tileset_size.width) * this.tile_size;
         if (this.tiles_data[id] && this.tiles_data[id].look === "bitmask") {
@@ -1582,7 +1582,7 @@ parameters.maps.forEach(map => {
 });
 // menu scene
 let menu = new Scene("menu");
-menu.keyEvents = function(event) {
+menu.keyEvents = function (event) {
   if (this.world.keys.ArrowDown && this.selection < this.button.length - 1) {
     this.world.assets.audio.selection.audio.play();
     this.selection += 1;
@@ -1595,7 +1595,7 @@ menu.keyEvents = function(event) {
     this.world.startScene(this.button[this.selection].link);
   }
 };
-menu.init = function() {
+menu.init = function () {
   this.init_once = true;
   // custom data
   this.button = [
@@ -1642,7 +1642,7 @@ menu.init = function() {
   this.cat.sprite.speed = 0.2;
   this.cat.sprite.offset.y = -3;
 };
-menu.render = function() {
+menu.render = function () {
   this.animatedBackground();
   this.ctx.drawImage(this.world.assets.image["main_title"].image, 0, 0);
   this.displaySelection();
@@ -1663,7 +1663,7 @@ menu.render = function() {
     "center"
   );
 };
-menu.displaySelection = function() {
+menu.displaySelection = function () {
   // display box
   this.ctx.fillStyle = "#82769e";
   this.world.drawBox(
@@ -1699,7 +1699,7 @@ menu.displaySelection = function() {
     this.select_pos.y + 20 * this.selection - 2
   );
 };
-menu.animatedBackground = function() {
+menu.animatedBackground = function () {
   this.offset.x += 0.8;
   this.offset.y += 0.6;
   if (this.offset.x > 63) {
@@ -1716,7 +1716,7 @@ menu.animatedBackground = function() {
   ctx.restore();
 };
 let levels = new Scene("levels");
-levels.keyEvents = function(event) {
+levels.keyEvents = function (event) {
   if (this.world.keys.KeyE) {
     this.world.assets.audio.selection.audio.play();
     this.world.startScene("menu");
@@ -1743,12 +1743,12 @@ levels.keyEvents = function(event) {
     this.world.startScene("inGame");
   }
 };
-levels.init = function() {
+levels.init = function () {
   this.init_once = true;
   this.selection = 0;
   this.scale = 0;
 };
-levels.render = function() {
+levels.render = function () {
   this.world.clear("black");
   // animate selection
   this.scale += 0.1;
@@ -1804,7 +1804,7 @@ levels.render = function() {
   );
 };
 let inGame = new Scene("inGame");
-inGame.keyEvents = function(event) {
+inGame.keyEvents = function (event) {
   if (this.world.keys.KeyE && this.userInput) {
     this.transition.start(
       0,
@@ -1824,7 +1824,7 @@ inGame.keyEvents = function(event) {
     );
   }
 };
-inGame.init = function() {
+inGame.init = function () {
   this.won = false;
   this.userInput = true;
   this.world.initMap("map_" + this.world.current_level);
@@ -1851,7 +1851,7 @@ inGame.init = function() {
     from: 0,
     to: Math.max(this.world.W, this.world.H),
     //
-    start: function(from, to, callback) {
+    start: function (from, to, callback) {
       this.scene.userInput = false;
       this.active = true;
       this.from = from;
@@ -1859,7 +1859,7 @@ inGame.init = function() {
       this.to = to;
       this.callback = callback;
     },
-    update: function() {
+    update: function () {
       let time = new Date() - this.start_time;
       if (time < this.duration) {
         this.value = Util.easeInOutQuad(
@@ -1876,7 +1876,7 @@ inGame.init = function() {
         }
       }
     },
-    render: function() {
+    render: function () {
       this.scene.ctx.fillStyle = "black";
       this.scene.ctx.fillRect(0, 0, this.scene.world.W, this.value);
       this.scene.ctx.fillRect(
@@ -1900,7 +1900,7 @@ inGame.init = function() {
     spawn_cat
   );
 };
-inGame.addCat = function(x, y) {
+inGame.addCat = function (x, y) {
   let cat = new Cat(this, x, y);
   let sprite_data = {
     image: "player_sprite",
@@ -1928,10 +1928,10 @@ inGame.addCat = function(x, y) {
   spawn_effect.trigger = 4;
   this.effects.push(spawn_effect);
 };
-inGame.render = function() {
+inGame.render = function () {
   this.control();
   this.world.renderMap();
-  for (let i = this.cats.length; i--; ) {
+  for (let i = this.cats.length; i--;) {
     this.cats[i].sprite.animate("idle");
     // draw shadow and cat
     this.ctx.drawImage(
@@ -1942,7 +1942,7 @@ inGame.render = function() {
     this.cats[i].display();
     this.cats[i].translation();
   }
-  for (let i = this.effects.length; i--; ) {
+  for (let i = this.effects.length; i--;) {
     this.effects[i].render();
   }
   if (this.transition.active) {
@@ -1950,7 +1950,7 @@ inGame.render = function() {
     this.transition.render();
   }
 };
-inGame.control = function() {
+inGame.control = function () {
   if (this.userInput == false) return false;
   if (this.world.keys.ArrowUp) {
     this.moveCats(0, -1);
@@ -1965,7 +1965,7 @@ inGame.control = function() {
     this.moveCats(1, 0);
   }
 };
-inGame.moveCats = function(x, y) {
+inGame.moveCats = function (x, y) {
   // see if every cat are ready to move
   let canMove = this.cats.every(cat => {
     return cat.inTranslation == false;
@@ -1981,7 +1981,7 @@ inGame.moveCats = function(x, y) {
     cat.applyMove();
   });
 };
-inGame.collisionCats = function() {
+inGame.collisionCats = function () {
   // check for other cats !
   let need_to_check = true;
   while (need_to_check === true) {
@@ -1994,7 +1994,7 @@ inGame.collisionCats = function() {
     });
   }
 };
-inGame.checkWin = function() {
+inGame.checkWin = function () {
   if (this.cats.length === 0) {
     // everyone is dead :/
     this.transition.start(
@@ -2093,11 +2093,11 @@ class Cat extends Entity {
       let time = new Date() - this.transition.start;
       if (time < this.transition.duration) {
         let x = this.transition.type(
-            time,
-            this.transition.start_pos.x,
-            this.transition.target.x - this.transition.start_pos.x,
-            this.transition.duration
-          ),
+          time,
+          this.transition.start_pos.x,
+          this.transition.target.x - this.transition.start_pos.x,
+          this.transition.duration
+        ),
           y = this.transition.type(
             time,
             this.transition.start_pos.y,
@@ -2281,16 +2281,16 @@ class Cat extends Entity {
   }
 }
 let controls = new Scene("controls");
-controls.keyEvents = function(event) {
+controls.keyEvents = function (event) {
   if (this.world.keys.KeyE) {
     this.world.startScene("menu");
   }
 };
-controls.init = function() {
+controls.init = function () {
   this.loop = false;
   this.controls = this.world.assets.image.controls.image;
 };
-controls.render = function() {
+controls.render = function () {
   this.world.clear("black");
   this.ctx.drawImage(this.controls, 0, 0);
   // notice

@@ -1,10 +1,12 @@
 /*/ D474designs | JOCV-III ///////
 // All Rights Reserved //////*/
 
-html, body {
+html,
+body {
   height: 100%;
   user-select: none;
 }
+
 body {
   color: #999;
   background: deepskyblue;
@@ -20,23 +22,27 @@ body {
   overflow: hidden;
   text-align: center;
 }
+
 a {
   color: #FF2948;
   font-weight: 700;
 }
-canvas{
-	flex-shrink: 0;
-	background-color:#000;
-	image-rendering: crisp-edges;
-	image-rendering: pixelated;
+
+canvas {
+  flex-shrink: 0;
+  background-color: #000;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
-	}
+}
+
 .method {
   color: grey;
 }
+
 .enfonceMarque {
   position: absolute;
   left: 0px;
@@ -49,6 +55,7 @@ canvas{
   background: grey;
   opacity: 0.5;
 }
+
 .enfonceDist {
   position: absolute;
   left: 0px;
@@ -61,6 +68,7 @@ canvas{
   background: #222;
   opacity: 0.8;
 }
+
 .message {
   font-weight: 600;
   margin: 20px;

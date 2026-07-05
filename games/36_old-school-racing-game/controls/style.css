@@ -24,7 +24,9 @@
   transition: box-shadow 0.1s linear, transform 0.1s linear;
   width: 75px;
 }
-.arrow-key:active, .arrow-key.press {
+
+.arrow-key:active,
+.arrow-key.press {
   box-shadow: 0px 0px 0 #999, 0px 0px 0 #999, 0px 0px 0 #999, -1px 1px 0 #999;
   transform: translate3d(-3px, 3px, 0);
 }
@@ -32,6 +34,7 @@
 .arrow-key.left {
   margin-right: 5%;
 }
+
 .arrow-key.right {
   margin-left: 5%;
 }
@@ -52,6 +55,7 @@
     height: 155px;
     width: 155px;
   }
+
   .arrow-key.right {
     margin-top: 25%;
     height: 155px;
@@ -59,29 +63,32 @@
   }
 
   .arrow-key.up {
-  margin-left: 5%;
-  margin-top: 3%;
-  height: 200px;
-  width: 200px;
-}
+    margin-left: 5%;
+    margin-top: 3%;
+    height: 200px;
+    width: 200px;
+  }
 
-.arrow-key.down {
-  margin-right: 5%;
-  margin-top: 3%;
-  height: 200px;
-  width: 200px;
-}
+  .arrow-key.down {
+    margin-right: 5%;
+    margin-top: 3%;
+    height: 200px;
+    width: 200px;
+  }
 }
 
 .arrow-key.left:before {
   content: "←";
 }
+
 .arrow-key.up:before {
   content: "▒";
 }
+
 .arrow-key.down:before {
   content: "░";
 }
+
 .arrow-key.right:before {
   content: "→";
 }

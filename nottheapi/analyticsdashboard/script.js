@@ -1,3 +1,3 @@
-$('li.nav-item').click( function() {
+$('li.nav-item').click(function () {
    $(this).toggleClass('open');
 });

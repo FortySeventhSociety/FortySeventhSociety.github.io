@@ -37,7 +37,7 @@ h1 {
   cursor: text;
   margin-bottom: 1em;
   opacity: 0;
-	outline: none;
+  outline: none;
   text-align: center;
   width: 10em;
 }
@@ -69,7 +69,7 @@ h1 {
   display: none;
   height: 1.9em;
   margin: 0;
-	outline: none;
+  outline: none;
   opacity: 0;
   position: fixed;
   right: 0;
@@ -160,15 +160,15 @@ h1 {
 }
 
 ::-webkit-scrollbar {
-    width: .5em;
+  width: .5em;
 }
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0em 0em .5em rgba(0, 255, 0, .25);
+  -webkit-box-shadow: inset 0em 0em .5em rgba(0, 255, 0, .25);
 }
 
 ::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0em 0em .25em rgba(0, 255, 0, .5);
+  -webkit-box-shadow: inset 0em 0em .25em rgba(0, 255, 0, .5);
 }
 
 footer {

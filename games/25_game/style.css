@@ -20,7 +20,8 @@ h2 {
   padding: 0;
 }
 
-.lava, .actor {
+.lava,
+.actor {
   background: #e55;
 }
 

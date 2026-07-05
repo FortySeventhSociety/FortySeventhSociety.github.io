@@ -12,26 +12,26 @@
 let gameSpeed = 1;
 
 // Colors
-const BLUE =   { r: 0x67, g: 0xd7, b: 0xf0 };
-const GREEN =  { r: 0xa6, g: 0xe0, b: 0x2c };
-const PINK =   { r: 0xfa, g: 0x24, b: 0x73 };
+const BLUE = { r: 0x67, g: 0xd7, b: 0xf0 };
+const GREEN = { r: 0xa6, g: 0xe0, b: 0x2c };
+const PINK = { r: 0xfa, g: 0x24, b: 0x73 };
 const ORANGE = { r: 0xfe, g: 0x95, b: 0x22 };
 
 //D474designs | Add new wireframe ///////
-const LIMEGREEN = { r:0, g:255, b:68 };
+const LIMEGREEN = { r: 0, g: 255, b: 68 };
 
 //D474designs | Change wireframe color for PINK block, and create BOSS ///////
-const YELLOW = { r:207, g:255, b:74 };
+const YELLOW = { r: 207, g: 255, b: 74 };
 
 //D474designs | Add additional block colors ///////
 const RED = { r: 252, g: 3, b: 3 };
-const GREEN2 = { r:0, g:189, b:85 };
-const BLUE2 = { r:52, g:67, b:235 };
-const PINK2 = { r:255, g:138, b:243 };
+const GREEN2 = { r: 0, g: 189, b: 85 };
+const BLUE2 = { r: 52, g: 67, b: 235 };
+const PINK2 = { r: 255, g: 138, b: 243 };
 const PURPLE = { r: 84, g: 0, b: 140 };
 const BLACK = { r: 0, g: 0, b: 0 };
 const WHITE = { r: 255, g: 255, b: 255 };
-const GREY = { r:69, g:69, b:69 };
+const GREY = { r: 69, g: 69, b: 69 };
 const allColors = [BLUE, GREEN, PINK, ORANGE, LIMEGREEN, RED, GREEN2, BLUE2, PINK2, PURPLE, BLACK, WHITE, GREY, YELLOW];
 
 // Gameplay
@@ -101,8 +101,8 @@ const cameraDistance = 900;
 const sceneScale = 1;
 // Objects that get too close to the camera will be faded out to transparent over this range.
 // const cameraFadeStartZ = 0.8*cameraDistance - 6*targetRadius;
-const cameraFadeStartZ = 0.45*cameraDistance;
-const cameraFadeEndZ = 0.65*cameraDistance;
+const cameraFadeStartZ = 0.45 * cameraDistance;
+const cameraFadeEndZ = 0.65 * cameraDistance;
 const cameraFadeRange = cameraFadeEndZ - cameraFadeStartZ;
 
 // Globals used to accumlate all vertices/polygons in each frame
@@ -297,7 +297,7 @@ const shadeColor = (color, lightness) => {
 
 const _allCooldowns = [];
 
-const makeCooldown = (rechargeTime, units=1) => {
+const makeCooldown = (rechargeTime, units = 1) => {
 	let timeRemaining = 0;
 	let lastTime = 0;
 
@@ -310,7 +310,7 @@ const makeCooldown = (rechargeTime, units=1) => {
 			timeRemaining = 0;
 		} else {
 			// update...
-			timeRemaining -= now-lastTime;
+			timeRemaining -= now - lastTime;
 			if (timeRemaining < 0) timeRemaining = 0;
 		}
 		lastTime = now;
@@ -318,7 +318,7 @@ const makeCooldown = (rechargeTime, units=1) => {
 
 	const canUse = () => {
 		updateTime();
-		return timeRemaining <= (rechargeTime * (units-1));
+		return timeRemaining <= (rechargeTime * (units - 1));
 	};
 
 	const cooldown = {
@@ -331,7 +331,7 @@ const makeCooldown = (rechargeTime, units=1) => {
 		mutate(options) {
 			if (options.rechargeTime) {
 				// Apply recharge time delta so change takes effect immediately.
-				timeRemaining -= rechargeTime-options.rechargeTime;
+				timeRemaining -= rechargeTime - options.rechargeTime;
 				if (timeRemaining < 0) timeRemaining = 0;
 				rechargeTime = options.rechargeTime;
 			}
@@ -402,7 +402,7 @@ function cloneVertices(vertices) {
 // Arrays must be the same length.
 function copyVerticesTo(arr1, arr2) {
 	const len = arr1.length;
-	for (let i=0; i<len; i++) {
+	for (let i = 0; i < len; i++) {
 		const v1 = arr1[i];
 		const v2 = arr2[i];
 		v2.x = v1.x;
@@ -463,9 +463,9 @@ function computePolyNormal(poly, normalName) {
 	const by = v1.y - v3.y;
 	const bz = v1.z - v3.z;
 	// Cross product
-	const nx = ay*bz - az*by;
-	const ny = az*bx - ax*bz;
-	const nz = ax*by - ay*bx;
+	const nx = ay * bz - az * by;
+	const ny = az * bx - ax * bz;
+	const nz = ax * by - ay * bx;
 	// Compute magnitude of normal and normalize
 	const mag = Math.hypot(nx, ny, nz);
 	const polyNormal = poly[normalName];
@@ -492,15 +492,15 @@ function transformVertices(vertices, target, tX, tY, tZ, rX, rY, rZ, sX, sY, sZ)
 		const targetVertex = target[i];
 		// X axis rotation
 		const x1 = v.x;
-		const y1 = v.z*sinX + v.y*cosX;
-		const z1 = v.z*cosX - v.y*sinX;
+		const y1 = v.z * sinX + v.y * cosX;
+		const z1 = v.z * cosX - v.y * sinX;
 		// Y axis rotation
-		const x2 = x1*cosY - z1*sinY;
+		const x2 = x1 * cosY - z1 * sinY;
 		const y2 = y1;
-		const z2 = x1*sinY + z1*cosY;
+		const z2 = x1 * sinY + z1 * cosY;
 		// Z axis rotation
-		const x3 = x2*cosZ - y2*sinZ;
-		const y3 = x2*sinZ + y2*cosZ;
+		const x3 = x2 * cosZ - y2 * sinZ;
+		const y3 = x2 * sinZ + y2 * cosZ;
 		const z3 = z2;
 
 		// Scale, Translate, and set the transform.
@@ -538,9 +538,9 @@ const projectVertexTo = (v, target) => {
 
 // Dummy no-op functions.
 // I use these in a special build for custom performance profiling.
-const PERF_START = () => {};
-const PERF_END = () => {};
-const PERF_UPDATE = () => {};
+const PERF_START = () => { };
+const PERF_END = () => { };
+const PERF_UPDATE = () => { };
 
 
 
@@ -553,19 +553,19 @@ const PERF_UPDATE = () => {};
 
 // A simple cube, 8 vertices, 6 quads.
 // Defaults to an edge length of 2 units, can be influenced with `scale`.
-function makeCubeModel({ scale=1 }) {
+function makeCubeModel({ scale = 1 }) {
 	return {
 		vertices: [
 			// top
 			{ x: -scale, y: -scale, z: scale },
-			{ x:  scale, y: -scale, z: scale },
-			{ x:  scale, y:  scale, z: scale },
-			{ x: -scale, y:  scale, z: scale },
+			{ x: scale, y: -scale, z: scale },
+			{ x: scale, y: scale, z: scale },
+			{ x: -scale, y: scale, z: scale },
 			// bottom
 			{ x: -scale, y: -scale, z: -scale },
-			{ x:  scale, y: -scale, z: -scale },
-			{ x:  scale, y:  scale, z: -scale },
-			{ x: -scale, y:  scale, z: -scale }
+			{ x: scale, y: -scale, z: -scale },
+			{ x: scale, y: scale, z: -scale },
+			{ x: -scale, y: scale, z: -scale }
 		],
 		polys: [
 			// z = 1
@@ -585,14 +585,14 @@ function makeCubeModel({ scale=1 }) {
 }
 
 // Not very optimized - lots of duplicate vertices are generated.
-function makeRecursiveCubeModel({ recursionLevel, splitFn, color, scale=1 }) {
+function makeRecursiveCubeModel({ recursionLevel, splitFn, color, scale = 1 }) {
 	const getScaleAtLevel = level => 1 / (3 ** level);
 
 	// We can model level 0 manually. It's just a single, centered, cube.
 	let cubeOrigins = [{ x: 0, y: 0, z: 0 }];
 
 	// Recursively replace cubes with smaller cubes.
-	for (let i=1; i<=recursionLevel; i++) {
+	for (let i = 1; i <= recursionLevel; i++) {
 		const scale = getScaleAtLevel(i) * 2;
 		const cubeOrigins2 = [];
 		cubeOrigins.forEach(origin => {
@@ -679,7 +679,7 @@ function mengerSpongeSplit(o, s) {
 // Helper to optimize models by merging duplicate vertices within a threshold,
 // and removing all polys that share the same vertices.
 // Directly mutates the model.
-function optimizeModel(model, threshold=0.0001) {
+function optimizeModel(model, threshold = 0.0001) {
 	const { vertices, polys } = model;
 
 	const compareVertices = (v1, v2) => (
@@ -721,8 +721,8 @@ function optimizeModel(model, threshold=0.0001) {
 		v.originalIndexes = [i];
 	});
 
-	for (let i=vertices.length-1; i>=0; i--) {
-		for (let ii=i-1; ii>=0; ii--) {
+	for (let i = vertices.length - 1; i >= 0; i--) {
+		for (let ii = i - 1; ii >= 0; ii--) {
 			const v1 = vertices[i];
 			const v2 = vertices[ii];
 			if (compareVertices(v1, v2)) {
@@ -754,8 +754,8 @@ function optimizeModel(model, threshold=0.0001) {
 	// 1. Each poly will either have no duplicates or 1 duplicate.
 	// 2. If two polys are equal, they are both hidden (two cubes touching),
 	//    therefore both can be removed.
-	for (let i=polys.length-1; i>=0; i--) {
-		for (let ii=i-1; ii>=0; ii--) {
+	for (let i = polys.length - 1; i >= 0; i--) {
+		for (let ii = i - 1; ii >= 0; ii--) {
 			const p1 = polys[i];
 			const p2 = polys[ii];
 			if (p1.sum !== p2.sum) break;
@@ -780,7 +780,7 @@ function optimizeModel(model, threshold=0.0001) {
 // ============================================================================
 
 class Entity {
-	constructor({ model, color, wireframe=false }) {
+	constructor({ model, color, wireframe = false }) {
 		const vertices = cloneVertices(model.vertices);
 		const shadowVertices = cloneVertices(model.vertices);
 		const colorHex = colorToHex(color);
@@ -876,8 +876,8 @@ const targets = [];
 // Pool target instances by color, using a Map.
 // keys are color objects, and values are arrays of targets.
 // Also pool wireframe instances separately.
-const targetPool = new Map(allColors.map(c=>([c, []])));
-const targetWireframePool = new Map(allColors.map(c=>([c, []])));
+const targetPool = new Map(allColors.map(c => ([c, []])));
+const targetWireframePool = new Map(allColors.map(c => ([c, []])));
 
 
 
@@ -958,7 +958,7 @@ const getTarget = (() => {
 			tripleStrong = false;
 			// Spawner is reset automatically when game resets.
 
-		// D474designs | Add BOSS cube
+			// D474designs | Add BOSS cube
 		} else if (!tripleStrong && state.game.score > tripleStrongEnableScore) {
 			tripleStrong = true;
 			bossSpawner.mutate({ maxSpawns: 1 });
@@ -1057,7 +1057,7 @@ const returnTarget = target => {
 
 
 function resetAllTargets() {
-	while(targets.length) {
+	while (targets.length) {
 		returnTarget(targets.pop());
 	}
 }
@@ -1075,13 +1075,13 @@ const frags = [];
 // Pool inactive fragments by color, using a Map.
 // keys are color objects, and values are arrays of fragments.
 // // Also pool wireframe instances separately.
-const fragPool = new Map(allColors.map(c=>([c, []])));
-const fragWireframePool = new Map(allColors.map(c=>([c, []])));
+const fragPool = new Map(allColors.map(c => ([c, []])));
+const fragWireframePool = new Map(allColors.map(c => ([c, []])));
 
 
 const createBurst = (() => {
 	// Precompute some private data to be reused for all bursts.
-	const basePositions = mengerSpongeSplit({ x:0, y:0, z:0 }, fragRadius*2);
+	const basePositions = mengerSpongeSplit({ x: 0, y: 0, z: 0 }, fragRadius * 2);
 	const positions = cloneVertices(basePositions);
 	const prevPositions = cloneVertices(basePositions);
 	const velocities = cloneVertices(basePositions);
@@ -1107,7 +1107,7 @@ const createBurst = (() => {
 		return frag;
 	}
 
-	return (target, force=1) => {
+	return (target, force = 1) => {
 		// Calculate fragment positions, and what would have been the previous positions
 		// when still a part of the larger target.
 		transformVertices(
@@ -1125,7 +1125,7 @@ const createBurst = (() => {
 
 		// Compute velocity of each fragment, based on previous positions.
 		// Will write to `velocities` array.
-		for (let i=0; i<fragCount; i++) {
+		for (let i = 0; i < fragCount; i++) {
 			const position = positions[i];
 			const prevPosition = prevPositions[i];
 			const velocity = velocities[i];
@@ -1146,7 +1146,7 @@ const createBurst = (() => {
 		);
 
 
-		for (let i=0; i<fragCount; i++) {
+		for (let i = 0; i < fragCount; i++) {
 			const position = positions[i];
 			const velocity = velocities[i];
 			const normal = positionNormals[i];
@@ -1214,7 +1214,7 @@ function addSpark(x, y, xD, yD) {
 // Spherical spark burst
 function sparkBurst(x, y, count, maxSpeed) {
 	const angleInc = TAU / count;
-	for (let i=0; i<count; i++) {
+	for (let i = 0; i < count; i++) {
 		const angle = i * angleInc + angleInc * Math.random();
 		const speed = (1 - Math.random() ** 3) * maxSpeed;
 		addSpark(
@@ -1286,7 +1286,7 @@ function renderScoreHud() {
 	} else {
 		scoreNode.innerText = `SCORE: ${state.game.score}`;
 		scoreNode.style.display = 'block';
-		cubeCountNode.style.opacity = 0.65 ;
+		cubeCountNode.style.opacity = 0.65;
 	}
 	cubeCountNode.innerText = `CUBES SMASHED: ${state.game.cubeCount}`;
 }
@@ -1636,7 +1636,7 @@ function tick(width, height, simTime, simSpeed, lag) {
 		const spawnRadius = Math.min(centerX * 0.8, maxSpawnX);
 		target.x = (Math.random() * spawnRadius * 2 - spawnRadius);
 		target.y = centerY + targetHitRadius * 2;
-		target.z = (Math.random() * targetRadius*2 - targetRadius);
+		target.z = (Math.random() * targetRadius * 2 - targetRadius);
 		target.xD = Math.random() * (target.x * -2 / 120);
 		target.yD = -20;
 		targets.push(target);
@@ -1700,7 +1700,7 @@ function tick(width, height, simTime, simSpeed, lag) {
 		const hitTestCount = Math.ceil(pointerSpeed / targetRadius * 2);
 		// Start loop at `1` and use `<=` check, so we skip 0% and end up at 100%.
 		// This omits the previous point position, and includes the most recent.
-		for (let ii=1; ii<=hitTestCount; ii++) {
+		for (let ii = 1; ii <= hitTestCount; ii++) {
 			const percent = 1 - (ii / hitTestCount);
 			const hitX = pointerScene.x - pointerDelta.x * percent;
 			const hitY = pointerScene.y - pointerDelta.y * percent;
@@ -1866,7 +1866,7 @@ function tick(width, height, simTime, simSpeed, lag) {
 		allShadowVertices,
 		allShadowVertices,
 		0, 0, 0,
-		TAU/8, 0, 0,
+		TAU / 8, 0, 0,
 		1, 1, 1
 	);
 
@@ -1874,7 +1874,7 @@ function tick(width, height, simTime, simSpeed, lag) {
 
 	const shadowDistanceMult = Math.hypot(1, 1);
 	const shadowVerticesLength = allShadowVertices.length;
-	for (let i=0; i<shadowVerticesLength; i++) {
+	for (let i = 0; i < shadowVerticesLength; i++) {
 		const distance = allVertices[i].z - backboardZ;
 		allShadowVertices[i].z -= shadowDistanceMult * distance;
 	}
@@ -1882,7 +1882,7 @@ function tick(width, height, simTime, simSpeed, lag) {
 		allShadowVertices,
 		allShadowVertices,
 		0, 0, 0,
-		-TAU/8, 0, 0,
+		-TAU / 8, 0, 0,
 		1, 1, 1
 	);
 	allShadowVertices.forEach(projectVertex);
@@ -1922,7 +1922,7 @@ function draw(ctx, width, height, viewScale) {
 			const vCount = vertices.length;
 			const firstV = vertices[0];
 			ctx.moveTo(firstV.x, firstV.y);
-			for (let i=1; i<vCount; i++) {
+			for (let i = 1; i < vCount; i++) {
 				const v = vertices[i];
 				ctx.lineTo(v.x, v.y);
 			}
@@ -1934,7 +1934,7 @@ function draw(ctx, width, height, viewScale) {
 			const vCount = vertices.length;
 			const firstV = vertices[0];
 			ctx.moveTo(firstV.x, firstV.y);
-			for (let i=1; i<vCount; i++) {
+			for (let i = 1; i < vCount; i++) {
 				const v = vertices[i];
 				ctx.lineTo(v.x, v.y);
 			}
@@ -2009,7 +2009,7 @@ function draw(ctx, width, height, viewScale) {
 		// a bit and keep the sparks larger for longer, we'll also increase the scale
 		// a bit after applying the root curve.
 		const scale = (spark.life / spark.maxLife) ** 0.5 * 1.5;
-		ctx.lineTo(spark.x - spark.xD*scale, spark.y - spark.yD*scale);
+		ctx.lineTo(spark.x - spark.xD * scale, spark.y - spark.yD * scale);
 
 	});
 	ctx.stroke();
@@ -2020,9 +2020,9 @@ function draw(ctx, width, height, viewScale) {
 
 	ctx.strokeStyle = touchTrailColor;
 	const touchPointCount = touchPoints.length;
-	for (let i=1; i<touchPointCount; i++) {
+	for (let i = 1; i < touchPointCount; i++) {
 		const current = touchPoints[i];
-		const prev = touchPoints[i-1];
+		const prev = touchPoints[i - 1];
 		if (current.touchBreak || prev.touchBreak) {
 			continue;
 		}

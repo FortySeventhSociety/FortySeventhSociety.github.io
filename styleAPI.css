@@ -6,8 +6,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-* {
-}
+
+* {}
 
 html {
   height: 100%;
@@ -130,6 +130,7 @@ body {
   font-weight: lighter;
   src: url("https://meloncholy.com/static/fonts/source-sans-pro/SourceSansPro-Light.otf");
 }
+
 .body1 {
   background-color: #222;
   color: #fff;
@@ -142,13 +143,16 @@ body {
   height: 100%;
   padding: 0 50px;
 }
+
 .h11 {
   font-size: 48px;
   line-height: 60px;
 }
+
 .a1 {
   color: #fff;
 }
+
 .graph {
   background-color: #383838;
   font-size: 14px;
@@ -156,28 +160,35 @@ body {
   margin-bottom: 16px;
   width: 100%;
 }
+
 .graph svg {
   overflow: visible;
 }
+
 .domain {
   display: none;
 }
+
 .tick {
   shape-rendering: "crispEdges";
   stroke: #fff;
   stroke-width: 1px;
 }
+
 .graph-val {
   text-anchor: end;
 }
+
 text {
   fill: #fff;
 }
+
 .line {
   fill: none;
   stroke-width: 3px;
   vector-effect: non-scaling-stroke;
 }
+
 .area {
   vector-effect: non-scaling-stroke;
 }
@@ -200,13 +211,11 @@ text {
 .body2 {
   display: flex;
   overflow: hidden;
-  background-image: linear-gradient(
-    to bottom,
-    #436f60,
-    #d2c493,
-    #3d3739,
-    #233e4f
-  );
+  background-image: linear-gradient(to bottom,
+      #436f60,
+      #d2c493,
+      #3d3739,
+      #233e4f);
 }
 
 .main.main {
@@ -225,28 +234,26 @@ text {
   position: relative;
   padding: 20px 0;
 }
+
 .content-container::before {
   width: 60px;
   height: 100%;
   content: "";
-  background-image: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to left,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0));
   position: absolute;
   top: 0;
   left: -60px;
 }
+
 .content-container::after {
   width: 60px;
   height: 100%;
   content: "";
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0));
   position: absolute;
   top: 0;
   right: -60px;
@@ -290,6 +297,7 @@ text {
   color: #56a1db;
   text-decoration: none;
 }
+
 #a2:hover,
 a2.selected {
   color: #287cbc;
@@ -309,6 +317,7 @@ a2.selected {
   font-size: 1rem;
   display: block;
 }
+
 .button:hover,
 .button.selected {
   background: #1b527d;
@@ -331,6 +340,7 @@ a2.selected {
   flex: 0 0 auto;
   position: relative;
 }
+
 .user-details-container .user-settings {
   font-size: 34px;
   width: 34px;
@@ -345,17 +355,21 @@ nav.main {
   flex-direction: column;
   flex: 1;
 }
+
 nav.main h5 {
   padding: 0 20px 10px;
   color: #484848;
   border-bottom: 1px solid #e3e3e3;
 }
+
 nav.main ul.nav-container {
   overflow: auto;
 }
+
 nav.main li.nav-item {
   overflow: hidden;
 }
+
 nav.main li.nav-item span {
   display: block;
   width: 100%;
@@ -372,6 +386,7 @@ nav.main li.nav-item span {
   -ms-user-select: none;
   user-select: none;
 }
+
 nav.main li.nav-item span::before {
   content: "";
   position: absolute;
@@ -383,6 +398,7 @@ nav.main li.nav-item span::before {
   top: 50%;
   transform: translateY(-50%);
 }
+
 nav.main li.nav-item span::after {
   display: inline-block;
   font-family: "stroke";
@@ -403,42 +419,55 @@ nav.main li.nav-item span::after {
   transform: translateY(-50%);
   transition: transform 0.25s ease;
 }
+
 nav.main li.nav-item:first-of-type span {
   border-top: none;
 }
+
 nav.main li.nav-item:last-of-type span {
   border-bottom: 1px solid #e3e3e3;
 }
+
 nav.main li.nav-item:first-of-type span::before {
   border-color: #28d8b2;
 }
+
 nav.main li.nav-item:first-of-type li a::before {
   background: #28d8b2;
 }
+
 nav.main li.nav-item:nth-of-type(2) span::before {
   border-color: #f47264;
 }
+
 nav.main li.nav-item:nth-of-type(2) li a::before {
   background: #f47264;
 }
+
 nav.main li.nav-item:nth-of-type(3) span::before {
   border-color: #56a1db;
 }
+
 nav.main li.nav-item:nth-of-type(3) li a::before {
   background: #56a1db;
 }
+
 nav.main li.nav-item:nth-of-type(4) span::before {
   border-color: #fbd046;
 }
+
 nav.main li.nav-item:nth-of-type(4) li a::before {
   background: #fbd046;
 }
+
 nav.main li.nav-item:nth-of-type(5) span::before {
   border-color: #735fa4;
 }
+
 nav.main li.nav-item:nth-of-type(5) li a::before {
   background: #735fa4;
 }
+
 nav.main li.nav-item ul.subnav {
   visibility: hidden;
   max-height: 0;
@@ -446,6 +475,7 @@ nav.main li.nav-item ul.subnav {
   transition-property: max-height, opacity;
   opacity: 0;
 }
+
 nav.main li.nav-item ul.subnav a {
   display: block;
   width: 100%;
@@ -454,9 +484,11 @@ nav.main li.nav-item ul.subnav a {
   padding: 16px 20px 16px 40px;
   position: relative;
 }
+
 nav.main li.nav-item ul.subnav a:hover {
   background: dadrken(#f9f9f9, 10%);
 }
+
 nav.main li.nav-item ul.subnav li a::before {
   content: "";
   position: absolute;
@@ -467,12 +499,15 @@ nav.main li.nav-item ul.subnav li a::before {
   top: 50%;
   transform: translateY(-50%);
 }
+
 nav.main li.nav-item.open span {
   border-bottom: 1px solid #e3e3e3;
 }
+
 nav.main li.nav-item.open span::after {
   transform: translateY(-50%) rotate(90deg);
 }
+
 nav.main li.nav-item.open ul.subnav {
   visibility: visible;
   max-height: 200px;
@@ -484,14 +519,13 @@ header.main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0));
   flex: 0 0 auto;
   position: relative;
 }
+
 header.main::after {
   content: "";
   width: 100%;
@@ -501,11 +535,13 @@ header.main::after {
   bottom: 0;
   background: linear-gradient(to right, transparent, #252525, transparent);
 }
+
 header.main h5 {
   padding-left: 34px;
   font-size: 18px;
   position: relative;
 }
+
 header.main h5::before {
   display: inline-block;
   font-family: "stroke";
@@ -525,10 +561,12 @@ header.main h5::before {
   left: 0;
   top: -4px;
 }
+
 header.main form.input-container {
   display: flex;
   align-items: center;
 }
+
 header.main form.input-container label {
   width: 28px;
   height: 28px;
@@ -538,6 +576,7 @@ header.main form.input-container label {
   margin-right: 10px;
   cursor: pointer;
 }
+
 header.main form.input-container label::before {
   display: inline-block;
   font-family: "stroke";
@@ -553,6 +592,7 @@ header.main form.input-container label::before {
   content: "";
   color: #d8d7d7;
 }
+
 header.main form.input-container input[type="search"] {
   background: none;
   border: none;
@@ -566,19 +606,19 @@ header.main form.input-container input[type="search"] {
 }
 
 section.content-section {
-  background-image: linear-gradient(
-    to right,
-    rgba(95, 99, 109, 0.5),
-    rgba(76, 95, 113, 0.8)
-  );
+  background-image: linear-gradient(to right,
+      rgba(95, 99, 109, 0.5),
+      rgba(76, 95, 113, 0.8));
   margin-bottom: 10px;
   border-radius: 3px;
   overflow: hidden;
 }
+
 section.content-section .content-item {
   display: flex;
   flex-direction: column;
 }
+
 section.content-section .content-item .content-header {
   display: flex;
   flex: 0 0 auto;
@@ -587,10 +627,12 @@ section.content-section .content-item .content-header {
   align-items: center;
   border-bottom: 1px solid #252525;
 }
+
 section.content-section .content-item .content-header h5 {
   padding-left: 20px;
   position: relative;
 }
+
 section.content-section .content-item .content-header h5::after {
   content: "";
   width: 8px;
@@ -602,6 +644,7 @@ section.content-section .content-item .content-header h5::after {
   transform: translateY(-50%);
   border-radius: 50%;
 }
+
 section.content-section .content-item .content-header .content-menu {
   transform: rotate(90deg);
   width: 26px;
@@ -611,11 +654,13 @@ section.content-section .content-item .content-header .content-menu {
   overflow: hidden;
   text-align: center;
 }
+
 section.content-section .content-item .content-body {
   flex: 0 0 260px;
   display: flex;
   align-items: stretch;
 }
+
 section.content-section .content-item .content-body .content-body-item {
   flex: 1;
   border-right: 1px solid #252525;
@@ -623,35 +668,32 @@ section.content-section .content-item .content-body .content-body-item {
   cursor: pointer;
   position: relative;
 }
+
 section.content-section .content-item .content-body .content-body-item h4 {
   color: #8c8a8a;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 20px;
 }
+
 section.content-section .content-item .content-body .content-body-item .stat {
   text-align: center;
   font-size: 32px;
   font-weight: 100;
 }
-section.content-section
-  .content-item
-  .content-body
-  .content-body-item
-  .stat.negative::before {
+
+section.content-section .content-item .content-body .content-body-item .stat.negative::before {
   content: "-";
   color: #f47264;
   padding-right: 4px;
 }
-section.content-section
-  .content-item
-  .content-body
-  .content-body-item
-  .stat.positive::before {
+
+section.content-section .content-item .content-body .content-body-item .stat.positive::before {
   content: "+";
   color: #28d8b2;
   padding-right: 4px;
 }
+
 section.content-section .content-item .content-body .content-body-item .graph {
   position: absolute;
   width: 100%;
@@ -660,102 +702,86 @@ section.content-section .content-item .content-body .content-body-item .graph {
   height: 170px;
   opacity: 0.9;
 }
-section.content-section
-  .content-item
-  .content-body
-  .content-body-item
-  .graph
-  svg {
+
+section.content-section .content-item .content-body .content-body-item .graph svg {
   width: 100%;
   height: 170px;
 }
+
 section.content-section .content-item .content-body .content-body-item:hover {
   background: #f9f9f9;
 }
-section.content-section
-  .content-item
-  .content-body
-  .content-body-item:hover
-  h4 {
+
+section.content-section .content-item .content-body .content-body-item:hover h4 {
   color: #959595;
 }
-section.content-section
-  .content-item
-  .content-body
-  .content-body-item:hover
-  .stat {
+
+section.content-section .content-item .content-body .content-body-item:hover .stat {
   color: #7b7b7b;
   font-weight: 300;
 }
-section.content-section
-  .content-item
-  .content-body
-  .content-body-item:last-of-type {
+
+section.content-section .content-item .content-body .content-body-item:last-of-type {
   border-right: none;
 }
+
 section.content-section:first-of-type .content-item .content-header h5::after {
   background: #f47264;
 }
+
 section.content-section:first-of-type .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:first-of-type
-  .content-item
-  .graph:nth-last-of-type(2)
-  svg
-  polygon {
+
+section.content-section:first-of-type .content-item .graph:nth-last-of-type(2) svg polygon {
   fill: #e22410;
 }
+
 section.content-section:nth-of-type(2) .content-item .content-header h5::after {
   background: #56a1db;
 }
+
 section.content-section:nth-of-type(2) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(2)
-  .content-item
-  .graph:nth-last-of-type(2)
-  svg
-  polygon {
+
+section.content-section:nth-of-type(2) .content-item .graph:nth-last-of-type(2) svg polygon {
   fill: #246ea7;
 }
+
 section.content-section:nth-of-type(3) .content-item .content-header h5::after {
   background: #fbd046;
 }
+
 section.content-section:nth-of-type(3) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(3)
-  .content-item
-  .graph:nth-last-of-type(2)
-  svg
-  polygon {
+
+section.content-section:nth-of-type(3) .content-item .graph:nth-last-of-type(2) svg polygon {
   fill: #d6a505;
 }
+
 section.content-section:nth-of-type(4) .content-item .content-header h5::after {
   background: #28d8b2;
 }
+
 section.content-section:nth-of-type(4) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(4)
-  .content-item
-  .graph:nth-last-of-type(2)
-  svg
-  polygon {
+
+section.content-section:nth-of-type(4) .content-item .graph:nth-last-of-type(2) svg polygon {
   fill: #18826b;
 }
+
 section.content-section:nth-of-type(5) .content-item .content-header h5::after {
   background: #735fa4;
 }
+
 section.content-section:nth-of-type(5) .content-item .graph svg polygon {
   fill: rgba(0, 0, 0, 0.4);
 }
-section.content-section:nth-of-type(5)
-  .content-item
-  .graph:nth-last-of-type(2)
-  svg
-  polygon {
+
+section.content-section:nth-of-type(5) .content-item .graph:nth-last-of-type(2) svg polygon {
   fill: #453964;
 }
 
@@ -766,6 +792,7 @@ section.content-section:nth-of-type(5)
   overflow: hidden;
   background: #f47264;
 }
+
 .avatar img {
   width: 100%;
 }
@@ -779,17 +806,21 @@ section.content-section:nth-of-type(5)
   background: #293950;
   color: #ecf0f0;
 }
+
 .section3 {
   margin: 0 auto;
 }
+
 .h13 {
   font-weight: normal;
   font-size: 2.4em;
   margin-bottom: 0;
 }
+
 .a3 {
   color: gold;
 }
+
 /* 
 ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
 */
@@ -1110,13 +1141,11 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
 
 .progress {
   background: #e9e5e2;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#dddddd),
-    to(#e9e5e2)
-  );
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      from(#dddddd),
+      to(#e9e5e2));
   background-image: -webkit-linear-gradient(top, #dddddd, #e9e5e2);
   background-image: -moz-linear-gradient(top, #dddddd, #e9e5e2);
   background-image: -ms-linear-gradient(top, #dddddd, #e9e5e2);
@@ -1190,6 +1219,7 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   padding: 2em 0;
   margin-top: 2em;
 }
+
 .light .row {
   margin: 0;
 }
@@ -1207,10 +1237,12 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   position: relative;
   display: flex;
 }
+
 .graphiq__graph-layout {
   flex: 1;
   overflow-x: hidden;
 }
+
 .graphiq__graph-values {
   font-size: 0.75em;
   padding-right: 5px;
@@ -1221,29 +1253,35 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   text-align: right;
   font-weight: bold;
 }
+
 .graphiq__line {
   fill: none;
   stroke-miterlimit: 10;
 }
+
 .graphiq__graph-key {
   display: flex;
   justify-content: space-between;
 }
+
 .graphiq__graph-key .key {
   font-size: 0.75em;
   text-align: center;
   display: block;
 }
+
 .graphiq__y-division {
   fill: none;
   stroke-miterlimit: 10;
   z-index: -1;
   transition: 0.25s ease-in;
 }
+
 .graphiq__graph-dot {
   transition: stroke-width ease-in-out 0.2s;
   transform-origin: 50% 50%;
 }
+
 .graphiq__value-dialog {
   display: block;
   position: absolute;
@@ -1261,6 +1299,7 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY();
@@ -1272,6 +1311,7 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY();
@@ -1283,25 +1323,25 @@ ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
   font-style: italic;
   font-weight: 400;
   font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4V0qWljRw-Pd815fNqc8T_wAFcX-c37MPiNYlWniJ2hJXHx_KVxUbq.ttf)
-    format("truetype");
+  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4V0qWljRw-Pd815fNqc8T_wAFcX-c37MPiNYlWniJ2hJXHx_KVxUbq.ttf) format("truetype");
 }
+
 @font-face {
   font-family: "Cabin";
   font-style: normal;
   font-weight: 400;
   font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7alwg.ttf)
-    format("truetype");
+  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7alwg.ttf) format("truetype");
 }
+
 @font-face {
   font-family: "Cabin";
   font-style: normal;
   font-weight: 700;
   font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alwg.ttf)
-    format("truetype");
+  src: url(https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alwg.ttf) format("truetype");
 }
+
 .body5,
 input,
 button,
@@ -1311,9 +1351,11 @@ select {
   color: #bdbebf;
   background: #4a4844;
 }
+
 figure {
   text-align: center;
 }
+
 [peak-chart] {
   position: relative;
   display: inline-block;
@@ -1326,6 +1368,7 @@ figure {
   -ms-transform: rotateX(45deg);
   transform: rotateX(45deg);
 }
+
 [peak-chart],
 [peak-chart] * {
   -webkit-transform-style: preserve-3d;
@@ -1333,7 +1376,8 @@ figure {
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-[peak-chart] > [face] {
+
+[peak-chart]>[face] {
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -1347,511 +1391,386 @@ figure {
   -moz-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
-[peak-chart] > [face]:nth-child(1) {
+
+[peak-chart]>[face]:nth-child(1) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(192, 60%, 50%),
-        hsl(192, 60%, 50%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(192, 60%, 50%),
       hsl(192, 60%, 50%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(192, 60%, 50%),
+      hsl(192, 60%, 50%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(2) {
+
+[peak-chart]>[face]:nth-child(2) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(192, 60%, 60%),
-        hsl(192, 60%, 60%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(192, 60%, 60%),
       hsl(192, 60%, 60%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(192, 60%, 60%),
+      hsl(192, 60%, 60%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(3) {
+
+[peak-chart]>[face]:nth-child(3) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(207, 60%, 50%),
-        hsl(207, 60%, 50%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(207, 60%, 50%),
       hsl(207, 60%, 50%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(207, 60%, 50%),
+      hsl(207, 60%, 50%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(4) {
+
+[peak-chart]>[face]:nth-child(4) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(207, 60%, 60%),
-        hsl(207, 60%, 60%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(207, 60%, 60%),
       hsl(207, 60%, 60%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(207, 60%, 60%),
+      hsl(207, 60%, 60%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(5) {
+
+[peak-chart]>[face]:nth-child(5) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(234, 32%, 50%),
-        hsl(234, 32%, 50%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(234, 32%, 50%),
       hsl(234, 32%, 50%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(234, 32%, 50%),
+      hsl(234, 32%, 50%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(6) {
+
+[peak-chart]>[face]:nth-child(6) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(234, 32%, 60%),
-        hsl(234, 32%, 60%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(234, 32%, 60%),
       hsl(234, 32%, 60%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(234, 32%, 60%),
+      hsl(234, 32%, 60%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(7) {
+
+[peak-chart]>[face]:nth-child(7) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(345, 58%, 50%),
-        hsl(345, 58%, 50%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(345, 58%, 50%),
       hsl(345, 58%, 50%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(345, 58%, 50%),
+      hsl(345, 58%, 50%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(8) {
+
+[peak-chart]>[face]:nth-child(8) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(345, 58%, 60%),
-        hsl(345, 58%, 60%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(345, 58%, 60%),
       hsl(345, 58%, 60%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(345, 58%, 60%),
+      hsl(345, 58%, 60%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(9) {
+
+[peak-chart]>[face]:nth-child(9) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(185, 27%, 50%),
-        hsl(185, 27%, 50%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(185, 27%, 50%),
       hsl(185, 27%, 50%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(185, 27%, 50%),
+      hsl(185, 27%, 50%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(10) {
+
+[peak-chart]>[face]:nth-child(10) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(185, 27%, 60%),
-        hsl(185, 27%, 60%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(185, 27%, 60%),
       hsl(185, 27%, 60%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(185, 27%, 60%),
+      hsl(185, 27%, 60%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(11) {
+
+[peak-chart]>[face]:nth-child(11) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(298, 29%, 50%),
-        hsl(298, 29%, 50%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(298, 29%, 50%),
       hsl(298, 29%, 50%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(298, 29%, 50%),
+      hsl(298, 29%, 50%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(12) {
+
+[peak-chart]>[face]:nth-child(12) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(298, 29%, 60%),
-        hsl(298, 29%, 60%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(298, 29%, 60%),
       hsl(298, 29%, 60%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(298, 29%, 60%),
+      hsl(298, 29%, 60%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(13) {
+
+[peak-chart]>[face]:nth-child(13) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(220, 6%, 80%),
-        hsl(220, 6%, 80%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(220, 6%, 80%),
       hsl(220, 6%, 80%) 50%,
-      transparent 50%
-    );
-}
-[peak-chart] > [face]:nth-child(14) {
+      transparent 50%);
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    linear-gradient(to top left,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(220, 6%, 90%),
-        hsl(220, 6%, 90%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
-      hsl(220, 6%, 90%),
-      hsl(220, 6%, 90%) 50%,
-      transparent 50%
-    );
-}
-[peak-chart] > [face]:nth-child(15) {
-  background-image:
-    -webkit-linear-gradient(
-      bottom right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(220, 6%, 80%),
-        hsl(220, 6%, 80%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    linear-gradient(to top left,
       hsl(220, 6%, 80%),
       hsl(220, 6%, 80%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(16) {
+
+[peak-chart]>[face]:nth-child(14) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(220, 6%, 90%),
-        hsl(220, 6%, 90%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(220, 6%, 90%),
       hsl(220, 6%, 90%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(220, 6%, 90%),
+      hsl(220, 6%, 90%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(17) {
+
+[peak-chart]>[face]:nth-child(15) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(220, 6%, 80%),
-        hsl(220, 6%, 80%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(220, 6%, 80%),
       hsl(220, 6%, 80%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(220, 6%, 80%),
+      hsl(220, 6%, 80%) 50%,
+      transparent 50%);
 }
-[peak-chart] > [face]:nth-child(18) {
+
+[peak-chart]>[face]:nth-child(16) {
   background-image:
-    -webkit-linear-gradient(
-      bottom right,
+    -webkit-linear-gradient(bottom right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    -webkit-linear-gradient(
-        bottom right,
-        hsl(220, 6%, 90%),
-        hsl(220, 6%, 90%) 50%,
-        transparent 50%
-      );
-  background-image:
-    linear-gradient(
-      to top left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 50%
-    ),
-    linear-gradient(
-      to top left,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
       hsl(220, 6%, 90%),
       hsl(220, 6%, 90%) 50%,
-      transparent 50%
-    );
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(220, 6%, 90%),
+      hsl(220, 6%, 90%) 50%,
+      transparent 50%);
 }
-[peak-chart] > label {
+
+[peak-chart]>[face]:nth-child(17) {
+  background-image:
+    -webkit-linear-gradient(bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
+      hsl(220, 6%, 80%),
+      hsl(220, 6%, 80%) 50%,
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(220, 6%, 80%),
+      hsl(220, 6%, 80%) 50%,
+      transparent 50%);
+}
+
+[peak-chart]>[face]:nth-child(18) {
+  background-image:
+    -webkit-linear-gradient(bottom right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    -webkit-linear-gradient(bottom right,
+      hsl(220, 6%, 90%),
+      hsl(220, 6%, 90%) 50%,
+      transparent 50%);
+  background-image:
+    linear-gradient(to top left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50%),
+    linear-gradient(to top left,
+      hsl(220, 6%, 90%),
+      hsl(220, 6%, 90%) 50%,
+      transparent 50%);
+}
+
+[peak-chart]>label {
   position: absolute;
   font-weight: bold;
   font-size: 90%;
@@ -1859,59 +1778,66 @@ figure {
   -moz-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
-[peak-chart] > label:before {
+
+[peak-chart]>label:before {
   content: "";
   position: absolute;
   width: 6px;
   height: 6px;
   border-radius: 3px;
-  background-image: -webkit-linear-gradient(
-    top right,
-    hsl(207.00000000000006, 60%, 89.99999999999999%),
-    hsl(207.00000000000003, 59.999999999999986%, 60%)
-  );
-  background-image: linear-gradient(
-    to bottom left,
-    hsl(207.00000000000006, 60%, 89.99999999999999%),
-    hsl(207.00000000000003, 59.999999999999986%, 60%)
-  );
+  background-image: -webkit-linear-gradient(top right,
+      hsl(207.00000000000006, 60%, 89.99999999999999%),
+      hsl(207.00000000000003, 59.999999999999986%, 60%));
+  background-image: linear-gradient(to bottom left,
+      hsl(207.00000000000006, 60%, 89.99999999999999%),
+      hsl(207.00000000000003, 59.999999999999986%, 60%));
 }
-[peak-chart] > label[point="bottomright"] {
+
+[peak-chart]>label[point="bottomright"] {
   padding-right: 6px;
   padding-bottom: 9px;
 }
-[peak-chart] > label[point="bottomright"]:before {
+
+[peak-chart]>label[point="bottomright"]:before {
   right: -3px;
   bottom: 3px;
 }
-[peak-chart] > label[point="bottomleft"] {
+
+[peak-chart]>label[point="bottomleft"] {
   padding-left: 6px;
   padding-bottom: 9px;
 }
-[peak-chart] > label[point="bottomleft"]:before {
+
+[peak-chart]>label[point="bottomleft"]:before {
   left: -3px;
   bottom: 3px;
 }
-[peak-chart] > label[point="topleft"] {
+
+[peak-chart]>label[point="topleft"] {
   padding-left: 4px;
   padding-top: 4px;
 }
-[peak-chart] > label[point="topleft"]:before {
+
+[peak-chart]>label[point="topleft"]:before {
   left: -3px;
   top: -3px;
 }
-[peak-chart] > label[point="topright"] {
+
+[peak-chart]>label[point="topright"] {
   padding-right: 4px;
   padding-top: 4px;
 }
-[peak-chart] > label[point="topright"]:before {
+
+[peak-chart]>label[point="topright"]:before {
   right: -3px;
   top: -3px;
 }
+
 figcaption {
   line-height: 36px;
   font-style: italic;
 }
+
 figcaption button {
   background: none;
   border: 1px solid lightgray;
@@ -1923,6 +1849,7 @@ figcaption button {
   border-radius: 0.5em;
   vertical-align: text-top;
 }
+
 figcaption button:hover {
   background: rgba(0, 0, 0, 0.04);
 }
@@ -1940,9 +1867,11 @@ figcaption button:hover {
 .months {
   grid-area: months;
 }
+
 .days {
   grid-area: days;
 }
+
 .squares {
   grid-area: squares;
 }
@@ -1959,18 +1888,31 @@ figcaption button:hover {
 .months {
   display: grid;
   grid-template-columns:
-    calc(var(--week-width) * 4) /* Jan */
-    calc(var(--week-width) * 4) /* Feb */
-    calc(var(--week-width) * 4) /* Mar */
-    calc(var(--week-width) * 5) /* Apr */
-    calc(var(--week-width) * 4) /* May */
-    calc(var(--week-width) * 4) /* Jun */
-    calc(var(--week-width) * 5) /* Jul */
-    calc(var(--week-width) * 4) /* Aug */
-    calc(var(--week-width) * 4) /* Sep */
-    calc(var(--week-width) * 5) /* Oct */
-    calc(var(--week-width) * 4) /* Nov */
-    calc(var(--week-width) * 5) /* Dec */;
+    calc(var(--week-width) * 4)
+    /* Jan */
+    calc(var(--week-width) * 4)
+    /* Feb */
+    calc(var(--week-width) * 4)
+    /* Mar */
+    calc(var(--week-width) * 5)
+    /* Apr */
+    calc(var(--week-width) * 4)
+    /* May */
+    calc(var(--week-width) * 4)
+    /* Jun */
+    calc(var(--week-width) * 5)
+    /* Jul */
+    calc(var(--week-width) * 4)
+    /* Aug */
+    calc(var(--week-width) * 4)
+    /* Sep */
+    calc(var(--week-width) * 5)
+    /* Oct */
+    calc(var(--week-width) * 4)
+    /* Nov */
+    calc(var(--week-width) * 5)
+    /* Dec */
+  ;
 }
 
 .days,
@@ -2024,6 +1966,7 @@ figcaption button:hover {
   padding: 50px 16px;
   background: #cceffc;
 }
+
 #live-poll-area {
   overflow: auto;
   width: 100%;
@@ -2033,20 +1976,24 @@ figcaption button:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .graph-container .graph {
   width: 110px;
   margin: 0 auto 25px auto;
 }
+
 .graph-container .graph canvas {
   max-width: 110px;
   height: auto;
 }
+
 .bar-chart {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
   max-width: 244px;
 }
+
 .bar-chart li {
   margin: 0;
   padding: 0;
@@ -2056,20 +2003,24 @@ figcaption button:hover {
   line-height: 1.45;
   overflow: auto;
 }
+
 .bar-chart span {
   display: block;
 }
+
 .bar-chart .label {
   font-weight: 700;
   width: 70%;
   float: left;
 }
+
 .bar-chart .percentage {
   width: 30%;
   float: right;
   font-size: 12px;
   text-align: right;
 }
+
 .bar-chart .bar-track {
   clear: both;
   display: block;
@@ -2079,22 +2030,27 @@ figcaption button:hover {
   overflow: visible;
   margin-bottom: 20px;
 }
+
 .bar-chart .bar {
   display: block;
   height: 5px;
 }
+
 .bar-chart .answer-0 .bar {
   background-color: #ce0f42;
   box-shadow: 0 2px 0 #99102e;
 }
+
 .bar-chart .answer-1 .bar {
   background-color: #72be44;
   box-shadow: 0 2px 0 #538e32;
 }
+
 .bar-chart .answer-2 .bar {
   background-color: #f15637;
   box-shadow: 0 2px 0 #bd4429;
 }
+
 .bar-chart .answer-3 .bar {
   background-color: #8b1851;
   box-shadow: 0 2px 0 #53002c;
@@ -2105,10 +2061,12 @@ figcaption button:hover {
     max-width: 384px;
     flex-direction: row;
   }
+
   .graph-container .graph {
     margin: 0 30px 0 0;
     padding: 0;
   }
+
   .bar-chart {
     min-width: 244px;
   }

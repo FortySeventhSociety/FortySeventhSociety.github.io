@@ -6,24 +6,24 @@ console.clear()
 // Utility Functions -->
 
 // This func. gets a random float between the given range
-function randomFloatFromRange(min, max){
+function randomFloatFromRange(min, max) {
 	return (Math.random() * (max - min + 1) + min);
 }
 
 // This func. gets a random item from a given array
-function randomFromArray(arr){
+function randomFromArray(arr) {
 	return arr[Math.floor(Math.random() * arr.length)]
 }
 
 // This func. gets the distance between two given points
-function getDist(x1, y1, x2, y2){
+function getDist(x1, y1, x2, y2) {
 	return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2))
 }
 
 
 // PARTICLE CLASS
-class Particle{
-	constructor(canvas, ctx, x, y, radius, color, velX, velY){
+class Particle {
+	constructor(canvas, ctx, x, y, radius, color, velX, velY) {
 		this.canvas = canvas
 		this.ctx = ctx
 		this.x = x
@@ -38,7 +38,7 @@ class Particle{
 		this.opacity = 1
 		this.gravity = 0.25
 	}
-	draw(){ // This func. draws the particle
+	draw() { // This func. draws the particle
 		this.ctx.save()
 		this.ctx.beginPath()
 		this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
@@ -48,9 +48,9 @@ class Particle{
 		this.ctx.globalAlpha = this.opacity
 		this.ctx.fill()
 		this.ctx.closePath()
-		this.ctx.restore()        
+		this.ctx.restore()
 	}
-	update(){ // This func. updates the particle
+	update() { // This func. updates the particle
 		this.x += this.velocity.x
 		this.y += this.velocity.y
 		this.velocity.y += this.gravity
@@ -62,8 +62,8 @@ class Particle{
 }
 
 // BALL CLASS
-class Ball{
-	constructor(canvas, ctx, x, y, radius, color, particlesArr, velX, velY, dontCheck){
+class Ball {
+	constructor(canvas, ctx, x, y, radius, color, particlesArr, velX, velY, dontCheck) {
 		this.canvas = canvas
 		this.ctx = ctx
 		this.x = x
@@ -81,7 +81,7 @@ class Ball{
 		this.particlesArr = particlesArr
 		this.collided = false
 	}
-	draw(){ // This func. draws the ball
+	draw() { // This func. draws the ball
 		this.ctx.save()
 		this.ctx.beginPath()
 		this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
@@ -97,14 +97,14 @@ class Ball{
 	}
 	// This func. updates the ball. The first argument of this func. takes an array where all the insrtance of balls are stored
 	// The second argument is opotional [default is False]. If set to true then the position of the ball changes with its respective Velocity
-	update(ballsArr, updateVel = false){
-		if(this.origin.y <= 0){
+	update(ballsArr, updateVel = false) {
+		if (this.origin.y <= 0) {
 			this.y += this.velocity.y
 		}
-		else if(this.origin.y >= this.canvas.height){
+		else if (this.origin.y >= this.canvas.height) {
 			this.y -= this.velocity.y
 		}
-		if(updateVel == true){
+		if (updateVel == true) {
 			this.y += this.velocity.y
 			this.x += this.velocity.x
 		}
@@ -114,20 +114,20 @@ class Ball{
 	}
 	// This func. is used to detect the collisions bettween any two balls
 	// The func. takes an argument which is the array where al the balls are stored
-	collisionDetect(ballsArr){
-		for(let i = 0; i < ballsArr.length; i++){
-			if(this === ballsArr[i] || this.dontCheck) continue
+	collisionDetect(ballsArr) {
+		for (let i = 0; i < ballsArr.length; i++) {
+			if (this === ballsArr[i] || this.dontCheck) continue
 			let distBetweenPoints = getDist(this.x, this.y, ballsArr[i].x, ballsArr[i].y) - this.radius * 2
-			if(distBetweenPoints < 0){
-				if(this.color == ballsArr[i].color){
-					for(let j = 0; j < Math.floor(randomFloatFromRange(20, 25)); j++){
+			if (distBetweenPoints < 0) {
+				if (this.color == ballsArr[i].color) {
+					for (let j = 0; j < Math.floor(randomFloatFromRange(20, 25)); j++) {
 						this.break(this.particlesArr, 0.4, 0.8)
 						this.collided = true
 					}
 					this.opacity = 0
 				}
-				else if(this.color != ballsArr[i].color){
-					for(let j = 0; j < Math.floor(randomFloatFromRange(40, 55)); j++){
+				else if (this.color != ballsArr[i].color) {
+					for (let j = 0; j < Math.floor(randomFloatFromRange(40, 55)); j++) {
 						ballsArr.forEach((ball) => {
 							ball.opacity = 0
 							this.break(this.particlesArr, 2, 5, ball.x, ball.y, ball.color)
@@ -142,11 +142,11 @@ class Ball{
 	}
 	// This func. is used to detect if the ball hits any of the corners of the canvas
 	// If hits any of the canvas sides then the ball would change its velocity direction
-	edgeDetect(){
+	edgeDetect() {
 		if (this.y + this.radius + this.velocity.y > this.canvas.height) {
 			this.velocity.y *= -1
 		}
-		else if(this.y - this.radius <= 0){
+		else if (this.y - this.radius <= 0) {
 			this.velocity.y *= -1
 		}
 
@@ -163,20 +163,20 @@ class Ball{
 	// The second and the third argument is nothing but accepts a min and max radius
 	// The forth and fifth args. tahes where the sparks would be spawned
 	// The sixth is nothing but 'c' which means color. I want to make the sparks the same color as the ball
-	break(arr, minRadius, maxRadius, x, y, c){
+	break(arr, minRadius, maxRadius, x, y, c) {
 		var randRadius = randomFloatFromRange(minRadius, maxRadius)
 		var randVel = {
 			x: randomFloatFromRange(-20, 20),
 			y: randomFloatFromRange(-20, 20),
 		}
-		if(this.origin.y <= 0){
-			let spawnX , spawnY
+		if (this.origin.y <= 0) {
+			let spawnX, spawnY
 			let color
-			if(x && y){
+			if (x && y) {
 				spawnX = x
 				spawnY = y
 				color = c
-			}else{
+			} else {
 				spawnX = this.x
 				spawnY = this.y + this.radius
 				color = this.color
@@ -185,17 +185,17 @@ class Ball{
 				new Particle(
 					this.canvas, this.ctx,
 					spawnX, spawnY,
-					randRadius, color , randVel.x, randVel.y
+					randRadius, color, randVel.x, randVel.y
 				)
 			)
-		}else{
-			let spawnX , spawnY
+		} else {
+			let spawnX, spawnY
 			let color
-			if(x && y){
+			if (x && y) {
 				spawnX = x
 				spawnY = y
 				color = c
-			}else{
+			} else {
 				spawnX = this.x
 				spawnY = this.y - this.radius
 				color = this.color
@@ -204,16 +204,16 @@ class Ball{
 				new Particle(
 					this.canvas, this.ctx,
 					spawnX, spawnY,
-					randRadius, color , randVel.x, randVel.y
+					randRadius, color, randVel.x, randVel.y
 				)
 			)
 		}
 	}
 	// When this func. is called with two colors passed as args. then it swaps the color between the two color provided
-	change(colorDefault, colorTochange){
-		if(this.color != colorDefault){
+	change(colorDefault, colorTochange) {
+		if (this.color != colorDefault) {
 			this.color = colorDefault
-		}else{
+		} else {
 			this.color = colorTochange
 		}
 	}
@@ -229,8 +229,8 @@ const ctx = canvas.getContext('2d')
 
 // Setting its width and height
 let canvasMaxHeight = 800,
-	 canvasWidth = 400,
-	 canvasHeight = innerHeight - 50 > canvasMaxHeight ? canvasMaxHeight : innerHeight - 50;
+	canvasWidth = 400,
+	canvasHeight = innerHeight - 50 > canvasMaxHeight ? canvasMaxHeight : innerHeight - 50;
 canvas.width = canvasWidth
 canvas.height = canvasHeight
 
@@ -243,7 +243,7 @@ let startScreen = document.querySelector('.start-screen')
 // Initializing everything
 
 let balls = [], // balls array
-	 particles = [] // sparks array
+	particles = [] // sparks array
 var redBall, blueBall // the TWO cantral balls
 var separation = 35 // separation between central balls
 var globalRadius = 18 // radius for all the Balls
@@ -260,7 +260,7 @@ var colors = ['#e74c3c', '#3498db']
 let randPoints;
 
 // Function that initializes the canvas
-function init(){
+function init() {
 	balls = []
 	particles = []
 	uselessBalls = []
@@ -273,12 +273,12 @@ function init(){
 
 	blueBall = new Ball(
 		canvas, ctx,
-		canvasWidth/2, canvasHeight/2 - separation,
+		canvasWidth / 2, canvasHeight / 2 - separation,
 		globalRadius, colors[1], particles, 0, 0, true
 	)
 	redBall = new Ball(
 		canvas, ctx,
-		canvasWidth/2, canvasHeight/2 + separation,
+		canvasWidth / 2, canvasHeight / 2 + separation,
 		globalRadius, colors[0], particles, 0, 0, true
 	)
 	balls.push(redBall, blueBall)
@@ -298,8 +298,8 @@ function init(){
 // This is an array for a bunch of useless balls on the start of the game
 var uselessBalls = []
 // This function will push many useless balls balls to the useless array and then push all the useless balls to the default ballas array
-function initUseless(){
-	for(let i = 0; i < 20; i++){
+function initUseless() {
+	for (let i = 0; i < 20; i++) {
 		let randVelXY = {
 			x: randomFloatFromRange(-5, 5),
 			y: randomFloatFromRange(-5, 5)
@@ -323,7 +323,7 @@ initUseless()
 var background = BG_Gradient('#2c3e50', '#34495e')
 
 // this func. calls itself again and again every 60ms and is the reason you can play this game
-function loop(){
+function loop() {
 	// func. that will call itself
 	requestAnimationFrame(loop)
 
@@ -341,48 +341,48 @@ function loop(){
 		ball.update(balls, true)
 		ball.edgeDetect()
 	})
-	if(uselessBalls.length != 0){
+	if (uselessBalls.length != 0) {
 		return
 	}
 
 	// updating every balls in the balls array
-	if(balls.length != 0){
+	if (balls.length != 0) {
 		balls.forEach((ball, index) => {
 			ball.update(balls)
-			if(ball.collided == true){
+			if (ball.collided == true) {
 				score += 10
 				fillColor = ball.color
 			}
-			if(ball.opacity <= 0){
+			if (ball.opacity <= 0) {
 				ball.dontCheck = true
 				balls.splice(index, 1)
 			}
 		})
 	}
-	if(balls.length == 0 || balls.length == 1){
+	if (balls.length == 0 || balls.length == 1) {
 		failed = true
 		generateBall = false
 	}
-	if(balls.length == 2){
+	if (balls.length == 2) {
 		generateBall = true
 	}
-	if(timeInterval % timer == 0 && generateBall == true){
+	if (timeInterval % timer == 0 && generateBall == true) {
 		generateBall = false
 		pushNewBalls()
 	}
 
 	// updating every particles or sparks in the particles array
-	if(particles.length != 0){
+	if (particles.length != 0) {
 		particles.forEach((particle, index) => {
 			particle.update()
-			if(particle.opacity <= 0.05){
+			if (particle.opacity <= 0.05) {
 				particles.splice(index, 1)
 			}
 		})
 	}
 
 	// reseting the timer to 0 every 600ms
-	if(timer == 600){
+	if (timer == 600) {
 		timer = 0
 	}
 
@@ -396,9 +396,9 @@ loop()
 
 
 // Function that is used tto push new balls to the Balls array whenever called
-function pushNewBalls(){
+function pushNewBalls() {
 	var randomPoint = randomFromArray(randPoints),
-		 randomColor = randomFromArray(colors)
+		randomColor = randomFromArray(colors)
 	balls.push(
 		new Ball(
 			canvas, ctx,
@@ -409,13 +409,13 @@ function pushNewBalls(){
 }
 
 // Func. to show and hide the UI
-function showHideOptions(){
-	if(failed == true && generateBall == false){
+function showHideOptions() {
+	if (failed == true && generateBall == false) {
 		retryText.classList.remove('hide')
 		retryText.classList.add('show')
 		retryBtn.classList.remove('hide')
 		retryBtn.classList.add('show')
-	}else if(failed == false && generateBall == true){
+	} else if (failed == false && generateBall == true) {
 		retryText.classList.add('hide')
 		retryText.classList.remove('show')
 		retryBtn.classList.add('hide')
@@ -424,7 +424,7 @@ function showHideOptions(){
 }
 
 // Func. that returns simple color gradient by providing two colors
-function BG_Gradient(color1, color2){
+function BG_Gradient(color1, color2) {
 	let bg = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight)
 	bg.addColorStop(0, color1)
 	bg.addColorStop(1, color2)
@@ -433,9 +433,9 @@ function BG_Gradient(color1, color2){
 
 // This will be called every 1000ms and the code would execute
 setInterval(() => {
-	if(velocityOfBall <= 7){
+	if (velocityOfBall <= 7) {
 		velocityOfBall += 0.08
-	}else{
+	} else {
 		velocityOfBall += 0
 	}
 }, 1500)
@@ -462,10 +462,10 @@ playBtn.addEventListener('mousedown', () => {
 })
 
 window.addEventListener('resize', () => {
-	if(canvasHeight >= canvasMaxHeight){
+	if (canvasHeight >= canvasMaxHeight) {
 		canvasHeight = canvasMaxHeight;
-	}else{
-		canvasHeight = innerHeight - 50		
+	} else {
+		canvasHeight = innerHeight - 50
 	}
 	canvas.height = canvasHeight
 })

@@ -1,6 +1,6 @@
 $(function () {
-  "use strict";
-	
+	"use strict";
+
 	var resizeTracker;
 
 	// Counteracts all transforms applied above an element.

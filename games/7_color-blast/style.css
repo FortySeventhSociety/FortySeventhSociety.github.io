@@ -2,13 +2,15 @@
 // All Rights Reserved //////*/
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -66,6 +68,7 @@ a {
   text-decoration: none;
   transition: 0.2s;
 }
+
 a:hover {
   color: #b3e0f2;
   text-decoration: underline;
@@ -77,36 +80,47 @@ a:hover {
   margin: 20px 0;
   text-shadow: #255 1px 0 20px;
 }
+
 .title span:nth-child(1) {
   color: #bf8040;
 }
+
 .title span:nth-child(2) {
   color: #bfbf40;
 }
+
 .title span:nth-child(3) {
   color: #80bf40;
 }
+
 .title span:nth-child(4) {
   color: #40bf40;
 }
+
 .title span:nth-child(5) {
   color: #40bf80;
 }
+
 .title span:nth-child(6) {
   color: #40bfbf;
 }
+
 .title span:nth-child(7) {
   color: #4080bf;
 }
+
 .title span:nth-child(8) {
   color: #4040bf;
 }
+
 .title span:nth-child(9) {
   color: #8040bf;
 }
+
 .title span:nth-child(10) {
   color: #bf40bf;
 }
+
 .title span:nth-child(11) {
   color: #bf4080;
 }

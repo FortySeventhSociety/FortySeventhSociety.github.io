@@ -22,7 +22,7 @@ function comparator(a, b) {
 }
 
 function difference(source, toRemove) {
-  return source.filter(function(value) {
+  return source.filter(function (value) {
     return toRemove.indexOf(value) == -1;
   });
 }
@@ -52,17 +52,17 @@ function Line(x1, y1, x2, y2) {
   this.y2 = y2;
   this.el = document.createElementNS("http://www.w3.org/2000/svg", "line");
   this.class = "line";
-  this.update = function(x1, y1, x2, y2) {
+  this.update = function (x1, y1, x2, y2) {
     this.el.setAttribute("x1", x1 || this.x1);
     this.el.setAttribute("y1", y1 || this.y1);
     this.el.setAttribute("x2", x2 || this.x2);
     this.el.setAttribute("y2", y2 || this.y2);
     this.setAttr("class", this.class);
   };
-  this.setAttr = function(attr, value) {
+  this.setAttr = function (attr, value) {
     this.el.setAttribute(attr, value);
   };
-  this.append = function() {
+  this.append = function () {
     svg.insertBefore(this.el, svg.firstChild);
   };
 }
@@ -77,7 +77,7 @@ function Dot(r, cx, cy) {
   this.cy = cy;
   this.el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   this.class = "dot";
-  this.update = function() {
+  this.update = function () {
     this.el.setAttribute("r", this.r);
     this.el.setAttribute("cx", this.cx);
     this.el.setAttribute("cy", this.cy);
@@ -85,35 +85,35 @@ function Dot(r, cx, cy) {
   };
 
   // activates a dot
-  this.activate = function() {
+  this.activate = function () {
     for (i = 0; i < dots.num; i++) {
       dots.list[i].setAttr("data-selected", "false");
     }
     this.setAttr("data-selected", "true");
   };
 
-  this.visited = function() {
+  this.visited = function () {
     this.setAttr("data-visited", "true");
   };
 
   // sets attribute to element
-  this.setAttr = function(attr, value) {
+  this.setAttr = function (attr, value) {
     this.el.setAttribute(attr, value);
   };
 
   // gets attribute to element
-  this.getAttr = function(attr) {
+  this.getAttr = function (attr) {
     return this.el.getAttribute(attr);
   };
 
   // appends element to svg and attaches event listeners
-  this.append = function() {
+  this.append = function () {
     svg.appendChild(this.el);
     this.el.addEventListener("click", this.onClick);
   };
 
   // on click on element
-  this.onClick = function(event) {
+  this.onClick = function (event) {
     //gets the id and the coords of the dot
     var thisId = Number(event.target.getAttribute("data-id").substr(3, 2));
     var thisCx = dots.list[thisId].cx;
@@ -219,17 +219,17 @@ app.level = 4;
 app.score = {};
 app.score.number = 0;
 app.score.el = document.getElementById("score");
-app.score.update = function(score) {
+app.score.update = function (score) {
   app.score.number += score;
   app.score.el.textContent = app.score.number;
 };
 
-app.score.reset = function() {
+app.score.reset = function () {
   app.score.number = 0;
   app.score.update(0);
 };
 
-app.results = function(points) {
+app.results = function (points) {
   if (points == "reset") {
     sessionStorage.setItem("results", 0);
   } else {
@@ -242,7 +242,7 @@ app.results = function(points) {
   }
 };
 
-app.launchScreen = function(lastScore, title, description, btnText) {
+app.launchScreen = function (lastScore, title, description, btnText) {
   app.launchScreen.el = document.getElementById("launch-screen");
   app.launchScreen.el.setAttribute("class", "is-visible");
 
@@ -267,7 +267,7 @@ app.launchScreen = function(lastScore, title, description, btnText) {
 app.preline = new Line(0, 0, 200, 200);
 app.preline.setAttr("id", "preline");
 
-app.start = function(dotsNum) {
+app.start = function (dotsNum) {
   dots.num = dotsNum;
 
   for (i = 0; i < dots.num; i++) {
@@ -277,7 +277,7 @@ app.start = function(dotsNum) {
     dots.list[i] = new Dot(8, cx, cy);
     dots.list[i].setAttr("data-id", "id-" + i);
     dots.list[i].setAttr(
-      "style", 
+      "style",
       "animation-delay:" + i / 10 + "s; transform-origin: " + cx + 'px ' + cy + 'px;');
     dots.list[i].update();
     dots.list[i].append();
@@ -311,7 +311,7 @@ app.start = function(dotsNum) {
   dots.list[dots.start].setAttr("data-selected", "true");
 };
 
-app.end = function(win) {
+app.end = function (win) {
   if (win) {
     app.level += 4;
     app.results(app.score.number);

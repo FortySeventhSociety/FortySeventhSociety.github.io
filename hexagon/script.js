@@ -20,7 +20,7 @@
         const distance = Math.round(
           Math.sqrt(
             Math.pow(rect.x - targetRect.x, 2) +
-              Math.pow(rect.y - targetRect.y, 2)
+            Math.pow(rect.y - targetRect.y, 2)
           )
         );
         return { element, rect, centerX, centerY, distance };
@@ -55,15 +55,15 @@
     });
   });
 
-   const switchButton = document.getElementById('switch');
-    const toggleTheme = () => {
-        switchButton.classList.toggle('checked');
-        document.documentElement.classList.toggle('vision-ui');
-    };
-    switchButton.addEventListener('click', toggleTheme);
+  const switchButton = document.getElementById('switch');
+  const toggleTheme = () => {
+    switchButton.classList.toggle('checked');
+    document.documentElement.classList.toggle('vision-ui');
+  };
+  switchButton.addEventListener('click', toggleTheme);
 
-    // demo
-    setTimeout(() => {
+  // demo
+  setTimeout(() => {
     ripple(hexagonElements[0], hexagons);
     setTimeout(() => {
       toggleTheme();

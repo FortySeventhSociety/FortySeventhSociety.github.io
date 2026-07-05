@@ -26,74 +26,74 @@ const tangram = `
 </div>
 `
 class MemoryGame {
-	constructor (selector) {
+	constructor(selector) {
 		this.selector = selector
 		this.init()
 	}
-	init () {
+	init() {
 		this.randomize()
 		this.buildGrid()
-		this.revealed = []	    
+		this.revealed = []
 	}
-	randomize () {
+	randomize() {
 		this.classes = this.shuffle(classes.concat(classes))
 	}
-	shuffle (array) {		
-		array.sort( function(a, b) {return 0.5 - Math.random()} );
+	shuffle(array) {
+		array.sort(function (a, b) { return 0.5 - Math.random() });
 		return array;
 	}
-	buildGrid () {
+	buildGrid() {
 		let html = ''
-		for (let i = 0; i<this.classes.length; i++ ) {
+		for (let i = 0; i < this.classes.length; i++) {
 			html += tangram;
 		}
 		this.selector.innerHTML = html;
 		this.cards = this.selector.querySelectorAll('.t')
-		this.classes.forEach ( (el, i) => {
+		this.classes.forEach((el, i) => {
 			const card = this.cards[i]
 			card.classList.add(el)
-			card.setAttribute( 'data-class', el)
+			card.setAttribute('data-class', el)
 			this.addCardListeners(card)
 		})
 
 	}
-	checkMatch () {
+	checkMatch() {
 		return this.revealed.length === 2 && this.revealed[0].getAttribute('data-class') === this.revealed[1].getAttribute('data-class')
 	}
-	addCardListeners (el) {
+	addCardListeners(el) {
 
-		el.addEventListener( 'mouseenter', (e) => {
+		el.addEventListener('mouseenter', (e) => {
 
-			if (el.classList.contains('revealed')){
-				return
-			}
-			
-			if ( this.revealed.length < 2 ) {
+			if (el.classList.contains('revealed')) {
 				return
 			}
 
-			Array.prototype.slice.call(this.revealed).forEach( (item) => {
+			if (this.revealed.length < 2) {
+				return
+			}
+
+			Array.prototype.slice.call(this.revealed).forEach((item) => {
 				item.classList.remove('revealed')
 			})
 			this.revealed = []
 		})
 
-		el.addEventListener( 'click', (e) => {
+		el.addEventListener('click', (e) => {
 
 			if (el.classList.contains('revealed')) {
 				return
 			}
-			
+
 			el.classList.add('revealed');
 			this.revealed.push(el)
-			if ( this.checkMatch() ) {
-				Array.prototype.slice.call(this.revealed).forEach( (item) => {
-				  item.classList.add('hidden')
-				  this.revealed = []
-			  })
+			if (this.checkMatch()) {
+				Array.prototype.slice.call(this.revealed).forEach((item) => {
+					item.classList.add('hidden')
+					this.revealed = []
+				})
 			}
 
-		}, false );
+		}, false);
 
 	}
 }

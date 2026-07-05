@@ -3,6 +3,7 @@
 
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Arvo");
+
 * {
   box-sizing: border-box;
 }
@@ -12,10 +13,13 @@ a {
   text-decoration: none;
   border-bottom: 1px solid currentColor;
 }
+
 a:hover {
   color: #14727e;
 }
-a:focus, a:active {
+
+a:focus,
+a:active {
   color: #0d4a52;
 }
 
@@ -54,6 +58,7 @@ header {
   color: #F8FFE5;
   text-align: center;
 }
+
 header span {
   display: inline-block;
   box-sizing: border-box;
@@ -63,12 +68,15 @@ header span {
   margin: 0 0.4rem;
   background: #FFC43D;
 }
+
 header span:nth-of-type(2) {
   background: #EF476F;
 }
+
 header span:nth-of-type(3) {
   background: #1B9AAA;
 }
+
 header span:nth-of-type(4) {
   background: #06D6A0;
 }
@@ -91,6 +99,7 @@ h1 {
   max-width: 550px;
   text-align: center;
 }
+
 header .container {
   padding: 0;
   padding: 2rem 4rem;
@@ -111,6 +120,7 @@ header .container {
   line-height: 1;
   color: #555;
 }
+
 .score-container.best-score {
   color: #9a9a95;
 }
@@ -141,7 +151,8 @@ header .container {
   height: 400px;
 }
 
-.tile, .background {
+.tile,
+.background {
   display: block;
   color: #F8FFE5;
   position: absolute;
@@ -173,57 +184,69 @@ header .container {
   border: 7px solid #9a9a95;
   box-sizing: border-box;
 }
+
 .tile--4 {
   background: #EF476F;
   color: #F8FFE5;
 }
+
 .tile--8 {
   background: #1B9AAA;
   color: #F8FFE5;
 }
+
 .tile--16 {
   background: #06D6A0;
   color: #F8FFE5;
 }
+
 .tile--32 {
   background: #f37694;
   color: #F8FFE5;
 }
+
 .tile--64 {
   background: #22c2d6;
   color: #F8FFE5;
 }
+
 .tile--128 {
   background: #17f8be;
   color: #F8FFE5;
 }
+
 .tile--256 {
   background: #ffd470;
   color: #F8FFE5;
 }
+
 .tile--512 {
   background: #eb184a;
   color: #F8FFE5;
 }
+
 .tile--1024 {
   background: #14727e;
   color: #F8FFE5;
 }
+
 .tile--2048 {
   background: #05a47b;
   color: #F8FFE5;
 }
+
 .tile--pop {
   -webkit-animation: pop 0.3s ease-in-out;
-          animation: pop 0.3s ease-in-out;
+  animation: pop 0.3s ease-in-out;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
+
 .tile--shrink {
   -webkit-animation: shrink 0.5s ease-in-out;
-          animation: shrink 0.5s ease-in-out;
+  animation: shrink 0.5s ease-in-out;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .add {
@@ -234,9 +257,10 @@ header .container {
   font-size: 1rem;
   color: #1B9AAA;
 }
+
 .add.active {
   -webkit-animation: add 0.8s ease-in-out;
-          animation: add 0.8s ease-in-out;
+  animation: add 0.8s ease-in-out;
 }
 
 @-webkit-keyframes add {
@@ -244,6 +268,7 @@ header .container {
     opacity: 1;
     top: 0;
   }
+
   100% {
     opacity: 0;
     top: -100%;
@@ -255,59 +280,71 @@ header .container {
     opacity: 1;
     top: 0;
   }
+
   100% {
     opacity: 0;
     top: -100%;
   }
 }
+
 @-webkit-keyframes pop {
   0% {
     transform: scale(0.5);
     opacity: 0;
   }
+
   90% {
     transform: scale(1.1);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
   }
 }
+
 @keyframes pop {
   0% {
     transform: scale(0.5);
     opacity: 0;
   }
+
   90% {
     transform: scale(1.1);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
   }
 }
+
 @-webkit-keyframes shrink {
   0% {
     transform: scale(1);
     opacity: 1;
   }
+
   100% {
     transform: scale(0.9);
     opacity: 0.9;
   }
 }
+
 @keyframes shrink {
   0% {
     transform: scale(1);
     opacity: 1;
   }
+
   100% {
     transform: scale(0.9);
     opacity: 0.9;
   }
 }
+
 .end {
   opacity: 0;
   position: absolute;
@@ -325,9 +362,11 @@ header .container {
   font-size: 2rem;
   transition: opacity 0.3s ease-in-out;
 }
+
 .end btn {
   margin-top: 1rem;
 }
+
 .end.active {
   opacity: 1;
   z-index: 1000;
@@ -351,12 +390,15 @@ header .container {
   border: 1px solid transparent;
   cursor: pointer;
 }
+
 .btn:hover {
   background-color: #14727e;
 }
+
 .btn:active {
   background-color: #0d4a52;
 }
+
 .btn:focus {
   box-shadow: 0 0 10px #0d4a52 inset;
   outline: none;
@@ -368,19 +410,24 @@ header .container {
   align-items: center;
   margin-top: 1rem;
 }
-.not-recommended * + * {
+
+.not-recommended *+* {
   margin-left: 10px;
 }
-.not-recommended__item + .not-recommended__annotation:before {
+
+.not-recommended__item+.not-recommended__annotation:before {
   font-size: 30px;
   content: "🙂";
 }
-.not-recommended__item:hover + .not-recommended__annotation:before {
+
+.not-recommended__item:hover+.not-recommended__annotation:before {
   content: "😟";
 }
-.not-recommended__item:focus + .not-recommended__annotation:before {
+
+.not-recommended__item:focus+.not-recommended__annotation:before {
   content: "😄";
 }
-.not-recommended__item:active + .not-recommended__annotation:before {
+
+.not-recommended__item:active+.not-recommended__annotation:before {
   content: "😨";
 }

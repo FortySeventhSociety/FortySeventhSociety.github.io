@@ -5,7 +5,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   user-select: none;
   -webkit-user-select: none;
@@ -22,7 +24,7 @@ body {
 
 body {
   margin: 0;
-  background: radial-gradient(ellipse at center, #88c4c2 0%,#56838f 80%);
+  background: radial-gradient(ellipse at center, #88c4c2 0%, #56838f 80%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +39,7 @@ body {
   left: 10%;
   font-size: 18px;
 }
+
 .switch2 {
   text-shadow: 2px 2px red, -3px -3px deepskyblue;
 }
@@ -85,8 +88,13 @@ body {
 }
 
 @keyframes rotate {
-  0% {transform: rotate(0deg)}
-  100% {transform: rotate(360deg)}
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
 }
 
 .indicator-active .reel-handle img {
@@ -115,8 +123,13 @@ body {
 }
 
 @keyframes reel {
-  0% {background-position: 0;}
-  100% {background-position: 139px}
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 139px
+  }
 }
 
 .reel-line-tension {

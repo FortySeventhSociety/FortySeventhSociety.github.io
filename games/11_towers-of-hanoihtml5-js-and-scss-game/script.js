@@ -2,7 +2,7 @@
 // All Rights Reserved ///////
 
 // Alert box using SweetAlert2 - https://limonte.github.io/sweetalert2
-$(document).ready(function() {
+$(document).ready(function () {
 
 	// Variables
 	var holding = [],
@@ -16,7 +16,7 @@ $(document).ready(function() {
 		$movesCount = $scorePanel.find('#moves-num'),
 		$ratingStars = $scorePanel.find('i'),
 		rating = 3;
-	
+
 	// Set Rating and final Score
 	function setRating(moves) {
 		if (moves === 127) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		} else if (moves >= 229) {
 			$ratingStars.eq(0).removeClass('fa-star').addClass('fa-star-o');
 			rating = 0;
-		}	
+		}
 		return { score: rating };
 	};
 
@@ -41,7 +41,7 @@ $(document).ready(function() {
 		for (var i = 1; i <= disksNum; i++) {
 			tower.prepend($('<li class="disk disk-' + i + '" data-value="' + i + '"></li>'));
 		}
-		$ratingStars.each(function() {
+		$ratingStars.each(function () {
 			$(this).removeClass('fa-star-o').addClass('fa-star');
 		});
 	}
@@ -61,14 +61,14 @@ $(document).ready(function() {
 					type: 'success',
 					confirmButtonColor: '#8bc34a',
 					confirmButtonText: 'Play again!!!'
-				}).then(function(isConfirm) {
+				}).then(function (isConfirm) {
 					if (isConfirm) {
 						initGame($tower.eq(0));
 					}
 				})
 			}
 		}
-		
+
 		setRating(moves);
 	}
 
@@ -91,30 +91,30 @@ $(document).ready(function() {
 			holding[0] = topDiskValue;
 		}
 	}
-	
+
 	initGame($tower.eq(0));
-	
+
 	// Event Handlers
-	$canves.on('click', '.tower', function() {
+	$canves.on('click', '.tower', function () {
 		var $this = $(this);
 		tower($this);
 	});
-	
-	$restart.on('click', function() {
+
+	$restart.on('click', function () {
 		swal({
-				allowEscapeKey: false,
-				allowOutsideClick: false,
-				title: 'Are you sure?',
-				text: "Your progress will be lost!!!",
-				type: 'warning',
-				showCancelButton: true,
-				confirmButtonColor: '#8bc34a',
-				cancelButtonColor: '#e91e63',
-				confirmButtonText: 'Yes, Restart Game'
-		}).then(function(isConfirm) {
-				if (isConfirm) {
-					initGame($tower.eq(0));
-				}
-			})
+			allowEscapeKey: false,
+			allowOutsideClick: false,
+			title: 'Are you sure?',
+			text: "Your progress will be lost!!!",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#8bc34a',
+			cancelButtonColor: '#e91e63',
+			confirmButtonText: 'Yes, Restart Game'
+		}).then(function (isConfirm) {
+			if (isConfirm) {
+				initGame($tower.eq(0));
+			}
+		})
 	});
 });

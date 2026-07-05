@@ -29,6 +29,7 @@ body {
   border-radius: 10px;
   box-shadow: 14px 14px 0 0 #000000;
 }
+
 .deck .card {
   height: 75px;
   width: 75px;
@@ -48,29 +49,36 @@ body {
   font-family: FontAwesome;
   line-height: 75px;
 }
+
 .deck .card:nth-child(4n) {
   margin: 0 0 15px 0;
 }
+
 .deck .card:nth-child(n+13) {
   margin: 0 15px 0 0;
 }
+
 .deck .card:nth-child(n+13):nth-child(4n) {
   margin: 0;
 }
+
 .deck .card.open {
   transform: rotateY(0);
   background: #89C4FF;
   cursor: default;
 }
+
 .deck .card.show {
   font-size: 33px;
 }
+
 .deck .card.match {
   transform: rotateY(0);
   cursor: default;
   background: #9BCB3C;
   font-size: 33px;
 }
+
 .deck .card.notmatch {
   background: #EE0E51;
 }
@@ -80,16 +88,19 @@ body {
   width: 345px;
   margin-bottom: 10px;
 }
+
 #score-panel .stars {
   margin: 0;
   padding: 0;
   display: inline-block;
   margin: 0 5px 0 0;
 }
+
 #score-panel .stars li {
   list-style: none;
   display: inline-block;
 }
+
 #score-panel .restart {
   float: right;
   cursor: pointer;

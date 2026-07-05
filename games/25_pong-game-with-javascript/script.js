@@ -342,7 +342,7 @@ var Game = {
 	},
 
 	// Reset the ball location, the player turns and set a delay before the next round begins.
-	_resetTurn: function(victor, loser) {
+	_resetTurn: function (victor, loser) {
 		this.ball = Ball.new.call(this, this.ball.speed);
 		this.turn = loser;
 		this.timer = (new Date()).getTime();
@@ -352,7 +352,7 @@ var Game = {
 	},
 
 	// Wait for a delay to have passed after each turn.
-	_turnDelayIsOver: function() {
+	_turnDelayIsOver: function () {
 		return ((new Date()).getTime() - this.timer >= 1000);
 	},
 

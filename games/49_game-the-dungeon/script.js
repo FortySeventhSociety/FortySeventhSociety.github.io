@@ -12,35 +12,35 @@
 */
 var Utl = {};
 // true si valeur est entre deux autres aleurs
-Utl.entre = function(valeur, min, max) {
+Utl.entre = function (valeur, min, max) {
   return (valeur - min) * (valeur - max) < 0;
 };
-Utl.aleatoire = function(min, max) {
+Utl.aleatoire = function (min, max) {
   return min + Math.random() * (max - min);
 };
 // Distance entre deux points
-Utl.distance = function(p1, p2) {
+Utl.distance = function (p1, p2) {
   return Math.hypot(p1.x - p2.x, p1.y - p2.y);
 };
-Utl.lerp = function(value1, value2, amount) {
+Utl.lerp = function (value1, value2, amount) {
   return value1 + (value2 - value1) * amount;
 };
 // collision Point > Carre
-Utl.pointCarre = function(x, y, carre) {
+Utl.pointCarre = function (x, y, carre) {
   return (
     Utl.entre(x, carre.pos.x, carre.pos.x + carre.taille) &&
     Utl.entre(y, carre.pos.y, carre.pos.y + carre.taille)
   );
 };
 // Morceler un tableau de plusieurs lignes
-Utl.morceler = function(tableau, largeur) {
+Utl.morceler = function (tableau, largeur) {
   var resultat = [];
   for (var i = 0; i < tableau.length; i += largeur)
     resultat.push(tableau.slice(i, i + largeur));
   return resultat;
 };
 // Morceler un tableau de plusieurs lignes
-Utl.tablifier = function(tableaux) {
+Utl.tablifier = function (tableaux) {
   let resultat = [];
   document.body.innerHTML = "";
   let largeur = tableaux.width;
@@ -99,7 +99,7 @@ class Menu {
       this.parent.phase(this.choix[this.selection].lien);
     }
   }
-  selectionne() {}
+  selectionne() { }
   rendu() {
     this.ctx.fillStyle = "#000";
     this.ctx.fillRect(
@@ -943,7 +943,7 @@ class Monde {
   chargerImages(url) {
     let img = new Image();
     let self = this;
-    img.onload = function() {
+    img.onload = function () {
       self.chargement();
     };
     img.src = url;

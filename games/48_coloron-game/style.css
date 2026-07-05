@@ -139,6 +139,7 @@
   left: 15px;
   top: 27px;
 }
+
 .triangle-2:after {
   content: " ";
   display: block;
@@ -150,12 +151,15 @@
   left: -3.5px;
   transition: border-bottom-color 0.4s ease;
 }
+
 .red .triangle-2:after {
   border-bottom-color: #fc5c82;
 }
+
 .yellow .triangle-2:after {
   border-bottom-color: #fcd45c;
 }
+
 .purple .triangle-2:after {
   border-bottom-color: #9174f5;
 }
@@ -168,6 +172,7 @@
   left: 43px;
   top: 60px;
 }
+
 .triangle-3:after {
   content: " ";
   display: block;
@@ -179,12 +184,15 @@
   left: -4.75px;
   transition: border-bottom-color 0.4s ease;
 }
+
 .red .triangle-3:after {
   border-bottom-color: #fc5c82;
 }
+
 .yellow .triangle-3:after {
   border-bottom-color: #fcd45c;
 }
+
 .purple .triangle-3:after {
   border-bottom-color: #9174f5;
 }
@@ -308,6 +316,7 @@
   top: 270px;
   transform: rotate(180deg);
 }
+
 .triangle-14:after {
   content: " ";
   display: block;
@@ -319,12 +328,15 @@
   left: -3.5px;
   transition: border-bottom-color 0.4s ease;
 }
+
 .red .triangle-14:after {
   border-bottom-color: #fc5c82;
 }
+
 .yellow .triangle-14:after {
   border-bottom-color: #fcd45c;
 }
+
 .purple .triangle-14:after {
   border-bottom-color: #9174f5;
 }
@@ -335,6 +347,7 @@
   z-index: 999;
   border-radius: 7px;
 }
+
 .stick .block .inner {
   border-radius: 7px;
   background-color: rgba(0, 0, 0, 0.12);
@@ -344,126 +357,150 @@
   width: 100%;
   position: absolute;
 }
+
 .stick .block:nth-child(2n+1) .inner-2 {
   left: -200%;
 }
+
 .stick .block:nth-child(2n+2) .inner-2 {
   left: 200%;
 }
+
 .stick .block-1 {
   height: 16px;
   width: 31px;
   top: 16px;
   left: 30px;
 }
+
 .stick .block-1 .inner {
   background-color: transparent !important;
   border-style: solid;
   box-sizing: border-box;
 }
+
 .stick .block-2 {
   height: 14px;
   width: 42px;
   top: 50px;
   left: 15px;
 }
+
 .stick .block-3 {
   height: 18px;
   width: 9px;
   top: 73px;
   left: 64px;
 }
+
 .stick .block-4 {
   height: 9px;
   width: 14px;
   top: 84px;
   left: 26px;
 }
+
 .stick .block-5 {
   height: 15px;
   width: 15px;
   top: 109px;
   left: 45px;
 }
+
 .stick .block-5 .inner {
   border-radius: 50%;
 }
+
 .stick .block-6 {
   height: 9px;
   width: 27px;
   top: 135px;
   left: 19px;
 }
+
 .stick .block-7 {
   height: 12px;
   width: 12px;
   top: 144px;
   left: 60px;
 }
+
 .stick .block-7 .inner {
   border-radius: 50%;
   border-style: solid;
   box-sizing: border-box;
   background-color: transparent;
 }
+
 .stick .block-8 {
   height: 27px;
   width: 14px;
   top: 164px;
   left: 24px;
 }
+
 .stick .block-9 {
   height: 8px;
   width: 8px;
   top: 188px;
   left: 64px;
 }
+
 .stick .block-10 {
   height: 12px;
   width: 22px;
   top: 219px;
   left: 11px;
 }
+
 .stick .block-10 .inner {
   background-color: transparent !important;
   border-style: solid;
   box-sizing: border-box;
 }
+
 .stick .block-11 {
   height: 22px;
   width: 22px;
   top: 226px;
   left: 50px;
 }
+
 .stick .block-11 .inner {
   border-radius: 50%;
 }
+
 .stick .block-12 {
   height: 18px;
   width: 9px;
   top: 248px;
   left: 26px;
 }
+
 .stick .block-13 {
   height: 8px;
   width: 8px;
   top: 278px;
   left: 50px;
 }
+
 .stick .block-13 .inner {
   border-radius: 50%;
 }
+
 .stick .block-14 {
   height: 12px;
   width: 22px;
   top: 297px;
   left: 18px;
 }
+
 .stick .block-14 .inner {
   background-color: transparent !important;
   border-style: solid;
   box-sizing: border-box;
 }
+
 .stick .block-15 {
   height: 9px;
   width: 27px;
@@ -482,7 +519,9 @@ body {
 a {
   cursor: url(https://greghub.github.io/coloron/public/svg/cursor.svg), pointer;
 }
-a:focus, a:active {
+
+a:focus,
+a:active {
   cursor: url(https://greghub.github.io/coloron/public/svg/cursor-tap.svg), pointer;
 }
 
@@ -494,14 +533,16 @@ a:focus, a:active {
   width: 100%;
 }
 
-.waves, .mounts {
+.waves,
+.mounts {
   position: absolute;
   width: 100%;
   left: 0;
   bottom: 0;
 }
 
-.waves div, .mounts div {
+.waves div,
+.mounts div {
   position: absolute;
   width: 100%;
 }
@@ -631,7 +672,9 @@ a:focus, a:active {
   transition: background-color 0.4s ease;
   cursor: url(https://greghub.github.io/coloron/public/svg/cursor.svg), pointer;
 }
-.stick:focus, .stick:active {
+
+.stick:focus,
+.stick:active {
   cursor: url(https://greghub.github.io/coloron/public/svg/cursor-tap.svg), pointer;
 }
 
@@ -651,7 +694,8 @@ a:focus, a:active {
   background-color: #4C4660;
 }
 
-.ball, .ball-demo {
+.ball,
+.ball-demo {
   background: url(https://greghub.github.io/coloron/public/svg/ball.svg) right bottom;
   background-size: 64px 64px;
   width: 53px;
@@ -686,6 +730,7 @@ a:focus, a:active {
 .start-game .start-game-top {
   min-height: 20%;
 }
+
 .start-game .start-game-top .play-full-page {
   display: none;
   border: 3px solid #fff;
@@ -702,9 +747,11 @@ a:focus, a:active {
   text-transform: uppercase;
   margin-top: 24px;
 }
+
 .start-game .start-game-top .play-full-page:hover {
   opacity: 0.7;
 }
+
 .start-game .logo-holder {
   width: 513px;
   height: 162px;
@@ -714,6 +761,7 @@ a:focus, a:active {
   text-align: center;
   margin-top: -10%;
 }
+
 .start-game .logo-holder .logo {
   color: #fff;
   text-transform: uppercase;
@@ -724,10 +772,12 @@ a:focus, a:active {
   margin-bottom: 4px;
   text-align: center;
 }
+
 .start-game .logo-holder .logo span {
   margin-left: -8px;
   margin-right: -8px;
 }
+
 .start-game .logo-holder .play-button {
   display: inline-block;
   background-color: #FF4571;
@@ -743,13 +793,16 @@ a:focus, a:active {
   line-height: 56px;
   text-decoration: none;
 }
+
 .start-game .logo-holder .play-button:hover {
   background-color: #ff5f84;
 }
+
 .start-game .logo-holder .hint {
   color: #fff;
   font-size: 20px;
 }
+
 .start-game .logo-holder .hint span {
   color: #FF4571;
 }
@@ -758,11 +811,13 @@ a:focus, a:active {
   text-decoration: none;
   text-shadow: 0px 0px 3px white;
 }
+
 .d474developmentsH {
   color: #FF4571;
   font-size: 26px;
   font-weight: 800;
 }
+
 .switch2 {
   text-shadow: 0px 0px 3px white;
 }
@@ -772,51 +827,66 @@ a:focus, a:active {
   justify-content: space-around;
   width: 100%;
 }
-.start-game .how-to-play .section-1, .start-game .how-to-play .section-3 {
+
+.start-game .how-to-play .section-1,
+.start-game .how-to-play .section-3 {
   flex: 1;
 }
-.start-game .how-to-play .section-1 .content, .start-game .how-to-play .section-3 .content {
+
+.start-game .how-to-play .section-1 .content,
+.start-game .how-to-play .section-3 .content {
   justify-content: center;
 }
+
 .start-game .how-to-play h4 {
   color: #fff;
   font-weight: 400;
   font-size: 22px;
   text-align: center;
 }
+
 .start-game .how-to-play .content {
   height: 200px;
   position: relative;
   display: flex;
   justify-content: space-around;
 }
+
 .start-game .how-to-play .bar {
   width: 60px;
   border-radius: 7px;
   margin-top: auto;
   transition: background-color 0.4s ease;
 }
+
 .start-game .how-to-play .bar.bar-1 {
   height: 180px;
   background: #FF4571;
 }
+
 .start-game .how-to-play .bar.bar-2 {
   height: 120px;
   background: #FFD145;
 }
+
 .start-game .how-to-play .bar.bar-3 {
   height: 150px;
   background: #4C4660;
 }
+
 .start-game .how-to-play .section-2 .bar {
   cursor: url(https://greghub.github.io/coloron/public/svg/cursor.svg), pointer;
 }
-.start-game .how-to-play .section-2 .bar:focus, .start-game .how-to-play .section-2 .bar:active {
+
+.start-game .how-to-play .section-2 .bar:focus,
+.start-game .how-to-play .section-2 .bar:active {
   cursor: url(https://greghub.github.io/coloron/public/svg/cursor-tap.svg), pointer;
 }
+
 .start-game .how-to-play .section-3 .ball-demo {
   background-color: #815FF8;
 }
+
 .start-game .how-to-play .section-3 .bar-1 {
   height: 120px;
   background-color: #815FF8;
@@ -825,6 +895,7 @@ a:focus, a:active {
 .stop-game {
   justify-content: center;
 }
+
 .stop-game .score-container {
   background-color: #4C4660;
   width: 433px;
@@ -832,6 +903,7 @@ a:focus, a:active {
   border-radius: 38px;
   text-align: center;
 }
+
 .stop-game .score-container h1 {
   color: #fff;
   text-transform: uppercase;
@@ -840,6 +912,7 @@ a:focus, a:active {
   margin-bottom: 4px;
   font-size: 64px;
 }
+
 .stop-game .score-container .final-score {
   color: #FFE345;
   font-weight: 900;
@@ -847,16 +920,19 @@ a:focus, a:active {
   letter-spacing: -6px;
   line-height: 110px;
 }
+
 .stop-game .score-container .result {
   color: #FF4571;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 30px;
 }
+
 .stop-game .score-container h4 {
   color: #fff;
   margin-top: 12px;
 }
+
 .stop-game .score-container .tweet {
   background: #fff;
   padding: 8px 20px;
@@ -867,16 +943,19 @@ a:focus, a:active {
   line-height: 24px;
   display: inline-block;
 }
+
 .stop-game .score-container .tweet:hover {
   background-color: #55ACEE;
   color: #fff;
 }
+
 .stop-game .score-container .tweet i {
   font-size: 24px;
   top: 2px;
   right: 2px;
   position: relative;
 }
+
 .stop-game .score-container .play-again {
   background-color: #FF4571;
   border: 2px solid #fff;
@@ -891,9 +970,11 @@ a:focus, a:active {
   margin: 6px 4px;
   display: inline-block;
 }
+
 .stop-game .score-container .play-again:hover {
   background-color: #ff5f84;
 }
+
 .stop-game .score-container .main-menu {
   background-color: #44BFA3;
   border: 2px solid #fff;
@@ -908,6 +989,7 @@ a:focus, a:active {
   margin: 6px 4px;
   display: inline-block;
 }
+
 .stop-game .score-container .main-menu:hover {
   background-color: #57c6ac;
 }
@@ -923,6 +1005,7 @@ a:focus, a:active {
   width: 100%;
   height: 100%;
 }
+
 .scene .ball-holder {
   flex: 1;
   display: flex;
@@ -930,6 +1013,7 @@ a:focus, a:active {
   justify-content: flex-end;
   padding-left: 558px;
 }
+
 .scene .score {
   position: fixed;
   right: 54px;
@@ -939,6 +1023,7 @@ a:focus, a:active {
   font-weight: 900;
   letter-spacing: -0.1em;
 }
+
 .scene .learn-to-play {
   z-index: 9999;
   display: inline-block;
@@ -972,6 +1057,7 @@ a:focus, a:active {
     background-position: center;
   }
 }
+
 .nominee {
   position: fixed;
   right: 0;

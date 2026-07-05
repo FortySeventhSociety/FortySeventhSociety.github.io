@@ -44,7 +44,7 @@
       window.clearInterval(0);
       window.clearInterval(1);
       window.clearInterval(2);
-      window.setTimeout = window.setInterval = window.requestAnimationFrame = () => {};
+      window.setTimeout = window.setInterval = window.requestAnimationFrame = () => { };
       document
         .querySelectorAll("animate")
         .forEach((node) => node.setAttribute("dur", "0s"));
@@ -84,5 +84,5 @@ m1344 -56 c9 -25 7 -1112 -3 -1118 -4 -3 -40 28 -80 68 l-71 74 0 400 0 401
 </g>
 </svg>
 
-`.replaceAll('fill="black"','fill="currentColor"');
+`.replaceAll('fill="black"', 'fill="currentColor"');
 })();

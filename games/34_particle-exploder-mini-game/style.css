@@ -1,72 +1,84 @@
 /*/ D474designs | JOCV-III ///////
 // All Rights Reserved //////*/
 
-canvas{
-  position:absolute;
-  top:0px; left:0px;
+canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
-#stats{
-  color:white;
-  background-color:rgba(000, 000, 000, 0.7);
-  font-size:20px;
-  padding:40px;
-  position:absolute;
-  top:10%; left:0px;
+
+#stats {
+  color: white;
+  background-color: rgba(000, 000, 000, 0.7);
+  font-size: 20px;
+  padding: 40px;
+  position: absolute;
+  top: 10%;
+  left: 0px;
 }
-#rules{
-  opacity:0;
-  color:white;
-  background-color:rgba(0, 0, 0, 0.8);
-  font-size:20px;
-  position:absolute;
-  text-align:center;
-  top:40vh;
-  width:96vw;
-  left:0px;
-  padding:2vw;
-  
-  -webkit-animation:disappear 4s linear;
+
+#rules {
+  opacity: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  top: 40vh;
+  width: 96vw;
+  left: 0px;
+  padding: 2vw;
+
+  -webkit-animation: disappear 4s linear;
 }
-@-webkit-keyframes disappear{
-  from{
-    opacity:1;
+
+@-webkit-keyframes disappear {
+  from {
+    opacity: 1;
   }
-  70%{
-    opacity:1;
+
+  70% {
+    opacity: 1;
   }
-  100%{
-    opacity:0;
+
+  100% {
+    opacity: 0;
   }
 }
 
-#rules2{
-  opacity:0;
-  color:white;
-  background-color:rgba(0, 0, 0, 0.8);
-  font-size:20px;
-  position:absolute;
-  text-align:center;
-  top:40vh;
-  width:96vw;
-  left:0px;
-  padding:2vw;
-  
-  -webkit-animation:disappear2 8s linear;
+#rules2 {
+  opacity: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  top: 40vh;
+  width: 96vw;
+  left: 0px;
+  padding: 2vw;
+
+  -webkit-animation: disappear2 8s linear;
 }
-@-webkit-keyframes disappear2{
-  from{
-    opacity:0;
+
+@-webkit-keyframes disappear2 {
+  from {
+    opacity: 0;
   }
-  50%{
-    opacity:0;
+
+  50% {
+    opacity: 0;
   }
-  70%{
-    opacity:1;
+
+  70% {
+    opacity: 1;
   }
-  85%{
-    opacity:1;
+
+  85% {
+    opacity: 1;
   }
-  100%{
-    opacity:0;
+
+  100% {
+    opacity: 0;
   }
 }

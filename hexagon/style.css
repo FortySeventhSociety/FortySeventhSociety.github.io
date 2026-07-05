@@ -2,20 +2,20 @@
 // All Rights Reserved //////*/
 
 @charset "UTF-8";
+
 :root {
   --color-primary: #ee75d2;
   --color-secondary: #75d8ee;
   --color-tertiary: #deee75;
   --color-quaternary: #9375ee;
   --color-surface: black;
-  --bg: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--color-quaternary), black 70%),
-    var(--color-surface)
-  );
+  --bg: linear-gradient(to bottom,
+      color-mix(in srgb, var(--color-quaternary), black 70%),
+      var(--color-surface));
   --color-on-surface: var(--color-primary);
   --hover-filter: brightness(1.2);
 }
+
 @media (any-pointer: fine) {
   :root {
     --icon-filter: saturate(3.4) brightness(0.5) invert(1);
@@ -28,6 +28,7 @@
   --color-on-surface: white;
   --hover-filter: brightness(1.5);
 }
+
 @media (any-pointer: fine) {
   .vision-ui {
     --icon-filter: saturate(0.4);
@@ -40,11 +41,13 @@
   initial-value: 0;
   inherits: true;
 }
+
 @property --ripple-factor {
   syntax: "<number>";
   initial-value: 0;
   inherits: true;
 }
+
 :root {
   --hexagon-size: 8vmin;
   --gap: 0.1vmin;
@@ -60,12 +63,14 @@
   margin: 0px;
   z-index: 9998;
 }
+
 .container .column {
   margin: 0 -0.2vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 @media only screen and (max-width: 1130px) {
   .container {
     top: 5%;
@@ -84,111 +89,105 @@
   width: var(--hexagon-size);
   aspect-ratio: 1;
   position: relative;
-  background: var(
-    --color-surface-container,
-    color-mix(
-      in srgb,
-      var(--color-secondary),
-      var(--color-primary) var(--mix-percentage)
-    )
-  );
+  background: var(--color-surface-container,
+      color-mix(in srgb,
+        var(--color-secondary),
+        var(--color-primary) var(--mix-percentage)));
   -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
-  -webkit-clip-path: polygon(
-    98.66024% 45%,
-    99.39693% 46.5798%,
-    99.84808% 48.26352%,
-    100% 50%,
-    99.84808% 51.73648%,
-    99.39693% 53.4202%,
-    98.66025% 55%,
-    78.66025% 89.64102%,
-    77.66044% 91.06889%,
-    76.42788% 92.30146%,
-    75% 93.30127%,
-    73.4202% 94.03794%,
-    71.73648% 94.48909%,
-    70% 94.64102%,
-    30% 94.64102%,
-    28.26352% 94.48909%,
-    26.5798% 94.03794%,
-    25% 93.30127%,
-    23.57212% 92.30146%,
-    22.33956% 91.06889%,
-    21.33975% 89.64102%,
-    1.33975% 55%,
-    0.60307% 53.4202%,
-    0.15192% 51.73648%,
-    0% 50%,
-    0.15192% 48.26352%,
-    0.60307% 46.5798%,
-    1.33975% 45%,
-    21.33975% 10.35898%,
-    22.33956% 8.93111%,
-    23.57212% 7.69854%,
-    25% 6.69873%,
-    26.5798% 5.96206%,
-    28.26352% 5.51091%,
-    30% 5.35898%,
-    70% 5.35898%,
-    71.73648% 5.51091%,
-    73.4202% 5.96206%,
-    75% 6.69873%,
-    76.42788% 7.69854%,
-    77.66044% 8.93111%,
-    78.66025% 10.35898%
-  );
-  clip-path: polygon(
-    98.66024% 45%,
-    99.39693% 46.5798%,
-    99.84808% 48.26352%,
-    100% 50%,
-    99.84808% 51.73648%,
-    99.39693% 53.4202%,
-    98.66025% 55%,
-    78.66025% 89.64102%,
-    77.66044% 91.06889%,
-    76.42788% 92.30146%,
-    75% 93.30127%,
-    73.4202% 94.03794%,
-    71.73648% 94.48909%,
-    70% 94.64102%,
-    30% 94.64102%,
-    28.26352% 94.48909%,
-    26.5798% 94.03794%,
-    25% 93.30127%,
-    23.57212% 92.30146%,
-    22.33956% 91.06889%,
-    21.33975% 89.64102%,
-    1.33975% 55%,
-    0.60307% 53.4202%,
-    0.15192% 51.73648%,
-    0% 50%,
-    0.15192% 48.26352%,
-    0.60307% 46.5798%,
-    1.33975% 45%,
-    21.33975% 10.35898%,
-    22.33956% 8.93111%,
-    23.57212% 7.69854%,
-    25% 6.69873%,
-    26.5798% 5.96206%,
-    28.26352% 5.51091%,
-    30% 5.35898%,
-    70% 5.35898%,
-    71.73648% 5.51091%,
-    73.4202% 5.96206%,
-    75% 6.69873%,
-    76.42788% 7.69854%,
-    77.66044% 8.93111%,
-    78.66025% 10.35898%
-  );
+  -webkit-clip-path: polygon(98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%);
+  clip-path: polygon(98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%);
   cursor: pointer;
 }
+
 @media (hover) {
   .hexagon:hover {
     filter: var(--hover-filter);
   }
 }
+
 .hexagon:after {
   content: var(--icon);
   display: grid;
@@ -204,17 +203,21 @@
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(max(0.8, calc(var(--ripple-factor) / 100)));
     opacity: 0.42;
   }
+
   65% {
     opacity: 1;
   }
+
   70% {
     transform: scale(1.5);
     filter: var(--ripple-filter);
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -226,38 +229,40 @@
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(max(0.8, calc(var(--ripple-factor) / 100)));
     opacity: 0.42;
   }
+
   65% {
     opacity: 1;
   }
+
   70% {
     transform: scale(1.5);
     filter: var(--ripple-filter);
   }
+
   to {
     transform: scale(1);
     opacity: 1;
   }
 }
+
 .container.show-ripple {
   pointer-events: none;
 }
+
 .container.show-ripple .hexagon {
   cursor: default;
   --duration: 0.45s;
   -webkit-animation: ripple var(--duration) ease-in-out;
   animation: ripple var(--duration) ease-in-out;
-  -webkit-animation-duration: max(
-    var(--duration),
-    calc(var(--duration) * var(--ripple-factor) / 100)
-  );
-  animation-duration: max(
-    var(--duration),
-    calc(var(--duration) * var(--ripple-factor) / 100)
-  );
+  -webkit-animation-duration: max(var(--duration),
+      calc(var(--duration) * var(--ripple-factor) / 100));
+  animation-duration: max(var(--duration),
+      calc(var(--duration) * var(--ripple-factor) / 100));
   -webkit-animation-delay: calc(var(--ripple-factor) * 8ms);
   animation-delay: calc(var(--ripple-factor) * 8ms);
 }
@@ -267,104 +272,96 @@
   width: var(--hexagon-size);
   aspect-ratio: 1;
   position: relative;
-  background: var(
-    --color-surface-container,
-    color-mix(
-      in srgb,
-      var(--color-secondary),
-      var(--color-primary) var(--mix-percentage)
-    )
-  );
+  background: var(--color-surface-container,
+      color-mix(in srgb,
+        var(--color-secondary),
+        var(--color-primary) var(--mix-percentage)));
   -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
-  -webkit-clip-path: polygon(
-    98.66024% 45%,
-    99.39693% 46.5798%,
-    99.84808% 48.26352%,
-    100% 50%,
-    99.84808% 51.73648%,
-    99.39693% 53.4202%,
-    98.66025% 55%,
-    78.66025% 89.64102%,
-    77.66044% 91.06889%,
-    76.42788% 92.30146%,
-    75% 93.30127%,
-    73.4202% 94.03794%,
-    71.73648% 94.48909%,
-    70% 94.64102%,
-    30% 94.64102%,
-    28.26352% 94.48909%,
-    26.5798% 94.03794%,
-    25% 93.30127%,
-    23.57212% 92.30146%,
-    22.33956% 91.06889%,
-    21.33975% 89.64102%,
-    1.33975% 55%,
-    0.60307% 53.4202%,
-    0.15192% 51.73648%,
-    0% 50%,
-    0.15192% 48.26352%,
-    0.60307% 46.5798%,
-    1.33975% 45%,
-    21.33975% 10.35898%,
-    22.33956% 8.93111%,
-    23.57212% 7.69854%,
-    25% 6.69873%,
-    26.5798% 5.96206%,
-    28.26352% 5.51091%,
-    30% 5.35898%,
-    70% 5.35898%,
-    71.73648% 5.51091%,
-    73.4202% 5.96206%,
-    75% 6.69873%,
-    76.42788% 7.69854%,
-    77.66044% 8.93111%,
-    78.66025% 10.35898%
-  );
-  clip-path: polygon(
-    98.66024% 45%,
-    99.39693% 46.5798%,
-    99.84808% 48.26352%,
-    100% 50%,
-    99.84808% 51.73648%,
-    99.39693% 53.4202%,
-    98.66025% 55%,
-    78.66025% 89.64102%,
-    77.66044% 91.06889%,
-    76.42788% 92.30146%,
-    75% 93.30127%,
-    73.4202% 94.03794%,
-    71.73648% 94.48909%,
-    70% 94.64102%,
-    30% 94.64102%,
-    28.26352% 94.48909%,
-    26.5798% 94.03794%,
-    25% 93.30127%,
-    23.57212% 92.30146%,
-    22.33956% 91.06889%,
-    21.33975% 89.64102%,
-    1.33975% 55%,
-    0.60307% 53.4202%,
-    0.15192% 51.73648%,
-    0% 50%,
-    0.15192% 48.26352%,
-    0.60307% 46.5798%,
-    1.33975% 45%,
-    21.33975% 10.35898%,
-    22.33956% 8.93111%,
-    23.57212% 7.69854%,
-    25% 6.69873%,
-    26.5798% 5.96206%,
-    28.26352% 5.51091%,
-    30% 5.35898%,
-    70% 5.35898%,
-    71.73648% 5.51091%,
-    73.4202% 5.96206%,
-    75% 6.69873%,
-    76.42788% 7.69854%,
-    77.66044% 8.93111%,
-    78.66025% 10.35898%
-  );
+  -webkit-clip-path: polygon(98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%);
+  clip-path: polygon(98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%);
   cursor: pointer;
   --index: 6;
   --column: 2;
@@ -378,109 +375,102 @@
   font-size: 2vmin;
   z-index: 9998;
 }
+
 .switch:after {
   --mix-percentage: calc(var(--column) * var(--index) * 3%);
   width: var(--hexagon-size);
   aspect-ratio: 1;
   position: relative;
-  background: var(
-    --color-surface-container,
-    color-mix(
-      in srgb,
-      var(--color-secondary),
-      var(--color-primary) var(--mix-percentage)
-    )
-  );
+  background: var(--color-surface-container,
+      color-mix(in srgb,
+        var(--color-secondary),
+        var(--color-primary) var(--mix-percentage)));
   -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
-  -webkit-clip-path: polygon(
-    98.66024% 45%,
-    99.39693% 46.5798%,
-    99.84808% 48.26352%,
-    100% 50%,
-    99.84808% 51.73648%,
-    99.39693% 53.4202%,
-    98.66025% 55%,
-    78.66025% 89.64102%,
-    77.66044% 91.06889%,
-    76.42788% 92.30146%,
-    75% 93.30127%,
-    73.4202% 94.03794%,
-    71.73648% 94.48909%,
-    70% 94.64102%,
-    30% 94.64102%,
-    28.26352% 94.48909%,
-    26.5798% 94.03794%,
-    25% 93.30127%,
-    23.57212% 92.30146%,
-    22.33956% 91.06889%,
-    21.33975% 89.64102%,
-    1.33975% 55%,
-    0.60307% 53.4202%,
-    0.15192% 51.73648%,
-    0% 50%,
-    0.15192% 48.26352%,
-    0.60307% 46.5798%,
-    1.33975% 45%,
-    21.33975% 10.35898%,
-    22.33956% 8.93111%,
-    23.57212% 7.69854%,
-    25% 6.69873%,
-    26.5798% 5.96206%,
-    28.26352% 5.51091%,
-    30% 5.35898%,
-    70% 5.35898%,
-    71.73648% 5.51091%,
-    73.4202% 5.96206%,
-    75% 6.69873%,
-    76.42788% 7.69854%,
-    77.66044% 8.93111%,
-    78.66025% 10.35898%
-  );
-  clip-path: polygon(
-    98.66024% 45%,
-    99.39693% 46.5798%,
-    99.84808% 48.26352%,
-    100% 50%,
-    99.84808% 51.73648%,
-    99.39693% 53.4202%,
-    98.66025% 55%,
-    78.66025% 89.64102%,
-    77.66044% 91.06889%,
-    76.42788% 92.30146%,
-    75% 93.30127%,
-    73.4202% 94.03794%,
-    71.73648% 94.48909%,
-    70% 94.64102%,
-    30% 94.64102%,
-    28.26352% 94.48909%,
-    26.5798% 94.03794%,
-    25% 93.30127%,
-    23.57212% 92.30146%,
-    22.33956% 91.06889%,
-    21.33975% 89.64102%,
-    1.33975% 55%,
-    0.60307% 53.4202%,
-    0.15192% 51.73648%,
-    0% 50%,
-    0.15192% 48.26352%,
-    0.60307% 46.5798%,
-    1.33975% 45%,
-    21.33975% 10.35898%,
-    22.33956% 8.93111%,
-    23.57212% 7.69854%,
-    25% 6.69873%,
-    26.5798% 5.96206%,
-    28.26352% 5.51091%,
-    30% 5.35898%,
-    70% 5.35898%,
-    71.73648% 5.51091%,
-    73.4202% 5.96206%,
-    75% 6.69873%,
-    76.42788% 7.69854%,
-    77.66044% 8.93111%,
-    78.66025% 10.35898%
-  );
+  -webkit-clip-path: polygon(98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%);
+  clip-path: polygon(98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%);
   display: grid;
   place-items: center;
   --index: 6;
@@ -493,6 +483,7 @@
   width: 6vmin;
   transition: transform 0.3s ease;
 }
+
 .switch.checked:after {
   transform: translateX(2vmin);
   content: "🕶️";
@@ -507,6 +498,7 @@ body {
   color: var(--color-on-surface);
   overflow: hidden;
 }
+
 body:before {
   content: "";
   position: absolute;
@@ -549,48 +541,52 @@ a.labs-follow-me {
   text-align: center;
   */
 }
+
 a.labs-follow-me:hover {
   z-index: 9997;
 }
+
 a.labs-follow-me svg {
   width: 14vmin;
 }
+
 @media only screen and (max-width: 1024px) {
   a.labs-follow-me {
     top: -7%;
     padding-left: 45%;
   }
-  a.labs-follow-me svg {
-  }
+
+  a.labs-follow-me svg {}
 }
+
 @media only screen and (max-width: 512px) {
   a.labs-follow-me {
     top: -8%;
     padding-left: 44%;
   }
-  a.labs-follow-me svg {
-  }
+
+  a.labs-follow-me svg {}
 }
+
 .dtd {
   position: absolute;
   color: black;
   bottom: 20px;
   z-index: 9999;
   font-weight: 600;
-  background: linear-gradient(
-    45deg,
-    #999 5%,
-    #fff 10%,
-    #ccc 30%,
-    #ddd 50%,
-    #ccc 70%,
-    #fff 80%,
-    #999 95%
-  );
+  background: linear-gradient(45deg,
+      #999 5%,
+      #fff 10%,
+      #ccc 30%,
+      #ddd 50%,
+      #ccc 70%,
+      #fff 80%,
+      #999 95%);
   border: 2px ridge black;
   padding: 5px;
   text-shadow: 0px 0px 1px white;
 }
+
 .chain {
   position: absolute;
   bottom: 40px;
@@ -598,6 +594,7 @@ a.labs-follow-me svg {
   background: deepskyblue;
   width: 100%;
 }
+
 .chain2 {
   position: absolute;
   bottom: 25px;
@@ -605,18 +602,23 @@ a.labs-follow-me svg {
   background: deepskyblue;
   width: 100%;
 }
+
 .dtd a {
   text-decoration: none;
 }
+
 .dtd a:link {
   color: black;
 }
+
 .dtd a:hover {
   color: black;
 }
+
 .dtd a:visited {
   color: black;
 }
+
 .dtd a:active {
   color: black;
 }
@@ -628,8 +630,10 @@ a.labs-follow-me svg {
   bottom: -35%;
   text-shadow: 0px 0px 15px white;
   -webkit-text-stroke: 1px black;
-  animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
+  animation: glowBright 2s ease-in-out infinite alternate;
+  /* Apply animation */
 }
+
 @media only screen and (max-width: 900px) {
   .sitemap {
     position: absolute;
@@ -638,9 +642,11 @@ a.labs-follow-me svg {
     bottom: -35%;
     text-shadow: 0px 0px 15px white;
     -webkit-text-stroke: 1px black;
-    animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
+    animation: glowBright 2s ease-in-out infinite alternate;
+    /* Apply animation */
   }
 }
+
 @media only screen and (max-width: 512px) {
   .sitemap {
     position: absolute;
@@ -649,9 +655,11 @@ a.labs-follow-me svg {
     bottom: -35%;
     text-shadow: 0px 0px 15px white;
     -webkit-text-stroke: 1px black;
-    animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
+    animation: glowBright 2s ease-in-out infinite alternate;
+    /* Apply animation */
   }
 }
+
 @media only screen and (max-width: 375px) {
   .sitemap {
     position: absolute;
@@ -660,7 +668,8 @@ a.labs-follow-me svg {
     bottom: -45%;
     text-shadow: 0px 0px 15px white;
     -webkit-text-stroke: 1px black;
-    animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
+    animation: glowBright 2s ease-in-out infinite alternate;
+    /* Apply animation */
   }
 }
 
@@ -670,23 +679,27 @@ a.labs-follow-me svg {
   transition: color 0.3s ease;
   text-shadow: 0px 0px 15px white;
   -webkit-text-stroke: 1px black;
-  animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
+  animation: glowBright 2s ease-in-out infinite alternate;
+  /* Apply animation */
 }
 
 .scramble:hover {
   color: #0ff;
   text-shadow: 0px 0px 15px white;
   -webkit-text-stroke: 1px black;
-  animation: glowBright 2s ease-in-out infinite alternate; /* Apply animation */
+  animation: glowBright 2s ease-in-out infinite alternate;
+  /* Apply animation */
 }
 
 @keyframes glowBright {
   0% {
     text-shadow: 0 0 10px #ff0000, 0 0 20px #00ff00, 0 0 30px #0000ff;
   }
+
   50% {
     text-shadow: 0 0 20px #00ff00, 0 0 30px #0000ff, 0 0 10px #ff0000;
   }
+
   100% {
     text-shadow: 0 0 30px #0000ff, 0 0 10px #ff0000, 0 0 20px #00ff00;
   }

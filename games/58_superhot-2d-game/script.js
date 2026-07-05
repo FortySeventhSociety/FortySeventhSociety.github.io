@@ -1,7 +1,7 @@
 // D474designs | Modifications, and fixes by JOCV-III ///////
 // All Rights Reserved ///////
 
-(function() {
+(function () {
   //---------------------------------------------------
   // VARIABLES
   //---------------------------------------------------
@@ -56,13 +56,13 @@
   //---------------------------------------------------
 
   //PRELOAD STATE
-  preload = function() {};
+  preload = function () { };
 
   // nothing to preload ¯\_(ツ)_/¯
 
   //CREATE STATE
-  create = function() {
-    
+  create = function () {
+
     //remove preview image
     // preview.clear()
 
@@ -70,10 +70,10 @@
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.pageAlignVertically = true;
     game.scale.pageAlignHorizontally = true;
-    
+
     //background color
     game.stage.backgroundColor = '#CCCCCC';
-    
+
     //start physics engine
     game.physics.startSystem(Phaser.Physics.ARCADE);
     // D474designs | Change arrow keys to WASD keys to correct glitch while firing, and moving in 2 directions /////// Legacy: input
@@ -86,16 +86,16 @@
       "up": game.input.keyboard.addKey(Phaser.Keyboard.W),
       "down": game.input.keyboard.addKey(Phaser.Keyboard.S),
       "left": game.input.keyboard.addKey(Phaser.Keyboard.A),
-      "right": game.input.keyboard.addKey(Phaser.Keyboard.D)  
+      "right": game.input.keyboard.addKey(Phaser.Keyboard.D)
     };
     //start the game
     return nextLevel();
   };
 
   //RESET THE GAME
-  resetGame = function() {
+  resetGame = function () {
     var bullet, enemy, i;
-    
+
     //nuke everything
     game.world.removeAll();
     //score text
@@ -104,13 +104,13 @@
     score_text.font = 'Orbitron';
     score_text.fontSize = 40;
     score_text.fill = '#ff0000';
-    
+
     //add player  
     player = new Player(game, game.rnd.integerInRange(100, game.world.width - 100), 500, drawShape(32, 32, '#FFFFFF'));
-    
+
     //ada player's bullet group
     bullets = game.add.group();
-    
+
     //add bullets to memory so we can throttle the shot 
     i = 0;
     while (i < bullets_count) {
@@ -119,7 +119,7 @@
       bullet.events.onOutOfBounds.add(bullet.kill, bullet);
       i++;
     }
-    
+
     //add enemies and enemy bullets
     enemies = game.add.group();
     enemies_bullets = game.add.group();
@@ -129,14 +129,14 @@
       enemies.add(enemy);
       i++;
     }
-    
+
     //create a new timer. this timer will act as our motion timer that we'll use to update time and motion instead of the main game update loop
     return motion_timer = game.time.events.loop(60, motionUpdate, this);
   };
 
-  
+
   //DRAW SHAPES
-  drawShape = function(width = 64, height = 64, color = '#ff0000') {
+  drawShape = function (width = 64, height = 64, color = '#ff0000') {
     var bmd;
     bmd = game.add.bitmapData(width, height);
     bmd.ctx.beginPath();
@@ -146,16 +146,16 @@
     return bmd;
   };
 
-  
+
   //CHECK INPUT
-  checkInput = function() {
+  checkInput = function () {
     // change time on input
     if (controls.up.isDown || controls.down.isDown || controls.left.isDown || controls.right.isDown) {
       speedUpTime();
     } else {
       slowDownTime();
     }
-    
+
     // D474designs | Add memoization for improved aiming /////// Legacy: if nothing assume up // determine what direction the player is moving
     if (controls.left.isDown) {
       currentHorizontalDirection = "left";
@@ -163,7 +163,7 @@
     } else if (controls.right.isDown) {
       currentHorizontalDirection = "right";
       lastHorizonatlDirection = "right";
-    } else if (!currentVerticalDirection) { 
+    } else if (!currentVerticalDirection) {
       currentHorizontalDirection = lastHorizonatlDirection;
       currentVerticalDirection = lastVerticalDirection;
     } else {
@@ -188,115 +188,115 @@
     }
   };
 
-// D474designs | Add button functionality for desktop, and mobile ///////
-$('#left').mousedown(function(){
-  controls.left.isDown = true;
-});
-$('#right').mousedown(function(){
-  controls.right.isDown = true;
-});
-$(document).mouseup(function(){
-  controls.left.isDown = false;
-  controls.right.isDown = false;
-});
-$('#up').mousedown(function(){
-  controls.up.isDown = true;
-});
-$(document).mouseup(function(){
-  controls.up.isDown = false;
-});
-$('#down').mousedown(function(){
-  controls.down.isDown = true;
-});
-$(document).mouseup(function(){
-  controls.down.isDown = false;
-});
+  // D474designs | Add button functionality for desktop, and mobile ///////
+  $('#left').mousedown(function () {
+    controls.left.isDown = true;
+  });
+  $('#right').mousedown(function () {
+    controls.right.isDown = true;
+  });
+  $(document).mouseup(function () {
+    controls.left.isDown = false;
+    controls.right.isDown = false;
+  });
+  $('#up').mousedown(function () {
+    controls.up.isDown = true;
+  });
+  $(document).mouseup(function () {
+    controls.up.isDown = false;
+  });
+  $('#down').mousedown(function () {
+    controls.down.isDown = true;
+  });
+  $(document).mouseup(function () {
+    controls.down.isDown = false;
+  });
 
-$('#shoot').mousedown(function(){
-  return player.fireBullet(currentHorizontalDirection, currentVerticalDirection);
-});
+  $('#shoot').mousedown(function () {
+    return player.fireBullet(currentHorizontalDirection, currentVerticalDirection);
+  });
 
-$("#left").on( "touchstart", function() {
-  controls.left.isDown = true;
-}).on("touchend", function(isKeyDown) {
-  controls.left.isDown = false;
-});
-$("#right").on( "touchstart", function() {
-  controls.right.isDown = true;
-}).on("touchend", function(isKeyDown) {
-  controls.right.isDown = false;
-});
-$("#up").on( "touchstart", function() {
-  controls.up.isDown = true;
-}).on("touchend", function(isKeyDown) {
-  controls.up.isDown = false;
-});
-$("#down").on( "touchstart", function() {
-  controls.down.isDown = true;
-}).on("touchend", function(isKeyDown) {
-  controls.down.isDown = false;
-});
+  $("#left").on("touchstart", function () {
+    controls.left.isDown = true;
+  }).on("touchend", function (isKeyDown) {
+    controls.left.isDown = false;
+  });
+  $("#right").on("touchstart", function () {
+    controls.right.isDown = true;
+  }).on("touchend", function (isKeyDown) {
+    controls.right.isDown = false;
+  });
+  $("#up").on("touchstart", function () {
+    controls.up.isDown = true;
+  }).on("touchend", function (isKeyDown) {
+    controls.up.isDown = false;
+  });
+  $("#down").on("touchstart", function () {
+    controls.down.isDown = true;
+  }).on("touchend", function (isKeyDown) {
+    controls.down.isDown = false;
+  });
 
-$("#shoot").on( "touchstart", function() {
-  return player.fireBullet(currentHorizontalDirection, currentVerticalDirection);
-})
+  $("#shoot").on("touchstart", function () {
+    return player.fireBullet(currentHorizontalDirection, currentVerticalDirection);
+  })
 
   //MOVEMENT
-  movePlayer = function() {
+  movePlayer = function () {
     return player.motionUpdate();
   };
 
-  moveEnemies = function() {
+  moveEnemies = function () {
     // Move the enemies towards the player at the rate of the game motion
-    return enemies.forEachAlive(function(enemy) {
+    return enemies.forEachAlive(function (enemy) {
       return enemy.motionUpdate();
     });
   };
 
-  moveBullets = function() {
+  moveBullets = function () {
     // player bullets
-    bullets.forEachAlive(function(bullet) {
+    bullets.forEachAlive(function (bullet) {
       return bullet.motionUpdate();
     });
     // enemy bullets
-    return enemies_bullets.forEachAlive(function(bullet) {
+    return enemies_bullets.forEachAlive(function (bullet) {
       return bullet.motionUpdate();
     });
   };
 
-  
+
   //COLLISION HANDLERS
-  playerEnemyHandler = function(player, enemy) {
+  playerEnemyHandler = function (player, enemy) {
     //you dead. tint the player for a moment and then reset the game
     if (enemy.can_kill) {
       enemy.can_kill = false;
       player.tint = 0xff0000;
-      return game.time.events.add(Phaser.Timer.SECOND * 0.2, function() {
+      return game.time.events.add(Phaser.Timer.SECOND * 0.2, function () {
         return gameOver();
       }, this);
     }
   };
 
-  bulletEnemyHandler = function(bullet, enemy) {
+  bulletEnemyHandler = function (bullet, enemy) {
     enemy.tint = 0x000000;
     bullet.kill();
     enemy.can_kill = false;
     updateScore(score += 1);
-    return game.time.events.add(Phaser.Timer.SECOND * 0.2, function() {
+    return game.time.events.add(Phaser.Timer.SECOND * 0.2, function () {
       return killEnemy(enemy);
     }, this);
   };
 
-  killEnemy = function(enemy) {
+  killEnemy = function (enemy) {
     enemy.kill();
     if (!enemies.getFirstAlive()) {
       return nextLevel();
     }
   };
 
-  
+
   //MANIPULATE TIME
-  speedUpTime = function() {
+  speedUpTime = function () {
     if (motion_timer.delay > min_delay) {
       motion_timer.delay -= 2;
     } else {
@@ -305,7 +305,7 @@ $("#shoot").on( "touchstart", function() {
     return time = motion_timer.delay + speed;
   };
 
-  slowDownTime = function() {
+  slowDownTime = function () {
     if (motion_timer.delay < max_delay) {
       motion_timer.delay += 2;
     } else {
@@ -314,40 +314,40 @@ $("#shoot").on( "touchstart", function() {
     return time = motion_timer.delay - speed;
   };
 
-  
+
   //UPDATE MOTION
-  updateMotion = function() {
+  updateMotion = function () {
     // always keep some motion and factor it by the time
     return motion = (100 - (time * 2)) + speed;
   };
 
-  
+
   //GAME OVER
-  gameOver = function() {
+  gameOver = function () {
     enemies_count = 1;
     updateScore(0);
     resetGame();
     spawnText("GAME");
-    return game.time.events.add(Phaser.Timer.SECOND * 0.5, function() {
+    return game.time.events.add(Phaser.Timer.SECOND * 0.5, function () {
       return spawnText("OVER");
     }, this);
   };
 
-  
+
   //NEXT LEVEL  
-  nextLevel = function() {
+  nextLevel = function () {
     // increase enemies and reset the game
     enemies_count++;
     resetGame();
     spawnText("SUPER");
-    return game.time.events.add(Phaser.Timer.SECOND * 0.5, function() {
+    return game.time.events.add(Phaser.Timer.SECOND * 0.5, function () {
       return spawnText("HOT");
     }, this);
   };
 
-  
+
   //SPAWN TEXT
-  spawnText = function(text = false, lifespan = 0.5) {
+  spawnText = function (text = false, lifespan = 0.5) {
     if (text) {
       text = game.add.text(game.world.centerX, game.world.centerY, text);
       text.anchor.set(0.5);
@@ -355,32 +355,32 @@ $("#shoot").on( "touchstart", function() {
       text.font = 'Orbitron';
       text.fontSize = 150;
       text.fill = '#ff0000';
-      return game.time.events.add(Phaser.Timer.SECOND * lifespan, function() {
+      return game.time.events.add(Phaser.Timer.SECOND * lifespan, function () {
         return text.kill();
       }, this);
     }
   };
 
   //MANAGE SCORE
-  updateScore = function(points) {
+  updateScore = function (points) {
     score = points;
     return score_text.text = score;
   };
 
-  
+
   //MOTION UPDATE LOOP
-  motionUpdate = function() {
+  motionUpdate = function () {
     updateMotion();
     movePlayer();
     moveEnemies();
     return moveBullets();
   };
 
-  
+
   //MAIN GAME UPDATE LOOP
-  update = function() {
+  update = function () {
     checkInput();
-    
+
     // player vs enemies
     game.physics.arcade.overlap(player, enemies, playerEnemyHandler, null, this);
     // enemy fire vs player
@@ -395,7 +395,7 @@ $("#shoot").on( "touchstart", function() {
   // game.physics.arcade.collide(enemies)
 
   //RENDER / DEBUG
-  render = function() {};
+  render = function () { };
 
   //game.debug.text "Move with arrow keys. Shoot with spacebar.", 30, 40
   // game.debug.text "Clock Delay " + motion_timer.delay + " / Time " + time + " / Motion " + motion, 30, 65
@@ -403,7 +403,7 @@ $("#shoot").on( "touchstart", function() {
   //---------------------------------------------------
   // Player CLASS
   //---------------------------------------------------
-  Player = function(game, x, y, sprite) {
+  Player = function (game, x, y, sprite) {
     Phaser.Sprite.call(this, game, x, y, sprite);
     game.physics.arcade.enable(this);
     this.game = game;
@@ -421,7 +421,7 @@ $("#shoot").on( "touchstart", function() {
   Player.prototype.constructor = Player;
 
   //PLAYER MOTION UPDATE LOOP
-  Player.prototype.motionUpdate = function() {
+  Player.prototype.motionUpdate = function () {
     var speed_modifier;
     //player should move slightly faster than enemies
     speed_modifier = speed / 6;
@@ -449,7 +449,7 @@ $("#shoot").on( "touchstart", function() {
     }
   };
 
-  Player.prototype.reposition = function() {
+  Player.prototype.reposition = function () {
     if (this.x < 0) {
       return this.x = game.world.width;
     } else if (this.x > game.world.width) {
@@ -461,7 +461,7 @@ $("#shoot").on( "touchstart", function() {
     }
   };
 
-  Player.prototype.fireBullet = function(h = false, v = false) {
+  Player.prototype.fireBullet = function (h = false, v = false) {
     var bullet;
     if (game.time.now > bullet_time) {
       bullet = bullets.getFirstExists(false);
@@ -475,11 +475,11 @@ $("#shoot").on( "touchstart", function() {
     }
   };
 
-  
+
   //---------------------------------------------------
   // BULLET CLASS
   //---------------------------------------------------
-  Bullet = function(game, x, y, sprite, h = false, v = false /* "up" */) {
+  Bullet = function (game, x, y, sprite, h = false, v = false /* "up" */) {
     Phaser.Sprite.call(this, game, x, y, sprite);
     game.physics.arcade.enable(this);
     this.game = game;
@@ -500,9 +500,9 @@ $("#shoot").on( "touchstart", function() {
   Bullet.prototype.constructor = Bullet;
 
   //BULLET MOTION UPDATE LOOP
-  Bullet.prototype.motionUpdate = function() {
+  Bullet.prototype.motionUpdate = function () {
     var speed_modifier;
-    
+
     //bullets should move faster than characters
     speed_modifier = speed / 2;
     switch (this.h) {
@@ -520,11 +520,11 @@ $("#shoot").on( "touchstart", function() {
     }
   };
 
-  
+
   //---------------------------------------------------
   // ENEMY CLASS
   //---------------------------------------------------
-  Enemy = function(game, x, y, sprite) {
+  Enemy = function (game, x, y, sprite) {
     Phaser.Sprite.call(this, game, x, y, sprite);
     game.physics.arcade.enable(this);
     this.game = game;
@@ -546,9 +546,9 @@ $("#shoot").on( "touchstart", function() {
   Enemy.prototype.constructor = Enemy;
 
   //ENEMY MOTION UPDATE LOOP
-  Enemy.prototype.motionUpdate = function() {
-    
-        // move enemy based on type
+  Enemy.prototype.motionUpdate = function () {
+
+    // move enemy based on type
     switch (this.type) {
       case 1:
         // just move down
@@ -566,20 +566,20 @@ $("#shoot").on( "touchstart", function() {
         //follow the player
         this.game.physics.arcade.moveToObject(this, player, motion);
     }
-    
+
     // shoot to kill!
     if (this.can_shoot) {
       this.fireBullet();
       this.can_shoot = false;
-      
+
       // randomly throttle firing
-      return this.game.time.events.add(Phaser.Timer.SECOND * this.game.rnd.integerInRange(3, 10), function() {
+      return this.game.time.events.add(Phaser.Timer.SECOND * this.game.rnd.integerInRange(3, 10), function () {
         return this.can_shoot = true;
       }, this);
     }
   };
 
-  Enemy.prototype.reposition = function() {
+  Enemy.prototype.reposition = function () {
     if (this.x < 0) {
       return this.x = game.world.width;
     } else if (this.x > game.world.width) {
@@ -591,7 +591,7 @@ $("#shoot").on( "touchstart", function() {
     }
   };
 
-  Enemy.prototype.fireBullet = function() {
+  Enemy.prototype.fireBullet = function () {
     var buffer, bullet, h, v;
     bullet = new Bullet(game, 0, 0, drawShape(10, 10, '#ff0000'));
     enemies_bullets.add(bullet);
@@ -616,7 +616,7 @@ $("#shoot").on( "touchstart", function() {
     return bullet.v = v;
   };
 
-  
+
   //---------------------------------------------------
   // INIT
   //---------------------------------------------------

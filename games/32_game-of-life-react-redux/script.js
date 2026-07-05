@@ -28,7 +28,8 @@ const makeGrid = (height, width, makeRandom = false) => {
       }
       row.push({
         status: value,
-        newBorn: value });
+        newBorn: value
+      });
 
     }
     grid.push(row);
@@ -81,7 +82,8 @@ const advanceGrid = function (grid = []) {
         if (neighbours === 3) {
           row.push({
             status: 1,
-            newBorn: true });
+            newBorn: true
+          });
 
         } else {
           row.push({ status: 0 });
@@ -100,54 +102,61 @@ function toggleAlive(x, y) {
   return {
     type: 'TOGGLE_ALIVE',
     x,
-    y };
+    y
+  };
 
 }
 
 function makeRandomGrid() {
   return {
-    type: 'MAKE_RANDOM' };
+    type: 'MAKE_RANDOM'
+  };
 
 }
 
 function tick() {
   return {
-    type: 'TICK' };
+    type: 'TICK'
+  };
 
 }
 
 function startPlaying(timerId) {
   return {
     type: 'PLAY',
-    timerId };
+    timerId
+  };
 
 }
 
 function stopPlaying(timerId) {
   return {
     type: 'STOP',
-    timerId };
+    timerId
+  };
 
 }
 
 function clear() {
   return {
-    type: 'CLEAR' };
+    type: 'CLEAR'
+  };
 
 }
 
 //COMPONENTS - 'dumb' functional components only receive props.  They don't need to dispatch actions nor to they care about the overall state of the app
 
 const Button = ({ title, icon, handleClick }) => /*#__PURE__*/
-React.createElement("span", { onClick: handleClick, className: "button" }, /*#__PURE__*/
-React.createElement("i", { className: icon }), " ", title);
+  React.createElement("span", { onClick: handleClick, className: "button" }, /*#__PURE__*/
+    React.createElement("i", { className: icon }), " ", title);
 
 
 
 const Cell = ({ alive, newBorn, handleClick }) => /*#__PURE__*/
-React.createElement("td", {
-  onClick: handleClick,
-  className: `${alive ? 'alive' : ''} ${newBorn ? 'new-born' : ''}` });
+  React.createElement("td", {
+    onClick: handleClick,
+    className: `${alive ? 'alive' : ''} ${newBorn ? 'new-born' : ''}`
+  });
 
 
 
@@ -158,22 +167,24 @@ class Board_ extends Component {
   render() {
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
-      React.createElement("table", null, /*#__PURE__*/
-      React.createElement("tbody", null,
-      this.props.board.map((row, i) => /*#__PURE__*/
-      React.createElement("tr", { key: i }, " ", row.map((cell, j) => /*#__PURE__*/
-      React.createElement(Cell, {
-        key: j,
-        alive: cell.status,
-        newBorn: cell.newBorn,
-        handleClick: () => this.props.toggleAlive(i, j) }))))))));
+        React.createElement("table", null, /*#__PURE__*/
+          React.createElement("tbody", null,
+            this.props.board.map((row, i) => /*#__PURE__*/
+              React.createElement("tr", { key: i }, " ", row.map((cell, j) => /*#__PURE__*/
+                React.createElement(Cell, {
+                  key: j,
+                  alive: cell.status,
+                  newBorn: cell.newBorn,
+                  handleClick: () => this.props.toggleAlive(i, j)
+                }))))))));
 
 
 
 
 
 
-  }}
+  }
+}
 
 
 const mapStateToProps_1 = ({ board }) => {
@@ -196,25 +207,29 @@ class Control_ extends Component {
   render() {
     return /*#__PURE__*/(
       React.createElement("div", { className: "controls" }, /*#__PURE__*/
-      React.createElement("div", { className: "buttons" }, /*#__PURE__*/
-      React.createElement(Button, {
-        handleClick: () => this.props.random(),
-        title: 'Randomise',
-        icon: 'fa fa-random' }), /*#__PURE__*/
+        React.createElement("div", { className: "buttons" }, /*#__PURE__*/
+          React.createElement(Button, {
+            handleClick: () => this.props.random(),
+            title: 'Randomise',
+            icon: 'fa fa-random'
+          }), /*#__PURE__*/
 
-      React.createElement(Button, {
-        handleClick: () => this.clear(),
-        title: 'Clear',
-        icon: 'fa fa-undo' }), /*#__PURE__*/
+          React.createElement(Button, {
+            handleClick: () => this.clear(),
+            title: 'Clear',
+            icon: 'fa fa-undo'
+          }), /*#__PURE__*/
 
-      React.createElement("div", { className: "button-group" }, /*#__PURE__*/
-      React.createElement(Button, {
-        icon: this.props.playState.isRunning ? 'fa fa-pause' : 'fa fa-play',
-        handleClick: () => this.togglePlay() }), /*#__PURE__*/
+          React.createElement("div", { className: "button-group" }, /*#__PURE__*/
+            React.createElement(Button, {
+              icon: this.props.playState.isRunning ? 'fa fa-pause' : 'fa fa-play',
+              handleClick: () => this.togglePlay()
+            }), /*#__PURE__*/
 
-      React.createElement(Button, {
-        handleClick: () => this.props.tick(),
-        icon: 'fa fa-step-forward' })))));
+            React.createElement(Button, {
+              handleClick: () => this.props.tick(),
+              icon: 'fa fa-step-forward'
+            })))));
 
 
 
@@ -236,7 +251,8 @@ class Control_ extends Component {
       this.props.stopPlaying();
     }
     this.props.clear();
-  }}
+  }
+}
 
 
 
@@ -250,7 +266,8 @@ const mapDispatchToProps_2 = dispatch => {
     tick: () => dispatch(tick()),
     startPlaying: timerId => dispatch(startPlaying(timerId)),
     stopPlaying: () => dispatch(stopPlaying()),
-    clear: () => dispatch(clear()) };
+    clear: () => dispatch(clear())
+  };
 
 };
 
@@ -262,10 +279,11 @@ class Counter_ extends Component {
   render() {
     return /*#__PURE__*/(
       React.createElement("div", { className: "counter" }, "Generations: ",
-      this.props.generations));
+        this.props.generations));
 
 
-  }}
+  }
+}
 
 
 const mapStateToProps_3 = ({ counter }) => {
@@ -277,11 +295,11 @@ const Counter = connect(mapStateToProps_3)(Counter_);
 //
 
 const App = () => /*#__PURE__*/
-React.createElement("div", null, /*#__PURE__*/
-React.createElement("h1", null, ""), /*#__PURE__*/
-React.createElement(Board, null), /*#__PURE__*/
-React.createElement(Control, null), /*#__PURE__*/
-React.createElement(Counter, null));
+  React.createElement("div", null, /*#__PURE__*/
+    React.createElement("h1", null, ""), /*#__PURE__*/
+    React.createElement(Board, null), /*#__PURE__*/
+    React.createElement(Control, null), /*#__PURE__*/
+    React.createElement(Counter, null));
 
 
 
@@ -304,7 +322,8 @@ const boardReducer = (state = initialGrid, action) => {
     case 'TICK':
       return advanceGrid(state.slice(0));
     default:
-      return state;}
+      return state;
+  }
 
 };
 
@@ -317,13 +336,15 @@ const generationCounterReducer = (state = 0, action) => {
     case 'MAKE_RANDOM':
       return 0;
     default:
-      return state;}
+      return state;
+  }
 
 };
 
 const playInitialState = {
   timerId: null,
-  isRunning: false };
+  isRunning: false
+};
 
 
 const playStatusReducer = (state = playInitialState, action) => {
@@ -331,15 +352,18 @@ const playStatusReducer = (state = playInitialState, action) => {
     case 'PLAY':
       return {
         timerId: action.timerId,
-        isRunning: true };
+        isRunning: true
+      };
 
     case 'STOP':
       return {
         timerId: null,
-        isRuninng: false };
+        isRuninng: false
+      };
 
     default:
-      return state;}
+      return state;
+  }
 
 };
 
@@ -347,14 +371,15 @@ const playStatusReducer = (state = playInitialState, action) => {
 const reducers = combineReducers({
   board: boardReducer,
   playState: playStatusReducer,
-  counter: generationCounterReducer });
+  counter: generationCounterReducer
+});
 
 
 //APPLICATION WRAPPER - wrap the app with the redux store and render to the DOM
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render( /*#__PURE__*/
-React.createElement(Provider, { store: createStoreWithMiddleware(reducers) }, /*#__PURE__*/
-React.createElement(App, null)),
+  React.createElement(Provider, { store: createStoreWithMiddleware(reducers) }, /*#__PURE__*/
+    React.createElement(App, null)),
 
-document.querySelector('.container'));
+  document.querySelector('.container'));

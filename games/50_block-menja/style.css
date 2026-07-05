@@ -50,15 +50,15 @@ body {
 	padding: 0.8em 0.65em;
 }
 
-.pause-btn > div {
+.pause-btn>div {
 	position: relative;
 	width: 0.8em;
 	height: 0.8em;
 	opacity: 0.75;
 }
 
-.pause-btn > div::before,
-.pause-btn > div::after {
+.pause-btn>div::before,
+.pause-btn>div::after {
 	content: '';
 	display: block;
 	width: 34%;
@@ -67,7 +67,7 @@ body {
 	background-color: #fff;
 }
 
-.pause-btn > div::after {
+.pause-btn>div::after {
 	right: 0;
 }
 
@@ -173,7 +173,7 @@ body {
 	opacity: 0.6;
 }
 
-.menus:not(.interactive-mode) .menu.active > * {
+.menus:not(.interactive-mode) .menu.active>* {
 	pointer-events: auto;
 }
 

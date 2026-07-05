@@ -23,8 +23,7 @@ figcaption {
   font-style: italic;
 }
 
-.graph(
-  @height: 560px,
+.graph(@height: 560px,
   @sect-width: 160px,
 
   @stripe-width: 12px,
@@ -40,7 +39,7 @@ figcaption {
   border: 1px solid lightgray;
   height: @height;
 
-  > * {
+  >* {
     width: @sect-width;
     height: 100%;
     float: left;
@@ -53,7 +52,7 @@ figcaption {
     &:last-child {
       border-right: 0 none;
 
-      > [data-point] {
+      >[data-point] {
         width: 0;
         height: 0;
       }
@@ -151,18 +150,14 @@ figcaption {
 }
 
 .downward-stripes(@color, @w) {
-  background: -webkit-repeating-linear-gradient(
-    -40deg,
-    transparent,
-    transparent @w,
-    @color @w,
-    @color (2 * @w)
-  );
-  background: repeating-linear-gradient(
-    -40deg,
-    transparent,
-    transparent @w,
-    @color @w,
-    @color (2 * @w)
-  );
+  background: -webkit-repeating-linear-gradient(-40deg,
+      transparent,
+      transparent @w,
+      @color @w,
+      @color (2 * @w));
+  background: repeating-linear-gradient(-40deg,
+      transparent,
+      transparent @w,
+      @color @w,
+      @color (2 * @w));
 }

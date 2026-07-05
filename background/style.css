@@ -12,18 +12,22 @@ body {
   height: 100%;
   */
 }
+
 /* unvisited link */
 a:link {
   color: powderblue;
 }
+
 /* visited link */
 a:visited {
   color: rebeccapurple;
 }
+
 /* mouse over link */
 a:hover {
   color: mediumpurple;
 }
+
 /* selected link */
 a:active {
   color: mediumaquamarine;
@@ -37,8 +41,7 @@ a:active {
   z-index: 777;
 }
 
-.square-ad {
-}
+.square-ad {}
 
 .square-ad iframe {
   position: absolute;
@@ -51,28 +54,33 @@ a:active {
   .desktop {
     visibility: visible;
   }
+
   .mobile {
     visibility: hidden;
     height: 0px;
     width: 0px;
   }
 }
+
 @media only screen and (max-width: 728px) {
   .desktop {
     visibility: hidden;
     height: 0px;
     width: 0px;
   }
+
   .mobile {
     visibility: visible;
   }
 }
 
-.anim, .anim svg {
+.anim,
+.anim svg {
   position: relative;
   width: 100%;
   height: 100%;
 }
+
 .anim path {
   stroke-width: 2;
 }

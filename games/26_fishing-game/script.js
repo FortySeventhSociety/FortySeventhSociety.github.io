@@ -77,16 +77,16 @@
 
     detectCollision() {
       if (
-      fish.y < this.y && fish.y > this.y - this.height ||
-      fish.y - fish.height < this.y && fish.y - fish.height > this.y - this.height)
-      {
+        fish.y < this.y && fish.y > this.y - this.height ||
+        fish.y - fish.height < this.y && fish.y - fish.height > this.y - this.height) {
         progressBar.fill();
         document.body.classList.add('collision');
       } else {
         progressBar.drain();
         document.body.classList.remove('collision');
       }
-    }}
+    }
+  }
 
 
   // ----
@@ -123,7 +123,8 @@
 
       this.fish.style.transform = `translateY(${this.y}px)`;
       this.randomCountdown -= this.speed;
-    }}
+    }
+  }
 
 
   // ------------
@@ -161,7 +162,8 @@
 
     updateUi() {
       this.progressBar.style.height = `${this.progress}%`;
-    }}
+    }
+  }
 
 
   // -----------
@@ -234,10 +236,10 @@
     TweenMax.set(".perfect", { rotationX: -90 });
 
     const tl = new TimelineMax({ paused: true }).
-    to('.game', 0.2, { opacity: 0 }).
-    to('.success', 0.5, { ease: Power3.easeOut, opacity: 1 }, 'ending').
-    to('.nice-catch', 0.5, { ease: Power3.easeOut, y: 0 }, 'ending').
-    to('.perfect', 3, { ease: Elastic.easeOut.config(1, 0.3), rotationX: 0 }, '+=0.2');
+      to('.game', 0.2, { opacity: 0 }).
+      to('.success', 0.5, { ease: Power3.easeOut, opacity: 1 }, 'ending').
+      to('.nice-catch', 0.5, { ease: Power3.easeOut, y: 0 }, 'ending').
+      to('.perfect', 3, { ease: Elastic.easeOut.config(1, 0.3), rotationX: 0 }, '+=0.2');
 
     return tl;
   }
@@ -291,13 +293,13 @@
       for (let i = this.segments; i >= 0; i--) {
         if (i === this.segments) {
           context.moveTo(
-          Math.sin(this.sin + i) * i / 2.5 + this.xoff,
-          canvas.height + -i * this.segmentSpread);
+            Math.sin(this.sin + i) * i / 2.5 + this.xoff,
+            canvas.height + -i * this.segmentSpread);
 
         } else {
           context.lineTo(
-          Math.sin(this.sin + i) * i / 2.5 + this.xoff,
-          canvas.height + -i * this.segmentSpread);
+            Math.sin(this.sin + i) * i / 2.5 + this.xoff,
+            canvas.height + -i * this.segmentSpread);
 
         }
         // context.arc(Math.sin(this.sin + i) * 10 + 30, this.y + (this.segmentSpread * i), this.radius, 0, 2*Math.PI); 
@@ -305,7 +307,8 @@
       context.stroke();
 
       this.sin += 0.05;
-    }}
+    }
+  }
 
 
   seaweed.push(new Seaweed(6, 8, 25));
@@ -350,9 +353,9 @@
       context.lineWidth = 1.3;
       context.moveTo(canvas.width, 0);
       context.bezierCurveTo(
-      canvas.width, canvas.height / 2 + this.tension,
-      canvas.width / 2, canvas.height + this.tension,
-      0, canvas.height);
+        canvas.width, canvas.height / 2 + this.tension,
+        canvas.width / 2, canvas.height + this.tension,
+        0, canvas.height);
 
       context.stroke();
     }
@@ -363,7 +366,8 @@
       } else {
         if (this.tension < 0) this.tension += 4;
       }
-    }}
+    }
+  }
 
 
   line = new Line();
@@ -428,7 +432,8 @@
           this.childAdded = true;
         }
       }
-    }}
+    }
+  }
 
 
   bubbles[bubblesCreated] = new Bubble();

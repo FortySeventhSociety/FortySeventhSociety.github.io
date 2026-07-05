@@ -72,8 +72,7 @@ Tiles
     background,
     box-shadow,
     opacity,
-    transform
-  ;
+    transform;
   transform: translateZ(0);
   transition-duration: 3000ms;
 }
@@ -108,19 +107,21 @@ Tiles
   border-right: 4px solid transparent;
 }
 
-.tile.left:before { 
+.tile.left:before {
   border-right: 4px inset rgba(255, 255, 255, 0.15);
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
 }
 
-.tile.right:before { 
+.tile.right:before {
   border-left: 4px inset rgba(255, 255, 255, 0.15);
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
 }
 
-@media (max-width: 900px), (max-height: 900px) {
+@media (max-width: 900px),
+(max-height: 900px) {
+
   .tile.up:before,
   .tile.down:before,
   .tile.left:before,
@@ -129,7 +130,9 @@ Tiles
   }
 }
 
-@media (max-width: 500px), (max-height: 500px) {
+@media (max-width: 500px),
+(max-height: 500px) {
+
   .tile.up:before,
   .tile.down:before,
   .tile.left:before,

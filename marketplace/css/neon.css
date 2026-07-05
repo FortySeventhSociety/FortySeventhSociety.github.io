@@ -46,17 +46,21 @@ h3 {
 }
 
 h1 a {
-  color: #ffffff; /* Colore del testo del link: verde scuro */
+  color: #ffffff;
+  /* Colore del testo del link: verde scuro */
   text-decoration: none;
 }
 
 h1 a:hover {
-  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+  text-decoration: underline;
+  /* Sottolinea il link al passaggio del mouse */
 }
 
 h2 a {
-  color: #ffffff; /* Colore del testo del link: bianco */
-  text-decoration: none; /* Rimuove la sottolineatura del link */
+  color: #ffffff;
+  /* Colore del testo del link: bianco */
+  text-decoration: none;
+  /* Rimuove la sottolineatura del link */
 }
 
 a:link {
@@ -72,22 +76,32 @@ a:visited {
   background-image: url("img/neon.jpg");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; /* Assicura che l'immagine copra l'intera area senza ripetersi */
-  color: white; /* Colore del testo */
-  padding: 0px 20px; /* Spazio interno per rendere il contenuto più visibile */
-  text-align: center; /* Allinea il testo al centro */
+  background-size: cover;
+  /* Assicura che l'immagine copra l'intera area senza ripetersi */
+  color: white;
+  /* Colore del testo */
+  padding: 0px 20px;
+  /* Spazio interno per rendere il contenuto più visibile */
+  text-align: center;
+  /* Allinea il testo al centro */
 }
 
 .header-section h1 {
-  font-size: 60px; /* Modifica la dimensione del titolo */
-  margin: 60px 0 0 0; /* Aggiunto margine superiore */
-  font-weight: bold; /* Rende il titolo più spesso */
+  font-size: 60px;
+  /* Modifica la dimensione del titolo */
+  margin: 60px 0 0 0;
+  /* Aggiunto margine superiore */
+  font-weight: bold;
+  /* Rende il titolo più spesso */
 }
 
 .header-section h2 {
-  font-size: 30px; /* Modifica la dimensione del sottotitolo */
-  margin: 10px 0 60px 0; /* Rimuove margine superiore e aggiunge uno spazio tra h1 e h2 */
-  font-weight: normal; /* Modifica lo spessore del testo del sottotitolo */
+  font-size: 30px;
+  /* Modifica la dimensione del sottotitolo */
+  margin: 10px 0 60px 0;
+  /* Rimuove margine superiore e aggiunge uno spazio tra h1 e h2 */
+  font-weight: normal;
+  /* Modifica lo spessore del testo del sottotitolo */
 }
 
 /* Stili per contenitori di tabelle */
@@ -191,13 +205,17 @@ th {
 }
 
 .dataTables_wrapper .dataTables_filter label {
-  margin-bottom: 20px; /* Aggiungi spazio sotto l'etichetta */
-  display: block; /* Assicurati che l'etichetta si comporti come un blocco per il margine inferiore */
+  margin-bottom: 20px;
+  /* Aggiungi spazio sotto l'etichetta */
+  display: block;
+  /* Assicurati che l'etichetta si comporti come un blocco per il margine inferiore */
 }
 
 .dataTables_wrapper .dataTables_length {
-  margin-top: 5px; /* Aggiungi spazio sopra il selettore "Show entries" */
-  margin-bottom: 5px; /* Aggiungi spazio sotto il selettore "Show entries" */
+  margin-top: 5px;
+  /* Aggiungi spazio sopra il selettore "Show entries" */
+  margin-bottom: 5px;
+  /* Aggiungi spazio sotto il selettore "Show entries" */
 }
 
 /* Stili per informazioni e paginazione */
@@ -225,34 +243,46 @@ th {
 }
 
 .dataTables_wrapper.buy .dataTables_length select {
-  border: 1px solid #00ff00; /* Bordo verde */
-  background-color: #000; /* Sfondo nero */
-  color: #00ff00; /* Testo verde */
-  font-family: "Dodec", monospace; /* Font */
-  padding: 4px; /* Spaziatura interna */
+  border: 1px solid #00ff00;
+  /* Bordo verde */
+  background-color: #000;
+  /* Sfondo nero */
+  color: #00ff00;
+  /* Testo verde */
+  font-family: "Dodec", monospace;
+  /* Font */
+  padding: 4px;
+  /* Spaziatura interna */
 }
 
 /* Per le tabelle sell */
 .dataTables_wrapper.sell .dataTables_length select {
-  border: 1px solid #ff3333; /* Bordo rosso */
-  background-color: #000; /* Sfondo nero */
-  color: #ff3333; /* Testo rosso */
-  font-family: "Dodec", monospace; /* Font */
-  padding: 4px; /* Spaziatura interna */
+  border: 1px solid #ff3333;
+  /* Bordo rosso */
+  background-color: #000;
+  /* Sfondo nero */
+  color: #ff3333;
+  /* Testo rosso */
+  font-family: "Dodec", monospace;
+  /* Font */
+  padding: 4px;
+  /* Spaziatura interna */
 }
 
 /* Stili per gli indicatori di ordinamento */
 .sorting:after,
 .sorting_asc:after,
 .sorting_desc:after {
-  content: "\25B4"; /* Default: up arrow */
+  content: "\25B4";
+  /* Default: up arrow */
   font-size: 10px;
   color: #00ff00;
   margin-left: 5px;
 }
 
 .sorting_desc:after {
-  content: "\25BE"; /* Down arrow */
+  content: "\25BE";
+  /* Down arrow */
 }
 
 /* Stili per i gruppi di filtri */
@@ -275,39 +305,54 @@ th {
 */
 
 .filter-group.buy select {
-  border: 1px solid #00ff00; /* Bordo verde per le tabelle buy */
-  background-color: #000; /* Sfondo nero */
-  color: #00ff00; /* Testo verde */
-  font-family: "Dodec", monospace; /* Font */
-  padding: 4px; /* Spaziatura interna */
+  border: 1px solid #00ff00;
+  /* Bordo verde per le tabelle buy */
+  background-color: #000;
+  /* Sfondo nero */
+  color: #00ff00;
+  /* Testo verde */
+  font-family: "Dodec", monospace;
+  /* Font */
+  padding: 4px;
+  /* Spaziatura interna */
 }
 
 /* Imposta il colore delle frecce di ordinamento per tutte le intestazioni delle colonne */
 .dataTables_wrapper th.sorting::after,
 .dataTables_wrapper th.sorting_asc::after,
 .dataTables_wrapper th.sorting_desc::after {
-  color: #ffffff; /* Colore bianco per le frecce di ordinamento */
-  font-size: 14px; /* Dimensione della freccia */
-  margin-left: 5px; /* Spazio tra il testo dell'intestazione e la freccia */
+  color: #ffffff;
+  /* Colore bianco per le frecce di ordinamento */
+  font-size: 14px;
+  /* Dimensione della freccia */
+  margin-left: 5px;
+  /* Spazio tra il testo dell'intestazione e la freccia */
 }
 
 /* Freccia per l'ordinamento crescente */
 .dataTables_wrapper th.sorting_asc::after {
-  content: "\25B4"; /* Freccia verso l'alto (Unicode) */
+  content: "\25B4";
+  /* Freccia verso l'alto (Unicode) */
 }
 
 /* Freccia per l'ordinamento decrescente */
 .dataTables_wrapper th.sorting_desc::after {
-  content: "\25BE"; /* Freccia verso il basso (Unicode) */
+  content: "\25BE";
+  /* Freccia verso il basso (Unicode) */
 }
 
 /* Selettore per i menu a tendina nella tabella sell */
 .filter-group.sell select {
-  border: 1px solid #ff3333; /* Bordo rosso per le tabelle sell */
-  background-color: #000; /* Sfondo nero */
-  color: #ff3333; /* Testo rosso */
-  font-family: "Dodec", monospace; /* Font */
-  padding: 4px; /* Spaziatura interna */
+  border: 1px solid #ff3333;
+  /* Bordo rosso per le tabelle sell */
+  background-color: #000;
+  /* Sfondo nero */
+  color: #ff3333;
+  /* Testo rosso */
+  font-family: "Dodec", monospace;
+  /* Font */
+  padding: 4px;
+  /* Spaziatura interna */
 }
 
 /* Stili per il piè di pagina */
@@ -450,95 +495,127 @@ td img {
 
 /* Personalizzazione delle barre di scorrimento per i contenitori di tabelle */
 .table-section::-webkit-scrollbar {
-  width: 8px; /* Larghezza della scrollbar */
+  width: 8px;
+  /* Larghezza della scrollbar */
 }
 
 /* Sfondo della track della scrollbar per le tabelle 'buy' */
 .table-section::-webkit-scrollbar-track {
-  background: #000; /* Sfondo nero per la track */
-  border: 2px solid #00ff00; /* Bordo verde per la track */
-  border-radius: 0; /* Angoli squadrati per la track */
+  background: #000;
+  /* Sfondo nero per la track */
+  border: 2px solid #00ff00;
+  /* Bordo verde per la track */
+  border-radius: 0;
+  /* Angoli squadrati per la track */
 }
 
 /* Sfondo della track della scrollbar per le tabelle 'sell' */
 .table-section.sell::-webkit-scrollbar-track {
-  border: 2px solid #ff3333; /* Bordo rosso per la track */
+  border: 2px solid #ff3333;
+  /* Bordo rosso per la track */
 }
 
 /* Parte scorrevole della scrollbar per le tabelle 'buy' */
 .table-section::-webkit-scrollbar-thumb {
-  background: #00ff00; /* Colore della parte scorrevole */
-  border-radius: 0; /* Angoli squadrati per il thumb */
-  border: 2px solid #00ff00; /* Bordo verde per il thumb */
-  height: 30px; /* Altezza del thumb */
+  background: #00ff00;
+  /* Colore della parte scorrevole */
+  border-radius: 0;
+  /* Angoli squadrati per il thumb */
+  border: 2px solid #00ff00;
+  /* Bordo verde per il thumb */
+  height: 30px;
+  /* Altezza del thumb */
 }
 
 /* Parte scorrevole della scrollbar per le tabelle 'sell' */
 .table-section.sell::-webkit-scrollbar-thumb {
-  background: #ff3333; /* Colore della parte scorrevole */
-  border: 2px solid #ff3333; /* Bordo rosso per il thumb */
+  background: #ff3333;
+  /* Colore della parte scorrevole */
+  border: 2px solid #ff3333;
+  /* Bordo rosso per il thumb */
 }
 
 /* Bottoni della scrollbar (freccette) */
 .table-section::-webkit-scrollbar-button {
-  background-color: #000; /* Sfondo delle frecce */
-  border: 2px solid #00ff00; /* Bordo verde per le frecce */
-  border-radius: 0; /* Angoli squadrati per le frecce */
+  background-color: #000;
+  /* Sfondo delle frecce */
+  border: 2px solid #00ff00;
+  /* Bordo verde per le frecce */
+  border-radius: 0;
+  /* Angoli squadrati per le frecce */
 }
 
 /* Bottoni della scrollbar per le tabelle 'sell' */
 .table-section.sell::-webkit-scrollbar-button {
-  border: 2px solid #ff3333; /* Bordo rosso per le frecce */
+  border: 2px solid #ff3333;
+  /* Bordo rosso per le frecce */
 }
 
 /* Nascondere i bottoni delle scrollbar se non necessari */
 .table-section::-webkit-scrollbar-button {
-  display: none; /* Nasconde i bottoni */
+  display: none;
+  /* Nasconde i bottoni */
 }
 
 /* Personalizzazione delle barre di scorrimento per i contenitori di tabelle */
 .table-section::-webkit-scrollbar {
-  width: 8px; /* Larghezza della scrollbar */
+  width: 8px;
+  /* Larghezza della scrollbar */
 }
 
 /* Sfondo della track della scrollbar */
 .table-section::-webkit-scrollbar-track {
-  background: #000; /* Sfondo nero per la track */
-  border: 2px solid #00ff00; /* Bordo verde acido per la track (per le tabelle buy) */
-  border-radius: 0; /* Angoli squadrati per la track */
+  background: #000;
+  /* Sfondo nero per la track */
+  border: 2px solid #00ff00;
+  /* Bordo verde acido per la track (per le tabelle buy) */
+  border-radius: 0;
+  /* Angoli squadrati per la track */
 }
 
 .table-section.sell::-webkit-scrollbar-track {
-  border: 2px solid #ff3333; /* Bordo rosso per la track (per le tabelle sell) */
+  border: 2px solid #ff3333;
+  /* Bordo rosso per la track (per le tabelle sell) */
 }
 
 /* Parte scorrevole della scrollbar */
 .table-section::-webkit-scrollbar-thumb {
-  background: #00ff00; /* Colore della parte scorrevole per le tabelle "buy" */
-  border-radius: 0; /* Angoli squadrati per il thumb */
-  border: 2px solid #00ff00; /* Bordo verde acido per il thumb */
-  height: 30px; /* Altezza del thumb per rendere il thumb meno lungo */
+  background: #00ff00;
+  /* Colore della parte scorrevole per le tabelle "buy" */
+  border-radius: 0;
+  /* Angoli squadrati per il thumb */
+  border: 2px solid #00ff00;
+  /* Bordo verde acido per il thumb */
+  height: 30px;
+  /* Altezza del thumb per rendere il thumb meno lungo */
 }
 
 .table-section.sell::-webkit-scrollbar-thumb {
-  background: #ff3333; /* Colore della parte scorrevole per le tabelle "sell" */
-  border: 2px solid #ff3333; /* Bordo rosso per il thumb */
+  background: #ff3333;
+  /* Colore della parte scorrevole per le tabelle "sell" */
+  border: 2px solid #ff3333;
+  /* Bordo rosso per il thumb */
 }
 
 /* Bottoni della scrollbar (freccette) */
 .table-section::-webkit-scrollbar-button {
-  background-color: #000; /* Sfondo delle frecce */
-  border: 2px solid #00ff00; /* Bordo verde acido per le frecce delle tabelle "buy" */
-  border-radius: 0; /* Angoli squadrati per le frecce */
+  background-color: #000;
+  /* Sfondo delle frecce */
+  border: 2px solid #00ff00;
+  /* Bordo verde acido per le frecce delle tabelle "buy" */
+  border-radius: 0;
+  /* Angoli squadrati per le frecce */
 }
 
 .table-section.sell::-webkit-scrollbar-button {
-  border: 2px solid #ff3333; /* Bordo rosso per le frecce delle tabelle "sell" */
+  border: 2px solid #ff3333;
+  /* Bordo rosso per le frecce delle tabelle "sell" */
 }
 
 /* Nascondere i bottoni delle scrollbar se non necessari */
 .table-section::-webkit-scrollbar-button {
-  display: none; /* Nasconde i bottoni per un aspetto più pulito */
+  display: none;
+  /* Nasconde i bottoni per un aspetto più pulito */
 }
 
 .hide {
@@ -550,7 +627,8 @@ td img {
   cursor: pointer;
   margin-bottom: 0px;
   font-size: 14px;
-  height: auto; /* Imposta l'altezza in modo che si adatti al contenuto */
+  height: auto;
+  /* Imposta l'altezza in modo che si adatti al contenuto */
 }
 
 .tab {
@@ -571,11 +649,13 @@ td img {
 
 .tab-content {
   height: 100%;
-  overflow: auto; /* Permetti lo scrolling se il contenuto è più grande */
+  overflow: auto;
+  /* Permetti lo scrolling se il contenuto è più grande */
   display: none;
   padding: 10px;
   background-color: #000000;
-  flex-grow: 1; /* Permette al contenuto di espandersi */
+  flex-grow: 1;
+  /* Permette al contenuto di espandersi */
   border: 2px solid #ffffff;
 }
 
@@ -588,22 +668,30 @@ td img {
 .table-section {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Lascia che l'altezza si adatti al contenitore principale */
-  flex-grow: 1; /* Permetti al contenitore di espandersi */
+  height: 100%;
+  /* Lascia che l'altezza si adatti al contenitore principale */
+  flex-grow: 1;
+  /* Permetti al contenitore di espandersi */
 }
 
 .header {
   position: relative;
-  padding: 0 20px; /* Spaziatura laterale per il contenitore */
+  padding: 0 20px;
+  /* Spaziatura laterale per il contenitore */
 }
 
 @media (max-width: 768px) {
   .menu2 {
-    position: absolute; /* Assicurati che l'elemento non sia assoluto se non necessario */
-    top: 10px; /* Regola la posizione su dispositivi mobili */
-    right: 10px; /* Regola la distanza dal bordo destro su dispositivi mobili */
-    z-index: 1000; /* Assicurati che il menu sia sopra altri elementi se necessario */
-    margin-bottom: 50px; /* Aggiungi spazio sotto il menu */
+    position: absolute;
+    /* Assicurati che l'elemento non sia assoluto se non necessario */
+    top: 10px;
+    /* Regola la posizione su dispositivi mobili */
+    right: 10px;
+    /* Regola la distanza dal bordo destro su dispositivi mobili */
+    z-index: 1000;
+    /* Assicurati che il menu sia sopra altri elementi se necessario */
+    margin-bottom: 50px;
+    /* Aggiungi spazio sotto il menu */
   }
 
   .menu2 span {
@@ -611,14 +699,20 @@ td img {
   }
 
   .header-container h1 {
-    margin-top: 150px; /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
-    font-size: 30px; /* Riduci la dimensione del font per dispositivi mobili */
-    line-height: 1.2; /* Migliora la leggibilità su schermi piccoli */
+    margin-top: 150px;
+    /* Maggiore spazio sopra il titolo per evitare la sovrapposizione */
+    font-size: 30px;
+    /* Riduci la dimensione del font per dispositivi mobili */
+    line-height: 1.2;
+    /* Migliora la leggibilità su schermi piccoli */
   }
 
   .header-container h2 {
-    font-size: 20px; /* Riduci la dimensione del font per h2 sui dispositivi mobili */
-    margin-top: 10px; /* Spazio sopra l'h2 */
-    margin-bottom: 0px; /* Spazio sotto l'h2 */
+    font-size: 20px;
+    /* Riduci la dimensione del font per h2 sui dispositivi mobili */
+    margin-top: 10px;
+    /* Spazio sopra l'h2 */
+    margin-bottom: 0px;
+    /* Spazio sotto l'h2 */
   }
 }

@@ -96,7 +96,7 @@ function aim(e) {
 		attr: {
 			d: "M100,250c" + offset.x + "," + offset.y + "," + (arcWidth - offset.x) + "," + (offset.y + 50) + "," + arcWidth + ",50"
 		},
-			autoAlpha: distance/60
+		autoAlpha: distance / 60
 	});
 
 }
@@ -125,7 +125,7 @@ function loose() {
 	var newArrow = document.createElementNS("http://www.w3.org/2000/svg", "use");
 	newArrow.setAttributeNS('http://www.w3.org/1999/xlink', 'href', "#arrow");
 	arrows.appendChild(newArrow);
-	
+
 	// animate arrow along path
 	var path = MorphSVGPlugin.pathDataToBezier("#arc");
 	TweenMax.to([newArrow], 0.5, {

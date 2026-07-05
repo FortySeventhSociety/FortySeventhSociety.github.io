@@ -4,20 +4,20 @@
 const DEV_MODE = false;
 
 const stage = document.createElement('canvas'),
-ctx = stage.getContext('2d'),
-dialogue = document.querySelector('.dialogue'),
-startBtn = dialogue.querySelector('button'),
-hud = document.querySelector('.hud'),
-scoreNode = hud.querySelector('.hud__score span');
+  ctx = stage.getContext('2d'),
+  dialogue = document.querySelector('.dialogue'),
+  startBtn = dialogue.querySelector('button'),
+  hud = document.querySelector('.hud'),
+  scoreNode = hud.querySelector('.hud__score span');
 
-let ship,lasers = [],enemies = [],
-playing = false,
-gameStarted = false,
-speedMultiplier,
-enemySeedFrameInterval,
-score = 0,
-tick = 0,
-laserTick = 0;
+let ship, lasers = [], enemies = [],
+  playing = false,
+  gameStarted = false,
+  speedMultiplier,
+  enemySeedFrameInterval,
+  score = 0,
+  tick = 0,
+  laserTick = 0;
 
 function randomBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -67,8 +67,8 @@ Ship.prototype.draw = function () {
 
 Ship.prototype.onKeyDown = function (e) {
   if (ship.active) {
-    if (e.keyCode === 39) this.right = true;else
-    if (e.keyCode === 37) this.left = true;
+    if (e.keyCode === 39) this.right = true; else
+      if (e.keyCode === 37) this.left = true;
 
     if (e.keyCode == 32 && !this.shooting) {
       this.shooting = true;
@@ -78,9 +78,9 @@ Ship.prototype.onKeyDown = function (e) {
 };
 
 Ship.prototype.onKeyUp = function (e) {
-  if (e.key === 'ArrowRight') this.right = false;else
-  if (e.key === 'ArrowLeft') this.left = false;else
-  if (e.keyCode == 32) this.shooting = false;
+  if (e.key === 'ArrowRight') this.right = false; else
+    if (e.key === 'ArrowLeft') this.left = false; else
+      if (e.keyCode == 32) this.shooting = false;
 };
 
 function Laser(options) {
@@ -141,11 +141,10 @@ Enemy.prototype.draw = function () {
 function hitTest(item1, item2) {
   let collision = true;
   if (
-  item1.x > item2.x + item2.width ||
-  item1.y > item2.y + item2.height ||
-  item2.x > item1.x + item1.width ||
-  item2.y > item1.y + item1.height)
-  {
+    item1.x > item2.x + item2.width ||
+    item1.y > item2.y + item2.height ||
+    item2.x > item1.x + item1.width ||
+    item2.y > item1.y + item1.height) {
     collision = false;
   }
   return collision;
@@ -262,16 +261,16 @@ function render(delta) {
 
     // ship movement
     if (ship.left)
-    xPos = ship.x -= ship.speed;else
-    if (ship.right)
-    xPos = ship.x += ship.speed;
+      xPos = ship.x -= ship.speed; else
+      if (ship.right)
+        xPos = ship.x += ship.speed;
 
     // stage boundaries
     if (gameStarted) {
       if (xPos < 0)
-      xPos = 0;else
-      if (xPos > stage.width - ship.width)
-      xPos = stage.width - ship.width;
+        xPos = 0; else
+        if (xPos > stage.width - ship.width)
+          xPos = stage.width - ship.width;
     }
 
     // create lasers, if shooting
@@ -279,7 +278,8 @@ function render(delta) {
       if (laserTick === 0 || laserTick % 10 === 0) {
         let laser = new Laser({
           color: 'skyblue',
-          x: ship.x + ship.radius - 3 });
+          x: ship.x + ship.radius - 3
+        });
 
         lasers.push(laser);
       }
@@ -334,7 +334,7 @@ ship = new Ship({ color: '#ff9d00', x: -100, y: -100 });
 
 // set up some ridiculous enemy speeds for the intro:
 speedMultiplier = 6,
-enemySeedFrameInterval = 20;
+  enemySeedFrameInterval = 20;
 
 playing = true;
 render();

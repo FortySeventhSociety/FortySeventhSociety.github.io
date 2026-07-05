@@ -1,11 +1,11 @@
-  gsap.registerPlugin(MorphSVGPlugin);
+gsap.registerPlugin(MorphSVGPlugin);
 
-  var xmlns = "https://www.w3.org/2000/svg",
+var xmlns = "https://www.w3.org/2000/svg",
   xlinkns = "https://www.w3.org/1999/xlink",
-  select = function(s) {
+  select = function (s) {
     return document.querySelector(s);
   },
-  selectAll = function(s) {
+  selectAll = function (s) {
     return document.querySelectorAll(ds);
   },
   mainSVG = select('.mainSVG'),
@@ -102,7 +102,7 @@ function graphPress() {
       y1: box._gsTransform.y + 20,
       y2: graphDot._gsTransform.y
     },
-    onComplete: function() {
+    onComplete: function () {
       //TweenMax.ticker.addEventListener('tick', connectLine);
       TweenMax.to(box, 0.8, {
         scale: 1,
@@ -146,17 +146,17 @@ var introTl = new TimelineMax({
   delay: 1
 });
 introTl.staggerFrom('#horizontalLinesGroup line', 1, {
-    drawSVG: '100% 100%',
-    alpha: 1,
-    //scaleX:-1,
-    transformOrigin: '0% 100%'
-  }, 0.1)
+  drawSVG: '100% 100%',
+  alpha: 1,
+  //scaleX:-1,
+  transformOrigin: '0% 100%'
+}, 0.1)
   .staggerFrom('#graphTextGroup text', 1, {
 
     alpha: 0
   }, 0.1, '-=0.5')
 
-.from([graphDot, dragger], 0.71, {
+  .from([graphDot, dragger], 0.71, {
     attr: {
       r: 0
     },
@@ -208,13 +208,13 @@ function init() {
       minX: 0,
       maxX: 770
     },
-    zIndexBoost:false,
+    zIndexBoost: false,
     onDrag: updateTimeline,
     onRelease: graphRelease,
-    
+
     //throwProps:true,
     onThrowUpdate: updateTimeline
-      //snap:[0,200, 400, 700, 770]
+    //snap:[0,200, 400, 700, 770]
   })
   TweenMax.ticker.addEventListener('tick', connectLine);
   graphRelease();

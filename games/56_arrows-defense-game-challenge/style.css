@@ -1,9 +1,15 @@
 /*/ D474designs | JOCV-III ///////
 // All Rights Reserved //////*/
 
-body {background:#000000;margin:0;padding:0}
+body {
+	background: #000000;
+	margin: 0;
+	padding: 0
+}
 
-canvas {background:#ecf0f1;}
+canvas {
+	background: #ecf0f1;
+}
 
 .backgroundText {
 	position: absolute;
@@ -16,28 +22,33 @@ canvas {background:#ecf0f1;}
 	cursor: pointer;
 	visibility: visible;
 }
+
 /* Unvisited links */
 .backgroundText:link {
-  color: red;
+	color: red;
 }
+
 /* Visited links */
 .backgroundText:visited {
-  color: deepskyblue;
-  visibility: hidden;
+	color: deepskyblue;
+	visibility: hidden;
 }
+
 /* Hovered links */
 .backgroundText:hover {
-  background: yellow;
+	background: yellow;
 }
+
 /* Active links */
 .backgroundText:active {
-  color: red;
+	color: red;
 }
 
 /* Active paragraphs */
 .backgroundText:active {
-  background: #eee;
+	background: #eee;
 }
+
 .switch2 {
 	text-shadow: 0px 0px 2px white;
 }

@@ -5,6 +5,7 @@
   font-stretch: normal;
   src: url(https://fonts.gstatic.com/s/cabin/v34/u-4V0qWljRw-Pd815fNqc8T_wAFcX-c37MPiNYlWniJ2hJXHx_KVxUbq.ttf) format('truetype');
 }
+
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
@@ -12,6 +13,7 @@
   font-stretch: normal;
   src: url(https://fonts.gstatic.com/s/cabin/v34/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7alwg.ttf) format('truetype');
 }
+
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
@@ -19,17 +21,20 @@
   font-stretch: normal;
   src: url(https://fonts.gstatic.com/s/cabin/v34/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alwg.ttf) format('truetype');
 }
+
 html,
 body,
 main {
   font: 19px Cabin;
   height: 100%;
 }
+
 figure {
   position: absolute;
   top: 0;
   bottom: 0;
 }
+
 [graph] {
   overflow: hidden;
   display: inline-block;
@@ -37,7 +42,8 @@ figure {
   border: 1px solid lightgray;
   height: 90%;
 }
-[graph] > * {
+
+[graph]>* {
   width: 160px;
   height: 100%;
   float: left;
@@ -46,25 +52,31 @@ figure {
   border-right: 1px solid lightgray;
   text-align: center;
 }
-[graph] > *:last-child {
+
+[graph]>*:last-child {
   border-right: 0 none;
 }
-[graph] > *:last-child > [data-point] {
+
+[graph]>*:last-child>[data-point] {
   width: 0;
   height: 0;
 }
-[graph] > *:hover {
+
+[graph]>*:hover {
   font-weight: bold;
   background: -webkit-repeating-linear-gradient(-40deg, transparent, transparent 12px, rgba(204, 231, 240, 0.3) 12px, rgba(204, 231, 240, 0.3) 24px);
   background: repeating-linear-gradient(-40deg, transparent, transparent 12px, rgba(204, 231, 240, 0.3) 12px, rgba(204, 231, 240, 0.3) 24px);
 }
-[graph] > *:hover [data-point]:before {
+
+[graph]>*:hover [data-point]:before {
   box-shadow: 0 0 5px 2px lightblue;
 }
-[graph] > *:hover[title]:after {
+
+[graph]>*:hover[title]:after {
   content: attr(title);
 }
-[graph] > *:after {
+
+[graph]>*:after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -73,6 +85,7 @@ figure {
   border-top: 1px solid lightgray;
   background: white;
 }
+
 [graph] [data-point] {
   position: absolute;
   top: 50%;
@@ -90,6 +103,7 @@ figure {
   transition: all 0.25s ease-in;
   -webkit-backface-visibility: hidden;
 }
+
 [graph] [data-point]:before {
   content: '';
   position: absolute;
@@ -105,6 +119,7 @@ figure {
   -moz-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
+
 [graph] [data-point]:after {
   content: '';
   position: absolute;
@@ -116,6 +131,7 @@ figure {
   background: -webkit-linear-gradient(220deg, #812d84, #cf79d1);
   background: linear-gradient(220deg, #812d84, #cf79d1);
 }
+
 figcaption {
   padding: 12px;
   font-style: italic;

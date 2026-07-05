@@ -23,16 +23,17 @@ class GenNumber extends React.Component {
   render() {
     return /*#__PURE__*/(
       React.createElement("div", { className: "app__gen-number" }, /*#__PURE__*/
-      React.createElement("div", { className: "app__info" }, /*#__PURE__*/
-      React.createElement("p", { className: "app__level" }, "Level: ", this.props.level.main, " - ", this.props.level.sub), /*#__PURE__*/
-      React.createElement("p", { className: "app__wrong" }, "Wrong: ", this.props.wrong, "/3")), /*#__PURE__*/
+        React.createElement("div", { className: "app__info" }, /*#__PURE__*/
+          React.createElement("p", { className: "app__level" }, "Level: ", this.props.level.main, " - ", this.props.level.sub), /*#__PURE__*/
+          React.createElement("p", { className: "app__wrong" }, "Wrong: ", this.props.wrong, "/3")), /*#__PURE__*/
 
-      React.createElement("p", { className: "app__divider" }, "############################"), /*#__PURE__*/
-      React.createElement("p", { className: "app__number", id: "number" }, this.props.wrong < 3 ? atob(this.props.question) : '????'), /*#__PURE__*/
-      React.createElement("p", { className: "app__divider" }, "############################")));
+        React.createElement("p", { className: "app__divider" }, "############################"), /*#__PURE__*/
+        React.createElement("p", { className: "app__number", id: "number" }, this.props.wrong < 3 ? atob(this.props.question) : '????'), /*#__PURE__*/
+        React.createElement("p", { className: "app__divider" }, "############################")));
 
 
-  }}
+  }
+}
 
 
 class InputNumber extends React.Component {
@@ -54,27 +55,29 @@ class InputNumber extends React.Component {
     let layout;
     if (this.props.wrong < 3) {
       layout = /*#__PURE__*/React.createElement("div", { className: "app__input" }, /*#__PURE__*/
-      React.createElement("form", { onSubmit: this.handleUserInput }, "Number is:", /*#__PURE__*/
+        React.createElement("form", { onSubmit: this.handleUserInput }, "Number is:", /*#__PURE__*/
 
-      React.createElement("input", {
-        pattern: "[0-9]+",
-        type: "text",
-        ref: ref => this.userNumber = ref,
-        required: true,
-        autoFocus: true }), /*#__PURE__*/
-      React.createElement("br", null), /*#__PURE__*/
-      React.createElement("br", null)), /*#__PURE__*/
+          React.createElement("input", {
+            pattern: "[0-9]+",
+            type: "text",
+            ref: ref => this.userNumber = ref,
+            required: true,
+            autoFocus: true
+          }), /*#__PURE__*/
+          React.createElement("br", null), /*#__PURE__*/
+          React.createElement("br", null)), /*#__PURE__*/
 
-      React.createElement("button", { onClick: this.handleReset }, "Restart"));
+        React.createElement("button", { onClick: this.handleReset }, "Restart"));
 
     } else {
       layout = /*#__PURE__*/React.createElement("div", { className: "app__end" }, /*#__PURE__*/
-      React.createElement("div", { class: "app__notify" }, "Better luck next time (\u2727\u03C9\u2727)"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("button", { onClick: this.handleReset }, "Restart"));
+        React.createElement("div", { class: "app__notify" }, "Better luck next time (\u2727\u03C9\u2727)"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("button", { onClick: this.handleReset }, "Restart"));
 
     }
 
     return layout;
-  }}
+  }
+}
 
 
 class App extends React.Component {
@@ -86,37 +89,39 @@ class App extends React.Component {
     this.state = {
       question: btoa(this.randomGenerate(2)),
       level: { main: 1, sub: 1 },
-      wrong: 0 };
+      wrong: 0
+    };
 
   }
   resetState() {
     this.setState({
       question: btoa(this.randomGenerate(2)),
       level: { main: 1, sub: 1 },
-      wrong: 0 });
+      wrong: 0
+    });
 
   }
   randomGenerate(digit) {
     let max = Math.pow(10, digit) - 1,
-    min = Math.pow(10, digit - 1);
+      min = Math.pow(10, digit - 1);
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   compareUserInput(userNumber) {
     let currQuestion = this.state.question,
-    mainLevel = this.state.level.main,
-    subLevel = this.state.level.sub,
-    wrong = this.state.wrong,
-    digit;
+      mainLevel = this.state.level.main,
+      subLevel = this.state.level.sub,
+      wrong = this.state.wrong,
+      digit;
 
     if (userNumber == currQuestion) {
       if (subLevel < 3) {
         ++subLevel;
       } else
-      if (subLevel == 3) {
-        ++mainLevel;
-        subLevel = 1;
-      }
+        if (subLevel == 3) {
+          ++mainLevel;
+          subLevel = 1;
+        }
     } else {
       ++wrong;
     }
@@ -125,25 +130,29 @@ class App extends React.Component {
     this.setState({
       question: btoa(this.randomGenerate(digit)),
       level: { main: mainLevel, sub: subLevel },
-      wrong: wrong });
+      wrong: wrong
+    });
 
   }
   render() {
     return /*#__PURE__*/(
       React.createElement("div", { className: "main__app" }, /*#__PURE__*/
-      React.createElement(GenNumber, {
-        question: this.state.question,
-        level: this.state.level,
-        wrong: this.state.wrong }), /*#__PURE__*/
-      React.createElement(InputNumber, {
-        compareUserInput: this.compareUserInput,
-        wrong: this.state.wrong,
-        onReset: this.resetState })));
+        React.createElement(GenNumber, {
+          question: this.state.question,
+          level: this.state.level,
+          wrong: this.state.wrong
+        }), /*#__PURE__*/
+        React.createElement(InputNumber, {
+          compareUserInput: this.compareUserInput,
+          wrong: this.state.wrong,
+          onReset: this.resetState
+        })));
 
 
-  }}
+  }
+}
 
 
 ReactDOM.render( /*#__PURE__*/
-React.createElement(App, null),
-document.getElementById('app'));
+  React.createElement(App, null),
+  document.getElementById('app'));

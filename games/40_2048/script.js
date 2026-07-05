@@ -132,13 +132,14 @@ function generateNewNumber() {
 function addRandomNumber() {
   // Adds either a 2 or a 4 to an empty position in the game array
   const emptyCells = game.map((_, index) => index).
-  filter(index => game[index] === null);
-  if (emptyCells.length === 0) {return;}
+    filter(index => game[index] === null);
+  if (emptyCells.length === 0) { return; }
   const newPos = emptyCells[Math.floor(Math.random() * emptyCells.length)];
   const newObj = {
     id: nextId++,
     index: newPos,
-    value: generateNewNumber() };
+    value: generateNewNumber()
+  };
 
   game.splice(newPos, 1, newObj);
 }
@@ -217,7 +218,8 @@ function shiftGameLeft(gameGrid) {
         filteredRow[j] = {
           id: nextId++,
           mergedIds: [filteredRow[j].id, filteredRow[j + 1].id],
-          value: sum };
+          value: sum
+        };
 
         filteredRow.splice(j + 1, 1);
         score += sum;
@@ -311,7 +313,8 @@ function handleTouchMove(evt) {
     if (tile) {
       return {
         ...tile,
-        index };
+        index
+      };
 
     } else {
       return null;
@@ -350,13 +353,15 @@ function handleKeypress(evt) {
         break;
       case 40:
         game = shiftGameDown(game);
-        break;}
+        break;
+    }
 
     game = game.map((tile, index) => {
       if (tile) {
         return {
           ...tile,
-          index };
+          index
+        };
 
       } else {
         return null;

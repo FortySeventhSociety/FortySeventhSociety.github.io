@@ -12,9 +12,9 @@ body {
   overflow: hidden;
   font-family: "Lato", sans-serif;
   background-color: #4d394b;
-background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1));
--webkit-background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1));
--moz-background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1));
+  background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1));
+  -webkit-background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1));
+  -moz-background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1));
 }
 
 .sudoku-container {
@@ -23,6 +23,7 @@ background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1))
   position: relative;
   padding: 0 2px;
 }
+
 .sudoku-container::before,
 .sudoku-container::after {
   position: absolute;
@@ -30,6 +31,7 @@ background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1))
   pointer-events: none;
   content: "";
 }
+
 .sudoku-container::before {
   width: 156px;
   border-width: 0 4px;
@@ -38,6 +40,7 @@ background: radial-gradient(circle, rgba(74, 74, 74, 1), rgba(255, 255, 255, 1))
   left: 160px;
   bottom: 4px;
 }
+
 .sudoku-container::after {
   height: 156px;
   border-width: 4px 0;
@@ -67,18 +70,22 @@ tr:nth-child(6) input {
   background-color: #2e222d;
   color: #eee;
 }
+
 .sudoku-container input:focus {
   border-color: #4c9689;
 }
+
 .sudoku-container input.highlight {
   background-color: #29b6f6;
   border-color: #29b6f6;
 }
+
 .sudoku-container input.disabled {
   cursor: not-allowed;
   background-color: #4c9689;
   border-color: #4c9689;
 }
+
 .sudoku-container input.disabled.highlight {
   background-color: #29b6f6;
   border-color: #29b6f6;
@@ -87,6 +94,7 @@ tr:nth-child(6) input {
 .sudoku-container .invalid {
   border-color: #e74c3c;
 }
+
 .sudoku-container .invalid:focus {
   border-color: #e74c3c;
 }

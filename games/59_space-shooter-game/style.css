@@ -1,7 +1,8 @@
 /*/ D474designs | JOCV-III ///////
 // All Rights Reserved //////*/
 
-.key, button {
+.key,
+button {
   border: 1px solid currentColor;
   border-radius: 5px;
   display: inline-block;
@@ -46,7 +47,9 @@ button {
   text-transform: uppercase;
   transition: color 0.2s linear, background-color 0.2s linear;
 }
-button:focus, button:hover {
+
+button:focus,
+button:hover {
   background-color: black;
   color: #ff9d00;
   transition-duration: 0.07s;

@@ -17,60 +17,57 @@ const maxGuesses = 6;
 function Tile() {
   const element = document.createElement('div');
   element.classList.add('tile-container');
-  
+
   const tile = document.createElement('div');
   tile.classList.add('tile');
   element.appendChild(tile)
-  
+
   let value = ''
   let state = 'tbd'
-  
+
   function get() {
     return value;
   }
-  
+
   function set(letter) {
     tile.innerHTML = letter
     value = letter
   }
-  
-  function clear (letter) {
+
+  function clear(letter) {
     tile.innerHTML = '';
     value = '';
-    tile.classList.remove('correct','oop','wrong');
+    tile.classList.remove('correct', 'oop', 'wrong');
   }
-  
+
   const stateActions = {
     'correct': setCorrect,
     'oop': setOutOfPlace,
     'wrong': setWrong
   }
-  
-  function setCorrect() 
-  {
+
+  function setCorrect() {
     tile.classList.add('correct');
   }
-  
-  function setOutOfPlace() 
-  {
+
+  function setOutOfPlace() {
     tile.classList.add('oop');
   }
-  
-  function setWrong() 
-  {
+
+  function setWrong() {
     tile.classList.add('wrong');
   }
-  
+
   function setState(newState) {
     state = newState
-    if(stateActions[state])
-       stateActions[state]();
+    if (stateActions[state])
+      stateActions[state]();
   }
-  
+
   function getState() {
     return state
   }
-  
+
   return {
     element,
     get,
@@ -85,41 +82,41 @@ function createGuessRow() {
   // Create container
   const element = document.createElement('div');
   element.classList.add('guess');
-  
+
   let idx = 0
 
   // Add tiles
   let tiles = [];
   let i = 0;
-  for(;i<wordLength;i++) {
+  for (; i < wordLength; i++) {
     const tile = Tile();
     element.appendChild(tile.element);
     tiles.push(tile);
   }
-  
+
   function appendLetter(letter) {
-    if(idx >= wordLength) return
+    if (idx >= wordLength) return
     tiles[idx].set(letter)
     idx++
   }
-  
+
   function deleteLetter() {
-    if(idx <= 0) return
+    if (idx <= 0) return
     idx--
     tiles[idx].clear()
   }
-  
+
   function getWord() {
     return tiles.reduce((prevValue, curTile) => {
       return prevValue += curTile.get()
     }, '')
   }
-  
+
   function clear() {
     tiles.forEach(tile => tile.clear())
     idx = 0
   }
-  
+
   return {
     element,
     tiles,
@@ -134,20 +131,20 @@ function createGameBoard() {
   // Create container
   const element = document.createElement('div')
   element.classList.add('board')
-  
+
   // Add rows
   let guesses = [];
   let i = 0;
-  for(;i<maxGuesses;i++) {
+  for (; i < maxGuesses; i++) {
     const guess = createGuessRow();
     element.appendChild(guess.element);
     guesses.push(guess);
   }
-  
+
   function clear() {
     guesses.forEach(guess => guess.clear())
   }
-  
+
   return {
     element,
     guesses,
@@ -156,58 +153,55 @@ function createGameBoard() {
 }
 
 // Keyboard
-const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-const keyboardLayout = [['q','w','e','r','t','y','u','i','o','p'],['a','s','d','f','g','h','j','k','l'],['enter','z','x','c','v','b','n','m','delete']]
+const keyboardLayout = [['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], ['enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'delete']]
 
 function createKey(letter, onClick) {
   const element = document.createElement('button');
   element.classList.add('key');
   element.dataset.value = letter
   element.innerHTML = letter.toUpperCase();
-  
+
   element.addEventListener('click', onClick)
   let state = 'tbd'
-  
+
   const stateActions = {
     'correct': setCorrect,
     'oop': setOutOfPlace,
     'wrong': setWrong
   }
-  
-  function setCorrect() 
-  {
+
+  function setCorrect() {
     clear()
     element.classList.add('correct');
   }
-  
-  function setOutOfPlace() 
-  {
+
+  function setOutOfPlace() {
     clear()
     element.classList.add('oop');
   }
-  
-  function setWrong() 
-  {
+
+  function setWrong() {
     clear()
     element.classList.add('wrong');
   }
-  
+
   function setState(newState) {
     state = newState
-    
-    if(stateActions[state])
+
+    if (stateActions[state])
       stateActions[state]()
   }
-  
+
   function getState() {
     return state
   }
-  
+
   function clear() {
     element.classList.remove('correct', 'oop', 'wrong');
   }
-  
+
   return {
     letter,
     element,
@@ -220,15 +214,15 @@ function createKey(letter, onClick) {
 function createKeyboardRow(row, onClick) {
   const element = document.createElement('div')
   element.classList.add('keyboard-row')
-  
+
   const keys = {}
   row.forEach(letter => {
     const key = createKey(letter, onClick);
     keys[letter] = key;
     element.appendChild(key.element);
   })
-  
-  return { 
+
+  return {
     element,
     keys
   }
@@ -237,34 +231,34 @@ function createKeyboardRow(row, onClick) {
 function createKeyboad() {
   const element = document.createElement('div')
   element.classList.add('keyboard')
-  
+
   const keyMap = {}
   keyboardLayout.forEach(keyRow => {
     const row = createKeyboardRow(keyRow, handleClick)
     element.appendChild(row.element)
     Object.assign(keyMap, row.keys)
   })
-  
+
   let callback;
-  
+
   function handleClick(value) {
-    if(!callback) return;
+    if (!callback) return;
     callback(value.srcElement)
   }
-  
+
   function addClickCallback(fn) {
-  if(!(fn && typeof fn === 'function')) return
+    if (!(fn && typeof fn === 'function')) return
     callback = fn
   }
-  
+
   function removeClickCallback() {
     callback = undefined
   }
-  
+
   function clear() {
     Object.keys(keyMap).forEach(key => keyMap[key].clear())
   }
-  
+
   return {
     element,
     keyMap,
@@ -286,36 +280,36 @@ const gameEl = document.getElementById('game')
 function MessageDisplay() {
   const element = document.createElement('div');
   element.classList.add('message', 'hide');
-  
+
   const text = document.createElement('h4');
   text.classList.add('text');
   text.innerHTML = 'MESSAGE TEST'
-  
+
   element.appendChild(text);
-  
+
   let isVisible = false;
   const duration = 1000;
-  
+
   function show(value) {
-    if(isVisible) return;
-    
-    if(!(value && typeof value === 'string')) return;
-       
+    if (isVisible) return;
+
+    if (!(value && typeof value === 'string')) return;
+
     text.innerHTML = value;
-    
+
     element.classList.remove('hide');
     element.classList.add('show');
     isVisible = true;
-    
+
     setTimeout(hide, duration);
   }
-  
+
   function hide() {
     element.classList.remove('show');
     element.classList.add('hide');
     isVisible = false;
   }
-  
+
   return {
     element,
     show
@@ -327,148 +321,148 @@ function Game() {
   let curGuessIndex = 0;
   let curGuessLetterIndex = 0;
   let curGuessWord = ''
-  
+
   // Create Game Board
   const gameBoard = createGameBoard();
 
   function GuessIterator() {
     const guesses = gameBoard.guesses
-    const maxIdx = guesses.length-1
+    const maxIdx = guesses.length - 1
     let idx = -1
     let guess = guesses[idx]
     return {
-      next: function() {
-        if (idx >= maxIdx) return { 
+      next: function () {
+        if (idx >= maxIdx) return {
           value: undefined,
           done: true
         }
 
         idx++
         guess = guesses[idx]
-        return { 
+        return {
           value: guess,
           done: false
         }
       }
     }
   }
-  
+
   let guessItr, guess, gameRunning = false;
-  
+
   let matchWord = ''
   function setMatchWord() {
     matchWord = getRandomWord()
   }
-  
+
   // Render
   const container = document.getElementById('game-container');
   container.appendChild(gameBoard.element);
-  
+
   const message = MessageDisplay()
   container.appendChild(message.element)
 
-  function appendGuessEntry(letter) {    
-    if(!guess.value) return
-      
-    if(!(letter && typeof letter === 'string')) return;
+  function appendGuessEntry(letter) {
+    if (!guess.value) return
+
+    if (!(letter && typeof letter === 'string')) return;
 
     guess.value.appendLetter(letter)
   }
 
   function deleteGuessEntry() {
-    if(!guess.value) return
+    if (!guess.value) return
     guess.value.deleteLetter()
   }
 
   function submitGuess() {
     const word = guess.value.getWord();
-    
-    if(word.length !== wordLength) {
+
+    if (word.length !== wordLength) {
       handleShortWord();
       return
     }
-    
-    if(!(wordDict.includes(word) || matchDict.includes(word))) {
+
+    if (!(wordDict.includes(word) || matchDict.includes(word))) {
       handleInvalidWord();
-      return ;
-    }
-    
-    const correctGuess = evaluateTiles()
-    
-    if(!correctGuess) {
-      guess = guessItr.next();
-      
-       if(guess.done === true)
-         message.show(matchWord.toUpperCase())
-      
       return;
     }
-    
+
+    const correctGuess = evaluateTiles()
+
+    if (!correctGuess) {
+      guess = guessItr.next();
+
+      if (guess.done === true)
+        message.show(matchWord.toUpperCase())
+
+      return;
+    }
+
     handleCorrectGuess();
     endGame();
   }
-  
+
   function evaluateTiles() {
     let matchLetters = [...matchWord],
-        unmatchedLetters,
-        matchLetter,
-        tileValue,
-        unmatched,
-        correctLetters = 0
-    
+      unmatchedLetters,
+      matchLetter,
+      tileValue,
+      unmatched,
+      correctLetters = 0
+
     unmatchedLetters = matchLetters.reduce((obj, letter) => {
-      if(obj[letter]) {
+      if (obj[letter]) {
         obj[letter]++;
         return obj;
       }
-      
+
       obj[letter] = 1;
       return obj;
     }, {})
-    
+
     // Step through the tiles
     const tilesToReEvaluate = []
     guess.value.tiles.forEach((tile, idx) => {
-        tileValue = tile.get();
-        // Letter at the same index in the match word
-        matchLetter = matchLetters[idx];
-      
-        // Is it a match?
-        if(tileValue === matchLetter) {
-          tile.setState('correct');
-          updateKeyboard(tileValue, 'correct');
-          unmatchedLetters[tileValue]--;
-          correctLetters++;
-          return;
-        }
-      
-        tilesToReEvaluate.push(tile)
-    })
-    
-    tilesToReEvaluate.forEach((tile, idx) => {
-        tileValue = tile.get();
-      
-        // Letter at the same index in the match word
-        matchLetter = matchLetters[idx];
-      
-        // Out of place?
-        if(unmatchedLetters[tileValue] > 0) {
-          tile.setState('oop');
-          updateKeyboard(tileValue, 'oop')
-          unmatchedLetters[tileValue]--;
-          return;
-        }
+      tileValue = tile.get();
+      // Letter at the same index in the match word
+      matchLetter = matchLetters[idx];
 
-        tile.setState('wrong');
-        updateKeyboard(tileValue, 'wrong');
+      // Is it a match?
+      if (tileValue === matchLetter) {
+        tile.setState('correct');
+        updateKeyboard(tileValue, 'correct');
+        unmatchedLetters[tileValue]--;
+        correctLetters++;
+        return;
+      }
+
+      tilesToReEvaluate.push(tile)
     })
-    
-    if(correctLetters === wordLength)
-       return true;
-    
+
+    tilesToReEvaluate.forEach((tile, idx) => {
+      tileValue = tile.get();
+
+      // Letter at the same index in the match word
+      matchLetter = matchLetters[idx];
+
+      // Out of place?
+      if (unmatchedLetters[tileValue] > 0) {
+        tile.setState('oop');
+        updateKeyboard(tileValue, 'oop')
+        unmatchedLetters[tileValue]--;
+        return;
+      }
+
+      tile.setState('wrong');
+      updateKeyboard(tileValue, 'wrong');
+    })
+
+    if (correctLetters === wordLength)
+      return true;
+
     return false;
   }
-  
+
   const keyboardStatePriority = {
     'correct': 0,
     'oop': 1,
@@ -477,57 +471,57 @@ function Game() {
   }
   function updateKeyboard(key, state) {
     const curState = keyboard.keyMap[key].getState();
-    
+
     const curPriority = keyboardStatePriority[curState];
     const newPriority = keyboardStatePriority[state];
-    
-    if(newPriority >= curPriority) return;
-    
+
+    if (newPriority >= curPriority) return;
+
     keyboard.keyMap[key].setState(state);
   }
-  
+
   function handleShortWord() {
     message.show(`You need ${wordLength} letters`)
   }
-  
+
   function handleInvalidWord() {
     message.show('Invalid Word')
   }
-  
+
   function handleCorrectGuess() {
     message.show(`YAY, CONGRATS!`)
   }
-  
+
   function startGame() {
     gameBoard.clear();
     removeListseners();
     keyboard.clear();
-    
+
     guessItr = new GuessIterator();
     guess = guessItr.next();
-    
+
     setMatchWord();
     addListeners();
   }
-  
+
   function endGame() {
     removeListseners();
   }
-  
+
   function giveUp() {
     message.show(matchWord.toUpperCase())
   }
-  
+
   function addListeners() {
     keyboard.addClickCallback(onKeyboardClick)
     window.addEventListener('keydown', onButtonClick)
   }
-  
+
   function removeListseners() {
     keyboard.removeClickCallback()
     window.removeEventListener('keydown', onButtonClick)
   }
-  
+
   let actions = {
     'delete': deleteGuessEntry,
     'backspace': deleteGuessEntry,
@@ -541,20 +535,20 @@ function Game() {
   function onButtonClick(evt) {
     parseAction(evt.key)
   }
-  
+
   // Handle Keyboard Letter Click
   function onKeyboardClick(el) {
     parseAction(el.dataset.value);
   }
 
   function parseAction(key) {
-    if(alphabet.includes(key)) {
+    if (alphabet.includes(key)) {
       actions.guess(key);
       return;
     }
 
     const action = key.toLowerCase()
-    if(!actions[action]) return;
+    if (!actions[action]) return;
 
     actions[action]();
   }
@@ -568,11 +562,11 @@ function Game() {
 theGame = new Game();
 theGame.startGame();
 
-newGameButton.addEventListener('click', (e) => { 
+newGameButton.addEventListener('click', (e) => {
   theGame.startGame();
   e.target.blur()
 });
-giveUpButton.addEventListener('click', (e) => { 
+giveUpButton.addEventListener('click', (e) => {
   theGame.giveUp();
   e.target.blur()
 });

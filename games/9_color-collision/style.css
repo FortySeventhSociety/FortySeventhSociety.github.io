@@ -23,12 +23,15 @@ body {
 .highlight {
   font-weight: 900;
 }
+
 .highlight._1 {
   color: #3498db;
 }
+
 .highlight._2 {
   color: #e74c3c;
 }
+
 .highlight._3 {
   color: #21c758;
 }
@@ -39,11 +42,13 @@ body {
   pointer-events: none;
   user-select: none;
 }
+
 .retry-text .char {
   font-size: 12vmin;
   font-weight: 800;
   letter-spacing: 5px;
 }
+
 .retry-text .char::before {
   pointer-events: none;
   content: attr(data-char);
@@ -84,13 +89,16 @@ body {
   transition: all 180ms cubic-bezier(0.075, 0.82, 0.165, 1);
   user-select: none;
 }
+
 .retry-btn.hide {
   pointer-events: none;
   opacity: 0;
 }
+
 .retry-btn.show .char {
   color: #fff;
 }
+
 .retry-btn:hover {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
@@ -116,12 +124,14 @@ body {
   flex-direction: column;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 .start-screen.hide {
   opacity: 0;
   transform: translateY(100%);
   pointer-events: none;
   z-index: -1;
 }
+
 .start-screen .game-data {
   width: 100%;
   height: 30%;
@@ -129,6 +139,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .start-screen .game-data .name {
   font-size: 2rem;
   color: #fff;
@@ -136,12 +147,15 @@ body {
   text-transform: uppercase;
   letter-spacing: 6px;
 }
+
 .start-screen .game-data .name span:nth-child(1) {
   color: #3498db;
 }
+
 .start-screen .game-data .name span:nth-child(2) {
   color: #e74c3c;
 }
+
 .start-screen .info {
   width: 100%;
   height: 50%;
@@ -150,6 +164,7 @@ body {
   line-height: 20px;
   color: rgba(255, 255, 255, 0.7);
 }
+
 .start-screen .btn.play {
   position: relative;
   width: 120px;
@@ -166,12 +181,15 @@ body {
   transition: all 400ms cubic-bezier(0.8, 0, 0.33, 1);
   overflow: hidden;
 }
-.start-screen .btn.play::after, .start-screen .btn.play::before {
+
+.start-screen .btn.play::after,
+.start-screen .btn.play::before {
   position: absolute;
   width: 100%;
   transition: all 400ms cubic-bezier(0.8, 0, 0.33, 1);
   z-index: -1;
 }
+
 .start-screen .btn.play::before {
   content: "";
   height: 0%;
@@ -180,6 +198,7 @@ body {
   border-radius: 50% 50% 0 0;
   background: #fff;
 }
+
 .start-screen .btn.play::after {
   content: "PLAY";
   height: 180%;
@@ -189,16 +208,20 @@ body {
   transform: translateY(-100%);
   font-size: 1.4em;
 }
+
 .start-screen .btn.play:hover {
   color: transparent;
   border-color: #fff;
 }
+
 .start-screen .btn.play:hover::after {
   transform: translateY(15%);
 }
+
 .start-screen .btn.play:hover::before {
   height: 180%;
 }
+
 .start-screen .btn.play:focus {
   transform: scale(0.9);
   outline: none;
@@ -210,6 +233,7 @@ body {
   bottom: 5px;
   padding: 5px 0;
 }
+
 .support a {
   margin: 0 10px;
   color: #fff;
@@ -223,11 +247,13 @@ body {
   align-items: center;
   user-select: none;
 }
+
 .support a span {
   text-transform: uppercase;
   font-size: 1rem;
   margin-right: 10px;
 }
+
 .support a:hover {
   background: black;
 }

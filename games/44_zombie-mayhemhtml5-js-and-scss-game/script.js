@@ -7,43 +7,43 @@ $(document).ready(function () {
 
     // Cache te DOM
     let $canves = $('#canves'),
-    $overlayScreen = $canves.find('.overlay-screen'),
-    $gameCover = $canves.find('.game-cover'),
-    $killedTitle = $canves.find('.killed-status span'),
-    $lifeIcons = $canves.find('.life'),
-    $muteMusic = $canves.find('#mute-music'),
-    $muteSounds = $canves.find('#mute-sounds'),
-    $ammoTitle = $canves.find('.ammo'),
-    $reloadHint = $canves.find('.reload-hint'),
-    $reloadHintSpinner = $reloadHint.find('.reload-trigger'),
-    $pasueGameTrigger = $canves.find('#pause-game');
+      $overlayScreen = $canves.find('.overlay-screen'),
+      $gameCover = $canves.find('.game-cover'),
+      $killedTitle = $canves.find('.killed-status span'),
+      $lifeIcons = $canves.find('.life'),
+      $muteMusic = $canves.find('#mute-music'),
+      $muteSounds = $canves.find('#mute-sounds'),
+      $ammoTitle = $canves.find('.ammo'),
+      $reloadHint = $canves.find('.reload-hint'),
+      $reloadHintSpinner = $reloadHint.find('.reload-trigger'),
+      $pasueGameTrigger = $canves.find('#pause-game');
 
     // Sounds
     const SHOOT_SOUND = 'SHOOT_SOUND',
-    NO_AMMO_SOUND = 'NO_AMMO_SOUND',
-    RELOAD_SOUND = 'RELOAD_SOUND',
-    ROAR_3 = 'ROAR_3',
-    ROAR_4 = 'ROAR_4',
-    ROAR_5 = 'ROAR_5',
-    ROAR_6 = 'ROAR_6',
-    LAUGHTER = 'LAUGHTER',
-    SOUNDTRACK = 'SOUNDTRACK',
-    PUNCH_1 = 'PUNCH_1',
-    PUNCH_2 = 'PUNCH_2',
-    PUNCH_3 = 'PUNCH_3',
-    PUNCH_4 = 'PUNCH_4';
+      NO_AMMO_SOUND = 'NO_AMMO_SOUND',
+      RELOAD_SOUND = 'RELOAD_SOUND',
+      ROAR_3 = 'ROAR_3',
+      ROAR_4 = 'ROAR_4',
+      ROAR_5 = 'ROAR_5',
+      ROAR_6 = 'ROAR_6',
+      LAUGHTER = 'LAUGHTER',
+      SOUNDTRACK = 'SOUNDTRACK',
+      PUNCH_1 = 'PUNCH_1',
+      PUNCH_2 = 'PUNCH_2',
+      PUNCH_3 = 'PUNCH_3',
+      PUNCH_4 = 'PUNCH_4';
 
     // General
     let pauseZombieTracking;
 
     // Game Info
     let mutedMusic = false,
-    mutedSounds = false,
-    gamePaused = false,
-    life = 3,
-    zombieKilled = 0,
-    wave = 0,
-    ammo = 6;
+      mutedSounds = false,
+      gamePaused = false,
+      life = 3,
+      zombieKilled = 0,
+      wave = 0,
+      ammo = 6;
 
     // Random number
     const getRandom = function (min, max) {
@@ -52,16 +52,16 @@ $(document).ready(function () {
 
     // Zombie Frequency per Level
     const WAVE_1_ZOMBIE_FRQ = getRandom(1300, 1700),
-    WAVE_2_ZOMBIE_FRQ = getRandom(1500, 1900),
-    WAVE_3_ZOMBIE_FRQ = getRandom(1700, 2100),
-    WAVE_4_ZOMBIE_FRQ = getRandom(1800, 2400);
+      WAVE_2_ZOMBIE_FRQ = getRandom(1500, 1900),
+      WAVE_3_ZOMBIE_FRQ = getRandom(1700, 2100),
+      WAVE_4_ZOMBIE_FRQ = getRandom(1800, 2400);
 
     // Zombie Quantity per Level
     const WAVE_1_ZOMBIE_QTY = getRandom(5, 7),
-    WAVE_2_ZOMBIE_QTY = getRandom(7, 10),
-    WAVE_3_ZOMBIE_QTY = getRandom(10, 14),
-    WAVE_4_ZOMBIE_QTY = getRandom(14, 17),
-    ALL_ZOMBIES = WAVE_1_ZOMBIE_QTY + WAVE_2_ZOMBIE_QTY + WAVE_3_ZOMBIE_QTY + WAVE_4_ZOMBIE_QTY;
+      WAVE_2_ZOMBIE_QTY = getRandom(7, 10),
+      WAVE_3_ZOMBIE_QTY = getRandom(10, 14),
+      WAVE_4_ZOMBIE_QTY = getRandom(14, 17),
+      ALL_ZOMBIES = WAVE_1_ZOMBIE_QTY + WAVE_2_ZOMBIE_QTY + WAVE_3_ZOMBIE_QTY + WAVE_4_ZOMBIE_QTY;
 
     // Load sounds
     (function loadSound() {
@@ -137,8 +137,8 @@ $(document).ready(function () {
         }
 
         let $this = $(this),
-        strength = e.target.dataset.strength.toString(),
-        $strengthBar = $this.find('.strength-bar');
+          strength = e.target.dataset.strength.toString(),
+          $strengthBar = $this.find('.strength-bar');
 
         if (strength === '1' && strength !== 0) {
           zombieKilled++;
@@ -416,31 +416,32 @@ $(document).ready(function () {
         $canves.find('.zombie-loader').addClass('zombie-' + getRandom(1, 3));
         // Preload all games graphics
         preload([
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-1.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-2.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-3.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-1.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-2.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-3.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-4.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/frame.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/icons.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-1-death.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-2-death.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-3-death.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-4.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-4-death.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-5.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-5-death.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-6.png',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-6-death.png'],
-        function () {
-          $canves.find('.loader').remove();
-          startGame();
-        });
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-1.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-2.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-3.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-1.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-2.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-3.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/bg-4.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/frame.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/icons.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-1-death.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-2-death.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-3-death.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-4.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-4-death.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-5.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-5-death.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-6.png',
+          'https://s3-us-west-2.amazonaws.com/s.cdpn.io/250758/zombie-6-death.png'],
+          function () {
+            $canves.find('.loader').remove();
+            startGame();
+          });
       },
       killed: zombieKilled,
-      ammoLeft: ammo };
+      ammoLeft: ammo
+    };
 
   }();
 

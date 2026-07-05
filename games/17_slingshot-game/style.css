@@ -14,6 +14,7 @@ body {
 .matter-demo-title {
   padding-top: 5%;
 }
+
 @media only screen and (max-width: 600px) {
   .matter-demo-title {
     padding-top: 15%;
@@ -25,5 +26,4 @@ body {
   visibility: hidden;
 }
 
-#slingshot {
-}
+#slingshot {}

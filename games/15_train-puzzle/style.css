@@ -19,12 +19,14 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+
 .canvas-container a {
   display: none;
   position: absolute;
   right: 5%;
   top: 5%;
 }
+
 .canvas-container canvas {
   height: 100%;
 }
@@ -51,6 +53,7 @@ body {
 .modal__win {
   display: none;
 }
+
 .modal__gameover .modal__title,
 .modal__win .modal__title {
   padding: 40px 0 25px;
@@ -63,6 +66,7 @@ body {
 .game--active .canvas-container a {
   display: block;
 }
+
 .game--active .modal {
   pointer-events: none;
   opacity: 0;
@@ -72,6 +76,7 @@ body {
 .game--over .modal__gameover {
   display: block;
 }
+
 .game--over .modal__main,
 .game--over .modal__win {
   display: none;
@@ -80,6 +85,7 @@ body {
 .game--win .modal__win {
   display: block;
 }
+
 .game--win .modal__gameover,
 .game--win .modal__main {
   display: none;
@@ -88,6 +94,7 @@ body {
 .game--loading .modal__main {
   display: none;
 }
+
 .game--loading .modal__loading {
   display: block;
 }
@@ -120,6 +127,7 @@ body {
   cursor: pointer;
   text-transform: none;
 }
+
 .btn:hover {
   background-color: #c3b9a8;
 }
