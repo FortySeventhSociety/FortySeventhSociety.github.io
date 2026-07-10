@@ -1,0 +1,206 @@
+{
+  "toBuy": [
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/8B4513/FFF?text=W",
+        "category": "Resources",
+        "subCategory": "Raw Materials",
+        "metadata": { "title": "Wood" }
+      },
+      "pricing": { "unitPrice": 5, "availableQuantity": 150 },
+      "tile": { "url": "https://nomstead.com/market/tile/101", "owner": "WoodcutterSam" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/A9A9A9/FFF?text=S",
+        "category": "Resources",
+        "subCategory": "Raw Materials",
+        "metadata": { "title": "Stone" }
+      },
+      "pricing": { "unitPrice": 8, "availableQuantity": 85 },
+      "tile": { "url": "https://nomstead.com/market/tile/102", "owner": "MinerMax" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/FFD700/000?text=G",
+        "category": "Treasures",
+        "subCategory": "Precious Metals",
+        "metadata": { "title": "Gold" }
+      },
+      "pricing": { "unitPrice": 500, "availableQuantity": 3 },
+      "tile": { "url": "https://nomstead.com/market/tile/103", "owner": "ProspectorPete" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/66CDAA/000?text=S",
+        "category": "Food",
+        "subCategory": "Meals",
+        "metadata": { "title": "Salad" }
+      },
+      "pricing": { "unitPrice": 15, "availableQuantity": 20 },
+      "tile": { "url": "https://nomstead.com/market/tile/104", "owner": "ChefGreen" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/9966CC/FFF?text=A",
+        "category": "Treasures",
+        "subCategory": "Gems",
+        "metadata": { "title": "Amethyst" }
+      },
+      "pricing": { "unitPrice": 120, "availableQuantity": 12 },
+      "tile": { "url": "https://nomstead.com/market/tile/105", "owner": "JewelerGemma" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/D2691E/FFF?text=C",
+        "category": "Resources",
+        "subCategory": "Raw Materials",
+        "metadata": { "title": "Clay" }
+      },
+      "pricing": { "unitPrice": 4, "availableQuantity": 300 },
+      "tile": { "url": "https://nomstead.com/market/tile/106", "owner": "DiggyDan" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/F0E5DE/000?text=CT",
+        "category": "Resources",
+        "subCategory": "Textiles",
+        "metadata": { "title": "Cotton Thread" }
+      },
+      "pricing": { "unitPrice": 10, "availableQuantity": 65 },
+      "tile": { "url": "https://nomstead.com/market/tile/107", "owner": "WeaverWendy" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/228B22/FFF?text=TG",
+        "category": "Resources",
+        "subCategory": "Textiles",
+        "metadata": { "title": "Cotton Thread Green" }
+      },
+      "pricing": { "unitPrice": 18, "availableQuantity": 40 },
+      "tile": { "url": "https://nomstead.com/market/tile/108", "owner": "WeaverWendy" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/DEB887/000?text=P",
+        "category": "Food",
+        "subCategory": "Raw Food",
+        "metadata": { "title": "Wrapped Potato" }
+      },
+      "pricing": { "unitPrice": 3, "availableQuantity": 500 },
+      "tile": { "url": "https://nomstead.com/market/tile/109", "owner": "FarmerFred" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/C72C41/FFF?text=R",
+        "category": "Treasures",
+        "subCategory": "Gems",
+        "metadata": { "title": "Ruby" }
+      },
+      "pricing": { "unitPrice": 450, "availableQuantity": 2 },
+      "tile": { "url": "https://nomstead.com/market/tile/110", "owner": "UndergroundAl" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/0033A0/FFF?text=S",
+        "category": "Treasures",
+        "subCategory": "Gems",
+        "metadata": { "title": "Sapphire" }
+      },
+      "pricing": { "unitPrice": 420, "availableQuantity": 4 },
+      "tile": { "url": "https://nomstead.com/market/tile/111", "owner": "UndergroundAl" }
+    }
+  ],
+  "toSell": [
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/6B6B6B/FFF?text=I",
+        "category": "Resources",
+        "subCategory": "Raw Materials",
+        "metadata": { "title": "Iron" }
+      },
+      "pricing": { "desiredQuantity": 200 },
+      "tile": { "url": "https://nomstead.com/market/tile/201", "owner": "BlacksmithBob" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/D4A30A/FFF?text=P",
+        "category": "Resources",
+        "subCategory": "Processed Materials",
+        "metadata": { "title": "Wood Plank" }
+      },
+      "pricing": { "desiredQuantity": 50 },
+      "tile": { "url": "https://nomstead.com/market/tile/202", "owner": "CarpenterChris" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/F4A460/000?text=F",
+        "category": "Food",
+        "subCategory": "Snacks",
+        "metadata": { "title": "Fries" }
+      },
+      "pricing": { "desiredQuantity": 30 },
+      "tile": { "url": "https://nomstead.com/market/tile/203", "owner": "HungryTavern" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/FF6347/FFF?text=B",
+        "category": "Resources",
+        "subCategory": "Processed Materials",
+        "metadata": { "title": "Clay Brick" }
+      },
+      "pricing": { "desiredQuantity": 500 },
+      "tile": { "url": "https://nomstead.com/market/tile/204", "owner": "MasonMason" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/7B8D82/FFF?text=SB",
+        "category": "Resources",
+        "subCategory": "Processed Materials",
+        "metadata": { "title": "Stone Brick" }
+      },
+      "pricing": { "desiredQuantity": 400 },
+      "tile": { "url": "https://nomstead.com/market/tile/205", "owner": "MasonMason" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/B8860B/FFF?text=IG",
+        "category": "Treasures",
+        "subCategory": "Bars",
+        "metadata": { "title": "Ingot Gold" }
+      },
+      "pricing": { "desiredQuantity": 15 },
+      "tile": { "url": "https://nomstead.com/market/tile/206", "owner": "SmelterStan" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/B0C4DE/000?text=IS",
+        "category": "Treasures",
+        "subCategory": "Bars",
+        "metadata": { "title": "Ingot Silver" }
+      },
+      "pricing": { "desiredQuantity": 25 },
+      "tile": { "url": "https://nomstead.com/market/tile/207", "owner": "SmelterStan" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/FFE4B5/000?text=MS",
+        "category": "Food",
+        "subCategory": "Meals",
+        "metadata": { "title": "Mushroom Soup" }
+      },
+      "pricing": { "desiredQuantity": 15 },
+      "tile": { "url": "https://nomstead.com/market/tile/208", "owner": "GourmetGarry" }
+    },
+    {
+      "object": {
+        "thumbnailImageUrl": "https://placehold.co/16x16/50C878/FFF?text=E",
+        "category": "Treasures",
+        "subCategory": "Gems",
+        "metadata": { "title": "Emerald" }
+      },
+      "pricing": { "desiredQuantity": 5 },
+      "tile": { "url": "https://nomstead.com/market/tile/209", "owner": "RoyalBank" }
+    }
+  ]
+}
